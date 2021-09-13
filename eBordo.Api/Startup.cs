@@ -1,4 +1,6 @@
 using eBordo.Api.Database;
+using eBordo.Api.Services.Drzava;
+using eBordo.Api.Services.GradService;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -33,6 +35,10 @@ namespace eBordo.Api
             services.AddDbContext<eBordoContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddAutoMapper(typeof(Startup));
+
+            //SERVICES
+            services.AddScoped<IDrzavaService, DrzavaService>();
+            services.AddScoped<IGradService, GradService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
