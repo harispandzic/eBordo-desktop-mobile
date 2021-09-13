@@ -18,5 +18,8 @@ namespace eBordo.Api.Database
         {
             base.OnModelCreating(modelBuilder);
         }
+
+        public virtual DbSet<Drzava> drzave { get; set; }
+        public virtual DbSet<Grad> gradovi { get; set; }
     }
 }
