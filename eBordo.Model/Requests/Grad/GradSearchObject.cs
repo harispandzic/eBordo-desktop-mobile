@@ -4,8 +4,8 @@ using System.Text;
 
 namespace eBordo.Model.Requests.Grad
 {
-    public class GradSearchRequest
+    public class GradSearchObject
     {
-        public string[] IncludeList { get; set; }
+        public string[] includeList { get; set; }
     }
 }

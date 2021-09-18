@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace eBordo.Api.Services.GradService
+namespace eBordo.Api.Services.Grad
 {
-    public interface IGradService: IBaseCRUDService<eBordo.Model.Models.Grad, eBordo.Api.Database.Grad, eBordo.Model.Requests.Grad.GradSearchRequest, eBordo.Model.Requests.Grad.GradInsertRequest, object>
+    public interface IGradService:IBaseCRUDService<eBordo.Model.Models.Grad, eBordo.Model.Requests.Grad.GradSearchObject, eBordo.Model.Requests.Grad.GradInsertRequest, eBordo.Model.Requests.Grad.GradUpdateRequest>
     {
     }
 }

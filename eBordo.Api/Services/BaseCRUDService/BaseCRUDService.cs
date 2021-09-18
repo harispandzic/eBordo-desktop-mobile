@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using eBordo.Api.Database;
+using eBordo.Api.Services.BaseREADService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,37 +8,15 @@ using System.Threading.Tasks;
 
 namespace eBordo.Api.Services.BaseCRUDService
 {
-    public class BaseCRUDService<TModel, TDatabase, TSearch, TInsert, TUpdate> : IBaseCRUDService<TModel, TDatabase, TSearch, TInsert, TUpdate>
+    public class BaseCRUDService<TModel, TDatabase, TSearch, TInsert, TUpdate> : BaseREADService<TModel, TDatabase, TSearch>,IBaseCRUDService<TModel, TSearch, TInsert, TUpdate>
         where TModel : class
+        where TDatabase : class
         where TSearch : class
         where TInsert : class
         where TUpdate : class
-        where TDatabase : class
     {
-        public eBordoContext _db { get; set; }
-        protected readonly IMapper _mapper;
-
-        public BaseCRUDService(eBordoContext db, IMapper mapper)
+        public BaseCRUDService(eBordoContext db, IMapper mapper):base(db, mapper)
         {
-            _db = db;
-            _mapper = mapper;
-        }
-
-        public virtual IEnumerable<TModel> Get(TSearch search = null)
-        {
-            var entity = _db.Set<TDatabase>();
-
-            var list = entity.ToList();
-
-            return _mapper.Map<List<TModel>>(list);
-        }
-        public virtual TModel GetById(int id)
-        {
-            var set = _db.Set<TDatabase>();
-
-            var entity = set.Find(id);
-
-            return _mapper.Map<TModel>(entity);
         }
         public virtual TModel Insert(TInsert request)
         {

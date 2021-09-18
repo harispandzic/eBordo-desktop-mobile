@@ -11,11 +11,14 @@ namespace eBordo.Api.Mapping
         public eBordoProfile()
         {
             CreateMap<eBordo.Api.Database.Drzava, eBordo.Model.Models.Drzava>();
-            CreateMap<eBordo.Api.Database.Grad, eBordo.Model.Models.Grad>();
-
+            CreateMap<eBordo.Api.Database.Grad, eBordo.Model.Models.Grad>().ReverseMap();
+            
             //INSERT requests
             CreateMap<eBordo.Model.Requests.Drzava.DrzavaInsertRequest, eBordo.Api.Database.Drzava>();
             CreateMap<eBordo.Model.Requests.Grad.GradInsertRequest, eBordo.Api.Database.Grad>();
+
+            //UPDATE REQUESTS
+            CreateMap<eBordo.Model.Requests.Grad.GradUpdateRequest, eBordo.Api.Database.Grad>();
         }
     }
 }

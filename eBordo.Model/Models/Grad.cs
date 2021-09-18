@@ -1,4 +1,5 @@
-﻿using System;
+﻿using eBordo.Model.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
