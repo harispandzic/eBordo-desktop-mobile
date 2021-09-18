@@ -7,30 +7,16 @@ using System.Threading.Tasks;
 
 namespace eBordo.Api.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class BaseCRUDController<TModel, TDatabase, TSearch, TInsert, TUpdate> : ControllerBase
+    public class BaseCRUDController<TModel, TSearch, TInsert, TUpdate> : BaseREADController<TModel, TSearch>
         where TModel : class
         where TSearch : class
         where TInsert : class
         where TUpdate : class
-        where TDatabase : class
     {
-        protected readonly IBaseCRUDService<TModel, TDatabase, TSearch, TInsert, TUpdate> _service;
-        public BaseCRUDController(IBaseCRUDService<TModel, TDatabase, TSearch, TInsert, TUpdate> service)
+        protected readonly IBaseCRUDService<TModel, TSearch, TInsert, TUpdate> _service;
+        public BaseCRUDController(IBaseCRUDService<TModel, TSearch, TInsert, TUpdate> service):base(service)
         {
             _service = service;
-        }
-        [HttpGet]
-        public virtual IEnumerable<TModel> Get([FromQuery] TSearch search)
-        {
-            return _service.Get(search);
-        }
-
-        [HttpGet("{id}")]
-        public virtual TModel GetById(int id)
-        {
-            return _service.GetById(id);
         }
 
         [HttpPost]

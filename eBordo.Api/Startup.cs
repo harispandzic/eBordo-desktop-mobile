@@ -1,6 +1,8 @@
 using eBordo.Api.Database;
+using eBordo.Api.Services.BaseREADService;
+using eBordo.Api.Services.BaseCRUDService;
 using eBordo.Api.Services.Drzava;
-using eBordo.Api.Services.GradService;
+using eBordo.Api.Services.Grad;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -39,6 +41,9 @@ namespace eBordo.Api
             //SERVICES
             services.AddScoped<IDrzavaService, DrzavaService>();
             services.AddScoped<IGradService, GradService>();
+
+            services.AddScoped<IBaseREADService<eBordo.Model.Models.Drzava, object>, BaseREADService<eBordo.Model.Models.Drzava, eBordo.Api.Database.Drzava, object>>();
+            //services.AddScoped<IBaseREADService<eBordo.Model.Models.Grad, eBordo.Model.Requests.Grad.GradSearchObject>, BaseREADService<eBordo.Model.Models.Grad, eBordo.Api.Database.Grad, eBordo.Model.Requests.Grad.GradSearchObject>>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

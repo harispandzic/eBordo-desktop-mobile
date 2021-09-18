@@ -17,6 +17,10 @@ namespace eBordo.Api.Database
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Grad>()
+               .HasOne<Drzava>(s => s.drzava)
+               ;
         }
 
         public virtual DbSet<Drzava> drzave { get; set; }
