@@ -29,7 +29,7 @@ namespace eBordo.Api.Services.BaseREADService
 
             return _mapper.Map<List<TModel>>(list);
         }
-        public virtual TModel GetById(int id, TSearch search = null)
+        public virtual TModel GetById(int id)
         {
             var set = _db.Set<TDatabase>();
 

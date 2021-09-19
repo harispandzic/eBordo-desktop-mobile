@@ -4,28 +4,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using eBordo.Model.Helpers;
+using eBordo.WinUI.Properties;
+using Flurl.Http;
 
 namespace eBordo.WinUI.ApiService
 {
     public class ApiService
     {
-        private string _route { get; set; }
-        public ApiService(string route)
-        {
-            _route = route;
-        }
-        //public async Task<T> Get<T>(object requestq)
-        //{
-        //    var url = $"{Properties.Settings.Default.ApiURL}/{_route}";
-        //    if (requestq != null)
-        //    {
-        //        url += "?";
-        //        url += await requestq.ToQueryString();
-        //    }
+        private string _resource;
+        public string endpoint = $"{Properties.Settings.Default.ApiURL}";
 
-        //    var result = await url.GetJsonAsync<T>();
-        //    return result;
-        //}
+        public ApiService(string resource)
+        {
+            _resource = resource;
+        }
+        public async Task<T> GetAll<T>(object request = null)
+        {
+            var query = "";
+            if (request != null)
+            {
+                query = await request?.ToQueryString();
+            }
+
+            var list = await $"{endpoint}{_resource}?{query}".GetJsonAsync<T>();
+
+            return list;
+        }
         //public async Task<T> GetById<T>(object id)
         //{
         //    var url = $"{Properties.Settings.Default.ApiURL}/{_route}/{id}";

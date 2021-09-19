@@ -10,6 +10,6 @@ namespace eBordo.Api.Services.BaseREADService
          where TSearch : class
     {
         IEnumerable<TModel> Get(TSearch search = null);
-        TModel GetById(int id, TSearch search = null);
+        TModel GetById(int id);
     }
 }

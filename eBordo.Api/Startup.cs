@@ -16,6 +16,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using eBordo.Api.Services.Igrac;
 
 namespace eBordo.Api
 {
@@ -41,8 +42,9 @@ namespace eBordo.Api
             //SERVICES
             services.AddScoped<IDrzavaService, DrzavaService>();
             services.AddScoped<IGradService, GradService>();
+            services.AddScoped<IIgracService, IgracService>();
 
-            services.AddScoped<IBaseREADService<eBordo.Model.Models.Drzava, object>, BaseREADService<eBordo.Model.Models.Drzava, eBordo.Api.Database.Drzava, object>>();
+            //services.AddScoped<IBaseREADService<eBordo.Model.Models.Drzava, object>, BaseREADService<eBordo.Model.Models.Drzava, eBordo.Api.Database.Drzava, object>>();
             //services.AddScoped<IBaseREADService<eBordo.Model.Models.Grad, eBordo.Model.Requests.Grad.GradSearchObject>, BaseREADService<eBordo.Model.Models.Grad, eBordo.Api.Database.Grad, eBordo.Model.Requests.Grad.GradSearchObject>>();
         }
 

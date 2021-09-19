@@ -24,9 +24,9 @@ namespace eBordo.Api.Controllers
         }
 
         [HttpGet("{id}")]
-        public virtual TModel GetById(int id, [FromQuery] TSearch search)
+        public virtual TModel GetById(int id)
         {
-            return _service.GetById(id, search);
+            return _service.GetById(id);
         }
     }
 }
