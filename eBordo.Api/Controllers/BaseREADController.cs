@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 namespace eBordo.Api.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class BaseREADController<TModel, TSearch> : ControllerBase where TModel : class where TSearch : class
     {
-        protected readonly IBaseREADService<TModel, TSearch> _service;
-        public BaseREADController(IBaseREADService<TModel, TSearch> service)
+        protected readonly BaseREADService<TModel, TSearch> _service;
+        public BaseREADController(BaseREADService<TModel, TSearch> service)
         {
             _service = service;
         }
@@ -24,9 +24,9 @@ namespace eBordo.Api.Controllers
         }
 
         [HttpGet("{id}")]
-        public virtual TModel GetById(int id, [FromQuery] TSearch search)
+        public virtual TModel GetById(int id)
         {
-            return _service.GetById(id, search);
+            return _service.GetById(id);
         }
     }
 }

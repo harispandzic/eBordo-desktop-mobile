@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace eBordo.Api.Services.BaseREADService
 {
-    public class BaseREADService<TModel, TDatabase, TSearch> : IBaseREADService<TModel, TSearch>
+    public class BaseREADService<TModel, TDatabase, TSearch> : BaseREADService<TModel, TSearch>
         where TModel : class
         where TSearch : class
         where TDatabase : class
@@ -29,7 +29,7 @@ namespace eBordo.Api.Services.BaseREADService
 
             return _mapper.Map<List<TModel>>(list);
         }
-        public virtual TModel GetById(int id, TSearch search = null)
+        public virtual TModel GetById(int id)
         {
             var set = _db.Set<TDatabase>();
 

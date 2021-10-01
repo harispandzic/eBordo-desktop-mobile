@@ -10,15 +10,30 @@ namespace eBordo.Api.Mapping
     {
         public eBordoProfile()
         {
-            CreateMap<eBordo.Api.Database.Drzava, eBordo.Model.Models.Drzava>();
-            CreateMap<eBordo.Api.Database.Grad, eBordo.Model.Models.Grad>().ReverseMap();
-            
-            //INSERT requests
-            CreateMap<eBordo.Model.Requests.Drzava.DrzavaInsertRequest, eBordo.Api.Database.Drzava>();
-            CreateMap<eBordo.Model.Requests.Grad.GradInsertRequest, eBordo.Api.Database.Grad>();
+            //Pozicija
+            CreateMap<eBordo.Api.Database.Pozicija, eBordo.Model.Models.Pozicija>();
 
-            //UPDATE REQUESTS
-            CreateMap<eBordo.Model.Requests.Grad.GradUpdateRequest, eBordo.Api.Database.Grad>();
+            //Država
+            CreateMap<eBordo.Api.Database.Drzava, eBordo.Model.Models.Drzava>();
+
+            //Grad
+            CreateMap<eBordo.Api.Database.Grad, eBordo.Model.Models.Grad>();
+
+            //Korisnik
+            CreateMap<eBordo.Api.Database.Korisnik, eBordo.Model.Models.Korisnik>().ReverseMap();
+            CreateMap<eBordo.Model.Requests.Korisnik.KorisnikInsertRequest, eBordo.Api.Database.Korisnik>();
+            CreateMap<eBordo.Model.Requests.Korisnik.KorisnikUpdateRequest, eBordo.Api.Database.Korisnik>();
+
+            //Igrač
+            CreateMap<eBordo.Api.Database.Igrac, eBordo.Model.Models.Igrac>();
+            CreateMap<eBordo.Api.Database.IgracStatistika, eBordo.Model.Models.IgracStatistika>().ReverseMap();
+            CreateMap<eBordo.Api.Database.IgracSkills, eBordo.Model.Models.IgracSkills>();
+            CreateMap<eBordo.Api.Database.Ugovor, eBordo.Model.Models.Ugovor>();
+            //INSERT & UPDATE
+            CreateMap<eBordo.Model.Requests.Igrac.IgracInsertRequest, eBordo.Api.Database.Igrac>();
+            CreateMap<eBordo.Model.Requests.Igrac.IgracUpdateRequest, eBordo.Api.Database.Igrac>();
+
+
         }
     }
 }

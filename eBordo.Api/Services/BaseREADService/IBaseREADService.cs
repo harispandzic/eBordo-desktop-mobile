@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 namespace eBordo.Api.Services.BaseREADService
 {
-    public interface IBaseREADService<TModel, TSearch>
+    public interface BaseREADService<TModel, TSearch>
          where TModel : class
          where TSearch : class
     {
         IEnumerable<TModel> Get(TSearch search = null);
-        TModel GetById(int id, TSearch search = null);
+        TModel GetById(int id);
     }
 }

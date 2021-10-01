@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace eBordo.WinUI
+namespace eBordo.WinUI.Forms.Početna
 {
-    public partial class Form1 : Form
+    public partial class frmPocetna : Form
     {
-        public Form1()
+        public frmPocetna()
         {
             InitializeComponent();
         }
+
+        private void frmPocetna_Load(object sender, EventArgs e)
+        {
+        }
+        
     }
 }

@@ -16,6 +16,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using eBordo.Api.Services.Igrac;
+using eBordo.Api.Services.Pozicija;
+using eBordo.Api.Services.Korisnik;
+using eBordo.Api.Services.IgracStatistika;
+using eBordo.Model.Models;
+using eBordo.Api.Services.IgracSkills;
+using eBordo.Api.Services.Ugovor;
 
 namespace eBordo.Api
 {
@@ -41,8 +48,14 @@ namespace eBordo.Api
             //SERVICES
             services.AddScoped<IDrzavaService, DrzavaService>();
             services.AddScoped<IGradService, GradService>();
+            services.AddScoped<IIgracService, IgracService>();
+            services.AddScoped<IPozicijaService, PozicijaService>();
+            services.AddScoped<IKorisnikService, KorisnikService>();
+            services.AddScoped<IIgracStatistikaService, IgracStatistikaService>();
+            services.AddScoped<IIgracSkillsService, IgracSkillsService>();
+            services.AddScoped<IUgovorService, UgovorService>();
 
-            services.AddScoped<IBaseREADService<eBordo.Model.Models.Drzava, object>, BaseREADService<eBordo.Model.Models.Drzava, eBordo.Api.Database.Drzava, object>>();
+            //services.AddScoped<IBaseREADService<eBordo.Model.Models.Drzava, object>, BaseREADService<eBordo.Model.Models.Drzava, eBordo.Api.Database.Drzava, object>>();
             //services.AddScoped<IBaseREADService<eBordo.Model.Models.Grad, eBordo.Model.Requests.Grad.GradSearchObject>, BaseREADService<eBordo.Model.Models.Grad, eBordo.Api.Database.Grad, eBordo.Model.Requests.Grad.GradSearchObject>>();
         }
 
