@@ -82,7 +82,7 @@ namespace eBordo.Api.Migrations
                     b.Property<int>("korisnikId")
                         .HasColumnType("int");
 
-                    b.Property<int>("pozicija")
+                    b.Property<int>("pozicijaId")
                         .HasColumnType("int");
 
                     b.Property<string>("slika")
@@ -110,6 +110,8 @@ namespace eBordo.Api.Migrations
 
                     b.HasIndex("korisnikId")
                         .IsUnique();
+
+                    b.HasIndex("pozicijaId");
 
                     b.HasIndex("ugovorId")
                         .IsUnique();
@@ -301,6 +303,21 @@ namespace eBordo.Api.Migrations
                     b.ToTable("korisnici");
                 });
 
+            modelBuilder.Entity("eBordo.Api.Database.Pozicija", b =>
+                {
+                    b.Property<int>("pozicijaId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("nazivPozicije")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("pozicijaId");
+
+                    b.ToTable("pozicije");
+                });
+
             modelBuilder.Entity("eBordo.Api.Database.Ugovor", b =>
                 {
                     b.Property<int>("ugovorId")
@@ -311,6 +328,9 @@ namespace eBordo.Api.Migrations
                     b.Property<DateTime>("datumPocetka")
                         .HasColumnType("datetime2");
 
+                    b.Property<DateTime>("datumPotpisa")
+                        .HasColumnType("datetime2");
+
                     b.Property<DateTime>("datumZavrsetka")
                         .HasColumnType("datetime2");
 
@@ -319,6 +339,9 @@ namespace eBordo.Api.Migrations
 
                     b.Property<float>("iznosPlate")
                         .HasColumnType("real");
+
+                    b.Property<string>("napomene")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ugovorId");
 
@@ -356,6 +379,12 @@ namespace eBordo.Api.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("eBordo.Api.Database.Pozicija", "pozicija")
+                        .WithMany()
+                        .HasForeignKey("pozicijaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("eBordo.Api.Database.Ugovor", "ugovor")
                         .WithOne("igrac")
                         .HasForeignKey("eBordo.Api.Database.Igrac", "ugovorId")
@@ -367,6 +396,8 @@ namespace eBordo.Api.Migrations
                     b.Navigation("igracStatistika");
 
                     b.Navigation("korisnik");
+
+                    b.Navigation("pozicija");
 
                     b.Navigation("ugovor");
                 });

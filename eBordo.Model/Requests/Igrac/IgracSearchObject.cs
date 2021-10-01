@@ -7,5 +7,6 @@ namespace eBordo.Model.Requests.Igrac
     public class IgracSearchObject
     {
         public string ime { get; set; }
+        public int pozicijaId { get; set; }
     }
 }

@@ -10,7 +10,6 @@ namespace eBordo.Api.Database
         public int igracId { get; set; }
         public Korisnik korisnik { get; set; }
         public int korisnikId { get; set; }
-
         public float visina { get; set; }
         public int tezina { get; set; }
         public int brojDresa { get; set; }
@@ -19,6 +18,7 @@ namespace eBordo.Api.Database
         public DateTime datumPristupaKlubu { get; set; }
 
         public Pozicija pozicija { get; set; }
+        public int pozicijaId { get; set; }
 
         public BoljaNoga boljaNoga { get; set; }
 

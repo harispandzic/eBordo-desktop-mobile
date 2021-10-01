@@ -5,8 +5,9 @@ using System.Threading.Tasks;
 
 namespace eBordo.Api.Database
 {
-    public enum Pozicija
+    public class Pozicija
     {
-        GOLMAN = 1, ODBRANA, VEZNJAK, KRILO, NAPADAČ
+        public int pozicijaId { get; set; }
+        public string nazivPozicije { get; set; }
     }
 }

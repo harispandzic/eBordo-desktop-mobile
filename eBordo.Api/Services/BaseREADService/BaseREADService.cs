@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace eBordo.Api.Services.BaseREADService
 {
-    public class BaseREADService<TModel, TDatabase, TSearch> : IBaseREADService<TModel, TSearch>
+    public class BaseREADService<TModel, TDatabase, TSearch> : BaseREADService<TModel, TSearch>
         where TModel : class
         where TSearch : class
         where TDatabase : class

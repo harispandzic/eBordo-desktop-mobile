@@ -30,12 +30,23 @@ namespace eBordo.WinUI.ApiService
 
             return list;
         }
-        //public async Task<T> GetById<T>(object id)
-        //{
-        //    var url = $"{Properties.Settings.Default.ApiURL}/{_route}/{id}";
-
-        //    var result = await url.GetJsonAsync<T>();
-        //    return result;
-        //}
+        public async Task<T> GetById<T>(object id)
+        {
+            var result = await $"{endpoint}{_resource}/{id}".GetJsonAsync<T>();
+            return result;
+        }
+        public async Task<T> DeleteById<T>(object id)
+        {
+            var result = await $"{endpoint}{_resource}/{id}".DeleteAsync().ReceiveJson<T>();
+            return result;
+        }
+        public async Task<T> Insert<T>(object request)
+        {
+            return await $"{endpoint}{_resource}".PostJsonAsync(request).ReceiveJson<T>();
+        }
+        public async Task<T> Update<T>(int id, object request)
+        {
+            return await $"{endpoint}{_resource}/{id}".PutJsonAsync(request).ReceiveJson<T>();
+        }
     }
 }

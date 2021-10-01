@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace eBordo.Api.Services.Grad
 {
-    public interface IGradService:IBaseREADService<eBordo.Model.Models.Grad,object>
+    public interface IGradService:BaseREADService<eBordo.Model.Models.Grad,object>
     {
     }
 }

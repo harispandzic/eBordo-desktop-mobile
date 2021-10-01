@@ -25,7 +25,7 @@ namespace eBordo.WinUI.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://localhost:49157/api")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://localhost:44317/api/")]
         public string ApiURL {
             get {
                 return ((string)(this["ApiURL"]));

@@ -42,6 +42,7 @@ namespace eBordo.Api.Database
                 .HasForeignKey<Igrac>(ad => ad.ugovorId)
                 ;
         }
+        public virtual DbSet<Pozicija> pozicije { get; set; }
         public virtual DbSet<Drzava> drzave { get; set; }
         public virtual DbSet<Grad> gradovi { get; set; }
         public virtual DbSet<IgracSkills> igracSkills { get; set; }

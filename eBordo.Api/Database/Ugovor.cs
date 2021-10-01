@@ -10,7 +10,9 @@ namespace eBordo.Api.Database
         public int ugovorId { get; set; }
         public DateTime datumPocetka { get; set; }
         public DateTime datumZavrsetka { get; set; }
+        public DateTime datumPotpisa { get; set; }
         public float iznosPlate { get; set; }
+        public string napomene { get; set; }
 
         public Igrac igrac { get; set; }
         public int? igracId { get; set; }
