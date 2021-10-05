@@ -1,4 +1,5 @@
 ﻿using eBordo.Api.Services.BaseREADService;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ namespace eBordo.Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class BaseREADController<TModel, TSearch> : ControllerBase where TModel : class where TSearch : class
     {
         protected readonly BaseREADService<TModel, TSearch> _service;

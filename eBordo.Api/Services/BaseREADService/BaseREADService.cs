@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using eBordo.Api.Database;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,7 @@ namespace eBordo.Api.Services.BaseREADService
     {
         public eBordoContext _db { get; set; }
         protected readonly IMapper _mapper;
+        protected readonly IHttpContextAccessor _httpContext;
 
         public BaseREADService(eBordoContext db, IMapper mapper)
         {

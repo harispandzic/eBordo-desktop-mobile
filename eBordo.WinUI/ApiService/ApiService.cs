@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using eBordo.Model.Helpers;
 using eBordo.WinUI.Properties;
 using Flurl.Http;
@@ -14,9 +15,27 @@ namespace eBordo.WinUI.ApiService
         private string _resource;
         public string endpoint = $"{Properties.Settings.Default.ApiURL}";
 
+        public static string username { get; set; }
+        public static string password { get; set; }
+        public static Model.Models.Korisnik logovaniKorisnik { get; set; }
+
         public ApiService(string resource)
         {
             _resource = resource;
+        }
+        public async Task<T> Auth<T>()
+        {
+            var url = $"{endpoint}{_resource}/Auth";
+
+            try
+            {
+                return await url.WithBasicAuth(username, password).GetJsonAsync<T>();
+            }
+            catch (FlurlHttpException ex)
+            {
+                MessageBox.Show("Pogrešan username ili password");
+                throw;
+            }
         }
         public async Task<T> GetAll<T>(object request = null)
         {
@@ -26,27 +45,27 @@ namespace eBordo.WinUI.ApiService
                 query = await request?.ToQueryString();
             }
 
-            var list = await $"{endpoint}{_resource}?{query}".GetJsonAsync<T>();
+            var list = await $"{endpoint}{_resource}?{query}".WithBasicAuth(username,password).GetJsonAsync<T>();
 
             return list;
         }
         public async Task<T> GetById<T>(object id)
         {
-            var result = await $"{endpoint}{_resource}/{id}".GetJsonAsync<T>();
+            var result = await $"{endpoint}{_resource}/{id}".WithBasicAuth(username, password).GetJsonAsync<T>();
             return result;
         }
         public async Task<T> DeleteById<T>(object id)
         {
-            var result = await $"{endpoint}{_resource}/{id}".DeleteAsync().ReceiveJson<T>();
+            var result = await $"{endpoint}{_resource}/{id}".WithBasicAuth(username, password).DeleteAsync().ReceiveJson<T>();
             return result;
         }
         public async Task<T> Insert<T>(object request)
         {
-            return await $"{endpoint}{_resource}".PostJsonAsync(request).ReceiveJson<T>();
+            return await $"{endpoint}{_resource}".WithBasicAuth(username, password).PostJsonAsync(request).ReceiveJson<T>();
         }
         public async Task<T> Update<T>(int id, object request)
         {
-            return await $"{endpoint}{_resource}/{id}".PutJsonAsync(request).ReceiveJson<T>();
+            return await $"{endpoint}{_resource}/{id}".WithBasicAuth(username, password).PutJsonAsync(request).ReceiveJson<T>();
         }
     }
 }

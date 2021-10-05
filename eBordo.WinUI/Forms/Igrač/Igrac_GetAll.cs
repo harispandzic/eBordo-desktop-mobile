@@ -15,6 +15,7 @@ namespace eBordo.WinUI.UserControls
     {
         private readonly ApiService.ApiService _igraci = new ApiService.ApiService("Igrac");
         private readonly ApiService.ApiService _pozicija = new ApiService.ApiService("Pozicija");
+        //private readonly ApiService.ApiService _korisnik = new ApiService.ApiService("Korisnik");
 
         private List<Model.Models.Igrac> _podaci;
         private List<Model.Models.Pozicija> _pozicije;
@@ -49,7 +50,10 @@ namespace eBordo.WinUI.UserControls
         }
         private async void PrikazIgraca_Load(object sender, EventArgs e)
         {
-            LoadComponents();
+            if (ApiService.ApiService.logovaniKorisnik.isAdmin)
+            {
+                LoadComponents();
+            }
             await LoadPozicije();
             await LoadIgraci();
         }
@@ -141,10 +145,10 @@ namespace eBordo.WinUI.UserControls
         }
 
 
-        private  void cmbPozicije_SelectedIndexChanged(object sender, EventArgs e)
+        private async  void cmbPozicije_SelectedIndexChanged(object sender, EventArgs e)
         {
             int pozicijaId = _pozicije[cmbPozicije.SelectedIndex].pozicijaId;
-            LoadIgraci("", pozicijaId);
+            await LoadIgraci("", pozicijaId);
         }
     }
 }

@@ -23,6 +23,9 @@ using eBordo.Api.Services.IgracStatistika;
 using eBordo.Model.Models;
 using eBordo.Api.Services.IgracSkills;
 using eBordo.Api.Services.Ugovor;
+using Microsoft.AspNetCore.Authentication;
+using eBordo.Api.Security;
+using Microsoft.OpenApi.Models;
 
 namespace eBordo.Api
 {
@@ -39,22 +42,46 @@ namespace eBordo.Api
         {
             services.AddControllers();
 
-            services.AddSwaggerGen();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "eBordo API", Version = "v1" });
+
+                c.AddSecurityDefinition("basicAuth", new OpenApiSecurityScheme
+                {
+                    Type = SecuritySchemeType.Http,
+                    Scheme = "basic"
+                });
+
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference { Type = ReferenceType.SecurityScheme, Id = "basicAuth" }
+                        },
+                        new string[]{}
+                    }
+                });
+            });
 
             services.AddDbContext<eBordoContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddAutoMapper(typeof(Startup));
 
             //SERVICES
+            services.AddScoped<IKorisnikService, KorisnikService>();
             services.AddScoped<IDrzavaService, DrzavaService>();
             services.AddScoped<IGradService, GradService>();
             services.AddScoped<IIgracService, IgracService>();
             services.AddScoped<IPozicijaService, PozicijaService>();
-            services.AddScoped<IKorisnikService, KorisnikService>();
             services.AddScoped<IIgracStatistikaService, IgracStatistikaService>();
             services.AddScoped<IIgracSkillsService, IgracSkillsService>();
             services.AddScoped<IUgovorService, UgovorService>();
 
+            services.AddAuthentication("BasicAuthentication")
+                .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
+
+            services.AddHttpContextAccessor();
             //services.AddScoped<IBaseREADService<eBordo.Model.Models.Drzava, object>, BaseREADService<eBordo.Model.Models.Drzava, eBordo.Api.Database.Drzava, object>>();
             //services.AddScoped<IBaseREADService<eBordo.Model.Models.Grad, eBordo.Model.Requests.Grad.GradSearchObject>, BaseREADService<eBordo.Model.Models.Grad, eBordo.Api.Database.Grad, eBordo.Model.Requests.Grad.GradSearchObject>>();
         }
@@ -69,6 +96,8 @@ namespace eBordo.Api
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

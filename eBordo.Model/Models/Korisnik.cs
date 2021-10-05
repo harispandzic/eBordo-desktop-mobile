@@ -16,6 +16,11 @@ namespace eBordo.Model.Models
         public string korisnickoIme { get; set; }
         public Drzava drzavljanstvo { get; set; }
         public Grad gradRodjenja { get; set; }
+        public byte[] Slika { get; set; }
+        public byte[] SlikaThumb { get; set; }
+        public bool isIgrac { get; set; }
+        public bool isTrener { get; set; }
+        public bool isAdmin { get; set; }
 
     }
 }

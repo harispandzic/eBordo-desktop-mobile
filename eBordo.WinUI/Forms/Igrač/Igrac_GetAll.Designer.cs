@@ -202,7 +202,7 @@ namespace eBordo.WinUI.UserControls
             this.btnPretraga.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnPretraga.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnPretraga.DisabledState.Parent = this.btnPretraga;
-            this.btnPretraga.FillColor = System.Drawing.Color.Maroon;
+            this.btnPretraga.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
             this.btnPretraga.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnPretraga.ForeColor = System.Drawing.Color.White;
             this.btnPretraga.HoverState.Parent = this.btnPretraga;
@@ -223,7 +223,7 @@ namespace eBordo.WinUI.UserControls
             this.btnRefresh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnRefresh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnRefresh.DisabledState.Parent = this.btnRefresh;
-            this.btnRefresh.FillColor = System.Drawing.Color.Maroon;
+            this.btnRefresh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
             this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnRefresh.ForeColor = System.Drawing.Color.White;
             this.btnRefresh.HoverState.Parent = this.btnRefresh;
@@ -297,7 +297,7 @@ namespace eBordo.WinUI.UserControls
             // 
             // guna2Panel2
             // 
-            this.guna2Panel2.BackColor = System.Drawing.Color.Maroon;
+            this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
             this.guna2Panel2.BorderColor = System.Drawing.Color.Transparent;
             this.guna2Panel2.Controls.Add(this.btnDodaj);
             this.guna2Panel2.Controls.Add(this.guna2HtmlLabel1);

@@ -1,9 +1,11 @@
 ﻿using eBordo.Model.Requests.Igrac;
+using eBordo.WinUI.Helper;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,10 +22,14 @@ namespace eBordo.WinUI.UserControls.Igrač
 
         private PrikazIgraca _prikazIgraca;
 
+        ByteToImage byteToImage = new ByteToImage();
+
         public List<Model.Models.Drzava> _drzave { get; set; }
         public List<Model.Models.Grad> _gradovi { get; set; }
         public List<Model.Models.Pozicija> _pozicije { get; set; }
         public Model.Models.Igrac _odabraniIgrac { get; set; }
+
+        private byte[] korisnikAvater { get; set; }
 
         public Igrac_Upsert(Model.Models.Igrac odabraniIgrac = null, PrikazIgraca prikazIgraca = null)
         {
@@ -50,6 +56,12 @@ namespace eBordo.WinUI.UserControls.Igrač
                 dtpDatumRodjenja.Enabled = false;
                 dtpDatumDolaska.Enabled = false;
                 dtpDatumPotpisa.Enabled = false;
+                btnUcitajFotografiju.Enabled = false;
+                if (_odabraniIgrac.korisnik.Slika.Length != 0)
+                {
+                    useAvatar.Image = byteToImage.ConvertByteToImage(_odabraniIgrac.korisnik.Slika);
+                    useAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
                 LoadIgrac();
             }
             else
@@ -57,9 +69,13 @@ namespace eBordo.WinUI.UserControls.Igrač
                 this.Text = "eBordo | Dodaj igrača";
                 btnSave.FillColor = Color.Green;
                 btnSave.Text = "Spasi igrača";
+                //var photo = Directory.GetFiles("/Uploads/DefaultAvatar.png");
+                //var location = this.GetType().Assembly.Location;
+                //useAvatar.Image = new Bitmap(@"Uploads/DefaultAvatar.png");
+                //useAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
             }
         }
-        private async void LoadIgrac()
+        private void LoadIgrac()
         {
             txtIme.Text = _odabraniIgrac.korisnik.ime;
             txtPrezime.Text = _odabraniIgrac.korisnik.prezime;
@@ -76,9 +92,10 @@ namespace eBordo.WinUI.UserControls.Igrač
             dtpDatumKraja.Value = _odabraniIgrac.ugovor.datumZavrsetka;
             txtIznosPlate.Value =Convert.ToDecimal(_odabraniIgrac.ugovor.iznosPlate);
             txtNapomene.Text = _odabraniIgrac.ugovor.napomene;
+
             LoadBoljaNoga();
         }
-        private async void LoadBoljaNoga()
+        private void LoadBoljaNoga()
         {
             if(_odabraniIgrac != null)
             {
@@ -189,7 +206,7 @@ namespace eBordo.WinUI.UserControls.Igrač
                     slika = "nema",
                     pozicijaId = _pozicije[cmbPozicija.SelectedIndex].pozicijaId,
                 };
-                var result = await _igrac.Update<Model.Models.Igrac>(_odabraniIgrac.igracId, updateRequest);
+                 await _igrac.Update<Model.Models.Igrac>(_odabraniIgrac.igracId, updateRequest);
             }
             else
             {
@@ -214,7 +231,9 @@ namespace eBordo.WinUI.UserControls.Igrač
                         telefon = txtTelefon.Text,
                         email = txtEmail.Text,
                         drzavljanstvoId = _drzave[cmbDrzavljanstvo.SelectedIndex].drzavaId,
-                        gradRodjenjaId = _gradovi[cmbGradRodjenja.SelectedIndex].gradId
+                        gradRodjenjaId = _gradovi[cmbGradRodjenja.SelectedIndex].gradId,
+                        Slika = korisnikAvater,
+                        SlikaThumb = korisnikAvater
                     },
                     ugovorInsertRequest = new Model.Requests.Ugovor.UgovorInsertRequest
                     {
@@ -234,12 +253,39 @@ namespace eBordo.WinUI.UserControls.Igrač
                     datumPristupaKlubu =dtpDatumDolaska.Value
                 };
 
-                var result = await _igrac.Insert<Model.Models.Igrac>(insertRequest);
+                await _igrac.Insert<Model.Models.Igrac>(insertRequest);
             }
             
             await _prikazIgraca.LoadIgraci();
 
             this.Hide();
         }
+        //public static Bitmap ByteToImage(byte[] blob)
+        //{
+        //    System.IO.MemoryStream mStream = new System.IO.MemoryStream();
+        //    byte[] pData = blob;
+        //    mStream.Write(pData, 0, Convert.ToInt32(pData.Length));
+        //    Bitmap bm = new Bitmap(mStream, false);
+        //    mStream.Dispose();
+        //    return bm;
+        //}
+        private void btnUcitajFotografiju_Click(object sender, EventArgs e)
+        {
+            var result = opnFileDialog.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                var fileName = opnFileDialog.FileName;
+
+                var file = System.IO.File.ReadAllBytes(fileName);
+
+                korisnikAvater = file;
+
+                Image image = Image.FromFile(fileName);
+                useAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+                useAvatar.Image = image;
+            }
+        }
+
     }
 }

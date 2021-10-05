@@ -14,5 +14,7 @@ namespace eBordo.Model.Requests.Korisnik
         public string email { get; set; }
         public int drzavljanstvoId { get; set; }
         public int gradRodjenjaId { get; set; }
+        public byte[] Slika { get; set; }
+        public byte[] SlikaThumb { get; set; }
     }
 }

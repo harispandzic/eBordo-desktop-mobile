@@ -16,7 +16,8 @@ namespace eBordo.WinUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Forms.Početna.frmPocetna());
+            Application.Run(new Login.frmLogin());
+            //Application.Run(new Forms.Početna.frmPocetna());
         }
     }
 }

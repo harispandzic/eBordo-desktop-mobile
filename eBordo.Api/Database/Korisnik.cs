@@ -27,6 +27,9 @@ namespace eBordo.Api.Database
         public Igrac igrac { get; set; }
         public int igracId { get; set; }
 
+        public byte[] Slika { get; set; }
+        public byte[] SlikaThumb { get; set; }
+
         //public Trener trener { get; set; }
         //public int trenerID { get; set; }
 
