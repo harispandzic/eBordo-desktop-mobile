@@ -78,11 +78,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiService\ApiService.cs" />
-    <Compile Include="Forms\Početna\Pocetna.cs">
+    <Compile Include="Forms\Igrač\Igrac_Upsert.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Početna\Pocetna.Designer.cs">
-      <DependentUpon>Pocetna.cs</DependentUpon>
+    <Compile Include="Forms\Igrač\Igrac_Upsert.designer.cs">
+      <DependentUpon>Igrac_Upsert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Početna\frmPocetna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Početna\frmPocetna.Designer.cs">
+      <DependentUpon>frmPocetna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\ByteToImage.cs" />
+    <Compile Include="Login\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -98,14 +111,14 @@
     <Compile Include="Forms\Igrač\Igrac_GetById.Designer.cs">
       <DependentUpon>Igrac_GetById.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Igrač\Igrac_Upsert.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Igrač\Igrac_Upsert.Designer.cs">
+    <EmbeddedResource Include="Forms\Igrač\Igrac_Upsert.resx">
       <DependentUpon>Igrac_Upsert.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Forms\Početna\Pocetna.resx">
-      <DependentUpon>Pocetna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Početna\frmPocetna.resx">
+      <DependentUpon>frmPocetna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -122,9 +135,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Igrač\Igrac_GetById.resx">
       <DependentUpon>Igrac_GetById.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Igrač\Igrac_Upsert.resx">
-      <DependentUpon>Igrac_Upsert.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -147,10 +157,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\215928.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\dd1860c8-3fc1-4729-9da0-86d0a8038668.png" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

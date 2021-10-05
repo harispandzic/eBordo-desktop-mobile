@@ -59,25 +59,5 @@ namespace eBordo.WinUI.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap _215928 {
-            get {
-                object obj = ResourceManager.GetObject("215928", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap dd1860c8_3fc1_4729_9da0_86d0a8038668 {
-            get {
-                object obj = ResourceManager.GetObject("dd1860c8-3fc1-4729-9da0-86d0a8038668", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }

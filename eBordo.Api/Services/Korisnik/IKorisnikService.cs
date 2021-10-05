@@ -7,7 +7,12 @@ using System.Threading.Tasks;
 
 namespace eBordo.Api.Services.Korisnik
 {
-    public interface IKorisnikService: IBaseCRUDService<eBordo.Model.Models.Korisnik,object, KorisnikInsertRequest, KorisnikUpdateRequest>
+    public interface IKorisnikService
     {
+        Task<Model.Models.Korisnik> Login(string username, string password);
+        Model.Models.Korisnik Auth();
+        Model.Models.Korisnik Insert(KorisnikInsertRequest request);
+        Model.Models.Korisnik Update(int id, KorisnikUpdateRequest request);
+        Model.Models.Korisnik Delete(int id);
     }
 }
