@@ -12,11 +12,11 @@ namespace eBordo.Model.Requests.Igrac
         public UgovorInsertRequest ugovorInsertRequest { get; set; }
         public int pozicijaId { get; set; }
         public string noga { get; set; }
+        public int jacinaSlabijeNoge { get; set; }
         public float visina { get; set; }
         public int tezina { get; set; }
         public int brojDresa { get; set; }
         public float trzisnaVrijednost { get; set; }
-        public string slika { get; set; }
-        public DateTime datumPristupaKlubu { get; set; }
+        public string napomeneOIgracu { get; set; }
     }
 }

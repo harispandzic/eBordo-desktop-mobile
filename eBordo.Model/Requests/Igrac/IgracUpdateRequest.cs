@@ -14,7 +14,7 @@ namespace eBordo.Model.Requests.Igrac
         public int tezina { get; set; }
         public int brojDresa { get; set; }
         public float trzisnaVrijednost { get; set; }
-        public string slika { get; set; }
         public int pozicijaId { get; set; }
+        public string napomeneOIgracu { get; set; }
     }
 }

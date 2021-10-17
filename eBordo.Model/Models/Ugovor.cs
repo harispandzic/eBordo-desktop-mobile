@@ -9,8 +9,5 @@ namespace eBordo.Model.Models
         public int ugovorId { get; set; }
         public DateTime datumPocetka { get; set; }
         public DateTime datumZavrsetka { get; set; }
-        public float iznosPlate { get; set; }
-        public DateTime datumPotpisa { get; set; }
-        public string napomene { get; set; }
     }
 }

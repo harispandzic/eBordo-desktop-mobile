@@ -5,43 +5,40 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.IO;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace eBordo.WinUI.UserControls.Igrač
+namespace eBordo.WinUI.Forms.AdminPanel
 {
-    public partial class Igrac_Upsert : Form
+    public partial class frmUpsertIgraca : Form
     {
         private readonly ApiService.ApiService _igrac = new ApiService.ApiService("Igrac");
         private readonly ApiService.ApiService _drzava = new ApiService.ApiService("Drzava");
         private readonly ApiService.ApiService _grad = new ApiService.ApiService("Grad");
         private readonly ApiService.ApiService _pozicija = new ApiService.ApiService("Pozicija");
 
-        private PrikazIgraca _prikazIgraca;
-
-        ByteToImage byteToImage = new ByteToImage();
-
         public List<Model.Models.Drzava> _drzave { get; set; }
         public List<Model.Models.Grad> _gradovi { get; set; }
         public List<Model.Models.Pozicija> _pozicije { get; set; }
         public Model.Models.Igrac _odabraniIgrac { get; set; }
 
-        private byte[] korisnikAvater { get; set; }
+        private frmPrikazIgraca _prikazIgraca;
+        private byte[] korisnikAvatar { get; set; }
+        ByteToImage byteToImage = new ByteToImage();
 
-        public Igrac_Upsert(Model.Models.Igrac odabraniIgrac = null, PrikazIgraca prikazIgraca = null)
+        public frmUpsertIgraca(Model.Models.Igrac odabraniIgrac = null, frmPrikazIgraca prikazIgraca = null)
         {
             InitializeComponent();
             _prikazIgraca = prikazIgraca;
-
-            if(odabraniIgrac != null)
+            if (odabraniIgrac != null)
             {
                 _odabraniIgrac = odabraniIgrac;
             }
         }
-        private async void Igrac_Insert_Load(object sender, EventArgs e)
+        private void frmUpsertIgraca_Load(object sender, EventArgs e)
         {
             LoadDrzave();
             LoadGradovi();
@@ -49,30 +46,24 @@ namespace eBordo.WinUI.UserControls.Igrač
             if (_odabraniIgrac != null)
             {
                 this.Text = "eBordo | Uredi igrača";
-                btnSave.FillColor = Color.Orange;
                 btnSave.Text = "Spasi izmjene";
                 txtIme.Enabled = false;
                 txtPrezime.Enabled = false;
                 dtpDatumRodjenja.Enabled = false;
-                dtpDatumDolaska.Enabled = false;
-                dtpDatumPotpisa.Enabled = false;
+                nmbrSlabijaNoga.Enabled = false;
                 btnUcitajFotografiju.Enabled = false;
                 if (_odabraniIgrac.korisnik.Slika.Length != 0)
                 {
-                    useAvatar.Image = byteToImage.ConvertByteToImage(_odabraniIgrac.korisnik.Slika);
-                    useAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
+                    userProflePicture.Image = byteToImage.ConvertByteToImage(_odabraniIgrac.korisnik.Slika);
+                    userProflePicture.SizeMode = PictureBoxSizeMode.StretchImage;
                 }
                 LoadIgrac();
             }
             else
             {
                 this.Text = "eBordo | Dodaj igrača";
-                btnSave.FillColor = Color.Green;
+                btnSave.BackColor = Color.Green;
                 btnSave.Text = "Spasi igrača";
-                //var photo = Directory.GetFiles("/Uploads/DefaultAvatar.png");
-                //var location = this.GetType().Assembly.Location;
-                //useAvatar.Image = new Bitmap(@"Uploads/DefaultAvatar.png");
-                //useAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
             }
         }
         private void LoadIgrac()
@@ -83,52 +74,31 @@ namespace eBordo.WinUI.UserControls.Igrač
             txtEmail.Text = _odabraniIgrac.korisnik.email;
             txtAdresa.Text = _odabraniIgrac.korisnik.adresa;
             txtTelefon.Text = _odabraniIgrac.korisnik.telefon;
-            txtVisina.Value = Convert.ToDecimal(_odabraniIgrac.visina);
-            txtTežina.Value = Convert.ToDecimal(_odabraniIgrac.tezina);
-            txtDres.Value = _odabraniIgrac.brojDresa;
-            txtVrijednost.Value = Convert.ToDecimal(_odabraniIgrac.trzisnaVrijednost);
-            dtpDatumDolaska.Value = _odabraniIgrac.ugovor.datumPotpisa;
-            dtpDatumPocetka.Value = _odabraniIgrac.ugovor.datumPocetka;
-            dtpDatumKraja.Value = _odabraniIgrac.ugovor.datumZavrsetka;
-            txtIznosPlate.Value =Convert.ToDecimal(_odabraniIgrac.ugovor.iznosPlate);
-            txtNapomene.Text = _odabraniIgrac.ugovor.napomene;
+            txtVisina.Text =  _odabraniIgrac.visina.ToString();
+            txtTezina.Text = _odabraniIgrac.tezina.ToString();
+            txtBrojDresa.Text = _odabraniIgrac.brojDresa.ToString();
+            txtTrzisnaVrijednost.Text = _odabraniIgrac.trzisnaVrijednost.ToString();
+            dtpDatumPotpisaUgovora.Value = _odabraniIgrac.ugovor.datumPocetka;
+            dtpDatumZavrsetkaUgovora.Value = _odabraniIgrac.ugovor.datumZavrsetka;
+            txtNapomene.Text = _odabraniIgrac.napomeneOIgracu;
+            nmbrSlabijaNoga.Value = _odabraniIgrac.jacinaSlabijeNoge;
 
             LoadBoljaNoga();
         }
         private void LoadBoljaNoga()
         {
-            if(_odabraniIgrac != null)
+            if (_odabraniIgrac != null)
             {
-                rbtnDesna.Enabled = false;
-                rbtnLijeva.Enabled = false;
-                if(_odabraniIgrac.boljaNoga == "DESNA")
+                radioDesna.Enabled = false;
+                radioLijeva.Enabled = false;
+                if (_odabraniIgrac.boljaNoga == "Desna")
                 {
-                    rbtnDesna.Checked = true;
+                    radioDesna.Checked = true;
                 }
-                else if (_odabraniIgrac.boljaNoga == "LIJEVA")
+                else if (_odabraniIgrac.boljaNoga == "Lijeva")
                 {
-                    rbtnLijeva.Checked = true;
+                    radioLijeva.Checked = true;
                 }
-            }
-        }
-        
-        private async void LoadDrzave()
-        {
-            _drzave = await _drzava.GetAll<List<Model.Models.Drzava>>(null);
-
-            if(_odabraniIgrac != null)
-            {
-                cmbDrzavljanstvo.Items.Add(_drzave.Where(s => s.drzavaId == _odabraniIgrac.korisnik.drzavljanstvo.drzavaId).SingleOrDefault().nazivDrzave);
-                cmbDrzavljanstvo.SelectedIndex = 0;
-                cmbDrzavljanstvo.Enabled = false;
-            }
-            else
-            {
-                foreach (var item in _drzave)
-                {
-                    cmbDrzavljanstvo.Items.Add(item.nazivDrzave);
-                }
-                cmbDrzavljanstvo.SelectedIndex = 0;
             }
         }
         private async void LoadPozicije()
@@ -145,7 +115,7 @@ namespace eBordo.WinUI.UserControls.Igrač
                 int selectedPozicija = 0;
                 for (int i = 0; i < _pozicije.Count; i++)
                 {
-                    if(_pozicije[i].pozicijaId == _odabraniIgrac.pozicija.pozicijaId)
+                    if (_pozicije[i].pozicijaId == _odabraniIgrac.pozicija.pozicijaId)
                     {
                         selectedPozicija = i;
                     }
@@ -158,11 +128,30 @@ namespace eBordo.WinUI.UserControls.Igrač
             }
 
         }
+        private async void LoadDrzave()
+        {
+            _drzave = await _drzava.GetAll<List<Model.Models.Drzava>>(null);
+
+            if (_odabraniIgrac != null)
+            {
+                cmbDrzavljanstvo.Items.Add(_drzave.Where(s => s.drzavaId == _odabraniIgrac.korisnik.drzavljanstvo.drzavaId).SingleOrDefault().nazivDrzave);
+                cmbDrzavljanstvo.SelectedIndex = 0;
+                cmbDrzavljanstvo.Enabled = false;
+            }
+            else
+            {
+                foreach (var item in _drzave)
+                {
+                    cmbDrzavljanstvo.Items.Add(item.nazivDrzave);
+                }
+                cmbDrzavljanstvo.SelectedIndex = 0;
+            }
+        }
         private async void LoadGradovi()
         {
             _gradovi = await _grad.GetAll<List<Model.Models.Grad>>(null);
-            
-            if(_odabraniIgrac != null)
+
+            if (_odabraniIgrac != null)
             {
                 cmbGradRodjenja.Items.Add(_gradovi.Where(s => s.gradId == _odabraniIgrac.korisnik.gradRodjenja.gradId).SingleOrDefault().nazivGrada);
                 cmbGradRodjenja.SelectedIndex = 0;
@@ -177,12 +166,13 @@ namespace eBordo.WinUI.UserControls.Igrač
                 cmbGradRodjenja.SelectedIndex = 0;
             }
         }
-        private async void btnSave_Click_1(object sender, EventArgs e)
+
+        private async void btnSave_Click(object sender, EventArgs e)
         {
             IgracInsertRequest insertRequest;
             IgracUpdateRequest updateRequest;
 
-            if(_odabraniIgrac != null)
+            if (_odabraniIgrac != null)
             {
                 updateRequest = new IgracUpdateRequest
                 {
@@ -194,28 +184,29 @@ namespace eBordo.WinUI.UserControls.Igrač
                     },
                     ugovorUpdateRequeest = new Model.Requests.Ugovor.UgovorUpdateRequest
                     {
-                        datumPocetka = dtpDatumPocetka.Value,
-                        datumZavrsetka = dtpDatumKraja.Value,
-                        plata = Decimal.ToInt32(txtIznosPlate.Value),
+                        datumPocetka = dtpDatumPotpisaUgovora.Value,
+                        datumZavrsetka = dtpDatumZavrsetkaUgovora.Value,
                         napomene = txtNapomene.Text
                     },
-                    visina = Decimal.ToInt32(txtVisina.Value),
-                    tezina = Decimal.ToInt32(txtTežina.Value),
-                    brojDresa = Decimal.ToInt32(txtDres.Value),
-                    trzisnaVrijednost = Decimal.ToInt32(txtVrijednost.Value),
-                    slika = "nema",
+                    visina = Int32.Parse(txtVisina.Text),
+                    tezina = Int32.Parse(txtTezina.Text),
+                    brojDresa = Int32.Parse(txtBrojDresa.Text),
+                    trzisnaVrijednost = Int32.Parse(txtTrzisnaVrijednost.Text),
+                    napomeneOIgracu = txtNapomene.Text,
                     pozicijaId = _pozicije[cmbPozicija.SelectedIndex].pozicijaId,
                 };
-                 await _igrac.Update<Model.Models.Igrac>(_odabraniIgrac.igracId, updateRequest);
+                await _igrac.Update<Model.Models.Igrac>(_odabraniIgrac.igracId, updateRequest);
+                await _prikazIgraca.LoadIgraci(notifikacija: TipNotifikacije.UREĐIVANJE);
+
             }
             else
             {
                 string boljaNoga = "";
-                if (rbtnDesna.Checked)
+                if (radioDesna.Checked)
                 {
                     boljaNoga = "DESNA";
                 }
-                else if (rbtnLijeva.Checked)
+                else if (radioLijeva.Checked)
                 {
                     boljaNoga = "LIJEVA";
                 }
@@ -232,60 +223,45 @@ namespace eBordo.WinUI.UserControls.Igrač
                         email = txtEmail.Text,
                         drzavljanstvoId = _drzave[cmbDrzavljanstvo.SelectedIndex].drzavaId,
                         gradRodjenjaId = _gradovi[cmbGradRodjenja.SelectedIndex].gradId,
-                        Slika = korisnikAvater,
-                        SlikaThumb = korisnikAvater
+                        Slika = korisnikAvatar,
                     },
                     ugovorInsertRequest = new Model.Requests.Ugovor.UgovorInsertRequest
                     {
-                        datumPocetka = dtpDatumPocetka.Value,
-                        datumZavrsetka = dtpDatumKraja.Value,
-                        datumPotpisa = dtpDatumPotpisa.Value,
-                        plata = Decimal.ToInt32(txtIznosPlate.Value),
-                        napomene = txtNapomene.Text
+                        datumPocetka = dtpDatumPotpisaUgovora.Value,
+                        datumZavrsetka = dtpDatumZavrsetkaUgovora.Value,
                     },
+                    visina = Int32.Parse(txtVisina.Text),
+                    tezina = Int32.Parse(txtTezina.Text),
+                    brojDresa = Int32.Parse(txtBrojDresa.Text),
+                    trzisnaVrijednost = Int32.Parse(txtTrzisnaVrijednost.Text),
+                    noga=boljaNoga,
+                    jacinaSlabijeNoge = nmbrSlabijaNoga.Value,
+                    napomeneOIgracu = txtNapomene.Text,
                     pozicijaId = _pozicije[cmbPozicija.SelectedIndex].pozicijaId,
-                    noga = boljaNoga,
-                    visina = Decimal.ToInt32(txtVisina.Value),
-                    tezina = Decimal.ToInt32(txtTežina.Value),
-                    brojDresa = Decimal.ToInt32(txtDres.Value),
-                    trzisnaVrijednost = Decimal.ToInt32(txtVrijednost.Value),
-                    slika = "nema",
-                    datumPristupaKlubu =dtpDatumDolaska.Value
                 };
 
                 await _igrac.Insert<Model.Models.Igrac>(insertRequest);
+                await _prikazIgraca.LoadIgraci(notifikacija: TipNotifikacije.DODAVANJE);
             }
-            
-            await _prikazIgraca.LoadIgraci();
 
             this.Hide();
         }
-        //public static Bitmap ByteToImage(byte[] blob)
-        //{
-        //    System.IO.MemoryStream mStream = new System.IO.MemoryStream();
-        //    byte[] pData = blob;
-        //    mStream.Write(pData, 0, Convert.ToInt32(pData.Length));
-        //    Bitmap bm = new Bitmap(mStream, false);
-        //    mStream.Dispose();
-        //    return bm;
-        //}
         private void btnUcitajFotografiju_Click(object sender, EventArgs e)
         {
-            var result = opnFileDialog.ShowDialog();
+            var result = fileDialog.ShowDialog();
 
             if (result == DialogResult.OK)
             {
-                var fileName = opnFileDialog.FileName;
+                var fileName = fileDialog.FileName;
 
                 var file = System.IO.File.ReadAllBytes(fileName);
 
-                korisnikAvater = file;
+                korisnikAvatar = file;
 
                 Image image = Image.FromFile(fileName);
-                useAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-                useAvatar.Image = image;
+                userProflePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+                userProflePicture.Image = image;
             }
         }
-
     }
 }

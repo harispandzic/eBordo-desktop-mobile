@@ -10,6 +10,8 @@ namespace eBordo.Model.Models
         public Korisnik korisnik { get; set; }
         public Pozicija pozicija { get; set; }
         public string boljaNoga { get; set; }
+        public string napomeneOIgracu { get; set; }
+        public int jacinaSlabijeNoge { get; set; }
         public float visina { get; set; }
         public int tezina { get; set; }
         public int brojDresa { get; set; }

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using eBordo.Api.Database;
 
 namespace eBordo.Api.Migrations
 {
     [DbContext(typeof(eBordoContext))]
-    partial class eBordoContextModelSnapshot : ModelSnapshot
+    [Migration("20211013054021_add-attribute-jacinSlabijeNoge-delete-some-attributes-from-igrac-table")]
+    partial class addattributejacinSlabijeNogedeletesomeattributesfromigractable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -250,6 +252,9 @@ namespace eBordo.Api.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<byte[]>("Slika")
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<byte[]>("SlikaThumb")
                         .HasColumnType("varbinary(max)");
 
                     b.Property<string>("adresa")

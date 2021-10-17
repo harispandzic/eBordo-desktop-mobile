@@ -98,10 +98,10 @@ namespace eBordo.Api.Services.Igrac
                 tezina = request.tezina,
                 brojDresa = request.brojDresa,
                 trzisnaVrijednost = request.trzisnaVrijednost,
-                slika = request.slika,
-                datumPristupaKlubu = request.datumPristupaKlubu,
                 pozicija = pozicija,
                 boljaNoga = boljaNoga,
+                napomeneOIgracu = request.napomeneOIgracu,
+                jacinaSlabijeNoge = request.jacinaSlabijeNoge,
                 igracStatistika = statistika,
                 igracSkills = skills,
                 ugovor = ugovor,
@@ -155,7 +155,7 @@ namespace eBordo.Api.Services.Igrac
             entity.tezina = request.tezina;
             entity.brojDresa = request.brojDresa;
             entity.trzisnaVrijednost = request.trzisnaVrijednost;
-            entity.slika = request.slika;
+            //entity.slika = request.slika;
             entity.pozicijaId = request.pozicijaId;
 
             _db.SaveChanges();
