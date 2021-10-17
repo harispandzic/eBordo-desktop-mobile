@@ -18,9 +18,6 @@ namespace eBordo.Api.Services.Ugovor
             Database.Ugovor ugovor = new Database.Ugovor();
             ugovor.datumPocetka = request.datumPocetka;
             ugovor.datumZavrsetka = request.datumZavrsetka;
-            ugovor.datumPotpisa = request.datumPotpisa;
-            ugovor.iznosPlate = request.plata;
-            ugovor.napomene = request.napomene;
             _db.ugovori.Add(ugovor);
             _db.SaveChanges();
 

@@ -33,7 +33,6 @@ namespace eBordo.WinUI.ApiService
             }
             catch (FlurlHttpException ex)
             {
-                MessageBox.Show("Pogrešan username ili password");
                 throw;
             }
         }
