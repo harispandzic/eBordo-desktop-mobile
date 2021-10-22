@@ -186,7 +186,6 @@ namespace eBordo.WinUI.Forms.AdminPanel
                     {
                         datumPocetka = dtpDatumPotpisaUgovora.Value,
                         datumZavrsetka = dtpDatumZavrsetkaUgovora.Value,
-                        napomene = txtNapomene.Text
                     },
                     visina = Int32.Parse(txtVisina.Text),
                     tezina = Int32.Parse(txtTezina.Text),

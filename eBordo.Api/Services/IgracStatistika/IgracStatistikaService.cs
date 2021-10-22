@@ -23,7 +23,7 @@ namespace eBordo.Api.Services.IgracStatistika
         }
         public override Model.Models.IgracStatistika Delete(int id)
         {
-            var entity = _db.igracStatistika.Where(s => s.igracId == id).FirstOrDefault();
+            var entity = _db.igracStatistika.Where(s => s.igracStatistikaId == id).FirstOrDefault();
 
             _db.Remove(entity);
             _db.SaveChanges();

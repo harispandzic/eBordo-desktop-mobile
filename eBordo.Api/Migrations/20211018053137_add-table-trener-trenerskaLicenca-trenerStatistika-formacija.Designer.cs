@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using eBordo.Api.Database;
 
 namespace eBordo.Api.Migrations
 {
     [DbContext(typeof(eBordoContext))]
-    partial class eBordoContextModelSnapshot : ModelSnapshot
+    [Migration("20211018053137_add-table-trener-trenerskaLicenca-trenerStatistika-formacija")]
+    partial class addtabletrenertrenerskaLicencatrenerStatistikaformacija
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -437,11 +439,20 @@ namespace eBordo.Api.Migrations
                     b.Property<DateTime>("datumPocetka")
                         .HasColumnType("datetime2");
 
+                    b.Property<DateTime>("datumPotpisa")
+                        .HasColumnType("datetime2");
+
                     b.Property<DateTime>("datumZavrsetka")
                         .HasColumnType("datetime2");
 
                     b.Property<int?>("igracId")
                         .HasColumnType("int");
+
+                    b.Property<float>("iznosPlate")
+                        .HasColumnType("real");
+
+                    b.Property<string>("napomene")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("trenerID")
                         .HasColumnType("int");
@@ -526,7 +537,7 @@ namespace eBordo.Api.Migrations
 
             modelBuilder.Entity("eBordo.Api.Database.Trener", b =>
                 {
-                    b.HasOne("eBordo.Api.Database.Formacija", "formacija")
+                    b.HasOne("eBordo.Api.Database.Formacija", "preferiranaFormacija")
                         .WithMany()
                         .HasForeignKey("formacijaId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -556,9 +567,9 @@ namespace eBordo.Api.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("formacija");
-
                     b.Navigation("korisnik");
+
+                    b.Navigation("preferiranaFormacija");
 
                     b.Navigation("trenerskaLicenca");
 

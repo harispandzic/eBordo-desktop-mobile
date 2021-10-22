@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace eBordo.Api.Services.Pozicija
+namespace eBordo.Api.Services.TrenerskaLicenca
 {
-    public interface IPozicijaService: IBaseREADService<Model.Models.Pozicija,object>
+    public interface ITrenerskaLicencaService: IBaseREADService<eBordo.Model.Models.TrenerskaLicenca, object>
     {
     }
 }

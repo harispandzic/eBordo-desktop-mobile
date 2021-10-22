@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace eBordo.Api.Services.BaseCRUDService
 {
-    public interface IBaseCRUDService<TModel, TSearch, TInsert, TUpdate> : BaseREADService<TModel, TSearch>
+    public interface IBaseCRUDService<TModel, TSearch, TInsert, TUpdate> : IBaseREADService<TModel, TSearch>
          where TModel : class
          where TSearch : class
          where TInsert : class

@@ -13,8 +13,8 @@ namespace eBordo.Api.Controllers
     //[Authorize]
     public class BaseREADController<TModel, TSearch> : ControllerBase where TModel : class where TSearch : class
     {
-        protected readonly BaseREADService<TModel, TSearch> _service;
-        public BaseREADController(BaseREADService<TModel, TSearch> service)
+        protected readonly IBaseREADService<TModel, TSearch> _service;
+        public BaseREADController(IBaseREADService<TModel, TSearch> service)
         {
             _service = service;
         }

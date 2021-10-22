@@ -41,6 +41,24 @@ namespace eBordo.Api.Database
                 .WithOne(ad => ad.ugovor)
                 .HasForeignKey<Igrac>(ad => ad.ugovorId)
                 ;
+
+            modelBuilder.Entity<Ugovor>()
+                .HasOne<Trener>(s => s.trener)
+                .WithOne(ad => ad.ugovor)
+                .HasForeignKey<Trener>(ad => ad.ugovorId)
+                ;
+
+            modelBuilder.Entity<Korisnik>()
+                .HasOne<Trener>(s => s.trener)
+                .WithOne(ad => ad.korisnik)
+                .HasForeignKey<Trener>(ad => ad.korisnikId)
+                ;
+
+            modelBuilder.Entity<TrenerStatistika>()
+                .HasOne<Trener>(s => s.trener)
+                .WithOne(ad => ad.trenerStatistika)
+                .HasForeignKey<Trener>(ad => ad.trenerStatistikaId)
+                ;
         }
         public virtual DbSet<Pozicija> pozicije { get; set; }
         public virtual DbSet<Drzava> drzave { get; set; }
@@ -50,5 +68,9 @@ namespace eBordo.Api.Database
         public virtual DbSet<Ugovor> ugovori { get; set; }
         public virtual DbSet<Korisnik> korisnici { get; set; }
         public virtual DbSet<Igrac> igraci { get; set; }
+        public virtual DbSet<TrenerStatistika> trenerStatistika { get; set; }
+        public virtual DbSet<Formacija> formacije { get; set; }
+        public virtual DbSet<TrenerskaLicenca> trenerskeLicence { get; set; }
+        public virtual DbSet<Trener> treneri { get; set; }
     }
 }
