@@ -32,7 +32,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
             lblTelefonVrijednost.Text = _odabraniIgrac.korisnik.telefon;
             lblEmailVrijednost.Text = _odabraniIgrac.korisnik.email;
 
-            lblPozicijaVrijednost.Text = _odabraniIgrac.pozicija.ToString();
+            lblPozicijaVrijednost.Text = _odabraniIgrac.pozicija.nazivPozicije;
             lblBoljaNogaVrijednost.Text = _odabraniIgrac.boljaNoga;
             ratingJacinaSlabijeNogeVrijednost.Value = _odabraniIgrac.jacinaSlabijeNoge;
             lblVisinaVrijednost.Text = _odabraniIgrac.visina.ToString();

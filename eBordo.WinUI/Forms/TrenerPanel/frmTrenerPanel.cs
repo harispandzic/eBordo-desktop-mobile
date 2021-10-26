@@ -10,23 +10,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace eBordo.WinUI.Forms.Igrač
+namespace eBordo.WinUI.Forms.TrenerPanel
 {
-    public partial class fromAdminPanel : Form
+    public partial class frmTrenerPanel : Form
     {
         private ByteToImage byteToImage = new ByteToImage();
-        private bool isKorisniciPanelCollapsed; 
-        public fromAdminPanel()
+        public frmTrenerPanel()
         {
             InitializeComponent();
         }
-        private void frmPrikazIgraca_Load(object sender, EventArgs e)
+
+        private void frmTrenerPanel_Load(object sender, EventArgs e)
         {
             hideActiveLabels("Početna");
             igracTabs.SetPage("tabPocetna");
-            //korisnickaFotografija.Image = byteToImage.ConvertByteToImage(ApiService.ApiService.logovaniKorisnik.Slika);
-            //lblLogovaniKorisnik.Text = (ApiService.ApiService.logovaniKorisnik.ime + " " + ApiService.ApiService.logovaniKorisnik.prezime).ToUpper();
-            //PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.PORUKA_DOBRODOSLICE);
+            korisnickaFotografija.Image = byteToImage.ConvertByteToImage(ApiService.ApiService.logovaniKorisnik.Slika);
+            lblLogovaniKorisnik.Text = (ApiService.ApiService.logovaniKorisnik.ime + " " + ApiService.ApiService.logovaniKorisnik.prezime).ToUpper();
+            PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.PORUKA_DOBRODOSLICE);
         }
         void hideActiveLabels(string opcija)
         {
@@ -36,7 +36,7 @@ namespace eBordo.WinUI.Forms.Igrač
                     {
                         pnlPocetna.Show();
                         pnlIgraci.Hide();
-                        pnlTreneri.Hide();
+                        pnlZdravstveniBilten.Hide();
                         pnlRasporedUtakmica.Hide();
                         pnlOdigraneUtakmice.Hide();
                         pnlRasporedTreninga.Hide();
@@ -46,17 +46,17 @@ namespace eBordo.WinUI.Forms.Igrač
                     {
                         pnlPocetna.Hide();
                         pnlIgraci.Show();
-                        pnlTreneri.Hide();
+                        pnlZdravstveniBilten.Hide();
                         pnlRasporedUtakmica.Hide();
                         pnlOdigraneUtakmice.Hide();
                         pnlRasporedTreninga.Hide();
                         break;
                     }
-                case "Treneri":
+                case "ZdravstveniBilten":
                     {
                         pnlPocetna.Hide();
                         pnlIgraci.Hide();
-                        pnlTreneri.Show();
+                        pnlZdravstveniBilten.Show();
                         pnlRasporedUtakmica.Hide();
                         pnlOdigraneUtakmice.Hide();
                         pnlRasporedTreninga.Hide();
@@ -66,7 +66,7 @@ namespace eBordo.WinUI.Forms.Igrač
                     {
                         pnlPocetna.Hide();
                         pnlIgraci.Hide();
-                        pnlTreneri.Hide();
+                        pnlZdravstveniBilten.Hide();
                         pnlRasporedUtakmica.Show();
                         pnlOdigraneUtakmice.Hide();
                         pnlRasporedTreninga.Hide();
@@ -76,7 +76,7 @@ namespace eBordo.WinUI.Forms.Igrač
                     {
                         pnlPocetna.Hide();
                         pnlIgraci.Hide();
-                        pnlTreneri.Hide();
+                        pnlZdravstveniBilten.Hide();
                         pnlRasporedUtakmica.Hide();
                         pnlOdigraneUtakmice.Show();
                         pnlRasporedTreninga.Hide();
@@ -86,44 +86,51 @@ namespace eBordo.WinUI.Forms.Igrač
                     {
                         pnlPocetna.Hide();
                         pnlIgraci.Hide();
-                        pnlTreneri.Hide();
+                        pnlZdravstveniBilten.Hide();
                         pnlRasporedUtakmica.Hide();
                         pnlOdigraneUtakmice.Hide();
                         pnlRasporedTreninga.Show();
                         break;
                     }
             }
-        }      
+        }
+
         private void btnPocetna_Click(object sender, EventArgs e)
         {
             hideActiveLabels("Početna");
             igracTabs.SetPage("Početna");
         }
+
         private void btnIgraci_Click(object sender, EventArgs e)
         {
             hideActiveLabels("Igrači");
             igracTabs.SetPage("Igrači");
         }
-        private void btnTreneri_Click(object sender, EventArgs e)
+
+        private void btnZdravstveniBilten_Click(object sender, EventArgs e)
         {
-            hideActiveLabels("Treneri");
-            igracTabs.SetPage("Treneri");
+            hideActiveLabels("ZdravstveniBilten");
+            igracTabs.SetPage("Zdravstveni bilten");
         }
+
         private void btnRasporedUtakmica_Click(object sender, EventArgs e)
         {
             hideActiveLabels("RasporedUtakmica");
             igracTabs.SetPage("Raspored utakmica");
         }
+
         private void btnOdigraneUtakmice_Click(object sender, EventArgs e)
         {
             hideActiveLabels("OdigraneUtakmice");
             igracTabs.SetPage("Odigrane utakmice");
         }
+
         private void btnRasporedTreninga_Click(object sender, EventArgs e)
         {
             hideActiveLabels("RasporedTreninga");
             igracTabs.SetPage("Raspored treninga");
         }
+
         private void lblLogout_Click(object sender, EventArgs e)
         {
             SoundPlayer simpleSound = new SoundPlayer(Properties.Resources.info);

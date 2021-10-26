@@ -1,7 +1,7 @@
 ﻿
-namespace eBordo.WinUI.Forms.Igrač
+namespace eBordo.WinUI.Forms.TrenerPanel
 {
-    partial class fromAdminPanel
+    partial class frmTrenerPanel
     {
         /// <summary>
         /// Required designer variable.
@@ -30,8 +30,8 @@ namespace eBordo.WinUI.Forms.Igrač
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fromAdminPanel));
             Utilities.BunifuPages.BunifuAnimatorNS.Animation animation1 = new Utilities.BunifuPages.BunifuAnimatorNS.Animation();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTrenerPanel));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
@@ -44,13 +44,13 @@ namespace eBordo.WinUI.Forms.Igrač
             this.label1 = new System.Windows.Forms.Label();
             this.tabIgraci = new System.Windows.Forms.TabPage();
             this.frmPrikazIgraca1 = new eBordo.WinUI.Forms.AdminPanel.frmPrikazIgraca();
-            this.tabTreneri = new System.Windows.Forms.TabPage();
             this.tabRasporedUtakmica = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
             this.tabOdigraneUtakmice = new System.Windows.Forms.TabPage();
             this.label5 = new System.Windows.Forms.Label();
             this.tabRasporedTreninga = new System.Windows.Forms.TabPage();
             this.label6 = new System.Windows.Forms.Label();
+            this.tabZdravstveniBilten = new System.Windows.Forms.TabPage();
             this.pnlMeni = new Bunifu.UI.WinForms.BunifuPanel();
             this.pnlRasporedTreninga = new System.Windows.Forms.Panel();
             this.iconPictureBox6 = new FontAwesome.Sharp.IconPictureBox();
@@ -61,9 +61,9 @@ namespace eBordo.WinUI.Forms.Igrač
             this.pnlRasporedUtakmica = new System.Windows.Forms.Panel();
             this.iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
             this.btnRasporedUtakmica = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.pnlTreneri = new System.Windows.Forms.Panel();
+            this.pnlZdravstveniBilten = new System.Windows.Forms.Panel();
             this.iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
-            this.btnTreneri = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.btnZdravstveniBilten = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.pnlIgraci = new System.Windows.Forms.Panel();
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.btnIgraci = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -77,11 +77,9 @@ namespace eBordo.WinUI.Forms.Igrač
             this.pngLogout = new FontAwesome.Sharp.IconPictureBox();
             this.pnlGrb = new System.Windows.Forms.Panel();
             this.lblLogout = new System.Windows.Forms.Label();
-            this.frmPrikazTrenera1 = new eBordo.WinUI.Forms.AdminPanel.frmPrikazTrenera();
             this.igracTabs.SuspendLayout();
             this.tabPocetna.SuspendLayout();
             this.tabIgraci.SuspendLayout();
-            this.tabTreneri.SuspendLayout();
             this.tabRasporedUtakmica.SuspendLayout();
             this.tabOdigraneUtakmice.SuspendLayout();
             this.tabRasporedTreninga.SuspendLayout();
@@ -114,7 +112,7 @@ namespace eBordo.WinUI.Forms.Igrač
             this.snackbar.ErrorOptions.CloseIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(199)))));
             this.snackbar.ErrorOptions.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.snackbar.ErrorOptions.ForeColor = System.Drawing.Color.Black;
-            this.snackbar.ErrorOptions.Icon = ((System.Drawing.Image)(resources.GetObject("resource.Icon")));
+            this.snackbar.ErrorOptions.Icon = null;
             this.snackbar.ErrorOptions.IconLeftMargin = 12;
             this.snackbar.FadeCloseIcon = false;
             this.snackbar.Host = Bunifu.UI.WinForms.BunifuSnackbar.Hosts.FormOwner;
@@ -128,7 +126,7 @@ namespace eBordo.WinUI.Forms.Igrač
             this.snackbar.InformationOptions.CloseIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
             this.snackbar.InformationOptions.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.snackbar.InformationOptions.ForeColor = System.Drawing.Color.Black;
-            this.snackbar.InformationOptions.Icon = ((System.Drawing.Image)(resources.GetObject("resource.Icon1")));
+            this.snackbar.InformationOptions.Icon = null;
             this.snackbar.InformationOptions.IconLeftMargin = 12;
             this.snackbar.Margin = 20;
             this.snackbar.MaximumSize = new System.Drawing.Size(0, 0);
@@ -149,7 +147,7 @@ namespace eBordo.WinUI.Forms.Igrač
             this.snackbar.SuccessOptions.CloseIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(255)))), ((int)(((byte)(237)))));
             this.snackbar.SuccessOptions.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.snackbar.SuccessOptions.ForeColor = System.Drawing.Color.Black;
-            this.snackbar.SuccessOptions.Icon = ((System.Drawing.Image)(resources.GetObject("resource.Icon2")));
+            this.snackbar.SuccessOptions.Icon = null;
             this.snackbar.SuccessOptions.IconLeftMargin = 12;
             this.snackbar.ViewsMargin = 7;
             this.snackbar.WarningOptions.ActionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -162,7 +160,7 @@ namespace eBordo.WinUI.Forms.Igrač
             this.snackbar.WarningOptions.CloseIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(143)))));
             this.snackbar.WarningOptions.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.snackbar.WarningOptions.ForeColor = System.Drawing.Color.Black;
-            this.snackbar.WarningOptions.Icon = ((System.Drawing.Image)(resources.GetObject("resource.Icon3")));
+            this.snackbar.WarningOptions.Icon = null;
             this.snackbar.WarningOptions.IconLeftMargin = 12;
             this.snackbar.ZoomCloseIcon = true;
             // 
@@ -172,17 +170,17 @@ namespace eBordo.WinUI.Forms.Igrač
             this.igracTabs.AllowTransitions = false;
             this.igracTabs.Controls.Add(this.tabPocetna);
             this.igracTabs.Controls.Add(this.tabIgraci);
-            this.igracTabs.Controls.Add(this.tabTreneri);
             this.igracTabs.Controls.Add(this.tabRasporedUtakmica);
             this.igracTabs.Controls.Add(this.tabOdigraneUtakmice);
             this.igracTabs.Controls.Add(this.tabRasporedTreninga);
+            this.igracTabs.Controls.Add(this.tabZdravstveniBilten);
             this.igracTabs.Location = new System.Drawing.Point(206, 48);
             this.igracTabs.Multiline = true;
             this.igracTabs.Name = "igracTabs";
-            this.igracTabs.Page = this.tabTreneri;
-            this.igracTabs.PageIndex = 2;
-            this.igracTabs.PageName = "tabTreneri";
-            this.igracTabs.PageTitle = "Treneri";
+            this.igracTabs.Page = this.tabRasporedTreninga;
+            this.igracTabs.PageIndex = 4;
+            this.igracTabs.PageName = "tabRasporedTreninga";
+            this.igracTabs.PageTitle = "Raspored treninga";
             this.igracTabs.SelectedIndex = 0;
             this.igracTabs.Size = new System.Drawing.Size(630, 429);
             this.igracTabs.TabIndex = 2;
@@ -241,17 +239,6 @@ namespace eBordo.WinUI.Forms.Igrač
             this.frmPrikazIgraca1.Name = "frmPrikazIgraca1";
             this.frmPrikazIgraca1.Size = new System.Drawing.Size(622, 403);
             this.frmPrikazIgraca1.TabIndex = 2;
-            // 
-            // tabTreneri
-            // 
-            this.tabTreneri.Controls.Add(this.frmPrikazTrenera1);
-            this.tabTreneri.Location = new System.Drawing.Point(4, 4);
-            this.tabTreneri.Name = "tabTreneri";
-            this.tabTreneri.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTreneri.Size = new System.Drawing.Size(622, 403);
-            this.tabTreneri.TabIndex = 2;
-            this.tabTreneri.Text = "Treneri";
-            this.tabTreneri.UseVisualStyleBackColor = true;
             // 
             // tabRasporedUtakmica
             // 
@@ -313,6 +300,16 @@ namespace eBordo.WinUI.Forms.Igrač
             this.label6.TabIndex = 1;
             this.label6.Text = "raspored treninga";
             // 
+            // tabZdravstveniBilten
+            // 
+            this.tabZdravstveniBilten.Location = new System.Drawing.Point(4, 4);
+            this.tabZdravstveniBilten.Name = "tabZdravstveniBilten";
+            this.tabZdravstveniBilten.Padding = new System.Windows.Forms.Padding(3);
+            this.tabZdravstveniBilten.Size = new System.Drawing.Size(622, 403);
+            this.tabZdravstveniBilten.TabIndex = 6;
+            this.tabZdravstveniBilten.Text = "Zdravstveni bilten";
+            this.tabZdravstveniBilten.UseVisualStyleBackColor = true;
+            // 
             // pnlMeni
             // 
             this.pnlMeni.BackgroundColor = System.Drawing.Color.Transparent;
@@ -330,9 +327,9 @@ namespace eBordo.WinUI.Forms.Igrač
             this.pnlMeni.Controls.Add(this.pnlRasporedUtakmica);
             this.pnlMeni.Controls.Add(this.iconPictureBox4);
             this.pnlMeni.Controls.Add(this.btnRasporedUtakmica);
-            this.pnlMeni.Controls.Add(this.pnlTreneri);
+            this.pnlMeni.Controls.Add(this.pnlZdravstveniBilten);
             this.pnlMeni.Controls.Add(this.iconPictureBox3);
-            this.pnlMeni.Controls.Add(this.btnTreneri);
+            this.pnlMeni.Controls.Add(this.btnZdravstveniBilten);
             this.pnlMeni.Controls.Add(this.pnlIgraci);
             this.pnlMeni.Controls.Add(this.iconPictureBox2);
             this.pnlMeni.Controls.Add(this.btnIgraci);
@@ -689,20 +686,20 @@ namespace eBordo.WinUI.Forms.Igrač
             this.btnRasporedUtakmica.UseDefaultRadiusAndThickness = true;
             this.btnRasporedUtakmica.Click += new System.EventHandler(this.btnRasporedUtakmica_Click);
             // 
-            // pnlTreneri
+            // pnlZdravstveniBilten
             // 
-            this.pnlTreneri.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
-            this.pnlTreneri.Location = new System.Drawing.Point(0, 204);
-            this.pnlTreneri.Name = "pnlTreneri";
-            this.pnlTreneri.Size = new System.Drawing.Size(8, 47);
-            this.pnlTreneri.TabIndex = 12;
+            this.pnlZdravstveniBilten.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.pnlZdravstveniBilten.Location = new System.Drawing.Point(0, 204);
+            this.pnlZdravstveniBilten.Name = "pnlZdravstveniBilten";
+            this.pnlZdravstveniBilten.Size = new System.Drawing.Size(8, 47);
+            this.pnlZdravstveniBilten.TabIndex = 12;
             // 
             // iconPictureBox3
             // 
             this.iconPictureBox3.BackColor = System.Drawing.Color.LightGray;
             this.iconPictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.iconPictureBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
-            this.iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.UserTie;
+            this.iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.BriefcaseMedical;
             this.iconPictureBox3.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
             this.iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox3.Location = new System.Drawing.Point(12, 212);
@@ -711,97 +708,97 @@ namespace eBordo.WinUI.Forms.Igrač
             this.iconPictureBox3.TabIndex = 11;
             this.iconPictureBox3.TabStop = false;
             // 
-            // btnTreneri
+            // btnZdravstveniBilten
             // 
-            this.btnTreneri.AllowAnimations = true;
-            this.btnTreneri.AllowMouseEffects = true;
-            this.btnTreneri.AllowToggling = false;
-            this.btnTreneri.AnimationSpeed = 200;
-            this.btnTreneri.AutoGenerateColors = false;
-            this.btnTreneri.AutoRoundBorders = false;
-            this.btnTreneri.AutoSizeLeftIcon = true;
-            this.btnTreneri.AutoSizeRightIcon = true;
-            this.btnTreneri.BackColor = System.Drawing.Color.Transparent;
-            this.btnTreneri.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
-            this.btnTreneri.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTreneri.BackgroundImage")));
-            this.btnTreneri.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnTreneri.ButtonText = "Treneri";
-            this.btnTreneri.ButtonTextMarginLeft = 0;
-            this.btnTreneri.ColorContrastOnClick = 45;
-            this.btnTreneri.ColorContrastOnHover = 45;
-            this.btnTreneri.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnZdravstveniBilten.AllowAnimations = true;
+            this.btnZdravstveniBilten.AllowMouseEffects = true;
+            this.btnZdravstveniBilten.AllowToggling = false;
+            this.btnZdravstveniBilten.AnimationSpeed = 200;
+            this.btnZdravstveniBilten.AutoGenerateColors = false;
+            this.btnZdravstveniBilten.AutoRoundBorders = false;
+            this.btnZdravstveniBilten.AutoSizeLeftIcon = true;
+            this.btnZdravstveniBilten.AutoSizeRightIcon = true;
+            this.btnZdravstveniBilten.BackColor = System.Drawing.Color.Transparent;
+            this.btnZdravstveniBilten.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
+            this.btnZdravstveniBilten.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnZdravstveniBilten.BackgroundImage")));
+            this.btnZdravstveniBilten.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnZdravstveniBilten.ButtonText = "Zdravstveni bilten";
+            this.btnZdravstveniBilten.ButtonTextMarginLeft = 0;
+            this.btnZdravstveniBilten.ColorContrastOnClick = 45;
+            this.btnZdravstveniBilten.ColorContrastOnHover = 45;
+            this.btnZdravstveniBilten.Cursor = System.Windows.Forms.Cursors.Hand;
             borderEdges4.BottomLeft = true;
             borderEdges4.BottomRight = true;
             borderEdges4.TopLeft = true;
             borderEdges4.TopRight = true;
-            this.btnTreneri.CustomizableEdges = borderEdges4;
-            this.btnTreneri.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnTreneri.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnTreneri.DisabledFillColor = System.Drawing.Color.Empty;
-            this.btnTreneri.DisabledForecolor = System.Drawing.Color.Empty;
-            this.btnTreneri.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnTreneri.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTreneri.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
-            this.btnTreneri.IconLeft = null;
-            this.btnTreneri.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTreneri.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.btnTreneri.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.btnTreneri.IconMarginLeft = 11;
-            this.btnTreneri.IconPadding = 10;
-            this.btnTreneri.IconRight = null;
-            this.btnTreneri.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnTreneri.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.btnTreneri.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.btnTreneri.IconSize = 25;
-            this.btnTreneri.IdleBorderColor = System.Drawing.Color.Empty;
-            this.btnTreneri.IdleBorderRadius = 0;
-            this.btnTreneri.IdleBorderThickness = 0;
-            this.btnTreneri.IdleFillColor = System.Drawing.Color.Empty;
-            this.btnTreneri.IdleIconLeftImage = null;
-            this.btnTreneri.IdleIconRightImage = null;
-            this.btnTreneri.IndicateFocus = false;
-            this.btnTreneri.Location = new System.Drawing.Point(0, 204);
-            this.btnTreneri.Name = "btnTreneri";
-            this.btnTreneri.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnTreneri.OnDisabledState.BorderRadius = 1;
-            this.btnTreneri.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnTreneri.OnDisabledState.BorderThickness = 1;
-            this.btnTreneri.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnTreneri.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnTreneri.OnDisabledState.IconLeftImage = null;
-            this.btnTreneri.OnDisabledState.IconRightImage = null;
-            this.btnTreneri.onHoverState.BorderColor = System.Drawing.Color.LightGray;
-            this.btnTreneri.onHoverState.BorderRadius = 1;
-            this.btnTreneri.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnTreneri.onHoverState.BorderThickness = 1;
-            this.btnTreneri.onHoverState.FillColor = System.Drawing.Color.LightGray;
-            this.btnTreneri.onHoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
-            this.btnTreneri.onHoverState.IconLeftImage = null;
-            this.btnTreneri.onHoverState.IconRightImage = null;
-            this.btnTreneri.OnIdleState.BorderColor = System.Drawing.Color.LightGray;
-            this.btnTreneri.OnIdleState.BorderRadius = 1;
-            this.btnTreneri.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnTreneri.OnIdleState.BorderThickness = 1;
-            this.btnTreneri.OnIdleState.FillColor = System.Drawing.Color.LightGray;
-            this.btnTreneri.OnIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
-            this.btnTreneri.OnIdleState.IconLeftImage = null;
-            this.btnTreneri.OnIdleState.IconRightImage = null;
-            this.btnTreneri.OnPressedState.BorderColor = System.Drawing.Color.LightGray;
-            this.btnTreneri.OnPressedState.BorderRadius = 1;
-            this.btnTreneri.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnTreneri.OnPressedState.BorderThickness = 1;
-            this.btnTreneri.OnPressedState.FillColor = System.Drawing.Color.LightGray;
-            this.btnTreneri.OnPressedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
-            this.btnTreneri.OnPressedState.IconLeftImage = null;
-            this.btnTreneri.OnPressedState.IconRightImage = null;
-            this.btnTreneri.Size = new System.Drawing.Size(209, 47);
-            this.btnTreneri.TabIndex = 13;
-            this.btnTreneri.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTreneri.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnTreneri.TextMarginLeft = 0;
-            this.btnTreneri.TextPadding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btnTreneri.UseDefaultRadiusAndThickness = true;
-            this.btnTreneri.Click += new System.EventHandler(this.btnTreneri_Click);
+            this.btnZdravstveniBilten.CustomizableEdges = borderEdges4;
+            this.btnZdravstveniBilten.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnZdravstveniBilten.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnZdravstveniBilten.DisabledFillColor = System.Drawing.Color.Empty;
+            this.btnZdravstveniBilten.DisabledForecolor = System.Drawing.Color.Empty;
+            this.btnZdravstveniBilten.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnZdravstveniBilten.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnZdravstveniBilten.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.btnZdravstveniBilten.IconLeft = null;
+            this.btnZdravstveniBilten.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnZdravstveniBilten.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnZdravstveniBilten.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnZdravstveniBilten.IconMarginLeft = 11;
+            this.btnZdravstveniBilten.IconPadding = 10;
+            this.btnZdravstveniBilten.IconRight = null;
+            this.btnZdravstveniBilten.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnZdravstveniBilten.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnZdravstveniBilten.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnZdravstveniBilten.IconSize = 25;
+            this.btnZdravstveniBilten.IdleBorderColor = System.Drawing.Color.Empty;
+            this.btnZdravstveniBilten.IdleBorderRadius = 0;
+            this.btnZdravstveniBilten.IdleBorderThickness = 0;
+            this.btnZdravstveniBilten.IdleFillColor = System.Drawing.Color.Empty;
+            this.btnZdravstveniBilten.IdleIconLeftImage = null;
+            this.btnZdravstveniBilten.IdleIconRightImage = null;
+            this.btnZdravstveniBilten.IndicateFocus = false;
+            this.btnZdravstveniBilten.Location = new System.Drawing.Point(0, 204);
+            this.btnZdravstveniBilten.Name = "btnZdravstveniBilten";
+            this.btnZdravstveniBilten.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnZdravstveniBilten.OnDisabledState.BorderRadius = 1;
+            this.btnZdravstveniBilten.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnZdravstveniBilten.OnDisabledState.BorderThickness = 1;
+            this.btnZdravstveniBilten.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnZdravstveniBilten.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnZdravstveniBilten.OnDisabledState.IconLeftImage = null;
+            this.btnZdravstveniBilten.OnDisabledState.IconRightImage = null;
+            this.btnZdravstveniBilten.onHoverState.BorderColor = System.Drawing.Color.LightGray;
+            this.btnZdravstveniBilten.onHoverState.BorderRadius = 1;
+            this.btnZdravstveniBilten.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnZdravstveniBilten.onHoverState.BorderThickness = 1;
+            this.btnZdravstveniBilten.onHoverState.FillColor = System.Drawing.Color.LightGray;
+            this.btnZdravstveniBilten.onHoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.btnZdravstveniBilten.onHoverState.IconLeftImage = null;
+            this.btnZdravstveniBilten.onHoverState.IconRightImage = null;
+            this.btnZdravstveniBilten.OnIdleState.BorderColor = System.Drawing.Color.LightGray;
+            this.btnZdravstveniBilten.OnIdleState.BorderRadius = 1;
+            this.btnZdravstveniBilten.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnZdravstveniBilten.OnIdleState.BorderThickness = 1;
+            this.btnZdravstveniBilten.OnIdleState.FillColor = System.Drawing.Color.LightGray;
+            this.btnZdravstveniBilten.OnIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.btnZdravstveniBilten.OnIdleState.IconLeftImage = null;
+            this.btnZdravstveniBilten.OnIdleState.IconRightImage = null;
+            this.btnZdravstveniBilten.OnPressedState.BorderColor = System.Drawing.Color.LightGray;
+            this.btnZdravstveniBilten.OnPressedState.BorderRadius = 1;
+            this.btnZdravstveniBilten.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnZdravstveniBilten.OnPressedState.BorderThickness = 1;
+            this.btnZdravstveniBilten.OnPressedState.FillColor = System.Drawing.Color.LightGray;
+            this.btnZdravstveniBilten.OnPressedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.btnZdravstveniBilten.OnPressedState.IconLeftImage = null;
+            this.btnZdravstveniBilten.OnPressedState.IconRightImage = null;
+            this.btnZdravstveniBilten.Size = new System.Drawing.Size(209, 47);
+            this.btnZdravstveniBilten.TabIndex = 13;
+            this.btnZdravstveniBilten.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnZdravstveniBilten.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnZdravstveniBilten.TextMarginLeft = 0;
+            this.btnZdravstveniBilten.TextPadding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.btnZdravstveniBilten.UseDefaultRadiusAndThickness = true;
+            this.btnZdravstveniBilten.Click += new System.EventHandler(this.btnZdravstveniBilten_Click);
             // 
             // pnlIgraci
             // 
@@ -1131,14 +1128,7 @@ namespace eBordo.WinUI.Forms.Igrač
             this.lblLogout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblLogout.Click += new System.EventHandler(this.lblLogout_Click);
             // 
-            // frmPrikazTrenera1
-            // 
-            this.frmPrikazTrenera1.Location = new System.Drawing.Point(0, 0);
-            this.frmPrikazTrenera1.Name = "frmPrikazTrenera1";
-            this.frmPrikazTrenera1.Size = new System.Drawing.Size(622, 403);
-            this.frmPrikazTrenera1.TabIndex = 0;
-            // 
-            // fromAdminPanel
+            // frmTrenerPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1147,16 +1137,14 @@ namespace eBordo.WinUI.Forms.Igrač
             this.Controls.Add(this.igracTabs);
             this.Controls.Add(this.gornjiPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "fromAdminPanel";
+            this.Name = "frmTrenerPanel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "eBordo | Dashboard";
-            this.Load += new System.EventHandler(this.frmPrikazIgraca_Load);
+            this.Load += new System.EventHandler(this.frmTrenerPanel_Load);
             this.igracTabs.ResumeLayout(false);
             this.tabPocetna.ResumeLayout(false);
             this.tabPocetna.PerformLayout();
             this.tabIgraci.ResumeLayout(false);
-            this.tabTreneri.ResumeLayout(false);
             this.tabRasporedUtakmica.ResumeLayout(false);
             this.tabRasporedUtakmica.PerformLayout();
             this.tabOdigraneUtakmice.ResumeLayout(false);
@@ -1190,16 +1178,15 @@ namespace eBordo.WinUI.Forms.Igrač
         private System.Windows.Forms.Label lblLogovaniKorisnik;
         private Bunifu.UI.WinForms.BunifuPictureBox korisnickaFotografija;
         private Bunifu.UI.WinForms.BunifuPanel pnlMeni;
-        private System.Windows.Forms.TabPage tabTreneri;
         private System.Windows.Forms.TabPage tabRasporedUtakmica;
         private System.Windows.Forms.TabPage tabOdigraneUtakmice;
         private System.Windows.Forms.TabPage tabRasporedTreninga;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnPocetna;
         private System.Windows.Forms.Panel pnlPocetna;
-        private System.Windows.Forms.Panel pnlTreneri;
+        private System.Windows.Forms.Panel pnlZdravstveniBilten;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnTreneri;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnZdravstveniBilten;
         private System.Windows.Forms.Panel pnlIgraci;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnIgraci;
@@ -1217,6 +1204,6 @@ namespace eBordo.WinUI.Forms.Igrač
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private AdminPanel.frmPrikazIgraca frmPrikazIgraca1;
-        private AdminPanel.frmPrikazTrenera frmPrikazTrenera1;
+        private System.Windows.Forms.TabPage tabZdravstveniBilten;
     }
 }

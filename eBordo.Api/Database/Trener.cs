@@ -8,9 +8,6 @@ namespace eBordo.Api.Database
     public class Trener
     {
         public int trenerId { get; set; }
-        public DateTime prvaZvanicnaUtakmica { get; set; }
-        public float trzisnaVrijednost { get; set; }
-
         public TrenerStatistika trenerStatistika { get; set; }
         public int trenerStatistikaId { get; set; }
 

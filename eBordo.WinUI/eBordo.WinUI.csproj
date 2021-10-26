@@ -204,13 +204,38 @@
     <Compile Include="Forms\AdminPanel\Igrač\frmUpsertIgraca.Designer.cs">
       <DependentUpon>frmUpsertIgraca.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AdminPanel\Trener\frmDetaljiTrenera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Trener\frmDetaljiTrenera.Designer.cs">
+      <DependentUpon>frmDetaljiTrenera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Trener\frmPrikazTrenera.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Trener\frmPrikazTrenera.Designer.cs">
+      <DependentUpon>frmPrikazTrenera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Trener\frmUpsertTrenera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Trener\frmUpsertTrenera.Designer.cs">
+      <DependentUpon>frmUpsertTrenera.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Login\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Login\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\TrenerPanel\frmTrenerPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TrenerPanel\frmTrenerPanel.Designer.cs">
+      <DependentUpon>frmTrenerPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helper\ByteToImage.cs" />
+    <Compile Include="Helper\PosaljiNotifikaciju.cs" />
     <Compile Include="Helper\TipNotifikacije.cs" />
     <Compile Include="Helper\TipPoruke.cs" />
     <Compile Include="Program.cs" />
@@ -227,8 +252,20 @@
     <EmbeddedResource Include="Forms\AdminPanel\Igrač\frmUpsertIgraca.resx">
       <DependentUpon>frmUpsertIgraca.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminPanel\Trener\frmDetaljiTrenera.resx">
+      <DependentUpon>frmDetaljiTrenera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminPanel\Trener\frmPrikazTrenera.resx">
+      <DependentUpon>frmPrikazTrenera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminPanel\Trener\frmUpsertTrenera.resx">
+      <DependentUpon>frmUpsertTrenera.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TrenerPanel\frmTrenerPanel.resx">
+      <DependentUpon>frmTrenerPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -339,8 +376,6 @@
   <ItemGroup>
     <None Include="Resources\bar-chart-676.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Forms\AdminPanel\Trener\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

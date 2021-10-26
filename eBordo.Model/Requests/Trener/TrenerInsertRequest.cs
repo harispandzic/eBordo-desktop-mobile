@@ -10,8 +10,6 @@ namespace eBordo.Model.Requests.Trener
     {
         public KorisnikInsertRequest korisnikInsertRequest { get; set; }
         public UgovorInsertRequest ugovorInsertRequest { get; set; }
-        public DateTime prvaZvanicnaUtakmica { get; set; }
-        public float trzisnaVrijednost { get; set; }
         public int preferiranaFormacijaId { get; set; }
         public int trenerskaLicencaId { get; set; }
     }

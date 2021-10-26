@@ -88,8 +88,6 @@ namespace eBordo.Api.Services.Trener
 
             eBordo.Api.Database.Trener trener = new eBordo.Api.Database.Trener
             {
-                prvaZvanicnaUtakmica = request.prvaZvanicnaUtakmica,
-                trzisnaVrijednost = request.trzisnaVrijednost,
                 formacija = preferiranaFormacija,
                 trenerskaLicenca = trenerskaLicenca,
                 trenerStatistika = statistika,

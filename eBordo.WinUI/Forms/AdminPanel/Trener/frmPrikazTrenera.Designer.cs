@@ -1,7 +1,7 @@
 ﻿
 namespace eBordo.WinUI.Forms.AdminPanel
 {
-    partial class frmPrikazIgraca
+    partial class frmPrikazTrenera
     {
         /// <summary> 
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrikazIgraca));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrikazTrenera));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -42,20 +42,17 @@ namespace eBordo.WinUI.Forms.AdminPanel
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             this.lblNaslovStranice = new Bunifu.UI.WinForms.BunifuLabel();
-            this.dgvPrikazIgraca = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.cmbPozicije = new Bunifu.UI.WinForms.BunifuDropdown();
+            this.dgvPrikazTrenera = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.imePrezime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.drzavljanstvo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.licenca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataLoader = new Bunifu.UI.WinForms.BunifuLoader();
             this.snackbar = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
-            this.btnPrijava = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.btnDodajTrenera = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnPretraga = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnRefresh = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.txtImePrezime = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.brojDresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.imePrezime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.drzavljanstvo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pozicija = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPrikazIgraca)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPrikazTrenera)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNaslovStranice
@@ -69,27 +66,27 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.lblNaslovStranice.Location = new System.Drawing.Point(20, 16);
             this.lblNaslovStranice.Name = "lblNaslovStranice";
             this.lblNaslovStranice.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblNaslovStranice.Size = new System.Drawing.Size(118, 21);
+            this.lblNaslovStranice.Size = new System.Drawing.Size(131, 21);
             this.lblNaslovStranice.TabIndex = 0;
-            this.lblNaslovStranice.Text = "PRIKAZ IGRAČA";
+            this.lblNaslovStranice.Text = "PRIKAZ TRENERA";
             this.lblNaslovStranice.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblNaslovStranice.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // dgvPrikazIgraca
+            // dgvPrikazTrenera
             // 
-            this.dgvPrikazIgraca.AllowCustomTheming = true;
-            this.dgvPrikazIgraca.AllowUserToAddRows = false;
-            this.dgvPrikazIgraca.AllowUserToDeleteRows = false;
-            this.dgvPrikazIgraca.AllowUserToResizeColumns = false;
-            this.dgvPrikazIgraca.AllowUserToResizeRows = false;
+            this.dgvPrikazTrenera.AllowCustomTheming = true;
+            this.dgvPrikazTrenera.AllowUserToAddRows = false;
+            this.dgvPrikazTrenera.AllowUserToDeleteRows = false;
+            this.dgvPrikazTrenera.AllowUserToResizeColumns = false;
+            this.dgvPrikazTrenera.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.dgvPrikazIgraca.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvPrikazIgraca.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvPrikazIgraca.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.dgvPrikazIgraca.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvPrikazIgraca.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvPrikazIgraca.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvPrikazTrenera.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvPrikazTrenera.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPrikazTrenera.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dgvPrikazTrenera.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvPrikazTrenera.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvPrikazTrenera.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
@@ -97,33 +94,31 @@ namespace eBordo.WinUI.Forms.AdminPanel
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPrikazIgraca.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvPrikazIgraca.ColumnHeadersHeight = 40;
-            this.dgvPrikazIgraca.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.brojDresa,
-            this.Column1,
+            this.dgvPrikazTrenera.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvPrikazTrenera.ColumnHeadersHeight = 40;
+            this.dgvPrikazTrenera.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.imePrezime,
             this.drzavljanstvo,
-            this.pozicija});
-            this.dgvPrikazIgraca.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvPrikazIgraca.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.dgvPrikazIgraca.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
-            this.dgvPrikazIgraca.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.White;
-            this.dgvPrikazIgraca.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvPrikazIgraca.CurrentTheme.BackColor = System.Drawing.Color.White;
-            this.dgvPrikazIgraca.CurrentTheme.GridColor = System.Drawing.Color.White;
-            this.dgvPrikazIgraca.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
-            this.dgvPrikazIgraca.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            this.dgvPrikazIgraca.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvPrikazIgraca.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.White;
-            this.dgvPrikazIgraca.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvPrikazIgraca.CurrentTheme.Name = null;
-            this.dgvPrikazIgraca.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvPrikazIgraca.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.dgvPrikazIgraca.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
-            this.dgvPrikazIgraca.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.White;
-            this.dgvPrikazIgraca.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvPrikazIgraca.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.licenca});
+            this.dgvPrikazTrenera.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvPrikazTrenera.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.dgvPrikazTrenera.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.dgvPrikazTrenera.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.White;
+            this.dgvPrikazTrenera.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvPrikazTrenera.CurrentTheme.BackColor = System.Drawing.Color.White;
+            this.dgvPrikazTrenera.CurrentTheme.GridColor = System.Drawing.Color.White;
+            this.dgvPrikazTrenera.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.dgvPrikazTrenera.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            this.dgvPrikazTrenera.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvPrikazTrenera.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.White;
+            this.dgvPrikazTrenera.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvPrikazTrenera.CurrentTheme.Name = null;
+            this.dgvPrikazTrenera.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvPrikazTrenera.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.dgvPrikazTrenera.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.dgvPrikazTrenera.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.White;
+            this.dgvPrikazTrenera.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvPrikazTrenera.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
@@ -131,71 +126,47 @@ namespace eBordo.WinUI.Forms.AdminPanel
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPrikazIgraca.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvPrikazIgraca.EnableHeadersVisualStyles = false;
-            this.dgvPrikazIgraca.GridColor = System.Drawing.Color.White;
-            this.dgvPrikazIgraca.HeaderBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
-            this.dgvPrikazIgraca.HeaderBgColor = System.Drawing.Color.Empty;
-            this.dgvPrikazIgraca.HeaderForeColor = System.Drawing.Color.White;
-            this.dgvPrikazIgraca.Location = new System.Drawing.Point(20, 102);
-            this.dgvPrikazIgraca.Name = "dgvPrikazIgraca";
-            this.dgvPrikazIgraca.ReadOnly = true;
-            this.dgvPrikazIgraca.RowHeadersVisible = false;
-            this.dgvPrikazIgraca.RowTemplate.Height = 40;
-            this.dgvPrikazIgraca.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPrikazIgraca.ShowCellErrors = false;
-            this.dgvPrikazIgraca.ShowCellToolTips = false;
-            this.dgvPrikazIgraca.ShowEditingIcon = false;
-            this.dgvPrikazIgraca.ShowRowErrors = false;
-            this.dgvPrikazIgraca.Size = new System.Drawing.Size(581, 284);
-            this.dgvPrikazIgraca.TabIndex = 1;
-            this.dgvPrikazIgraca.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
-            this.dgvPrikazIgraca.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrikazIgraca_CellContentClick_1);
+            this.dgvPrikazTrenera.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvPrikazTrenera.EnableHeadersVisualStyles = false;
+            this.dgvPrikazTrenera.GridColor = System.Drawing.Color.White;
+            this.dgvPrikazTrenera.HeaderBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.dgvPrikazTrenera.HeaderBgColor = System.Drawing.Color.Empty;
+            this.dgvPrikazTrenera.HeaderForeColor = System.Drawing.Color.White;
+            this.dgvPrikazTrenera.Location = new System.Drawing.Point(20, 102);
+            this.dgvPrikazTrenera.Name = "dgvPrikazTrenera";
+            this.dgvPrikazTrenera.ReadOnly = true;
+            this.dgvPrikazTrenera.RowHeadersVisible = false;
+            this.dgvPrikazTrenera.RowTemplate.Height = 40;
+            this.dgvPrikazTrenera.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPrikazTrenera.ShowCellErrors = false;
+            this.dgvPrikazTrenera.ShowCellToolTips = false;
+            this.dgvPrikazTrenera.ShowEditingIcon = false;
+            this.dgvPrikazTrenera.ShowRowErrors = false;
+            this.dgvPrikazTrenera.Size = new System.Drawing.Size(581, 284);
+            this.dgvPrikazTrenera.TabIndex = 1;
+            this.dgvPrikazTrenera.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            this.dgvPrikazTrenera.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrikazTrenera_CellContentClick);
             // 
-            // cmbPozicije
+            // imePrezime
             // 
-            this.cmbPozicije.BackColor = System.Drawing.Color.Transparent;
-            this.cmbPozicije.BackgroundColor = System.Drawing.Color.White;
-            this.cmbPozicije.BorderColor = System.Drawing.Color.Silver;
-            this.cmbPozicije.BorderRadius = 1;
-            this.cmbPozicije.Color = System.Drawing.Color.Silver;
-            this.cmbPozicije.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
-            this.cmbPozicije.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.cmbPozicije.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.cmbPozicije.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.cmbPozicije.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.cmbPozicije.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
-            this.cmbPozicije.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbPozicije.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
-            this.cmbPozicije.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPozicije.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
-            this.cmbPozicije.FillDropDown = true;
-            this.cmbPozicije.FillIndicator = false;
-            this.cmbPozicije.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbPozicije.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.cmbPozicije.ForeColor = System.Drawing.Color.Black;
-            this.cmbPozicije.FormattingEnabled = true;
-            this.cmbPozicije.Icon = null;
-            this.cmbPozicije.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
-            this.cmbPozicije.IndicatorColor = System.Drawing.Color.DarkGray;
-            this.cmbPozicije.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
-            this.cmbPozicije.IndicatorThickness = 2;
-            this.cmbPozicije.IsDropdownOpened = false;
-            this.cmbPozicije.ItemBackColor = System.Drawing.Color.White;
-            this.cmbPozicije.ItemBorderColor = System.Drawing.Color.White;
-            this.cmbPozicije.ItemForeColor = System.Drawing.Color.Black;
-            this.cmbPozicije.ItemHeight = 26;
-            this.cmbPozicije.ItemHighLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
-            this.cmbPozicije.ItemHighLightForeColor = System.Drawing.Color.White;
-            this.cmbPozicije.ItemTopMargin = 3;
-            this.cmbPozicije.Location = new System.Drawing.Point(215, 66);
-            this.cmbPozicije.Name = "cmbPozicije";
-            this.cmbPozicije.Size = new System.Drawing.Size(165, 32);
-            this.cmbPozicije.TabIndex = 2;
-            this.cmbPozicije.Text = "Pozicija";
-            this.cmbPozicije.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
-            this.cmbPozicije.TextLeftMargin = 5;
-            this.cmbPozicije.SelectedIndexChanged += new System.EventHandler(this.cmbPozicije_SelectedIndexChanged);
+            this.imePrezime.FillWeight = 150F;
+            this.imePrezime.HeaderText = "Ime i prezime";
+            this.imePrezime.Name = "imePrezime";
+            this.imePrezime.ReadOnly = true;
+            // 
+            // drzavljanstvo
+            // 
+            this.drzavljanstvo.FillWeight = 120F;
+            this.drzavljanstvo.HeaderText = "Državljanstvo";
+            this.drzavljanstvo.Name = "drzavljanstvo";
+            this.drzavljanstvo.ReadOnly = true;
+            // 
+            // licenca
+            // 
+            this.licenca.FillWeight = 110F;
+            this.licenca.HeaderText = "Licenca";
+            this.licenca.Name = "licenca";
+            this.licenca.ReadOnly = true;
             // 
             // dataLoader
             // 
@@ -239,7 +210,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.snackbar.ErrorOptions.CloseIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(199)))));
             this.snackbar.ErrorOptions.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.snackbar.ErrorOptions.ForeColor = System.Drawing.Color.Black;
-            this.snackbar.ErrorOptions.Icon = ((System.Drawing.Image)(resources.GetObject("resource.Icon")));
+            this.snackbar.ErrorOptions.Icon = null;
             this.snackbar.ErrorOptions.IconLeftMargin = 12;
             this.snackbar.FadeCloseIcon = true;
             this.snackbar.Host = Bunifu.UI.WinForms.BunifuSnackbar.Hosts.FormOwner;
@@ -253,7 +224,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.snackbar.InformationOptions.CloseIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
             this.snackbar.InformationOptions.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.snackbar.InformationOptions.ForeColor = System.Drawing.Color.Black;
-            this.snackbar.InformationOptions.Icon = ((System.Drawing.Image)(resources.GetObject("resource.Icon1")));
+            this.snackbar.InformationOptions.Icon = null;
             this.snackbar.InformationOptions.IconLeftMargin = 12;
             this.snackbar.Margin = 30;
             this.snackbar.MaximumSize = new System.Drawing.Size(0, 0);
@@ -274,7 +245,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.snackbar.SuccessOptions.CloseIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(255)))), ((int)(((byte)(237)))));
             this.snackbar.SuccessOptions.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.snackbar.SuccessOptions.ForeColor = System.Drawing.Color.Black;
-            this.snackbar.SuccessOptions.Icon = ((System.Drawing.Image)(resources.GetObject("resource.Icon2")));
+            this.snackbar.SuccessOptions.Icon = null;
             this.snackbar.SuccessOptions.IconLeftMargin = 12;
             this.snackbar.ViewsMargin = 7;
             this.snackbar.WarningOptions.ActionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -287,101 +258,101 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.snackbar.WarningOptions.CloseIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(143)))));
             this.snackbar.WarningOptions.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.snackbar.WarningOptions.ForeColor = System.Drawing.Color.Black;
-            this.snackbar.WarningOptions.Icon = ((System.Drawing.Image)(resources.GetObject("resource.Icon3")));
+            this.snackbar.WarningOptions.Icon = null;
             this.snackbar.WarningOptions.IconLeftMargin = 12;
             this.snackbar.ZoomCloseIcon = true;
             // 
-            // btnPrijava
+            // btnDodajTrenera
             // 
-            this.btnPrijava.AllowAnimations = true;
-            this.btnPrijava.AllowMouseEffects = true;
-            this.btnPrijava.AllowToggling = false;
-            this.btnPrijava.AnimationSpeed = 200;
-            this.btnPrijava.AutoGenerateColors = false;
-            this.btnPrijava.AutoRoundBorders = false;
-            this.btnPrijava.AutoSizeLeftIcon = true;
-            this.btnPrijava.AutoSizeRightIcon = true;
-            this.btnPrijava.BackColor = System.Drawing.Color.Transparent;
-            this.btnPrijava.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
-            this.btnPrijava.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPrijava.BackgroundImage")));
-            this.btnPrijava.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnPrijava.ButtonText = "DODAJ IGRAČA";
-            this.btnPrijava.ButtonTextMarginLeft = 0;
-            this.btnPrijava.ColorContrastOnClick = 45;
-            this.btnPrijava.ColorContrastOnHover = 45;
-            this.btnPrijava.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDodajTrenera.AllowAnimations = true;
+            this.btnDodajTrenera.AllowMouseEffects = true;
+            this.btnDodajTrenera.AllowToggling = false;
+            this.btnDodajTrenera.AnimationSpeed = 200;
+            this.btnDodajTrenera.AutoGenerateColors = false;
+            this.btnDodajTrenera.AutoRoundBorders = false;
+            this.btnDodajTrenera.AutoSizeLeftIcon = true;
+            this.btnDodajTrenera.AutoSizeRightIcon = true;
+            this.btnDodajTrenera.BackColor = System.Drawing.Color.Transparent;
+            this.btnDodajTrenera.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
+            this.btnDodajTrenera.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDodajTrenera.BackgroundImage")));
+            this.btnDodajTrenera.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnDodajTrenera.ButtonText = "DODAJ TRENERA";
+            this.btnDodajTrenera.ButtonTextMarginLeft = 0;
+            this.btnDodajTrenera.ColorContrastOnClick = 45;
+            this.btnDodajTrenera.ColorContrastOnHover = 45;
+            this.btnDodajTrenera.Cursor = System.Windows.Forms.Cursors.Hand;
             borderEdges1.BottomLeft = true;
             borderEdges1.BottomRight = true;
             borderEdges1.TopLeft = true;
             borderEdges1.TopRight = true;
-            this.btnPrijava.CustomizableEdges = borderEdges1;
-            this.btnPrijava.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnPrijava.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnPrijava.DisabledFillColor = System.Drawing.Color.Empty;
-            this.btnPrijava.DisabledForecolor = System.Drawing.Color.Empty;
-            this.btnPrijava.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnPrijava.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrijava.ForeColor = System.Drawing.Color.White;
-            this.btnPrijava.IconLeft = global::eBordo.WinUI.Properties.Resources.add;
-            this.btnPrijava.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPrijava.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.btnPrijava.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.btnPrijava.IconMarginLeft = 11;
-            this.btnPrijava.IconPadding = 10;
-            this.btnPrijava.IconRight = null;
-            this.btnPrijava.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPrijava.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.btnPrijava.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.btnPrijava.IconSize = 50;
-            this.btnPrijava.IdleBorderColor = System.Drawing.Color.Empty;
-            this.btnPrijava.IdleBorderRadius = 0;
-            this.btnPrijava.IdleBorderThickness = 0;
-            this.btnPrijava.IdleFillColor = System.Drawing.Color.Empty;
-            this.btnPrijava.IdleIconLeftImage = global::eBordo.WinUI.Properties.Resources.add;
-            this.btnPrijava.IdleIconRightImage = null;
-            this.btnPrijava.IndicateFocus = true;
-            this.btnPrijava.Location = new System.Drawing.Point(472, 16);
-            this.btnPrijava.Name = "btnPrijava";
-            this.btnPrijava.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnPrijava.OnDisabledState.BorderRadius = 20;
-            this.btnPrijava.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnPrijava.OnDisabledState.BorderThickness = 1;
-            this.btnPrijava.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnPrijava.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnPrijava.OnDisabledState.IconLeftImage = null;
-            this.btnPrijava.OnDisabledState.IconRightImage = null;
-            this.btnPrijava.onHoverState.BorderColor = System.Drawing.Color.Empty;
-            this.btnPrijava.onHoverState.BorderRadius = 20;
-            this.btnPrijava.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnPrijava.onHoverState.BorderThickness = 1;
-            this.btnPrijava.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
-            this.btnPrijava.onHoverState.ForeColor = System.Drawing.Color.White;
-            this.btnPrijava.onHoverState.IconLeftImage = global::eBordo.WinUI.Properties.Resources.add;
-            this.btnPrijava.onHoverState.IconRightImage = null;
-            this.btnPrijava.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
-            this.btnPrijava.OnIdleState.BorderRadius = 20;
-            this.btnPrijava.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnPrijava.OnIdleState.BorderThickness = 1;
-            this.btnPrijava.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
-            this.btnPrijava.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.btnPrijava.OnIdleState.IconLeftImage = global::eBordo.WinUI.Properties.Resources.add;
-            this.btnPrijava.OnIdleState.IconRightImage = null;
-            this.btnPrijava.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
-            this.btnPrijava.OnPressedState.BorderRadius = 20;
-            this.btnPrijava.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnPrijava.OnPressedState.BorderThickness = 1;
-            this.btnPrijava.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
-            this.btnPrijava.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.btnPrijava.OnPressedState.IconLeftImage = global::eBordo.WinUI.Properties.Resources.add;
-            this.btnPrijava.OnPressedState.IconRightImage = null;
-            this.btnPrijava.Size = new System.Drawing.Size(129, 38);
-            this.btnPrijava.TabIndex = 15;
-            this.btnPrijava.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPrijava.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnPrijava.TextMarginLeft = 0;
-            this.btnPrijava.TextPadding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.btnPrijava.UseDefaultRadiusAndThickness = true;
-            this.btnPrijava.Click += new System.EventHandler(this.btnPrijava_Click);
+            this.btnDodajTrenera.CustomizableEdges = borderEdges1;
+            this.btnDodajTrenera.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnDodajTrenera.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnDodajTrenera.DisabledFillColor = System.Drawing.Color.Empty;
+            this.btnDodajTrenera.DisabledForecolor = System.Drawing.Color.Empty;
+            this.btnDodajTrenera.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnDodajTrenera.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDodajTrenera.ForeColor = System.Drawing.Color.White;
+            this.btnDodajTrenera.IconLeft = global::eBordo.WinUI.Properties.Resources.add;
+            this.btnDodajTrenera.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDodajTrenera.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnDodajTrenera.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnDodajTrenera.IconMarginLeft = 11;
+            this.btnDodajTrenera.IconPadding = 10;
+            this.btnDodajTrenera.IconRight = null;
+            this.btnDodajTrenera.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDodajTrenera.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnDodajTrenera.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnDodajTrenera.IconSize = 50;
+            this.btnDodajTrenera.IdleBorderColor = System.Drawing.Color.Empty;
+            this.btnDodajTrenera.IdleBorderRadius = 0;
+            this.btnDodajTrenera.IdleBorderThickness = 0;
+            this.btnDodajTrenera.IdleFillColor = System.Drawing.Color.Empty;
+            this.btnDodajTrenera.IdleIconLeftImage = global::eBordo.WinUI.Properties.Resources.add;
+            this.btnDodajTrenera.IdleIconRightImage = null;
+            this.btnDodajTrenera.IndicateFocus = true;
+            this.btnDodajTrenera.Location = new System.Drawing.Point(461, 16);
+            this.btnDodajTrenera.Name = "btnDodajTrenera";
+            this.btnDodajTrenera.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnDodajTrenera.OnDisabledState.BorderRadius = 20;
+            this.btnDodajTrenera.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnDodajTrenera.OnDisabledState.BorderThickness = 1;
+            this.btnDodajTrenera.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnDodajTrenera.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnDodajTrenera.OnDisabledState.IconLeftImage = null;
+            this.btnDodajTrenera.OnDisabledState.IconRightImage = null;
+            this.btnDodajTrenera.onHoverState.BorderColor = System.Drawing.Color.Empty;
+            this.btnDodajTrenera.onHoverState.BorderRadius = 20;
+            this.btnDodajTrenera.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnDodajTrenera.onHoverState.BorderThickness = 1;
+            this.btnDodajTrenera.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
+            this.btnDodajTrenera.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.btnDodajTrenera.onHoverState.IconLeftImage = global::eBordo.WinUI.Properties.Resources.add;
+            this.btnDodajTrenera.onHoverState.IconRightImage = null;
+            this.btnDodajTrenera.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
+            this.btnDodajTrenera.OnIdleState.BorderRadius = 20;
+            this.btnDodajTrenera.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnDodajTrenera.OnIdleState.BorderThickness = 1;
+            this.btnDodajTrenera.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
+            this.btnDodajTrenera.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnDodajTrenera.OnIdleState.IconLeftImage = global::eBordo.WinUI.Properties.Resources.add;
+            this.btnDodajTrenera.OnIdleState.IconRightImage = null;
+            this.btnDodajTrenera.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
+            this.btnDodajTrenera.OnPressedState.BorderRadius = 20;
+            this.btnDodajTrenera.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnDodajTrenera.OnPressedState.BorderThickness = 1;
+            this.btnDodajTrenera.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
+            this.btnDodajTrenera.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnDodajTrenera.OnPressedState.IconLeftImage = global::eBordo.WinUI.Properties.Resources.add;
+            this.btnDodajTrenera.OnPressedState.IconRightImage = null;
+            this.btnDodajTrenera.Size = new System.Drawing.Size(140, 38);
+            this.btnDodajTrenera.TabIndex = 15;
+            this.btnDodajTrenera.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDodajTrenera.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnDodajTrenera.TextMarginLeft = 0;
+            this.btnDodajTrenera.TextPadding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.btnDodajTrenera.UseDefaultRadiusAndThickness = true;
+            this.btnDodajTrenera.Click += new System.EventHandler(this.btnDodajTrenera_Click);
             // 
             // btnPretraga
             // 
@@ -644,77 +615,37 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.txtImePrezime.UseSystemPasswordChar = false;
             this.txtImePrezime.WordWrap = true;
             // 
-            // brojDresa
-            // 
-            this.brojDresa.FillWeight = 30F;
-            this.brojDresa.HeaderText = "#";
-            this.brojDresa.Name = "brojDresa";
-            this.brojDresa.ReadOnly = true;
-            this.brojDresa.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Column1";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // imePrezime
-            // 
-            this.imePrezime.FillWeight = 150F;
-            this.imePrezime.HeaderText = "Ime i prezime";
-            this.imePrezime.Name = "imePrezime";
-            this.imePrezime.ReadOnly = true;
-            // 
-            // drzavljanstvo
-            // 
-            this.drzavljanstvo.FillWeight = 120F;
-            this.drzavljanstvo.HeaderText = "Državljanstvo";
-            this.drzavljanstvo.Name = "drzavljanstvo";
-            this.drzavljanstvo.ReadOnly = true;
-            // 
-            // pozicija
-            // 
-            this.pozicija.FillWeight = 110F;
-            this.pozicija.HeaderText = "Pozicija";
-            this.pozicija.Name = "pozicija";
-            this.pozicija.ReadOnly = true;
-            // 
-            // frmPrikazIgraca
+            // frmPrikazTrenera
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnPrijava);
+            this.Controls.Add(this.btnDodajTrenera);
             this.Controls.Add(this.dataLoader);
             this.Controls.Add(this.btnPretraga);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.txtImePrezime);
-            this.Controls.Add(this.cmbPozicije);
-            this.Controls.Add(this.dgvPrikazIgraca);
+            this.Controls.Add(this.dgvPrikazTrenera);
             this.Controls.Add(this.lblNaslovStranice);
-            this.Name = "frmPrikazIgraca";
+            this.Name = "frmPrikazTrenera";
             this.Size = new System.Drawing.Size(622, 403);
-            this.Load += new System.EventHandler(this.frmPrikazIgraca_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPrikazIgraca)).EndInit();
+            this.Load += new System.EventHandler(this.frmPrikazTrenera_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPrikazTrenera)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
-
         #endregion
 
         private Bunifu.UI.WinForms.BunifuLabel lblNaslovStranice;
-        private Bunifu.UI.WinForms.BunifuDataGridView dgvPrikazIgraca;
-        private Bunifu.UI.WinForms.BunifuDropdown cmbPozicije;
+        private Bunifu.UI.WinForms.BunifuDataGridView dgvPrikazTrenera;
         private Bunifu.UI.WinForms.BunifuTextBox txtImePrezime;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnRefresh;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnPretraga;
         private Bunifu.UI.WinForms.BunifuLoader dataLoader;
         private Bunifu.UI.WinForms.BunifuSnackbar snackbar;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnPrijava;
-        private System.Windows.Forms.DataGridViewTextBoxColumn brojDresa;
-        private System.Windows.Forms.DataGridViewImageColumn Column1;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnDodajTrenera;
         private System.Windows.Forms.DataGridViewTextBoxColumn imePrezime;
         private System.Windows.Forms.DataGridViewTextBoxColumn drzavljanstvo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pozicija;
+        private System.Windows.Forms.DataGridViewTextBoxColumn licenca;
     }
 }
