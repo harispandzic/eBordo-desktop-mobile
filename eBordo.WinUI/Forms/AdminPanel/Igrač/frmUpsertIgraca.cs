@@ -103,67 +103,88 @@ namespace eBordo.WinUI.Forms.AdminPanel
         }
         private async void LoadPozicije()
         {
-            _pozicije = await _pozicija.GetAll<List<Model.Models.Pozicija>>(null);
-
-            foreach (var item in _pozicije)
+            try
             {
-                cmbPozicija.Items.Add(item.nazivPozicije);
-            }
+                _pozicije = await _pozicija.GetAll<List<Model.Models.Pozicija>>(null);
 
-            if (_odabraniIgrac != null)
-            {
-                int selectedPozicija = 0;
-                for (int i = 0; i < _pozicije.Count; i++)
+                foreach (var item in _pozicije)
                 {
-                    if (_pozicije[i].pozicijaId == _odabraniIgrac.pozicija.pozicijaId)
-                    {
-                        selectedPozicija = i;
-                    }
+                    cmbPozicija.Items.Add(item.nazivPozicije);
                 }
-                cmbPozicija.SelectedIndex = selectedPozicija;
+
+                if (_odabraniIgrac != null)
+                {
+                    int selectedPozicija = 0;
+                    for (int i = 0; i < _pozicije.Count; i++)
+                    {
+                        if (_pozicije[i].pozicijaId == _odabraniIgrac.pozicija.pozicijaId)
+                        {
+                            selectedPozicija = i;
+                        }
+                    }
+                    cmbPozicija.SelectedIndex = selectedPozicija;
+                }
+                else
+                {
+                    cmbPozicija.SelectedIndex = 0;
+                }
             }
-            else
+            catch 
             {
-                cmbPozicija.SelectedIndex = 0;
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.GREŠKA_NA_SERVERU);
             }
 
         }
         private async void LoadDrzave()
         {
-            _drzave = await _drzava.GetAll<List<Model.Models.Drzava>>(null);
+            try
+            {
+                _drzave = await _drzava.GetAll<List<Model.Models.Drzava>>(null);
 
-            if (_odabraniIgrac != null)
-            {
-                cmbDrzavljanstvo.Items.Add(_drzave.Where(s => s.drzavaId == _odabraniIgrac.korisnik.drzavljanstvo.drzavaId).SingleOrDefault().nazivDrzave);
-                cmbDrzavljanstvo.SelectedIndex = 0;
-                cmbDrzavljanstvo.Enabled = false;
-            }
-            else
-            {
-                foreach (var item in _drzave)
+                if (_odabraniIgrac != null)
                 {
-                    cmbDrzavljanstvo.Items.Add(item.nazivDrzave);
+                    cmbDrzavljanstvo.Items.Add(_drzave.Where(s => s.drzavaId == _odabraniIgrac.korisnik.drzavljanstvo.drzavaId).SingleOrDefault().nazivDrzave);
+                    cmbDrzavljanstvo.SelectedIndex = 0;
+                    cmbDrzavljanstvo.Enabled = false;
                 }
-                cmbDrzavljanstvo.SelectedIndex = 0;
+                else
+                {
+                    foreach (var item in _drzave)
+                    {
+                        cmbDrzavljanstvo.Items.Add(item.nazivDrzave);
+                    }
+                    cmbDrzavljanstvo.SelectedIndex = 0;
+                }
             }
+            catch
+            {
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.GREŠKA_NA_SERVERU);
+            }   
         }
         private async void LoadGradovi()
         {
-            _gradovi = await _grad.GetAll<List<Model.Models.Grad>>(null);
+            try
+            {
+                _gradovi = await _grad.GetAll<List<Model.Models.Grad>>(null);
 
-            if (_odabraniIgrac != null)
-            {
-                cmbGradRodjenja.Items.Add(_gradovi.Where(s => s.gradId == _odabraniIgrac.korisnik.gradRodjenja.gradId).SingleOrDefault().nazivGrada);
-                cmbGradRodjenja.SelectedIndex = 0;
-                cmbGradRodjenja.Enabled = false;
-            }
-            else
-            {
-                foreach (var item in _gradovi)
+                if (_odabraniIgrac != null)
                 {
-                    cmbGradRodjenja.Items.Add(item.nazivGrada);
+                    cmbGradRodjenja.Items.Add(_gradovi.Where(s => s.gradId == _odabraniIgrac.korisnik.gradRodjenja.gradId).SingleOrDefault().nazivGrada);
+                    cmbGradRodjenja.SelectedIndex = 0;
+                    cmbGradRodjenja.Enabled = false;
                 }
-                cmbGradRodjenja.SelectedIndex = 0;
+                else
+                {
+                    foreach (var item in _gradovi)
+                    {
+                        cmbGradRodjenja.Items.Add(item.nazivGrada);
+                    }
+                    cmbGradRodjenja.SelectedIndex = 0;
+                }
+            }
+            catch
+            {
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.GREŠKA_NA_SERVERU);
             }
         }
 
@@ -186,7 +207,6 @@ namespace eBordo.WinUI.Forms.AdminPanel
                     {
                         datumPocetka = dtpDatumPotpisaUgovora.Value,
                         datumZavrsetka = dtpDatumZavrsetkaUgovora.Value,
-                        napomene = txtNapomene.Text
                     },
                     visina = Int32.Parse(txtVisina.Text),
                     tezina = Int32.Parse(txtTezina.Text),
@@ -195,8 +215,22 @@ namespace eBordo.WinUI.Forms.AdminPanel
                     napomeneOIgracu = txtNapomene.Text,
                     pozicijaId = _pozicije[cmbPozicija.SelectedIndex].pozicijaId,
                 };
-                await _igrac.Update<Model.Models.Igrac>(_odabraniIgrac.igracId, updateRequest);
-                await _prikazIgraca.LoadIgraci(notifikacija: TipNotifikacije.UREĐIVANJE);
+                try
+                {
+                    await _igrac.Update<Model.Models.Igrac>(_odabraniIgrac.igracId, updateRequest);
+                }
+                catch
+                {
+                    PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.GREŠKA_NA_SERVERU);
+                }
+                try
+                {
+                    await _prikazIgraca.LoadIgraci(notifikacija: TipNotifikacije.UREĐIVANJE);
+                }
+                catch
+                {
+                    PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.GREŠKA_NA_SERVERU);
+                }
 
             }
             else
@@ -239,12 +273,17 @@ namespace eBordo.WinUI.Forms.AdminPanel
                     napomeneOIgracu = txtNapomene.Text,
                     pozicijaId = _pozicije[cmbPozicija.SelectedIndex].pozicijaId,
                 };
-
-                await _igrac.Insert<Model.Models.Igrac>(insertRequest);
-                await _prikazIgraca.LoadIgraci(notifikacija: TipNotifikacije.DODAVANJE);
+                try
+                {
+                    await _igrac.Insert<Model.Models.Igrac>(insertRequest);
+                    await _prikazIgraca.LoadIgraci(notifikacija: TipNotifikacije.DODAVANJE);
+                    this.Hide();
+                }
+                catch 
+                {
+                    PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.GREŠKA_NA_SERVERU);
+                }
             }
-
-            this.Hide();
         }
         private void btnUcitajFotografiju_Click(object sender, EventArgs e)
         {

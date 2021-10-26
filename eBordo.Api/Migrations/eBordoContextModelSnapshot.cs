@@ -37,6 +37,21 @@ namespace eBordo.Api.Migrations
                     b.ToTable("drzave");
                 });
 
+            modelBuilder.Entity("eBordo.Api.Database.Formacija", b =>
+                {
+                    b.Property<int>("formacijaId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("nazivFormacije")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("formacijaId");
+
+                    b.ToTable("formacije");
+                });
+
             modelBuilder.Entity("eBordo.Api.Database.Grad", b =>
                 {
                     b.Property<int>("gradId")
@@ -297,6 +312,9 @@ namespace eBordo.Api.Migrations
                     b.Property<string>("telefon")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("trenerID")
+                        .HasColumnType("int");
+
                     b.HasKey("korisnikId");
 
                     b.HasIndex("drzavljanstvoId");
@@ -321,6 +339,88 @@ namespace eBordo.Api.Migrations
                     b.ToTable("pozicije");
                 });
 
+            modelBuilder.Entity("eBordo.Api.Database.Trener", b =>
+                {
+                    b.Property<int>("trenerId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("formacijaId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("korisnikId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("trenerStatistikaId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("trenerskaLicencaId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ugovorId")
+                        .HasColumnType("int");
+
+                    b.HasKey("trenerId");
+
+                    b.HasIndex("formacijaId");
+
+                    b.HasIndex("korisnikId")
+                        .IsUnique();
+
+                    b.HasIndex("trenerStatistikaId")
+                        .IsUnique();
+
+                    b.HasIndex("trenerskaLicencaId");
+
+                    b.HasIndex("ugovorId")
+                        .IsUnique();
+
+                    b.ToTable("treneri");
+                });
+
+            modelBuilder.Entity("eBordo.Api.Database.TrenerStatistika", b =>
+                {
+                    b.Property<int>("trenerStatistikaID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("brojNerjesenih")
+                        .HasColumnType("int");
+
+                    b.Property<int>("brojPobjeda")
+                        .HasColumnType("int");
+
+                    b.Property<int>("brojPoraza")
+                        .HasColumnType("int");
+
+                    b.Property<int>("brojUtakmica")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("trenerID")
+                        .HasColumnType("int");
+
+                    b.HasKey("trenerStatistikaID");
+
+                    b.ToTable("trenerStatistika");
+                });
+
+            modelBuilder.Entity("eBordo.Api.Database.TrenerskaLicenca", b =>
+                {
+                    b.Property<int>("trenerskaLicencaId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("nazivLicence")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("trenerskaLicencaId");
+
+                    b.ToTable("trenerskeLicence");
+                });
+
             modelBuilder.Entity("eBordo.Api.Database.Ugovor", b =>
                 {
                     b.Property<int>("ugovorId")
@@ -331,20 +431,14 @@ namespace eBordo.Api.Migrations
                     b.Property<DateTime>("datumPocetka")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("datumPotpisa")
-                        .HasColumnType("datetime2");
-
                     b.Property<DateTime>("datumZavrsetka")
                         .HasColumnType("datetime2");
 
                     b.Property<int?>("igracId")
                         .HasColumnType("int");
 
-                    b.Property<float>("iznosPlate")
-                        .HasColumnType("real");
-
-                    b.Property<string>("napomene")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int?>("trenerID")
+                        .HasColumnType("int");
 
                     b.HasKey("ugovorId");
 
@@ -424,6 +518,49 @@ namespace eBordo.Api.Migrations
                     b.Navigation("gradRodjenja");
                 });
 
+            modelBuilder.Entity("eBordo.Api.Database.Trener", b =>
+                {
+                    b.HasOne("eBordo.Api.Database.Formacija", "formacija")
+                        .WithMany()
+                        .HasForeignKey("formacijaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("eBordo.Api.Database.Korisnik", "korisnik")
+                        .WithOne("trener")
+                        .HasForeignKey("eBordo.Api.Database.Trener", "korisnikId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("eBordo.Api.Database.TrenerStatistika", "trenerStatistika")
+                        .WithOne("trener")
+                        .HasForeignKey("eBordo.Api.Database.Trener", "trenerStatistikaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("eBordo.Api.Database.TrenerskaLicenca", "trenerskaLicenca")
+                        .WithMany()
+                        .HasForeignKey("trenerskaLicencaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("eBordo.Api.Database.Ugovor", "ugovor")
+                        .WithOne("trener")
+                        .HasForeignKey("eBordo.Api.Database.Trener", "ugovorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("formacija");
+
+                    b.Navigation("korisnik");
+
+                    b.Navigation("trenerskaLicenca");
+
+                    b.Navigation("trenerStatistika");
+
+                    b.Navigation("ugovor");
+                });
+
             modelBuilder.Entity("eBordo.Api.Database.IgracSkills", b =>
                 {
                     b.Navigation("igrac");
@@ -437,11 +574,20 @@ namespace eBordo.Api.Migrations
             modelBuilder.Entity("eBordo.Api.Database.Korisnik", b =>
                 {
                     b.Navigation("igrac");
+
+                    b.Navigation("trener");
+                });
+
+            modelBuilder.Entity("eBordo.Api.Database.TrenerStatistika", b =>
+                {
+                    b.Navigation("trener");
                 });
 
             modelBuilder.Entity("eBordo.Api.Database.Ugovor", b =>
                 {
                     b.Navigation("igrac");
+
+                    b.Navigation("trener");
                 });
 #pragma warning restore 612, 618
         }

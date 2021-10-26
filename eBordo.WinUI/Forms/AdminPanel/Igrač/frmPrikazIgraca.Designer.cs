@@ -43,10 +43,6 @@ namespace eBordo.WinUI.Forms.AdminPanel
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             this.lblNaslovStranice = new Bunifu.UI.WinForms.BunifuLabel();
             this.dgvPrikazIgraca = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.brojDresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imePrezime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.drzavljanstvo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pozicija = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmbPozicije = new Bunifu.UI.WinForms.BunifuDropdown();
             this.dataLoader = new Bunifu.UI.WinForms.BunifuLoader();
             this.snackbar = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
@@ -54,6 +50,11 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.btnPretraga = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnRefresh = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.txtImePrezime = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.brojDresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.imePrezime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.drzavljanstvo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pozicija = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrikazIgraca)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,6 +101,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.dgvPrikazIgraca.ColumnHeadersHeight = 40;
             this.dgvPrikazIgraca.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.brojDresa,
+            this.Column1,
             this.imePrezime,
             this.drzavljanstvo,
             this.pozicija});
@@ -149,35 +151,6 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.dgvPrikazIgraca.TabIndex = 1;
             this.dgvPrikazIgraca.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             this.dgvPrikazIgraca.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrikazIgraca_CellContentClick_1);
-            // 
-            // brojDresa
-            // 
-            this.brojDresa.FillWeight = 30F;
-            this.brojDresa.HeaderText = "#";
-            this.brojDresa.Name = "brojDresa";
-            this.brojDresa.ReadOnly = true;
-            this.brojDresa.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // imePrezime
-            // 
-            this.imePrezime.FillWeight = 150F;
-            this.imePrezime.HeaderText = "Ime i prezime";
-            this.imePrezime.Name = "imePrezime";
-            this.imePrezime.ReadOnly = true;
-            // 
-            // drzavljanstvo
-            // 
-            this.drzavljanstvo.FillWeight = 120F;
-            this.drzavljanstvo.HeaderText = "Državljanstvo";
-            this.drzavljanstvo.Name = "drzavljanstvo";
-            this.drzavljanstvo.ReadOnly = true;
-            // 
-            // pozicija
-            // 
-            this.pozicija.FillWeight = 110F;
-            this.pozicija.HeaderText = "Pozicija";
-            this.pozicija.Name = "pozicija";
-            this.pozicija.ReadOnly = true;
             // 
             // cmbPozicije
             // 
@@ -671,6 +644,41 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.txtImePrezime.UseSystemPasswordChar = false;
             this.txtImePrezime.WordWrap = true;
             // 
+            // brojDresa
+            // 
+            this.brojDresa.FillWeight = 30F;
+            this.brojDresa.HeaderText = "#";
+            this.brojDresa.Name = "brojDresa";
+            this.brojDresa.ReadOnly = true;
+            this.brojDresa.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Column1";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // imePrezime
+            // 
+            this.imePrezime.FillWeight = 150F;
+            this.imePrezime.HeaderText = "Ime i prezime";
+            this.imePrezime.Name = "imePrezime";
+            this.imePrezime.ReadOnly = true;
+            // 
+            // drzavljanstvo
+            // 
+            this.drzavljanstvo.FillWeight = 120F;
+            this.drzavljanstvo.HeaderText = "Državljanstvo";
+            this.drzavljanstvo.Name = "drzavljanstvo";
+            this.drzavljanstvo.ReadOnly = true;
+            // 
+            // pozicija
+            // 
+            this.pozicija.FillWeight = 110F;
+            this.pozicija.HeaderText = "Pozicija";
+            this.pozicija.Name = "pozicija";
+            this.pozicija.ReadOnly = true;
+            // 
             // frmPrikazIgraca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -696,10 +704,6 @@ namespace eBordo.WinUI.Forms.AdminPanel
 
         private Bunifu.UI.WinForms.BunifuLabel lblNaslovStranice;
         private Bunifu.UI.WinForms.BunifuDataGridView dgvPrikazIgraca;
-        private System.Windows.Forms.DataGridViewTextBoxColumn brojDresa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn imePrezime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn drzavljanstvo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pozicija;
         private Bunifu.UI.WinForms.BunifuDropdown cmbPozicije;
         private Bunifu.UI.WinForms.BunifuTextBox txtImePrezime;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnRefresh;
@@ -707,5 +711,10 @@ namespace eBordo.WinUI.Forms.AdminPanel
         private Bunifu.UI.WinForms.BunifuLoader dataLoader;
         private Bunifu.UI.WinForms.BunifuSnackbar snackbar;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnPrijava;
+        private System.Windows.Forms.DataGridViewTextBoxColumn brojDresa;
+        private System.Windows.Forms.DataGridViewImageColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn imePrezime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn drzavljanstvo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pozicija;
     }
 }

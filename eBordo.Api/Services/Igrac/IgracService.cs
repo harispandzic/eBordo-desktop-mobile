@@ -180,7 +180,7 @@ namespace eBordo.Api.Services.Igrac
             _db.SaveChanges();
 
             _korisnikService.Delete(result.korisnikId);
-            _statistikaService.Delete(result.igracId);
+            _statistikaService.Delete(result.igracStatistikaId);
             _skillsService.Delete(result.igracSkillsId);
             _ugovorService.Delete(result.ugovorId);
 

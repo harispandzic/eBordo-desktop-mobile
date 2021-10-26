@@ -29,14 +29,12 @@ namespace eBordo.Api.Services.Ugovor
 
             ugovor.datumPocetka = request.datumPocetka;
             ugovor.datumZavrsetka = request.datumZavrsetka;
-            ugovor.iznosPlate = request.plata;
-            ugovor.napomene = request.napomene;
 
             return _mapper.Map<Model.Models.Ugovor>(ugovor);
         }
         public override Model.Models.Ugovor Delete(int id)
         {
-            var entity = _db.ugovori.Where(s => s.igracId == id).FirstOrDefault();
+            var entity = _db.ugovori.Where(s => s.ugovorId == id).FirstOrDefault();
 
             _db.Remove(entity);
             _db.SaveChanges();

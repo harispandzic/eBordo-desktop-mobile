@@ -29,8 +29,8 @@ namespace eBordo.Api.Database
 
         public byte[] Slika { get; set; }
 
-        //public Trener trener { get; set; }
-        //public int trenerID { get; set; }
+        public Trener trener { get; set; }
+        public int trenerID { get; set; }
 
         public bool isIgrac { get; set; }
         public bool isTrener { get; set; }

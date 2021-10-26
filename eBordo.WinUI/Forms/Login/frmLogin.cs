@@ -1,4 +1,5 @@
-﻿using System;
+﻿using eBordo.WinUI.Helper;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -43,22 +44,25 @@ namespace eBordo.WinUI.Forms.Login
             {
                 ApiService.ApiService.logovaniKorisnik = await _apiService.Auth<Model.Models.Korisnik>();
                 loader.Hide();
-                Forms.Igrač.fromAdminPanel prikazIgraca = new Forms.Igrač.fromAdminPanel();
-                this.Hide();
-                prikazIgraca.Show();
+                if (ApiService.ApiService.logovaniKorisnik.isIgrac)
+                {
+                    Forms.Igrač.fromAdminPanel prikazIgraca = new Forms.Igrač.fromAdminPanel();
+                    this.Hide();
+                    prikazIgraca.Show();
+                }
+                if (ApiService.ApiService.logovaniKorisnik.isTrener)
+                {
+                    Forms.TrenerPanel.frmTrenerPanel prikazTrenera = new Forms.TrenerPanel.frmTrenerPanel();
+                    this.Hide();
+                    prikazTrenera.Show();
+                } 
             }
             catch
             {
-               bnfSnackBar.Show(this,
-                "Korisničko ime i lozinka nisu ispravni!",
-                Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error,
-                2000, "", Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
-                SoundPlayer simpleSound = new SoundPlayer(Properties.Resources.error);
-                simpleSound.Play();
+                PosaljiNotifikaciju.notificationSwitch(bnfSnackBar, this, TipNotifikacije.NEISPRAVNI_KREDENCIJALI);             
                 loader.Hide();
                 btnPrijava.Show();
-            }
-            
+            } 
         }
 
         private void frmLogin_Load(object sender, EventArgs e)

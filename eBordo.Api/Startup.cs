@@ -26,6 +26,10 @@ using eBordo.Api.Services.Ugovor;
 using Microsoft.AspNetCore.Authentication;
 using eBordo.Api.Security;
 using Microsoft.OpenApi.Models;
+using eBordo.Api.Services.Trener;
+using eBordo.Api.Services.TrenerskaLicenca;
+using eBordo.Api.Services.TrenerStatistika;
+using eBordo.Api.Services.Formacija;
 
 namespace eBordo.Api
 {
@@ -77,6 +81,10 @@ namespace eBordo.Api
             services.AddScoped<IIgracStatistikaService, IgracStatistikaService>();
             services.AddScoped<IIgracSkillsService, IgracSkillsService>();
             services.AddScoped<IUgovorService, UgovorService>();
+            services.AddScoped<ITrenerService, TrenerService>();
+            services.AddScoped<ITrenerskaLicencaService, TrenerskaLicencaService>();
+            services.AddScoped<ITrenerStatistikaService, TrenerStatistikaService>();
+            services.AddScoped<IFormacijaService, FormacijaService>();
 
             services.AddAuthentication("BasicAuthentication")
                 .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);

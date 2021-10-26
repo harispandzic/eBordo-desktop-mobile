@@ -26,12 +26,7 @@ namespace eBordo.WinUI.Forms.Igrač
             igracTabs.SetPage("tabPocetna");
             //korisnickaFotografija.Image = byteToImage.ConvertByteToImage(ApiService.ApiService.logovaniKorisnik.Slika);
             //lblLogovaniKorisnik.Text = (ApiService.ApiService.logovaniKorisnik.ime + " " + ApiService.ApiService.logovaniKorisnik.prezime).ToUpper();
-            //snackbar.Show(this,
-            //        lblLogovaniKorisnik.Text + ", dobrodošao na eBordo!",
-            //        Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success,
-            //        3000, "", Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
-            //SoundPlayer simpleSound = new SoundPlayer(Properties.Resources.success);
-            //simpleSound.Play();
+            //PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.PORUKA_DOBRODOSLICE);
         }
         void hideActiveLabels(string opcija)
         {
@@ -103,7 +98,6 @@ namespace eBordo.WinUI.Forms.Igrač
         {
             hideActiveLabels("Početna");
             igracTabs.SetPage("Početna");
-
         }
         private void btnIgraci_Click(object sender, EventArgs e)
         {

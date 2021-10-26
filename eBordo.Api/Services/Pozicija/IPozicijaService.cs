@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace eBordo.Api.Services.Pozicija
 {
-    public interface IPozicijaService: BaseREADService<Model.Models.Pozicija,object>
+    public interface IPozicijaService: IBaseREADService<Model.Models.Pozicija,object>
     {
     }
 }

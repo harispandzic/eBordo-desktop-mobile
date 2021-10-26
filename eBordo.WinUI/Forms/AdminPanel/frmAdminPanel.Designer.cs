@@ -45,7 +45,6 @@ namespace eBordo.WinUI.Forms.Igrač
             this.tabIgraci = new System.Windows.Forms.TabPage();
             this.frmPrikazIgraca1 = new eBordo.WinUI.Forms.AdminPanel.frmPrikazIgraca();
             this.tabTreneri = new System.Windows.Forms.TabPage();
-            this.label3 = new System.Windows.Forms.Label();
             this.tabRasporedUtakmica = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
             this.tabOdigraneUtakmice = new System.Windows.Forms.TabPage();
@@ -78,6 +77,7 @@ namespace eBordo.WinUI.Forms.Igrač
             this.pngLogout = new FontAwesome.Sharp.IconPictureBox();
             this.pnlGrb = new System.Windows.Forms.Panel();
             this.lblLogout = new System.Windows.Forms.Label();
+            this.frmPrikazTrenera1 = new eBordo.WinUI.Forms.AdminPanel.frmPrikazTrenera();
             this.igracTabs.SuspendLayout();
             this.tabPocetna.SuspendLayout();
             this.tabIgraci.SuspendLayout();
@@ -179,10 +179,10 @@ namespace eBordo.WinUI.Forms.Igrač
             this.igracTabs.Location = new System.Drawing.Point(206, 48);
             this.igracTabs.Multiline = true;
             this.igracTabs.Name = "igracTabs";
-            this.igracTabs.Page = this.tabIgraci;
-            this.igracTabs.PageIndex = 1;
-            this.igracTabs.PageName = "tabIgraci";
-            this.igracTabs.PageTitle = "Igrači";
+            this.igracTabs.Page = this.tabTreneri;
+            this.igracTabs.PageIndex = 2;
+            this.igracTabs.PageName = "tabTreneri";
+            this.igracTabs.PageTitle = "Treneri";
             this.igracTabs.SelectedIndex = 0;
             this.igracTabs.Size = new System.Drawing.Size(630, 429);
             this.igracTabs.TabIndex = 2;
@@ -244,7 +244,7 @@ namespace eBordo.WinUI.Forms.Igrač
             // 
             // tabTreneri
             // 
-            this.tabTreneri.Controls.Add(this.label3);
+            this.tabTreneri.Controls.Add(this.frmPrikazTrenera1);
             this.tabTreneri.Location = new System.Drawing.Point(4, 4);
             this.tabTreneri.Name = "tabTreneri";
             this.tabTreneri.Padding = new System.Windows.Forms.Padding(3);
@@ -252,15 +252,6 @@ namespace eBordo.WinUI.Forms.Igrač
             this.tabTreneri.TabIndex = 2;
             this.tabTreneri.Text = "Treneri";
             this.tabTreneri.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(294, 195);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 13);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "trenri";
             // 
             // tabRasporedUtakmica
             // 
@@ -1140,6 +1131,13 @@ namespace eBordo.WinUI.Forms.Igrač
             this.lblLogout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblLogout.Click += new System.EventHandler(this.lblLogout_Click);
             // 
+            // frmPrikazTrenera1
+            // 
+            this.frmPrikazTrenera1.Location = new System.Drawing.Point(0, 0);
+            this.frmPrikazTrenera1.Name = "frmPrikazTrenera1";
+            this.frmPrikazTrenera1.Size = new System.Drawing.Size(622, 403);
+            this.frmPrikazTrenera1.TabIndex = 0;
+            // 
             // fromAdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1159,7 +1157,6 @@ namespace eBordo.WinUI.Forms.Igrač
             this.tabPocetna.PerformLayout();
             this.tabIgraci.ResumeLayout(false);
             this.tabTreneri.ResumeLayout(false);
-            this.tabTreneri.PerformLayout();
             this.tabRasporedUtakmica.ResumeLayout(false);
             this.tabRasporedUtakmica.PerformLayout();
             this.tabOdigraneUtakmice.ResumeLayout(false);
@@ -1216,10 +1213,10 @@ namespace eBordo.WinUI.Forms.Igrač
         private FontAwesome.Sharp.IconPictureBox iconPictureBox5;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnOdigraneUtakmice;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private AdminPanel.frmPrikazIgraca frmPrikazIgraca1;
+        private AdminPanel.frmPrikazTrenera frmPrikazTrenera1;
     }
 }
