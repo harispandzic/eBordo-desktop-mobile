@@ -12,5 +12,6 @@ namespace eBordo.Model.Models
         public int gradId { get; set; }
         public Stadion stadion { get; set; }
         public int stadionId { get; set; }
+        public byte[] grb { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿using eBordo.Api.Services.BaseREADService;
+﻿using eBordo.Api.Services.BaseCRUDService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace eBordo.Api.Services.Klub
 {
-    public interface IKlubService : IBaseREADService<eBordo.Model.Models.Klub, object>
+    public interface IKlubService : IBaseCRUDService<eBordo.Model.Models.Klub, object,eBordo.Model.Requests.Klub.KlubInsertRequest,object>
     {
     }
 }

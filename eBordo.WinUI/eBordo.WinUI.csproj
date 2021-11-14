@@ -34,11 +34,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu.Charts.WinForms, Version=1.1.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.Charts.WinForms.1.1.5\lib\net40\Bunifu.Charts.WinForms.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.Dataviz.WinForms, Version=2.2.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
       <HintPath>..\packages\Bunifu.Dataviz.WinForms.2.2.0\lib\Bunifu.Dataviz.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.Licensing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bunifu.Dataviz.WinForms.2.2.0\lib\Bunifu.Licensing.dll</HintPath>
+      <HintPath>..\packages\Bunifu.Charts.WinForms.1.1.5\lib\net40\Bunifu.Licensing.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
       <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.1.5.3.dll</HintPath>
@@ -139,8 +142,8 @@
     <Reference Include="Bunifu.UI.WinForms.Deprecated, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
       <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.Deprecated.dll</HintPath>
     </Reference>
-    <Reference Include="eBordo.WinUI">
-      <HintPath>obj\Debug\eBordo.WinUI.exe</HintPath>
+    <Reference Include="Bunifu.Utils, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.Utils.1.0.6\lib\net\Bunifu.Utils.dll</HintPath>
     </Reference>
     <Reference Include="Flurl, Version=3.0.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Flurl.3.0.2\lib\net461\Flurl.dll</HintPath>
@@ -249,19 +252,47 @@
     <Compile Include="Forms\AdminPanel\RasporedUtakmica\frmZakaziUtakmicuKartica.Designer.cs">
       <DependentUpon>frmZakaziUtakmicuKartica.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AdminPanel\Tabele\Države\frmDrzavaKartica.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Tabele\Države\frmDrzavaKartica.Designer.cs">
+      <DependentUpon>frmDrzavaKartica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Tabele\Države\frmPrikazDrzava.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Tabele\Države\frmPrikazDrzava.Designer.cs">
+      <DependentUpon>frmPrikazDrzava.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AdminPanel\Tabele\frmTabelePocetna.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forms\AdminPanel\Tabele\frmTabelePocetna.Designer.cs">
       <DependentUpon>frmTabelePocetna.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AdminPanel\Tabele\Klubovi\frmKlubKartica.cs" />
+    <Compile Include="Forms\AdminPanel\Tabele\Klubovi\frmKlubKartica.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Forms\AdminPanel\Tabele\Klubovi\frmKlubKartica.Designer.cs">
       <DependentUpon>frmKlubKartica.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AdminPanel\Tabele\Klubovi\frmKlubovi.cs" />
-    <Compile Include="Forms\AdminPanel\Tabele\Klubovi\frmKlubovi.Designer.cs">
-      <DependentUpon>frmKlubovi.cs</DependentUpon>
+    <Compile Include="Forms\AdminPanel\Tabele\Klubovi\frmPrikazKlubova.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Tabele\Klubovi\frmPrikazKlubova.Designer.cs">
+      <DependentUpon>frmPrikazKlubova.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Tabele\Takmičenja\frmTakmicenjaPrikaz.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Tabele\Takmičenja\frmTakmicenjaPrikaz.Designer.cs">
+      <DependentUpon>frmTakmicenjaPrikaz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Tabele\Takmičenja\frmTakmicenjeKartica.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Tabele\Takmičenja\frmTakmicenjeKartica.Designer.cs">
+      <DependentUpon>frmTakmicenjeKartica.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\AdminPanel\Trener\frmDetaljiTrenera.cs">
       <SubType>Form</SubType>
@@ -339,11 +370,26 @@
     <EmbeddedResource Include="Forms\AdminPanel\RasporedUtakmica\frmZakaziUtakmicuKartica.resx">
       <DependentUpon>frmZakaziUtakmicuKartica.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminPanel\Tabele\Države\frmDrzavaKartica.resx">
+      <DependentUpon>frmDrzavaKartica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminPanel\Tabele\Države\frmPrikazDrzava.resx">
+      <DependentUpon>frmPrikazDrzava.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminPanel\Tabele\frmTabelePocetna.resx">
       <DependentUpon>frmTabelePocetna.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AdminPanel\Tabele\Klubovi\frmKlubovi.resx">
-      <DependentUpon>frmKlubovi.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\AdminPanel\Tabele\Klubovi\frmKlubKartica.resx">
+      <DependentUpon>frmKlubKartica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminPanel\Tabele\Klubovi\frmPrikazKlubova.resx">
+      <DependentUpon>frmPrikazKlubova.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminPanel\Tabele\Takmičenja\frmTakmicenjaPrikaz.resx">
+      <DependentUpon>frmTakmicenjaPrikaz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminPanel\Tabele\Takmičenja\frmTakmicenjeKartica.resx">
+      <DependentUpon>frmTakmicenjeKartica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminPanel\Trener\frmDetaljiTrenera.resx">
       <DependentUpon>frmDetaljiTrenera.cs</DependentUpon>
@@ -589,5 +635,12 @@
   <ItemGroup>
     <None Include="Resources\300px-Flag_of_Bosnia_and_Herzegovina.svg.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\upload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\uploadFile.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

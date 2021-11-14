@@ -29,8 +29,8 @@ namespace eBordo.Api.Migrations
                     b.Property<string>("nazivDrzave")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("zastavaUrl")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<byte[]>("zastava")
+                        .HasColumnType("varbinary(max)");
 
                     b.HasKey("drzavaId");
 
@@ -267,6 +267,9 @@ namespace eBordo.Api.Migrations
                     b.Property<int>("gradId")
                         .HasColumnType("int");
 
+                    b.Property<byte[]>("grb")
+                        .HasColumnType("varbinary(max)");
+
                     b.Property<string>("nazivKluba")
                         .HasColumnType("nvarchar(max)");
 
@@ -397,8 +400,8 @@ namespace eBordo.Api.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("logoTakmicenja")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<byte[]>("logo")
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<string>("nazivTakmicenja")
                         .HasColumnType("nvarchar(max)");

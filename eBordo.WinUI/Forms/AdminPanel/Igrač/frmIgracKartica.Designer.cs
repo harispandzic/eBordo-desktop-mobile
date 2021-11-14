@@ -37,12 +37,12 @@ namespace eBordo.WinUI.Forms.AdminPanel.Igrač
             this.btnView = new System.Windows.Forms.PictureBox();
             this.btnEdit = new System.Windows.Forms.PictureBox();
             this.btnDelete = new System.Windows.Forms.PictureBox();
-            this.pictureGostujucaDomaca = new System.Windows.Forms.PictureBox();
+            this.pictureZastava = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.korisnickaFotografija)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureGostujucaDomaca)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureZastava)).BeginInit();
             this.SuspendLayout();
             // 
             // igracOcjena
@@ -150,17 +150,17 @@ namespace eBordo.WinUI.Forms.AdminPanel.Igrač
             this.btnDelete.TabStop = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click_1);
             // 
-            // pictureGostujucaDomaca
+            // pictureZastava
             // 
-            this.pictureGostujucaDomaca.BackColor = System.Drawing.Color.Transparent;
-            this.pictureGostujucaDomaca.BackgroundImage = global::eBordo.WinUI.Properties.Resources._300px_Flag_of_Bosnia_and_Herzegovina_svg;
-            this.pictureGostujucaDomaca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureGostujucaDomaca.Location = new System.Drawing.Point(150, 3);
-            this.pictureGostujucaDomaca.Name = "pictureGostujucaDomaca";
-            this.pictureGostujucaDomaca.Size = new System.Drawing.Size(30, 28);
-            this.pictureGostujucaDomaca.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureGostujucaDomaca.TabIndex = 54;
-            this.pictureGostujucaDomaca.TabStop = false;
+            this.pictureZastava.BackColor = System.Drawing.Color.Transparent;
+            this.pictureZastava.BackgroundImage = global::eBordo.WinUI.Properties.Resources._300px_Flag_of_Bosnia_and_Herzegovina_svg;
+            this.pictureZastava.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureZastava.Location = new System.Drawing.Point(150, 3);
+            this.pictureZastava.Name = "pictureZastava";
+            this.pictureZastava.Size = new System.Drawing.Size(30, 28);
+            this.pictureZastava.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureZastava.TabIndex = 54;
+            this.pictureZastava.TabStop = false;
             // 
             // frmIgracKartica
             // 
@@ -169,7 +169,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Igrač
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.BackgroundImage = global::eBordo.WinUI.Properties.Resources.Screenshot_11;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Controls.Add(this.pictureGostujucaDomaca);
+            this.Controls.Add(this.pictureZastava);
             this.Controls.Add(this.igracOcjena);
             this.Controls.Add(this.btnView);
             this.Controls.Add(this.btnDelete);
@@ -187,7 +187,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Igrač
             ((System.ComponentModel.ISupportInitialize)(this.btnView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureGostujucaDomaca)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureZastava)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -201,6 +201,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.Igrač
         private System.Windows.Forms.PictureBox btnView;
         private System.Windows.Forms.PictureBox btnEdit;
         private System.Windows.Forms.PictureBox btnDelete;
-        private System.Windows.Forms.PictureBox pictureGostujucaDomaca;
+        private System.Windows.Forms.PictureBox pictureZastava;
     }
 }
