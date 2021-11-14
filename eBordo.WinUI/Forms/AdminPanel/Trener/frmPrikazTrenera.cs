@@ -25,6 +25,8 @@ namespace eBordo.WinUI.Forms.AdminPanel
         DataGridViewImageColumn btnUpdate = new DataGridViewImageColumn();
         DataGridViewImageColumn btnDelete = new DataGridViewImageColumn();
 
+        ByteToImage byteToImage = new ByteToImage();
+
         public frmPrikazTrenera()
         {
             InitializeComponent();
@@ -32,28 +34,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
 
         private async void frmPrikazTrenera_Load(object sender, EventArgs e)
         {
-            LoadComponents();
             await LoadTreneri();
-        }
-        public void LoadComponents()
-        {
-            dgvPrikazTrenera.Columns.Add(btnView);
-            btnView.Width = 28;
-            btnView.HeaderText = " ";
-            btnView.Name = "btnView";
-
-            dgvPrikazTrenera.Columns.Add(btnUpdate);
-            btnUpdate.Width = 28;
-            btnUpdate.HeaderText = " ";
-            btnUpdate.Name = "btnUpdate";
-
-            dgvPrikazTrenera.Columns.Add(btnDelete);
-            btnDelete.Width = 28;
-            btnDelete.HeaderText = " ";
-            btnDelete.Name = "btnDelete";
-
-            dataLoader.BackColor = Color.Gainsboro;
-            dataLoader.Show();
         }
         public async Task LoadTreneri(string pretraga = "", TipNotifikacije notifikacija = TipNotifikacije.BEZ)
         {
@@ -61,8 +42,6 @@ namespace eBordo.WinUI.Forms.AdminPanel
             {
                 PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, notifikacija);
             }
-
-            dgvPrikazTrenera.Rows.Clear();
 
             TrenerSearchObject search = new TrenerSearchObject
             {
@@ -72,31 +51,34 @@ namespace eBordo.WinUI.Forms.AdminPanel
             try
             {
                 _podaci = await _treneri.GetAll<List<Model.Models.Trener>>(search);
-
                 dataLoader.Hide();
+                noSearchResult.Hide();
+
+                pnlTreneriWrapper.Controls.Clear();
+
 
                 if (_podaci.Count == 0 && (pretraga != ""))
                 {
-                    PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.NEMA_REZULTATA_PRETRAGE);
+                    //PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.NEMA_REZULTATA_PRETRAGE);
+                    noSearchResult.Show();
+                    noSearchResult.BringToFront();
                 }
                 else if (_podaci.Count == 0)
                 {
                     PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.NEMA_PODATAKA);
+                    noSearchResult.Show();
+                    noSearchResult.BringToFront();
                 }
 
-                dgvPrikazTrenera.AutoGenerateColumns = false;
-
-                foreach (var item in _podaci)
+                frmTrenerKartica[] listItems = new frmTrenerKartica[_podaci.Count];
+                for (int i = 0; i < listItems.Length; i++)
                 {
-                    dgvPrikazTrenera.Rows.Add(new object[]
-                    {
-                        item.korisnik.ime + " " + item.korisnik.prezime,
-                        item.korisnik.drzavljanstvo.nazivDrzave,
-                        item.trenerskaLicenca.nazivLicence,
-                        Properties.Resources.view,
-                        Properties.Resources.edit,
-                        Properties.Resources.delete
-                    });
+                    listItems[i] = new frmTrenerKartica(snackbar, this);
+                    listItems[i].slika = byteToImage.ConvertByteToImage(_podaci[i].korisnik.Slika);
+                    listItems[i].trenerId = _podaci[i].trenerId;
+                    listItems[i].imePrezime = _podaci[i].korisnik.ime + " " + _podaci[i].korisnik.prezime;
+                    listItems[i].uloga = "MOCK: GLAVNI TRENER";
+                    pnlTreneriWrapper.Controls.Add(listItems[i]);
                 }
             }
             catch
@@ -157,17 +139,16 @@ namespace eBordo.WinUI.Forms.AdminPanel
                 }
             }
         }
-
-        private async void btnPretraga_Click(object sender, EventArgs e)
-        {
-            string pretraga = txtImePrezime.Text;
-            await LoadTreneri(pretraga);
-        }
-
         private async void btnRefresh_Click(object sender, EventArgs e)
         {
             txtImePrezime.Text = "";
             await LoadTreneri();
+        }
+
+        private async void txtImePrezime_TextChanged(object sender, EventArgs e)
+        {
+            string pretraga = txtImePrezime.Text;
+            await LoadTreneri(pretraga);
         }
     }
 }

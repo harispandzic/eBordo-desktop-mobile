@@ -137,7 +137,7 @@ namespace eBordo.WinUI.Forms.Login
             // 
             // pnlGrb
             // 
-            this.pnlGrb.BackgroundImage = global::eBordo.WinUI.Properties.Resources.dd1860c8_3fc1_4729_9da0_86d0a8038668;
+            this.pnlGrb.BackgroundImage = global::eBordo.WinUI.Properties.Resources.grbSarajevo;
             this.pnlGrb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlGrb.Location = new System.Drawing.Point(119, 23);
             this.pnlGrb.Name = "pnlGrb";

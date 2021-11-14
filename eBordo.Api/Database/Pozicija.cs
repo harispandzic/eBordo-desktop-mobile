@@ -9,5 +9,6 @@ namespace eBordo.Api.Database
     {
         public int pozicijaId { get; set; }
         public string nazivPozicije { get; set; }
+        public string skracenica { get; set; }
     }
 }

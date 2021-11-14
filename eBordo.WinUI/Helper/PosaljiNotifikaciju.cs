@@ -55,6 +55,16 @@ namespace eBordo.WinUI.Helper
                         posaljiNotifikaciju("Greška na serveru!", TipPoruke.ERROR, snackbar, forma);
                         break;
                     }
+                case TipNotifikacije.BROJ_IGRACA_PRVA_POSTAVA:
+                    {
+                        posaljiNotifikaciju("Prva postava mora imati 11 igrača!", TipPoruke.WARNING, snackbar, forma);
+                        break;
+                    }
+                case TipNotifikacije.BROJ_IGRACA_KLUPA:
+                    {
+                        posaljiNotifikaciju("Klupa mora imati 9 igrača", TipPoruke.WARNING, snackbar, forma);
+                        break;
+                    }
                 case TipNotifikacije.BEZ: break;
             }
         }

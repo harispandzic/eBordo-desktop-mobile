@@ -139,6 +139,9 @@
     <Reference Include="Bunifu.UI.WinForms.Deprecated, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
       <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.Deprecated.dll</HintPath>
     </Reference>
+    <Reference Include="eBordo.WinUI">
+      <HintPath>obj\Debug\eBordo.WinUI.exe</HintPath>
+    </Reference>
     <Reference Include="Flurl, Version=3.0.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Flurl.3.0.2\lib\net461\Flurl.dll</HintPath>
     </Reference>
@@ -192,6 +195,12 @@
     <Compile Include="Forms\AdminPanel\Igrač\frmDetaljiIgraca.Designer.cs">
       <DependentUpon>frmDetaljiIgraca.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AdminPanel\Igrač\frmIgracKartica.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Igrač\frmIgracKartica.Designer.cs">
+      <DependentUpon>frmIgracKartica.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AdminPanel\Igrač\frmPrikazIgraca.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -204,6 +213,56 @@
     <Compile Include="Forms\AdminPanel\Igrač\frmUpsertIgraca.Designer.cs">
       <DependentUpon>frmUpsertIgraca.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AdminPanel\RasporedUtakmica\frmDetaljiIgraca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\RasporedUtakmica\frmDetaljiIgraca.Designer.cs">
+      <DependentUpon>frmDetaljiIgraca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\RasporedUtakmica\frmPozvaniIgracKartica.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\RasporedUtakmica\frmPozvaniIgracKartica.Designer.cs">
+      <DependentUpon>frmPozvaniIgracKartica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\RasporedUtakmica\frmPrikazRasporedaUtakmicacs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\RasporedUtakmica\frmPrikazRasporedaUtakmicacs.Designer.cs">
+      <DependentUpon>frmPrikazRasporedaUtakmicacs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\RasporedUtakmica\frmUpsertUtakmica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\RasporedUtakmica\frmUpsertUtakmica.Designer.cs">
+      <DependentUpon>frmUpsertUtakmica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\RasporedUtakmica\frmUtakmicaKartica.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\RasporedUtakmica\frmUtakmicaKartica.Designer.cs">
+      <DependentUpon>frmUtakmicaKartica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\RasporedUtakmica\frmZakaziUtakmicuKartica.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\RasporedUtakmica\frmZakaziUtakmicuKartica.Designer.cs">
+      <DependentUpon>frmZakaziUtakmicuKartica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Tabele\frmTabelePocetna.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Tabele\frmTabelePocetna.Designer.cs">
+      <DependentUpon>frmTabelePocetna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Tabele\Klubovi\frmKlubKartica.cs" />
+    <Compile Include="Forms\AdminPanel\Tabele\Klubovi\frmKlubKartica.Designer.cs">
+      <DependentUpon>frmKlubKartica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Tabele\Klubovi\frmKlubovi.cs" />
+    <Compile Include="Forms\AdminPanel\Tabele\Klubovi\frmKlubovi.Designer.cs">
+      <DependentUpon>frmKlubovi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AdminPanel\Trener\frmDetaljiTrenera.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,6 +274,12 @@
     </Compile>
     <Compile Include="Forms\AdminPanel\Trener\frmPrikazTrenera.Designer.cs">
       <DependentUpon>frmPrikazTrenera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Trener\frmTrenerKartica.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Trener\frmTrenerKartica.Designer.cs">
+      <DependentUpon>frmTrenerKartica.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\AdminPanel\Trener\frmUpsertTrenera.cs">
       <SubType>Form</SubType>
@@ -236,6 +301,7 @@
     </Compile>
     <Compile Include="Helper\ByteToImage.cs" />
     <Compile Include="Helper\PosaljiNotifikaciju.cs" />
+    <Compile Include="Helper\TipFiltera.cs" />
     <Compile Include="Helper\TipNotifikacije.cs" />
     <Compile Include="Helper\TipPoruke.cs" />
     <Compile Include="Program.cs" />
@@ -246,17 +312,47 @@
     <EmbeddedResource Include="Forms\AdminPanel\Igrač\frmDetaljiIgraca.resx">
       <DependentUpon>frmDetaljiIgraca.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminPanel\Igrač\frmIgracKartica.resx">
+      <DependentUpon>frmIgracKartica.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminPanel\Igrač\frmPrikazIgraca.resx">
       <DependentUpon>frmPrikazIgraca.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminPanel\Igrač\frmUpsertIgraca.resx">
       <DependentUpon>frmUpsertIgraca.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminPanel\RasporedUtakmica\frmDetaljiIgraca.resx">
+      <DependentUpon>frmDetaljiIgraca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminPanel\RasporedUtakmica\frmPozvaniIgracKartica.resx">
+      <DependentUpon>frmPozvaniIgracKartica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminPanel\RasporedUtakmica\frmPrikazRasporedaUtakmicacs.resx">
+      <DependentUpon>frmPrikazRasporedaUtakmicacs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminPanel\RasporedUtakmica\frmUpsertUtakmica.resx">
+      <DependentUpon>frmUpsertUtakmica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminPanel\RasporedUtakmica\frmUtakmicaKartica.resx">
+      <DependentUpon>frmUtakmicaKartica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminPanel\RasporedUtakmica\frmZakaziUtakmicuKartica.resx">
+      <DependentUpon>frmZakaziUtakmicuKartica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminPanel\Tabele\frmTabelePocetna.resx">
+      <DependentUpon>frmTabelePocetna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminPanel\Tabele\Klubovi\frmKlubovi.resx">
+      <DependentUpon>frmKlubovi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminPanel\Trener\frmDetaljiTrenera.resx">
       <DependentUpon>frmDetaljiTrenera.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminPanel\Trener\frmPrikazTrenera.resx">
       <DependentUpon>frmPrikazTrenera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminPanel\Trener\frmTrenerKartica.resx">
+      <DependentUpon>frmTrenerKartica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminPanel\Trener\frmUpsertTrenera.resx">
       <DependentUpon>frmUpsertTrenera.cs</DependentUpon>
@@ -335,9 +431,6 @@
     <None Include="Resources\error.wav" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\info.wav" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\success.wav" />
   </ItemGroup>
   <ItemGroup>
@@ -376,6 +469,125 @@
   <ItemGroup>
     <None Include="Resources\bar-chart-676.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\stadion.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Picture1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\362a00a76411ff883c4ada0fb8add6f3-min.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Picture2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dd444d59333091b11f8404627d1a9990-thumb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dTnDWzIzjKjVAN5u5QX5JrZHr5qDWr-thumb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\a81af54f-ea65-45e9-b6c4-e66a2ab9414e.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Picture11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\away.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Picture111.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Picture12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\date.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\location.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\time.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\domaci.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gostujuci.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rezervni.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dupovac.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customIgrac.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trophy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\300px-Flag_of_Bosnia_and_Herzegovina.svg.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

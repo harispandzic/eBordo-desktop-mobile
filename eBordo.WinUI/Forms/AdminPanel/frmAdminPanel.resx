@@ -373,6 +373,15 @@
         EJkIIhNBZCKI1sxcpwB8NzPXA7ONIOgMD1RLAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="bunifuButton1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAANEAAAAvCAYAAAB9oi+GAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACsSURBVHhe7dOxDcMwEMBA7T/eq8wYHsCGewFJwPaKq1hz
+        zcxn730D/3v/WacA/M5EEJkIIhNBZCKITASRiSAyEUQmgshEEJkIIhNBZCKITASRiSAyEUQmgshEEJkI
+        IhNBZCKITASRiSAyEUQmgshEEJkIIhNBZCKITASRiSAyEUQmgshEEJkIIhNBZCKITASRiSAyEUQmgshE
+        EJkIIhNBZCKI1sxcpwB8NzPXA7ONIOgMD1RLAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="gornjiPanel.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAnsAAAAyCAYAAAAk/B0aAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -386,7 +395,7 @@
 </value>
   </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>37</value>
+    <value>25</value>
   </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
