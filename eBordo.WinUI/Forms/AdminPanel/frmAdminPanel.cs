@@ -40,6 +40,7 @@ namespace eBordo.WinUI.Forms.Igrač
                         pnlRasporedUtakmica.Hide();
                         pnlOdigraneUtakmice.Hide();
                         pnlRasporedTreninga.Hide();
+                        pnlTabele.Hide();
                         break;
                     }
                 case "Igrači":
@@ -50,6 +51,7 @@ namespace eBordo.WinUI.Forms.Igrač
                         pnlRasporedUtakmica.Hide();
                         pnlOdigraneUtakmice.Hide();
                         pnlRasporedTreninga.Hide();
+                        pnlTabele.Hide();
                         break;
                     }
                 case "Treneri":
@@ -60,6 +62,7 @@ namespace eBordo.WinUI.Forms.Igrač
                         pnlRasporedUtakmica.Hide();
                         pnlOdigraneUtakmice.Hide();
                         pnlRasporedTreninga.Hide();
+                        pnlTabele.Hide();
                         break;
                     }
                 case "RasporedUtakmica":
@@ -70,6 +73,7 @@ namespace eBordo.WinUI.Forms.Igrač
                         pnlRasporedUtakmica.Show();
                         pnlOdigraneUtakmice.Hide();
                         pnlRasporedTreninga.Hide();
+                        pnlTabele.Hide();
                         break;
                     }
                 case "OdigraneUtakmice":
@@ -80,6 +84,7 @@ namespace eBordo.WinUI.Forms.Igrač
                         pnlRasporedUtakmica.Hide();
                         pnlOdigraneUtakmice.Show();
                         pnlRasporedTreninga.Hide();
+                        pnlTabele.Hide();
                         break;
                     }
                 case "RasporedTreninga":
@@ -90,6 +95,18 @@ namespace eBordo.WinUI.Forms.Igrač
                         pnlRasporedUtakmica.Hide();
                         pnlOdigraneUtakmice.Hide();
                         pnlRasporedTreninga.Show();
+                        pnlTabele.Hide();
+                        break;
+                    }
+                case "Tabele":
+                    {
+                        pnlPocetna.Hide();
+                        pnlIgraci.Hide();
+                        pnlTreneri.Hide();
+                        pnlRasporedUtakmica.Hide();
+                        pnlOdigraneUtakmice.Hide();
+                        pnlRasporedTreninga.Hide();
+                        pnlTabele.Show();
                         break;
                     }
             }
@@ -129,6 +146,12 @@ namespace eBordo.WinUI.Forms.Igrač
             SoundPlayer simpleSound = new SoundPlayer(Properties.Resources.info);
             simpleSound.Play();
             Application.Restart();
+        }
+
+        private void bunifuButton1_Click(object sender, EventArgs e)
+        {
+            hideActiveLabels("Tabele");
+            igracTabs.SetPage("Tabele");
         }
     }
 }

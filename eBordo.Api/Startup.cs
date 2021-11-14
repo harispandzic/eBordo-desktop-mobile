@@ -30,6 +30,12 @@ using eBordo.Api.Services.Trener;
 using eBordo.Api.Services.TrenerskaLicenca;
 using eBordo.Api.Services.TrenerStatistika;
 using eBordo.Api.Services.Formacija;
+using eBordo.Api.Services.Stadion;
+using eBordo.Api.Services.Takmicenje;
+using eBordo.Api.Services.Klub;
+using eBordo.Api.Services.Utakmica;
+using eBordo.Api.Services.UtakmicaSastav;
+using Newtonsoft.Json;
 
 namespace eBordo.Api
 {
@@ -85,6 +91,11 @@ namespace eBordo.Api
             services.AddScoped<ITrenerskaLicencaService, TrenerskaLicencaService>();
             services.AddScoped<ITrenerStatistikaService, TrenerStatistikaService>();
             services.AddScoped<IFormacijaService, FormacijaService>();
+            services.AddScoped<IStadionService, StadionService>();
+            services.AddScoped<ITakmicenjeService, TakmicenjeService>();
+            services.AddScoped<IKlubService, KlubService>();
+            services.AddScoped<IUtakmicaService, UtakmicaService>();
+            services.AddScoped<IUtakmicaSastavService, UtakmicaSastavService>();
 
             services.AddAuthentication("BasicAuthentication")
                 .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);

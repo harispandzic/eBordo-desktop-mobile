@@ -1,4 +1,5 @@
 ﻿using eBordo.Model.Requests.Igrac;
+using eBordo.WinUI.Forms.AdminPanel.Igrač;
 using eBordo.WinUI.Helper;
 using System;
 using System.Collections.Generic;
@@ -24,6 +25,9 @@ namespace eBordo.WinUI.Forms.AdminPanel
         DataGridViewImageColumn btnView = new DataGridViewImageColumn();
         DataGridViewImageColumn btnUpdate = new DataGridViewImageColumn();
         DataGridViewImageColumn btnDelete = new DataGridViewImageColumn();
+
+        ByteToImage byteToImage = new ByteToImage();
+
         public frmPrikazIgraca()
         {
             InitializeComponent();
@@ -31,29 +35,8 @@ namespace eBordo.WinUI.Forms.AdminPanel
         }
         private async void frmPrikazIgraca_Load(object sender, EventArgs e)
         {
-            LoadComponents();
             await LoadIgraci();
             await LoadPozicije();
-        }
-        public void LoadComponents()
-        {
-            dgvPrikazIgraca.Columns.Add(btnView);
-            btnView.Width = 28;
-            btnView.HeaderText = " ";
-            btnView.Name = "btnView";
-
-            dgvPrikazIgraca.Columns.Add(btnUpdate);
-            btnUpdate.Width = 28;
-            btnUpdate.HeaderText = " ";
-            btnUpdate.Name = "btnUpdate";
-
-            dgvPrikazIgraca.Columns.Add(btnDelete);
-            btnDelete.Width = 28;
-            btnDelete.HeaderText = " ";
-            btnDelete.Name = "btnDelete";
-
-            dataLoader.BackColor = Color.Gainsboro;
-            dataLoader.Show();
         }
         private async Task LoadPozicije()
         {
@@ -79,7 +62,6 @@ namespace eBordo.WinUI.Forms.AdminPanel
                 PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, notifikacija);
             }
 
-            dgvPrikazIgraca.Rows.Clear();
 
             IgracSearchObject search = new IgracSearchObject
             {
@@ -91,81 +73,41 @@ namespace eBordo.WinUI.Forms.AdminPanel
             {
                 _podaci = await _igraci.GetAll<List<Model.Models.Igrac>>(search);
                 dataLoader.Hide();
+                noSearchResult.Hide();
 
-                if(_podaci.Count == 0 && (pretraga != "" || pozicijaId != -1))
+                pnlIgraciWrapper.Controls.Clear();
+
+                if (_podaci.Count == 0 && (pretraga != "" || pozicijaId != -1))
                 {
-                    PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.NEMA_REZULTATA_PRETRAGE);
+                    //PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.NEMA_REZULTATA_PRETRAGE);
+                    noSearchResult.Show();
+                    noSearchResult.BringToFront();
                 }
                 else if(_podaci.Count == 0)
                 {
                     PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.NEMA_PODATAKA);
+                    noSearchResult.Show();
+                    noSearchResult.BringToFront();
                 }
 
-                dgvPrikazIgraca.AutoGenerateColumns = false;
-
-                foreach (var item in _podaci)
+                frmIgracKartica[] listItems = new frmIgracKartica[_podaci.Count];
+                for (int i = 0; i < listItems.Length; i++)
                 {
-                    dgvPrikazIgraca.Rows.Add(new object[]
-                    {
-                        item.brojDresa,
-                        item.korisnik.ime + " " + item.korisnik.prezime,
-                        item.korisnik.drzavljanstvo.nazivDrzave,
-                        item.pozicija.nazivPozicije,
-                        Properties.Resources.view,
-                        Properties.Resources.edit,
-                        Properties.Resources.delete
-                    });
+                    listItems[i] = new frmIgracKartica(snackbar, this);
+                    listItems[i].slika = byteToImage.ConvertByteToImage(_podaci[i].korisnik.Slika);
+                    listItems[i].igracId = _podaci[i].igracId;
+                    listItems[i].imePrezime = _podaci[i].korisnik.ime + " " + _podaci[i].korisnik.prezime;
+                    listItems[i].ocjena = (int)_podaci[i].igracStatistika.prosjecnaOcjena;
+                    listItems[i].brojDresa = "#" + _podaci[i].brojDresa;
+                    listItems[i].pozicija = _podaci[i].pozicija.nazivPozicije;
+                    pnlIgraciWrapper.Controls.Add(listItems[i]);
                 }
             }
             catch 
             {
                 PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
             }
-        }      
-        private async void dgvPrikazIgraca_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == 4)
-            {
-                try
-                {
-                    var igracId = _podaci[e.RowIndex].igracId;
-                    var igrac = await _igraci.GetById<Model.Models.Igrac>(igracId);
-                    frmDetaljiIgraca getById = new frmDetaljiIgraca(igrac);
-                    getById.Show();
-                }
-                catch
-                {
-                    PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
-                }
-            }
-            else if (e.ColumnIndex == 5)
-            {
-                try
-                {
-                    var igracId = _podaci[e.RowIndex].igracId;
-                    var result = await _igraci.GetById<Model.Models.Igrac>(igracId);
-                    frmUpsertIgraca update = new frmUpsertIgraca(result, this);
-                    update.Show();
-                }
-                catch
-                {
-                    PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
-                }
-            }
-            else if (e.ColumnIndex == 6)
-            {
-                try
-                {
-                    var igracId = _podaci[e.RowIndex].igracId;
-                    var result = await _igraci.DeleteById<Model.Models.Igrac>(igracId);
-                    await LoadIgraci(notifikacija: TipNotifikacije.BRISANJE);
-                }
-                catch
-                {
-                    PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
-                }
-            }
-        }
+        } 
 
         private async void cmbPozicije_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -182,14 +124,19 @@ namespace eBordo.WinUI.Forms.AdminPanel
 
         private async void btnPretraga_Click(object sender, EventArgs e)
         {
-            string pretraga = txtImePrezime.Text;
-            await LoadIgraci(pretraga);
+            
         }
 
         private void btnPrijava_Click(object sender, EventArgs e)
         {
             Forms.AdminPanel.frmUpsertIgraca insert = new Forms.AdminPanel.frmUpsertIgraca(null, this);
             insert.Show();
+        }
+
+        private async void txtImePrezime_TextChanged(object sender, EventArgs e)
+        {
+            string pretraga = txtImePrezime.Text;
+            await LoadIgraci(pretraga);
         }
     }
 }

@@ -39,9 +39,20 @@ namespace eBordo.Api.Mapping
             CreateMap<eBordo.Api.Database.TrenerskaLicenca, eBordo.Model.Models.TrenerskaLicenca>();
             CreateMap<eBordo.Api.Database.Formacija, eBordo.Model.Models.Formacija>();
             CreateMap<eBordo.Api.Database.Ugovor, eBordo.Model.Models.Ugovor>();
+            CreateMap<eBordo.Api.Database.Stadion, eBordo.Model.Models.Stadion>();
+            CreateMap<eBordo.Api.Database.Takmicenje, eBordo.Model.Models.Takmicenje>();
+            CreateMap<eBordo.Api.Database.Klub, eBordo.Model.Models.Klub>();
+            CreateMap<eBordo.Api.Database.Utakmica, eBordo.Model.Models.Utakmica>();
+            CreateMap<eBordo.Api.Database.UtakmicaSastav, eBordo.Model.Models.UtakmicaSastav>();
             //INSERT & UPDATE
             CreateMap<eBordo.Model.Requests.Trener.TrenerInsertRequest, eBordo.Api.Database.Trener>();
             CreateMap<eBordo.Model.Requests.Trener.TrenerUpdateRequest, eBordo.Api.Database.Trener>();
+
+            CreateMap<eBordo.Model.Requests.Utakmica.UtakmicaInsertRequest, eBordo.Api.Database.Utakmica>();
+            CreateMap<eBordo.Model.Requests.Utakmica.UtakmicaUpdateRequest, eBordo.Api.Database.Utakmica>();
+
+            CreateMap<eBordo.Model.Requests.UtakmicaSastav.UtakmicaSastavInsertRequest, eBordo.Api.Database.UtakmicaSastav>();
+            CreateMap<eBordo.Model.Requests.UtakmicaSastav.UtakmicaSastavUpdateRequest, eBordo.Api.Database.UtakmicaSastav>();
 
         }
     }
