@@ -66,6 +66,8 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             pictureGostujucaDomaca.BackgroundImageLayout = ImageLayout.Zoom;
             pictureDres.BackgroundImage = dres;
             pictureGostujucaDomaca.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureTakmicenje.BackgroundImage = logoTakmicenja;
+            pictureTakmicenje.BackgroundImageLayout = ImageLayout.Zoom;
             lblDatum.Text = datum;
             lblSatnica.Text = satnica;
             lblStadion.Text = stadion;
@@ -103,6 +105,20 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
         private void panelDelete_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private async void btnView_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var result = await _utakmica.GetById<Model.Models.Utakmica>(utakmicaId);
+                frmDetaljiUtakmice detalji = new frmDetaljiUtakmice(result, _prikazRasporeda);
+                detalji.Show();
+            }
+            catch
+            {
+                PosaljiNotifikaciju.notificationSwitch(_snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
+            }
         }
     }
 }

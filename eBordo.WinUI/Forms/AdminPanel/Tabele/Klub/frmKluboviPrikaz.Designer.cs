@@ -1,7 +1,7 @@
 ﻿
-namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Klubovi
+namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Klub
 {
-    partial class frmKlubovi
+    partial class frmKluboviPrikaz
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,30 +29,30 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Klubovi
         /// </summary>
         private void InitializeComponent()
         {
-            this.flowPanelKlubovi = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
-            // flowPanelKlubovi
+            // flowLayoutPanel1
             // 
-            this.flowPanelKlubovi.Location = new System.Drawing.Point(338, 0);
-            this.flowPanelKlubovi.Name = "flowPanelKlubovi";
-            this.flowPanelKlubovi.Size = new System.Drawing.Size(243, 269);
-            this.flowPanelKlubovi.TabIndex = 0;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(293, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(288, 269);
+            this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // frmKlubovi
+            // frmKluboviPrikaz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.flowPanelKlubovi);
-            this.Name = "frmKlubovi";
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Name = "frmKluboviPrikaz";
             this.Size = new System.Drawing.Size(581, 269);
-            this.Load += new System.EventHandler(this.frmKlubovi_Load);
+            this.Load += new System.EventHandler(this.frmKluboviPrikaz_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.FlowLayoutPanel flowPanelKlubovi;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

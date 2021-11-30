@@ -12,7 +12,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele
 {
     public partial class frmTabelePocetna : UserControl
     {
-        private string[] opcije = { "Klubovi", "Stadioni", "Države", "Gradovi", "Takmičenja", "Pozicije", "Formacije" };
+        private string[] opcije = { "Klubovi", "Stadioni", "Države", "Gradovi", "Takmičenja"};
         public frmTabelePocetna()
         {
             InitializeComponent();

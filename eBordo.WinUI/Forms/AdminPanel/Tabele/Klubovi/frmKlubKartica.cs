@@ -10,11 +10,20 @@ using System.Windows.Forms;
 
 namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Klubovi
 {
-    public partial class frmKlubKartica: UserControl
+    public partial class frmKlubKartica : UserControl
     {
+        public string nazivKluba { get; set; }
+        public Image igracSlika { get; set; }
         public frmKlubKartica()
         {
             InitializeComponent();
+        }
+
+        private void frmKlubKartica_Load(object sender, EventArgs e)
+        {
+            picureGrb.BackgroundImage = igracSlika;
+            picureGrb.BackgroundImageLayout = ImageLayout.Zoom;
+            lblNazivKluba.Text = nazivKluba;
         }
     }
 }

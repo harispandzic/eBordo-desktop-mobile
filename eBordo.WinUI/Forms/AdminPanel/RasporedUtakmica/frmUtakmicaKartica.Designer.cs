@@ -132,6 +132,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.btnView.Size = new System.Drawing.Size(20, 20);
             this.btnView.TabIndex = 50;
             this.btnView.TabStop = false;
+            this.btnView.Click += new System.EventHandler(this.btnView_Click);
             // 
             // btnDelete
             // 
@@ -174,7 +175,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             // pictureTakmicenje
             // 
             this.pictureTakmicenje.BackColor = System.Drawing.Color.Transparent;
-            this.pictureTakmicenje.BackgroundImage = global::eBordo.WinUI.Properties.Resources.a81af54f_ea65_45e9_b6c4_e66a2ab9414e;
             this.pictureTakmicenje.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureTakmicenje.Location = new System.Drawing.Point(252, 8);
             this.pictureTakmicenje.Name = "pictureTakmicenje";

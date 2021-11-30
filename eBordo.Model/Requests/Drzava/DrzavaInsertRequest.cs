@@ -7,6 +7,6 @@ namespace eBordo.Model.Requests.Drzava
     public class DrzavaInsertRequest
     {
         public string nazivDrzave { get; set; }
-        public string zastavaUrl { get; set; }
+        public byte[] zastava { get; set; }
     }
 }

@@ -31,19 +31,14 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrikazRasporedaUtakmicacs));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.lblNaslovStranice = new Bunifu.UI.WinForms.BunifuLabel();
             this.pnlRasporedUtakmica = new System.Windows.Forms.Panel();
             this.pnlUtakmiceWrapper = new System.Windows.Forms.FlowLayoutPanel();
             this.loader = new Bunifu.UI.WinForms.BunifuLoader();
             this.btnDodajUtakmicu = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnRefresh = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.txtImePrezime = new Bunifu.UI.WinForms.BunifuTextBox();
             this.cmbPozicije = new Bunifu.UI.WinForms.BunifuDropdown();
             this.snackbar = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
             this.SuspendLayout();
@@ -124,11 +119,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.btnDodajUtakmicu.ColorContrastOnClick = 45;
             this.btnDodajUtakmicu.ColorContrastOnHover = 45;
             this.btnDodajUtakmicu.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.btnDodajUtakmicu.CustomizableEdges = borderEdges1;
+            borderEdges3.BottomLeft = true;
+            borderEdges3.BottomRight = true;
+            borderEdges3.TopLeft = true;
+            borderEdges3.TopRight = true;
+            this.btnDodajUtakmicu.CustomizableEdges = borderEdges3;
             this.btnDodajUtakmicu.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnDodajUtakmicu.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnDodajUtakmicu.DisabledFillColor = System.Drawing.Color.Empty;
@@ -217,11 +212,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.btnRefresh.ColorContrastOnClick = 45;
             this.btnRefresh.ColorContrastOnHover = 45;
             this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.btnRefresh.CustomizableEdges = borderEdges2;
+            borderEdges4.BottomLeft = true;
+            borderEdges4.BottomRight = true;
+            borderEdges4.TopLeft = true;
+            borderEdges4.TopRight = true;
+            this.btnRefresh.CustomizableEdges = borderEdges4;
             this.btnRefresh.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnRefresh.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnRefresh.DisabledFillColor = System.Drawing.Color.Empty;
@@ -288,81 +283,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.btnRefresh.TextMarginLeft = 0;
             this.btnRefresh.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnRefresh.UseDefaultRadiusAndThickness = true;
-            // 
-            // txtImePrezime
-            // 
-            this.txtImePrezime.AcceptsReturn = false;
-            this.txtImePrezime.AcceptsTab = false;
-            this.txtImePrezime.AnimationSpeed = 200;
-            this.txtImePrezime.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.txtImePrezime.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txtImePrezime.AutoSizeHeight = true;
-            this.txtImePrezime.BackColor = System.Drawing.Color.Transparent;
-            this.txtImePrezime.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtImePrezime.BackgroundImage")));
-            this.txtImePrezime.BorderColorActive = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
-            this.txtImePrezime.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.txtImePrezime.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.txtImePrezime.BorderColorIdle = System.Drawing.Color.Silver;
-            this.txtImePrezime.BorderRadius = 1;
-            this.txtImePrezime.BorderThickness = 1;
-            this.txtImePrezime.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtImePrezime.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtImePrezime.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.txtImePrezime.DefaultText = "";
-            this.txtImePrezime.FillColor = System.Drawing.Color.White;
-            this.txtImePrezime.HideSelection = true;
-            this.txtImePrezime.IconLeft = null;
-            this.txtImePrezime.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtImePrezime.IconPadding = 10;
-            this.txtImePrezime.IconRight = null;
-            this.txtImePrezime.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtImePrezime.Lines = new string[0];
-            this.txtImePrezime.Location = new System.Drawing.Point(69, 69);
-            this.txtImePrezime.MaxLength = 32767;
-            this.txtImePrezime.MinimumSize = new System.Drawing.Size(1, 1);
-            this.txtImePrezime.Modified = false;
-            this.txtImePrezime.Multiline = false;
-            this.txtImePrezime.Name = "txtImePrezime";
-            stateProperties1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
-            stateProperties1.FillColor = System.Drawing.Color.Empty;
-            stateProperties1.ForeColor = System.Drawing.Color.Empty;
-            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtImePrezime.OnActiveState = stateProperties1;
-            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtImePrezime.OnDisabledState = stateProperties2;
-            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
-            stateProperties3.FillColor = System.Drawing.Color.Empty;
-            stateProperties3.ForeColor = System.Drawing.Color.Empty;
-            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtImePrezime.OnHoverState = stateProperties3;
-            stateProperties4.BorderColor = System.Drawing.Color.Silver;
-            stateProperties4.FillColor = System.Drawing.Color.White;
-            stateProperties4.ForeColor = System.Drawing.Color.Empty;
-            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtImePrezime.OnIdleState = stateProperties4;
-            this.txtImePrezime.Padding = new System.Windows.Forms.Padding(3);
-            this.txtImePrezime.PasswordChar = '\0';
-            this.txtImePrezime.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtImePrezime.PlaceholderText = "Ime i prezime";
-            this.txtImePrezime.ReadOnly = false;
-            this.txtImePrezime.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtImePrezime.SelectedText = "";
-            this.txtImePrezime.SelectionLength = 0;
-            this.txtImePrezime.SelectionStart = 0;
-            this.txtImePrezime.ShortcutsEnabled = true;
-            this.txtImePrezime.Size = new System.Drawing.Size(165, 34);
-            this.txtImePrezime.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txtImePrezime.TabIndex = 18;
-            this.txtImePrezime.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtImePrezime.TextMarginBottom = 0;
-            this.txtImePrezime.TextMarginLeft = 3;
-            this.txtImePrezime.TextMarginTop = 1;
-            this.txtImePrezime.TextPlaceholder = "Ime i prezime";
-            this.txtImePrezime.UseSystemPasswordChar = false;
-            this.txtImePrezime.WordWrap = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // cmbPozicije
             // 
@@ -400,13 +321,14 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.cmbPozicije.ItemHighLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
             this.cmbPozicije.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cmbPozicije.ItemTopMargin = 3;
-            this.cmbPozicije.Location = new System.Drawing.Point(236, 70);
+            this.cmbPozicije.Location = new System.Drawing.Point(70, 71);
             this.cmbPozicije.Name = "cmbPozicije";
             this.cmbPozicije.Size = new System.Drawing.Size(165, 32);
             this.cmbPozicije.TabIndex = 17;
-            this.cmbPozicije.Text = "Pozicija";
+            this.cmbPozicije.Text = "Vrsta utakmice";
             this.cmbPozicije.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbPozicije.TextLeftMargin = 5;
+            this.cmbPozicije.SelectedIndexChanged += new System.EventHandler(this.cmbPozicije_SelectedIndexChanged);
             // 
             // snackbar
             // 
@@ -483,7 +405,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.loader);
             this.Controls.Add(this.btnRefresh);
-            this.Controls.Add(this.txtImePrezime);
             this.Controls.Add(this.cmbPozicije);
             this.Controls.Add(this.pnlUtakmiceWrapper);
             this.Controls.Add(this.btnDodajUtakmicu);
@@ -505,7 +426,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
         private Bunifu.UI.WinForms.BunifuLoader loader;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnDodajUtakmicu;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnRefresh;
-        private Bunifu.UI.WinForms.BunifuTextBox txtImePrezime;
         private Bunifu.UI.WinForms.BunifuDropdown cmbPozicije;
         private Bunifu.UI.WinForms.BunifuSnackbar snackbar;
     }

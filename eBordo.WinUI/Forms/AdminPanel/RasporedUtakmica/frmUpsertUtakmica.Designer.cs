@@ -548,13 +548,13 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             // 
             // lblImePrezime
             // 
-            this.lblImePrezime.BackColor = System.Drawing.Color.Transparent;
+            this.lblImePrezime.BackColor = System.Drawing.Color.Gainsboro;
             this.lblImePrezime.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblImePrezime.ForeColor = System.Drawing.Color.Black;
             this.lblImePrezime.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblImePrezime.Location = new System.Drawing.Point(402, 12);
+            this.lblImePrezime.Location = new System.Drawing.Point(399, 12);
             this.lblImePrezime.Name = "lblImePrezime";
-            this.lblImePrezime.Size = new System.Drawing.Size(501, 23);
+            this.lblImePrezime.Size = new System.Drawing.Size(504, 23);
             this.lblImePrezime.TabIndex = 69;
             this.lblImePrezime.Text = "SPISAK POZVANIH IGRAČA NA UTAKMICU";
             this.lblImePrezime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -605,7 +605,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             // 
             // lblPrvaPostava
             // 
-            this.lblPrvaPostava.BackColor = System.Drawing.Color.Transparent;
+            this.lblPrvaPostava.BackColor = System.Drawing.Color.Gainsboro;
             this.lblPrvaPostava.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrvaPostava.ForeColor = System.Drawing.Color.Black;
             this.lblPrvaPostava.Location = new System.Drawing.Point(399, 84);
@@ -679,7 +679,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             // 
             // lblKlupa
             // 
-            this.lblKlupa.BackColor = System.Drawing.Color.Transparent;
+            this.lblKlupa.BackColor = System.Drawing.Color.Gainsboro;
             this.lblKlupa.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKlupa.ForeColor = System.Drawing.Color.Black;
             this.lblKlupa.Location = new System.Drawing.Point(655, 84);

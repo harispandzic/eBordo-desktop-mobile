@@ -102,6 +102,7 @@ namespace eBordo.Api.Services.Igrac
                 boljaNoga = boljaNoga,
                 napomeneOIgracu = request.napomeneOIgracu,
                 jacinaSlabijeNoge = request.jacinaSlabijeNoge,
+                slikaPanel = request.SlikaPanel,
                 igracStatistika = statistika,
                 igracSkills = skills,
                 ugovor = ugovor,

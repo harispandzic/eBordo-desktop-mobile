@@ -86,6 +86,8 @@ namespace eBordo.Api.Services.Trener
             var preferiranaFormacija = _db.formacije.Find(request.preferiranaFormacijaId);
             var trenerskaLicenca = _db.trenerskeLicence.Find(request.trenerskaLicencaId);
 
+            UlogaTrenera ulogaTrenera = request.ulogaTreneraId == 1 ? UlogaTrenera.GLAVNI : UlogaTrenera.POMOĆNI;
+
             eBordo.Api.Database.Trener trener = new eBordo.Api.Database.Trener
             {
                 formacija = preferiranaFormacija,
@@ -93,6 +95,8 @@ namespace eBordo.Api.Services.Trener
                 trenerStatistika = statistika,
                 ugovor = ugovor,
                 korisnik = korisnik,
+                slikaPanel = request.SlikaPanel,
+                ulogaTrenera = ulogaTrenera
             };
 
             _db.treneri.Add(trener);

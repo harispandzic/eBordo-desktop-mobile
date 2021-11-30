@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using eBordo.Api.Database;
-using eBordo.Api.Services.BaseREADService;
+using eBordo.Api.Services.BaseCRUDService;
+using eBordo.Model.Requests.Klub;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -9,9 +10,25 @@ using System.Threading.Tasks;
 
 namespace eBordo.Api.Services.Klub
 {
-    public class KlubService : BaseREADService<eBordo.Model.Models.Klub, eBordo.Api.Database.Klub, object>, IKlubService
+    public class KlubService : BaseCRUDService<eBordo.Model.Models.Klub, eBordo.Api.Database.Klub, object, eBordo.Model.Requests.Klub.KlubInsertRequest,object>, IKlubService
     {
         public KlubService(eBordoContext db, IMapper mapper) : base(db, mapper) { }
+
+        public override Model.Models.Klub Insert(KlubInsertRequest request)
+        {
+            Database.Klub klub = new Database.Klub
+            {
+                nazivKluba = request.nazivKluba,
+                gradId = request.gradId,
+                stadionId = request.stadionId,
+                grb = request.grb
+            };
+
+            _db.Add(klub);
+            _db.SaveChanges();
+
+            return _mapper.Map<eBordo.Model.Models.Klub>(klub);
+        }
 
         public override IEnumerable<eBordo.Model.Models.Klub> Get(object search = null)
         {

@@ -100,6 +100,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
                     listItems[i].ocjena = (int)_podaci[i].igracStatistika.prosjecnaOcjena;
                     listItems[i].brojDresa = "#" + _podaci[i].brojDresa;
                     listItems[i].pozicija = _podaci[i].pozicija.nazivPozicije;
+                    listItems[i].zastava = byteToImage.ConvertByteToImage(_podaci[i].korisnik.drzavljanstvo.zastava);
                     pnlIgraciWrapper.Controls.Add(listItems[i]);
                 }
             }

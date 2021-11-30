@@ -18,5 +18,6 @@ namespace eBordo.Model.Requests.Igrac
         public int brojDresa { get; set; }
         public float trzisnaVrijednost { get; set; }
         public string napomeneOIgracu { get; set; }
+        public byte[] SlikaPanel { get; set; }
     }
 }

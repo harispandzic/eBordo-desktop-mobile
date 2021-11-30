@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
+namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Klub
 {
-    public partial class frmZakaziUtakmicuKartica : UserControl
+    public partial class frmKlubKartica : UserControl
     {
-        public frmZakaziUtakmicuKartica()
+        public frmKlubKartica()
         {
             InitializeComponent();
         }

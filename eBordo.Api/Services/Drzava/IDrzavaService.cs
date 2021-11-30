@@ -7,7 +7,7 @@ using eBordo.Api.Services.BaseREADService;
 
 namespace eBordo.Api.Services.Drzava
 {
-    public interface IDrzavaService: IBaseREADService<eBordo.Model.Models.Drzava, object>
+    public interface IDrzavaService: IBaseCRUDService<eBordo.Model.Models.Drzava, object, Model.Requests.Drzava.DrzavaInsertRequest,object>
     {
     }
 }

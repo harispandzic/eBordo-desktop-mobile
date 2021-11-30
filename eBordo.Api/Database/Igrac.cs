@@ -31,5 +31,6 @@ namespace eBordo.Api.Database
         public Ugovor ugovor { get; set; }
         public int ugovorId { get; set; }
 
+        public byte[] slikaPanel { get; set; }
     }
 }

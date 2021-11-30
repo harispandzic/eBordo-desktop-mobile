@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <metadata name="snackbar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+    <value>416, 3</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="resource.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -185,7 +185,7 @@
         SUVORK5CYII=
 </value>
   </data>
-  <data name="btnUcitajFotografiju.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnUcitajPanelPhoto.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAG4AAAAeCAYAAADNeSs6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIESURBVGhD7Zu/SgNBEMYXshctLe1mHsHS0ifw7gKCna3Y
@@ -289,8 +289,8 @@
         AAAAAAAAAADAqO2RJEn7eqsGAAAAAAAAAAAAAOCj5ALRhDOyYNJ1LgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="fileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>117, 17</value>
+  <metadata name="avatarFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>117, 3</value>
   </metadata>
   <data name="btnSave.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -413,6 +413,27 @@
         oYSFEhZKWChhoYSFEhZKWChhoYSF+sGutd4+3PnacljtfhEb3ASVM7VsewUAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="btnUcitajAvatar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAG4AAAAeCAYAAADNeSs6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIESURBVGhD7Zu/SgNBEMYXshctLe1mHsHS0ifw7gKCna3Y
+        WQo+gJ2dhZDCykKwE6wCVpYpLASLvECUJIoGtNBvLisYMpEE8mcPZuBHwJndwH6ZnR12dZNYWqWs5vkq
+        99wsSPjbmCFhXYs1Tmh3z9FqWPrpLXW0liV0Ar5yT131C42Zk3nq4bNf83S+42g9yDGZ5RXexi+gIxP8
+        ndRYHOkgYXqpp4Mgy/+G4MMs4RdtMmMJeGjhuR7k0U1EKwK1CYylgUTqZ54vg0zDJtujZVrEYNtE/TsK
+        cg1MiqA41AFGNKQJP6P2bQTZnJMTTFEMlWAjMjw3CtGkZ8Af7PRYElDr3tIVYicNX+gd1EAjOtDj8bGD
+        gjeK04gZz00R7lF1GvHiuY3ejduq04ga1DjdYcSNCVdSTLiSYsKVFJcl1sOVETlVtjSHES+SbMg4vtec
+        RsQg2dCA0z7Ee1cDjOiQpyTQ63RwpWPClYlO7mmzuCFA6jWUACNGZJv8NbmcyxN7yRU9nrryVDLINjA4
+        zrB/vo4EG1GA5Pqseb4Ocg1bXqE7CdAGGsslq/LD2IeyxW04xMOp5UMbbCweSSSc/J/kgXKQabyhANYx
+        SB7EqpMZCwI1DaLdTvUkPa3QFgSU/xPoIAP1iY15gSM/t0YOItOY9AyY6AwT2YXrvMEaI8MuJGnC8o8x
+        534Ampf8S395aqwAAAAASUVORK5CYII=
+</value>
+  </data>
+  <metadata name="panelSlikaFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>256, 3</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>25</value>
+  </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAUAAAAAAAEAIABdrgAAVgAAADAwAAABACAAqCUAALOuAAAgIAAAAQAgAKgQAABb1AAAGBgAAAEA

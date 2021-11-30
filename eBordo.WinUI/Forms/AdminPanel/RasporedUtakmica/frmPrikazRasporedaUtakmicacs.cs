@@ -24,9 +24,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             InitializeComponent();
         }
 
-        private void frmPrikazRasporedaUtakmicacs_Load(object sender, EventArgs e)
+        private async void frmPrikazRasporedaUtakmicacs_Load(object sender, EventArgs e)
         {
-            LoadUtakmice();
+            await LoadUtakmice();
+            cmbPozicije.Items.Add("Domaća");
+            cmbPozicije.Items.Add("Gostujuća");
         }
         public async Task LoadUtakmice(string tipUtakmice = "", TipNotifikacije notifikacija = TipNotifikacije.BEZ)
         {
@@ -58,12 +60,12 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
                         listItems[i].grbDomacina = Properties.Resources.grbSarajevo;
                         listItems[i].tipUtakmice = Properties.Resources.home;
                         listItems[i].gost = _podaci[i].protivnik.nazivKluba.ToUpper();
-                        listItems[i].grbGostiju = Properties.Resources.grbProtivnik;
+                        listItems[i].grbGostiju = byteToImage.ConvertByteToImage(_podaci[i].protivnik.grb);
                     }
                     else if(_podaci[i].vrstaUtakmice == "Gostujuća")
                     {
                         listItems[i].domacin = _podaci[i].protivnik.nazivKluba.ToUpper();
-                        listItems[i].grbDomacina = Properties.Resources.grbProtivnik;
+                        listItems[i].grbDomacina = byteToImage.ConvertByteToImage(_podaci[i].protivnik.grb);
                         listItems[i].tipUtakmice = Properties.Resources.away;
                         listItems[i].gost = "FK Sarajevo".ToUpper();
                         listItems[i].grbGostiju = Properties.Resources.grbSarajevo;
@@ -84,6 +86,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
                     listItems[i].datum = _podaci[i].datumOdigravanja.ToString("dd.MM.yyyy"); ;
                     listItems[i].satnica = _podaci[i].satnica + " h";
                     listItems[i].stadion = "STADION " + _podaci[i].stadion.nazivStadiona.ToUpper();
+                    listItems[i].logoTakmicenja = byteToImage.ConvertByteToImage(_podaci[i].takmicenje.logo);
 
                     pnlUtakmiceWrapper.Controls.Add(listItems[i]);
                 }
@@ -98,6 +101,24 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
         {
             frmUpsertUtakmica insert = new frmUpsertUtakmica(null, this);
             insert.Show();
+        }
+
+        private async void btnRefresh_Click(object sender, EventArgs e)
+        {
+            cmbPozicije.Text = "Pozicija";
+            await LoadUtakmice();
+        }
+
+        private async void cmbPozicije_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cmbPozicije.SelectedIndex == 0)
+            {
+                await LoadUtakmice(tipUtakmice: "Domaća");
+            }
+            else
+            {
+                await LoadUtakmice(tipUtakmice: "Gostujuća");
+            }
         }
     }
 }

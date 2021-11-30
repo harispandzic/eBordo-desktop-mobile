@@ -8,6 +8,6 @@ namespace eBordo.Model.Models
     {
         public int takmicenjeId { get; set; }
         public string nazivTakmicenja { get; set; }
-        public string logoTakmicenja { get; set; }
+        public byte[] logo { get; set; }
     }
 }

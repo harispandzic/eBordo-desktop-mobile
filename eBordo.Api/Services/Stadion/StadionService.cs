@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using eBordo.Api.Database;
-using eBordo.Api.Services.BaseREADService;
+using eBordo.Api.Services.BaseCRUDService;
+using eBordo.Model.Requests.Stadion;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -9,10 +10,23 @@ using System.Threading.Tasks;
 
 namespace eBordo.Api.Services.Stadion
 {
-    public class StadionService : BaseREADService<eBordo.Model.Models.Stadion, eBordo.Api.Database.Stadion, object>, IStadionService
+    public class StadionService : BaseCRUDService<eBordo.Model.Models.Stadion, eBordo.Api.Database.Stadion, object, Model.Requests.Stadion.StadionInsertRequest, object>, IStadionService
     {
         public StadionService(eBordoContext db, IMapper mapper) : base(db, mapper) { }
 
+        public override Model.Models.Stadion Insert(StadionInsertRequest request)
+        {
+            Database.Stadion stadion = new Database.Stadion
+            {
+                nazivStadiona = request.nazivStadiona,
+                lokacijaStadionaId = request.lokacijaStadionaId,
+                slikaStadiona = request.slikaStadiona,
+            };
+            _db.Add(stadion);
+            _db.SaveChanges();
+
+            return _mapper.Map<eBordo.Model.Models.Stadion>(stadion);
+        }
         public override IEnumerable<eBordo.Model.Models.Stadion> Get(object search = null)
         {
             var entity = _db.Set<Database.Stadion>()

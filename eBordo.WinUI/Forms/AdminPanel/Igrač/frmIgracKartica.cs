@@ -26,6 +26,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Igrač
         public string brojDresa { get; set; }
         public string pozicija { get; set; }
         public Image slika { get; set; }
+        public Image zastava { get; set; }
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -48,6 +49,8 @@ namespace eBordo.WinUI.Forms.AdminPanel.Igrač
         {
             korisnickaFotografija.BackgroundImage = slika;
             korisnickaFotografija.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureZastava.BackgroundImage = zastava;
+            pictureZastava.BackgroundImageLayout = ImageLayout.Zoom;
             lblImePrezime.Text = imePrezime.ToUpper();
             igracOcjena.Value = ocjena;
             lblBrojDresa.Text = brojDresa;

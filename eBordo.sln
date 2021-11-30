@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eBordo.Api", "eBordo.Api\eBordo.Api.csproj", "{9C67F490-EAD8-43E7-8F4B-00816173DB12}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eBordo.Api", "eBordo.Api\eBordo.Api.csproj", "{9C67F490-EAD8-43E7-8F4B-00816173DB12}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eBordo.Model", "eBordo.Model\eBordo.Model.csproj", "{77251DC3-2526-433E-8269-A78C995AD900}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eBordo.Model", "eBordo.Model\eBordo.Model.csproj", "{77251DC3-2526-433E-8269-A78C995AD900}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eBordo.WinUI", "eBordo.WinUI\eBordo.WinUI.csproj", "{912FAA39-A827-41F6-BCE0-928D3BDEAF19}"
 EndProject

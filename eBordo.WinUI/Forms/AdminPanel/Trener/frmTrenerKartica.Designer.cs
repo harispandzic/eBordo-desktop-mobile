@@ -35,10 +35,12 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.btnDelete = new System.Windows.Forms.PictureBox();
             this.btnEdit = new System.Windows.Forms.PictureBox();
             this.korisnickaFotografija = new System.Windows.Forms.PictureBox();
+            this.pictureZastava = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.btnView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.korisnickaFotografija)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureZastava)).BeginInit();
             this.SuspendLayout();
             // 
             // lblUloga
@@ -111,12 +113,25 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.korisnickaFotografija.TabIndex = 48;
             this.korisnickaFotografija.TabStop = false;
             // 
+            // pictureZastava
+            // 
+            this.pictureZastava.BackColor = System.Drawing.Color.Transparent;
+            this.pictureZastava.BackgroundImage = global::eBordo.WinUI.Properties.Resources._300px_Flag_of_Bosnia_and_Herzegovina_svg;
+            this.pictureZastava.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureZastava.Location = new System.Drawing.Point(150, 3);
+            this.pictureZastava.Name = "pictureZastava";
+            this.pictureZastava.Size = new System.Drawing.Size(30, 28);
+            this.pictureZastava.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureZastava.TabIndex = 55;
+            this.pictureZastava.TabStop = false;
+            // 
             // frmTrenerKartica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::eBordo.WinUI.Properties.Resources.Screenshot_11;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.pictureZastava);
             this.Controls.Add(this.btnView);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
@@ -131,6 +146,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.korisnickaFotografija)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureZastava)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -143,5 +159,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
         private System.Windows.Forms.Label lblUloga;
         private System.Windows.Forms.Label lblImePrezime;
         private System.Windows.Forms.PictureBox korisnickaFotografija;
+        private System.Windows.Forms.PictureBox pictureZastava;
     }
 }

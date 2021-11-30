@@ -8,16 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Klubovi
+namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Klub
 {
-    public partial class frmKlubovi : UserControl
+    public partial class frmKluboviPrikaz : UserControl
     {
-        public frmKlubovi()
+        public frmKluboviPrikaz()
         {
             InitializeComponent();
         }
 
-        private void frmKlubovi_Load(object sender, EventArgs e)
+        private void frmKluboviPrikaz_Load(object sender, EventArgs e)
         {
 
         }
