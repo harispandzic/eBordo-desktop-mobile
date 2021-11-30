@@ -22,5 +22,8 @@ namespace eBordo.Api.Database
 
         public TrenerskaLicenca trenerskaLicenca { get; set; }
         public int trenerskaLicencaId { get; set; }
+
+        public UlogaTrenera ulogaTrenera { get; set; }
+        public byte[] slikaPanel { get; set; }
     }
 }

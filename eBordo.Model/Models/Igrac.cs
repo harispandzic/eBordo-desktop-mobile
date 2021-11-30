@@ -19,5 +19,6 @@ namespace eBordo.Model.Models
         public IgracStatistika igracStatistika { get; set; }
         public IgracSkills igracSkills { get; set; }
         public Ugovor ugovor { get; set; }
+        public byte[] slikaPanel { get; set; }
     }
 }

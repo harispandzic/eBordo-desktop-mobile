@@ -22,7 +22,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Takmičenja
         private void frmTakmicenjeKartica_Load(object sender, EventArgs e)
         {
             picureLogo.BackgroundImage = logoTakmicenja;
-            picureLogo.BackgroundImageLayout = ImageLayout.Stretch;
+            picureLogo.BackgroundImageLayout = ImageLayout.Zoom;
             lblNazivTakmicenja.Text = nazivTakmicenja;
         }
     }

@@ -22,7 +22,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Klubovi
         private void frmKlubKartica_Load(object sender, EventArgs e)
         {
             picureGrb.BackgroundImage = igracSlika;
-            picureGrb.BackgroundImageLayout = ImageLayout.Stretch;
+            picureGrb.BackgroundImageLayout = ImageLayout.Zoom;
             lblNazivKluba.Text = nazivKluba;
         }
     }

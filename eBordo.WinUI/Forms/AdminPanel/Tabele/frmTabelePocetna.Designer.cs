@@ -35,28 +35,22 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele
             this.tabKlubovi = new System.Windows.Forms.TabPage();
             this.frmPrikazKlubova1 = new eBordo.WinUI.Forms.AdminPanel.Tabele.Klubovi.frmPrikazKlubova();
             this.tabStadioni = new System.Windows.Forms.TabPage();
-            this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.frmPrikazStadiona1 = new eBordo.WinUI.Forms.AdminPanel.Tabele.Stadion.frmPrikazStadiona();
             this.tabDrzave = new System.Windows.Forms.TabPage();
             this.frmPrikazDrzava1 = new eBordo.WinUI.Forms.AdminPanel.Tabele.Države.frmPrikazDrzava();
             this.tabGradovi = new System.Windows.Forms.TabPage();
-            this.bunifuLabel4 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.frmPrikazGradova1 = new eBordo.WinUI.Forms.AdminPanel.Tabele.Grad.frmPrikazGradova();
             this.tabTakmicenja = new System.Windows.Forms.TabPage();
-            this.tabPozicije = new System.Windows.Forms.TabPage();
-            this.bunifuLabel6 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.tabFormacije = new System.Windows.Forms.TabPage();
-            this.bunifuLabel7 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.frmTakmicenjaPrikaz1 = new eBordo.WinUI.Forms.AdminPanel.Tabele.Takmičenja.frmTakmicenjaPrikaz();
             this.cmbTabele = new Bunifu.UI.WinForms.BunifuDropdown();
             this.lblNaslovStranice = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuSeparator1 = new Bunifu.UI.WinForms.BunifuSeparator();
-            this.frmTakmicenjaPrikaz1 = new eBordo.WinUI.Forms.AdminPanel.Tabele.Takmičenja.frmTakmicenjaPrikaz();
             this.tabelePages.SuspendLayout();
             this.tabKlubovi.SuspendLayout();
             this.tabStadioni.SuspendLayout();
             this.tabDrzave.SuspendLayout();
             this.tabGradovi.SuspendLayout();
             this.tabTakmicenja.SuspendLayout();
-            this.tabPozicije.SuspendLayout();
-            this.tabFormacije.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabelePages
@@ -68,15 +62,13 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele
             this.tabelePages.Controls.Add(this.tabDrzave);
             this.tabelePages.Controls.Add(this.tabGradovi);
             this.tabelePages.Controls.Add(this.tabTakmicenja);
-            this.tabelePages.Controls.Add(this.tabPozicije);
-            this.tabelePages.Controls.Add(this.tabFormacije);
             this.tabelePages.Location = new System.Drawing.Point(20, 57);
             this.tabelePages.Multiline = true;
             this.tabelePages.Name = "tabelePages";
-            this.tabelePages.Page = this.tabTakmicenja;
-            this.tabelePages.PageIndex = 4;
-            this.tabelePages.PageName = "tabTakmicenja";
-            this.tabelePages.PageTitle = "Takmičenja";
+            this.tabelePages.Page = this.tabKlubovi;
+            this.tabelePages.PageIndex = 0;
+            this.tabelePages.PageName = "tabKlubovi";
+            this.tabelePages.PageTitle = "Klubovi";
             this.tabelePages.SelectedIndex = 0;
             this.tabelePages.Size = new System.Drawing.Size(595, 343);
             this.tabelePages.TabIndex = 1;
@@ -118,7 +110,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele
             // 
             // tabStadioni
             // 
-            this.tabStadioni.Controls.Add(this.bunifuLabel2);
+            this.tabStadioni.Controls.Add(this.frmPrikazStadiona1);
             this.tabStadioni.Location = new System.Drawing.Point(4, 4);
             this.tabStadioni.Name = "tabStadioni";
             this.tabStadioni.Padding = new System.Windows.Forms.Padding(3);
@@ -127,20 +119,12 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele
             this.tabStadioni.Text = "Stadioni";
             this.tabStadioni.UseVisualStyleBackColor = true;
             // 
-            // bunifuLabel2
+            // frmPrikazStadiona1
             // 
-            this.bunifuLabel2.AllowParentOverrides = false;
-            this.bunifuLabel2.AutoEllipsis = false;
-            this.bunifuLabel2.CursorType = null;
-            this.bunifuLabel2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuLabel2.Location = new System.Drawing.Point(271, 127);
-            this.bunifuLabel2.Name = "bunifuLabel2";
-            this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel2.Size = new System.Drawing.Size(42, 15);
-            this.bunifuLabel2.TabIndex = 1;
-            this.bunifuLabel2.Text = "stadioni";
-            this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.frmPrikazStadiona1.Location = new System.Drawing.Point(0, 0);
+            this.frmPrikazStadiona1.Name = "frmPrikazStadiona1";
+            this.frmPrikazStadiona1.Size = new System.Drawing.Size(587, 317);
+            this.frmPrikazStadiona1.TabIndex = 0;
             // 
             // tabDrzave
             // 
@@ -162,7 +146,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele
             // 
             // tabGradovi
             // 
-            this.tabGradovi.Controls.Add(this.bunifuLabel4);
+            this.tabGradovi.Controls.Add(this.frmPrikazGradova1);
             this.tabGradovi.Location = new System.Drawing.Point(4, 4);
             this.tabGradovi.Name = "tabGradovi";
             this.tabGradovi.Padding = new System.Windows.Forms.Padding(3);
@@ -171,20 +155,12 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele
             this.tabGradovi.Text = "Gradovi";
             this.tabGradovi.UseVisualStyleBackColor = true;
             // 
-            // bunifuLabel4
+            // frmPrikazGradova1
             // 
-            this.bunifuLabel4.AllowParentOverrides = false;
-            this.bunifuLabel4.AutoEllipsis = false;
-            this.bunifuLabel4.CursorType = null;
-            this.bunifuLabel4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuLabel4.Location = new System.Drawing.Point(271, 127);
-            this.bunifuLabel4.Name = "bunifuLabel4";
-            this.bunifuLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel4.Size = new System.Drawing.Size(40, 15);
-            this.bunifuLabel4.TabIndex = 1;
-            this.bunifuLabel4.Text = "gradovi";
-            this.bunifuLabel4.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel4.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.frmPrikazGradova1.Location = new System.Drawing.Point(0, 0);
+            this.frmPrikazGradova1.Name = "frmPrikazGradova1";
+            this.frmPrikazGradova1.Size = new System.Drawing.Size(587, 317);
+            this.frmPrikazGradova1.TabIndex = 0;
             // 
             // tabTakmicenja
             // 
@@ -197,57 +173,12 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele
             this.tabTakmicenja.Text = "Takmičenja";
             this.tabTakmicenja.UseVisualStyleBackColor = true;
             // 
-            // tabPozicije
+            // frmTakmicenjaPrikaz1
             // 
-            this.tabPozicije.Controls.Add(this.bunifuLabel6);
-            this.tabPozicije.Location = new System.Drawing.Point(4, 4);
-            this.tabPozicije.Name = "tabPozicije";
-            this.tabPozicije.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPozicije.Size = new System.Drawing.Size(587, 317);
-            this.tabPozicije.TabIndex = 5;
-            this.tabPozicije.Text = "Pozicije";
-            this.tabPozicije.UseVisualStyleBackColor = true;
-            // 
-            // bunifuLabel6
-            // 
-            this.bunifuLabel6.AllowParentOverrides = false;
-            this.bunifuLabel6.AutoEllipsis = false;
-            this.bunifuLabel6.CursorType = null;
-            this.bunifuLabel6.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuLabel6.Location = new System.Drawing.Point(271, 127);
-            this.bunifuLabel6.Name = "bunifuLabel6";
-            this.bunifuLabel6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel6.Size = new System.Drawing.Size(40, 15);
-            this.bunifuLabel6.TabIndex = 1;
-            this.bunifuLabel6.Text = "pozicije";
-            this.bunifuLabel6.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel6.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // tabFormacije
-            // 
-            this.tabFormacije.Controls.Add(this.bunifuLabel7);
-            this.tabFormacije.Location = new System.Drawing.Point(4, 4);
-            this.tabFormacije.Name = "tabFormacije";
-            this.tabFormacije.Padding = new System.Windows.Forms.Padding(3);
-            this.tabFormacije.Size = new System.Drawing.Size(587, 317);
-            this.tabFormacije.TabIndex = 6;
-            this.tabFormacije.Text = "Formacije";
-            this.tabFormacije.UseVisualStyleBackColor = true;
-            // 
-            // bunifuLabel7
-            // 
-            this.bunifuLabel7.AllowParentOverrides = false;
-            this.bunifuLabel7.AutoEllipsis = false;
-            this.bunifuLabel7.CursorType = null;
-            this.bunifuLabel7.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuLabel7.Location = new System.Drawing.Point(271, 127);
-            this.bunifuLabel7.Name = "bunifuLabel7";
-            this.bunifuLabel7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel7.Size = new System.Drawing.Size(50, 15);
-            this.bunifuLabel7.TabIndex = 1;
-            this.bunifuLabel7.Text = "formacije";
-            this.bunifuLabel7.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel7.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.frmTakmicenjaPrikaz1.Location = new System.Drawing.Point(0, 0);
+            this.frmTakmicenjaPrikaz1.Name = "frmTakmicenjaPrikaz1";
+            this.frmTakmicenjaPrikaz1.Size = new System.Drawing.Size(587, 317);
+            this.frmTakmicenjaPrikaz1.TabIndex = 0;
             // 
             // cmbTabele
             // 
@@ -285,7 +216,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele
             this.cmbTabele.ItemHighLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
             this.cmbTabele.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cmbTabele.ItemTopMargin = 3;
-            this.cmbTabele.Location = new System.Drawing.Point(440, 12);
+            this.cmbTabele.Location = new System.Drawing.Point(415, 9);
             this.cmbTabele.Name = "cmbTabele";
             this.cmbTabele.Size = new System.Drawing.Size(165, 32);
             this.cmbTabele.TabIndex = 3;
@@ -323,15 +254,8 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele
             this.bunifuSeparator1.Location = new System.Drawing.Point(20, 47);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
             this.bunifuSeparator1.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
-            this.bunifuSeparator1.Size = new System.Drawing.Size(585, 14);
+            this.bunifuSeparator1.Size = new System.Drawing.Size(560, 14);
             this.bunifuSeparator1.TabIndex = 5;
-            // 
-            // frmTakmicenjaPrikaz1
-            // 
-            this.frmTakmicenjaPrikaz1.Location = new System.Drawing.Point(0, 0);
-            this.frmTakmicenjaPrikaz1.Name = "frmTakmicenjaPrikaz1";
-            this.frmTakmicenjaPrikaz1.Size = new System.Drawing.Size(587, 317);
-            this.frmTakmicenjaPrikaz1.TabIndex = 0;
             // 
             // frmTabelePocetna
             // 
@@ -347,15 +271,9 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele
             this.tabelePages.ResumeLayout(false);
             this.tabKlubovi.ResumeLayout(false);
             this.tabStadioni.ResumeLayout(false);
-            this.tabStadioni.PerformLayout();
             this.tabDrzave.ResumeLayout(false);
             this.tabGradovi.ResumeLayout(false);
-            this.tabGradovi.PerformLayout();
             this.tabTakmicenja.ResumeLayout(false);
-            this.tabPozicije.ResumeLayout(false);
-            this.tabPozicije.PerformLayout();
-            this.tabFormacije.ResumeLayout(false);
-            this.tabFormacije.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -371,15 +289,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele
         private System.Windows.Forms.TabPage tabDrzave;
         private System.Windows.Forms.TabPage tabGradovi;
         private System.Windows.Forms.TabPage tabTakmicenja;
-        private System.Windows.Forms.TabPage tabPozicije;
-        private System.Windows.Forms.TabPage tabFormacije;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel4;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel6;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel7;
         private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator1;
         private Klubovi.frmPrikazKlubova frmPrikazKlubova1;
         private Države.frmPrikazDrzava frmPrikazDrzava1;
         private Takmičenja.frmTakmicenjaPrikaz frmTakmicenjaPrikaz1;
+        private Stadion.frmPrikazStadiona frmPrikazStadiona1;
+        private Grad.frmPrikazGradova frmPrikazGradova1;
     }
 }

@@ -34,10 +34,10 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Takmičenja
             try
             {
                 pnlPrikazDrzava.Controls.Clear();
-                pnlLoader.Hide();
-                loader.Hide();
 
                 _takmicenja = await _takmicenje.GetAll<List<Model.Models.Takmicenje>>(null);
+                pnlLoader.Hide();
+                loader.Hide();
 
                 frmTakmicenjeKartica[] listItems = new frmTakmicenjeKartica[_takmicenja.Count];
                 for (int i = 0; i < listItems.Length; i++)

@@ -22,7 +22,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Države
         private void frmDrzavaKartica_Load(object sender, EventArgs e)
         {
             picureZastava.BackgroundImage = zastavaDrzave;
-            picureZastava.BackgroundImageLayout = ImageLayout.Stretch;
+            picureZastava.BackgroundImageLayout = ImageLayout.Zoom;
             lblNazivDrzave.Text = nazivDrzave;
         }
     }

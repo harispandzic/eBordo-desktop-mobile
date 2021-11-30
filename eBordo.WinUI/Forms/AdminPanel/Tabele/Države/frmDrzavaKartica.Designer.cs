@@ -41,7 +41,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Države
             this.lblNazivDrzave.BackColor = System.Drawing.Color.Transparent;
             this.lblNazivDrzave.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNazivDrzave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
-            this.lblNazivDrzave.Location = new System.Drawing.Point(41, 7);
+            this.lblNazivDrzave.Location = new System.Drawing.Point(31, 7);
             this.lblNazivDrzave.Name = "lblNazivDrzave";
             this.lblNazivDrzave.Size = new System.Drawing.Size(116, 23);
             this.lblNazivDrzave.TabIndex = 55;
@@ -63,7 +63,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Države
             // 
             this.picureZastava.Location = new System.Drawing.Point(5, 6);
             this.picureZastava.Name = "picureZastava";
-            this.picureZastava.Size = new System.Drawing.Size(36, 23);
+            this.picureZastava.Size = new System.Drawing.Size(25, 25);
             this.picureZastava.TabIndex = 54;
             this.picureZastava.TabStop = false;
             // 

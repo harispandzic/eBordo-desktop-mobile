@@ -45,10 +45,10 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Klubovi
             try
             {
                 pnlPrikazKlubova.Controls.Clear();
-                pnlLoader.Hide();
-                loader.Hide();
 
                 _klubovi = await _klub.GetAll<List<Model.Models.Klub>>(null);
+                pnlLoader.Hide();
+                loader.Hide();
 
                 frmKlubKartica[] listItems = new frmKlubKartica[_klubovi.Count];
                 for (int i = 0; i < listItems.Length; i++)

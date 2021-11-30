@@ -222,6 +222,12 @@
     <Compile Include="Forms\AdminPanel\RasporedUtakmica\frmDetaljiIgraca.Designer.cs">
       <DependentUpon>frmDetaljiIgraca.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AdminPanel\RasporedUtakmica\frmDetaljiUtakmice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\RasporedUtakmica\frmDetaljiUtakmice.Designer.cs">
+      <DependentUpon>frmDetaljiUtakmice.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AdminPanel\RasporedUtakmica\frmPozvaniIgracKartica.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -246,11 +252,11 @@
     <Compile Include="Forms\AdminPanel\RasporedUtakmica\frmUtakmicaKartica.Designer.cs">
       <DependentUpon>frmUtakmicaKartica.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AdminPanel\RasporedUtakmica\frmZakaziUtakmicuKartica.cs">
+    <Compile Include="Forms\AdminPanel\RasporedUtakmica\frmUtakmicaSastavKartica_detaljiUtakmice.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\AdminPanel\RasporedUtakmica\frmZakaziUtakmicuKartica.Designer.cs">
-      <DependentUpon>frmZakaziUtakmicuKartica.cs</DependentUpon>
+    <Compile Include="Forms\AdminPanel\RasporedUtakmica\frmUtakmicaSastavKartica_detaljiUtakmice.Designer.cs">
+      <DependentUpon>frmUtakmicaSastavKartica_detaljiUtakmice.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\AdminPanel\Tabele\Države\frmDrzavaKartica.cs">
       <SubType>UserControl</SubType>
@@ -270,6 +276,18 @@
     <Compile Include="Forms\AdminPanel\Tabele\frmTabelePocetna.Designer.cs">
       <DependentUpon>frmTabelePocetna.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AdminPanel\Tabele\Grad\frmGradKartica.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Tabele\Grad\frmGradKartica.Designer.cs">
+      <DependentUpon>frmGradKartica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Tabele\Grad\frmPrikazGradova.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Tabele\Grad\frmPrikazGradova.Designer.cs">
+      <DependentUpon>frmPrikazGradova.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AdminPanel\Tabele\Klubovi\frmKlubKartica.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -281,6 +299,18 @@
     </Compile>
     <Compile Include="Forms\AdminPanel\Tabele\Klubovi\frmPrikazKlubova.Designer.cs">
       <DependentUpon>frmPrikazKlubova.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Tabele\Stadion\frmPrikazStadiona.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Tabele\Stadion\frmPrikazStadiona.Designer.cs">
+      <DependentUpon>frmPrikazStadiona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Tabele\Stadion\frmStadionKartica.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Tabele\Stadion\frmStadionKartica.Designer.cs">
+      <DependentUpon>frmStadionKartica.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\AdminPanel\Tabele\Takmičenja\frmTakmicenjaPrikaz.cs">
       <SubType>UserControl</SubType>
@@ -355,6 +385,9 @@
     <EmbeddedResource Include="Forms\AdminPanel\RasporedUtakmica\frmDetaljiIgraca.resx">
       <DependentUpon>frmDetaljiIgraca.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminPanel\RasporedUtakmica\frmDetaljiUtakmice.resx">
+      <DependentUpon>frmDetaljiUtakmice.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminPanel\RasporedUtakmica\frmPozvaniIgracKartica.resx">
       <DependentUpon>frmPozvaniIgracKartica.cs</DependentUpon>
     </EmbeddedResource>
@@ -367,8 +400,8 @@
     <EmbeddedResource Include="Forms\AdminPanel\RasporedUtakmica\frmUtakmicaKartica.resx">
       <DependentUpon>frmUtakmicaKartica.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AdminPanel\RasporedUtakmica\frmZakaziUtakmicuKartica.resx">
-      <DependentUpon>frmZakaziUtakmicuKartica.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\AdminPanel\RasporedUtakmica\frmUtakmicaSastavKartica_detaljiUtakmice.resx">
+      <DependentUpon>frmUtakmicaSastavKartica_detaljiUtakmice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminPanel\Tabele\Države\frmDrzavaKartica.resx">
       <DependentUpon>frmDrzavaKartica.cs</DependentUpon>
@@ -379,11 +412,23 @@
     <EmbeddedResource Include="Forms\AdminPanel\Tabele\frmTabelePocetna.resx">
       <DependentUpon>frmTabelePocetna.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminPanel\Tabele\Grad\frmGradKartica.resx">
+      <DependentUpon>frmGradKartica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminPanel\Tabele\Grad\frmPrikazGradova.resx">
+      <DependentUpon>frmPrikazGradova.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminPanel\Tabele\Klubovi\frmKlubKartica.resx">
       <DependentUpon>frmKlubKartica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminPanel\Tabele\Klubovi\frmPrikazKlubova.resx">
       <DependentUpon>frmPrikazKlubova.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminPanel\Tabele\Stadion\frmPrikazStadiona.resx">
+      <DependentUpon>frmPrikazStadiona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminPanel\Tabele\Stadion\frmStadionKartica.resx">
+      <DependentUpon>frmStadionKartica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminPanel\Tabele\Takmičenja\frmTakmicenjaPrikaz.resx">
       <DependentUpon>frmTakmicenjaPrikaz.cs</DependentUpon>
@@ -641,6 +686,29 @@
   <ItemGroup>
     <None Include="Resources\uploadFile.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\trofej_bordo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stadion_bordo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\datum_bordo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\satnica_bordo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kapiten_bordo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sudija_bordo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_bordo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\away_bordo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

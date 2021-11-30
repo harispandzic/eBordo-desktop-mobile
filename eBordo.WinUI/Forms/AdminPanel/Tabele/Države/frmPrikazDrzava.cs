@@ -35,10 +35,10 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Države
             try
             {
                 pnlPrikazDrzava.Controls.Clear();
-                pnlLoader.Hide();
-                loader.Hide();
 
                 _drzave = await _drzava.GetAll<List<Model.Models.Drzava>>(null);
+                pnlLoader.Hide();
+                loader.Hide();
 
                 frmDrzavaKartica[] listItems = new frmDrzavaKartica[_drzave.Count];
                 for (int i = 0; i < listItems.Length; i++)

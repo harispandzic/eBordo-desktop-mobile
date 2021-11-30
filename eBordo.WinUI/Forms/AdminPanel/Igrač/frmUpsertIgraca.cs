@@ -26,6 +26,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
         public Model.Models.Igrac _odabraniIgrac { get; set; }
 
         private frmPrikazIgraca _prikazIgraca;
+        private byte[] korisnikPanelPhoto { get; set; }
         private byte[] korisnikAvatar { get; set; }
         ByteToImage byteToImage = new ByteToImage();
 
@@ -51,7 +52,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
                 txtPrezime.Enabled = false;
                 dtpDatumRodjenja.Enabled = false;
                 nmbrSlabijaNoga.Enabled = false;
-                btnUcitajFotografiju.Enabled = false;
+                btnUcitajPanelPhoto.Enabled = false;
                 if (_odabraniIgrac.korisnik.Slika.Length != 0)
                 {
                     userProflePicture.Image = byteToImage.ConvertByteToImage(_odabraniIgrac.korisnik.Slika);
@@ -272,6 +273,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
                     jacinaSlabijeNoge = nmbrSlabijaNoga.Value,
                     napomeneOIgracu = txtNapomene.Text,
                     pozicijaId = _pozicije[cmbPozicija.SelectedIndex].pozicijaId,
+                    SlikaPanel = korisnikPanelPhoto
                 };
                 try
                 {
@@ -287,19 +289,39 @@ namespace eBordo.WinUI.Forms.AdminPanel
         }
         private void btnUcitajFotografiju_Click(object sender, EventArgs e)
         {
-            var result = fileDialog.ShowDialog();
+            var result = avatarFileDialog.ShowDialog();
 
             if (result == DialogResult.OK)
             {
-                var fileName = fileDialog.FileName;
+                var fileName = avatarFileDialog.FileName;
 
                 var file = System.IO.File.ReadAllBytes(fileName);
 
                 korisnikAvatar = file;
 
                 Image image = Image.FromFile(fileName);
-                userProflePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+                userProflePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
                 userProflePicture.Image = image;
+            }
+        }
+
+        private void btnUcitajAvatar_Click(object sender, EventArgs e)
+        {
+            
+            
+            var result = panelSlikaFileDialog.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                var fileName = panelSlikaFileDialog.FileName;
+
+                var file = System.IO.File.ReadAllBytes(fileName);
+
+                korisnikPanelPhoto = file;
+
+                Image image = Image.FromFile(fileName);
+                pictureSlikaIgraca.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+                pictureSlikaIgraca.Image = image;
             }
         }
     }

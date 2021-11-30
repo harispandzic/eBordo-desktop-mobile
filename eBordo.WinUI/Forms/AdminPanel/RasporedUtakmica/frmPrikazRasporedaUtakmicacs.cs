@@ -27,6 +27,8 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
         private async void frmPrikazRasporedaUtakmicacs_Load(object sender, EventArgs e)
         {
             await LoadUtakmice();
+            cmbPozicije.Items.Add("Domaća");
+            cmbPozicije.Items.Add("Gostujuća");
         }
         public async Task LoadUtakmice(string tipUtakmice = "", TipNotifikacije notifikacija = TipNotifikacije.BEZ)
         {
@@ -99,6 +101,24 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
         {
             frmUpsertUtakmica insert = new frmUpsertUtakmica(null, this);
             insert.Show();
+        }
+
+        private async void btnRefresh_Click(object sender, EventArgs e)
+        {
+            cmbPozicije.Text = "Pozicija";
+            await LoadUtakmice();
+        }
+
+        private async void cmbPozicije_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cmbPozicije.SelectedIndex == 0)
+            {
+                await LoadUtakmice(tipUtakmice: "Domaća");
+            }
+            else
+            {
+                await LoadUtakmice(tipUtakmice: "Gostujuća");
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using eBordo.Model.Requests.Korisnik;
+﻿using eBordo.Model.Models;
+using eBordo.Model.Requests.Korisnik;
 using eBordo.Model.Requests.Ugovor;
 using System;
 using System.Collections.Generic;
@@ -12,5 +13,7 @@ namespace eBordo.Model.Requests.Trener
         public UgovorInsertRequest ugovorInsertRequest { get; set; }
         public int preferiranaFormacijaId { get; set; }
         public int trenerskaLicencaId { get; set; }
+        public int ulogaTreneraId { get; set; }
+        public byte[] SlikaPanel { get; set; }
     }
 }
