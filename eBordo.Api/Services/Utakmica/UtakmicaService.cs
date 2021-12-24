@@ -53,6 +53,10 @@ namespace eBordo.Api.Services.Utakmica
                     entity = entity.Where(s => s.vrstaUtakmice == VrstaUtakmice.Gostujuća);
                 }
             }
+            if (search != null)
+            {
+                entity = entity.Where(s => s.odigrana == search.odigrana);
+            }
             var result = entity.ToList();
 
             return _mapper.Map<List<Model.Models.Utakmica>>(result);
@@ -112,7 +116,7 @@ namespace eBordo.Api.Services.Utakmica
             {
                 foreach (var item in request.sastav)
                 {
-                    Model.Models.UtakmicaSastav sastavResultModel = _utakmicaSastavService.Insert(item, utakmica.utakmicaId);
+                    Model.Models.UtakmicaSastav sastavResultModel = _utakmicaSastavService.InsertByUtakmicaId(item, utakmica.utakmicaId);
                 }
             }
 
@@ -164,7 +168,7 @@ namespace eBordo.Api.Services.Utakmica
             {
                 foreach (var item in request.sastav)
                 {
-                    Model.Models.UtakmicaSastav sastavResultModel = _utakmicaSastavService.Update(item, id, item.igracId);
+                    Model.Models.UtakmicaSastav sastavResultModel = _utakmicaSastavService.UpdateByUtakmicaId(item, id, item.igracId);
                 }
             }
 

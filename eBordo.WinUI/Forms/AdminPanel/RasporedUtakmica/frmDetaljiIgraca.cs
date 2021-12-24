@@ -47,5 +47,30 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             lblZutiKartoni.Text = _selectedIgrac.igracStatistika.zutiKartoni.ToString();
             lblCrveniKartoni.Text = _selectedIgrac.igracStatistika.crveniKartoni.ToString();
         }
+
+        private void pictureNastupi_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureZutiKartoni_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureCrveniKartoni_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureGolovi_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureAsistencije_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

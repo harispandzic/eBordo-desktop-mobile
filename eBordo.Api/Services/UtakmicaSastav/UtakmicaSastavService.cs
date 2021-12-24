@@ -2,6 +2,7 @@
 using eBordo.Api.Database;
 using eBordo.Api.Services.BaseCRUDService;
 using eBordo.Model.Requests.UtakmicaSastav;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,18 +10,25 @@ using System.Threading.Tasks;
 
 namespace eBordo.Api.Services.UtakmicaSastav
 {
-    public class UtakmicaSastavService: IUtakmicaSastavService
+    public class UtakmicaSastavService : BaseCRUDService<eBordo.Model.Models.UtakmicaSastav, eBordo.Api.Database.UtakmicaSastav, eBordo.Model.Requests.UtakmicaSastav.UtakmicaSastavSearchObject, eBordo.Model.Requests.UtakmicaSastav.UtakmicaSastavInsertRequest, eBordo.Model.Requests.UtakmicaSastav.UtakmicaSastavUpdateRequest>, IUtakmicaSastavService
     {
-        public eBordoContext _db { get; set; }
-        protected readonly IMapper _mapper;
-
         public UtakmicaSastavService(eBordoContext db, IMapper mapper)
+            : base(db, mapper)
+        { }
+        public override IEnumerable<Model.Models.UtakmicaSastav> Get(UtakmicaSastavSearchObject search)
         {
-            _db = db;
-            _mapper = mapper;
-        }
+            var utakmicaSastav = _db.utakmicaSastav
+                .Where(s => s.utakmicaId == search.utakmicaId)
+                .Include(s => s.igrac)
+                .Include(s => s.igrac.pozicija)
+                .Include(s => s.igrac.korisnik)
+                .AsQueryable();
 
-        public Model.Models.UtakmicaSastav Insert(UtakmicaSastavInsertRequest request, int utakmicaId)
+            var result = utakmicaSastav.ToList();
+
+            return _mapper.Map<List<Model.Models.UtakmicaSastav>>(result);
+        }
+        public Model.Models.UtakmicaSastav InsertByUtakmicaId(UtakmicaSastavInsertRequest request, int utakmicaId)
         {
             SastavUloga uloga = (SastavUloga)Enum.Parse(typeof(SastavUloga), request.uloga);
 
@@ -37,7 +45,7 @@ namespace eBordo.Api.Services.UtakmicaSastav
 
             return _mapper.Map<Model.Models.UtakmicaSastav>(utakmicaSastav);
         }
-        public Model.Models.UtakmicaSastav Update(UtakmicaSastavUpdateRequest request, int utakmicaId, int igracId)
+        public Model.Models.UtakmicaSastav UpdateByUtakmicaId(UtakmicaSastavUpdateRequest request, int utakmicaId, int igracId)
         {
             Database.UtakmicaSastav utakmicaSastav = _db.utakmicaSastav.Where(s => s.utakmicaId == utakmicaId && s.igracId == igracId).SingleOrDefault();
 
@@ -52,7 +60,7 @@ namespace eBordo.Api.Services.UtakmicaSastav
 
             return _mapper.Map<Model.Models.UtakmicaSastav>(utakmicaSastav);
         }
-        public Model.Models.UtakmicaSastav Delete(int utakmicaSastavId)
+        public Model.Models.UtakmicaSastav DeleteByUtakmicaId(int utakmicaSastavId)
         {
             Database.UtakmicaSastav utakmicaSastav = _db.utakmicaSastav.Where(s => s.utakmicaSastavId == utakmicaSastavId).SingleOrDefault();
 

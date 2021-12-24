@@ -40,6 +40,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             UtakmicaSearchObject search = new UtakmicaSearchObject
             {
                 tipUtakmice = tipUtakmice,
+                odigrana = false
             };
 
             try

@@ -12,7 +12,13 @@ namespace eBordo.Api.Database
         public int utakmicaId { get; set; }
         public Utakmica utakmica { get; set; }
 
-        public int izmjenaId { get; set; }
-        public Izmjena izmjena { get; set; }
+        public Igrac igracOut { get; set; }
+        public int igracOutId { get; set; }
+
+        public Igrac igracIn { get; set; }
+        public int igracInId { get; set; }
+
+        public int minuta { get; set; }
+        public IzmjenaRazlog izmjenaRazlog { get; set; }
     }
 }

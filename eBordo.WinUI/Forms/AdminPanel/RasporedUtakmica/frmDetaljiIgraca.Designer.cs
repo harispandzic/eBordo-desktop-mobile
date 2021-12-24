@@ -144,6 +144,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.pictureCrveniKartoni.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureCrveniKartoni.TabIndex = 151;
             this.pictureCrveniKartoni.TabStop = false;
+            this.pictureCrveniKartoni.Click += new System.EventHandler(this.pictureCrveniKartoni_Click);
             // 
             // pictureZutiKartoni
             // 
@@ -155,6 +156,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.pictureZutiKartoni.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureZutiKartoni.TabIndex = 150;
             this.pictureZutiKartoni.TabStop = false;
+            this.pictureZutiKartoni.Click += new System.EventHandler(this.pictureZutiKartoni_Click);
             // 
             // pictureAsistencije
             // 
@@ -166,6 +168,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.pictureAsistencije.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureAsistencije.TabIndex = 149;
             this.pictureAsistencije.TabStop = false;
+            this.pictureAsistencije.Click += new System.EventHandler(this.pictureAsistencije_Click);
             // 
             // pictureGolovi
             // 
@@ -177,6 +180,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.pictureGolovi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureGolovi.TabIndex = 148;
             this.pictureGolovi.TabStop = false;
+            this.pictureGolovi.Click += new System.EventHandler(this.pictureGolovi_Click);
             // 
             // pictureNastupi
             // 
@@ -188,6 +192,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.pictureNastupi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureNastupi.TabIndex = 147;
             this.pictureNastupi.TabStop = false;
+            this.pictureNastupi.Click += new System.EventHandler(this.pictureNastupi_Click);
             // 
             // lblBrojDresa
             // 

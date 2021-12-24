@@ -216,6 +216,48 @@
     <Compile Include="Forms\AdminPanel\Igrač\frmUpsertIgraca.Designer.cs">
       <DependentUpon>frmUpsertIgraca.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AdminPanel\Odigrane utakmice\frmDetaljneOcjeneIgraca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Odigrane utakmice\frmDetaljneOcjeneIgraca.Designer.cs">
+      <DependentUpon>frmDetaljneOcjeneIgraca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Odigrane utakmice\frmIgracNastupKartica.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Odigrane utakmice\frmIgracNastupKartica.Designer.cs">
+      <DependentUpon>frmIgracNastupKartica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Odigrane utakmice\frmIzmjenaKartica.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Odigrane utakmice\frmIzmjenaKartica.Designer.cs">
+      <DependentUpon>frmIzmjenaKartica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Odigrane utakmice\frmIzvjestajKartica.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Odigrane utakmice\frmIzvjestajKartica.Designer.cs">
+      <DependentUpon>frmIzvjestajKartica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Odigrane utakmice\frmOdaberiUtakmicu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Odigrane utakmice\frmOdaberiUtakmicu.Designer.cs">
+      <DependentUpon>frmOdaberiUtakmicu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Odigrane utakmice\frmPrikazOdigranihUtakmica.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Odigrane utakmice\frmPrikazOdigranihUtakmica.Designer.cs">
+      <DependentUpon>frmPrikazOdigranihUtakmica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Odigrane utakmice\frmUpsertIzvjestaj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Odigrane utakmice\frmUpsertIzvjestaj.Designer.cs">
+      <DependentUpon>frmUpsertIzvjestaj.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AdminPanel\RasporedUtakmica\frmDetaljiIgraca.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -381,6 +423,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminPanel\Igrač\frmUpsertIgraca.resx">
       <DependentUpon>frmUpsertIgraca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminPanel\Odigrane utakmice\frmDetaljneOcjeneIgraca.resx">
+      <DependentUpon>frmDetaljneOcjeneIgraca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminPanel\Odigrane utakmice\frmIgracNastupKartica.resx">
+      <DependentUpon>frmIgracNastupKartica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminPanel\Odigrane utakmice\frmIzmjenaKartica.resx">
+      <DependentUpon>frmIzmjenaKartica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminPanel\Odigrane utakmice\frmIzvjestajKartica.resx">
+      <DependentUpon>frmIzvjestajKartica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminPanel\Odigrane utakmice\frmOdaberiUtakmicu.resx">
+      <DependentUpon>frmOdaberiUtakmicu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminPanel\Odigrane utakmice\frmPrikazOdigranihUtakmica.resx">
+      <DependentUpon>frmPrikazOdigranihUtakmica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminPanel\Odigrane utakmice\frmUpsertIzvjestaj.resx">
+      <DependentUpon>frmUpsertIzvjestaj.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminPanel\RasporedUtakmica\frmDetaljiIgraca.resx">
       <DependentUpon>frmDetaljiIgraca.cs</DependentUpon>
@@ -709,6 +772,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\away_bordo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eBordo_nerjesenaUtakmica.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eBordo_pobjedaUtakmica.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eBordo_porazUtakmica.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
