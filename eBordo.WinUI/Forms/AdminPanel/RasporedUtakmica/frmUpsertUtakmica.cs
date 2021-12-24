@@ -1,4 +1,5 @@
-﻿using eBordo.Model.Requests.Igrac;
+﻿using eBordo.Model.Models;
+using eBordo.Model.Requests.Igrac;
 using eBordo.Model.Requests.Utakmica;
 using eBordo.Model.Requests.UtakmicaSastav;
 using eBordo.WinUI.Helper;

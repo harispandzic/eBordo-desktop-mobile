@@ -36,6 +36,10 @@ using eBordo.Api.Services.Klub;
 using eBordo.Api.Services.Utakmica;
 using eBordo.Api.Services.UtakmicaSastav;
 using Newtonsoft.Json;
+using eBordo.Api.Services.Izvještaj;
+using eBordo.Api.Services.UtakmicaNastupService;
+using eBordo.Api.Services.UtakmicaNastup;
+using eBordo.Api.Services.UtakmicaIzmjena;
 
 namespace eBordo.Api
 {
@@ -96,6 +100,9 @@ namespace eBordo.Api
             services.AddScoped<IKlubService, KlubService>();
             services.AddScoped<IUtakmicaService, UtakmicaService>();
             services.AddScoped<IUtakmicaSastavService, UtakmicaSastavService>();
+            services.AddScoped<IIzvještajService, IzvještajService>();
+            services.AddScoped<IUtakmicaNastupService, UtakmicaNastupService>();
+            services.AddScoped<IUtakmicaIzmjenaService, UtakmicaIzmjenaService>();
 
             services.AddAuthentication("BasicAuthentication")
                 .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);

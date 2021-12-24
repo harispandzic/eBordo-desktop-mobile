@@ -1,19 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text;
 
-namespace eBordo.Api.Database
+namespace eBordo.Model.Models
 {
-    public class UtakmicaOcjena
+    public class UtakmicaNastup
     {
-        public int utakmicaOcjenaId { get; set; }
-
+        public int utakmicaNastupId { get; set; }
         public Igrac igrac { get; set; }
         public int igracId { get; set; }
-
+        public Trener trener { get; set; }
+        public int trenerId { get; set; }
         public Utakmica utakmica { get; set; }
         public int utakmicaId { get; set; }
+        public int minute { get; set; }
+        public int golovi { get; set; }
+        public int asistencije { get; set; }
+        public int zutiKartoni { get; set; }
+        public int crveniKartoni { get; set; }
+        public int ocjena { get; set; }
+        public string komentar { get; set; }
 
         public int kontrolaLopte { get; set; }
         public int driblanje { get; set; }
@@ -26,6 +32,5 @@ namespace eBordo.Api.Database
         public int klizeciStart { get; set; }
         public int skok { get; set; }
         public int odbrana { get; set; }
-        public float prosjecnaOcjena { get; set; }
     }
 }

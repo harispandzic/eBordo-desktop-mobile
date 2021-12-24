@@ -31,8 +31,8 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrikazRasporedaUtakmicacs));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.lblNaslovStranice = new Bunifu.UI.WinForms.BunifuLabel();
             this.pnlRasporedUtakmica = new System.Windows.Forms.Panel();
             this.pnlUtakmiceWrapper = new System.Windows.Forms.FlowLayoutPanel();
@@ -41,6 +41,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.btnRefresh = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.cmbPozicije = new Bunifu.UI.WinForms.BunifuDropdown();
             this.snackbar = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
+            this.pnlRasporedUtakmica.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblNaslovStranice
@@ -62,6 +63,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             // 
             // pnlRasporedUtakmica
             // 
+            this.pnlRasporedUtakmica.Controls.Add(this.pnlUtakmiceWrapper);
             this.pnlRasporedUtakmica.Location = new System.Drawing.Point(20, 104);
             this.pnlRasporedUtakmica.Name = "pnlRasporedUtakmica";
             this.pnlRasporedUtakmica.Size = new System.Drawing.Size(600, 305);
@@ -70,7 +72,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             // pnlUtakmiceWrapper
             // 
             this.pnlUtakmiceWrapper.AutoScroll = true;
-            this.pnlUtakmiceWrapper.Location = new System.Drawing.Point(20, 104);
+            this.pnlUtakmiceWrapper.Location = new System.Drawing.Point(0, 0);
             this.pnlUtakmiceWrapper.Name = "pnlUtakmiceWrapper";
             this.pnlUtakmiceWrapper.Size = new System.Drawing.Size(600, 305);
             this.pnlUtakmiceWrapper.TabIndex = 0;
@@ -119,11 +121,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.btnDodajUtakmicu.ColorContrastOnClick = 45;
             this.btnDodajUtakmicu.ColorContrastOnHover = 45;
             this.btnDodajUtakmicu.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.btnDodajUtakmicu.CustomizableEdges = borderEdges3;
+            borderEdges5.BottomLeft = true;
+            borderEdges5.BottomRight = true;
+            borderEdges5.TopLeft = true;
+            borderEdges5.TopRight = true;
+            this.btnDodajUtakmicu.CustomizableEdges = borderEdges5;
             this.btnDodajUtakmicu.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnDodajUtakmicu.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnDodajUtakmicu.DisabledFillColor = System.Drawing.Color.Empty;
@@ -212,11 +214,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.btnRefresh.ColorContrastOnClick = 45;
             this.btnRefresh.ColorContrastOnHover = 45;
             this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges4.BottomLeft = true;
-            borderEdges4.BottomRight = true;
-            borderEdges4.TopLeft = true;
-            borderEdges4.TopRight = true;
-            this.btnRefresh.CustomizableEdges = borderEdges4;
+            borderEdges6.BottomLeft = true;
+            borderEdges6.BottomRight = true;
+            borderEdges6.TopLeft = true;
+            borderEdges6.TopRight = true;
+            this.btnRefresh.CustomizableEdges = borderEdges6;
             this.btnRefresh.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnRefresh.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnRefresh.DisabledFillColor = System.Drawing.Color.Empty;
@@ -406,13 +408,13 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.Controls.Add(this.loader);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.cmbPozicije);
-            this.Controls.Add(this.pnlUtakmiceWrapper);
             this.Controls.Add(this.btnDodajUtakmicu);
             this.Controls.Add(this.pnlRasporedUtakmica);
             this.Controls.Add(this.lblNaslovStranice);
             this.Name = "frmPrikazRasporedaUtakmicacs";
             this.Size = new System.Drawing.Size(622, 403);
             this.Load += new System.EventHandler(this.frmPrikazRasporedaUtakmicacs_Load);
+            this.pnlRasporedUtakmica.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

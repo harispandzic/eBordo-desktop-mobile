@@ -11,14 +11,12 @@ namespace eBordo.Api.Database
         public int goloviSarajevo { get; set; }
         public int goloviProtivnik { get; set; }
         public Rezultat rezultat { get; set; }
-        public int brojGledalaca { get; set; }
         public DateTime datumKreiranja { get; set; }
         public string zapisnik { get; set; }
         public byte[] slikaSaUtakmice { get; set; }
         public Vrijeme vrijeme { get; set; }
 
         public ICollection<UtakmicaNastup> nastupi { get; set; }
-        public ICollection<UtakmicaOcjena> ocjene { get; set; }
         public ICollection<UtakmicaIzmjena> izmjene { get; set; }
 
         public Igrac igracUtakmica { get; set; }

@@ -74,10 +74,10 @@ namespace eBordo.WinUI.Forms.AdminPanel
                 for (int i = 0; i < listItems.Length; i++)
                 {
                     listItems[i] = new frmTrenerKartica(snackbar, this);
-                    listItems[i].slika = byteToImage.ConvertByteToImage(_podaci[i].korisnik.Slika);
+                    listItems[i].slika = byteToImage.ConvertByteToImage(_podaci[i].SlikaPanel);
                     listItems[i].trenerId = _podaci[i].trenerId;
                     listItems[i].imePrezime = _podaci[i].korisnik.ime + " " + _podaci[i].korisnik.prezime;
-                    listItems[i].uloga = "MOCK: GLAVNI TRENER";
+                    listItems[i].uloga = _podaci[i].ulogaTrenera.ToString() + " TRENER";
                     pnlTreneriWrapper.Controls.Add(listItems[i]);
                 }
             }

@@ -94,7 +94,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
                 for (int i = 0; i < listItems.Length; i++)
                 {
                     listItems[i] = new frmIgracKartica(snackbar, this);
-                    listItems[i].slika = byteToImage.ConvertByteToImage(_podaci[i].korisnik.Slika);
+                    listItems[i].slika = byteToImage.ConvertByteToImage(_podaci[i].slikaPanel);
                     listItems[i].igracId = _podaci[i].igracId;
                     listItems[i].imePrezime = _podaci[i].korisnik.ime + " " + _podaci[i].korisnik.prezime;
                     listItems[i].ocjena = (int)_podaci[i].igracStatistika.prosjecnaOcjena;
