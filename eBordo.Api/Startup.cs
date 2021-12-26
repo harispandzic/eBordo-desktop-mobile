@@ -40,6 +40,8 @@ using eBordo.Api.Services.Izvještaj;
 using eBordo.Api.Services.UtakmicaNastupService;
 using eBordo.Api.Services.UtakmicaNastup;
 using eBordo.Api.Services.UtakmicaIzmjena;
+using eBordo.Api.Services.Notifikacija;
+using eBordo.Api.Services.Trening;
 
 namespace eBordo.Api
 {
@@ -103,13 +105,13 @@ namespace eBordo.Api
             services.AddScoped<IIzvještajService, IzvještajService>();
             services.AddScoped<IUtakmicaNastupService, UtakmicaNastupService>();
             services.AddScoped<IUtakmicaIzmjenaService, UtakmicaIzmjenaService>();
+            services.AddScoped<INotifikacijaService, NotifikacijaService>();
+            services.AddScoped<ITreningService, TreningService>();
 
             services.AddAuthentication("BasicAuthentication")
                 .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
 
             services.AddHttpContextAccessor();
-            //services.AddScoped<IBaseREADService<eBordo.Model.Models.Drzava, object>, BaseREADService<eBordo.Model.Models.Drzava, eBordo.Api.Database.Drzava, object>>();
-            //services.AddScoped<IBaseREADService<eBordo.Model.Models.Grad, eBordo.Model.Requests.Grad.GradSearchObject>, BaseREADService<eBordo.Model.Models.Grad, eBordo.Api.Database.Grad, eBordo.Model.Requests.Grad.GradSearchObject>>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

@@ -58,12 +58,16 @@ namespace eBordo.Api.Mapping
             CreateMap<eBordo.Api.Database.UtakmicaNastup, eBordo.Model.Models.UtakmicaNastup>();
             CreateMap<eBordo.Api.Database.UtakmicaIzmjena, eBordo.Model.Models.UtakmicaIzmjena>();
 
-
             CreateMap<eBordo.Model.Requests.Izvještaj.IzvjetajInsertRequest, eBordo.Api.Database.Izvještaj>();
             CreateMap<eBordo.Model.Requests.UtakmicaNastup.UtakmicaNastupInsertRequest, eBordo.Api.Database.UtakmicaNastup>();
             CreateMap<eBordo.Model.Requests.UtakmicaIzmjena.UtakmicaIzmjenaInsertRequest, eBordo.Api.Database.UtakmicaIzmjena>();
 
-
+            CreateMap<eBordo.Api.Database.Notifikacija, eBordo.Model.Models.Notifikacija>();
+            CreateMap<eBordo.Model.Requests.Notifikacija.NotifikacijaInsertRequest, eBordo.Api.Database.Notifikacija>();
+           
+            CreateMap<eBordo.Api.Database.Trening, eBordo.Model.Models.Trening>();
+            CreateMap<eBordo.Model.Requests.Trening.TreningInsertRequest, eBordo.Api.Database.Trening>();
+            CreateMap<eBordo.Model.Requests.Trening.TreningUpdateRequest, eBordo.Api.Database.Trening>();
         }
     }
 }

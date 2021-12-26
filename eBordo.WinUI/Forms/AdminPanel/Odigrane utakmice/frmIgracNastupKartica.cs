@@ -44,7 +44,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
 
         frmUpsertIzvjestaj _upsertIzvjestaj;
         FlowLayoutPanel _flowPanelOcjene;
-        List<Model.Models.Igrac> _igraciSastav;
         bool _isUpdate;
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -105,8 +104,10 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
 
         private void btnView_Click(object sender, EventArgs e)
         {
-            frmDetaljneOcjeneIgraca frmDetaljneOcjene = new frmDetaljneOcjeneIgraca();
+            frmDetaljneOcjeneIgraca frmDetaljneOcjene = new frmDetaljneOcjeneIgraca(igracId, kontrolaLopte, 
+                driblanje, dodavanje, kretanje, brzina, sut,
+                snaga, markiranje, klizeciStart, skok, odbrana, igracKomentar);
             frmDetaljneOcjene.Show();
-        }
+    }
     }
 }

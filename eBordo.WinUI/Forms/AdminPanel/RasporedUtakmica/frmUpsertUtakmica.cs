@@ -440,17 +440,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
 
         private async void btnSave_Click(object sender, EventArgs e)
         {
-            //if(flowPanelPrvaPostava.Controls.Count != 11)
-            //{
-            //    PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.BROJ_IGRACA_PRVA_POSTAVA);
-            //    return;
-            //}
-            //if (flowPanelKlupa.Controls.Count != 9)
-            //{
-            //    PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.BROJ_IGRACA_KLUPA);
-            //    return;
-            //}
-
             UtakmicaInsertRequest insertRequest;
             UtakmicaUpdateRequest updateRequest;
 

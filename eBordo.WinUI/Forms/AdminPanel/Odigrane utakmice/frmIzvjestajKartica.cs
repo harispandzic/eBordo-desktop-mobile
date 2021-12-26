@@ -109,5 +109,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
                 PosaljiNotifikaciju.notificationSwitch(_snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
             }
         }
+
+        private void btnView_Click(object sender, EventArgs e)
+        {
+            frmDetaljiOdigraneUtakmice detalji = new frmDetaljiOdigraneUtakmice();
+            detalji.Show();
+        }
     }
 }
