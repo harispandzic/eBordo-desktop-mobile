@@ -56,6 +56,14 @@ namespace eBordo.Api.Services.Utakmica
             if (search != null)
             {
                 entity = entity.Where(s => s.odigrana == search.odigrana);
+                if (search.isNarednaUtakmica)
+                {
+                    entity = entity.Where(s => s.datumOdigravanja.Date >= DateTime.Now.Date).OrderBy(s => s.datumOdigravanja).Take(1);
+                }
+                if (search.isSearchTop3)
+                {
+                    entity = entity.Where(s => s.datumOdigravanja.Date >= DateTime.Now.Date).OrderBy(s => s.datumOdigravanja).Take(3);
+                }
             }
             var result = entity.ToList();
 

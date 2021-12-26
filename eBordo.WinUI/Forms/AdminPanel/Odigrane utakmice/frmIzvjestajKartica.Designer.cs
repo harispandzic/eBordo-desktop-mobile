@@ -182,6 +182,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             this.btnView.Size = new System.Drawing.Size(20, 20);
             this.btnView.TabIndex = 70;
             this.btnView.TabStop = false;
+            this.btnView.Click += new System.EventHandler(this.btnView_Click);
             // 
             // btnDelete
             // 

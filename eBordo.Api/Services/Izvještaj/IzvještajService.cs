@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using eBordo.Api.Database;
 using eBordo.Api.Services.BaseCRUDService;
+using eBordo.Api.Services.Notifikacija;
 using eBordo.Api.Services.UtakmicaIzmjena;
 using eBordo.Api.Services.UtakmicaNastupService;
 using eBordo.Model.Requests.Izvještaj;
@@ -18,12 +19,14 @@ namespace eBordo.Api.Services.Izvještaj
     {
         private IUtakmicaNastupService _utakmicaNastupService { get; set; }
         private IUtakmicaIzmjenaService _utakmicaIzmjenaService { get; set; }
+        private INotifikacijaService _notifikacijaService { get; set; }
 
-        public IzvještajService(eBordoContext db, IMapper mapper, IUtakmicaNastupService utakmicaNastupService, IUtakmicaIzmjenaService utakmicaIzmjenaService)
+        public IzvještajService(eBordoContext db, IMapper mapper, IUtakmicaNastupService utakmicaNastupService, IUtakmicaIzmjenaService utakmicaIzmjenaService, INotifikacijaService notifikacijaService)
             : base(db, mapper)
         {
             _utakmicaNastupService = utakmicaNastupService;
             _utakmicaIzmjenaService = utakmicaIzmjenaService;
+            _notifikacijaService = notifikacijaService;
         }
         public override IEnumerable<Model.Models.Izvještaj> Get(IzvjestajSearchObject search = null)
         {
@@ -79,6 +82,10 @@ namespace eBordo.Api.Services.Izvještaj
                 {
                     entity = entity.Where(s => s.rezultat == Rezultat.NERJEŠENO);
                 }
+            }
+            if (search.isSearchZadnjaUtakmica)
+            {
+                entity = entity.Where(s => s.utakmica.datumOdigravanja.Date <= DateTime.Now.Date).OrderByDescending(s => s.utakmica.datumOdigravanja).Take(1);
             }
             var result = entity.ToList();
 
@@ -156,6 +163,20 @@ namespace eBordo.Api.Services.Izvještaj
             _db.Add(izvjestaj);
             _db.SaveChanges();
 
+            var igraciUtakmica = _db.utakmicaSastav.Where(s => s.utakmicaId == request.utakmicaID).Include(s => s.igrac).ToList();
+
+            foreach (var item in igraciUtakmica)
+            {
+                Model.Requests.Notifikacija.NotifikacijaInsertRequest notifikacijaInsert = new Model.Requests.Notifikacija.NotifikacijaInsertRequest
+                {
+                    tekstNotifikacije = "Utakmica je uspješno pohranjena!",
+                    korisnikId = item.igrac.korisnikId,
+                    tipNotifikacije = "Obavještenje"
+                };
+                _notifikacijaService.Insert(notifikacijaInsert);
+            }
+
+           
             Database.Izvještaj izvjestajSearch = _db.izvještaj.Where(s => s.utakmicaID == request.utakmicaID).SingleOrDefault();
 
             if (request.utakmicaNastup.Count != 0)

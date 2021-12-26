@@ -139,5 +139,10 @@ namespace eBordo.WinUI.Forms.AdminPanel
             string pretraga = txtImePrezime.Text;
             await LoadIgraci(pretraga);
         }
+
+        private void pnlIgraciWrapper_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

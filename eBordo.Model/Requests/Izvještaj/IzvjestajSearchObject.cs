@@ -8,5 +8,6 @@ namespace eBordo.Model.Requests.Izvještaj
     {
         public string tipUtakmice { get; set; }
         public string rezultat { get; set; }
+        public bool isSearchZadnjaUtakmica { get; set; }
     }
 }

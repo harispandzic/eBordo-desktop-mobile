@@ -15,7 +15,6 @@ namespace eBordo.WinUI.Forms.Igrač
     public partial class fromAdminPanel : Form
     {
         private ByteToImage byteToImage = new ByteToImage();
-        private bool isKorisniciPanelCollapsed; 
         public fromAdminPanel()
         {
             InitializeComponent();
@@ -152,6 +151,10 @@ namespace eBordo.WinUI.Forms.Igrač
         {
             hideActiveLabels("Tabele");
             igracTabs.SetPage("Tabele");
+        }
+
+        private void iconPictureBox8_Click(object sender, EventArgs e)
+        {
         }
     }
 }

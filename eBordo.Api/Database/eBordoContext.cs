@@ -80,5 +80,7 @@ namespace eBordo.Api.Database
         public virtual DbSet<UtakmicaNastup> utakmicaNastup { get; set; }
         public virtual DbSet<UtakmicaIzmjena> utakmicaIzmjena { get; set; }
         public virtual DbSet<Izvještaj> izvještaj { get; set; }
+        public virtual DbSet<Notifikacija> notifikacije { get; set; }
+        public virtual DbSet<Trening> trening { get; set; }
     }
 }
