@@ -51,7 +51,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
         );
         public frmIzmjenaKartica(FlowLayoutPanel flowPanelIzmjene, frmUpsertIzvjestaj upsertIzvjestaj, List<Model.Models.Igrac> igraciPrvaPostava, List<Model.Models.Igrac> igraciKlupa, BunifuDropdown cmbPrvaPostava, BunifuDropdown cmbKlupa, bool isUpdate)
         {
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 386, 82, 8, 8));
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 365, 41, 8, 8));
             InitializeComponent();
             _flowPanelIzmjene = flowPanelIzmjene;
             _upsertIzvjestaj = upsertIzvjestaj;
@@ -74,14 +74,14 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             txtIgracOutPrezime.Text = igracOutPrezime;
             txtIgracInPrezime.Text = igracInPrezime;
 
-            txtIgracOutPozicija.Text = igracOutPozicija;
-            txtIgracInPozicija.Text = igracInPozicija;
+            //txtIgracOutPozicija.Text = igracOutPozicija;
+            //txtIgracInPozicija.Text = igracInPozicija;
 
-            txtIgracOutBroj.Text = igracOutBroj;
-            txtIgracInBroj.Text = igracInBroj;
+            //txtIgracOutBroj.Text = igracOutBroj;
+            //txtIgracInBroj.Text = igracInBroj;
 
-            label1.Text = minuta.ToString();
-            label2.Text = razlogIzmjene;
+            txtMinuta.Text = minuta.ToString() + "'";
+            txtRazlogIzmjene.Text = razlogIzmjene;
         }
 
         private async void button1_Click(object sender, EventArgs e)
@@ -98,11 +98,49 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
                     }
                 }
             }
+            _upsertIzvjestaj.UpdateBrojEvidentiranihIzmjena();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             _upsertIzvjestaj.filterIzmjene(igracOutId, igracInId);
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            _upsertIzvjestaj.filterIzmjene(igracOutId, igracInId);
+        }
+
+        private async void btnDelete_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < _flowPanelIzmjene.Controls.Count; i++)
+            {
+                var control = (frmIzmjenaKartica)_flowPanelIzmjene.Controls[i];
+                if (control.igracOutId == this.igracOutId && control.igracInId == this.igracInId)
+                {
+                    _flowPanelIzmjene.Controls.Remove(control);
+                    if (_isUpdate)
+                    {
+                        await _izmjenaApi.DeleteById<Model.Models.UtakmicaIzmjena>(control.utakmicaIzmjenaId);
+                    }
+                    _upsertIzvjestaj.UpdateBrojEvidentiranihIzmjena();
+                }
+            }
         }
     }
 }

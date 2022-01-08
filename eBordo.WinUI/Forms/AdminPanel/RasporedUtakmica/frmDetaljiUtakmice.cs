@@ -34,7 +34,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
                 grbGost.BackgroundImage = byteToImage.ConvertByteToImage(_odabranaUtakmica.protivnik.grb);
                 grbGost.BackgroundImageLayout = ImageLayout.Zoom;
                 lblGost.Text = _odabranaUtakmica.protivnik.nazivKluba.ToUpper();
-                pictureVrstaUtakmice.BackgroundImage = Properties.Resources.home_bordo;
+                pictureGostujucaDomaca.BackgroundImage = Properties.Resources.home;
             }
             else if (_odabranaUtakmica.vrstaUtakmice == "Gostujuća")
             {
@@ -44,35 +44,53 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
                 grbGost.BackgroundImage = Properties.Resources.grbSarajevo;
                 grbGost.BackgroundImageLayout = ImageLayout.Zoom;
                 lblGost.Text = "FK SARAJEVO";
-                pictureVrstaUtakmice.BackgroundImage = Properties.Resources.away_bordo;
+                pictureGostujucaDomaca.BackgroundImage = Properties.Resources.away;
             }
-            lblUtakmicaOpis.Text = _odabranaUtakmica.opisUtakmice;
-            lblStadion.Text = _odabranaUtakmica.stadion.nazivStadiona;
-            lblDatum.Text = _odabranaUtakmica.datumOdigravanja.ToString("dd.MM.yyyy");
-            lblSatnica.Text = _odabranaUtakmica.satnica + "h";
-            lblKapiten.Text = _odabranaUtakmica.kapiten.korisnik.ime + " " + _odabranaUtakmica.kapiten.korisnik.prezime;
-            lblSudija.Text = _odabranaUtakmica.sudija;
-            pictureSlikaStadiona.BackgroundImage = byteToImage.ConvertByteToImage(_odabranaUtakmica.stadion.slikaStadiona);
-            pictureSlikaStadiona.BackgroundImageLayout = ImageLayout.Zoom;
+            lblOpisUtakmice.Text = _odabranaUtakmica.opisUtakmice.ToUpper();
+            txtStadion.Text = "STADION " + _odabranaUtakmica.stadion.nazivStadiona.ToUpper();
+            txtDatum.Text = _odabranaUtakmica.datumOdigravanja.ToString("dd.MM.yyyy");
+            txtSatnica.Text = _odabranaUtakmica.satnica + "h";
+            txtSudija.Text = _odabranaUtakmica.sudija;
+            pictureTakmicenje.BackgroundImage = byteToImage.ConvertByteToImage(_odabranaUtakmica.takmicenje.logo);
+            pictureTakmicenje.BackgroundImageLayout = ImageLayout.Zoom;
+            //pictureKapiten.BackgroundImage = byteToImage.ConvertByteToImage(_odabranaUtakmica.kapiten.korisnik.Slika);
+            //pictureKapiten.BackgroundImageLayout = ImageLayout.Zoom;
+            txtKapiten.Text = (_odabranaUtakmica.kapiten.korisnik.ime[0] + ". " + _odabranaUtakmica.kapiten.korisnik.prezime).ToUpper();
             if (_odabranaUtakmica.tipGarniture == "Domaća")
             {
                 pictureDres.BackgroundImage = Properties.Resources.domaci;
+                txtGarnitura.Text = "DOMAĆA";
             }
             else if (_odabranaUtakmica.tipGarniture == "Gostujuća")
             {
                 pictureDres.BackgroundImage = Properties.Resources.gostujuci;
+                txtGarnitura.Text = "GOSTUJUĆA";
             }
             else if (_odabranaUtakmica.tipGarniture == "Rezervna")
             {
                 pictureDres.BackgroundImage = Properties.Resources.rezervni;
+                txtGarnitura.Text = "REZERVNA";
+            }
+            if (_odabranaUtakmica.datumOdigravanja.Date == DateTime.Now.Date)
+            {
+                txtBrojDana.Text = "DANAS";
+            }
+            else if (_odabranaUtakmica.datumOdigravanja.Date < DateTime.Now.Date)
+            {
+                txtBrojDana.Text = "ZAVRŠENA PRIJE " + (DateTime.Now.Date - _odabranaUtakmica.datumOdigravanja.Date.Date).TotalDays + " DANA";
+            }
+            else
+            {
+                txtBrojDana.Text = "ZA " + (_odabranaUtakmica.datumOdigravanja.Date.Date - DateTime.Now.Date).TotalDays + " DANA";
             }
             foreach (var item in _odabranaUtakmica.sastav)
             {
-                frmUtakmicaSastavKartica_detaljiUtakmice pozvaniIgrac = new frmUtakmicaSastavKartica_detaljiUtakmice();
+                frmUtakmicaSastavKartica_detaljiUtakmice pozvaniIgrac = new frmUtakmicaSastavKartica_detaljiUtakmice(snackbar);
                 pozvaniIgrac.igracSlika = byteToImage.ConvertByteToImage(item.igrac.korisnik.Slika);
                 pozvaniIgrac.igracPozicija = item.pozicija.skracenica;
                 pozvaniIgrac.igracImePrezime = item.igrac.korisnik.ime[0] + ". " + item.igrac.korisnik.prezime;
                 pozvaniIgrac.brojDresa = "#" + item.igrac.brojDresa.ToString();
+                pozvaniIgrac.igracId = item.igracId;
                 if(item.igrac.igracId == _odabranaUtakmica.kapitenId)
                 {
                     pozvaniIgrac.isKapiten = true;

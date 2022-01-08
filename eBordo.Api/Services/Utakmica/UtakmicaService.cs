@@ -3,6 +3,7 @@ using eBordo.Api.Database;
 using eBordo.Api.Services.BaseCRUDService;
 using eBordo.Api.Services.UtakmicaSastav;
 using eBordo.Model.Requests.Utakmica;
+using eBordo.Model.Requests.UtakmicaSastav;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -40,6 +41,7 @@ namespace eBordo.Api.Services.Utakmica
                     .ThenInclude(t => t.igrac.igracSkills)
                 .Include(s => s.sastav)
                     .ThenInclude(t => t.igrac.igracStatistika)
+                .OrderByDescending(s => s.datumOdigravanja)
                 .AsQueryable();
 
             if (search != null && !string.IsNullOrEmpty(search.tipUtakmice))
@@ -176,7 +178,21 @@ namespace eBordo.Api.Services.Utakmica
             {
                 foreach (var item in request.sastav)
                 {
-                    Model.Models.UtakmicaSastav sastavResultModel = _utakmicaSastavService.UpdateByUtakmicaId(item, id, item.igracId);
+                    if (item.utakmicaSastavid == 0)
+                    {
+                        UtakmicaSastavInsertRequest sastav = new UtakmicaSastavInsertRequest
+                        {
+                            igracId = item.igracId,
+                            utakmicaId = item.utakmicaId,
+                            pozicijaId = item.pozicijaId,
+                            uloga = item.uloga
+                        };
+                        _utakmicaSastavService.InsertByUtakmicaId(sastav, utakmica.utakmicaId);
+                    }
+                    else
+                    {
+                        _utakmicaSastavService.UpdateByUtakmicaId(item, id, item.igracId);
+                    }
                 }
             }
 

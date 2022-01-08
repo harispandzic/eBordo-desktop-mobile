@@ -88,9 +88,33 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
                     listItems[i].satnica = _podaci[i].satnica + " h";
                     listItems[i].stadion = "STADION " + _podaci[i].stadion.nazivStadiona.ToUpper();
                     listItems[i].logoTakmicenja = byteToImage.ConvertByteToImage(_podaci[i].takmicenje.logo);
+                    if (_podaci[i].datumOdigravanja.Date == DateTime.Now.Date)
+                    {
+                        listItems[i].brojDanaDoUtakmice = "DANAS";
+                    }
+                    else if(_podaci[i].datumOdigravanja.Date < DateTime.Now.Date)
+                    {
+                        listItems[i].brojDanaDoUtakmice = "ZAVRŠENA PRIJE " + (DateTime.Now.Date - _podaci[i].datumOdigravanja.Date.Date).TotalDays + " DANA";
+                    }
+                    else
+                    {
+                        listItems[i].brojDanaDoUtakmice = "ZA " + (_podaci[i].datumOdigravanja.Date.Date - DateTime.Now.Date).TotalDays + " DANA";
+                    }
+                    if(_podaci[i].sastav.Count() != 20)
+                    {
+                        listItems[i].statusSlika = Properties.Resources.eBordo_inProgress;
+                        listItems[i].statusText = "IN PROGRESS";
 
+                    }
+                    else
+                    {
+                        listItems[i].statusSlika = Properties.Resources.eBordo_success_notification;
+                        listItems[i].statusText = "SASTAV ODABRAN";
+                    }
                     pnlUtakmiceWrapper.Controls.Add(listItems[i]);
                 }
+                loaderBrojIgraca.Hide();
+                UcitajBrojUtakmica();
             }
             catch
             {
@@ -120,6 +144,22 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             {
                 await LoadUtakmice(tipUtakmice: "Gostujuća");
             }
+        }
+
+        private async void bunifuButton1_Click(object sender, EventArgs e)
+        {
+            cmbPozicije.Text = "Pozicija";
+            await LoadUtakmice();
+        }
+
+        private void btnSaveIgracSastav_Click(object sender, EventArgs e)
+        {
+            frmUpsertUtakmica insert = new frmUpsertUtakmica(null, this);
+            insert.Show();
+        }
+        private void UcitajBrojUtakmica()
+        {
+            txtBrojUtakmica.Text = pnlUtakmiceWrapper.Controls.Count.ToString();
         }
     }
 }

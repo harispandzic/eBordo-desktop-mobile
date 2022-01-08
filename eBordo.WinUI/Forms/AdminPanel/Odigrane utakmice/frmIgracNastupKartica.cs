@@ -20,7 +20,8 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
         public int utakmicaOcjenaId { get; set; }
         public int igracId { get; set; }
         public Image igracSlika { get; set; }
-        public string igracImePrezimeBrojDresa { get; set; }
+        public string igracImePrezime { get; set; }
+        public string brojDresa { get; set; }
         public string igracPozicija { get; set; }
         public int igracMinute { get; set; }
         public int igracGolovi { get; set; }
@@ -68,7 +69,8 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
         {
             pictureIgracSlika.BackgroundImage = igracSlika;
             pictureIgracSlika.BackgroundImageLayout = ImageLayout.Zoom;
-            txtImePrezimeBrojDresa.Text = igracImePrezimeBrojDresa;
+            txtImePrezimeBrojDresa.Text = igracImePrezime;
+            txtBrojDresa.Text = brojDresa;
             lblPozicija.Text = igracPozicija;
             label1.Text = igracGolovi.ToString();
             label2.Text = igracAsistencije.ToString();
@@ -95,6 +97,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
                 }
             }
             _upsertIzvjestaj.filterIgraci(TipFiltera.Brisanje, igracId);
+            _upsertIzvjestaj.UpdateBrojEvidentiranih();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -106,7 +109,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
         {
             frmDetaljneOcjeneIgraca frmDetaljneOcjene = new frmDetaljneOcjeneIgraca(igracId, kontrolaLopte, 
                 driblanje, dodavanje, kretanje, brzina, sut,
-                snaga, markiranje, klizeciStart, skok, odbrana, igracKomentar);
+                snaga, markiranje, klizeciStart, skok, odbrana, igracKomentar, ocjenaRating,igracMinute, igracGolovi, igracAsistencije, igracZutiKartoni, igracCrveniKartoni);
             frmDetaljneOcjene.Show();
     }
     }

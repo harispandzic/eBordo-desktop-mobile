@@ -408,12 +408,6 @@
     <Compile Include="Forms\AdminPanel\Početna\frmPrikazUtakmica.Designer.cs">
       <DependentUpon>frmPrikazUtakmica.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AdminPanel\RasporedUtakmica\frmDetaljiIgraca.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\AdminPanel\RasporedUtakmica\frmDetaljiIgraca.Designer.cs">
-      <DependentUpon>frmDetaljiIgraca.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\AdminPanel\RasporedUtakmica\frmDetaljiUtakmice.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -577,10 +571,12 @@
       <DependentUpon>frmTrenerPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper\ByteToImage.cs" />
+    <Compile Include="Helper\Field.cs" />
     <Compile Include="Helper\PosaljiNotifikaciju.cs" />
     <Compile Include="Helper\TipFiltera.cs" />
     <Compile Include="Helper\TipNotifikacije.cs" />
     <Compile Include="Helper\TipPoruke.cs" />
+    <Compile Include="Helper\Validacija.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\AdminPanel\frmAdminPanel.resx">
@@ -627,9 +623,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminPanel\Početna\frmPrikazUtakmica.resx">
       <DependentUpon>frmPrikazUtakmica.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AdminPanel\RasporedUtakmica\frmDetaljiIgraca.resx">
-      <DependentUpon>frmDetaljiIgraca.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminPanel\RasporedUtakmica\frmDetaljiUtakmice.resx">
       <DependentUpon>frmDetaljiUtakmice.cs</DependentUpon>
@@ -1015,6 +1008,60 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\eBordo_nerjeseno.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eBordo_close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eBordo_igracOut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eBordo_igracIn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eBordo_uploadImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eBordo_IN_OUT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eBordo_bordoPanelZaobljen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eBordo_ADMIN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addPerson.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addUtakmica.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eBordo_sudija_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\215928.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\test.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eBordo_inProgress.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eBordo_BLANK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eBordo_required.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eBordo_required2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eBordo_required3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets" Condition="Exists('..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets')" />

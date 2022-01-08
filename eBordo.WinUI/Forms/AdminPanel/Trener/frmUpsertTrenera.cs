@@ -49,24 +49,26 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             LoadLicence();
             if (_odabraniTrener != null)
             {
+                btnSaveUpdate.Show();
                 this.Text = "eBordo | Uredi trenera";
-                btnSave.Text = "Spasi izmjene";
                 txtIme.Enabled = false;
                 txtPrezime.Enabled = false;
                 dtpDatumRodjenja.Enabled = false;
                 btnUcitajFotografiju.Enabled = false;
+                btnUcitajPanelPhoto.Enabled = false;
                 if (_odabraniTrener.korisnik.Slika.Length != 0)
                 {
                     userProflePicture.Image = byteToImage.ConvertByteToImage(_odabraniTrener.korisnik.Slika);
                     userProflePicture.SizeMode = PictureBoxSizeMode.StretchImage;
+                    pictureSlikaIgraca.BackgroundImage = byteToImage.ConvertByteToImage(_odabraniTrener.SlikaPanel);
+                    pictureSlikaIgraca.SizeMode = PictureBoxSizeMode.Zoom;
                 }
                 LoadTrener();
             }
             else
             {
+                btnSave.Show();
                 this.Text = "eBordo | Dodaj trenera";
-                btnSave.BackColor = Color.Green;
-                btnSave.Text = "Spasi trenera";
             }
         }
         private void LoadTrener()
@@ -77,6 +79,8 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             txtEmail.Text = _odabraniTrener.korisnik.email;
             txtAdresa.Text = _odabraniTrener.korisnik.adresa;
             txtTelefon.Text = _odabraniTrener.korisnik.telefon;
+            radioBtnGlavni.Enabled = false;
+            radioBtnPomocnik.Enabled = false;
         }
         private async void LoadLicence()
         {
@@ -196,86 +200,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
                 PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.GREŠKA_NA_SERVERU);
             }
         }
-        private async void btnSave_Click_1(object sender, EventArgs e)
-        {
-            TrenerInsertRequest insertRequest;
-            TrenerUpdateRequest updateRequest;
-
-            if (_odabraniTrener != null)
-            {
-                updateRequest = new TrenerUpdateRequest
-                {
-                    korisnikUpdateRequest = new Model.Requests.Korisnik.KorisnikUpdateRequest
-                    {
-                        adresa = txtAdresa.Text,
-                        telefon = txtTelefon.Text,
-                        email = txtEmail.Text
-                    },
-                    ugovorUpdateRequeest = new Model.Requests.Ugovor.UgovorUpdateRequest
-                    {
-                        datumPocetka = dtpDatumPotpisaUgovora.Value,
-                        datumZavrsetka = dtpDatumZavrsetkaUgovora.Value,
-                    },
-                    preferiranaFormacijaId = _formacije[cmbFormacija.SelectedIndex].formacijaId,
-                    trenerskaLicencaId = _licence[cmbLicenca.SelectedIndex].trenerskaLicencaId,
-                };
-                try
-                {
-                    await _trener.Update<Model.Models.Trener>(_odabraniTrener.trenerId, updateRequest);
-                    await _prikazTrenera.LoadTreneri(notifikacija: TipNotifikacije.UREĐIVANJE);
-                }
-                catch 
-                {
-                    PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.GREŠKA_NA_SERVERU);
-                }
-            }
-            else
-            {
-                int uloga = 0;
-                if (radioBtnGlavni.Checked)
-                {
-                    uloga = 1;
-                }
-                if (radioBtnPomocnik.Checked)
-                {
-                    uloga = 2;
-                }
-                insertRequest = new TrenerInsertRequest
-                {
-                    korisnikInsertRequest = new Model.Requests.Korisnik.KorisnikInsertRequest
-                    {
-                        ime = txtIme.Text,
-                        prezime = txtPrezime.Text,
-                        datumRodjenja = dtpDatumRodjenja.Value,
-                        adresa = txtAdresa.Text,
-                        telefon = txtTelefon.Text,
-                        email = txtEmail.Text,
-                        drzavljanstvoId = _drzave[cmbDrzavljanstvo.SelectedIndex].drzavaId,
-                        gradRodjenjaId = _gradovi[cmbGradRodjenja.SelectedIndex].gradId,
-                        Slika = korisnikAvatar,
-                    },
-                    ugovorInsertRequest = new Model.Requests.Ugovor.UgovorInsertRequest
-                    {
-                        datumPocetka = dtpDatumPotpisaUgovora.Value,
-                        datumZavrsetka = dtpDatumZavrsetkaUgovora.Value,
-                    },
-                    preferiranaFormacijaId = _formacije[cmbFormacija.SelectedIndex].formacijaId,
-                    trenerskaLicencaId = _licence[cmbLicenca.SelectedIndex].trenerskaLicencaId,
-                    SlikaPanel = korisnikPanelPhoto,
-                    ulogaTreneraId = uloga
-                };
-                try
-                {
-                    await _trener.Insert<Model.Models.Trener>(insertRequest);
-                    await _prikazTrenera.LoadTreneri(notifikacija: TipNotifikacije.DODAVANJE);
-                    this.Hide();
-                }
-                catch
-                {
-                    PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.GREŠKA_NA_SERVERU);
-                }
-            }
-        }
         private void btnUcitajFotografiju_Click_1(object sender, EventArgs e)
         {
             var result = avatarFileDialog.ShowDialog();
@@ -309,6 +233,87 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
                 Image image = Image.FromFile(fileName);
                 pictureSlikaIgraca.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
                 pictureSlikaIgraca.Image = image;
+            }
+        }
+
+        private void cmbLicenca_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void btnSave_Click(object sender, EventArgs e)
+        {
+            int uloga = 0;
+            if (radioBtnGlavni.Checked)
+            {
+                uloga = 1;
+            }
+            if (radioBtnPomocnik.Checked)
+            {
+                uloga = 2;
+            }
+            TrenerInsertRequest insertRequest = new TrenerInsertRequest
+            {
+                korisnikInsertRequest = new Model.Requests.Korisnik.KorisnikInsertRequest
+                {
+                    ime = txtIme.Text,
+                    prezime = txtPrezime.Text,
+                    datumRodjenja = dtpDatumRodjenja.Value,
+                    adresa = txtAdresa.Text,
+                    telefon = txtTelefon.Text,
+                    email = txtEmail.Text,
+                    drzavljanstvoId = _drzave[cmbDrzavljanstvo.SelectedIndex].drzavaId,
+                    gradRodjenjaId = _gradovi[cmbGradRodjenja.SelectedIndex].gradId,
+                    Slika = korisnikAvatar,
+                },
+                ugovorInsertRequest = new Model.Requests.Ugovor.UgovorInsertRequest
+                {
+                    datumPocetka = dtpDatumPotpisaUgovora.Value,
+                    datumZavrsetka = dtpDatumZavrsetkaUgovora.Value,
+                },
+                preferiranaFormacijaId = _formacije[cmbFormacija.SelectedIndex].formacijaId,
+                trenerskaLicencaId = _licence[cmbLicenca.SelectedIndex].trenerskaLicencaId,
+                SlikaPanel = korisnikPanelPhoto,
+                ulogaTreneraId = uloga
+            };
+            try
+            {
+                await _trener.Insert<Model.Models.Trener>(insertRequest);
+                await _prikazTrenera.LoadTreneri(notifikacija: TipNotifikacije.DODAVANJE);
+                this.Hide();
+            }
+            catch
+            {
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.GREŠKA_NA_SERVERU);
+            }
+        }
+
+        private async void btnSaveUpdate_Click(object sender, EventArgs e)
+        {
+            TrenerUpdateRequest updateRequest = new TrenerUpdateRequest
+            {
+                korisnikUpdateRequest = new Model.Requests.Korisnik.KorisnikUpdateRequest
+                {
+                    adresa = txtAdresa.Text,
+                    telefon = txtTelefon.Text,
+                    email = txtEmail.Text
+                },
+                ugovorUpdateRequeest = new Model.Requests.Ugovor.UgovorUpdateRequest
+                {
+                    datumPocetka = dtpDatumPotpisaUgovora.Value,
+                    datumZavrsetka = dtpDatumZavrsetkaUgovora.Value,
+                },
+                preferiranaFormacijaId = _formacije[cmbFormacija.SelectedIndex].formacijaId,
+                trenerskaLicencaId = _licence[cmbLicenca.SelectedIndex].trenerskaLicencaId,
+            };
+            try
+            {
+                await _trener.Update<Model.Models.Trener>(_odabraniTrener.trenerId, updateRequest);
+                await _prikazTrenera.LoadTreneri(notifikacija: TipNotifikacije.UREĐIVANJE);
+            }
+            catch
+            {
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.GREŠKA_NA_SERVERU);
             }
         }
     }

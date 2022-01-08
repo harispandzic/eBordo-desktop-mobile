@@ -32,8 +32,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
             this.txtBrojDana = new System.Windows.Forms.Label();
             this.grbGost = new System.Windows.Forms.PictureBox();
             this.grbDomacin = new System.Windows.Forms.PictureBox();
-            this.iconPictureBox7 = new FontAwesome.Sharp.IconPictureBox();
-            this.txtProtivnik = new System.Windows.Forms.Label();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.txtDatum = new System.Windows.Forms.Label();
             this.pictureTakmicenje = new System.Windows.Forms.PictureBox();
@@ -44,7 +42,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
             this.txtOpisUtakmice = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grbGost)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grbDomacin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureTakmicenje)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureGostujucaDomaca)).BeginInit();
@@ -84,33 +81,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
             this.grbDomacin.TabIndex = 87;
             this.grbDomacin.TabStop = false;
             // 
-            // iconPictureBox7
-            // 
-            this.iconPictureBox7.BackColor = System.Drawing.Color.Transparent;
-            this.iconPictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.iconPictureBox7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
-            this.iconPictureBox7.IconChar = FontAwesome.Sharp.IconChar.ShieldAlt;
-            this.iconPictureBox7.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
-            this.iconPictureBox7.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox7.IconSize = 12;
-            this.iconPictureBox7.Location = new System.Drawing.Point(53, 18);
-            this.iconPictureBox7.Name = "iconPictureBox7";
-            this.iconPictureBox7.Size = new System.Drawing.Size(12, 12);
-            this.iconPictureBox7.TabIndex = 90;
-            this.iconPictureBox7.TabStop = false;
-            // 
-            // txtProtivnik
-            // 
-            this.txtProtivnik.BackColor = System.Drawing.Color.Transparent;
-            this.txtProtivnik.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProtivnik.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
-            this.txtProtivnik.Location = new System.Drawing.Point(64, 15);
-            this.txtProtivnik.Name = "txtProtivnik";
-            this.txtProtivnik.Size = new System.Drawing.Size(79, 14);
-            this.txtProtivnik.TabIndex = 89;
-            this.txtProtivnik.Text = "M. Ahmetović #9";
-            this.txtProtivnik.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // iconPictureBox1
             // 
             this.iconPictureBox1.BackColor = System.Drawing.Color.Transparent;
@@ -120,7 +90,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
             this.iconPictureBox1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox1.IconSize = 12;
-            this.iconPictureBox1.Location = new System.Drawing.Point(53, 31);
+            this.iconPictureBox1.Location = new System.Drawing.Point(53, 20);
             this.iconPictureBox1.Name = "iconPictureBox1";
             this.iconPictureBox1.Size = new System.Drawing.Size(12, 12);
             this.iconPictureBox1.TabIndex = 92;
@@ -131,7 +101,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
             this.txtDatum.BackColor = System.Drawing.Color.Transparent;
             this.txtDatum.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDatum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
-            this.txtDatum.Location = new System.Drawing.Point(64, 28);
+            this.txtDatum.Location = new System.Drawing.Point(64, 17);
             this.txtDatum.Name = "txtDatum";
             this.txtDatum.Size = new System.Drawing.Size(96, 14);
             this.txtDatum.TabIndex = 91;
@@ -167,7 +137,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
             this.iconPictureBox2.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox2.IconSize = 12;
-            this.iconPictureBox2.Location = new System.Drawing.Point(53, 45);
+            this.iconPictureBox2.Location = new System.Drawing.Point(53, 36);
             this.iconPictureBox2.Name = "iconPictureBox2";
             this.iconPictureBox2.Size = new System.Drawing.Size(12, 12);
             this.iconPictureBox2.TabIndex = 96;
@@ -178,7 +148,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
             this.txtStadion.BackColor = System.Drawing.Color.Transparent;
             this.txtStadion.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStadion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
-            this.txtStadion.Location = new System.Drawing.Point(64, 41);
+            this.txtStadion.Location = new System.Drawing.Point(64, 32);
             this.txtStadion.Name = "txtStadion";
             this.txtStadion.Size = new System.Drawing.Size(68, 14);
             this.txtStadion.TabIndex = 95;
@@ -225,8 +195,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
             this.Controls.Add(this.pictureTakmicenje);
             this.Controls.Add(this.iconPictureBox1);
             this.Controls.Add(this.txtDatum);
-            this.Controls.Add(this.iconPictureBox7);
-            this.Controls.Add(this.txtProtivnik);
             this.Controls.Add(this.grbGost);
             this.Controls.Add(this.grbDomacin);
             this.Controls.Add(this.txtBrojDana);
@@ -235,7 +203,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
             this.Load += new System.EventHandler(this.frmPrikazUtakmica_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grbGost)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grbDomacin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureTakmicenje)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureGostujucaDomaca)).EndInit();
@@ -250,8 +217,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
         private System.Windows.Forms.Label txtBrojDana;
         private System.Windows.Forms.PictureBox grbGost;
         private System.Windows.Forms.PictureBox grbDomacin;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox7;
-        private System.Windows.Forms.Label txtProtivnik;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private System.Windows.Forms.Label txtDatum;
         private System.Windows.Forms.PictureBox pictureTakmicenje;

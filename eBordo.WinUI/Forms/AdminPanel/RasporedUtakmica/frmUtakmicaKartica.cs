@@ -23,6 +23,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
         public int utakmicaId { get; set; }
         public string utakmicaOpis { get; set; }
         public string domacin { get; set; }
+        public string brojDanaDoUtakmice { get; set; }
         public Image grbDomacina { get; set; }
         public string gost { get; set; }
         public Image grbGostiju { get; set; }
@@ -32,6 +33,8 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
         public Image logoTakmicenja { get; set; }
         public Image tipUtakmice { get; set; }
         public Image dres { get; set; }
+        public Image statusSlika { get; set; }
+        public string statusText { get; set; }
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -45,7 +48,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
         );
         public frmUtakmicaKartica(frmPrikazRasporedaUtakmicacs prikazRasporeda, BunifuSnackbar snackbar)
         {
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 285, 218, 12, 12));
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 285, 232, 12, 12));
             InitializeComponent();
             _prikazRasporeda = prikazRasporeda;
             _snackbar = snackbar;
@@ -71,6 +74,10 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             lblDatum.Text = datum;
             lblSatnica.Text = satnica;
             lblStadion.Text = stadion;
+            brojDana.Text = brojDanaDoUtakmice;
+            pictureStatus.BackgroundImage = statusSlika;
+            pictureTakmicenje.BackgroundImageLayout = ImageLayout.Zoom;
+            txtStatus.Text = statusText;
         }
 
         private async void btnDelete_Click(object sender, EventArgs e)
@@ -119,6 +126,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             {
                 PosaljiNotifikaciju.notificationSwitch(_snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
             }
+        }
+
+        private void brojDana_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

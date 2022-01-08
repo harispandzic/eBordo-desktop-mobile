@@ -35,7 +35,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
             grbGost.BackgroundImage = grbGostProp;
             grbGost.BackgroundImageLayout = ImageLayout.Zoom;
             txtBrojDana.Text = brojDana;
-            txtProtivnik.Text = protivnik;
             txtDatum.Text = datum.ToString("dd.MM.yyyy");
             txtStadion.Text = satnica;
             pictureTakmicenje.BackgroundImage = takmicenje;

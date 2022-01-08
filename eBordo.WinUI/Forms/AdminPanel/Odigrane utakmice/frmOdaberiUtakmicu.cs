@@ -40,18 +40,25 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
 
                 _utakmice = await _utakmica.GetAll<List<Model.Models.Utakmica>>(search);
 
-                foreach (var item in _utakmice)
+                if(_utakmice.Count() != 0)
                 {
-                    if (item.vrstaUtakmice == "Domaća")
+                    foreach (var item in _utakmice)
                     {
-                        cmbUtakmica.Items.Add("FK Sarajevo - " + item.protivnik.nazivKluba + " - " + item.datumOdigravanja.ToString("dd.MM.yyyy"));
+                        if (item.vrstaUtakmice == "Domaća")
+                        {
+                            cmbUtakmica.Items.Add("FK Sarajevo - " + item.protivnik.nazivKluba + " - " + item.datumOdigravanja.ToString("dd.MM.yyyy"));
+                        }
+                        else
+                        {
+                            cmbUtakmica.Items.Add(item.protivnik.nazivKluba + " - FK Sarajevo - " + item.datumOdigravanja.ToString("dd.MM.yyyy"));
+                        }
                     }
-                    else
-                    {
-                        cmbUtakmica.Items.Add(item.protivnik.nazivKluba + " - FK Sarajevo - " + item.datumOdigravanja.ToString("dd.MM.yyyy"));
-                    }
+                    cmbUtakmica.SelectedIndex = 0;
                 }
-                cmbUtakmica.SelectedIndex = 0;
+                else
+                {
+                    PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.BEZ_UTAKMICA);
+                }
             }
             catch
             {
@@ -62,6 +69,13 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
         private void btnDodajUtakmicu_Click(object sender, EventArgs e)
         {
             frmUpsertIzvjestaj insert = new frmUpsertIzvjestaj(_utakmice[cmbUtakmica.SelectedIndex].utakmicaId, _prikazUtakmica, null);
+            insert.Show();
+        }
+
+        private void btnSaveIgracSastav_Click(object sender, EventArgs e)
+        {
+            frmUpsertIzvjestaj insert = new frmUpsertIzvjestaj(_utakmice[cmbUtakmica.SelectedIndex].utakmicaId, _prikazUtakmica, null);
+            this.Hide();
             insert.Show();
         }
     }

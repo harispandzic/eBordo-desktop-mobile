@@ -118,35 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="lblNaslovStranice.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(81, 5, 32); text-align: left; }</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnRefresh.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACwAAAAfCAYAAACcai8CAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAD/SURBVFhH7Zi/SgRBDIcDZtTy3iApLX0Sd2Yru2tt7lkE
-        n8FXsL3WR7C2EEE5jj3wDs7izKzjnyJt2Bwk8MEuycLHj2FhAv+rJLouyEvhvSQ+TIo45MSPGemm6f1V
-        BzRrzUH9eELE6yMjP3VnxE0XoMpqw65Aep4DnYNEv5CXjTrkCAl11ye6O450G3I0XqrwVmt6Rf4MesMr
-        IWxNCFsTwtaEsDUhbE0IWxPC1oSwNSFsjdzp6FNreAXqkkJreETCHeqt+fZYUpZwH6BuU+ThVRtwBfL6
-        d13VJbrMSG+S9F4dnhrkVTnhq1H2p8aFIPK9p8XKeFSRl/0pXXxbAnwBS9Kfx0d+Gp0AAAAASUVORK5C
-        YII=
-</value>
-  </data>
-  <data name="btnDodajUtakmicu.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAJAAAAAgCAYAAAD9jPHNAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE8SURBVHhe7dwxSgNBFIDhV1p6A62ciY3eIIgz2ll7BBvP
-        IniBNMkbcwBbW49gbSGCQSSCClrEmWw0QWbJymv/gS/FvtnuZyDFrKwuP4qnvRRufAoTn+IMWAqTnsZb
-        p+Fskcty7Q36m2Xor8K0/jLQcBrfckR3Lh1vL/IRmcej9ReAFvdbg/6GOD089xpeKxuAdho+/DheNqdP
-        bQOw3oPkn/c/D4HOSkDVAdAFAcGEgGBCQDAhIJgQEEwICCYEBBMCggkBwYSAYEJAMCEgmBAQTAgIJgQE
-        EwKCCQHBhIBgQkAwEa/xqzYAupByy7A2ANbSOBWX4oXXwCmE/9E4y+1cS7me6lN4rG4CWoWX3/vxu8O4
-        n0+hp1zUZ30zsCo8Oz04mcfzs8oXOvJwmHFTFXX5D1f5/M/O6Mg31Yh8A8R7KrWvhXWgAAAAAElFTkSu
-        QmCC
-</value>
+    <value>#bunifu-label { padding: 0px; font-family: 'Oswald'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(64, 5, 7); text-align: left; }</value>
   </data>
   <metadata name="snackbar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="resource.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAoRJREFUSEvt
@@ -209,6 +186,30 @@
         0ym6XhB4EJoWwpC2FIl8gh8UFNtMhZGjuJ5ygU2wiZxxU3KA4topi9UIhMyHoTXkeHldHG2hmH8TrtE2
         Uacg8A3Q7/sLHjL1sPEXRxs5LXfD/T8N9+4yDLoN3AAuFmb4BJzhdrJtaD0piv4A+0jNQocapoMAAAAA
         SUVORK5CYII=
+</value>
+  </data>
+  <data name="txtBrojUtakmica.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Oswald'; font-size: 8pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(81, 5, 32); text-align: left; }</value>
+  </data>
+  <data name="bunifuButton1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACwAAAAfCAYAAACcai8CAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAD4SURBVFhH7Zg9bgJBDEYt4bEpOQIlJSfAc4LUHIEmZ0Hi
+        DFwhLS1HoKZAkRJFaJFIpGwBHnbzB9taMZItvWY+j/T0lYbfIylNM9JKec2JT/9K47AW5Fmr9zMCMChh
+        Rq7+fHIBHTOmjTAPW10ADda3i85A3mqxfdDKH7X+Q+eSLz607cV9tNsiSLsi/H4deKYIdwZeCWFrQtia
+        ELYmhK0JYWtC2JoQtiaErQlha4pwff3oGShHiq7AI5KoKg3PlbtoWZCfypmqn5GeuxZcgbz/PldJSmOV
+        ftHg82bRA8hvkx49XGS/phwEBWmpC54OK7UWuRKiUWMJcAav2sI65HgOGQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="btnSaveIgracSastav.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAH4AAAAgCAYAAADUp8wPAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAExSURBVHhe7ds9SoNBEMbxKS29gVbuxEZvEMRZ7aw9go1n
+        EbxAmjirB7C19QjWFiIYRCKooEXcTeIHshdwnmfh9xbZfat/Ft5m5PfSs3w4KHalxSZa8owisMnA83Vy
+        O1pm/llbo+Fq29Rzm/Zfpv8ueX6p8W9S2V9fZheZR/f+CxTO7dpouCLJd4/V7blzgCJye9OLfLq47b0D
+        FNmd1Mfrnx8JQAvf3aDYGB4Uw4NieFAMD4rhQTE8KIYHxfCgGB4Uw4NieFAMD4rhQTE8KIYHxfCgGB4U
+        w4NieFCinj96GxSbtOmK3gYF5nkqqeQTdeOtR+F5VptfShun0WL33UMUkD19z89tjvN2vfUP9Z/w3j9M
+        Mdhj8p2DefSv1SZm6+a44mRNNPUDvo2/b5zt6aK2yCcuVX+qdopAdwAAAABJRU5ErkJggg==
 </value>
   </data>
 </root>

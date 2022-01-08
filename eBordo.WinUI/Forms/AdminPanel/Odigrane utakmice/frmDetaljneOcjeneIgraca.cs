@@ -28,13 +28,19 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
         public int _klizeciStart { get; set; }
         public int _skok { get; set; }
         public int _odbrana { get; set; }
+        public int _ocjena { get; set; }
         public string _igracKomentar { get; set; }
+        int _brojMinuta { get; set; }
+        int _brojGolova { get; set; }
+        int _brojAsistencija { get; set; }
+        int _brojZutih { get; set; }
+        int _brojCrvenih { get; set; }
 
         ByteToImage byteToImage = new ByteToImage();
 
         public frmDetaljneOcjeneIgraca(int igracId, int kontrolaLopte,
                 int driblanje, int dodavanje, int kretanje, int brzina,int
-                sut, int snaga, int markiranje, int klizeciStart, int skok, int odbrana,string igracKomentar)
+                sut, int snaga, int markiranje, int klizeciStart, int skok, int odbrana,string igracKomentar, int ocjena, int brojMinuta, int brojGolova, int brojAsistencija, int brojZutih, int brojCrvenih)
         {
             InitializeComponent();
             _igracId = igracId;
@@ -50,6 +56,12 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             _skok = skok;
             _odbrana = odbrana;
             _igracKomentar = igracKomentar;
+            _ocjena = ocjena;
+            _brojMinuta = brojMinuta;
+            _brojGolova = brojGolova;
+            _brojAsistencija = brojAsistencija;
+            _brojZutih = brojZutih;
+            _brojCrvenih = brojCrvenih;
         }
 
         private async void frmDetaljneOcjeneIgraca_Load(object sender, EventArgs e)
@@ -58,10 +70,13 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             {
                 _igrac = await _igraci.GetById<Model.Models.Igrac>(_igracId);
                 lblBrojDresa.Text = "#" + _igrac.brojDresa.ToString();
+                pictureZastava.BackgroundImage = byteToImage.ConvertByteToImage(_igrac.korisnik.drzavljanstvo.zastava);
+                pictureZastava.BackgroundImageLayout = ImageLayout.Zoom;
                 pictureSlikaIgraca.BackgroundImage = byteToImage.ConvertByteToImage(_igrac.slikaPanel);
-                lblPrezime.Text = (_igrac.korisnik.ime[0] + ". " + _igrac.korisnik.prezime).ToUpper();
                 pictureSlikaIgraca.BackgroundImageLayout = ImageLayout.Zoom;
-                igracOcjena.Value = (int)_igrac.igracStatistika.prosjecnaOcjena;
+                lblPrezime.Text = (_igrac.korisnik.ime[0] + ". " + _igrac.korisnik.prezime).ToUpper();
+                lblPozicija.Text = _igrac.pozicija.nazivPozicije.ToUpper();
+                lblOcjena.Value = (int)_igrac.igracStatistika.prosjecnaOcjena;
                 ratingKontrolaLopte.Value = _kontrolaLopte;
                 ratingDriblanje.Value = _driblanje;
                 ratingDodavanje.Value = _dodavanje;
@@ -73,11 +88,23 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
                 ratingKlizeciStart.Value = _klizeciStart;
                 ratingSkok.Value = _skok;
                 ratingOdbrana.Value = _odbrana;
+                ocjenaNastupa.Value = _ocjena;
+                txtKomentar.Text = _igracKomentar;
+                lblMinute.Text = _brojMinuta.ToString();
+                lblGolovi.Text = _brojGolova.ToString();
+                lblAsistencije.Text = _brojAsistencija.ToString();
+                lblZutiKartoni.Text = _brojZutih.ToString();
+                lblCrveniKartoni.Text = _brojCrvenih.ToString();
             }
             catch
             {
                 PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
             }
+        }
+
+        private void lblPrezime_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

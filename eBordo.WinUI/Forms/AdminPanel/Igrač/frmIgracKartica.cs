@@ -97,5 +97,10 @@ namespace eBordo.WinUI.Forms.AdminPanel.Igrač
                 PosaljiNotifikaciju.notificationSwitch(_snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
             }
         }
+
+        private void korisnickaFotografija_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

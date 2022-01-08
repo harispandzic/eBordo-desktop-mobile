@@ -62,8 +62,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
             this.iconPictureBox13 = new FontAwesome.Sharp.IconPictureBox();
             this.txtSatnicaNaredneUtakmice = new System.Windows.Forms.Label();
             this.iconPictureBox12 = new FontAwesome.Sharp.IconPictureBox();
-            this.txtProtivnik = new System.Windows.Forms.Label();
-            this.iconPictureBox8 = new FontAwesome.Sharp.IconPictureBox();
             this.grbGostNarednaUtakmica = new System.Windows.Forms.PictureBox();
             this.label15 = new System.Windows.Forms.Label();
             this.grbDomacinNarednaUtakmica = new System.Windows.Forms.PictureBox();
@@ -84,8 +82,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
             this.iconPictureBox6 = new FontAwesome.Sharp.IconPictureBox();
             this.txtDatumZadnjaUtakmica = new System.Windows.Forms.Label();
             this.iconPictureBox7 = new FontAwesome.Sharp.IconPictureBox();
-            this.txtProtivnikZadnjaUtakmica = new System.Windows.Forms.Label();
-            this.iconPictureBox9 = new FontAwesome.Sharp.IconPictureBox();
             this.grbGostZadnjaUtakmica = new System.Windows.Forms.PictureBox();
             this.label20 = new System.Windows.Forms.Label();
             this.grbDomacinZadnjaUtakmica = new System.Windows.Forms.PictureBox();
@@ -93,7 +89,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
             this.loaderPocetna = new Bunifu.UI.WinForms.BunifuLoader();
             this.panelPocetna = new System.Windows.Forms.Panel();
             this.pictureTrenerSlika = new Bunifu.UI.WinForms.BunifuPictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.pnlIgraci.SuspendLayout();
             this.pnlBrojIgrača.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
@@ -109,7 +104,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
             ((System.ComponentModel.ISupportInitialize)(this.pictureTakmicenje)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grbGostNarednaUtakmica)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grbDomacinNarednaUtakmica)).BeginInit();
             this.bunifuPanel4.SuspendLayout();
@@ -119,7 +113,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
             ((System.ComponentModel.ISupportInitialize)(this.pictureTakmicenjeZadnjaUtakmica)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grbGostZadnjaUtakmica)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grbDomacinZadnjaUtakmica)).BeginInit();
             this.panelPocetna.SuspendLayout();
@@ -188,7 +181,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
             this.pnlBrojIgrača.Controls.Add(this.iconPictureBox2);
             this.pnlBrojIgrača.Controls.Add(this.txtAktivniIgraci);
             this.pnlBrojIgrača.Controls.Add(this.label1);
-            this.pnlBrojIgrača.Location = new System.Drawing.Point(13, 47);
+            this.pnlBrojIgrača.Location = new System.Drawing.Point(13, 120);
             this.pnlBrojIgrača.Name = "pnlBrojIgrača";
             this.pnlBrojIgrača.ShowBorders = true;
             this.pnlBrojIgrača.Size = new System.Drawing.Size(162, 68);
@@ -375,7 +368,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
             this.bunifuPanel1.Controls.Add(this.iconPictureBox3);
             this.bunifuPanel1.Controls.Add(this.txtAktivniTreneri);
             this.bunifuPanel1.Controls.Add(this.label5);
-            this.bunifuPanel1.Location = new System.Drawing.Point(176, 47);
+            this.bunifuPanel1.Location = new System.Drawing.Point(176, 120);
             this.bunifuPanel1.Name = "bunifuPanel1";
             this.bunifuPanel1.ShowBorders = true;
             this.bunifuPanel1.Size = new System.Drawing.Size(162, 68);
@@ -535,13 +528,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
             this.bunifuPanel7.Controls.Add(this.iconPictureBox13);
             this.bunifuPanel7.Controls.Add(this.txtSatnicaNaredneUtakmice);
             this.bunifuPanel7.Controls.Add(this.iconPictureBox12);
-            this.bunifuPanel7.Controls.Add(this.txtProtivnik);
-            this.bunifuPanel7.Controls.Add(this.iconPictureBox8);
             this.bunifuPanel7.Controls.Add(this.grbGostNarednaUtakmica);
             this.bunifuPanel7.Controls.Add(this.label15);
             this.bunifuPanel7.Controls.Add(this.grbDomacinNarednaUtakmica);
             this.bunifuPanel7.Controls.Add(this.txtBrojDanaNaredneUtakmice);
-            this.bunifuPanel7.Location = new System.Drawing.Point(13, 116);
+            this.bunifuPanel7.Location = new System.Drawing.Point(13, 47);
             this.bunifuPanel7.Name = "bunifuPanel7";
             this.bunifuPanel7.ShowBorders = true;
             this.bunifuPanel7.Size = new System.Drawing.Size(162, 72);
@@ -551,7 +542,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
             // 
             this.pictureTakmicenje.BackColor = System.Drawing.Color.Transparent;
             this.pictureTakmicenje.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureTakmicenje.Location = new System.Drawing.Point(139, 6);
+            this.pictureTakmicenje.Location = new System.Drawing.Point(139, 46);
             this.pictureTakmicenje.Name = "pictureTakmicenje";
             this.pictureTakmicenje.Size = new System.Drawing.Size(20, 20);
             this.pictureTakmicenje.TabIndex = 111;
@@ -562,7 +553,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
             this.txtOpisNaredneUtakmice.BackColor = System.Drawing.Color.Transparent;
             this.txtOpisNaredneUtakmice.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOpisNaredneUtakmice.ForeColor = System.Drawing.Color.White;
-            this.txtOpisNaredneUtakmice.Location = new System.Drawing.Point(70, 49);
+            this.txtOpisNaredneUtakmice.Location = new System.Drawing.Point(70, 34);
             this.txtOpisNaredneUtakmice.Name = "txtOpisNaredneUtakmice";
             this.txtOpisNaredneUtakmice.Size = new System.Drawing.Size(68, 14);
             this.txtOpisNaredneUtakmice.TabIndex = 109;
@@ -577,7 +568,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
             this.iconPictureBox13.IconColor = System.Drawing.Color.White;
             this.iconPictureBox13.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox13.IconSize = 12;
-            this.iconPictureBox13.Location = new System.Drawing.Point(59, 52);
+            this.iconPictureBox13.Location = new System.Drawing.Point(59, 37);
             this.iconPictureBox13.Name = "iconPictureBox13";
             this.iconPictureBox13.Size = new System.Drawing.Size(12, 12);
             this.iconPictureBox13.TabIndex = 110;
@@ -588,7 +579,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
             this.txtSatnicaNaredneUtakmice.BackColor = System.Drawing.Color.Transparent;
             this.txtSatnicaNaredneUtakmice.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSatnicaNaredneUtakmice.ForeColor = System.Drawing.Color.White;
-            this.txtSatnicaNaredneUtakmice.Location = new System.Drawing.Point(70, 35);
+            this.txtSatnicaNaredneUtakmice.Location = new System.Drawing.Point(70, 20);
             this.txtSatnicaNaredneUtakmice.Name = "txtSatnicaNaredneUtakmice";
             this.txtSatnicaNaredneUtakmice.Size = new System.Drawing.Size(89, 14);
             this.txtSatnicaNaredneUtakmice.TabIndex = 107;
@@ -603,37 +594,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
             this.iconPictureBox12.IconColor = System.Drawing.Color.White;
             this.iconPictureBox12.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox12.IconSize = 12;
-            this.iconPictureBox12.Location = new System.Drawing.Point(59, 38);
+            this.iconPictureBox12.Location = new System.Drawing.Point(59, 23);
             this.iconPictureBox12.Name = "iconPictureBox12";
             this.iconPictureBox12.Size = new System.Drawing.Size(12, 12);
             this.iconPictureBox12.TabIndex = 108;
             this.iconPictureBox12.TabStop = false;
-            // 
-            // txtProtivnik
-            // 
-            this.txtProtivnik.BackColor = System.Drawing.Color.Transparent;
-            this.txtProtivnik.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProtivnik.ForeColor = System.Drawing.Color.White;
-            this.txtProtivnik.Location = new System.Drawing.Point(70, 21);
-            this.txtProtivnik.Name = "txtProtivnik";
-            this.txtProtivnik.Size = new System.Drawing.Size(68, 14);
-            this.txtProtivnik.TabIndex = 105;
-            this.txtProtivnik.Text = "M. Ahmetović #9";
-            this.txtProtivnik.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // iconPictureBox8
-            // 
-            this.iconPictureBox8.BackColor = System.Drawing.Color.Transparent;
-            this.iconPictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.iconPictureBox8.IconChar = FontAwesome.Sharp.IconChar.ShieldAlt;
-            this.iconPictureBox8.IconColor = System.Drawing.Color.White;
-            this.iconPictureBox8.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox8.IconSize = 12;
-            this.iconPictureBox8.Location = new System.Drawing.Point(59, 24);
-            this.iconPictureBox8.Name = "iconPictureBox8";
-            this.iconPictureBox8.Size = new System.Drawing.Size(12, 12);
-            this.iconPictureBox8.TabIndex = 106;
-            this.iconPictureBox8.TabStop = false;
             // 
             // grbGostNarednaUtakmica
             // 
@@ -830,13 +795,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
             this.bunifuPanel8.Controls.Add(this.iconPictureBox6);
             this.bunifuPanel8.Controls.Add(this.txtDatumZadnjaUtakmica);
             this.bunifuPanel8.Controls.Add(this.iconPictureBox7);
-            this.bunifuPanel8.Controls.Add(this.txtProtivnikZadnjaUtakmica);
-            this.bunifuPanel8.Controls.Add(this.iconPictureBox9);
             this.bunifuPanel8.Controls.Add(this.grbGostZadnjaUtakmica);
             this.bunifuPanel8.Controls.Add(this.label20);
             this.bunifuPanel8.Controls.Add(this.grbDomacinZadnjaUtakmica);
             this.bunifuPanel8.Controls.Add(this.txtPrijeDanaZadnjaUtakmica);
-            this.bunifuPanel8.Location = new System.Drawing.Point(176, 116);
+            this.bunifuPanel8.Location = new System.Drawing.Point(176, 47);
             this.bunifuPanel8.Name = "bunifuPanel8";
             this.bunifuPanel8.ShowBorders = true;
             this.bunifuPanel8.Size = new System.Drawing.Size(162, 72);
@@ -846,7 +809,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
             // 
             this.pictureRezultatZadnjaUtakmica.BackColor = System.Drawing.Color.Transparent;
             this.pictureRezultatZadnjaUtakmica.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureRezultatZadnjaUtakmica.Location = new System.Drawing.Point(93, 51);
+            this.pictureRezultatZadnjaUtakmica.Location = new System.Drawing.Point(93, 36);
             this.pictureRezultatZadnjaUtakmica.Name = "pictureRezultatZadnjaUtakmica";
             this.pictureRezultatZadnjaUtakmica.Size = new System.Drawing.Size(15, 15);
             this.pictureRezultatZadnjaUtakmica.TabIndex = 112;
@@ -856,7 +819,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
             // 
             this.pictureTakmicenjeZadnjaUtakmica.BackColor = System.Drawing.Color.Transparent;
             this.pictureTakmicenjeZadnjaUtakmica.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureTakmicenjeZadnjaUtakmica.Location = new System.Drawing.Point(139, 6);
+            this.pictureTakmicenjeZadnjaUtakmica.Location = new System.Drawing.Point(139, 46);
             this.pictureTakmicenjeZadnjaUtakmica.Name = "pictureTakmicenjeZadnjaUtakmica";
             this.pictureTakmicenjeZadnjaUtakmica.Size = new System.Drawing.Size(20, 20);
             this.pictureTakmicenjeZadnjaUtakmica.TabIndex = 111;
@@ -867,7 +830,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
             this.txtRezultat.BackColor = System.Drawing.Color.Transparent;
             this.txtRezultat.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRezultat.ForeColor = System.Drawing.Color.White;
-            this.txtRezultat.Location = new System.Drawing.Point(70, 50);
+            this.txtRezultat.Location = new System.Drawing.Point(70, 35);
             this.txtRezultat.Name = "txtRezultat";
             this.txtRezultat.Size = new System.Drawing.Size(68, 14);
             this.txtRezultat.TabIndex = 109;
@@ -882,7 +845,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
             this.iconPictureBox6.IconColor = System.Drawing.Color.White;
             this.iconPictureBox6.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox6.IconSize = 12;
-            this.iconPictureBox6.Location = new System.Drawing.Point(59, 52);
+            this.iconPictureBox6.Location = new System.Drawing.Point(59, 37);
             this.iconPictureBox6.Name = "iconPictureBox6";
             this.iconPictureBox6.Size = new System.Drawing.Size(12, 12);
             this.iconPictureBox6.TabIndex = 110;
@@ -893,7 +856,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
             this.txtDatumZadnjaUtakmica.BackColor = System.Drawing.Color.Transparent;
             this.txtDatumZadnjaUtakmica.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDatumZadnjaUtakmica.ForeColor = System.Drawing.Color.White;
-            this.txtDatumZadnjaUtakmica.Location = new System.Drawing.Point(70, 35);
+            this.txtDatumZadnjaUtakmica.Location = new System.Drawing.Point(70, 20);
             this.txtDatumZadnjaUtakmica.Name = "txtDatumZadnjaUtakmica";
             this.txtDatumZadnjaUtakmica.Size = new System.Drawing.Size(89, 14);
             this.txtDatumZadnjaUtakmica.TabIndex = 107;
@@ -908,37 +871,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
             this.iconPictureBox7.IconColor = System.Drawing.Color.White;
             this.iconPictureBox7.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox7.IconSize = 12;
-            this.iconPictureBox7.Location = new System.Drawing.Point(59, 38);
+            this.iconPictureBox7.Location = new System.Drawing.Point(59, 23);
             this.iconPictureBox7.Name = "iconPictureBox7";
             this.iconPictureBox7.Size = new System.Drawing.Size(12, 12);
             this.iconPictureBox7.TabIndex = 108;
             this.iconPictureBox7.TabStop = false;
-            // 
-            // txtProtivnikZadnjaUtakmica
-            // 
-            this.txtProtivnikZadnjaUtakmica.BackColor = System.Drawing.Color.Transparent;
-            this.txtProtivnikZadnjaUtakmica.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProtivnikZadnjaUtakmica.ForeColor = System.Drawing.Color.White;
-            this.txtProtivnikZadnjaUtakmica.Location = new System.Drawing.Point(70, 21);
-            this.txtProtivnikZadnjaUtakmica.Name = "txtProtivnikZadnjaUtakmica";
-            this.txtProtivnikZadnjaUtakmica.Size = new System.Drawing.Size(68, 14);
-            this.txtProtivnikZadnjaUtakmica.TabIndex = 105;
-            this.txtProtivnikZadnjaUtakmica.Text = "M. Ahmetović #9";
-            this.txtProtivnikZadnjaUtakmica.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // iconPictureBox9
-            // 
-            this.iconPictureBox9.BackColor = System.Drawing.Color.Transparent;
-            this.iconPictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.iconPictureBox9.IconChar = FontAwesome.Sharp.IconChar.ShieldAlt;
-            this.iconPictureBox9.IconColor = System.Drawing.Color.White;
-            this.iconPictureBox9.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox9.IconSize = 12;
-            this.iconPictureBox9.Location = new System.Drawing.Point(59, 24);
-            this.iconPictureBox9.Name = "iconPictureBox9";
-            this.iconPictureBox9.Size = new System.Drawing.Size(12, 12);
-            this.iconPictureBox9.TabIndex = 106;
-            this.iconPictureBox9.TabStop = false;
             // 
             // grbGostZadnjaUtakmica
             // 
@@ -1023,7 +960,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
             this.pictureTrenerSlika.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureTrenerSlika.AutoSizeHeight = true;
             this.pictureTrenerSlika.BorderRadius = 17;
-            this.pictureTrenerSlika.Image = global::eBordo.WinUI.Properties.Resources.Screenshot_12;
+            this.pictureTrenerSlika.Image = global::eBordo.WinUI.Properties.Resources.eBordo_ADMIN;
             this.pictureTrenerSlika.IsCircle = true;
             this.pictureTrenerSlika.Location = new System.Drawing.Point(12, 6);
             this.pictureTrenerSlika.Name = "pictureTrenerSlika";
@@ -1033,21 +970,10 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
             this.pictureTrenerSlika.TabStop = false;
             this.pictureTrenerSlika.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(536, 21);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 118;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // frmPočetna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureTrenerSlika);
             this.Controls.Add(this.panelPocetna);
             this.Controls.Add(this.bunifuPanel8);
@@ -1088,7 +1014,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
             ((System.ComponentModel.ISupportInitialize)(this.pictureTakmicenje)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grbGostNarednaUtakmica)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grbDomacinNarednaUtakmica)).EndInit();
             this.bunifuPanel4.ResumeLayout(false);
@@ -1099,7 +1024,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
             ((System.ComponentModel.ISupportInitialize)(this.pictureTakmicenjeZadnjaUtakmica)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grbGostZadnjaUtakmica)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grbDomacinZadnjaUtakmica)).EndInit();
             this.panelPocetna.ResumeLayout(false);
@@ -1149,8 +1073,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
         private FontAwesome.Sharp.IconPictureBox iconPictureBox13;
         private System.Windows.Forms.Label txtSatnicaNaredneUtakmice;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox12;
-        private System.Windows.Forms.Label txtProtivnik;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox8;
         private System.Windows.Forms.PictureBox pictureTakmicenje;
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel8;
         private System.Windows.Forms.PictureBox pictureTakmicenjeZadnjaUtakmica;
@@ -1158,8 +1080,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
         private FontAwesome.Sharp.IconPictureBox iconPictureBox6;
         private System.Windows.Forms.Label txtDatumZadnjaUtakmica;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox7;
-        private System.Windows.Forms.Label txtProtivnikZadnjaUtakmica;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox9;
         private System.Windows.Forms.PictureBox grbGostZadnjaUtakmica;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.PictureBox grbDomacinZadnjaUtakmica;
@@ -1171,6 +1091,5 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
         private System.Windows.Forms.Panel panelPocetna;
         private Bunifu.UI.WinForms.BunifuPictureBox pictureTrenerSlika;
         private System.Windows.Forms.PictureBox pictureRezultatZadnjaUtakmica;
-        private System.Windows.Forms.Button button1;
     }
 }

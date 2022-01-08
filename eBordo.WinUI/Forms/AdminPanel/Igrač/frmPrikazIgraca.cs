@@ -103,6 +103,8 @@ namespace eBordo.WinUI.Forms.AdminPanel
                     listItems[i].zastava = byteToImage.ConvertByteToImage(_podaci[i].korisnik.drzavljanstvo.zastava);
                     pnlIgraciWrapper.Controls.Add(listItems[i]);
                 }
+                loaderIgraci.Hide();
+                UcitajBrojIgraca();
             }
             catch 
             {
@@ -143,6 +145,15 @@ namespace eBordo.WinUI.Forms.AdminPanel
         private void pnlIgraciWrapper_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+        private void UcitajBrojIgraca()
+        {
+            txtBrojIgraca.Text = pnlIgraciWrapper.Controls.Count.ToString();
+        }
+        private void btnSaveIgracSastav_Click(object sender, EventArgs e)
+        {
+            Forms.AdminPanel.frmUpsertIgraca insert = new Forms.AdminPanel.frmUpsertIgraca(null, this);
+            insert.Show();
         }
     }
 }

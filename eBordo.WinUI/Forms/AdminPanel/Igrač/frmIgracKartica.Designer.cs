@@ -77,11 +77,12 @@ namespace eBordo.WinUI.Forms.AdminPanel.Igrač
             this.korisnickaFotografija.Size = new System.Drawing.Size(188, 203);
             this.korisnickaFotografija.TabIndex = 39;
             this.korisnickaFotografija.TabStop = false;
+            this.korisnickaFotografija.Click += new System.EventHandler(this.korisnickaFotografija_Click);
             // 
             // lblImePrezime
             // 
             this.lblImePrezime.BackColor = System.Drawing.Color.Transparent;
-            this.lblImePrezime.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblImePrezime.Font = new System.Drawing.Font("Oswald", 11F);
             this.lblImePrezime.ForeColor = System.Drawing.Color.Transparent;
             this.lblImePrezime.Location = new System.Drawing.Point(0, 196);
             this.lblImePrezime.Name = "lblImePrezime";
@@ -93,7 +94,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Igrač
             // lblBrojDresa
             // 
             this.lblBrojDresa.BackColor = System.Drawing.Color.Transparent;
-            this.lblBrojDresa.Font = new System.Drawing.Font("Oswald", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBrojDresa.Font = new System.Drawing.Font("Oswald", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBrojDresa.ForeColor = System.Drawing.Color.Transparent;
             this.lblBrojDresa.Location = new System.Drawing.Point(-1, 0);
             this.lblBrojDresa.Name = "lblBrojDresa";

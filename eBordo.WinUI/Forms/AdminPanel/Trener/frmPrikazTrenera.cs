@@ -78,8 +78,11 @@ namespace eBordo.WinUI.Forms.AdminPanel
                     listItems[i].trenerId = _podaci[i].trenerId;
                     listItems[i].imePrezime = _podaci[i].korisnik.ime + " " + _podaci[i].korisnik.prezime;
                     listItems[i].uloga = _podaci[i].ulogaTrenera.ToString() + " TRENER";
+                    listItems[i].licenca = _podaci[i].trenerskaLicenca.nazivLicence;
                     pnlTreneriWrapper.Controls.Add(listItems[i]);
                 }
+                loaderBrojIgraca.Hide();
+                UcitajBrojTrenera();
             }
             catch
             {
@@ -149,6 +152,22 @@ namespace eBordo.WinUI.Forms.AdminPanel
         {
             string pretraga = txtImePrezime.Text;
             await LoadTreneri(pretraga);
+        }
+
+        private void btnSaveIgracSastav_Click(object sender, EventArgs e)
+        {
+            Forms.AdminPanel.Trener.frmUpsertTrenera insert = new Forms.AdminPanel.Trener.frmUpsertTrenera(null, this);
+            insert.Show();
+        }
+        private void UcitajBrojTrenera()
+        {
+            bunifuLabel1.Text = pnlTreneriWrapper.Controls.Count.ToString();
+        }
+
+        private async void bunifuButton1_Click(object sender, EventArgs e)
+        {
+            txtImePrezime.Text = "";
+            await LoadTreneri();
         }
     }
 }

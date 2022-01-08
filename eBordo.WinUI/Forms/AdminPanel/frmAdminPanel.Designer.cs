@@ -43,6 +43,7 @@ namespace eBordo.WinUI.Forms.Igrač
             this.snackbar = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
             this.igracTabs = new Bunifu.UI.WinForms.BunifuPages();
             this.tabPocetna = new System.Windows.Forms.TabPage();
+            this.frmPočetna1 = new eBordo.WinUI.Forms.AdminPanel.Početna.frmPočetna();
             this.tabIgraci = new System.Windows.Forms.TabPage();
             this.frmPrikazIgraca1 = new eBordo.WinUI.Forms.AdminPanel.frmPrikazIgraca();
             this.tabTreneri = new System.Windows.Forms.TabPage();
@@ -85,7 +86,6 @@ namespace eBordo.WinUI.Forms.Igrač
             this.pngLogout = new FontAwesome.Sharp.IconPictureBox();
             this.pnlGrb = new System.Windows.Forms.Panel();
             this.lblLogout = new System.Windows.Forms.Label();
-            this.frmPočetna1 = new eBordo.WinUI.Forms.AdminPanel.Početna.frmPočetna();
             this.igracTabs.SuspendLayout();
             this.tabPocetna.SuspendLayout();
             this.tabIgraci.SuspendLayout();
@@ -225,6 +225,13 @@ namespace eBordo.WinUI.Forms.Igrač
             this.tabPocetna.TabIndex = 0;
             this.tabPocetna.Text = "Početna";
             this.tabPocetna.UseVisualStyleBackColor = true;
+            // 
+            // frmPočetna1
+            // 
+            this.frmPočetna1.Location = new System.Drawing.Point(0, 0);
+            this.frmPočetna1.Name = "frmPočetna1";
+            this.frmPočetna1.Size = new System.Drawing.Size(622, 403);
+            this.frmPočetna1.TabIndex = 0;
             // 
             // tabIgraci
             // 
@@ -467,9 +474,9 @@ namespace eBordo.WinUI.Forms.Igrač
             // 
             this.iconPictureBox7.BackColor = System.Drawing.Color.LightGray;
             this.iconPictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.iconPictureBox7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.iconPictureBox7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.iconPictureBox7.IconChar = FontAwesome.Sharp.IconChar.Table;
-            this.iconPictureBox7.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.iconPictureBox7.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.iconPictureBox7.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox7.Location = new System.Drawing.Point(12, 401);
             this.iconPictureBox7.Name = "iconPictureBox7";
@@ -479,7 +486,7 @@ namespace eBordo.WinUI.Forms.Igrač
             // 
             // pnlTabele
             // 
-            this.pnlTabele.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.pnlTabele.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.pnlTabele.Location = new System.Drawing.Point(0, 392);
             this.pnlTabele.Name = "pnlTabele";
             this.pnlTabele.Size = new System.Drawing.Size(8, 47);
@@ -487,7 +494,7 @@ namespace eBordo.WinUI.Forms.Igrač
             // 
             // pnlRasporedTreninga
             // 
-            this.pnlRasporedTreninga.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.pnlRasporedTreninga.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.pnlRasporedTreninga.Location = new System.Drawing.Point(0, 345);
             this.pnlRasporedTreninga.Name = "pnlRasporedTreninga";
             this.pnlRasporedTreninga.Size = new System.Drawing.Size(8, 47);
@@ -497,9 +504,9 @@ namespace eBordo.WinUI.Forms.Igrač
             // 
             this.iconPictureBox6.BackColor = System.Drawing.Color.LightGray;
             this.iconPictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.iconPictureBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.iconPictureBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.iconPictureBox6.IconChar = FontAwesome.Sharp.IconChar.CalendarDay;
-            this.iconPictureBox6.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.iconPictureBox6.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.iconPictureBox6.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox6.Location = new System.Drawing.Point(12, 353);
             this.iconPictureBox6.Name = "iconPictureBox6";
@@ -536,8 +543,8 @@ namespace eBordo.WinUI.Forms.Igrač
             this.btnRasporedTreninga.DisabledFillColor = System.Drawing.Color.Empty;
             this.btnRasporedTreninga.DisabledForecolor = System.Drawing.Color.Empty;
             this.btnRasporedTreninga.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnRasporedTreninga.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRasporedTreninga.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.btnRasporedTreninga.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRasporedTreninga.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.btnRasporedTreninga.IconLeft = null;
             this.btnRasporedTreninga.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRasporedTreninga.IconLeftCursor = System.Windows.Forms.Cursors.Default;
@@ -579,7 +586,7 @@ namespace eBordo.WinUI.Forms.Igrač
             this.btnRasporedTreninga.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.btnRasporedTreninga.OnIdleState.BorderThickness = 1;
             this.btnRasporedTreninga.OnIdleState.FillColor = System.Drawing.Color.LightGray;
-            this.btnRasporedTreninga.OnIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.btnRasporedTreninga.OnIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.btnRasporedTreninga.OnIdleState.IconLeftImage = null;
             this.btnRasporedTreninga.OnIdleState.IconRightImage = null;
             this.btnRasporedTreninga.OnPressedState.BorderColor = System.Drawing.Color.LightGray;
@@ -601,7 +608,7 @@ namespace eBordo.WinUI.Forms.Igrač
             // 
             // pnlOdigraneUtakmice
             // 
-            this.pnlOdigraneUtakmice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.pnlOdigraneUtakmice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.pnlOdigraneUtakmice.Location = new System.Drawing.Point(0, 298);
             this.pnlOdigraneUtakmice.Name = "pnlOdigraneUtakmice";
             this.pnlOdigraneUtakmice.Size = new System.Drawing.Size(8, 47);
@@ -611,9 +618,9 @@ namespace eBordo.WinUI.Forms.Igrač
             // 
             this.iconPictureBox5.BackColor = System.Drawing.Color.LightGray;
             this.iconPictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.iconPictureBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.iconPictureBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.Futbol;
-            this.iconPictureBox5.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.iconPictureBox5.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox5.Location = new System.Drawing.Point(12, 306);
             this.iconPictureBox5.Name = "iconPictureBox5";
@@ -650,8 +657,8 @@ namespace eBordo.WinUI.Forms.Igrač
             this.btnOdigraneUtakmice.DisabledFillColor = System.Drawing.Color.Empty;
             this.btnOdigraneUtakmice.DisabledForecolor = System.Drawing.Color.Empty;
             this.btnOdigraneUtakmice.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnOdigraneUtakmice.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOdigraneUtakmice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.btnOdigraneUtakmice.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOdigraneUtakmice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.btnOdigraneUtakmice.IconLeft = null;
             this.btnOdigraneUtakmice.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnOdigraneUtakmice.IconLeftCursor = System.Windows.Forms.Cursors.Default;
@@ -693,7 +700,7 @@ namespace eBordo.WinUI.Forms.Igrač
             this.btnOdigraneUtakmice.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.btnOdigraneUtakmice.OnIdleState.BorderThickness = 1;
             this.btnOdigraneUtakmice.OnIdleState.FillColor = System.Drawing.Color.LightGray;
-            this.btnOdigraneUtakmice.OnIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.btnOdigraneUtakmice.OnIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.btnOdigraneUtakmice.OnIdleState.IconLeftImage = null;
             this.btnOdigraneUtakmice.OnIdleState.IconRightImage = null;
             this.btnOdigraneUtakmice.OnPressedState.BorderColor = System.Drawing.Color.LightGray;
@@ -715,7 +722,7 @@ namespace eBordo.WinUI.Forms.Igrač
             // 
             // pnlRasporedUtakmica
             // 
-            this.pnlRasporedUtakmica.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.pnlRasporedUtakmica.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.pnlRasporedUtakmica.Location = new System.Drawing.Point(0, 251);
             this.pnlRasporedUtakmica.Name = "pnlRasporedUtakmica";
             this.pnlRasporedUtakmica.Size = new System.Drawing.Size(8, 47);
@@ -725,9 +732,9 @@ namespace eBordo.WinUI.Forms.Igrač
             // 
             this.iconPictureBox4.BackColor = System.Drawing.Color.LightGray;
             this.iconPictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.iconPictureBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.iconPictureBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.CalendarAlt;
-            this.iconPictureBox4.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.iconPictureBox4.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox4.Location = new System.Drawing.Point(12, 259);
             this.iconPictureBox4.Name = "iconPictureBox4";
@@ -764,8 +771,8 @@ namespace eBordo.WinUI.Forms.Igrač
             this.btnRasporedUtakmica.DisabledFillColor = System.Drawing.Color.Empty;
             this.btnRasporedUtakmica.DisabledForecolor = System.Drawing.Color.Empty;
             this.btnRasporedUtakmica.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnRasporedUtakmica.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRasporedUtakmica.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.btnRasporedUtakmica.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRasporedUtakmica.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.btnRasporedUtakmica.IconLeft = null;
             this.btnRasporedUtakmica.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRasporedUtakmica.IconLeftCursor = System.Windows.Forms.Cursors.Default;
@@ -807,7 +814,7 @@ namespace eBordo.WinUI.Forms.Igrač
             this.btnRasporedUtakmica.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.btnRasporedUtakmica.OnIdleState.BorderThickness = 1;
             this.btnRasporedUtakmica.OnIdleState.FillColor = System.Drawing.Color.LightGray;
-            this.btnRasporedUtakmica.OnIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.btnRasporedUtakmica.OnIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.btnRasporedUtakmica.OnIdleState.IconLeftImage = null;
             this.btnRasporedUtakmica.OnIdleState.IconRightImage = null;
             this.btnRasporedUtakmica.OnPressedState.BorderColor = System.Drawing.Color.LightGray;
@@ -829,7 +836,7 @@ namespace eBordo.WinUI.Forms.Igrač
             // 
             // pnlTreneri
             // 
-            this.pnlTreneri.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.pnlTreneri.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.pnlTreneri.Location = new System.Drawing.Point(0, 204);
             this.pnlTreneri.Name = "pnlTreneri";
             this.pnlTreneri.Size = new System.Drawing.Size(8, 47);
@@ -839,9 +846,9 @@ namespace eBordo.WinUI.Forms.Igrač
             // 
             this.iconPictureBox3.BackColor = System.Drawing.Color.LightGray;
             this.iconPictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.iconPictureBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.iconPictureBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.UserTie;
-            this.iconPictureBox3.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.iconPictureBox3.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox3.Location = new System.Drawing.Point(12, 212);
             this.iconPictureBox3.Name = "iconPictureBox3";
@@ -878,8 +885,8 @@ namespace eBordo.WinUI.Forms.Igrač
             this.btnTreneri.DisabledFillColor = System.Drawing.Color.Empty;
             this.btnTreneri.DisabledForecolor = System.Drawing.Color.Empty;
             this.btnTreneri.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnTreneri.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTreneri.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.btnTreneri.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTreneri.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.btnTreneri.IconLeft = null;
             this.btnTreneri.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTreneri.IconLeftCursor = System.Windows.Forms.Cursors.Default;
@@ -921,7 +928,7 @@ namespace eBordo.WinUI.Forms.Igrač
             this.btnTreneri.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.btnTreneri.OnIdleState.BorderThickness = 1;
             this.btnTreneri.OnIdleState.FillColor = System.Drawing.Color.LightGray;
-            this.btnTreneri.OnIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.btnTreneri.OnIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.btnTreneri.OnIdleState.IconLeftImage = null;
             this.btnTreneri.OnIdleState.IconRightImage = null;
             this.btnTreneri.OnPressedState.BorderColor = System.Drawing.Color.LightGray;
@@ -943,7 +950,7 @@ namespace eBordo.WinUI.Forms.Igrač
             // 
             // pnlIgraci
             // 
-            this.pnlIgraci.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.pnlIgraci.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.pnlIgraci.Location = new System.Drawing.Point(0, 157);
             this.pnlIgraci.Name = "pnlIgraci";
             this.pnlIgraci.Size = new System.Drawing.Size(8, 47);
@@ -953,9 +960,9 @@ namespace eBordo.WinUI.Forms.Igrač
             // 
             this.iconPictureBox2.BackColor = System.Drawing.Color.LightGray;
             this.iconPictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.iconPictureBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.iconPictureBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Running;
-            this.iconPictureBox2.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.iconPictureBox2.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox2.Location = new System.Drawing.Point(12, 165);
             this.iconPictureBox2.Name = "iconPictureBox2";
@@ -992,8 +999,8 @@ namespace eBordo.WinUI.Forms.Igrač
             this.btnIgraci.DisabledFillColor = System.Drawing.Color.Empty;
             this.btnIgraci.DisabledForecolor = System.Drawing.Color.Empty;
             this.btnIgraci.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnIgraci.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIgraci.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.btnIgraci.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIgraci.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.btnIgraci.IconLeft = null;
             this.btnIgraci.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnIgraci.IconLeftCursor = System.Windows.Forms.Cursors.Default;
@@ -1035,7 +1042,7 @@ namespace eBordo.WinUI.Forms.Igrač
             this.btnIgraci.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.btnIgraci.OnIdleState.BorderThickness = 1;
             this.btnIgraci.OnIdleState.FillColor = System.Drawing.Color.LightGray;
-            this.btnIgraci.OnIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.btnIgraci.OnIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.btnIgraci.OnIdleState.IconLeftImage = null;
             this.btnIgraci.OnIdleState.IconRightImage = null;
             this.btnIgraci.OnPressedState.BorderColor = System.Drawing.Color.LightGray;
@@ -1057,7 +1064,7 @@ namespace eBordo.WinUI.Forms.Igrač
             // 
             // pnlPocetna
             // 
-            this.pnlPocetna.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.pnlPocetna.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.pnlPocetna.Location = new System.Drawing.Point(0, 110);
             this.pnlPocetna.Name = "pnlPocetna";
             this.pnlPocetna.Size = new System.Drawing.Size(8, 47);
@@ -1067,9 +1074,9 @@ namespace eBordo.WinUI.Forms.Igrač
             // 
             this.iconPictureBox1.BackColor = System.Drawing.Color.LightGray;
             this.iconPictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.iconPictureBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.iconPictureBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Home;
-            this.iconPictureBox1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.iconPictureBox1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox1.Location = new System.Drawing.Point(12, 118);
             this.iconPictureBox1.Name = "iconPictureBox1";
@@ -1083,7 +1090,7 @@ namespace eBordo.WinUI.Forms.Igrač
             this.korisnickaFotografija.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.korisnickaFotografija.AutoSizeHeight = true;
             this.korisnickaFotografija.BorderRadius = 35;
-            this.korisnickaFotografija.Image = ((System.Drawing.Image)(resources.GetObject("korisnickaFotografija.Image")));
+            this.korisnickaFotografija.Image = global::eBordo.WinUI.Properties.Resources.eBordo_ADMIN;
             this.korisnickaFotografija.IsCircle = true;
             this.korisnickaFotografija.Location = new System.Drawing.Point(70, 8);
             this.korisnickaFotografija.Name = "korisnickaFotografija";
@@ -1122,8 +1129,8 @@ namespace eBordo.WinUI.Forms.Igrač
             this.btnPocetna.DisabledFillColor = System.Drawing.Color.Empty;
             this.btnPocetna.DisabledForecolor = System.Drawing.Color.Empty;
             this.btnPocetna.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnPocetna.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPocetna.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.btnPocetna.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPocetna.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.btnPocetna.IconLeft = null;
             this.btnPocetna.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPocetna.IconLeftCursor = System.Windows.Forms.Cursors.Default;
@@ -1165,7 +1172,7 @@ namespace eBordo.WinUI.Forms.Igrač
             this.btnPocetna.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.btnPocetna.OnIdleState.BorderThickness = 1;
             this.btnPocetna.OnIdleState.FillColor = System.Drawing.Color.LightGray;
-            this.btnPocetna.OnIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.btnPocetna.OnIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.btnPocetna.OnIdleState.IconLeftImage = null;
             this.btnPocetna.OnIdleState.IconRightImage = null;
             this.btnPocetna.OnPressedState.BorderColor = System.Drawing.Color.LightGray;
@@ -1188,13 +1195,13 @@ namespace eBordo.WinUI.Forms.Igrač
             // lblLogovaniKorisnik
             // 
             this.lblLogovaniKorisnik.BackColor = System.Drawing.Color.Transparent;
-            this.lblLogovaniKorisnik.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogovaniKorisnik.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.lblLogovaniKorisnik.Font = new System.Drawing.Font("Oswald", 10F);
+            this.lblLogovaniKorisnik.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.lblLogovaniKorisnik.Location = new System.Drawing.Point(0, 81);
             this.lblLogovaniKorisnik.Name = "lblLogovaniKorisnik";
             this.lblLogovaniKorisnik.Size = new System.Drawing.Size(209, 22);
             this.lblLogovaniKorisnik.TabIndex = 3;
-            this.lblLogovaniKorisnik.Text = "Logovani korisnik";
+            this.lblLogovaniKorisnik.Text = "ADMINISTRATOR";
             this.lblLogovaniKorisnik.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bunifuButton1
@@ -1226,8 +1233,8 @@ namespace eBordo.WinUI.Forms.Igrač
             this.bunifuButton1.DisabledFillColor = System.Drawing.Color.Empty;
             this.bunifuButton1.DisabledForecolor = System.Drawing.Color.Empty;
             this.bunifuButton1.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.bunifuButton1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.bunifuButton1.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.bunifuButton1.IconLeft = null;
             this.bunifuButton1.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bunifuButton1.IconLeftCursor = System.Windows.Forms.Cursors.Default;
@@ -1269,7 +1276,7 @@ namespace eBordo.WinUI.Forms.Igrač
             this.bunifuButton1.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.bunifuButton1.OnIdleState.BorderThickness = 1;
             this.bunifuButton1.OnIdleState.FillColor = System.Drawing.Color.LightGray;
-            this.bunifuButton1.OnIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.bunifuButton1.OnIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.bunifuButton1.OnIdleState.IconLeftImage = null;
             this.bunifuButton1.OnIdleState.IconRightImage = null;
             this.bunifuButton1.OnPressedState.BorderColor = System.Drawing.Color.LightGray;
@@ -1291,7 +1298,7 @@ namespace eBordo.WinUI.Forms.Igrač
             // 
             // gornjiPanel
             // 
-            this.gornjiPanel.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.gornjiPanel.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.gornjiPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("gornjiPanel.BackgroundImage")));
             this.gornjiPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.gornjiPanel.BorderColor = System.Drawing.Color.Transparent;
@@ -1310,7 +1317,7 @@ namespace eBordo.WinUI.Forms.Igrač
             // lblNaziv
             // 
             this.lblNaziv.BackColor = System.Drawing.Color.Transparent;
-            this.lblNaziv.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNaziv.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNaziv.ForeColor = System.Drawing.Color.White;
             this.lblNaziv.Location = new System.Drawing.Point(37, 14);
             this.lblNaziv.Name = "lblNaziv";
@@ -1351,22 +1358,15 @@ namespace eBordo.WinUI.Forms.Igrač
             // 
             this.lblLogout.BackColor = System.Drawing.Color.Transparent;
             this.lblLogout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblLogout.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogout.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogout.ForeColor = System.Drawing.Color.White;
-            this.lblLogout.Location = new System.Drawing.Point(536, 14);
+            this.lblLogout.Location = new System.Drawing.Point(540, 15);
             this.lblLogout.Name = "lblLogout";
             this.lblLogout.Size = new System.Drawing.Size(70, 22);
             this.lblLogout.TabIndex = 5;
             this.lblLogout.Text = "ODJAVA";
             this.lblLogout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblLogout.Click += new System.EventHandler(this.lblLogout_Click);
-            // 
-            // frmPočetna1
-            // 
-            this.frmPočetna1.Location = new System.Drawing.Point(0, 0);
-            this.frmPočetna1.Name = "frmPočetna1";
-            this.frmPočetna1.Size = new System.Drawing.Size(622, 403);
-            this.frmPočetna1.TabIndex = 0;
             // 
             // fromAdminPanel
             // 

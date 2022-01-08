@@ -51,6 +51,9 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             this.lblGoloviGost = new System.Windows.Forms.Label();
             this.pictureRezultat = new System.Windows.Forms.PictureBox();
             this.lblRezultatOpis = new System.Windows.Forms.Label();
+            this.brojDana = new System.Windows.Forms.Label();
+            this.txtStatus = new System.Windows.Forms.Label();
+            this.pictureStatus = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -64,6 +67,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             ((System.ComponentModel.ISupportInitialize)(this.grbDomacin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureDres)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureRezultat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureStatus)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox4
@@ -72,7 +76,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             this.pictureBox4.BackgroundImage = global::eBordo.WinUI.Properties.Resources.trophy;
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox4.Location = new System.Drawing.Point(8, 178);
+            this.pictureBox4.Location = new System.Drawing.Point(13, 174);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(17, 17);
             this.pictureBox4.TabIndex = 79;
@@ -83,7 +87,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             this.lblOpisUtakmice.BackColor = System.Drawing.Color.Transparent;
             this.lblOpisUtakmice.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOpisUtakmice.ForeColor = System.Drawing.Color.Transparent;
-            this.lblOpisUtakmice.Location = new System.Drawing.Point(28, 178);
+            this.lblOpisUtakmice.Location = new System.Drawing.Point(33, 174);
             this.lblOpisUtakmice.Name = "lblOpisUtakmice";
             this.lblOpisUtakmice.Size = new System.Drawing.Size(174, 23);
             this.lblOpisUtakmice.TabIndex = 78;
@@ -96,7 +100,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             this.pictureBox3.BackgroundImage = global::eBordo.WinUI.Properties.Resources.location;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Location = new System.Drawing.Point(8, 158);
+            this.pictureBox3.Location = new System.Drawing.Point(13, 154);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(17, 17);
             this.pictureBox3.TabIndex = 77;
@@ -108,7 +112,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             this.pictureBox2.BackgroundImage = global::eBordo.WinUI.Properties.Resources.time;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Location = new System.Drawing.Point(8, 138);
+            this.pictureBox2.Location = new System.Drawing.Point(13, 134);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(17, 17);
             this.pictureBox2.TabIndex = 76;
@@ -120,7 +124,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             this.pictureBox1.BackgroundImage = global::eBordo.WinUI.Properties.Resources.date;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Location = new System.Drawing.Point(8, 118);
+            this.pictureBox1.Location = new System.Drawing.Point(13, 114);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(17, 17);
             this.pictureBox1.TabIndex = 75;
@@ -131,7 +135,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             this.lblDatum.BackColor = System.Drawing.Color.Transparent;
             this.lblDatum.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDatum.ForeColor = System.Drawing.Color.Transparent;
-            this.lblDatum.Location = new System.Drawing.Point(28, 118);
+            this.lblDatum.Location = new System.Drawing.Point(33, 114);
             this.lblDatum.Name = "lblDatum";
             this.lblDatum.Size = new System.Drawing.Size(232, 23);
             this.lblDatum.TabIndex = 74;
@@ -142,7 +146,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             // 
             this.pictureGostujucaDomaca.BackColor = System.Drawing.Color.Transparent;
             this.pictureGostujucaDomaca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureGostujucaDomaca.Location = new System.Drawing.Point(245, 197);
+            this.pictureGostujucaDomaca.Location = new System.Drawing.Point(250, 216);
             this.pictureGostujucaDomaca.Name = "pictureGostujucaDomaca";
             this.pictureGostujucaDomaca.Size = new System.Drawing.Size(30, 28);
             this.pictureGostujucaDomaca.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -153,7 +157,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             // 
             this.pictureTakmicenje.BackColor = System.Drawing.Color.Transparent;
             this.pictureTakmicenje.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureTakmicenje.Location = new System.Drawing.Point(247, 10);
+            this.pictureTakmicenje.Location = new System.Drawing.Point(252, 8);
             this.pictureTakmicenje.Name = "pictureTakmicenje";
             this.pictureTakmicenje.Size = new System.Drawing.Size(30, 30);
             this.pictureTakmicenje.TabIndex = 72;
@@ -164,7 +168,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             this.lblStadion.BackColor = System.Drawing.Color.Transparent;
             this.lblStadion.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStadion.ForeColor = System.Drawing.Color.Transparent;
-            this.lblStadion.Location = new System.Drawing.Point(28, 158);
+            this.lblStadion.Location = new System.Drawing.Point(33, 154);
             this.lblStadion.Name = "lblStadion";
             this.lblStadion.Size = new System.Drawing.Size(232, 23);
             this.lblStadion.TabIndex = 71;
@@ -177,7 +181,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             this.btnView.BackgroundImage = global::eBordo.WinUI.Properties.Resources.view22;
             this.btnView.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnView.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnView.Location = new System.Drawing.Point(8, 203);
+            this.btnView.Location = new System.Drawing.Point(13, 222);
             this.btnView.Name = "btnView";
             this.btnView.Size = new System.Drawing.Size(20, 20);
             this.btnView.TabIndex = 70;
@@ -190,7 +194,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             this.btnDelete.BackgroundImage = global::eBordo.WinUI.Properties.Resources.delete2;
             this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelete.Location = new System.Drawing.Point(54, 203);
+            this.btnDelete.Location = new System.Drawing.Point(59, 222);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(20, 20);
             this.btnDelete.TabIndex = 69;
@@ -203,7 +207,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             this.btnEdit.BackgroundImage = global::eBordo.WinUI.Properties.Resources.edit2;
             this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEdit.Location = new System.Drawing.Point(31, 203);
+            this.btnEdit.Location = new System.Drawing.Point(36, 222);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(20, 20);
             this.btnEdit.TabIndex = 68;
@@ -215,7 +219,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             this.lblSatnica.BackColor = System.Drawing.Color.Transparent;
             this.lblSatnica.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSatnica.ForeColor = System.Drawing.Color.Transparent;
-            this.lblSatnica.Location = new System.Drawing.Point(28, 138);
+            this.lblSatnica.Location = new System.Drawing.Point(33, 134);
             this.lblSatnica.Name = "lblSatnica";
             this.lblSatnica.Size = new System.Drawing.Size(232, 23);
             this.lblSatnica.TabIndex = 67;
@@ -225,9 +229,9 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             // lblGost
             // 
             this.lblGost.BackColor = System.Drawing.Color.Transparent;
-            this.lblGost.Font = new System.Drawing.Font("Oswald", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGost.Font = new System.Drawing.Font("Oswald", 12F);
             this.lblGost.ForeColor = System.Drawing.Color.Transparent;
-            this.lblGost.Location = new System.Drawing.Point(44, 57);
+            this.lblGost.Location = new System.Drawing.Point(49, 55);
             this.lblGost.Name = "lblGost";
             this.lblGost.Size = new System.Drawing.Size(149, 23);
             this.lblGost.TabIndex = 66;
@@ -237,9 +241,9 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             // lblDomacin
             // 
             this.lblDomacin.BackColor = System.Drawing.Color.Transparent;
-            this.lblDomacin.Font = new System.Drawing.Font("Oswald", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDomacin.Font = new System.Drawing.Font("Oswald", 12F);
             this.lblDomacin.ForeColor = System.Drawing.Color.Transparent;
-            this.lblDomacin.Location = new System.Drawing.Point(44, 17);
+            this.lblDomacin.Location = new System.Drawing.Point(49, 15);
             this.lblDomacin.Name = "lblDomacin";
             this.lblDomacin.Size = new System.Drawing.Size(149, 23);
             this.lblDomacin.TabIndex = 65;
@@ -250,7 +254,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             // 
             this.grbGost.BackColor = System.Drawing.Color.Transparent;
             this.grbGost.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.grbGost.Location = new System.Drawing.Point(8, 51);
+            this.grbGost.Location = new System.Drawing.Point(13, 49);
             this.grbGost.Name = "grbGost";
             this.grbGost.Size = new System.Drawing.Size(35, 35);
             this.grbGost.TabIndex = 64;
@@ -260,7 +264,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             // 
             this.grbDomacin.BackColor = System.Drawing.Color.Transparent;
             this.grbDomacin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.grbDomacin.Location = new System.Drawing.Point(8, 10);
+            this.grbDomacin.Location = new System.Drawing.Point(13, 8);
             this.grbDomacin.Name = "grbDomacin";
             this.grbDomacin.Size = new System.Drawing.Size(35, 35);
             this.grbDomacin.TabIndex = 63;
@@ -270,7 +274,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             // 
             this.pictureDres.BackColor = System.Drawing.Color.Transparent;
             this.pictureDres.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureDres.Location = new System.Drawing.Point(218, 195);
+            this.pictureDres.Location = new System.Drawing.Point(223, 214);
             this.pictureDres.Name = "pictureDres";
             this.pictureDres.Size = new System.Drawing.Size(30, 30);
             this.pictureDres.TabIndex = 80;
@@ -279,9 +283,9 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             // lblGoloviDomacin
             // 
             this.lblGoloviDomacin.BackColor = System.Drawing.Color.Transparent;
-            this.lblGoloviDomacin.Font = new System.Drawing.Font("Oswald", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGoloviDomacin.Font = new System.Drawing.Font("Oswald", 12F);
             this.lblGoloviDomacin.ForeColor = System.Drawing.Color.Transparent;
-            this.lblGoloviDomacin.Location = new System.Drawing.Point(186, 17);
+            this.lblGoloviDomacin.Location = new System.Drawing.Point(186, 15);
             this.lblGoloviDomacin.Name = "lblGoloviDomacin";
             this.lblGoloviDomacin.Size = new System.Drawing.Size(40, 23);
             this.lblGoloviDomacin.TabIndex = 81;
@@ -291,9 +295,9 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             // lblGoloviGost
             // 
             this.lblGoloviGost.BackColor = System.Drawing.Color.Transparent;
-            this.lblGoloviGost.Font = new System.Drawing.Font("Oswald", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGoloviGost.Font = new System.Drawing.Font("Oswald", 12F);
             this.lblGoloviGost.ForeColor = System.Drawing.Color.Transparent;
-            this.lblGoloviGost.Location = new System.Drawing.Point(186, 57);
+            this.lblGoloviGost.Location = new System.Drawing.Point(186, 55);
             this.lblGoloviGost.Name = "lblGoloviGost";
             this.lblGoloviGost.Size = new System.Drawing.Size(40, 23);
             this.lblGoloviGost.TabIndex = 82;
@@ -306,7 +310,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             this.pictureRezultat.BackgroundImage = global::eBordo.WinUI.Properties.Resources.eBordo_pobjedaUtakmica;
             this.pictureRezultat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureRezultat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureRezultat.Location = new System.Drawing.Point(8, 98);
+            this.pictureRezultat.Location = new System.Drawing.Point(13, 94);
             this.pictureRezultat.Name = "pictureRezultat";
             this.pictureRezultat.Size = new System.Drawing.Size(17, 17);
             this.pictureRezultat.TabIndex = 84;
@@ -317,18 +321,56 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             this.lblRezultatOpis.BackColor = System.Drawing.Color.Transparent;
             this.lblRezultatOpis.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRezultatOpis.ForeColor = System.Drawing.Color.Transparent;
-            this.lblRezultatOpis.Location = new System.Drawing.Point(28, 98);
+            this.lblRezultatOpis.Location = new System.Drawing.Point(33, 94);
             this.lblRezultatOpis.Name = "lblRezultatOpis";
             this.lblRezultatOpis.Size = new System.Drawing.Size(174, 23);
             this.lblRezultatOpis.TabIndex = 83;
             this.lblRezultatOpis.Text = "POBJEDA";
             this.lblRezultatOpis.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // brojDana
+            // 
+            this.brojDana.AutoSize = true;
+            this.brojDana.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.brojDana.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.brojDana.Location = new System.Drawing.Point(94, 117);
+            this.brojDana.Name = "brojDana";
+            this.brojDana.Size = new System.Drawing.Size(52, 16);
+            this.brojDana.TabIndex = 85;
+            this.brojDana.Text = "ZA 2 DANA";
+            // 
+            // txtStatus
+            // 
+            this.txtStatus.BackColor = System.Drawing.Color.Transparent;
+            this.txtStatus.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStatus.ForeColor = System.Drawing.Color.Transparent;
+            this.txtStatus.Location = new System.Drawing.Point(33, 195);
+            this.txtStatus.Name = "txtStatus";
+            this.txtStatus.Size = new System.Drawing.Size(174, 23);
+            this.txtStatus.TabIndex = 88;
+            this.txtStatus.Text = "POBJEDA";
+            this.txtStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pictureStatus
+            // 
+            this.pictureStatus.BackColor = System.Drawing.Color.Transparent;
+            this.pictureStatus.BackgroundImage = global::eBordo.WinUI.Properties.Resources.eBordo_pobjedaUtakmica;
+            this.pictureStatus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureStatus.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureStatus.Location = new System.Drawing.Point(13, 196);
+            this.pictureStatus.Name = "pictureStatus";
+            this.pictureStatus.Size = new System.Drawing.Size(17, 17);
+            this.pictureStatus.TabIndex = 87;
+            this.pictureStatus.TabStop = false;
+            // 
             // frmIzvjestajKartica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::eBordo.WinUI.Properties.Resources.Screenshot_11;
+            this.Controls.Add(this.txtStatus);
+            this.Controls.Add(this.pictureStatus);
+            this.Controls.Add(this.brojDana);
             this.Controls.Add(this.pictureRezultat);
             this.Controls.Add(this.lblRezultatOpis);
             this.Controls.Add(this.lblGoloviGost);
@@ -353,7 +395,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             this.Controls.Add(this.pictureDres);
             this.DoubleBuffered = true;
             this.Name = "frmIzvjestajKartica";
-            this.Size = new System.Drawing.Size(285, 232);
+            this.Size = new System.Drawing.Size(285, 249);
             this.Load += new System.EventHandler(this.frmIzvjestajKartica_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -368,7 +410,9 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             ((System.ComponentModel.ISupportInitialize)(this.grbDomacin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureDres)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureRezultat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureStatus)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -396,5 +440,8 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
         private System.Windows.Forms.Label lblGoloviGost;
         private System.Windows.Forms.PictureBox pictureRezultat;
         private System.Windows.Forms.Label lblRezultatOpis;
+        private System.Windows.Forms.Label brojDana;
+        private System.Windows.Forms.Label txtStatus;
+        private System.Windows.Forms.PictureBox pictureStatus;
     }
 }

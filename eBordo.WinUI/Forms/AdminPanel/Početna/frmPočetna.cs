@@ -175,7 +175,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
                     pictureRezultatZadnjaUtakmica.BackgroundImage = Properties.Resources.eBordo_nerjeseno;
                     pictureRezultatZadnjaUtakmica.BackgroundImageLayout = ImageLayout.Zoom;
                 }
-                txtProtivnikZadnjaUtakmica.Text = _zadnjaUtakmica[0].utakmica.protivnik.nazivKluba;
                 txtDatumZadnjaUtakmica.Text = _zadnjaUtakmica[0].utakmica.datumOdigravanja.ToString("dd.MM.yyyy") + " u " + _zadnjaUtakmica[0].utakmica.satnica + " h";
                 if(_zadnjaUtakmica[0].utakmica.datumOdigravanja.Date == DateTime.Now.Date)
                 {
@@ -222,7 +221,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
                     //pictureDomacaGostujucaNarednaUtakmica.BackgroundImage = Properties.Resources.away;
                     //pictureDomacaGostujucaNarednaUtakmica.BackgroundImageLayout = ImageLayout.Zoom;
                 }
-                txtProtivnik.Text = _narednaUtakmica[0].protivnik.nazivKluba;
                 txtSatnicaNaredneUtakmice.Text = _narednaUtakmica[0].datumOdigravanja.ToString("dd.MM.yyyy") + " u " + _narednaUtakmica[0].satnica + " h";
                 if(_narednaUtakmica[0].datumOdigravanja.Date == DateTime.Now.Date)
                 {
