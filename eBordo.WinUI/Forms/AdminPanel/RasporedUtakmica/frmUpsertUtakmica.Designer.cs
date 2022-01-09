@@ -158,15 +158,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.label8 = new System.Windows.Forms.Label();
             this.btnSave = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnSaveUpdate = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel3 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel4 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel5 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel6 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel7 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel8 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel9 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.txtOpisUtakmiceValidator = new Bunifu.UI.WinForms.BunifuLabel();
+            this.txtDatumOdigravanjaValidator = new Bunifu.UI.WinForms.BunifuLabel();
+            this.txtSudijaValidator = new Bunifu.UI.WinForms.BunifuLabel();
+            this.txtSatnicaValidator = new Bunifu.UI.WinForms.BunifuLabel();
+            this.pictureDatumOdigravanjaValidator = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureIgracSlika)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.domaciDres)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rezervniDres)).BeginInit();
@@ -189,6 +185,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureDatumOdigravanjaValidator)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbProtivnik
@@ -227,7 +224,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.cmbProtivnik.ItemHighLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
             this.cmbProtivnik.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cmbProtivnik.ItemTopMargin = 3;
-            this.cmbProtivnik.Location = new System.Drawing.Point(11, 86);
+            this.cmbProtivnik.Location = new System.Drawing.Point(12, 94);
             this.cmbProtivnik.Name = "cmbProtivnik";
             this.cmbProtivnik.Size = new System.Drawing.Size(176, 32);
             this.cmbProtivnik.TabIndex = 30;
@@ -241,7 +238,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.lblProtivnik.AutoEllipsis = false;
             this.lblProtivnik.CursorType = null;
             this.lblProtivnik.Font = new System.Drawing.Font("Oswald", 8F);
-            this.lblProtivnik.Location = new System.Drawing.Point(12, 68);
+            this.lblProtivnik.Location = new System.Drawing.Point(12, 78);
             this.lblProtivnik.Name = "lblProtivnik";
             this.lblProtivnik.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblProtivnik.Size = new System.Drawing.Size(40, 16);
@@ -322,7 +319,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.lblVrstaUtakmice.AutoEllipsis = false;
             this.lblVrstaUtakmice.CursorType = null;
             this.lblVrstaUtakmice.Font = new System.Drawing.Font("Oswald", 8F);
-            this.lblVrstaUtakmice.Location = new System.Drawing.Point(200, 68);
+            this.lblVrstaUtakmice.Location = new System.Drawing.Point(200, 78);
             this.lblVrstaUtakmice.Name = "lblVrstaUtakmice";
             this.lblVrstaUtakmice.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblVrstaUtakmice.Size = new System.Drawing.Size(66, 16);
@@ -367,7 +364,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.cmbTakmicenja.ItemHighLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.cmbTakmicenja.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cmbTakmicenja.ItemTopMargin = 3;
-            this.cmbTakmicenja.Location = new System.Drawing.Point(11, 197);
+            this.cmbTakmicenja.Location = new System.Drawing.Point(13, 223);
             this.cmbTakmicenja.Name = "cmbTakmicenja";
             this.cmbTakmicenja.Size = new System.Drawing.Size(176, 32);
             this.cmbTakmicenja.TabIndex = 44;
@@ -381,7 +378,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.lblTakmicenje.AutoEllipsis = false;
             this.lblTakmicenje.CursorType = null;
             this.lblTakmicenje.Font = new System.Drawing.Font("Oswald", 8F);
-            this.lblTakmicenje.Location = new System.Drawing.Point(12, 179);
+            this.lblTakmicenje.Location = new System.Drawing.Point(13, 207);
             this.lblTakmicenje.Name = "lblTakmicenje";
             this.lblTakmicenje.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblTakmicenje.Size = new System.Drawing.Size(49, 16);
@@ -426,7 +423,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.cmbStadion.ItemHighLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.cmbStadion.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cmbStadion.ItemTopMargin = 3;
-            this.cmbStadion.Location = new System.Drawing.Point(199, 197);
+            this.cmbStadion.Location = new System.Drawing.Point(199, 223);
             this.cmbStadion.Name = "cmbStadion";
             this.cmbStadion.Size = new System.Drawing.Size(176, 32);
             this.cmbStadion.TabIndex = 46;
@@ -440,7 +437,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.lblStadion.AutoEllipsis = false;
             this.lblStadion.CursorType = null;
             this.lblStadion.Font = new System.Drawing.Font("Oswald", 8F);
-            this.lblStadion.Location = new System.Drawing.Point(200, 179);
+            this.lblStadion.Location = new System.Drawing.Point(200, 207);
             this.lblStadion.Name = "lblStadion";
             this.lblStadion.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblStadion.Size = new System.Drawing.Size(34, 16);
@@ -455,7 +452,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.lblDatumRodjenja.AutoEllipsis = false;
             this.lblDatumRodjenja.CursorType = null;
             this.lblDatumRodjenja.Font = new System.Drawing.Font("Oswald", 8F);
-            this.lblDatumRodjenja.Location = new System.Drawing.Point(12, 124);
+            this.lblDatumRodjenja.Location = new System.Drawing.Point(12, 143);
             this.lblDatumRodjenja.Name = "lblDatumRodjenja";
             this.lblDatumRodjenja.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblDatumRodjenja.Size = new System.Drawing.Size(81, 16);
@@ -471,7 +468,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.lblSatnica.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblSatnica.CursorType = System.Windows.Forms.Cursors.Default;
             this.lblSatnica.Font = new System.Drawing.Font("Oswald", 8F);
-            this.lblSatnica.Location = new System.Drawing.Point(200, 124);
+            this.lblSatnica.Location = new System.Drawing.Point(200, 143);
             this.lblSatnica.Name = "lblSatnica";
             this.lblSatnica.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblSatnica.Size = new System.Drawing.Size(33, 16);
@@ -532,7 +529,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.cmbKapiten.ItemHighLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.cmbKapiten.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cmbKapiten.ItemTopMargin = 3;
-            this.cmbKapiten.Location = new System.Drawing.Point(11, 253);
+            this.cmbKapiten.Location = new System.Drawing.Point(13, 288);
             this.cmbKapiten.Name = "cmbKapiten";
             this.cmbKapiten.Size = new System.Drawing.Size(176, 32);
             this.cmbKapiten.TabIndex = 54;
@@ -546,7 +543,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.lblKapiten.AutoEllipsis = false;
             this.lblKapiten.CursorType = null;
             this.lblKapiten.Font = new System.Drawing.Font("Oswald", 8F);
-            this.lblKapiten.Location = new System.Drawing.Point(12, 235);
+            this.lblKapiten.Location = new System.Drawing.Point(13, 272);
             this.lblKapiten.Name = "lblKapiten";
             this.lblKapiten.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblKapiten.Size = new System.Drawing.Size(34, 16);
@@ -562,7 +559,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.lblSudija.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblSudija.CursorType = System.Windows.Forms.Cursors.Default;
             this.lblSudija.Font = new System.Drawing.Font("Oswald", 8F);
-            this.lblSudija.Location = new System.Drawing.Point(200, 235);
+            this.lblSudija.Location = new System.Drawing.Point(200, 272);
             this.lblSudija.Name = "lblSudija";
             this.lblSudija.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblSudija.Size = new System.Drawing.Size(28, 16);
@@ -575,7 +572,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             // 
             this.radioBtnDomacaGarnitura.AutoSize = true;
             this.radioBtnDomacaGarnitura.Font = new System.Drawing.Font("Oswald", 9F);
-            this.radioBtnDomacaGarnitura.Location = new System.Drawing.Point(42, 445);
+            this.radioBtnDomacaGarnitura.Location = new System.Drawing.Point(42, 491);
             this.radioBtnDomacaGarnitura.Name = "radioBtnDomacaGarnitura";
             this.radioBtnDomacaGarnitura.Size = new System.Drawing.Size(65, 21);
             this.radioBtnDomacaGarnitura.TabIndex = 63;
@@ -587,7 +584,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             // 
             this.radioBtnGostujucaGarnitura.AutoSize = true;
             this.radioBtnGostujucaGarnitura.Font = new System.Drawing.Font("Oswald", 9F);
-            this.radioBtnGostujucaGarnitura.Location = new System.Drawing.Point(154, 445);
+            this.radioBtnGostujucaGarnitura.Location = new System.Drawing.Point(154, 491);
             this.radioBtnGostujucaGarnitura.Name = "radioBtnGostujucaGarnitura";
             this.radioBtnGostujucaGarnitura.Size = new System.Drawing.Size(74, 21);
             this.radioBtnGostujucaGarnitura.TabIndex = 64;
@@ -599,7 +596,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             // 
             this.radioBtnRezervnaGarnitura.AutoSize = true;
             this.radioBtnRezervnaGarnitura.Font = new System.Drawing.Font("Oswald", 9F);
-            this.radioBtnRezervnaGarnitura.Location = new System.Drawing.Point(278, 445);
+            this.radioBtnRezervnaGarnitura.Location = new System.Drawing.Point(278, 491);
             this.radioBtnRezervnaGarnitura.Name = "radioBtnRezervnaGarnitura";
             this.radioBtnRezervnaGarnitura.Size = new System.Drawing.Size(68, 21);
             this.radioBtnRezervnaGarnitura.TabIndex = 65;
@@ -613,7 +610,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.lblNapoemeneOUtakmici.AutoEllipsis = false;
             this.lblNapoemeneOUtakmici.CursorType = null;
             this.lblNapoemeneOUtakmici.Font = new System.Drawing.Font("Oswald", 8F);
-            this.lblNapoemeneOUtakmici.Location = new System.Drawing.Point(11, 472);
+            this.lblNapoemeneOUtakmici.Location = new System.Drawing.Point(11, 513);
             this.lblNapoemeneOUtakmici.Name = "lblNapoemeneOUtakmici";
             this.lblNapoemeneOUtakmici.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblNapoemeneOUtakmici.Size = new System.Drawing.Size(92, 16);
@@ -871,7 +868,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.cmbVrstaUtakmice.ItemHighLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.cmbVrstaUtakmice.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cmbVrstaUtakmice.ItemTopMargin = 3;
-            this.cmbVrstaUtakmice.Location = new System.Drawing.Point(200, 86);
+            this.cmbVrstaUtakmice.Location = new System.Drawing.Point(200, 94);
             this.cmbVrstaUtakmice.Name = "cmbVrstaUtakmice";
             this.cmbVrstaUtakmice.Size = new System.Drawing.Size(175, 32);
             this.cmbVrstaUtakmice.TabIndex = 134;
@@ -1055,7 +1052,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.txtNapomene.IconRight = null;
             this.txtNapomene.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNapomene.Lines = new string[0];
-            this.txtNapomene.Location = new System.Drawing.Point(11, 490);
+            this.txtNapomene.Location = new System.Drawing.Point(11, 531);
             this.txtNapomene.MaxLength = 32767;
             this.txtNapomene.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtNapomene.Modified = false;
@@ -1091,7 +1088,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.txtNapomene.SelectionLength = 0;
             this.txtNapomene.SelectionStart = 0;
             this.txtNapomene.ShortcutsEnabled = true;
-            this.txtNapomene.Size = new System.Drawing.Size(365, 222);
+            this.txtNapomene.Size = new System.Drawing.Size(365, 182);
             this.txtNapomene.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtNapomene.TabIndex = 67;
             this.txtNapomene.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1106,7 +1103,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             // 
             this.domaciDres.BackgroundImage = global::eBordo.WinUI.Properties.Resources.domaci;
             this.domaciDres.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.domaciDres.Location = new System.Drawing.Point(18, 310);
+            this.domaciDres.Location = new System.Drawing.Point(18, 356);
             this.domaciDres.Name = "domaciDres";
             this.domaciDres.Size = new System.Drawing.Size(112, 133);
             this.domaciDres.TabIndex = 62;
@@ -1116,7 +1113,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             // 
             this.rezervniDres.BackgroundImage = global::eBordo.WinUI.Properties.Resources.rezervni;
             this.rezervniDres.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.rezervniDres.Location = new System.Drawing.Point(254, 310);
+            this.rezervniDres.Location = new System.Drawing.Point(254, 356);
             this.rezervniDres.Name = "rezervniDres";
             this.rezervniDres.Size = new System.Drawing.Size(112, 133);
             this.rezervniDres.TabIndex = 61;
@@ -1126,7 +1123,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             // 
             this.gostujuciDres.BackgroundImage = global::eBordo.WinUI.Properties.Resources.gostujuci;
             this.gostujuciDres.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.gostujuciDres.Location = new System.Drawing.Point(136, 310);
+            this.gostujuciDres.Location = new System.Drawing.Point(136, 356);
             this.gostujuciDres.Name = "gostujuciDres";
             this.gostujuciDres.Size = new System.Drawing.Size(112, 133);
             this.gostujuciDres.TabIndex = 57;
@@ -1148,7 +1145,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.txtSudija.BorderColorIdle = System.Drawing.Color.Silver;
             this.txtSudija.BorderRadius = 1;
             this.txtSudija.BorderThickness = 1;
-            this.txtSudija.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtSudija.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtSudija.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSudija.DefaultFont = new System.Drawing.Font("Oswald", 8F);
             this.txtSudija.DefaultText = "";
@@ -1157,10 +1154,10 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.txtSudija.IconLeft = null;
             this.txtSudija.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSudija.IconPadding = 10;
-            this.txtSudija.IconRight = null;
+            this.txtSudija.IconRight = ((System.Drawing.Image)(resources.GetObject("txtSudija.IconRight")));
             this.txtSudija.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSudija.Lines = new string[0];
-            this.txtSudija.Location = new System.Drawing.Point(199, 253);
+            this.txtSudija.Location = new System.Drawing.Point(199, 288);
             this.txtSudija.MaxLength = 32767;
             this.txtSudija.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtSudija.Modified = false;
@@ -1189,7 +1186,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.txtSudija.Padding = new System.Windows.Forms.Padding(3);
             this.txtSudija.PasswordChar = '\0';
             this.txtSudija.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtSudija.PlaceholderText = "Sudija";
+            this.txtSudija.PlaceholderText = "SUDIJA";
             this.txtSudija.ReadOnly = false;
             this.txtSudija.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtSudija.SelectedText = "";
@@ -1203,9 +1200,10 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.txtSudija.TextMarginBottom = 0;
             this.txtSudija.TextMarginLeft = 3;
             this.txtSudija.TextMarginTop = 1;
-            this.txtSudija.TextPlaceholder = "Sudija";
+            this.txtSudija.TextPlaceholder = "SUDIJA";
             this.txtSudija.UseSystemPasswordChar = false;
             this.txtSudija.WordWrap = true;
+            this.txtSudija.TextChanged += new System.EventHandler(this.txtSudija_TextChanged);
             // 
             // txtOpisUtakmice
             // 
@@ -1223,7 +1221,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.txtOpisUtakmice.BorderColorIdle = System.Drawing.Color.Silver;
             this.txtOpisUtakmice.BorderRadius = 1;
             this.txtOpisUtakmice.BorderThickness = 1;
-            this.txtOpisUtakmice.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtOpisUtakmice.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtOpisUtakmice.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtOpisUtakmice.DefaultFont = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOpisUtakmice.DefaultText = "";
@@ -1232,7 +1230,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.txtOpisUtakmice.IconLeft = null;
             this.txtOpisUtakmice.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtOpisUtakmice.IconPadding = 10;
-            this.txtOpisUtakmice.IconRight = null;
+            this.txtOpisUtakmice.IconRight = ((System.Drawing.Image)(resources.GetObject("txtOpisUtakmice.IconRight")));
             this.txtOpisUtakmice.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtOpisUtakmice.Lines = new string[0];
             this.txtOpisUtakmice.Location = new System.Drawing.Point(11, 30);
@@ -1264,7 +1262,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.txtOpisUtakmice.Padding = new System.Windows.Forms.Padding(3);
             this.txtOpisUtakmice.PasswordChar = '\0';
             this.txtOpisUtakmice.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtOpisUtakmice.PlaceholderText = "ex. 1/2 finala Kupa BiH";
+            this.txtOpisUtakmice.PlaceholderText = "EX. 1/2 FINALA KUPA BIH";
             this.txtOpisUtakmice.ReadOnly = false;
             this.txtOpisUtakmice.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtOpisUtakmice.SelectedText = "";
@@ -1278,9 +1276,10 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.txtOpisUtakmice.TextMarginBottom = 0;
             this.txtOpisUtakmice.TextMarginLeft = 3;
             this.txtOpisUtakmice.TextMarginTop = 1;
-            this.txtOpisUtakmice.TextPlaceholder = "ex. 1/2 finala Kupa BiH";
+            this.txtOpisUtakmice.TextPlaceholder = "EX. 1/2 FINALA KUPA BIH";
             this.txtOpisUtakmice.UseSystemPasswordChar = false;
             this.txtOpisUtakmice.WordWrap = true;
+            this.txtOpisUtakmice.TextChanged += new System.EventHandler(this.txtOpisUtakmice_TextChanged);
             // 
             // txtSatnica
             // 
@@ -1307,10 +1306,10 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.txtSatnica.IconLeft = null;
             this.txtSatnica.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSatnica.IconPadding = 10;
-            this.txtSatnica.IconRight = null;
+            this.txtSatnica.IconRight = ((System.Drawing.Image)(resources.GetObject("txtSatnica.IconRight")));
             this.txtSatnica.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSatnica.Lines = new string[0];
-            this.txtSatnica.Location = new System.Drawing.Point(199, 142);
+            this.txtSatnica.Location = new System.Drawing.Point(199, 160);
             this.txtSatnica.MaxLength = 32767;
             this.txtSatnica.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtSatnica.Modified = false;
@@ -1356,6 +1355,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.txtSatnica.TextPlaceholder = "Satnica";
             this.txtSatnica.UseSystemPasswordChar = false;
             this.txtSatnica.WordWrap = true;
+            this.txtSatnica.TextChanged += new System.EventHandler(this.txtSatnica_TextChanged);
             // 
             // dtpDatumOdigravanja
             // 
@@ -1376,11 +1376,12 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.dtpDatumOdigravanja.IconColor = System.Drawing.Color.Gray;
             this.dtpDatumOdigravanja.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
             this.dtpDatumOdigravanja.LeftTextMargin = 5;
-            this.dtpDatumOdigravanja.Location = new System.Drawing.Point(12, 143);
+            this.dtpDatumOdigravanja.Location = new System.Drawing.Point(12, 160);
             this.dtpDatumOdigravanja.MinimumSize = new System.Drawing.Size(4, 30);
             this.dtpDatumOdigravanja.Name = "dtpDatumOdigravanja";
             this.dtpDatumOdigravanja.Size = new System.Drawing.Size(176, 30);
             this.dtpDatumOdigravanja.TabIndex = 47;
+            this.dtpDatumOdigravanja.ValueChanged += new System.EventHandler(this.dtpDatumOdigravanja_ValueChanged);
             // 
             // txtBrojDresa
             // 
@@ -2418,7 +2419,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.label8.BackColor = System.Drawing.Color.Gainsboro;
             this.label8.Font = new System.Drawing.Font("Oswald", 8F);
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(11, 290);
+            this.label8.Location = new System.Drawing.Point(11, 336);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(364, 17);
             this.label8.TabIndex = 218;
@@ -2613,173 +2614,86 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.btnSaveUpdate.Visible = false;
             this.btnSaveUpdate.Click += new System.EventHandler(this.btnSaveUpdate_Click);
             // 
-            // bunifuLabel2
+            // txtOpisUtakmiceValidator
             // 
-            this.bunifuLabel2.AllowParentOverrides = false;
-            this.bunifuLabel2.AutoEllipsis = false;
-            this.bunifuLabel2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel2.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel2.Font = new System.Drawing.Font("Oswald", 8F);
-            this.bunifuLabel2.ForeColor = System.Drawing.Color.Green;
-            this.bunifuLabel2.Location = new System.Drawing.Point(77, 12);
-            this.bunifuLabel2.Name = "bunifuLabel2";
-            this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel2.Size = new System.Drawing.Size(5, 16);
-            this.bunifuLabel2.TabIndex = 321;
-            this.bunifuLabel2.Text = "*";
-            this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.txtOpisUtakmiceValidator.AllowParentOverrides = false;
+            this.txtOpisUtakmiceValidator.AutoEllipsis = false;
+            this.txtOpisUtakmiceValidator.CursorType = null;
+            this.txtOpisUtakmiceValidator.Font = new System.Drawing.Font("Oswald", 6F);
+            this.txtOpisUtakmiceValidator.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.txtOpisUtakmiceValidator.Location = new System.Drawing.Point(14, 62);
+            this.txtOpisUtakmiceValidator.Name = "txtOpisUtakmiceValidator";
+            this.txtOpisUtakmiceValidator.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtOpisUtakmiceValidator.Size = new System.Drawing.Size(0, 0);
+            this.txtOpisUtakmiceValidator.TabIndex = 335;
+            this.txtOpisUtakmiceValidator.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.txtOpisUtakmiceValidator.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // bunifuLabel1
+            // txtDatumOdigravanjaValidator
             // 
-            this.bunifuLabel1.AllowParentOverrides = false;
-            this.bunifuLabel1.AutoEllipsis = false;
-            this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.Font = new System.Drawing.Font("Oswald", 8F);
-            this.bunifuLabel1.ForeColor = System.Drawing.Color.Green;
-            this.bunifuLabel1.Location = new System.Drawing.Point(55, 68);
-            this.bunifuLabel1.Name = "bunifuLabel1";
-            this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(5, 16);
-            this.bunifuLabel1.TabIndex = 322;
-            this.bunifuLabel1.Text = "*";
-            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.txtDatumOdigravanjaValidator.AllowParentOverrides = false;
+            this.txtDatumOdigravanjaValidator.AutoEllipsis = false;
+            this.txtDatumOdigravanjaValidator.CursorType = null;
+            this.txtDatumOdigravanjaValidator.Font = new System.Drawing.Font("Oswald", 6F);
+            this.txtDatumOdigravanjaValidator.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.txtDatumOdigravanjaValidator.Location = new System.Drawing.Point(13, 191);
+            this.txtDatumOdigravanjaValidator.Name = "txtDatumOdigravanjaValidator";
+            this.txtDatumOdigravanjaValidator.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtDatumOdigravanjaValidator.Size = new System.Drawing.Size(0, 0);
+            this.txtDatumOdigravanjaValidator.TabIndex = 337;
+            this.txtDatumOdigravanjaValidator.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.txtDatumOdigravanjaValidator.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // bunifuLabel3
+            // txtSudijaValidator
             // 
-            this.bunifuLabel3.AllowParentOverrides = false;
-            this.bunifuLabel3.AutoEllipsis = false;
-            this.bunifuLabel3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel3.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel3.Font = new System.Drawing.Font("Oswald", 8F);
-            this.bunifuLabel3.ForeColor = System.Drawing.Color.Green;
-            this.bunifuLabel3.Location = new System.Drawing.Point(269, 68);
-            this.bunifuLabel3.Name = "bunifuLabel3";
-            this.bunifuLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel3.Size = new System.Drawing.Size(5, 16);
-            this.bunifuLabel3.TabIndex = 323;
-            this.bunifuLabel3.Text = "*";
-            this.bunifuLabel3.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel3.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.txtSudijaValidator.AllowParentOverrides = false;
+            this.txtSudijaValidator.AutoEllipsis = false;
+            this.txtSudijaValidator.CursorType = null;
+            this.txtSudijaValidator.Font = new System.Drawing.Font("Oswald", 6F);
+            this.txtSudijaValidator.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.txtSudijaValidator.Location = new System.Drawing.Point(200, 320);
+            this.txtSudijaValidator.Name = "txtSudijaValidator";
+            this.txtSudijaValidator.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtSudijaValidator.Size = new System.Drawing.Size(0, 0);
+            this.txtSudijaValidator.TabIndex = 339;
+            this.txtSudijaValidator.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.txtSudijaValidator.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // bunifuLabel4
+            // txtSatnicaValidator
             // 
-            this.bunifuLabel4.AllowParentOverrides = false;
-            this.bunifuLabel4.AutoEllipsis = false;
-            this.bunifuLabel4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel4.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel4.Font = new System.Drawing.Font("Oswald", 8F);
-            this.bunifuLabel4.ForeColor = System.Drawing.Color.Green;
-            this.bunifuLabel4.Location = new System.Drawing.Point(95, 124);
-            this.bunifuLabel4.Name = "bunifuLabel4";
-            this.bunifuLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel4.Size = new System.Drawing.Size(5, 16);
-            this.bunifuLabel4.TabIndex = 324;
-            this.bunifuLabel4.Text = "*";
-            this.bunifuLabel4.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel4.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.txtSatnicaValidator.AllowParentOverrides = false;
+            this.txtSatnicaValidator.AutoEllipsis = false;
+            this.txtSatnicaValidator.CursorType = null;
+            this.txtSatnicaValidator.Font = new System.Drawing.Font("Oswald", 6F);
+            this.txtSatnicaValidator.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.txtSatnicaValidator.Location = new System.Drawing.Point(200, 192);
+            this.txtSatnicaValidator.Name = "txtSatnicaValidator";
+            this.txtSatnicaValidator.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtSatnicaValidator.Size = new System.Drawing.Size(0, 0);
+            this.txtSatnicaValidator.TabIndex = 340;
+            this.txtSatnicaValidator.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.txtSatnicaValidator.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // bunifuLabel5
+            // pictureDatumOdigravanjaValidator
             // 
-            this.bunifuLabel5.AllowParentOverrides = false;
-            this.bunifuLabel5.AutoEllipsis = false;
-            this.bunifuLabel5.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel5.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel5.Font = new System.Drawing.Font("Oswald", 8F);
-            this.bunifuLabel5.ForeColor = System.Drawing.Color.Green;
-            this.bunifuLabel5.Location = new System.Drawing.Point(236, 124);
-            this.bunifuLabel5.Name = "bunifuLabel5";
-            this.bunifuLabel5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel5.Size = new System.Drawing.Size(5, 16);
-            this.bunifuLabel5.TabIndex = 325;
-            this.bunifuLabel5.Text = "*";
-            this.bunifuLabel5.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel5.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // bunifuLabel6
-            // 
-            this.bunifuLabel6.AllowParentOverrides = false;
-            this.bunifuLabel6.AutoEllipsis = false;
-            this.bunifuLabel6.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel6.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel6.Font = new System.Drawing.Font("Oswald", 8F);
-            this.bunifuLabel6.ForeColor = System.Drawing.Color.Green;
-            this.bunifuLabel6.Location = new System.Drawing.Point(64, 179);
-            this.bunifuLabel6.Name = "bunifuLabel6";
-            this.bunifuLabel6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel6.Size = new System.Drawing.Size(5, 16);
-            this.bunifuLabel6.TabIndex = 326;
-            this.bunifuLabel6.Text = "*";
-            this.bunifuLabel6.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel6.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // bunifuLabel7
-            // 
-            this.bunifuLabel7.AllowParentOverrides = false;
-            this.bunifuLabel7.AutoEllipsis = false;
-            this.bunifuLabel7.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel7.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel7.Font = new System.Drawing.Font("Oswald", 8F);
-            this.bunifuLabel7.ForeColor = System.Drawing.Color.Green;
-            this.bunifuLabel7.Location = new System.Drawing.Point(237, 179);
-            this.bunifuLabel7.Name = "bunifuLabel7";
-            this.bunifuLabel7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel7.Size = new System.Drawing.Size(5, 16);
-            this.bunifuLabel7.TabIndex = 327;
-            this.bunifuLabel7.Text = "*";
-            this.bunifuLabel7.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel7.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // bunifuLabel8
-            // 
-            this.bunifuLabel8.AllowParentOverrides = false;
-            this.bunifuLabel8.AutoEllipsis = false;
-            this.bunifuLabel8.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel8.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel8.Font = new System.Drawing.Font("Oswald", 8F);
-            this.bunifuLabel8.ForeColor = System.Drawing.Color.Green;
-            this.bunifuLabel8.Location = new System.Drawing.Point(49, 235);
-            this.bunifuLabel8.Name = "bunifuLabel8";
-            this.bunifuLabel8.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel8.Size = new System.Drawing.Size(5, 16);
-            this.bunifuLabel8.TabIndex = 328;
-            this.bunifuLabel8.Text = "*";
-            this.bunifuLabel8.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel8.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // bunifuLabel9
-            // 
-            this.bunifuLabel9.AllowParentOverrides = false;
-            this.bunifuLabel9.AutoEllipsis = false;
-            this.bunifuLabel9.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel9.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel9.Font = new System.Drawing.Font("Oswald", 8F);
-            this.bunifuLabel9.ForeColor = System.Drawing.Color.Green;
-            this.bunifuLabel9.Location = new System.Drawing.Point(231, 235);
-            this.bunifuLabel9.Name = "bunifuLabel9";
-            this.bunifuLabel9.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel9.Size = new System.Drawing.Size(5, 16);
-            this.bunifuLabel9.TabIndex = 329;
-            this.bunifuLabel9.Text = "*";
-            this.bunifuLabel9.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel9.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.pictureDatumOdigravanjaValidator.BackgroundImage = global::eBordo.WinUI.Properties.Resources.eBordo_required3;
+            this.pictureDatumOdigravanjaValidator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureDatumOdigravanjaValidator.Location = new System.Drawing.Point(169, 170);
+            this.pictureDatumOdigravanjaValidator.Name = "pictureDatumOdigravanjaValidator";
+            this.pictureDatumOdigravanjaValidator.Size = new System.Drawing.Size(10, 10);
+            this.pictureDatumOdigravanjaValidator.TabIndex = 354;
+            this.pictureDatumOdigravanjaValidator.TabStop = false;
             // 
             // frmUpsertUtakmica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(954, 725);
-            this.Controls.Add(this.bunifuLabel9);
-            this.Controls.Add(this.bunifuLabel8);
-            this.Controls.Add(this.bunifuLabel7);
-            this.Controls.Add(this.bunifuLabel6);
-            this.Controls.Add(this.bunifuLabel5);
-            this.Controls.Add(this.bunifuLabel4);
-            this.Controls.Add(this.bunifuLabel3);
-            this.Controls.Add(this.bunifuLabel1);
-            this.Controls.Add(this.bunifuLabel2);
+            this.Controls.Add(this.pictureDatumOdigravanjaValidator);
+            this.Controls.Add(this.txtSatnicaValidator);
+            this.Controls.Add(this.txtSudijaValidator);
+            this.Controls.Add(this.txtDatumOdigravanjaValidator);
+            this.Controls.Add(this.txtOpisUtakmiceValidator);
             this.Controls.Add(this.btnSaveUpdate);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label8);
@@ -2913,6 +2827,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureDatumOdigravanjaValidator)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3026,14 +2941,10 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
         private System.Windows.Forms.Label label8;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSave;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSaveUpdate;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel3;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel4;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel5;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel6;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel7;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel8;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel9;
+        private Bunifu.UI.WinForms.BunifuLabel txtOpisUtakmiceValidator;
+        private Bunifu.UI.WinForms.BunifuLabel txtDatumOdigravanjaValidator;
+        private Bunifu.UI.WinForms.BunifuLabel txtSudijaValidator;
+        private Bunifu.UI.WinForms.BunifuLabel txtSatnicaValidator;
+        private System.Windows.Forms.PictureBox pictureDatumOdigravanjaValidator;
     }
 }

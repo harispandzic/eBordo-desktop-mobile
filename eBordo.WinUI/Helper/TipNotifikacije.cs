@@ -29,6 +29,7 @@ namespace eBordo.WinUI.Helper
         IGRAC_USPJESNO_OCJENJEN,
         IZMJENA_USPJEŠNO_EVIDENTIRANA,
         IZMJENA_VEC_EVIDENTIRANA,
-        FORMA_VALIDACIJA
+        FORMA_VALIDACIJA,
+        GRESKA_UPLOAD,
     }
 }

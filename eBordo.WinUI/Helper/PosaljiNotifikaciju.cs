@@ -120,6 +120,11 @@ namespace eBordo.WinUI.Helper
                         posaljiNotifikaciju("Podaci nisu ispravni!", TipPoruke.WARNING, snackbar, forma, BunifuSnackbar.Positions.BottomRight);
                         break;
                     }
+                case TipNotifikacije.GRESKA_UPLOAD:
+                    {
+                        posaljiNotifikaciju("Greška pri učitavanju slike!", TipPoruke.WARNING, snackbar, forma, BunifuSnackbar.Positions.BottomRight);
+                        break;
+                    }
                 case TipNotifikacije.BEZ: break;
             }
         }

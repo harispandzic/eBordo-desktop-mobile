@@ -8,6 +8,7 @@ namespace eBordo.WinUI.Helper
 {
     public enum Field
     {
+        BEZ,
         IME,
         PREZIME,
         ADRESA,
@@ -17,10 +18,24 @@ namespace eBordo.WinUI.Helper
         TEZINA,
         DRES,
         TRZISNA_VRIJEDNOST,
-        DATUM_RODJENJA,
+        DATUM_RODJENJA_IGRAC,
+        DATUM_RODJENJA_TRENER,
         DATUM_POTPISA,
         DATUM_ZAVRSETKA,
         SLIKA_AVATAR,
-        SLIKA_PANEL
+        SLIKA_PANEL,
+        OPIS_UTAKMICE,
+        DATUM_ODIGRAVANJA,
+        SATNICA,
+        SUDIJA,
+        MINUTE,
+        GOLOVI,
+        ASISTENCIJE,
+        ZUTI_KARTONI,
+        CRVENI_KARTONI,
+        MINUTA_IZMJENA,
+        SLIKA_UTAKMICA,
+        GOLOVI_DOMACIN,
+        GOLOVI_GOST
     }
 }

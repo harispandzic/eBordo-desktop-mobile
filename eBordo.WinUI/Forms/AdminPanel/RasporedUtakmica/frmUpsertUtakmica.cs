@@ -38,6 +38,9 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
 
         ByteToImage byteToImage = new ByteToImage();
 
+        bool isOpisUtakmiceValidated = false, isDatumOdigravanjaValidated = false, isSatnicaValidated = false,
+            isSudijaValidated = false;
+
         public frmUpsertUtakmica(Model.Models.Utakmica odabranaUtakmica, frmPrikazRasporedaUtakmicacs prikazUtakmica)
         {
             InitializeComponent();
@@ -89,6 +92,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
                 btnSave.Show();
                 this.Text = "eBordo | Dodaj utakmicu";
                 cmbVrstaUtakmice.SelectedIndex = 0;
+                radioBtnDomacaGarnitura.Checked = true;
             }
             UpdateBrojEvidentiranih();
         }
@@ -696,6 +700,34 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             {
                 PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.GREŠKA_NA_SERVERU);
             }
+        }
+
+        private void txtOpisUtakmice_TextChanged(object sender, EventArgs e)
+        {
+            isOpisUtakmiceValidated = Validacija.ValidirajInputString(txtOpisUtakmice, txtOpisUtakmiceValidator, Field.OPIS_UTAKMICE);
+        }
+
+        private void txtSudija_TextChanged(object sender, EventArgs e)
+        {
+            isSudijaValidated = Validacija.ValidirajInputString(txtSudija, txtSudijaValidator, Field.SUDIJA);
+        }
+
+        private void txtSatnica_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                isSatnicaValidated = Validacija.ValidirajInputString(txtSatnica, txtSatnicaValidator, Field.SATNICA);
+            }
+            catch
+            {
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.GREŠKA_NA_SERVERU);
+            }
+        }
+
+        private void dtpDatumOdigravanja_ValueChanged(object sender, EventArgs e)
+        {
+            isDatumOdigravanjaValidated = Validacija.ValidirajDatum(dtpDatumOdigravanja.Value,txtDatumOdigravanjaValidator, pictureDatumOdigravanjaValidator, Field.DATUM_ODIGRAVANJA);
+
         }
     }
 }

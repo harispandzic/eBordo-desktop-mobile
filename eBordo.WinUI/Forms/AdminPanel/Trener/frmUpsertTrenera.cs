@@ -32,6 +32,51 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
         private byte[] korisnikAvatar { get; set; }
         ByteToImage byteToImage = new ByteToImage();
 
+        bool isImeValidated = false, isPrezimeValidate = false, isAdresaValidated = false,
+            isTelefonValidated, isEmailValidated = false,
+            isSlikaAvatarValidated = false, isSlikaPanelValidated = false,
+            isDatumRodjenjaValidated = false, isDatumPotpisaValidated = false, isDatumZavrsetkaValidated = false;
+
+        private void txtIme_TextChanged(object sender, EventArgs e)
+        {
+            isImeValidated = Validacija.ValidirajInputString(txtIme, txtImeValidator, Field.IME);
+        }
+
+        private void txtPrezime_TextChanged(object sender, EventArgs e)
+        {
+            isPrezimeValidate = Validacija.ValidirajInputString(txtPrezime, txtPrezimeValidator, Field.PREZIME);
+        }
+
+        private void dtpDatumRodjenja_ValueChanged(object sender, EventArgs e)
+        {
+            isDatumRodjenjaValidated = Validacija.ValidirajDatum(dtpDatumRodjenja.Value, txtDatumRodjenjaValidator, pictureDatumRodjenjaValidator, Field.DATUM_RODJENJA_TRENER);
+        }
+
+        private void txtAdresa_TextChanged(object sender, EventArgs e)
+        {
+            isAdresaValidated = Validacija.ValidirajInputString(txtAdresa, txtAdresaValidator, Field.ADRESA);
+        }
+
+        private void txtTelefon_TextChanged(object sender, EventArgs e)
+        {
+            isTelefonValidated = Validacija.ValidirajInputString(txtTelefon, txtTelefonValidator, Field.TELEFON);
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+            isEmailValidated = Validacija.ValidirajInputString(txtEmail, txtMailValidator, Field.EMAIL);
+        }
+
+        private void dtpDatumPotpisaUgovora_ValueChanged(object sender, EventArgs e)
+        {
+            isDatumPotpisaValidated = Validacija.ValidirajDatum(dtpDatumPotpisaUgovora.Value, txtDatumPotpisaValidator, pictureDatumPotpisaValidator, Field.DATUM_POTPISA);
+        }
+
+        private void dtpDatumZavrsetkaUgovora_ValueChanged(object sender, EventArgs e)
+        {
+            isDatumZavrsetkaValidated = Validacija.ValidirajDatum(dtpDatumZavrsetkaUgovora.Value, txtDatumZavrsetkaValidator, pictureDatumZavrsetkaUgovora, Field.DATUM_ZAVRSETKA);
+        }
+
         public frmUpsertTrenera(Model.Models.Trener odabraniTrener = null, frmPrikazTrenera prikazTrenera = null)
         {
             InitializeComponent();
@@ -204,17 +249,26 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
         {
             var result = avatarFileDialog.ShowDialog();
 
-            if (result == DialogResult.OK)
+            try
             {
-                var fileName = avatarFileDialog.FileName;
+                if (result == DialogResult.OK)
+                {
+                    var fileName = avatarFileDialog.FileName;
 
-                var file = System.IO.File.ReadAllBytes(fileName);
+                    var file = System.IO.File.ReadAllBytes(fileName);
 
-                korisnikAvatar = file;
+                    korisnikAvatar = file;
 
-                Image image = Image.FromFile(fileName);
-                userProflePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-                userProflePicture.Image = image;
+                    Image image = Image.FromFile(fileName);
+                    userProflePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+                    userProflePicture.Image = image;
+
+                    isSlikaAvatarValidated = Validacija.ValidirajSliku(image, pictureSlikaAvatarValidator, Field.SLIKA_AVATAR);
+                }
+            }
+            catch 
+            {
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.GRESKA_UPLOAD);
             }
         }
 
@@ -222,17 +276,26 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
         {
             var result = panelSlikaFileDialog.ShowDialog();
 
-            if (result == DialogResult.OK)
+            try
             {
-                var fileName = panelSlikaFileDialog.FileName;
+                if (result == DialogResult.OK)
+                {
+                    var fileName = panelSlikaFileDialog.FileName;
 
-                var file = System.IO.File.ReadAllBytes(fileName);
+                    var file = System.IO.File.ReadAllBytes(fileName);
 
-                korisnikPanelPhoto = file;
+                    korisnikPanelPhoto = file;
 
-                Image image = Image.FromFile(fileName);
-                pictureSlikaIgraca.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-                pictureSlikaIgraca.Image = image;
+                    Image image = Image.FromFile(fileName);
+                    pictureSlikaIgraca.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+                    pictureSlikaIgraca.Image = image;
+
+                    isSlikaPanelValidated = Validacija.ValidirajSliku(image, pictureSlikaPanelVAlidator, Field.SLIKA_PANEL);
+                }
+            }
+            catch
+            {
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.GRESKA_UPLOAD);
             }
         }
 
@@ -240,9 +303,30 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
         {
 
         }
+        private bool ValidirajFormu()
+        {
+            bool isUspjesno = true;
+            if (!isImeValidated || !isPrezimeValidate || !isAdresaValidated || 
+                !isTelefonValidated || !isEmailValidated ||
+                isDatumRodjenjaValidated || isDatumPotpisaValidated || isDatumZavrsetkaValidated ||
+                isSlikaAvatarValidated || isSlikaPanelValidated)
+            {
+                isUspjesno = false;
+            }
+            else
+            {
+                isUspjesno = true;
+            }
 
+            return isUspjesno;
+        }
         private async void btnSave_Click(object sender, EventArgs e)
         {
+            if (!ValidirajFormu())
+            {
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.FORMA_VALIDACIJA);
+                return;
+            }
             int uloga = 0;
             if (radioBtnGlavni.Checked)
             {
@@ -290,6 +374,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
 
         private async void btnSaveUpdate_Click(object sender, EventArgs e)
         {
+            if (!ValidirajFormu())
+            {
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.FORMA_VALIDACIJA);
+                return;
+            }
             TrenerUpdateRequest updateRequest = new TrenerUpdateRequest
             {
                 korisnikUpdateRequest = new Model.Requests.Korisnik.KorisnikUpdateRequest
@@ -315,6 +404,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             {
                 PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.GREŠKA_NA_SERVERU);
             }
+        }
+
+        private void txtDatumZavrsetkaValidator_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -204,23 +204,26 @@ namespace eBordo.WinUI.Forms.AdminPanel
         {
             var result = avatarFileDialog.ShowDialog();
 
-            if (result == DialogResult.OK)
+            try
             {
-                var fileName = avatarFileDialog.FileName;
+                if (result == DialogResult.OK)
+                {
+                    var fileName = avatarFileDialog.FileName;
 
-                var file = System.IO.File.ReadAllBytes(fileName);
+                    var file = System.IO.File.ReadAllBytes(fileName);
 
-                korisnikAvatar = file;
+                    korisnikAvatar = file;
 
-                Image image = Image.FromFile(fileName);
-                userProflePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-                userProflePicture.Image = image;
+                    Image image = Image.FromFile(fileName);
+                    userProflePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+                    userProflePicture.Image = image;
 
-                isSlikaAvatarValidated = Validacija.ValidirajSliku(image, pictureSlikaAvatarValidator, Field.SLIKA_AVATAR);
-
-                pictureSlikaAvatarValidator.BackgroundImage = Properties.Resources.eBordo_success_notification;
-                pictureSlikaAvatarValidator.BackgroundImageLayout = ImageLayout.Zoom;
-                txtSlikaAvatarValidator.Text = "";
+                    isSlikaAvatarValidated = Validacija.ValidirajSliku(image, pictureSlikaAvatarValidator, Field.SLIKA_AVATAR);
+                }
+            }
+            catch
+            {
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.GRESKA_UPLOAD);
             }
         }
 
@@ -228,24 +231,27 @@ namespace eBordo.WinUI.Forms.AdminPanel
         {
             var result = panelSlikaFileDialog.ShowDialog();
 
-            if (result == DialogResult.OK)
+            try
             {
-                btnUcitajPanelPhoto.TextAlign = ContentAlignment.MiddleRight;
+                if (result == DialogResult.OK)
+                {
+                    btnUcitajPanelPhoto.TextAlign = ContentAlignment.MiddleRight;
 
-                var fileName = panelSlikaFileDialog.FileName;
+                    var fileName = panelSlikaFileDialog.FileName;
 
-                var file = System.IO.File.ReadAllBytes(fileName);
-                korisnikPanelPhoto = file;
+                    var file = System.IO.File.ReadAllBytes(fileName);
+                    korisnikPanelPhoto = file;
 
-                Image image = Image.FromFile(fileName);
-                pictureSlikaIgraca.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-                pictureSlikaIgraca.Image = image;
+                    Image image = Image.FromFile(fileName);
+                    pictureSlikaIgraca.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+                    pictureSlikaIgraca.Image = image;
 
-                isSlikaPanelValidated = Validacija.ValidirajSliku(image, pictureSlikaPanelVAlidator, Field.SLIKA_PANEL);
-
-                pictureSlikaPanelVAlidator.BackgroundImage = Properties.Resources.eBordo_success_notification;
-                pictureSlikaPanelVAlidator.BackgroundImageLayout = ImageLayout.Zoom;
-                txtSlikaPanelValidator.Text = "";
+                    isSlikaPanelValidated = Validacija.ValidirajSliku(image, pictureSlikaPanelVAlidator, Field.SLIKA_PANEL);
+                }
+            }
+            catch
+            {
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.GRESKA_UPLOAD);
             }
         }
 
@@ -397,7 +403,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
 
         private void dtpDatumRodjenja_ValueChanged(object sender, EventArgs e)
         {
-            isDatumRodjenjaValidated = Validacija.ValidirajDatum(dtpDatumRodjenja.Value, txtDatumRodjenjaValidator, pictureDatumRodjenjaValidator, Field.DATUM_RODJENJA);
+            isDatumRodjenjaValidated = Validacija.ValidirajDatum(dtpDatumRodjenja.Value, txtDatumRodjenjaValidator, pictureDatumRodjenjaValidator, Field.DATUM_RODJENJA_IGRAC);
         }
 
         private void txtIme_TextChanged(object sender, EventArgs e)

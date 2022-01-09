@@ -38,6 +38,13 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
         private List<Model.Models.Igrac> _ostaliIgraci = new List<Model.Models.Igrac>();
         private List<int> _pozvaniIgraci = new List<int>();
 
+        bool isMinuteValidated = false, isGoloviValidated = false, isAsistencijeValidated = false,
+            isZutKartoniValidated = false, isCrveniKartoniValidated = false;
+
+        bool isMinutaIzmjenaValidirana = false;
+
+        bool isSlikaUtakmiceValidated = false, isGoloviDomacinValidated = false, isGoloviGostValidated = false;
+
         public frmUpsertIzvjestaj(int utakmicaId, frmPrikazOdigranihUtakmica prikazUtakmica, Izvještaj izvještaj)
         {
             InitializeComponent();
@@ -82,7 +89,12 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
                 txtGoloviDomacinhUredjivanje.Visible = false;
                 txtGoloviGostijuUredjivanje.Visible = false;
                 pictureRezultat.Visible = false;
+                cmbIgraciSastav.SelectedIndex = 0;
+                radioBtnSunce.Checked = true;
+                pictureSlikaUtakmice.BackgroundImage = Properties.Resources.eBordo_success_notification;
+                pictureSlikaUtakmice.BackgroundImageLayout = ImageLayout.Zoom;
             }
+            txtIzmjenaMinutaValidator.Hide();
             LoadDetaljiIgraca(_ostaliIgraci[0]);
             UpdateBrojEvidentiranih();
             UpdateBrojEvidentiranihIzmjena();
@@ -293,31 +305,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
                 PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.GREŠKA_NA_SERVERU);
             }
         }
-        private void pictureSlikaUtakmice_Click(object sender, EventArgs e)
-        {
-            if(_izvještaj != null)
-            {
-                return;
-            }
-            else
-            {
-                var result = fileDialog.ShowDialog();
-
-                if (result == DialogResult.OK)
-                {
-                    var fileName = fileDialog.FileName;
-
-                    var file = System.IO.File.ReadAllBytes(fileName);
-
-                    utakmicaSlika = file;
-
-                    Image image = Image.FromFile(fileName);
-                    pictureSlikaUtakmice.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-                    pictureSlikaUtakmice.Image = image;
-                }
-            }
-        }     
-    
         public void filterIzmjene(int igracOutId, int igracInId)
         {
             string minute = "";
@@ -412,9 +399,56 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             txtIzmjenaMinuta.Clear();
             cmbRazlogIzmjena.SelectedIndex = 0;
         }
+        private bool ValidirajOcjenu()
+        {
+            bool isUspjesno = true;
+            if (!isMinuteValidated || !isGoloviValidated || !isAsistencijeValidated ||
+                !isZutKartoniValidated || !isCrveniKartoniValidated)
+            {
+                isUspjesno = false;
+            }
+            else
+            {
+                isUspjesno = true;
+            }
 
+            return isUspjesno;
+        }
+        private bool ValidirajIzmjneu()
+        {
+            bool isUspjesno = true;
+            if (!isMinutaIzmjenaValidirana)
+            {
+                isUspjesno = false;
+            }
+            else
+            {
+                isUspjesno = true;
+            }
+
+            return isUspjesno;
+        }
+        private bool ValidirajFormu()
+        {
+            bool isUspjesno = true;
+            if (!isSlikaUtakmiceValidated || !isGoloviGostValidated || !isGoloviDomacinValidated)
+            {
+                isUspjesno = false;
+            }
+            else
+            {
+                isUspjesno = true;
+            }
+
+            return isUspjesno;
+        }
         private void btnSaveIgracSastav_Click(object sender, EventArgs e)
         {
+            if (!ValidirajOcjenu())
+            {
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.FORMA_VALIDACIJA);
+                return;
+            }
             frmIgracNastupKartica nastup;
             int igracId = _ostaliIgraci[cmbIgraciSastav.SelectedIndex].igracId;
             int nastupId = 0;
@@ -556,6 +590,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
 
         private void bunifuButton1_Click(object sender, EventArgs e)
         {
+            if (!ValidirajIzmjneu())
+            {
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.FORMA_VALIDACIJA);
+                return;
+            }
             frmIzmjenaKartica izmjena;
             int igracOutId = _igraciPrvaPostava[cmbIgracOut.SelectedIndex].igracId;
             int igracInId = _igraciKlupa[cmbIgracIn.SelectedIndex].igracId;
@@ -614,268 +653,82 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             }
         }
 
-        private void igracOcjena_ValueChanged(object sender, Bunifu.UI.WinForms.BunifuRating.ValueChangedEventArgs e)
+        private void txtAsistencije_TextChanged_1(object sender, EventArgs e)
+        {
+            isAsistencijeValidated = Validacija.ValidirajOcjene(txtAsistencije, Field.ASISTENCIJE);
+        }
+
+        private void txtZutiKartoni_TextChanged_1(object sender, EventArgs e)
+        {
+            isZutKartoniValidated = Validacija.ValidirajOcjene(txtZutiKartoni, Field.ZUTI_KARTONI);
+        }
+
+        private void txtCrveniKartoni_TextChanged_1(object sender, EventArgs e)
+        {
+            isCrveniKartoniValidated = Validacija.ValidirajOcjene(txtCrveniKartoni, Field.CRVENI_KARTONI);
+        }
+
+        private void txtIzmjenaMinuta_TextChanged(object sender, EventArgs e)
+        {
+            isMinutaIzmjenaValidirana = Validacija.ValidirajInputString(txtIzmjenaMinuta, txtIzmjenaMinutaValidator, Field.MINUTA_IZMJENA);
+        }
+
+        private void btnUcitajPanelPhoto_Click(object sender, EventArgs e)
+        {
+            if (_izvještaj != null)
+            {
+                return;
+            }
+            else
+            {
+                try
+                {
+                    var result = fileDialog.ShowDialog();
+
+                    if (result == DialogResult.OK)
+                    {
+                        var fileName = fileDialog.FileName;
+
+                        var file = System.IO.File.ReadAllBytes(fileName);
+
+                        utakmicaSlika = file;
+
+                        Image image = Image.FromFile(fileName);
+                        pictureSlikaUtakmice.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+                        pictureSlikaUtakmice.Image = image;
+
+                        isSlikaUtakmiceValidated = Validacija.ValidirajSliku(image, pictureSlikaUtakmicaValidator, Field.SLIKA_UTAKMICA);
+                    }
+                }
+                catch
+                {
+                    PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.GRESKA_UPLOAD);
+                }
+            }
+        }
+
+        private void txtGoloviGost_TextChanged(object sender, EventArgs e)
+        {
+            isGoloviGostValidated = Validacija.ValidirajOcjene(txtGoloviGost, Field.GOLOVI_GOST);
+        }
+
+        private void pictureSlikaUtakmice_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void pictureSlikaIgraca_Click(object sender, EventArgs e)
+        private void xtGoloviDomacin_TextChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void txtPozicija_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtBrojDresa_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label18_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtMinute_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtGolovi_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtAsistencije_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtZutiKartoni_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCrveniKartoni_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void iconPictureBox5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void iconPictureBox4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void iconPictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void iconPictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void iconPictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void iconPictureBox6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label14_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label15_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label16_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label17_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ratingSut_ValueChanged(object sender, Bunifu.UI.WinForms.BunifuRating.ValueChangedEventArgs e)
-        {
-
-        }
-
-        private void ratingBrzina_ValueChanged(object sender, Bunifu.UI.WinForms.BunifuRating.ValueChangedEventArgs e)
-        {
-
-        }
-
-        private void ratingKretanje_ValueChanged(object sender, Bunifu.UI.WinForms.BunifuRating.ValueChangedEventArgs e)
-        {
-
-        }
-
-        private void ratingDodavanje_ValueChanged(object sender, Bunifu.UI.WinForms.BunifuRating.ValueChangedEventArgs e)
-        {
-
-        }
-
-        private void ratingDriblanje_ValueChanged(object sender, Bunifu.UI.WinForms.BunifuRating.ValueChangedEventArgs e)
-        {
-
-        }
-
-        private void ratingKontrolaLopte_ValueChanged(object sender, Bunifu.UI.WinForms.BunifuRating.ValueChangedEventArgs e)
-        {
-
-        }
-
-        private void iconPictureBox11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void iconPictureBox10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void iconPictureBox9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void iconPictureBox8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void iconPictureBox7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void iconPictureBox12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label20_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label21_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label22_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label23_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label24_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ratingSnaga_ValueChanged(object sender, Bunifu.UI.WinForms.BunifuRating.ValueChangedEventArgs e)
-        {
-
-        }
-
-        private void ratingMarkiranje_ValueChanged(object sender, Bunifu.UI.WinForms.BunifuRating.ValueChangedEventArgs e)
-        {
-
-        }
-
-        private void txtBrojDana_Click(object sender, EventArgs e)
-        {
-
+            isGoloviDomacinValidated = Validacija.ValidirajOcjene(txtGoloviDomacin, Field.GOLOVI_DOMACIN);
         }
 
         private async void bunifuButton3_Click(object sender, EventArgs e)
         {
+            if (!ValidirajFormu())
+            {
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.FORMA_VALIDACIJA);
+                return;
+            }
             List<UtakmicaNastupInsertRequest> nastupi = new List<UtakmicaNastupInsertRequest>();
             List<UtakmicaIzmjenaInsertRequest> izmjene = new List<UtakmicaIzmjenaInsertRequest>();
             Vrijeme vrijeme = Vrijeme.KIŠA;
@@ -971,6 +824,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
 
         private async void btnSaveUpdate_Click(object sender, EventArgs e)
         {
+            if (!ValidirajFormu())
+            {
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.FORMA_VALIDACIJA);
+                return;
+            }
             List<UtakmicaNastupUpdateRequest> nastupi = new List<UtakmicaNastupUpdateRequest>();
             List<UtakmicaIzmjenaUpdateRequest> izmjene = new List<UtakmicaIzmjenaUpdateRequest>();
 
@@ -1037,6 +895,17 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             {
                 PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.GREŠKA_NA_SERVERU);
             }
+        }
+
+        private void txtMinute_TextChanged_1(object sender, EventArgs e)
+        {
+            isMinuteValidated = Validacija.ValidirajOcjene(txtMinute, Field.MINUTE);          
+        }
+
+        private void txtGolovi_TextChanged_1(object sender, EventArgs e)
+        {
+            isGoloviValidated = Validacija.ValidirajOcjene(txtGolovi, Field.GOLOVI);
+
         }
     }
 }

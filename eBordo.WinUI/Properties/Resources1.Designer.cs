@@ -373,6 +373,16 @@ namespace eBordo.WinUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap eBordo_error_izvjestaj {
+            get {
+                object obj = ResourceManager.GetObject("eBordo_error_izvjestaj", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap eBordo_error_notification {
             get {
                 object obj = ResourceManager.GetObject("eBordo_error_notification", resourceCulture);
@@ -483,6 +493,36 @@ namespace eBordo.WinUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap eBordo_required_izvjestaj {
+            get {
+                object obj = ResourceManager.GetObject("eBordo_required_izvjestaj", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap eBordo_required_izvjestaj1 {
+            get {
+                object obj = ResourceManager.GetObject("eBordo_required_izvjestaj1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap eBordo_required_izvjestaj2 {
+            get {
+                object obj = ResourceManager.GetObject("eBordo_required_izvjestaj2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap eBordo_required2 {
             get {
                 object obj = ResourceManager.GetObject("eBordo_required2", resourceCulture);
@@ -506,6 +546,16 @@ namespace eBordo.WinUI.Properties {
         public static System.Drawing.Bitmap eBordo_stadion {
             get {
                 object obj = ResourceManager.GetObject("eBordo_stadion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap eBordo_success_izvjestaj {
+            get {
+                object obj = ResourceManager.GetObject("eBordo_success_izvjestaj", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
