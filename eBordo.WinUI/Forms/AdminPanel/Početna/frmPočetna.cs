@@ -56,6 +56,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
             await LoadNotifikacije();
             await LoadBrojKorisnika();
             await LoadStatistika();
+            gifLoader.Hide();
             loaderPocetna.Hide();
             panelPocetna.Hide();
         }
@@ -407,6 +408,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
         }
 
         private async void button1_Click(object sender, EventArgs e)
+        {
+            await LoadPodaci();
+        }
+
+        private async void btnSaveIgracSastav_Click(object sender, EventArgs e)
         {
             await LoadPodaci();
         }

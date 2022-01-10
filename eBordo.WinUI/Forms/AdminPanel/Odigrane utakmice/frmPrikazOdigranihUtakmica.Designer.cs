@@ -45,7 +45,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             this.lblDrzavljanstvoVrijednost = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuButton1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnSaveIgracSastav = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.gifLoader = new System.Windows.Forms.PictureBox();
             this.pnlRasporedUtakmica.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gifLoader)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNaslovStranice
@@ -514,10 +518,36 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             this.btnSaveIgracSastav.UseDefaultRadiusAndThickness = true;
             this.btnSaveIgracSastav.Click += new System.EventHandler(this.btnSaveIgracSastav_Click);
             // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox5.BackgroundImage = global::eBordo.WinUI.Properties.Resources.giphy;
+            this.pictureBox5.Image = global::eBordo.WinUI.Properties.Resources.ezgif1;
+            this.pictureBox5.Location = new System.Drawing.Point(559, 16);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(45, 40);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 324;
+            this.pictureBox5.TabStop = false;
+            // 
+            // gifLoader
+            // 
+            this.gifLoader.BackColor = System.Drawing.Color.Transparent;
+            this.gifLoader.BackgroundImage = global::eBordo.WinUI.Properties.Resources.giphy;
+            this.gifLoader.Image = global::eBordo.WinUI.Properties.Resources.ezgif2;
+            this.gifLoader.Location = new System.Drawing.Point(268, 224);
+            this.gifLoader.Name = "gifLoader";
+            this.gifLoader.Size = new System.Drawing.Size(91, 61);
+            this.gifLoader.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.gifLoader.TabIndex = 325;
+            this.gifLoader.TabStop = false;
+            // 
             // frmPrikazOdigranihUtakmica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.gifLoader);
+            this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.btnSaveIgracSastav);
             this.Controls.Add(this.bunifuButton1);
             this.Controls.Add(this.loaderBrojIgraca);
@@ -532,6 +562,8 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             this.Size = new System.Drawing.Size(622, 403);
             this.Load += new System.EventHandler(this.frmPrikazOdigranihUtakmica_Load);
             this.pnlRasporedUtakmica.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gifLoader)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -551,5 +583,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
         private Bunifu.UI.WinForms.BunifuLabel lblDrzavljanstvoVrijednost;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton1;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSaveIgracSastav;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox gifLoader;
     }
 }

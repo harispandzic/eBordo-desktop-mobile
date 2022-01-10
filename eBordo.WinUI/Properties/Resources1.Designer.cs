@@ -373,6 +373,16 @@ namespace eBordo.WinUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap eBordo_duration {
+            get {
+                object obj = ResourceManager.GetObject("eBordo_duration", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap eBordo_error_izvjestaj {
             get {
                 object obj = ResourceManager.GetObject("eBordo_error_izvjestaj", resourceCulture);
@@ -436,6 +446,16 @@ namespace eBordo.WinUI.Properties {
         public static System.Drawing.Bitmap eBordo_inProgress {
             get {
                 object obj = ResourceManager.GetObject("eBordo_inProgress", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap eBordo_login {
+            get {
+                object obj = ResourceManager.GetObject("eBordo_login", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -553,6 +573,16 @@ namespace eBordo.WinUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap eBordo_stadion_white {
+            get {
+                object obj = ResourceManager.GetObject("eBordo_stadion_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap eBordo_success_izvjestaj {
             get {
                 object obj = ResourceManager.GetObject("eBordo_success_izvjestaj", resourceCulture);
@@ -576,6 +606,16 @@ namespace eBordo.WinUI.Properties {
         public static System.Drawing.Bitmap eBordo_sudija_white {
             get {
                 object obj = ResourceManager.GetObject("eBordo_sudija_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap eBordo_TC {
+            get {
+                object obj = ResourceManager.GetObject("eBordo_TC", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -675,6 +715,36 @@ namespace eBordo.WinUI.Properties {
         public static System.Drawing.Bitmap ezgif_com_gif_maker__3_ {
             get {
                 object obj = ResourceManager.GetObject("ezgif.com-gif-maker (3)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap ezgif1 {
+            get {
+                object obj = ResourceManager.GetObject("ezgif1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap ezgif2 {
+            get {
+                object obj = ResourceManager.GetObject("ezgif2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap giphy {
+            get {
+                object obj = ResourceManager.GetObject("giphy", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

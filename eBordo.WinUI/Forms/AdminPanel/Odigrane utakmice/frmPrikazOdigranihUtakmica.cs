@@ -55,6 +55,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
 
                 _podaci = await _izvjestaj.GetAll<List<Model.Models.Izvještaj>>(search);
                 loader.Hide();
+                gifLoader.Hide();
 
                 frmIzvjestajKartica[] listItems = new frmIzvjestajKartica[_podaci.Count];
                 for (int i = 0; i < listItems.Length; i++)

@@ -1078,6 +1078,27 @@
   <ItemGroup>
     <None Include="Resources\eBordo_success_izvjestaj.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eBordo_stadion_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eBordo_TC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eBordo_duration.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\giphy.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ezgif.com-gif-maker.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ezgif.com-gif-maker %282%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eBordo_login.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets" Condition="Exists('..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

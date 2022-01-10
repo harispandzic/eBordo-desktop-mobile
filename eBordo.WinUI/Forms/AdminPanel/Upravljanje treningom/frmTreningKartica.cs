@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -26,25 +27,48 @@ namespace eBordo.WinUI.Forms.AdminPanel.Upravljanje_treningom
         public string fokusTreninga { get; set; }
         public bool isOdradjen { get; set; }
         public int zabiljezioID { get; set; }
-        public Image igracSlika { get; set; }
-        public string igracPrezimeBrojDresa { get; set; }
+        public Image igracSlikaAvatar { get; set; }
+        public Image igracSlikaPanel { get; set; }
+        public Image treningLokacija { get; set; }
+        public string trener { get; set; }
+        public string trajanjeTrenera { get; set; }
+        public string brojTreninga { get; set; }
+        public string brojDanaString { get; set; }
 
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+        (
+            int nLeftRect,     // x-coordinate of upper-left corner
+            int nTopRect,      // y-coordinate of upper-left corner
+            int nRightRect,    // x-coordinate of lower-right corner
+            int nBottomRect,   // y-coordinate of lower-right corner
+            int nWidthEllipse, // height of ellipse
+            int nHeightEllipse // width of ellipse
+        );
         public frmTreningKartica(frmPrikazTreninga prikazTreninga, BunifuSnackbar snackbar)
         {
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 284, 150, 12, 12));
             InitializeComponent();
             _prikazTreninga = prikazTreninga;
             _snackbar = snackbar;
         }
-
+        
         private void frmTreningKartica_Load(object sender, EventArgs e)
         {
             lblDatum.Text = datumOdrzavanja.ToString("dd.MM.yyyy");
             lblSatnica.Text = satnica;
-            lblStadion.Text = lokacija;
-            lblOpisUtakmice.Text = fokusTreninga;
-            label1.Text = igracPrezimeBrojDresa;
-            pictureIgracSlika.BackgroundImage = igracSlika;
+            lblLokacija.Text = lokacija;
+            lblFokusTreninga.Text = fokusTreninga;
+            txtImePrezimeTrener.Text = trener.ToUpper();
+            pictureIgracSlika.BackgroundImage = igracSlikaAvatar;
             pictureIgracSlika.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureSlikaPanelIgraca.BackgroundImage = igracSlikaPanel;
+            pictureSlikaPanelIgraca.BackgroundImageLayout = ImageLayout.Zoom;
+            txtTrajanjeTreninga.Text = trajanjeTrenera;
+            txtBrojTreninga.Text = brojTreninga;
+            pictureLokacija.BackgroundImage = treningLokacija;
+            pictureLokacija.BackgroundImageLayout = ImageLayout.Zoom;
+            brojDana.Text = brojDanaString;
         }
 
         private async void btnEdit_Click(object sender, EventArgs e)

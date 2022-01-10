@@ -71,6 +71,17 @@ namespace eBordo.WinUI.Forms.AdminPanel
             ratingKlizeciStart.Value = (int)_odabraniIgrac.igracSkills.klizeciStart;
             ratingSkok.Value = (int)_odabraniIgrac.igracSkills.skok;
             ratingOdbrana.Value = (int)_odabraniIgrac.igracSkills.odbrana;
+
+            if (!_odabraniIgrac.korisnik.isAktivan)
+            {
+                pictureAktivan.BackgroundImage = Properties.Resources.eBordo_error_notification;
+                pictureAktivan.BackgroundImageLayout = ImageLayout.Zoom;
+            }
+            else
+            {
+                pictureAktivan.BackgroundImage = Properties.Resources.eBordo_success_notification;
+                pictureAktivan.BackgroundImageLayout = ImageLayout.Zoom;
+            }
         }
 
         private void lblBrojDresa_Click(object sender, EventArgs e)

@@ -25,6 +25,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
         public string uloga { get; set; }
         public string licenca { get; set; }
         public Image slika { get; set; }
+        public bool isAktivan { get; set; }
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -50,6 +51,19 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             lblImePrezime.Text = imePrezime.ToUpper();
             lblUloga.Text = uloga.ToUpper();
             txtLicenca.Text = licenca.ToUpper();
+            if (!isAktivan)
+            {
+                btnDelete.Hide();
+                btnEdit.Location = new Point(94, 251);
+                btnView.Location = new Point(72, 251);
+                pictureAktivan.BackgroundImage = Properties.Resources.eBordo_error_notification;
+                pictureAktivan.BackgroundImageLayout = ImageLayout.Zoom;
+            }
+            else
+            {
+                pictureAktivan.BackgroundImage = Properties.Resources.eBordo_success_notification;
+                pictureAktivan.BackgroundImageLayout = ImageLayout.Zoom;
+            }
         }
 
         private async void btnView_Click(object sender, EventArgs e)

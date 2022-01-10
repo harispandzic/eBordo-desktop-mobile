@@ -11,5 +11,6 @@ namespace eBordo.Model.Requests.Trening
         public string lokacija { get; set; }
         public string fokusTreninga { get; set; }
         public bool isOdradjen { get; set; }
+        public int trajanje { get; set; }
     }
 }

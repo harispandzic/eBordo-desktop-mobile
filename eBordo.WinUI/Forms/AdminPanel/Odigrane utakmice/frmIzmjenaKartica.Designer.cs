@@ -40,12 +40,14 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
             this.txtMinuta = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureIgracIn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureIgracOut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.bunifuPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // txtIgracInPrezime
@@ -143,11 +145,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = global::eBordo.WinUI.Properties.Resources.eBordo_IN_OUT;
+            this.pictureBox1.BackgroundImage = global::eBordo.WinUI.Properties.Resources.eBordo_igracOut;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(153, 11);
+            this.pictureBox1.Location = new System.Drawing.Point(149, 15);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox1.Size = new System.Drawing.Size(12, 12);
             this.pictureBox1.TabIndex = 131;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -179,11 +181,23 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             this.txtMinuta.Text = "90\'";
             this.txtMinuta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.BackgroundImage = global::eBordo.WinUI.Properties.Resources.eBordo_igracIn;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Location = new System.Drawing.Point(162, 15);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(12, 12);
+            this.pictureBox2.TabIndex = 165;
+            this.pictureBox2.TabStop = false;
+            // 
             // frmIzmjenaKartica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.bunifuPanel1);
             this.Controls.Add(this.txtRazlogIzmjene);
             this.Controls.Add(this.pictureIgracIn);
@@ -202,6 +216,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.bunifuPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -217,5 +232,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
         private System.Windows.Forms.Label txtRazlogIzmjene;
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel1;
         private System.Windows.Forms.Label txtMinuta;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

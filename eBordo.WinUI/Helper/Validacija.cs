@@ -153,11 +153,58 @@ namespace eBordo.WinUI.Helper
                         }
                         break;
                     }
+                case Field.FOKUS_TRENINGA:
+                    {
+                        if (isPrazanString(kontrola, label) ||
+                                isMinimalnoKaraktera(kontrola, label, 15))
+                        {
+                            isValidiran = false;
+                        }
+                        break;
+                    }
+                case Field.TRAJANJE_TRENERA:
+                    {
+                        if (isPrazanString(kontrola, label) ||
+                                isOdredjenBrojKaraktera(kontrola, label, 1) || 
+                                    isInRange(kontrola, label, 1, 4))
+                        {
+                            isValidiran = false;
+                        }
+                        break;
+                    }
+                case Field.KORISNICKO_IME:
+                    {
+                        if (isPrazanString(kontrola, label, polje) ||
+                                isMinimalnoKaraktera(kontrola, label, 4, polje) ||
+                                    isIspravanMail(kontrola, label, polje) ||
+                                        isSarajevoEMail(kontrola, label, polje))
+                        {
+                            isValidiran = false;
+                        }
+                        break;
+                    }
+                case Field.PASSWORD:
+                    {
+                        if (isPrazanString(kontrola, label, polje) ||
+                                isMinimalnoKaraktera(kontrola, label, 4, polje) ||
+                                    ValidacijaPAssword(kontrola, label, polje))
+                        {
+                            isValidiran = false;
+                        }
+                        break;
+                    }
                 default:break;
             }
             if (isValidiran)
             {
-                kontrola.RightIcon.Image = Properties.Resources.eBordo_success_notification;
+                if (polje == Field.KORISNICKO_IME || polje == Field.PASSWORD)
+                {
+                    kontrola.RightIcon.Image = Properties.Resources.eBordo_success_izvjestaj;
+                }
+                else
+                {
+                    kontrola.RightIcon.Image = Properties.Resources.eBordo_success_notification;
+                }
                 label.Text = "";
                 isValidiran = true;
             }
@@ -336,6 +383,15 @@ namespace eBordo.WinUI.Helper
                         }
                         break;
                     }
+                case Field.DATUM_ODRZAVANJA:
+                    {
+                        if (isDatumDanasnji(datum, labelValidator, pictureValidator) ||
+                            isDatumInNarednih30Dana(datum, labelValidator, pictureValidator, 3))
+                        {
+                            isValidiran = false;
+                        }
+                        break;
+                    }
                 default: break;
             }
 
@@ -409,14 +465,21 @@ namespace eBordo.WinUI.Helper
             }
             return flag;
         }
-        private static bool isPrazanString(BunifuTextBox kontrola, BunifuLabel label = null)
+        private static bool isPrazanString(BunifuTextBox kontrola, BunifuLabel label = null, Field polje = Field.BEZ)
         {
             bool flag = false;
             if (kontrola.Text.Length == 0)
             {
                 if(label != null)
                 {
-                    kontrola.RightIcon.Image = Properties.Resources.eBordo_required3;
+                    if(polje == Field.KORISNICKO_IME || polje == Field.PASSWORD)
+                    {
+                        kontrola.RightIcon.Image = Properties.Resources.eBordo_required_izvjestaj2;
+                    }
+                    else
+                    {
+                        kontrola.RightIcon.Image = Properties.Resources.eBordo_required3;
+                    }
                     label.Text = "Polje je obavezno";
                 }
                 else
@@ -427,14 +490,21 @@ namespace eBordo.WinUI.Helper
             }
             return flag;
         }
-        private static bool isMinimalnoKaraktera(BunifuTextBox kontrola, BunifuLabel label = null, int brojKaraktera = 0)
+        private static bool isMinimalnoKaraktera(BunifuTextBox kontrola, BunifuLabel label = null, int brojKaraktera = 0, Field polje = Field.BEZ)
         {
             bool flag = false;
             if (kontrola.Text.Length < brojKaraktera)
             {
-                kontrola.RightIcon.Image = Properties.Resources.eBordo_error_notification;
                 if(label != null)
                 {
+                    if (polje == Field.KORISNICKO_IME || polje == Field.PASSWORD)
+                    {
+                        kontrola.RightIcon.Image = Properties.Resources.eBordo_error_izvjestaj;
+                    }
+                    else
+                    {
+                        kontrola.RightIcon.Image = Properties.Resources.eBordo_error_notification;
+                    }
                     label.Text = "Nedovoljan broj karaktera";
                 }
                 flag = true;
@@ -515,20 +585,109 @@ namespace eBordo.WinUI.Helper
             }
             return flag;
         }
-        private static bool isIspravanMail(BunifuTextBox kontrola, BunifuLabel label = null)
+        private static bool isSarajevoEMail(BunifuTextBox kontrola, BunifuLabel label = null, Field polje = Field.BEZ)
         {
-            var foo = new EmailAddressAttribute();
             bool flag = false;
-            if (!foo.IsValid(kontrola.Text))
+            if (!kontrola.Text.Contains("fksarajevo.ba"))
             {
-                kontrola.RightIcon.Image = Properties.Resources.eBordo_error_notification;
-                if(label != null)
+                if (polje == Field.KORISNICKO_IME)
+                {
+                    kontrola.RightIcon.Image = Properties.Resources.eBordo_error_izvjestaj;
+                }
+                else
+                {
+                    kontrola.RightIcon.Image = Properties.Resources.eBordo_error_notification;
+                }
+                if (label != null)
                 {
                     label.Text = "Neispravan format";
                 }
                 flag = true;
             }
             return flag;
+        }
+        private static bool isIspravanMail(BunifuTextBox kontrola, BunifuLabel label = null, Field polje = Field.BEZ)
+        {
+            var foo = new EmailAddressAttribute();
+            bool flag = false;
+            if (!foo.IsValid(kontrola.Text))
+            {
+                if (polje == Field.KORISNICKO_IME)
+                {
+                    kontrola.RightIcon.Image = Properties.Resources.eBordo_error_izvjestaj;
+                }
+                else
+                {
+                    kontrola.RightIcon.Image = Properties.Resources.eBordo_error_notification;
+                }
+                if (label != null)
+                {
+                    label.Text = "Neispravan format";
+                }
+                flag = true;
+            }
+            return flag;
+        }
+        private static bool ValidacijaPAssword(BunifuTextBox kontrola, BunifuLabel label = null, Field polje = Field.BEZ)
+        {
+            bool flag = false;
+            if (!kontrola.Text.Any(char.IsDigit))
+            {
+                kontrola.RightIcon.Image = Properties.Resources.eBordo_error_izvjestaj;
+                if (label != null)
+                {
+                    label.Text = "Lozinka mora uključivati brojeve";
+                }
+                flag = true;
+            }
+            if (!kontrola.Text.Any(char.IsUpper))
+            {
+                kontrola.RightIcon.Image = Properties.Resources.eBordo_error_izvjestaj;
+                if (label != null)
+                {
+                    label.Text = "Lozinka mora uključivati velika slova";
+                }
+                flag = true;
+            }
+            if (!kontrola.Text.Any(char.IsLower))
+            {
+                kontrola.RightIcon.Image = Properties.Resources.eBordo_error_izvjestaj;
+                if (label != null)
+                {
+                    label.Text = "Lozinka mora uključivati mala slova";
+                }
+                flag = true;
+            }
+            if (isSadrziSPecijalniKarakter(kontrola.Text))
+            {
+                kontrola.RightIcon.Image = Properties.Resources.eBordo_error_izvjestaj;
+                if (label != null)
+                {
+                    label.Text = "Lozinka mora uključivati specijalne karaktere";
+                }
+                flag = true;
+            }
+            return flag;
+        }
+        private static bool isSadrziSPecijalniKarakter(string tekst)
+        {
+            int brojac = 0;
+            char[] specialCharacters = { '!', '@', '£', '$', '%', '^', '&', '*', '(', ')', '#', '€' };
+            for (int i = 0; i < specialCharacters.Length; i++)
+            {
+                if (tekst.Contains(specialCharacters[i]))
+                {
+                    brojac++;
+                }
+            }
+            if(brojac > 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
         private static bool isInRange(BunifuTextBox kontrola, BunifuLabel label = null, int broj1 = 0, int broj2 = 0)
         {

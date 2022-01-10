@@ -17,18 +17,26 @@ namespace eBordo.Api.Services.Trening
         public override IEnumerable<Model.Models.Trening> Get(TreningSearchObject search = null)
         {
             var entity = _db.trening
-                .Where(s => s.isOdradjen == false)
                 .Include(s => s.zabiljezio)
                 .Include(s => s.zabiljezio.korisnik)
                 .AsQueryable();
 
             if (search != null && !string.IsNullOrEmpty(search.lokacijaTreninga))
             {
-                entity = entity.Where(s => s.lokacija.ToString() == search.lokacijaTreninga);
+                LokacijaTreninga lokacija = (LokacijaTreninga)Enum.Parse(typeof(LokacijaTreninga), search.lokacijaTreninga);
+                entity = entity.Where(s => s.lokacija == lokacija);
             }
             if (search.isSearchTop3)
             {
                 entity = entity.Where(s => s.datumOdrzavanja.Date >= DateTime.Now.Date).OrderBy(s => s.datumOdrzavanja).Take(3);
+            }
+            if (search.zavrsen == true)
+            {
+                entity = entity.Where(s => s.isOdradjen).OrderBy(s => s.datumOdrzavanja).Take(3);
+            }
+            else
+            {
+                entity = entity.Where(s => !s.isOdradjen).OrderBy(s => s.datumOdrzavanja).Take(3);
             }
             var result = entity.ToList();
 
@@ -52,6 +60,7 @@ namespace eBordo.Api.Services.Trening
                 lokacija = (LokacijaTreninga)Enum.Parse(typeof(LokacijaTreninga), request.lokacija),
                 fokusTreninga = request.fokusTreninga,
                 isOdradjen = false,
+                trajanje = request.trajanje,
                 zabiljezioID = 1
             };
 
@@ -69,6 +78,7 @@ namespace eBordo.Api.Services.Trening
             trening.lokacija = (LokacijaTreninga)Enum.Parse(typeof(LokacijaTreninga), request.lokacija);
             trening.fokusTreninga = request.fokusTreninga;
             trening.isOdradjen = request.isOdradjen;
+            trening.trajanje = request.trajanje;
 
             _db.SaveChanges();
 

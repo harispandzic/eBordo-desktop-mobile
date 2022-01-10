@@ -107,12 +107,24 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
                     userProflePicture.SizeMode = PictureBoxSizeMode.StretchImage;
                     pictureSlikaIgraca.BackgroundImage = byteToImage.ConvertByteToImage(_odabraniTrener.SlikaPanel);
                     pictureSlikaIgraca.SizeMode = PictureBoxSizeMode.Zoom;
+                    isSlikaAvatarValidated = true;
+                    isSlikaPanelValidated = true;
+                    pictureSlikaAvatarValidator.BackgroundImage = Properties.Resources.eBordo_success_izvjestaj;
+                    pictureSlikaAvatarValidator.BackgroundImageLayout = ImageLayout.Zoom;
+                    pictureSlikaPanelVAlidator.BackgroundImage = Properties.Resources.eBordo_success_izvjestaj;
+                    pictureSlikaPanelVAlidator.BackgroundImageLayout = ImageLayout.Zoom;
                 }
+                pictureSlikaAvatarValidator.BackColor = Color.FromArgb(204, 204, 204);
+                pictureSlikaPanelVAlidator.BackColor = Color.FromArgb(204, 204, 204);
+                dtpDatumPotpisaUgovora.Value = _odabraniTrener.ugovor.datumPocetka;
+                dtpDatumZavrsetkaUgovora.Value = _odabraniTrener.ugovor.datumZavrsetka;
                 LoadTrener();
             }
             else
             {
                 btnSave.Show();
+                controlIsAktivan.Hide();
+                switchIsAktivan.Hide();
                 this.Text = "eBordo | Dodaj trenera";
             }
         }
@@ -126,6 +138,14 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             txtTelefon.Text = _odabraniTrener.korisnik.telefon;
             radioBtnGlavni.Enabled = false;
             radioBtnPomocnik.Enabled = false;
+            if (_odabraniTrener.korisnik.isAktivan)
+            {
+                switchIsAktivan.Checked = true;
+            }
+            else
+            {
+                switchIsAktivan.Checked = false;
+            }
         }
         private async void LoadLicence()
         {
@@ -193,6 +213,12 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
                 PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.GREŠKA_NA_SERVERU);
             }
         }
+
+        private void switchIsAktivan_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuToggleSwitch.CheckedChangedEventArgs e)
+        {
+
+        }
+
         private async void LoadDrzave()
         {
             try
@@ -308,8 +334,8 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             bool isUspjesno = true;
             if (!isImeValidated || !isPrezimeValidate || !isAdresaValidated || 
                 !isTelefonValidated || !isEmailValidated ||
-                isDatumRodjenjaValidated || isDatumPotpisaValidated || isDatumZavrsetkaValidated ||
-                isSlikaAvatarValidated || isSlikaPanelValidated)
+                !isDatumRodjenjaValidated || !isDatumPotpisaValidated || !isDatumZavrsetkaValidated ||
+                !isSlikaAvatarValidated || !isSlikaPanelValidated)
             {
                 isUspjesno = false;
             }
@@ -379,13 +405,23 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
                 PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.FORMA_VALIDACIJA);
                 return;
             }
+            bool isAktivan = true;
+            if (switchIsAktivan.Checked)
+            {
+                isAktivan = true;
+            }
+            else
+            {
+                isAktivan = false;
+            }
             TrenerUpdateRequest updateRequest = new TrenerUpdateRequest
             {
                 korisnikUpdateRequest = new Model.Requests.Korisnik.KorisnikUpdateRequest
                 {
                     adresa = txtAdresa.Text,
                     telefon = txtTelefon.Text,
-                    email = txtEmail.Text
+                    email = txtEmail.Text,
+                    isAktivan = isAktivan
                 },
                 ugovorUpdateRequeest = new Model.Requests.Ugovor.UgovorUpdateRequest
                 {

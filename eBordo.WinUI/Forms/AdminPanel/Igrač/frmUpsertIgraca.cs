@@ -66,14 +66,24 @@ namespace eBordo.WinUI.Forms.AdminPanel
                     userProflePicture.SizeMode = PictureBoxSizeMode.StretchImage;
                     pictureSlikaIgraca.Image = byteToImage.ConvertByteToImage(_odabraniIgrac.slikaPanel);
                     pictureSlikaIgraca.SizeMode = PictureBoxSizeMode.Zoom;
+                    isSlikaAvatarValidated = true;
+                    isSlikaPanelValidated = true;
+                    pictureSlikaAvatarValidator.BackgroundImage = Properties.Resources.eBordo_success_izvjestaj;
+                    pictureSlikaAvatarValidator.BackgroundImageLayout = ImageLayout.Zoom;
+                    pictureSlikaPanelVAlidator.BackgroundImage = Properties.Resources.eBordo_success_izvjestaj;
+                    pictureSlikaPanelVAlidator.BackgroundImageLayout = ImageLayout.Zoom;
                 }
                 LoadIgrac();
                 pictureSlikaAvatarValidator.BackColor = Color.FromArgb(204, 204, 204);
                 pictureSlikaPanelVAlidator.BackColor = Color.FromArgb(204, 204, 204);
+                radioDesna.Checked = true;
+                radioLijeva.Checked = false;
             }
             else
             {
                 btnSave.Show();
+                controlIsAktivan.Hide();
+                switchIsAktivan.Hide();
                 this.Text = "eBordo | Dodaj igrača";
             }
             btnUcitajPanelPhoto.TextAlign = ContentAlignment.MiddleCenter;
@@ -94,7 +104,14 @@ namespace eBordo.WinUI.Forms.AdminPanel
             dtpDatumZavrsetkaUgovora.Value = _odabraniIgrac.ugovor.datumZavrsetka;
             txtNapomene.Text = _odabraniIgrac.napomeneOIgracu;
             nmbrSlabijaNoga.Value = _odabraniIgrac.jacinaSlabijeNoge;
-
+            if (_odabraniIgrac.korisnik.isAktivan)
+            {
+                switchIsAktivan.Checked = true;
+            }
+            else
+            {
+                switchIsAktivan.Checked = false;
+            }
             LoadBoljaNoga();
         }
         private void LoadBoljaNoga()
@@ -322,13 +339,23 @@ namespace eBordo.WinUI.Forms.AdminPanel
             }
             IgracUpdateRequest updateRequest;
 
+            bool isAktivan = true;
+            if (switchIsAktivan.Checked)
+            {
+                isAktivan = true;
+            }
+            else
+            {
+                isAktivan = false;
+            }
             updateRequest = new IgracUpdateRequest
             {
                 korisnikUpdateRequest = new Model.Requests.Korisnik.KorisnikUpdateRequest
                 {
                     adresa = txtAdresa.Text,
                     telefon = txtTelefon.Text,
-                    email = txtEmail.Text
+                    email = txtEmail.Text,
+                    isAktivan = isAktivan
                 },
                 ugovorUpdateRequeest = new Model.Requests.Ugovor.UgovorUpdateRequest
                 {
@@ -365,8 +392,8 @@ namespace eBordo.WinUI.Forms.AdminPanel
             if (!isImeValidated || !isPrezimeValidate || !isAdresaValidated || 
                 !isTelefonValidated || !isEmailValidated || !isTezinaValidated || 
                 !isVisinaValidated || !isBrojDresaValidated || !isTrzisnaVrijednostValidated || 
-                isDatumRodjenjaValidated || isDatumPotpisaValidated || isDatumZavrsetkaValidated ||
-                isSlikaAvatarValidated || isSlikaPanelValidated)
+                !isDatumRodjenjaValidated || !isDatumPotpisaValidated || !isDatumZavrsetkaValidated ||
+                !isSlikaAvatarValidated || !isSlikaPanelValidated)
             {
                 isUspjesno = false;
             }
@@ -387,6 +414,11 @@ namespace eBordo.WinUI.Forms.AdminPanel
         }
 
         private void pictureDatumPotpisaValidator_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void switchIsAktivan_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuToggleSwitch.CheckedChangedEventArgs e)
         {
 
         }

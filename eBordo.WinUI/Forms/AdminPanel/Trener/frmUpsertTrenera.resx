@@ -5723,6 +5723,17 @@
   <data name="txtDatumZavrsetkaValidator.BaseStylesheet" xml:space="preserve">
     <value>#bunifu-label { padding: 0px; font-family: 'Oswald'; font-size: 6pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(64, 5, 7); text-align: left; }</value>
   </data>
+  <data name="switchIsAktivan.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAQCAYAAAABOs/SAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEmSURBVEhLtVQtTwNBEN3kdmYAhaxE9ifgZiV/ogmGBIks
+        rj8AQSrq0WgsEss/IKkgJHyVpEBJKuDt3fYIMKrcvOSJy3y8vZndF35DQ9hQkv1EPElRrhPJ51pErUY+
+        0yiH6Lld2tvQuLmLgmmKPDebrUV+Q797rWSvyPwETneMpJld3AV5hkmeFrkG9Z+6ihZGeVaiQSOKnWIU
+        d2aiA7HzRw1bvTziI4zgw0ryI09CinRuBx2JGw9hvjGDvnzPwg9GwJvLLHxpBHyJKefLNcTH8k/QkdnR
+        gorsYNn+b7gljAS+0bxlkgOc4sVO7JI8h9ZJLbpC3rUSv9oFnXCRKrnKhlUkv6EVjTD2J6Pon8x2zGNT
+        dAVl7tem0sH7xvpuYZEX7U5bhPAFmQokUWi0jw8AAAAASUVORK5CYII=
+</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>25</value>
   </metadata>

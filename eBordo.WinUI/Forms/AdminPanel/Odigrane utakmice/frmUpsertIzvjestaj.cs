@@ -80,6 +80,8 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
                     radioBtnSunce.Checked = true;
                 }
                 cmbIgracUtakmice.Enabled = false;
+                pictureSlikaUtakmicaValidator.BackgroundImage = Properties.Resources.eBordo_success_notification;
+                pictureSlikaUtakmicaValidator.BackgroundImageLayout = ImageLayout.Zoom;
                 LoadPodaci();
             }
             else
@@ -89,10 +91,8 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
                 txtGoloviDomacinhUredjivanje.Visible = false;
                 txtGoloviGostijuUredjivanje.Visible = false;
                 pictureRezultat.Visible = false;
-                cmbIgraciSastav.SelectedIndex = 0;
                 radioBtnSunce.Checked = true;
-                pictureSlikaUtakmice.BackgroundImage = Properties.Resources.eBordo_success_notification;
-                pictureSlikaUtakmice.BackgroundImageLayout = ImageLayout.Zoom;
+                cmbIgracUtakmice.SelectedIndex = 1;
             }
             txtIzmjenaMinutaValidator.Hide();
             LoadDetaljiIgraca(_ostaliIgraci[0]);
@@ -661,6 +661,10 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
         private void txtZutiKartoni_TextChanged_1(object sender, EventArgs e)
         {
             isZutKartoniValidated = Validacija.ValidirajOcjene(txtZutiKartoni, Field.ZUTI_KARTONI);
+            if(txtZutiKartoni.Text == "2")
+            {
+                txtCrveniKartoni.Text = "1";
+            }
         }
 
         private void txtCrveniKartoni_TextChanged_1(object sender, EventArgs e)
@@ -710,6 +714,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
         private void txtGoloviGost_TextChanged(object sender, EventArgs e)
         {
             isGoloviGostValidated = Validacija.ValidirajOcjene(txtGoloviGost, Field.GOLOVI_GOST);
+        }
+
+        private void txtGoloviDomacin_TextChanged(object sender, EventArgs e)
+        {
+            isGoloviDomacinValidated = Validacija.ValidirajOcjene(txtGoloviDomacin, Field.GOLOVI_DOMACIN);
         }
 
         private void pictureSlikaUtakmice_Click(object sender, EventArgs e)

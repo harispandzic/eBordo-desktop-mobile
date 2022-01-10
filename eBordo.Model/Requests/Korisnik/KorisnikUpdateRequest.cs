@@ -9,5 +9,6 @@ namespace eBordo.Model.Requests.Korisnik
         public string adresa { get; set; }
         public string telefon { get; set; }
         public string email { get; set; }
+        public bool isAktivan { get; set; }
     }
 }

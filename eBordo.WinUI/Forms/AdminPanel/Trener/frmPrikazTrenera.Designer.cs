@@ -31,12 +31,12 @@ namespace eBordo.WinUI.Forms.AdminPanel
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrikazTrenera));
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.lblNaslovStranice = new Bunifu.UI.WinForms.BunifuLabel();
             this.dataLoader = new Bunifu.UI.WinForms.BunifuLoader();
             this.snackbar = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
@@ -49,8 +49,14 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.btnSaveIgracSastav = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuButton1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.checkBoxZavrseniTreninzi = new Bunifu.UI.WinForms.BunifuCheckBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.gifLoader = new System.Windows.Forms.PictureBox();
             this.pnlIgraci.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.noSearchResult)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gifLoader)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNaslovStranice
@@ -198,26 +204,26 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.txtImePrezime.Modified = false;
             this.txtImePrezime.Multiline = false;
             this.txtImePrezime.Name = "txtImePrezime";
-            stateProperties1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
-            stateProperties1.FillColor = System.Drawing.Color.Empty;
-            stateProperties1.ForeColor = System.Drawing.Color.Empty;
-            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtImePrezime.OnActiveState = stateProperties1;
-            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtImePrezime.OnDisabledState = stateProperties2;
-            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
-            stateProperties3.FillColor = System.Drawing.Color.Empty;
-            stateProperties3.ForeColor = System.Drawing.Color.Empty;
-            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtImePrezime.OnHoverState = stateProperties3;
-            stateProperties4.BorderColor = System.Drawing.Color.Silver;
-            stateProperties4.FillColor = System.Drawing.Color.White;
-            stateProperties4.ForeColor = System.Drawing.Color.Empty;
-            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtImePrezime.OnIdleState = stateProperties4;
+            stateProperties5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            stateProperties5.FillColor = System.Drawing.Color.Empty;
+            stateProperties5.ForeColor = System.Drawing.Color.Empty;
+            stateProperties5.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtImePrezime.OnActiveState = stateProperties5;
+            stateProperties6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties6.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txtImePrezime.OnDisabledState = stateProperties6;
+            stateProperties7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            stateProperties7.FillColor = System.Drawing.Color.Empty;
+            stateProperties7.ForeColor = System.Drawing.Color.Empty;
+            stateProperties7.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtImePrezime.OnHoverState = stateProperties7;
+            stateProperties8.BorderColor = System.Drawing.Color.Silver;
+            stateProperties8.FillColor = System.Drawing.Color.White;
+            stateProperties8.ForeColor = System.Drawing.Color.Empty;
+            stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtImePrezime.OnIdleState = stateProperties8;
             this.txtImePrezime.Padding = new System.Windows.Forms.Padding(3);
             this.txtImePrezime.PasswordChar = '\0';
             this.txtImePrezime.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -356,11 +362,11 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.btnSaveIgracSastav.ColorContrastOnClick = 45;
             this.btnSaveIgracSastav.ColorContrastOnHover = 45;
             this.btnSaveIgracSastav.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.btnSaveIgracSastav.CustomizableEdges = borderEdges1;
+            borderEdges3.BottomLeft = true;
+            borderEdges3.BottomRight = true;
+            borderEdges3.TopLeft = true;
+            borderEdges3.TopRight = true;
+            this.btnSaveIgracSastav.CustomizableEdges = borderEdges3;
             this.btnSaveIgracSastav.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnSaveIgracSastav.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnSaveIgracSastav.DisabledFillColor = System.Drawing.Color.Empty;
@@ -449,11 +455,11 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.bunifuButton1.ColorContrastOnClick = 45;
             this.bunifuButton1.ColorContrastOnHover = 45;
             this.bunifuButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.bunifuButton1.CustomizableEdges = borderEdges2;
+            borderEdges4.BottomLeft = true;
+            borderEdges4.BottomRight = true;
+            borderEdges4.TopLeft = true;
+            borderEdges4.TopRight = true;
+            this.bunifuButton1.CustomizableEdges = borderEdges4;
             this.bunifuButton1.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bunifuButton1.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton1.DisabledFillColor = System.Drawing.Color.Empty;
@@ -522,10 +528,111 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.bunifuButton1.UseDefaultRadiusAndThickness = true;
             this.bunifuButton1.Click += new System.EventHandler(this.bunifuButton1_Click);
             // 
+            // bunifuLabel2
+            // 
+            this.bunifuLabel2.AllowParentOverrides = false;
+            this.bunifuLabel2.AutoEllipsis = false;
+            this.bunifuLabel2.AutoSize = false;
+            this.bunifuLabel2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel2.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel2.Font = new System.Drawing.Font("Oswald", 9F);
+            this.bunifuLabel2.ForeColor = System.Drawing.Color.Black;
+            this.bunifuLabel2.Location = new System.Drawing.Point(264, 81);
+            this.bunifuLabel2.Name = "bunifuLabel2";
+            this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel2.Size = new System.Drawing.Size(40, 17);
+            this.bunifuLabel2.TabIndex = 300;
+            this.bunifuLabel2.Text = "Aktivan";
+            this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuLabel2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            // 
+            // checkBoxZavrseniTreninzi
+            // 
+            this.checkBoxZavrseniTreninzi.AllowBindingControlAnimation = true;
+            this.checkBoxZavrseniTreninzi.AllowBindingControlColorChanges = false;
+            this.checkBoxZavrseniTreninzi.AllowBindingControlLocation = true;
+            this.checkBoxZavrseniTreninzi.AllowCheckBoxAnimation = false;
+            this.checkBoxZavrseniTreninzi.AllowCheckmarkAnimation = true;
+            this.checkBoxZavrseniTreninzi.AllowOnHoverStates = true;
+            this.checkBoxZavrseniTreninzi.AutoCheck = true;
+            this.checkBoxZavrseniTreninzi.BackColor = System.Drawing.Color.Transparent;
+            this.checkBoxZavrseniTreninzi.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("checkBoxZavrseniTreninzi.BackgroundImage")));
+            this.checkBoxZavrseniTreninzi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.checkBoxZavrseniTreninzi.BindingControlPosition = Bunifu.UI.WinForms.BunifuCheckBox.BindingControlPositions.Right;
+            this.checkBoxZavrseniTreninzi.BorderRadius = 12;
+            this.checkBoxZavrseniTreninzi.Checked = true;
+            this.checkBoxZavrseniTreninzi.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Checked;
+            this.checkBoxZavrseniTreninzi.Cursor = System.Windows.Forms.Cursors.Default;
+            this.checkBoxZavrseniTreninzi.CustomCheckmarkImage = null;
+            this.checkBoxZavrseniTreninzi.Location = new System.Drawing.Point(240, 77);
+            this.checkBoxZavrseniTreninzi.MinimumSize = new System.Drawing.Size(17, 17);
+            this.checkBoxZavrseniTreninzi.Name = "checkBoxZavrseniTreninzi";
+            this.checkBoxZavrseniTreninzi.OnCheck.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.checkBoxZavrseniTreninzi.OnCheck.BorderRadius = 12;
+            this.checkBoxZavrseniTreninzi.OnCheck.BorderThickness = 2;
+            this.checkBoxZavrseniTreninzi.OnCheck.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.checkBoxZavrseniTreninzi.OnCheck.CheckmarkColor = System.Drawing.Color.White;
+            this.checkBoxZavrseniTreninzi.OnCheck.CheckmarkThickness = 2;
+            this.checkBoxZavrseniTreninzi.OnDisable.BorderColor = System.Drawing.Color.LightGray;
+            this.checkBoxZavrseniTreninzi.OnDisable.BorderRadius = 12;
+            this.checkBoxZavrseniTreninzi.OnDisable.BorderThickness = 2;
+            this.checkBoxZavrseniTreninzi.OnDisable.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.checkBoxZavrseniTreninzi.OnDisable.CheckmarkColor = System.Drawing.Color.LightGray;
+            this.checkBoxZavrseniTreninzi.OnDisable.CheckmarkThickness = 2;
+            this.checkBoxZavrseniTreninzi.OnHoverChecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.checkBoxZavrseniTreninzi.OnHoverChecked.BorderRadius = 12;
+            this.checkBoxZavrseniTreninzi.OnHoverChecked.BorderThickness = 2;
+            this.checkBoxZavrseniTreninzi.OnHoverChecked.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.checkBoxZavrseniTreninzi.OnHoverChecked.CheckmarkColor = System.Drawing.Color.White;
+            this.checkBoxZavrseniTreninzi.OnHoverChecked.CheckmarkThickness = 2;
+            this.checkBoxZavrseniTreninzi.OnHoverUnchecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.checkBoxZavrseniTreninzi.OnHoverUnchecked.BorderRadius = 12;
+            this.checkBoxZavrseniTreninzi.OnHoverUnchecked.BorderThickness = 1;
+            this.checkBoxZavrseniTreninzi.OnHoverUnchecked.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.checkBoxZavrseniTreninzi.OnUncheck.BorderColor = System.Drawing.Color.DarkGray;
+            this.checkBoxZavrseniTreninzi.OnUncheck.BorderRadius = 12;
+            this.checkBoxZavrseniTreninzi.OnUncheck.BorderThickness = 1;
+            this.checkBoxZavrseniTreninzi.OnUncheck.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.checkBoxZavrseniTreninzi.Size = new System.Drawing.Size(21, 21);
+            this.checkBoxZavrseniTreninzi.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu;
+            this.checkBoxZavrseniTreninzi.TabIndex = 299;
+            this.checkBoxZavrseniTreninzi.ThreeState = false;
+            this.checkBoxZavrseniTreninzi.ToolTipText = null;
+            this.checkBoxZavrseniTreninzi.CheckedChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs>(this.checkBoxZavrseniTreninzi_CheckedChanged);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox5.BackgroundImage = global::eBordo.WinUI.Properties.Resources.giphy;
+            this.pictureBox5.Image = global::eBordo.WinUI.Properties.Resources.ezgif1;
+            this.pictureBox5.Location = new System.Drawing.Point(559, 16);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(45, 40);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 323;
+            this.pictureBox5.TabStop = false;
+            // 
+            // gifLoader
+            // 
+            this.gifLoader.BackColor = System.Drawing.Color.Transparent;
+            this.gifLoader.BackgroundImage = global::eBordo.WinUI.Properties.Resources.giphy;
+            this.gifLoader.Image = global::eBordo.WinUI.Properties.Resources.ezgif2;
+            this.gifLoader.Location = new System.Drawing.Point(268, 224);
+            this.gifLoader.Name = "gifLoader";
+            this.gifLoader.Size = new System.Drawing.Size(91, 61);
+            this.gifLoader.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.gifLoader.TabIndex = 324;
+            this.gifLoader.TabStop = false;
+            // 
             // frmPrikazTrenera
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.gifLoader);
+            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.bunifuLabel2);
+            this.Controls.Add(this.checkBoxZavrseniTreninzi);
             this.Controls.Add(this.bunifuButton1);
             this.Controls.Add(this.btnSaveIgracSastav);
             this.Controls.Add(this.loaderBrojIgraca);
@@ -541,6 +648,8 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.Load += new System.EventHandler(this.frmPrikazTrenera_Load);
             this.pnlIgraci.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.noSearchResult)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gifLoader)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -559,5 +668,9 @@ namespace eBordo.WinUI.Forms.AdminPanel
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSaveIgracSastav;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton1;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
+        private Bunifu.UI.WinForms.BunifuCheckBox checkBoxZavrseniTreninzi;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox gifLoader;
     }
 }

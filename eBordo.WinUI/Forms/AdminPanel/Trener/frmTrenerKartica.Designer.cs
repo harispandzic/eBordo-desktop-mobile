@@ -37,11 +37,13 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.korisnickaFotografija = new System.Windows.Forms.PictureBox();
             this.pictureZastava = new System.Windows.Forms.PictureBox();
             this.txtLicenca = new System.Windows.Forms.Label();
+            this.pictureAktivan = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.btnView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.korisnickaFotografija)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureZastava)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureAktivan)).BeginInit();
             this.SuspendLayout();
             // 
             // lblUloga
@@ -138,12 +140,24 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.txtLicenca.Text = "UEFA A";
             this.txtLicenca.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // pictureAktivan
+            // 
+            this.pictureAktivan.BackColor = System.Drawing.Color.Transparent;
+            this.pictureAktivan.BackgroundImage = global::eBordo.WinUI.Properties.Resources.eBordo_success_notification;
+            this.pictureAktivan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureAktivan.Location = new System.Drawing.Point(7, 28);
+            this.pictureAktivan.Name = "pictureAktivan";
+            this.pictureAktivan.Size = new System.Drawing.Size(23, 23);
+            this.pictureAktivan.TabIndex = 115;
+            this.pictureAktivan.TabStop = false;
+            // 
             // frmTrenerKartica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::eBordo.WinUI.Properties.Resources.Screenshot_11;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.pictureAktivan);
             this.Controls.Add(this.txtLicenca);
             this.Controls.Add(this.pictureZastava);
             this.Controls.Add(this.btnView);
@@ -161,6 +175,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.korisnickaFotografija)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureZastava)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureAktivan)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -175,5 +190,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
         private System.Windows.Forms.PictureBox korisnickaFotografija;
         private System.Windows.Forms.PictureBox pictureZastava;
         private System.Windows.Forms.Label txtLicenca;
+        private System.Windows.Forms.PictureBox pictureAktivan;
     }
 }

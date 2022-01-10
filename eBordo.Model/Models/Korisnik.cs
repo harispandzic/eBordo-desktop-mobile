@@ -21,6 +21,6 @@ namespace eBordo.Model.Models
         public bool isIgrac { get; set; }
         public bool isTrener { get; set; }
         public bool isAdmin { get; set; }
-
+        public bool isAktivan { get; set; }
     }
 }

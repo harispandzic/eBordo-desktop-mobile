@@ -92,6 +92,7 @@ namespace eBordo.Api.Services.Korisnik
                 lozinkaHash = passwordGenerator.GenerateHash(saltPassword, "test"),
                 drzavljanstvoId = request.drzavljanstvoId,
                 gradRodjenjaId = request.gradRodjenjaId,
+                isAktivan = true
             };
     
             _db.Add(korisnik);
@@ -108,6 +109,7 @@ namespace eBordo.Api.Services.Korisnik
             korisnik.adresa = request.adresa;
             korisnik.email = request.email;
             korisnik.telefon = request.telefon;
+            korisnik.isAktivan = request.isAktivan;
 
             _db.SaveChanges();
 
@@ -117,7 +119,8 @@ namespace eBordo.Api.Services.Korisnik
         {
             var entity = _db.korisnici.Where(s => s.korisnikId == id).FirstOrDefault();
 
-            _db.Remove(entity);
+            entity.isAktivan = false;
+
             _db.SaveChanges();
 
             return _mapper.Map<eBordo.Model.Models.Korisnik>(entity);

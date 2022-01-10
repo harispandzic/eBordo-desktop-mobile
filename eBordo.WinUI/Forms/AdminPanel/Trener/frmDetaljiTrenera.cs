@@ -53,6 +53,17 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             lblPoraziVrijednost.Text = _odabraniTrener.trenerStatistika.brojPoraza.ToString();
 
             lblNerjeseneVrijednosti.Text = _odabraniTrener.trenerStatistika.brojNerjesenih.ToString();
+
+            if (!_odabraniTrener.korisnik.isAktivan)
+            {
+                pictureAktivan.BackgroundImage = Properties.Resources.eBordo_error_notification;
+                pictureAktivan.BackgroundImageLayout = ImageLayout.Zoom;
+            }
+            else
+            {
+                pictureAktivan.BackgroundImage = Properties.Resources.eBordo_success_notification;
+                pictureAktivan.BackgroundImageLayout = ImageLayout.Zoom;
+            }
         }
 
         private void pictureZastava_Click(object sender, EventArgs e)

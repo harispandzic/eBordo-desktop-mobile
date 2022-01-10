@@ -27,6 +27,8 @@ namespace eBordo.WinUI.Forms.AdminPanel.Igrač
         public string pozicija { get; set; }
         public Image slika { get; set; }
         public Image zastava { get; set; }
+        public bool isAktivan { get; set; }
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -39,9 +41,8 @@ namespace eBordo.WinUI.Forms.AdminPanel.Igrač
         );
         public frmIgracKartica(BunifuSnackbar snackbar, frmPrikazIgraca prikazIgraca)
         {
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 188, 286, 8, 8));
             InitializeComponent();
-            //this.BorderStyle = BorderStyle.None;
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, this.Width, this.Height, 12, 12));
             _snackbar = snackbar;
             _prikazIgraca = prikazIgraca;
         }
@@ -55,6 +56,19 @@ namespace eBordo.WinUI.Forms.AdminPanel.Igrač
             igracOcjena.Value = ocjena;
             lblBrojDresa.Text = brojDresa;
             lblPozicija.Text = pozicija.ToUpper();
+            if (!isAktivan)
+            {
+                btnDelete.Hide();
+                btnEdit.Location = new Point(94, 259);
+                btnView.Location = new Point(72, 259);
+                pictureAktivan.BackgroundImage = Properties.Resources.eBordo_error_notification;
+                pictureAktivan.BackgroundImageLayout = ImageLayout.Zoom;
+            }
+            else
+            {
+                pictureAktivan.BackgroundImage = Properties.Resources.eBordo_success_notification;
+                pictureAktivan.BackgroundImageLayout = ImageLayout.Zoom;
+            }
         }
 
         private async void btnView_Click_1(object sender, EventArgs e)

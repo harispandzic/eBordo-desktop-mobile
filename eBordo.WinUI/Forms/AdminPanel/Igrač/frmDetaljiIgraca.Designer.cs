@@ -137,6 +137,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.lblPozicija = new System.Windows.Forms.Label();
             this.userProflePicture = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.txtImePrezime2 = new System.Windows.Forms.Label();
+            this.pictureAktivan = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureZastava)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.korisnickaFotografija)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -174,6 +175,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
             ((System.ComponentModel.ISupportInitialize)(this.pictureNastupi)).BeginInit();
             this.bunifuPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userProflePicture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureAktivan)).BeginInit();
             this.SuspendLayout();
             // 
             // lblFrzavljanstvoOpis
@@ -1862,11 +1864,23 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.txtImePrezime2.Text = "MERSUDIN AHMETOVIĆ";
             this.txtImePrezime2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // pictureAktivan
+            // 
+            this.pictureAktivan.BackColor = System.Drawing.Color.Transparent;
+            this.pictureAktivan.BackgroundImage = global::eBordo.WinUI.Properties.Resources.eBordo_success_notification;
+            this.pictureAktivan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureAktivan.Location = new System.Drawing.Point(651, 12);
+            this.pictureAktivan.Name = "pictureAktivan";
+            this.pictureAktivan.Size = new System.Drawing.Size(23, 23);
+            this.pictureAktivan.TabIndex = 315;
+            this.pictureAktivan.TabStop = false;
+            // 
             // frmDetaljiIgraca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(683, 344);
+            this.Controls.Add(this.pictureAktivan);
             this.Controls.Add(this.txtImePrezime2);
             this.Controls.Add(this.userProflePicture);
             this.Controls.Add(this.bunifuPanel3);
@@ -2012,6 +2026,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
             ((System.ComponentModel.ISupportInitialize)(this.pictureNastupi)).EndInit();
             this.bunifuPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.userProflePicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureAktivan)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2125,5 +2140,6 @@ namespace eBordo.WinUI.Forms.AdminPanel
         private System.Windows.Forms.Label lblPozicija;
         private Bunifu.UI.WinForms.BunifuPictureBox userProflePicture;
         private System.Windows.Forms.Label txtImePrezime2;
+        private System.Windows.Forms.PictureBox pictureAktivan;
     }
 }

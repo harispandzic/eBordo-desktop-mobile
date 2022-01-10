@@ -38,11 +38,13 @@ namespace eBordo.WinUI.Forms.AdminPanel.Igrač
             this.btnEdit = new System.Windows.Forms.PictureBox();
             this.btnDelete = new System.Windows.Forms.PictureBox();
             this.pictureZastava = new System.Windows.Forms.PictureBox();
+            this.pictureAktivan = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.korisnickaFotografija)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureZastava)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureAktivan)).BeginInit();
             this.SuspendLayout();
             // 
             // igracOcjena
@@ -163,6 +165,17 @@ namespace eBordo.WinUI.Forms.AdminPanel.Igrač
             this.pictureZastava.TabIndex = 54;
             this.pictureZastava.TabStop = false;
             // 
+            // pictureAktivan
+            // 
+            this.pictureAktivan.BackColor = System.Drawing.Color.Transparent;
+            this.pictureAktivan.BackgroundImage = global::eBordo.WinUI.Properties.Resources.eBordo_success_notification;
+            this.pictureAktivan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureAktivan.Location = new System.Drawing.Point(4, 32);
+            this.pictureAktivan.Name = "pictureAktivan";
+            this.pictureAktivan.Size = new System.Drawing.Size(23, 23);
+            this.pictureAktivan.TabIndex = 116;
+            this.pictureAktivan.TabStop = false;
+            // 
             // frmIgracKartica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -170,6 +183,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Igrač
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.BackgroundImage = global::eBordo.WinUI.Properties.Resources.Screenshot_11;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.pictureAktivan);
             this.Controls.Add(this.pictureZastava);
             this.Controls.Add(this.igracOcjena);
             this.Controls.Add(this.btnView);
@@ -189,6 +203,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Igrač
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureZastava)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureAktivan)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -203,5 +218,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.Igrač
         private System.Windows.Forms.PictureBox btnEdit;
         private System.Windows.Forms.PictureBox btnDelete;
         private System.Windows.Forms.PictureBox pictureZastava;
+        private System.Windows.Forms.PictureBox pictureAktivan;
     }
 }

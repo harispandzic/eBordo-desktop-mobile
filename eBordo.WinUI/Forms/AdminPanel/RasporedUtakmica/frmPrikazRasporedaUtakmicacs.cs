@@ -49,6 +49,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
 
                 _podaci = await _utakmice.GetAll<List<Model.Models.Utakmica>>(search);
                 loader.Hide();
+                gifLoader.Hide();
 
                 frmUtakmicaKartica[] listItems = new frmUtakmicaKartica[_podaci.Count];
                 for (int i = 0; i < listItems.Length; i++)

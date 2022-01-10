@@ -57,6 +57,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
                 }
                 else
                 {
+                    cmbUtakmica.Text = "Nema utakmica!";
                     PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.BEZ_UTAKMICA);
                 }
             }
@@ -74,6 +75,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
 
         private void btnSaveIgracSastav_Click(object sender, EventArgs e)
         {
+            if(_utakmice.Count() == 0)
+            {
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.BEZ_UTAKMICA);
+                return;
+            }
             frmUpsertIzvjestaj insert = new frmUpsertIzvjestaj(_utakmice[cmbUtakmica.SelectedIndex].utakmicaId, _prikazUtakmica, null);
             this.Hide();
             insert.Show();

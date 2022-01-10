@@ -94,6 +94,8 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
                 cmbVrstaUtakmice.SelectedIndex = 0;
                 radioBtnDomacaGarnitura.Checked = true;
             }
+            radioBtnPrvihXI.Checked = true;
+            radioBtnKlupa.Checked = false;
             UpdateBrojEvidentiranih();
         }
         private void LoadPodaciUtakmica()
@@ -258,7 +260,8 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             IgracSearchObject search = new IgracSearchObject
             {
                 ime = "",
-                pozicijaId = -1
+                pozicijaId = -1,
+                isAktivan = true
             };
 
             try
@@ -510,6 +513,41 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
         {
             txtBrojIgracaPrvaPostava.Text = flowPanelPrvaPostava.Controls.Count.ToString() + " od 11";
             txtBrojIgracaKlupa.Text = flowPanelKlupa.Controls.Count.ToString() + " od 9";
+
+            if(flowPanelPrvaPostava.Controls.Count >= 5)
+            {
+                pictureValidacijaPrvaPOstavaka.BackgroundImage = Properties.Resources.eBordo_success_notification;
+                pictureValidacijaPrvaPOstavaka.BackgroundImageLayout = ImageLayout.Zoom;
+                txtPrvaPostavaValidator.Text = "Odabran minimalan broj";
+            }
+            else
+            {
+                pictureValidacijaPrvaPOstavaka.BackgroundImage = Properties.Resources.eBordo_required3;
+                pictureValidacijaPrvaPOstavaka.BackgroundImageLayout = ImageLayout.Zoom;
+                txtPrvaPostavaValidator.Text = "Minimalno 5 igrača";
+            }
+
+            if (flowPanelKlupa.Controls.Count >= 4)
+            {
+                pictureKlupaValidator.BackgroundImage = Properties.Resources.eBordo_success_notification;
+                pictureKlupaValidator.BackgroundImageLayout = ImageLayout.Zoom;
+                txtKlupaValidator.Text = "Odabran minimalan broj";
+            }
+            else
+            {
+                pictureKlupaValidator.BackgroundImage = Properties.Resources.eBordo_required3;
+                pictureKlupaValidator.BackgroundImageLayout = ImageLayout.Zoom;
+                txtKlupaValidator.Text = "Minimalno 5 igrača";
+            }
+
+            if (flowPanelPrvaPostava.Controls.Count == 11)
+            {
+                txtPrvaPostavaValidator.Text = "Odabrana prva postava";
+            }
+            if (flowPanelKlupa.Controls.Count == 9)
+            {
+                txtKlupaValidator.Text = "Odabrana klupa";
+            }
         }
         private void label2_Click(object sender, EventArgs e)
         {
@@ -569,9 +607,28 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
                 PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
             }
         }
+        private bool ValidirajFormu()
+        {
+            bool isUspjesno = true;
+            if (!isOpisUtakmiceValidated || !isDatumOdigravanjaValidated || !isSatnicaValidated || 
+                !isSudijaValidated || flowPanelPrvaPostava.Controls.Count < 5 || flowPanelKlupa.Controls.Count < 4)
+            {
+                isUspjesno = false;
+            }
+            else
+            {
+                isUspjesno = true;
+            }
 
+            return isUspjesno;
+        }
         private async void btnSave_Click_1(object sender, EventArgs e)
         {
+            if (!ValidirajFormu())
+            {
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.FORMA_VALIDACIJA);
+                return;
+            }
             string tipGarniture = "", tipUtakmice = "";
             if (radioBtnDomacaGarnitura.Checked)
             {
@@ -653,6 +710,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
 
         private async void btnSaveUpdate_Click(object sender, EventArgs e)
         {
+            if (!ValidirajFormu())
+            {
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.FORMA_VALIDACIJA);
+                return;
+            }
             List<UtakmicaSastavUpdateRequest> sastav = new List<UtakmicaSastavUpdateRequest>();
 
             for (int i = 0; i < flowPanelPrvaPostava.Controls.Count; i++)
@@ -714,20 +776,12 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
 
         private void txtSatnica_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                isSatnicaValidated = Validacija.ValidirajInputString(txtSatnica, txtSatnicaValidator, Field.SATNICA);
-            }
-            catch
-            {
-                PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.GREŠKA_NA_SERVERU);
-            }
+            isSatnicaValidated = Validacija.ValidirajInputString(txtSatnica, txtSatnicaValidator, Field.SATNICA);
         }
 
         private void dtpDatumOdigravanja_ValueChanged(object sender, EventArgs e)
         {
             isDatumOdigravanjaValidated = Validacija.ValidirajDatum(dtpDatumOdigravanja.Value,txtDatumOdigravanjaValidator, pictureDatumOdigravanjaValidator, Field.DATUM_ODIGRAVANJA);
-
         }
     }
 }

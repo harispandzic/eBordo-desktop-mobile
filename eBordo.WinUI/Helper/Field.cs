@@ -36,6 +36,11 @@ namespace eBordo.WinUI.Helper
         MINUTA_IZMJENA,
         SLIKA_UTAKMICA,
         GOLOVI_DOMACIN,
-        GOLOVI_GOST
+        GOLOVI_GOST,
+        FOKUS_TRENINGA,
+        DATUM_ODRZAVANJA,
+        TRAJANJE_TRENERA,
+        KORISNICKO_IME,
+        PASSWORD
     }
 }

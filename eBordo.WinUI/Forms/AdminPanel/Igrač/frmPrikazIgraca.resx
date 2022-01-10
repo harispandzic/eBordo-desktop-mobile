@@ -319,6 +319,17 @@
         74C5JsMAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="checkBoxZavrseniTreninzi.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAD/SURBVDhP7ZWtDsJQDIWbcH8AhUQikUhcJ5E8AhKJROKQ
+        SB6BR0AieQQkEomcA9rdZgNW2HYFipN82ZKdntw1XQc/Fzo3ROtnxOoF4+doOmOxVQsB2on1ayIl7pUY
+        v0Po9qW8LLR2RKaTWvydK73VVGIKZSc07qwU1CVF7wcSF5RYt1WMDXF7icv7WK+HFeSnzXqpGGLIe4vG
+        LTRDDDxyIZRuNEMM/1AJNW6pGWIoQlt+ohli4GUTQgF6miEGnvkslEWf2EEzNYJ2h8QF8e6kB7Gf6o2v
+        3EaJK8T9eDM3YSMxZfFGp1YclaIPuIt6Qk0cnv02aERUaAwpLBH7kwAeBWqhU9JjoFMAAAAASUVORK5C
+        YII=
+</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>47</value>
   </metadata>

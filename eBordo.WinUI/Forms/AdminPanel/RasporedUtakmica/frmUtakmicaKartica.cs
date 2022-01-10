@@ -57,6 +57,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
         {
             panelDelete.Hide();
             loader.Hide();
+            gifLoader.Hide();
 
             lblOpisUtakmice.Text = utakmicaOpis;
             lblDomacin.Text = domacin;
@@ -86,6 +87,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             {
                 panelDelete.Show();
                 loader.Show();
+                gifLoader.Show();
                 var result = await _utakmica.DeleteById<Model.Models.Igrac>(utakmicaId);
                 await _prikazRasporeda.LoadUtakmice(notifikacija: TipNotifikacije.BRISANJE);
             }

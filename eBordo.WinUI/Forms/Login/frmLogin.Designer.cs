@@ -31,24 +31,31 @@ namespace eBordo.WinUI.Forms.Login
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties9 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties10 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties11 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties12 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties13 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties14 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties15 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties16 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.txtKorisnickoIme = new Bunifu.UI.WinForms.BunifuTextBox();
             this.pnlLoginPozadina = new System.Windows.Forms.Panel();
-            this.pnlGrb = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.lblOpis = new System.Windows.Forms.Label();
             this.txtLozinka = new Bunifu.UI.WinForms.BunifuTextBox();
             this.btnPrijava = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bnfSnackBar = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.loader = new Bunifu.UI.WinForms.BunifuLoader();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtKorisnickoImeValidator = new Bunifu.UI.WinForms.BunifuLabel();
+            this.txtLozinkaValidator = new Bunifu.UI.WinForms.BunifuLabel();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtKorisnickoIme
@@ -65,46 +72,46 @@ namespace eBordo.WinUI.Forms.Login
             this.txtKorisnickoIme.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.txtKorisnickoIme.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
             this.txtKorisnickoIme.BorderColorIdle = System.Drawing.Color.Silver;
-            this.txtKorisnickoIme.BorderRadius = 1;
+            this.txtKorisnickoIme.BorderRadius = 30;
             this.txtKorisnickoIme.BorderThickness = 1;
             this.txtKorisnickoIme.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtKorisnickoIme.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtKorisnickoIme.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txtKorisnickoIme.DefaultFont = new System.Drawing.Font("Oswald", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtKorisnickoIme.DefaultText = "";
             this.txtKorisnickoIme.FillColor = System.Drawing.Color.White;
             this.txtKorisnickoIme.HideSelection = true;
             this.txtKorisnickoIme.IconLeft = null;
             this.txtKorisnickoIme.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtKorisnickoIme.IconPadding = 10;
-            this.txtKorisnickoIme.IconRight = null;
+            this.txtKorisnickoIme.IconRight = ((System.Drawing.Image)(resources.GetObject("txtKorisnickoIme.IconRight")));
             this.txtKorisnickoIme.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtKorisnickoIme.Lines = new string[0];
-            this.txtKorisnickoIme.Location = new System.Drawing.Point(27, 189);
+            this.txtKorisnickoIme.Location = new System.Drawing.Point(27, 176);
             this.txtKorisnickoIme.MaxLength = 32767;
             this.txtKorisnickoIme.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtKorisnickoIme.Modified = false;
             this.txtKorisnickoIme.Multiline = false;
             this.txtKorisnickoIme.Name = "txtKorisnickoIme";
-            stateProperties1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
-            stateProperties1.FillColor = System.Drawing.Color.Empty;
-            stateProperties1.ForeColor = System.Drawing.Color.Empty;
-            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtKorisnickoIme.OnActiveState = stateProperties1;
-            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtKorisnickoIme.OnDisabledState = stateProperties2;
-            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
-            stateProperties3.FillColor = System.Drawing.Color.Empty;
-            stateProperties3.ForeColor = System.Drawing.Color.Empty;
-            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtKorisnickoIme.OnHoverState = stateProperties3;
-            stateProperties4.BorderColor = System.Drawing.Color.Silver;
-            stateProperties4.FillColor = System.Drawing.Color.White;
-            stateProperties4.ForeColor = System.Drawing.Color.Empty;
-            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtKorisnickoIme.OnIdleState = stateProperties4;
+            stateProperties9.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            stateProperties9.FillColor = System.Drawing.Color.Empty;
+            stateProperties9.ForeColor = System.Drawing.Color.Empty;
+            stateProperties9.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtKorisnickoIme.OnActiveState = stateProperties9;
+            stateProperties10.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties10.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties10.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txtKorisnickoIme.OnDisabledState = stateProperties10;
+            stateProperties11.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            stateProperties11.FillColor = System.Drawing.Color.Empty;
+            stateProperties11.ForeColor = System.Drawing.Color.Empty;
+            stateProperties11.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtKorisnickoIme.OnHoverState = stateProperties11;
+            stateProperties12.BorderColor = System.Drawing.Color.Silver;
+            stateProperties12.FillColor = System.Drawing.Color.White;
+            stateProperties12.ForeColor = System.Drawing.Color.Empty;
+            stateProperties12.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtKorisnickoIme.OnIdleState = stateProperties12;
             this.txtKorisnickoIme.Padding = new System.Windows.Forms.Padding(3);
             this.txtKorisnickoIme.PasswordChar = '\0';
             this.txtKorisnickoIme.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -115,7 +122,7 @@ namespace eBordo.WinUI.Forms.Login
             this.txtKorisnickoIme.SelectionLength = 0;
             this.txtKorisnickoIme.SelectionStart = 0;
             this.txtKorisnickoIme.ShortcutsEnabled = true;
-            this.txtKorisnickoIme.Size = new System.Drawing.Size(260, 39);
+            this.txtKorisnickoIme.Size = new System.Drawing.Size(260, 40);
             this.txtKorisnickoIme.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtKorisnickoIme.TabIndex = 2;
             this.txtKorisnickoIme.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -125,6 +132,7 @@ namespace eBordo.WinUI.Forms.Login
             this.txtKorisnickoIme.TextPlaceholder = "Korisničko ime";
             this.txtKorisnickoIme.UseSystemPasswordChar = false;
             this.txtKorisnickoIme.WordWrap = true;
+            this.txtKorisnickoIme.TextChanged += new System.EventHandler(this.txtKorisnickoIme_TextChanged);
             // 
             // pnlLoginPozadina
             // 
@@ -132,37 +140,28 @@ namespace eBordo.WinUI.Forms.Login
             this.pnlLoginPozadina.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlLoginPozadina.Location = new System.Drawing.Point(318, 0);
             this.pnlLoginPozadina.Name = "pnlLoginPozadina";
-            this.pnlLoginPozadina.Size = new System.Drawing.Size(319, 382);
+            this.pnlLoginPozadina.Size = new System.Drawing.Size(319, 399);
             this.pnlLoginPozadina.TabIndex = 1;
-            // 
-            // pnlGrb
-            // 
-            this.pnlGrb.BackgroundImage = global::eBordo.WinUI.Properties.Resources.grbSarajevo;
-            this.pnlGrb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlGrb.Location = new System.Drawing.Point(119, 23);
-            this.pnlGrb.Name = "pnlGrb";
-            this.pnlGrb.Size = new System.Drawing.Size(76, 100);
-            this.pnlGrb.TabIndex = 3;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(85, 124);
+            this.label1.Font = new System.Drawing.Font("Rockwell", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(28, 118);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(144, 33);
+            this.label1.Size = new System.Drawing.Size(160, 43);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Prijavi se";
+            this.label1.Text = "Prijava na";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblOpis
             // 
-            this.lblOpis.AutoSize = true;
-            this.lblOpis.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOpis.Location = new System.Drawing.Point(68, 157);
+            this.lblOpis.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOpis.Location = new System.Drawing.Point(7, 155);
             this.lblOpis.Name = "lblOpis";
-            this.lblOpis.Size = new System.Drawing.Size(185, 16);
+            this.lblOpis.Size = new System.Drawing.Size(305, 16);
             this.lblOpis.TabIndex = 5;
-            this.lblOpis.Text = "Unesite podatke za prijavu";
+            this.lblOpis.Text = "UNESI PODATKE ZA PRIJAVU";
+            this.lblOpis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtLozinka
             // 
@@ -178,48 +177,48 @@ namespace eBordo.WinUI.Forms.Login
             this.txtLozinka.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.txtLozinka.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
             this.txtLozinka.BorderColorIdle = System.Drawing.Color.Silver;
-            this.txtLozinka.BorderRadius = 1;
+            this.txtLozinka.BorderRadius = 30;
             this.txtLozinka.BorderThickness = 1;
             this.txtLozinka.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtLozinka.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtLozinka.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txtLozinka.DefaultFont = new System.Drawing.Font("Oswald", 6F);
             this.txtLozinka.DefaultText = "";
             this.txtLozinka.FillColor = System.Drawing.Color.White;
             this.txtLozinka.HideSelection = true;
             this.txtLozinka.IconLeft = null;
             this.txtLozinka.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtLozinka.IconPadding = 10;
-            this.txtLozinka.IconRight = null;
+            this.txtLozinka.IconRight = ((System.Drawing.Image)(resources.GetObject("txtLozinka.IconRight")));
             this.txtLozinka.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtLozinka.Lines = new string[0];
-            this.txtLozinka.Location = new System.Drawing.Point(27, 242);
+            this.txtLozinka.Location = new System.Drawing.Point(27, 230);
             this.txtLozinka.MaxLength = 32767;
             this.txtLozinka.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtLozinka.Modified = false;
             this.txtLozinka.Multiline = false;
             this.txtLozinka.Name = "txtLozinka";
-            stateProperties5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
-            stateProperties5.FillColor = System.Drawing.Color.Empty;
-            stateProperties5.ForeColor = System.Drawing.Color.Empty;
-            stateProperties5.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtLozinka.OnActiveState = stateProperties5;
-            stateProperties6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties6.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtLozinka.OnDisabledState = stateProperties6;
-            stateProperties7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
-            stateProperties7.FillColor = System.Drawing.Color.Empty;
-            stateProperties7.ForeColor = System.Drawing.Color.Empty;
-            stateProperties7.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtLozinka.OnHoverState = stateProperties7;
-            stateProperties8.BorderColor = System.Drawing.Color.Silver;
-            stateProperties8.FillColor = System.Drawing.Color.White;
-            stateProperties8.ForeColor = System.Drawing.Color.Empty;
-            stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtLozinka.OnIdleState = stateProperties8;
+            stateProperties13.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            stateProperties13.FillColor = System.Drawing.Color.Empty;
+            stateProperties13.ForeColor = System.Drawing.Color.Empty;
+            stateProperties13.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtLozinka.OnActiveState = stateProperties13;
+            stateProperties14.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties14.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties14.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txtLozinka.OnDisabledState = stateProperties14;
+            stateProperties15.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            stateProperties15.FillColor = System.Drawing.Color.Empty;
+            stateProperties15.ForeColor = System.Drawing.Color.Empty;
+            stateProperties15.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtLozinka.OnHoverState = stateProperties15;
+            stateProperties16.BorderColor = System.Drawing.Color.Silver;
+            stateProperties16.FillColor = System.Drawing.Color.White;
+            stateProperties16.ForeColor = System.Drawing.Color.Empty;
+            stateProperties16.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtLozinka.OnIdleState = stateProperties16;
             this.txtLozinka.Padding = new System.Windows.Forms.Padding(3);
-            this.txtLozinka.PasswordChar = '\0';
+            this.txtLozinka.PasswordChar = '●';
             this.txtLozinka.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtLozinka.PlaceholderText = "Lozinka";
             this.txtLozinka.ReadOnly = false;
@@ -228,7 +227,7 @@ namespace eBordo.WinUI.Forms.Login
             this.txtLozinka.SelectionLength = 0;
             this.txtLozinka.SelectionStart = 0;
             this.txtLozinka.ShortcutsEnabled = true;
-            this.txtLozinka.Size = new System.Drawing.Size(260, 39);
+            this.txtLozinka.Size = new System.Drawing.Size(260, 40);
             this.txtLozinka.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtLozinka.TabIndex = 6;
             this.txtLozinka.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -236,8 +235,9 @@ namespace eBordo.WinUI.Forms.Login
             this.txtLozinka.TextMarginLeft = 3;
             this.txtLozinka.TextMarginTop = 1;
             this.txtLozinka.TextPlaceholder = "Lozinka";
-            this.txtLozinka.UseSystemPasswordChar = false;
+            this.txtLozinka.UseSystemPasswordChar = true;
             this.txtLozinka.WordWrap = true;
+            this.txtLozinka.TextChanged += new System.EventHandler(this.txtLozinka_TextChanged);
             // 
             // btnPrijava
             // 
@@ -258,19 +258,19 @@ namespace eBordo.WinUI.Forms.Login
             this.btnPrijava.ColorContrastOnClick = 45;
             this.btnPrijava.ColorContrastOnHover = 45;
             this.btnPrijava.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.btnPrijava.CustomizableEdges = borderEdges1;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.btnPrijava.CustomizableEdges = borderEdges2;
             this.btnPrijava.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnPrijava.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnPrijava.DisabledFillColor = System.Drawing.Color.Empty;
             this.btnPrijava.DisabledForecolor = System.Drawing.Color.Empty;
             this.btnPrijava.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnPrijava.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrijava.Font = new System.Drawing.Font("Oswald", 10F);
             this.btnPrijava.ForeColor = System.Drawing.Color.White;
-            this.btnPrijava.IconLeft = null;
+            this.btnPrijava.IconLeft = global::eBordo.WinUI.Properties.Resources.eBordo_login;
             this.btnPrijava.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPrijava.IconLeftCursor = System.Windows.Forms.Cursors.Default;
             this.btnPrijava.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
@@ -280,15 +280,15 @@ namespace eBordo.WinUI.Forms.Login
             this.btnPrijava.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPrijava.IconRightCursor = System.Windows.Forms.Cursors.Default;
             this.btnPrijava.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.btnPrijava.IconSize = 25;
+            this.btnPrijava.IconSize = 30;
             this.btnPrijava.IdleBorderColor = System.Drawing.Color.Empty;
             this.btnPrijava.IdleBorderRadius = 0;
             this.btnPrijava.IdleBorderThickness = 0;
             this.btnPrijava.IdleFillColor = System.Drawing.Color.Empty;
-            this.btnPrijava.IdleIconLeftImage = null;
+            this.btnPrijava.IdleIconLeftImage = global::eBordo.WinUI.Properties.Resources.eBordo_login;
             this.btnPrijava.IdleIconRightImage = null;
             this.btnPrijava.IndicateFocus = true;
-            this.btnPrijava.Location = new System.Drawing.Point(83, 311);
+            this.btnPrijava.Location = new System.Drawing.Point(101, 286);
             this.btnPrijava.Name = "btnPrijava";
             this.btnPrijava.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnPrijava.OnDisabledState.BorderRadius = 35;
@@ -302,32 +302,32 @@ namespace eBordo.WinUI.Forms.Login
             this.btnPrijava.onHoverState.BorderRadius = 35;
             this.btnPrijava.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.btnPrijava.onHoverState.BorderThickness = 1;
-            this.btnPrijava.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.btnPrijava.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.btnPrijava.onHoverState.ForeColor = System.Drawing.Color.White;
-            this.btnPrijava.onHoverState.IconLeftImage = null;
+            this.btnPrijava.onHoverState.IconLeftImage = global::eBordo.WinUI.Properties.Resources.eBordo_login;
             this.btnPrijava.onHoverState.IconRightImage = null;
-            this.btnPrijava.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.btnPrijava.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.btnPrijava.OnIdleState.BorderRadius = 35;
             this.btnPrijava.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.btnPrijava.OnIdleState.BorderThickness = 1;
-            this.btnPrijava.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.btnPrijava.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.btnPrijava.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.btnPrijava.OnIdleState.IconLeftImage = null;
+            this.btnPrijava.OnIdleState.IconLeftImage = global::eBordo.WinUI.Properties.Resources.eBordo_login;
             this.btnPrijava.OnIdleState.IconRightImage = null;
-            this.btnPrijava.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.btnPrijava.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.btnPrijava.OnPressedState.BorderRadius = 35;
             this.btnPrijava.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.btnPrijava.OnPressedState.BorderThickness = 1;
-            this.btnPrijava.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.btnPrijava.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.btnPrijava.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.btnPrijava.OnPressedState.IconLeftImage = null;
+            this.btnPrijava.OnPressedState.IconLeftImage = global::eBordo.WinUI.Properties.Resources.eBordo_login;
             this.btnPrijava.OnPressedState.IconRightImage = null;
-            this.btnPrijava.Size = new System.Drawing.Size(150, 39);
+            this.btnPrijava.Size = new System.Drawing.Size(115, 39);
             this.btnPrijava.TabIndex = 7;
-            this.btnPrijava.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnPrijava.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPrijava.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnPrijava.TextMarginLeft = 0;
-            this.btnPrijava.TextPadding = new System.Windows.Forms.Padding(0);
+            this.btnPrijava.TextPadding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.btnPrijava.UseDefaultRadiusAndThickness = true;
             this.btnPrijava.Click += new System.EventHandler(this.btnPrijava_Click);
             // 
@@ -400,42 +400,123 @@ namespace eBordo.WinUI.Forms.Login
             this.bnfSnackBar.WarningOptions.IconLeftMargin = 12;
             this.bnfSnackBar.ZoomCloseIcon = true;
             // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Oswald", 7F);
+            this.label2.Location = new System.Drawing.Point(4, 379);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(309, 16);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Copyright 2022 © Haris Pandžić. Sva prava zadržana.";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox5.BackgroundImage = global::eBordo.WinUI.Properties.Resources.giphy;
+            this.pictureBox5.Image = global::eBordo.WinUI.Properties.Resources.ezgif1;
+            this.pictureBox5.Location = new System.Drawing.Point(113, 11);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(91, 109);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 327;
+            this.pictureBox5.TabStop = false;
+            // 
             // loader
             // 
             this.loader.AllowStylePresets = true;
             this.loader.BackColor = System.Drawing.Color.Transparent;
             this.loader.CapStyle = Bunifu.UI.WinForms.BunifuLoader.CapStyles.Round;
-            this.loader.Color = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.loader.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.loader.Colors = new Bunifu.UI.WinForms.Bloom[0];
             this.loader.Customization = "";
             this.loader.DashWidth = 0.5F;
             this.loader.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.loader.Image = null;
-            this.loader.Location = new System.Drawing.Point(143, 313);
+            this.loader.Location = new System.Drawing.Point(145, 290);
             this.loader.Name = "loader";
             this.loader.NoRounding = false;
             this.loader.Preset = Bunifu.UI.WinForms.BunifuLoader.StylePresets.Solid;
             this.loader.RingStyle = Bunifu.UI.WinForms.BunifuLoader.RingStyles.Solid;
             this.loader.ShowText = false;
-            this.loader.Size = new System.Drawing.Size(35, 35);
+            this.loader.Size = new System.Drawing.Size(30, 30);
             this.loader.Speed = 7;
             this.loader.TabIndex = 8;
             this.loader.Text = "bunifuLoader1";
             this.loader.TextPadding = new System.Windows.Forms.Padding(0);
-            this.loader.Thickness = 6;
+            this.loader.Thickness = 4;
             this.loader.Transparent = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::eBordo.WinUI.Properties.Resources.giphy;
+            this.pictureBox1.Image = global::eBordo.WinUI.Properties.Resources.ezgif2;
+            this.pictureBox1.Location = new System.Drawing.Point(119, 336);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(79, 42);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 329;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Rockwell", 21.75F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.label3.Location = new System.Drawing.Point(170, 121);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(117, 36);
+            this.label3.TabIndex = 330;
+            this.label3.Text = "eBordo";
+            // 
+            // txtKorisnickoImeValidator
+            // 
+            this.txtKorisnickoImeValidator.AllowParentOverrides = false;
+            this.txtKorisnickoImeValidator.AutoEllipsis = false;
+            this.txtKorisnickoImeValidator.CursorType = null;
+            this.txtKorisnickoImeValidator.Font = new System.Drawing.Font("Oswald", 6F);
+            this.txtKorisnickoImeValidator.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.txtKorisnickoImeValidator.Location = new System.Drawing.Point(34, 215);
+            this.txtKorisnickoImeValidator.Name = "txtKorisnickoImeValidator";
+            this.txtKorisnickoImeValidator.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtKorisnickoImeValidator.Size = new System.Drawing.Size(0, 0);
+            this.txtKorisnickoImeValidator.TabIndex = 343;
+            this.txtKorisnickoImeValidator.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.txtKorisnickoImeValidator.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // txtLozinkaValidator
+            // 
+            this.txtLozinkaValidator.AllowParentOverrides = false;
+            this.txtLozinkaValidator.AutoEllipsis = false;
+            this.txtLozinkaValidator.CursorType = null;
+            this.txtLozinkaValidator.Font = new System.Drawing.Font("Oswald", 6F);
+            this.txtLozinkaValidator.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.txtLozinkaValidator.Location = new System.Drawing.Point(34, 269);
+            this.txtLozinkaValidator.Name = "txtLozinkaValidator";
+            this.txtLozinkaValidator.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtLozinkaValidator.Size = new System.Drawing.Size(0, 0);
+            this.txtLozinkaValidator.TabIndex = 344;
+            this.txtLozinkaValidator.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.txtLozinkaValidator.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(637, 382);
+            this.ClientSize = new System.Drawing.Size(637, 396);
+            this.Controls.Add(this.txtLozinkaValidator);
+            this.Controls.Add(this.txtKorisnickoImeValidator);
+            this.Controls.Add(this.lblOpis);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnPrijava);
             this.Controls.Add(this.loader);
             this.Controls.Add(this.txtLozinka);
-            this.Controls.Add(this.lblOpis);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pnlGrb);
             this.Controls.Add(this.txtKorisnickoIme);
             this.Controls.Add(this.pnlLoginPozadina);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -444,6 +525,8 @@ namespace eBordo.WinUI.Forms.Login
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "eBordo | Prijavi se";
             this.Load += new System.EventHandler(this.frmLogin_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -452,12 +535,17 @@ namespace eBordo.WinUI.Forms.Login
         #endregion
         private System.Windows.Forms.Panel pnlLoginPozadina;
         private Bunifu.UI.WinForms.BunifuTextBox txtKorisnickoIme;
-        private System.Windows.Forms.Panel pnlGrb;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblOpis;
         private Bunifu.UI.WinForms.BunifuTextBox txtLozinka;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnPrijava;
         private Bunifu.UI.WinForms.BunifuSnackbar bnfSnackBar;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox5;
         private Bunifu.UI.WinForms.BunifuLoader loader;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label3;
+        private Bunifu.UI.WinForms.BunifuLabel txtKorisnickoImeValidator;
+        private Bunifu.UI.WinForms.BunifuLabel txtLozinkaValidator;
     }
 }

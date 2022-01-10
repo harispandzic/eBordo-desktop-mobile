@@ -32,11 +32,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDetaljiTrenera));
             this.korisnickaFotografija = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.bunifuPanel3 = new Bunifu.UI.WinForms.BunifuPanel();
-            this.txtImePrezime = new System.Windows.Forms.Label();
-            this.txtUloga = new System.Windows.Forms.Label();
-            this.pictureZastava = new System.Windows.Forms.PictureBox();
             this.txtLicenca = new System.Windows.Forms.Label();
+            this.pictureZastava = new System.Windows.Forms.PictureBox();
+            this.txtImePrezime = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.txtUloga = new System.Windows.Forms.Label();
             this.lblImePrezime = new System.Windows.Forms.Label();
             this.userProflePicture = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.iconPictureBox10 = new FontAwesome.Sharp.IconPictureBox();
@@ -82,6 +82,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.pictureAsistencije = new System.Windows.Forms.PictureBox();
             this.pictureGolovi = new System.Windows.Forms.PictureBox();
             this.pictureNastupi = new System.Windows.Forms.PictureBox();
+            this.pictureAktivan = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.korisnickaFotografija)).BeginInit();
             this.bunifuPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureZastava)).BeginInit();
@@ -102,6 +103,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             ((System.ComponentModel.ISupportInitialize)(this.pictureAsistencije)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureGolovi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureNastupi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureAktivan)).BeginInit();
             this.SuspendLayout();
             // 
             // korisnickaFotografija
@@ -139,29 +141,17 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.bunifuPanel3.Size = new System.Drawing.Size(179, 265);
             this.bunifuPanel3.TabIndex = 313;
             // 
-            // txtImePrezime
+            // txtLicenca
             // 
-            this.txtImePrezime.BackColor = System.Drawing.Color.Transparent;
-            this.txtImePrezime.Font = new System.Drawing.Font("Oswald", 12F);
-            this.txtImePrezime.ForeColor = System.Drawing.Color.White;
-            this.txtImePrezime.Location = new System.Drawing.Point(10, 216);
-            this.txtImePrezime.Name = "txtImePrezime";
-            this.txtImePrezime.Size = new System.Drawing.Size(168, 23);
-            this.txtImePrezime.TabIndex = 240;
-            this.txtImePrezime.Text = "MERSUDIN AHMETOVIĆ";
-            this.txtImePrezime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtUloga
-            // 
-            this.txtUloga.BackColor = System.Drawing.Color.Transparent;
-            this.txtUloga.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUloga.ForeColor = System.Drawing.Color.Transparent;
-            this.txtUloga.Location = new System.Drawing.Point(10, 239);
-            this.txtUloga.Name = "txtUloga";
-            this.txtUloga.Size = new System.Drawing.Size(168, 23);
-            this.txtUloga.TabIndex = 313;
-            this.txtUloga.Text = "POMOĆNI TRENER";
-            this.txtUloga.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.txtLicenca.BackColor = System.Drawing.Color.Transparent;
+            this.txtLicenca.Font = new System.Drawing.Font("Oswald", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLicenca.ForeColor = System.Drawing.Color.White;
+            this.txtLicenca.Location = new System.Drawing.Point(15, 5);
+            this.txtLicenca.Name = "txtLicenca";
+            this.txtLicenca.Size = new System.Drawing.Size(44, 28);
+            this.txtLicenca.TabIndex = 241;
+            this.txtLicenca.Text = "UEFA A";
+            this.txtLicenca.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureZastava
             // 
@@ -176,17 +166,17 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.pictureZastava.TabStop = false;
             this.pictureZastava.Click += new System.EventHandler(this.pictureZastava_Click);
             // 
-            // txtLicenca
+            // txtImePrezime
             // 
-            this.txtLicenca.BackColor = System.Drawing.Color.Transparent;
-            this.txtLicenca.Font = new System.Drawing.Font("Oswald", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLicenca.ForeColor = System.Drawing.Color.White;
-            this.txtLicenca.Location = new System.Drawing.Point(15, 5);
-            this.txtLicenca.Name = "txtLicenca";
-            this.txtLicenca.Size = new System.Drawing.Size(44, 28);
-            this.txtLicenca.TabIndex = 241;
-            this.txtLicenca.Text = "UEFA A";
-            this.txtLicenca.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txtImePrezime.BackColor = System.Drawing.Color.Transparent;
+            this.txtImePrezime.Font = new System.Drawing.Font("Oswald", 12F);
+            this.txtImePrezime.ForeColor = System.Drawing.Color.White;
+            this.txtImePrezime.Location = new System.Drawing.Point(10, 216);
+            this.txtImePrezime.Name = "txtImePrezime";
+            this.txtImePrezime.Size = new System.Drawing.Size(168, 23);
+            this.txtImePrezime.TabIndex = 240;
+            this.txtImePrezime.Text = "MERSUDIN AHMETOVIĆ";
+            this.txtImePrezime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox2
             // 
@@ -198,6 +188,18 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.pictureBox2.Size = new System.Drawing.Size(165, 231);
             this.pictureBox2.TabIndex = 239;
             this.pictureBox2.TabStop = false;
+            // 
+            // txtUloga
+            // 
+            this.txtUloga.BackColor = System.Drawing.Color.Transparent;
+            this.txtUloga.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUloga.ForeColor = System.Drawing.Color.Transparent;
+            this.txtUloga.Location = new System.Drawing.Point(10, 239);
+            this.txtUloga.Name = "txtUloga";
+            this.txtUloga.Size = new System.Drawing.Size(168, 23);
+            this.txtUloga.TabIndex = 313;
+            this.txtUloga.Text = "POMOĆNI TRENER";
+            this.txtUloga.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblImePrezime
             // 
@@ -893,11 +895,23 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.pictureNastupi.TabIndex = 363;
             this.pictureNastupi.TabStop = false;
             // 
+            // pictureAktivan
+            // 
+            this.pictureAktivan.BackColor = System.Drawing.Color.Transparent;
+            this.pictureAktivan.BackgroundImage = global::eBordo.WinUI.Properties.Resources.eBordo_success_notification;
+            this.pictureAktivan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureAktivan.Location = new System.Drawing.Point(587, 11);
+            this.pictureAktivan.Name = "pictureAktivan";
+            this.pictureAktivan.Size = new System.Drawing.Size(23, 23);
+            this.pictureAktivan.TabIndex = 381;
+            this.pictureAktivan.TabStop = false;
+            // 
             // frmDetaljiTrenera
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(615, 261);
+            this.Controls.Add(this.pictureAktivan);
             this.Controls.Add(this.lblPobjedeVrijednost);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.pictureBox9);
@@ -972,6 +986,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             ((System.ComponentModel.ISupportInitialize)(this.pictureAsistencije)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureGolovi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureNastupi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureAktivan)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1031,5 +1046,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
         private System.Windows.Forms.PictureBox pictureAsistencije;
         private System.Windows.Forms.PictureBox pictureGolovi;
         private System.Windows.Forms.PictureBox pictureNastupi;
+        private System.Windows.Forms.PictureBox pictureAktivan;
     }
 }

@@ -57,6 +57,9 @@ namespace eBordo.WinUI.Forms.Igrač
             this.tabTabele = new System.Windows.Forms.TabPage();
             this.frmTabelePocetna1 = new eBordo.WinUI.Forms.AdminPanel.Tabele.frmTabelePocetna();
             this.pnlMeni = new Bunifu.UI.WinForms.BunifuPanel();
+            this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.controlIsAktivan = new Bunifu.UI.WinForms.BunifuLabel();
+            this.gifLoader = new System.Windows.Forms.PictureBox();
             this.bunifuButton2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.iconPictureBox7 = new FontAwesome.Sharp.IconPictureBox();
             this.pnlTabele = new System.Windows.Forms.Panel();
@@ -82,9 +85,9 @@ namespace eBordo.WinUI.Forms.Igrač
             this.lblLogovaniKorisnik = new System.Windows.Forms.Label();
             this.bunifuButton1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.gornjiPanel = new Bunifu.UI.WinForms.BunifuPanel();
+            this.pnlGrb = new System.Windows.Forms.Panel();
             this.lblNaziv = new System.Windows.Forms.Label();
             this.pngLogout = new FontAwesome.Sharp.IconPictureBox();
-            this.pnlGrb = new System.Windows.Forms.Panel();
             this.lblLogout = new System.Windows.Forms.Label();
             this.igracTabs.SuspendLayout();
             this.tabPocetna.SuspendLayout();
@@ -95,6 +98,7 @@ namespace eBordo.WinUI.Forms.Igrač
             this.tabRasporedTreninga.SuspendLayout();
             this.tabTabele.SuspendLayout();
             this.pnlMeni.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gifLoader)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox5)).BeginInit();
@@ -349,6 +353,9 @@ namespace eBordo.WinUI.Forms.Igrač
             this.pnlMeni.BorderColor = System.Drawing.Color.Transparent;
             this.pnlMeni.BorderRadius = 3;
             this.pnlMeni.BorderThickness = 1;
+            this.pnlMeni.Controls.Add(this.bunifuLabel1);
+            this.pnlMeni.Controls.Add(this.controlIsAktivan);
+            this.pnlMeni.Controls.Add(this.gifLoader);
             this.pnlMeni.Controls.Add(this.bunifuButton2);
             this.pnlMeni.Controls.Add(this.iconPictureBox7);
             this.pnlMeni.Controls.Add(this.pnlTabele);
@@ -378,6 +385,53 @@ namespace eBordo.WinUI.Forms.Igrač
             this.pnlMeni.ShowBorders = true;
             this.pnlMeni.Size = new System.Drawing.Size(209, 477);
             this.pnlMeni.TabIndex = 0;
+            // 
+            // bunifuLabel1
+            // 
+            this.bunifuLabel1.AllowParentOverrides = false;
+            this.bunifuLabel1.AutoEllipsis = false;
+            this.bunifuLabel1.BackColor = System.Drawing.Color.LightGray;
+            this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel1.Font = new System.Drawing.Font("Oswald", 8F);
+            this.bunifuLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.bunifuLabel1.Location = new System.Drawing.Point(47, 455);
+            this.bunifuLabel1.Name = "bunifuLabel1";
+            this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel1.Size = new System.Drawing.Size(21, 16);
+            this.bunifuLabel1.TabIndex = 370;
+            this.bunifuLabel1.Text = "2022";
+            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // controlIsAktivan
+            // 
+            this.controlIsAktivan.AllowParentOverrides = false;
+            this.controlIsAktivan.AutoEllipsis = false;
+            this.controlIsAktivan.BackColor = System.Drawing.Color.LightGray;
+            this.controlIsAktivan.Cursor = System.Windows.Forms.Cursors.Default;
+            this.controlIsAktivan.CursorType = System.Windows.Forms.Cursors.Default;
+            this.controlIsAktivan.Font = new System.Drawing.Font("Oswald", 8F);
+            this.controlIsAktivan.Location = new System.Drawing.Point(4, 455);
+            this.controlIsAktivan.Name = "controlIsAktivan";
+            this.controlIsAktivan.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.controlIsAktivan.Size = new System.Drawing.Size(41, 16);
+            this.controlIsAktivan.TabIndex = 369;
+            this.controlIsAktivan.Text = "#EBORDO";
+            this.controlIsAktivan.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.controlIsAktivan.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // gifLoader
+            // 
+            this.gifLoader.BackColor = System.Drawing.Color.LightGray;
+            this.gifLoader.BackgroundImage = global::eBordo.WinUI.Properties.Resources.giphy;
+            this.gifLoader.Image = global::eBordo.WinUI.Properties.Resources.ezgif2;
+            this.gifLoader.Location = new System.Drawing.Point(158, 451);
+            this.gifLoader.Name = "gifLoader";
+            this.gifLoader.Size = new System.Drawing.Size(51, 23);
+            this.gifLoader.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.gifLoader.TabIndex = 325;
+            this.gifLoader.TabStop = false;
             // 
             // bunifuButton2
             // 
@@ -1304,9 +1358,9 @@ namespace eBordo.WinUI.Forms.Igrač
             this.gornjiPanel.BorderColor = System.Drawing.Color.Transparent;
             this.gornjiPanel.BorderRadius = 3;
             this.gornjiPanel.BorderThickness = 1;
+            this.gornjiPanel.Controls.Add(this.pnlGrb);
             this.gornjiPanel.Controls.Add(this.lblNaziv);
             this.gornjiPanel.Controls.Add(this.pngLogout);
-            this.gornjiPanel.Controls.Add(this.pnlGrb);
             this.gornjiPanel.Controls.Add(this.lblLogout);
             this.gornjiPanel.Location = new System.Drawing.Point(206, 0);
             this.gornjiPanel.Name = "gornjiPanel";
@@ -1314,14 +1368,24 @@ namespace eBordo.WinUI.Forms.Igrač
             this.gornjiPanel.Size = new System.Drawing.Size(635, 50);
             this.gornjiPanel.TabIndex = 0;
             // 
+            // pnlGrb
+            // 
+            this.pnlGrb.BackColor = System.Drawing.Color.Transparent;
+            this.pnlGrb.BackgroundImage = global::eBordo.WinUI.Properties.Resources.grbSarajevo;
+            this.pnlGrb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pnlGrb.Location = new System.Drawing.Point(9, 7);
+            this.pnlGrb.Name = "pnlGrb";
+            this.pnlGrb.Size = new System.Drawing.Size(25, 35);
+            this.pnlGrb.TabIndex = 4;
+            // 
             // lblNaziv
             // 
             this.lblNaziv.BackColor = System.Drawing.Color.Transparent;
             this.lblNaziv.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNaziv.ForeColor = System.Drawing.Color.White;
-            this.lblNaziv.Location = new System.Drawing.Point(37, 14);
+            this.lblNaziv.Location = new System.Drawing.Point(34, 14);
             this.lblNaziv.Name = "lblNaziv";
-            this.lblNaziv.Size = new System.Drawing.Size(291, 22);
+            this.lblNaziv.Size = new System.Drawing.Size(164, 22);
             this.lblNaziv.TabIndex = 5;
             this.lblNaziv.Text = "FUDBALSKI KLUB SARAJEVO";
             this.lblNaziv.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1343,16 +1407,6 @@ namespace eBordo.WinUI.Forms.Igrač
             this.pngLogout.Size = new System.Drawing.Size(32, 30);
             this.pngLogout.TabIndex = 2;
             this.pngLogout.TabStop = false;
-            // 
-            // pnlGrb
-            // 
-            this.pnlGrb.BackColor = System.Drawing.Color.Transparent;
-            this.pnlGrb.BackgroundImage = global::eBordo.WinUI.Properties.Resources.grbSarajevo;
-            this.pnlGrb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pnlGrb.Location = new System.Drawing.Point(9, 7);
-            this.pnlGrb.Name = "pnlGrb";
-            this.pnlGrb.Size = new System.Drawing.Size(27, 35);
-            this.pnlGrb.TabIndex = 4;
             // 
             // lblLogout
             // 
@@ -1391,6 +1445,8 @@ namespace eBordo.WinUI.Forms.Igrač
             this.tabRasporedTreninga.ResumeLayout(false);
             this.tabTabele.ResumeLayout(false);
             this.pnlMeni.ResumeLayout(false);
+            this.pnlMeni.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gifLoader)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox5)).EndInit();
@@ -1452,5 +1508,8 @@ namespace eBordo.WinUI.Forms.Igrač
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton2;
         private AdminPanel.Upravljanje_treningom.frmPrikazTreninga frmPrikazTreninga1;
         private AdminPanel.Početna.frmPočetna frmPočetna1;
+        private System.Windows.Forms.PictureBox gifLoader;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
+        private Bunifu.UI.WinForms.BunifuLabel controlIsAktivan;
     }
 }

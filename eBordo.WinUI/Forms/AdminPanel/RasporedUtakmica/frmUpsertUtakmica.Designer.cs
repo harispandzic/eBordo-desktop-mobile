@@ -163,6 +163,10 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.txtSudijaValidator = new Bunifu.UI.WinForms.BunifuLabel();
             this.txtSatnicaValidator = new Bunifu.UI.WinForms.BunifuLabel();
             this.pictureDatumOdigravanjaValidator = new System.Windows.Forms.PictureBox();
+            this.pictureValidacijaPrvaPOstavaka = new System.Windows.Forms.PictureBox();
+            this.txtPrvaPostavaValidator = new Bunifu.UI.WinForms.BunifuLabel();
+            this.txtKlupaValidator = new Bunifu.UI.WinForms.BunifuLabel();
+            this.pictureKlupaValidator = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureIgracSlika)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.domaciDres)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rezervniDres)).BeginInit();
@@ -186,6 +190,8 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureDatumOdigravanjaValidator)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureValidacijaPrvaPOstavaka)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureKlupaValidator)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbProtivnik
@@ -692,10 +698,10 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             // flowPanelPrvaPostava
             // 
             this.flowPanelPrvaPostava.AutoScroll = true;
-            this.flowPanelPrvaPostava.Location = new System.Drawing.Point(395, 219);
+            this.flowPanelPrvaPostava.Location = new System.Drawing.Point(395, 234);
             this.flowPanelPrvaPostava.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.flowPanelPrvaPostava.Name = "flowPanelPrvaPostava";
-            this.flowPanelPrvaPostava.Size = new System.Drawing.Size(300, 453);
+            this.flowPanelPrvaPostava.Size = new System.Drawing.Size(300, 451);
             this.flowPanelPrvaPostava.TabIndex = 0;
             // 
             // cmbPozicije
@@ -745,10 +751,10 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             // flowPanelKlupa
             // 
             this.flowPanelKlupa.AutoScroll = true;
-            this.flowPanelKlupa.Location = new System.Drawing.Point(671, 219);
+            this.flowPanelKlupa.Location = new System.Drawing.Point(671, 234);
             this.flowPanelKlupa.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.flowPanelKlupa.Name = "flowPanelKlupa";
-            this.flowPanelKlupa.Size = new System.Drawing.Size(300, 453);
+            this.flowPanelKlupa.Size = new System.Drawing.Size(300, 451);
             this.flowPanelKlupa.TabIndex = 130;
             // 
             // lblKlupa
@@ -881,7 +887,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.lblImePrezimeBrojDresa.BackColor = System.Drawing.Color.Transparent;
             this.lblImePrezimeBrojDresa.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblImePrezimeBrojDresa.ForeColor = System.Drawing.Color.Black;
-            this.lblImePrezimeBrojDresa.Location = new System.Drawing.Point(426, 694);
+            this.lblImePrezimeBrojDresa.Location = new System.Drawing.Point(426, 708);
             this.lblImePrezimeBrojDresa.Name = "lblImePrezimeBrojDresa";
             this.lblImePrezimeBrojDresa.Size = new System.Drawing.Size(116, 23);
             this.lblImePrezimeBrojDresa.TabIndex = 138;
@@ -893,7 +899,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(399, 670);
+            this.label1.Location = new System.Drawing.Point(399, 684);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(252, 23);
             this.label1.TabIndex = 139;
@@ -908,7 +914,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.pictureIgracSlika.BorderRadius = 14;
             this.pictureIgracSlika.Image = global::eBordo.WinUI.Properties.Resources.Screenshot_12;
             this.pictureIgracSlika.IsCircle = true;
-            this.pictureIgracSlika.Location = new System.Drawing.Point(400, 690);
+            this.pictureIgracSlika.Location = new System.Drawing.Point(400, 706);
             this.pictureIgracSlika.Name = "pictureIgracSlika";
             this.pictureIgracSlika.Size = new System.Drawing.Size(28, 28);
             this.pictureIgracSlika.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1021,7 +1027,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.bunifuSeparator1.Location = new System.Drawing.Point(379, 12);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
             this.bunifuSeparator1.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Vertical;
-            this.bunifuSeparator1.Size = new System.Drawing.Size(14, 700);
+            this.bunifuSeparator1.Size = new System.Drawing.Size(14, 725);
             this.bunifuSeparator1.TabIndex = 68;
             // 
             // txtNapomene
@@ -1088,7 +1094,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.txtNapomene.SelectionLength = 0;
             this.txtNapomene.SelectionStart = 0;
             this.txtNapomene.ShortcutsEnabled = true;
-            this.txtNapomene.Size = new System.Drawing.Size(365, 182);
+            this.txtNapomene.Size = new System.Drawing.Size(365, 209);
             this.txtNapomene.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtNapomene.TabIndex = 67;
             this.txtNapomene.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -2476,7 +2482,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.btnSave.IdleIconLeftImage = global::eBordo.WinUI.Properties.Resources.save;
             this.btnSave.IdleIconRightImage = null;
             this.btnSave.IndicateFocus = true;
-            this.btnSave.Location = new System.Drawing.Point(813, 687);
+            this.btnSave.Location = new System.Drawing.Point(813, 704);
             this.btnSave.Name = "btnSave";
             this.btnSave.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnSave.OnDisabledState.BorderRadius = 10;
@@ -2570,7 +2576,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.btnSaveUpdate.IdleIconLeftImage = global::eBordo.WinUI.Properties.Resources.save_black;
             this.btnSaveUpdate.IdleIconRightImage = null;
             this.btnSaveUpdate.IndicateFocus = true;
-            this.btnSaveUpdate.Location = new System.Drawing.Point(827, 687);
+            this.btnSaveUpdate.Location = new System.Drawing.Point(827, 704);
             this.btnSaveUpdate.Name = "btnSaveUpdate";
             this.btnSaveUpdate.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnSaveUpdate.OnDisabledState.BorderRadius = 10;
@@ -2684,11 +2690,67 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.pictureDatumOdigravanjaValidator.TabIndex = 354;
             this.pictureDatumOdigravanjaValidator.TabStop = false;
             // 
+            // pictureValidacijaPrvaPOstavaka
+            // 
+            this.pictureValidacijaPrvaPOstavaka.BackgroundImage = global::eBordo.WinUI.Properties.Resources.eBordo_required3;
+            this.pictureValidacijaPrvaPOstavaka.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureValidacijaPrvaPOstavaka.Location = new System.Drawing.Point(398, 220);
+            this.pictureValidacijaPrvaPOstavaka.Name = "pictureValidacijaPrvaPOstavaka";
+            this.pictureValidacijaPrvaPOstavaka.Size = new System.Drawing.Size(10, 10);
+            this.pictureValidacijaPrvaPOstavaka.TabIndex = 355;
+            this.pictureValidacijaPrvaPOstavaka.TabStop = false;
+            // 
+            // txtPrvaPostavaValidator
+            // 
+            this.txtPrvaPostavaValidator.AllowParentOverrides = false;
+            this.txtPrvaPostavaValidator.AutoEllipsis = false;
+            this.txtPrvaPostavaValidator.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtPrvaPostavaValidator.CursorType = System.Windows.Forms.Cursors.Default;
+            this.txtPrvaPostavaValidator.Font = new System.Drawing.Font("Oswald", 6F);
+            this.txtPrvaPostavaValidator.Location = new System.Drawing.Point(410, 219);
+            this.txtPrvaPostavaValidator.Name = "txtPrvaPostavaValidator";
+            this.txtPrvaPostavaValidator.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtPrvaPostavaValidator.Size = new System.Drawing.Size(63, 12);
+            this.txtPrvaPostavaValidator.TabIndex = 356;
+            this.txtPrvaPostavaValidator.Text = "Minimalno 5 igrača";
+            this.txtPrvaPostavaValidator.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.txtPrvaPostavaValidator.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // txtKlupaValidator
+            // 
+            this.txtKlupaValidator.AllowParentOverrides = false;
+            this.txtKlupaValidator.AutoEllipsis = false;
+            this.txtKlupaValidator.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtKlupaValidator.CursorType = System.Windows.Forms.Cursors.Default;
+            this.txtKlupaValidator.Font = new System.Drawing.Font("Oswald", 6F);
+            this.txtKlupaValidator.Location = new System.Drawing.Point(686, 219);
+            this.txtKlupaValidator.Name = "txtKlupaValidator";
+            this.txtKlupaValidator.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtKlupaValidator.Size = new System.Drawing.Size(63, 12);
+            this.txtKlupaValidator.TabIndex = 358;
+            this.txtKlupaValidator.Text = "Minimalno 4 igrača";
+            this.txtKlupaValidator.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.txtKlupaValidator.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // pictureKlupaValidator
+            // 
+            this.pictureKlupaValidator.BackgroundImage = global::eBordo.WinUI.Properties.Resources.eBordo_required3;
+            this.pictureKlupaValidator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureKlupaValidator.Location = new System.Drawing.Point(674, 220);
+            this.pictureKlupaValidator.Name = "pictureKlupaValidator";
+            this.pictureKlupaValidator.Size = new System.Drawing.Size(10, 10);
+            this.pictureKlupaValidator.TabIndex = 357;
+            this.pictureKlupaValidator.TabStop = false;
+            // 
             // frmUpsertUtakmica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(954, 725);
+            this.ClientSize = new System.Drawing.Size(954, 749);
+            this.Controls.Add(this.txtKlupaValidator);
+            this.Controls.Add(this.pictureKlupaValidator);
+            this.Controls.Add(this.txtPrvaPostavaValidator);
+            this.Controls.Add(this.pictureValidacijaPrvaPOstavaka);
             this.Controls.Add(this.pictureDatumOdigravanjaValidator);
             this.Controls.Add(this.txtSatnicaValidator);
             this.Controls.Add(this.txtSudijaValidator);
@@ -2828,6 +2890,8 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureDatumOdigravanjaValidator)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureValidacijaPrvaPOstavaka)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureKlupaValidator)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2946,5 +3010,9 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
         private Bunifu.UI.WinForms.BunifuLabel txtSudijaValidator;
         private Bunifu.UI.WinForms.BunifuLabel txtSatnicaValidator;
         private System.Windows.Forms.PictureBox pictureDatumOdigravanjaValidator;
+        private System.Windows.Forms.PictureBox pictureValidacijaPrvaPOstavaka;
+        private Bunifu.UI.WinForms.BunifuLabel txtPrvaPostavaValidator;
+        private Bunifu.UI.WinForms.BunifuLabel txtKlupaValidator;
+        private System.Windows.Forms.PictureBox pictureKlupaValidator;
     }
 }

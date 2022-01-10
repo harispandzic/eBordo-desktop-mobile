@@ -336,6 +336,17 @@
         zdXDrkzTvuVmTNIMwxvQx5B92jSyvAAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="btnSaveIgracSastav.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAFUAAAAZCAYAAABAb2JNAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEdSURBVGhD7do/SkNBEMfxKS29gVbuxEZvEMQZ7aw9go1n
+        EbxAmmTWHMDW1iOkTiGCQSSCClrE3ST+QQbDezrdb+Hziuy+5stCinn0ffFAjztZrjjLhLPOYBWZdEyv
+        k8nJMuHX2ul11+smX8jUfxl+k0yfSthRyoeby6RE86DmvwCNjDd63TVKtn/KJo/OAWjK5IWHer64pd4B
+        aOuGyuP5x4/wRzWquwHtIWoARA2AqAEQNQCiBkDUAIgaAFEDIGoARA2AqAEQNQCx6Zu3Ae1RHQN4G9CS
+        6ZRS1jM2wW39D6az0vOS6kyFs9y6h6Ahefgc/m33dbfc1rtS+dU/DKvJfbK9o3nQj1XH1GWzX2C80kT5
+        o6/fSmwNDnhRkugd+sALQOwRJe4AAAAASUVORK5CYII=
+</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>25</value>
   </metadata>

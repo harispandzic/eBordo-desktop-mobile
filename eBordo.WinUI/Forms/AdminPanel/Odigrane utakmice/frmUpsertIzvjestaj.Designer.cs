@@ -37,6 +37,14 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties9 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties10 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties11 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties12 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties13 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
@@ -70,14 +78,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties39 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties40 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges7 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties9 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties10 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties11 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties12 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             this.lblNapoemeneOUtakmici = new Bunifu.UI.WinForms.BunifuLabel();
             this.radioBtnKisa = new System.Windows.Forms.RadioButton();
             this.radioBtnSunce = new System.Windows.Forms.RadioButton();
@@ -135,11 +135,13 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             this.btnSaveUpdate = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnSave = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuPanel7 = new Bunifu.UI.WinForms.BunifuPanel();
+            this.txtGoloviGostijuUredjivanje = new System.Windows.Forms.Label();
+            this.txtGoloviDomacinhUredjivanje = new System.Windows.Forms.Label();
+            this.txtGoloviGost = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.txtGoloviDomacin = new Bunifu.UI.WinForms.BunifuTextBox();
             this.txtBrojDana = new System.Windows.Forms.Label();
             this.pictureRezultat = new System.Windows.Forms.PictureBox();
-            this.txtGoloviGostijuUredjivanje = new System.Windows.Forms.Label();
             this.lblStadion = new System.Windows.Forms.Label();
-            this.txtGoloviDomacinhUredjivanje = new System.Windows.Forms.Label();
             this.pictureGostujucaDomaca = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureDres = new System.Windows.Forms.PictureBox();
@@ -187,8 +189,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             this.txtIzmjenaMinutaValidator = new Bunifu.UI.WinForms.BunifuLabel();
             this.pictureSlikaUtakmicaValidator = new System.Windows.Forms.PictureBox();
             this.btnUcitajPanelPhoto = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.txtGoloviDomacin = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.txtGoloviGost = new Bunifu.UI.WinForms.BunifuTextBox();
             this.bunifuPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureRezultat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureGostujucaDomaca)).BeginInit();
@@ -312,7 +312,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             this.cmbIgracUtakmice.Name = "cmbIgracUtakmice";
             this.cmbIgracUtakmice.Size = new System.Drawing.Size(183, 32);
             this.cmbIgracUtakmice.TabIndex = 132;
-            this.cmbIgracUtakmice.Text = "Kapiten";
+            this.cmbIgracUtakmice.Text = "Igrač utakmice";
             this.cmbIgracUtakmice.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbIgracUtakmice.TextLeftMargin = 5;
             // 
@@ -1501,6 +1501,182 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             this.bunifuPanel7.Size = new System.Drawing.Size(389, 128);
             this.bunifuPanel7.TabIndex = 286;
             // 
+            // txtGoloviGostijuUredjivanje
+            // 
+            this.txtGoloviGostijuUredjivanje.BackColor = System.Drawing.Color.Transparent;
+            this.txtGoloviGostijuUredjivanje.Font = new System.Drawing.Font("Oswald", 12F);
+            this.txtGoloviGostijuUredjivanje.ForeColor = System.Drawing.Color.Transparent;
+            this.txtGoloviGostijuUredjivanje.Location = new System.Drawing.Point(183, 87);
+            this.txtGoloviGostijuUredjivanje.Name = "txtGoloviGostijuUredjivanje";
+            this.txtGoloviGostijuUredjivanje.Size = new System.Drawing.Size(40, 23);
+            this.txtGoloviGostijuUredjivanje.TabIndex = 289;
+            this.txtGoloviGostijuUredjivanje.Text = "2";
+            this.txtGoloviGostijuUredjivanje.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtGoloviDomacinhUredjivanje
+            // 
+            this.txtGoloviDomacinhUredjivanje.BackColor = System.Drawing.Color.Transparent;
+            this.txtGoloviDomacinhUredjivanje.Font = new System.Drawing.Font("Oswald", 12F);
+            this.txtGoloviDomacinhUredjivanje.ForeColor = System.Drawing.Color.Transparent;
+            this.txtGoloviDomacinhUredjivanje.Location = new System.Drawing.Point(183, 47);
+            this.txtGoloviDomacinhUredjivanje.Name = "txtGoloviDomacinhUredjivanje";
+            this.txtGoloviDomacinhUredjivanje.Size = new System.Drawing.Size(40, 23);
+            this.txtGoloviDomacinhUredjivanje.TabIndex = 288;
+            this.txtGoloviDomacinhUredjivanje.Text = "2";
+            this.txtGoloviDomacinhUredjivanje.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtGoloviGost
+            // 
+            this.txtGoloviGost.AcceptsReturn = false;
+            this.txtGoloviGost.AcceptsTab = false;
+            this.txtGoloviGost.AnimationSpeed = 200;
+            this.txtGoloviGost.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txtGoloviGost.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txtGoloviGost.AutoSizeHeight = true;
+            this.txtGoloviGost.BackColor = System.Drawing.Color.Transparent;
+            this.txtGoloviGost.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtGoloviGost.BackgroundImage")));
+            this.txtGoloviGost.BorderColorActive = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.txtGoloviGost.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.txtGoloviGost.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.txtGoloviGost.BorderColorIdle = System.Drawing.Color.Silver;
+            this.txtGoloviGost.BorderRadius = 1;
+            this.txtGoloviGost.BorderThickness = 1;
+            this.txtGoloviGost.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtGoloviGost.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtGoloviGost.DefaultFont = new System.Drawing.Font("Oswald", 7F);
+            this.txtGoloviGost.DefaultText = "";
+            this.txtGoloviGost.FillColor = System.Drawing.Color.White;
+            this.txtGoloviGost.HideSelection = true;
+            this.txtGoloviGost.IconLeft = null;
+            this.txtGoloviGost.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtGoloviGost.IconPadding = 3;
+            this.txtGoloviGost.IconRight = global::eBordo.WinUI.Properties.Resources.eBordo_required_izvjestaj2;
+            this.txtGoloviGost.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtGoloviGost.Lines = new string[0];
+            this.txtGoloviGost.Location = new System.Drawing.Point(183, 87);
+            this.txtGoloviGost.MaxLength = 32767;
+            this.txtGoloviGost.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txtGoloviGost.Modified = false;
+            this.txtGoloviGost.Multiline = false;
+            this.txtGoloviGost.Name = "txtGoloviGost";
+            stateProperties5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            stateProperties5.FillColor = System.Drawing.Color.Empty;
+            stateProperties5.ForeColor = System.Drawing.Color.Empty;
+            stateProperties5.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtGoloviGost.OnActiveState = stateProperties5;
+            stateProperties6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties6.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txtGoloviGost.OnDisabledState = stateProperties6;
+            stateProperties7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            stateProperties7.FillColor = System.Drawing.Color.Empty;
+            stateProperties7.ForeColor = System.Drawing.Color.Empty;
+            stateProperties7.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtGoloviGost.OnHoverState = stateProperties7;
+            stateProperties8.BorderColor = System.Drawing.Color.Silver;
+            stateProperties8.FillColor = System.Drawing.Color.White;
+            stateProperties8.ForeColor = System.Drawing.Color.Empty;
+            stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtGoloviGost.OnIdleState = stateProperties8;
+            this.txtGoloviGost.Padding = new System.Windows.Forms.Padding(3);
+            this.txtGoloviGost.PasswordChar = '\0';
+            this.txtGoloviGost.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txtGoloviGost.PlaceholderText = "";
+            this.txtGoloviGost.ReadOnly = false;
+            this.txtGoloviGost.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtGoloviGost.SelectedText = "";
+            this.txtGoloviGost.SelectionLength = 0;
+            this.txtGoloviGost.SelectionStart = 0;
+            this.txtGoloviGost.ShortcutsEnabled = true;
+            this.txtGoloviGost.Size = new System.Drawing.Size(40, 23);
+            this.txtGoloviGost.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
+            this.txtGoloviGost.TabIndex = 353;
+            this.txtGoloviGost.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtGoloviGost.TextMarginBottom = 0;
+            this.txtGoloviGost.TextMarginLeft = 3;
+            this.txtGoloviGost.TextMarginTop = 1;
+            this.txtGoloviGost.TextPlaceholder = "";
+            this.txtGoloviGost.UseSystemPasswordChar = false;
+            this.txtGoloviGost.WordWrap = true;
+            this.txtGoloviGost.TextChanged += new System.EventHandler(this.txtGoloviGost_TextChanged);
+            // 
+            // txtGoloviDomacin
+            // 
+            this.txtGoloviDomacin.AcceptsReturn = false;
+            this.txtGoloviDomacin.AcceptsTab = false;
+            this.txtGoloviDomacin.AnimationSpeed = 200;
+            this.txtGoloviDomacin.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txtGoloviDomacin.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txtGoloviDomacin.AutoSizeHeight = true;
+            this.txtGoloviDomacin.BackColor = System.Drawing.Color.Transparent;
+            this.txtGoloviDomacin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtGoloviDomacin.BackgroundImage")));
+            this.txtGoloviDomacin.BorderColorActive = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.txtGoloviDomacin.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.txtGoloviDomacin.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.txtGoloviDomacin.BorderColorIdle = System.Drawing.Color.Silver;
+            this.txtGoloviDomacin.BorderRadius = 1;
+            this.txtGoloviDomacin.BorderThickness = 1;
+            this.txtGoloviDomacin.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtGoloviDomacin.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtGoloviDomacin.DefaultFont = new System.Drawing.Font("Oswald", 7F);
+            this.txtGoloviDomacin.DefaultText = "";
+            this.txtGoloviDomacin.FillColor = System.Drawing.Color.White;
+            this.txtGoloviDomacin.HideSelection = true;
+            this.txtGoloviDomacin.IconLeft = null;
+            this.txtGoloviDomacin.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtGoloviDomacin.IconPadding = 3;
+            this.txtGoloviDomacin.IconRight = global::eBordo.WinUI.Properties.Resources.eBordo_required_izvjestaj2;
+            this.txtGoloviDomacin.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtGoloviDomacin.Lines = new string[0];
+            this.txtGoloviDomacin.Location = new System.Drawing.Point(183, 47);
+            this.txtGoloviDomacin.MaxLength = 32767;
+            this.txtGoloviDomacin.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txtGoloviDomacin.Modified = false;
+            this.txtGoloviDomacin.Multiline = false;
+            this.txtGoloviDomacin.Name = "txtGoloviDomacin";
+            stateProperties9.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            stateProperties9.FillColor = System.Drawing.Color.Empty;
+            stateProperties9.ForeColor = System.Drawing.Color.Empty;
+            stateProperties9.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtGoloviDomacin.OnActiveState = stateProperties9;
+            stateProperties10.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties10.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties10.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txtGoloviDomacin.OnDisabledState = stateProperties10;
+            stateProperties11.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            stateProperties11.FillColor = System.Drawing.Color.Empty;
+            stateProperties11.ForeColor = System.Drawing.Color.Empty;
+            stateProperties11.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtGoloviDomacin.OnHoverState = stateProperties11;
+            stateProperties12.BorderColor = System.Drawing.Color.Silver;
+            stateProperties12.FillColor = System.Drawing.Color.White;
+            stateProperties12.ForeColor = System.Drawing.Color.Empty;
+            stateProperties12.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtGoloviDomacin.OnIdleState = stateProperties12;
+            this.txtGoloviDomacin.Padding = new System.Windows.Forms.Padding(3);
+            this.txtGoloviDomacin.PasswordChar = '\0';
+            this.txtGoloviDomacin.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txtGoloviDomacin.PlaceholderText = "";
+            this.txtGoloviDomacin.ReadOnly = false;
+            this.txtGoloviDomacin.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtGoloviDomacin.SelectedText = "";
+            this.txtGoloviDomacin.SelectionLength = 0;
+            this.txtGoloviDomacin.SelectionStart = 0;
+            this.txtGoloviDomacin.ShortcutsEnabled = true;
+            this.txtGoloviDomacin.Size = new System.Drawing.Size(40, 23);
+            this.txtGoloviDomacin.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
+            this.txtGoloviDomacin.TabIndex = 352;
+            this.txtGoloviDomacin.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtGoloviDomacin.TextMarginBottom = 0;
+            this.txtGoloviDomacin.TextMarginLeft = 3;
+            this.txtGoloviDomacin.TextMarginTop = 1;
+            this.txtGoloviDomacin.TextPlaceholder = "";
+            this.txtGoloviDomacin.UseSystemPasswordChar = false;
+            this.txtGoloviDomacin.WordWrap = true;
+            this.txtGoloviDomacin.TextChanged += new System.EventHandler(this.txtGoloviDomacin_TextChanged);
+            // 
             // txtBrojDana
             // 
             this.txtBrojDana.AutoSize = true;
@@ -1523,18 +1699,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             this.pictureRezultat.TabIndex = 288;
             this.pictureRezultat.TabStop = false;
             // 
-            // txtGoloviGostijuUredjivanje
-            // 
-            this.txtGoloviGostijuUredjivanje.BackColor = System.Drawing.Color.Transparent;
-            this.txtGoloviGostijuUredjivanje.Font = new System.Drawing.Font("Oswald", 12F);
-            this.txtGoloviGostijuUredjivanje.ForeColor = System.Drawing.Color.Transparent;
-            this.txtGoloviGostijuUredjivanje.Location = new System.Drawing.Point(183, 87);
-            this.txtGoloviGostijuUredjivanje.Name = "txtGoloviGostijuUredjivanje";
-            this.txtGoloviGostijuUredjivanje.Size = new System.Drawing.Size(40, 23);
-            this.txtGoloviGostijuUredjivanje.TabIndex = 289;
-            this.txtGoloviGostijuUredjivanje.Text = "2";
-            this.txtGoloviGostijuUredjivanje.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // lblStadion
             // 
             this.lblStadion.BackColor = System.Drawing.Color.Transparent;
@@ -1546,18 +1710,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             this.lblStadion.TabIndex = 289;
             this.lblStadion.Text = "STADION ASIM FERHATOVIĆ HASE";
             this.lblStadion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txtGoloviDomacinhUredjivanje
-            // 
-            this.txtGoloviDomacinhUredjivanje.BackColor = System.Drawing.Color.Transparent;
-            this.txtGoloviDomacinhUredjivanje.Font = new System.Drawing.Font("Oswald", 12F);
-            this.txtGoloviDomacinhUredjivanje.ForeColor = System.Drawing.Color.Transparent;
-            this.txtGoloviDomacinhUredjivanje.Location = new System.Drawing.Point(183, 47);
-            this.txtGoloviDomacinhUredjivanje.Name = "txtGoloviDomacinhUredjivanje";
-            this.txtGoloviDomacinhUredjivanje.Size = new System.Drawing.Size(40, 23);
-            this.txtGoloviDomacinhUredjivanje.TabIndex = 288;
-            this.txtGoloviDomacinhUredjivanje.Text = "2";
-            this.txtGoloviDomacinhUredjivanje.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureGostujucaDomaca
             // 
@@ -2996,157 +3148,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             this.btnUcitajPanelPhoto.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnUcitajPanelPhoto.UseDefaultRadiusAndThickness = true;
             this.btnUcitajPanelPhoto.Click += new System.EventHandler(this.btnUcitajPanelPhoto_Click);
-            // 
-            // txtGoloviDomacin
-            // 
-            this.txtGoloviDomacin.AcceptsReturn = false;
-            this.txtGoloviDomacin.AcceptsTab = false;
-            this.txtGoloviDomacin.AnimationSpeed = 200;
-            this.txtGoloviDomacin.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.txtGoloviDomacin.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txtGoloviDomacin.AutoSizeHeight = true;
-            this.txtGoloviDomacin.BackColor = System.Drawing.Color.Transparent;
-            this.txtGoloviDomacin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtGoloviDomacin.BackgroundImage")));
-            this.txtGoloviDomacin.BorderColorActive = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
-            this.txtGoloviDomacin.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.txtGoloviDomacin.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
-            this.txtGoloviDomacin.BorderColorIdle = System.Drawing.Color.Silver;
-            this.txtGoloviDomacin.BorderRadius = 1;
-            this.txtGoloviDomacin.BorderThickness = 1;
-            this.txtGoloviDomacin.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtGoloviDomacin.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtGoloviDomacin.DefaultFont = new System.Drawing.Font("Oswald", 7F);
-            this.txtGoloviDomacin.DefaultText = "";
-            this.txtGoloviDomacin.FillColor = System.Drawing.Color.White;
-            this.txtGoloviDomacin.HideSelection = true;
-            this.txtGoloviDomacin.IconLeft = null;
-            this.txtGoloviDomacin.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtGoloviDomacin.IconPadding = 3;
-            this.txtGoloviDomacin.IconRight = global::eBordo.WinUI.Properties.Resources.eBordo_required_izvjestaj2;
-            this.txtGoloviDomacin.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtGoloviDomacin.Lines = new string[0];
-            this.txtGoloviDomacin.Location = new System.Drawing.Point(183, 47);
-            this.txtGoloviDomacin.MaxLength = 32767;
-            this.txtGoloviDomacin.MinimumSize = new System.Drawing.Size(1, 1);
-            this.txtGoloviDomacin.Modified = false;
-            this.txtGoloviDomacin.Multiline = false;
-            this.txtGoloviDomacin.Name = "txtGoloviDomacin";
-            stateProperties9.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
-            stateProperties9.FillColor = System.Drawing.Color.Empty;
-            stateProperties9.ForeColor = System.Drawing.Color.Empty;
-            stateProperties9.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtGoloviDomacin.OnActiveState = stateProperties9;
-            stateProperties10.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties10.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties10.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtGoloviDomacin.OnDisabledState = stateProperties10;
-            stateProperties11.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
-            stateProperties11.FillColor = System.Drawing.Color.Empty;
-            stateProperties11.ForeColor = System.Drawing.Color.Empty;
-            stateProperties11.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtGoloviDomacin.OnHoverState = stateProperties11;
-            stateProperties12.BorderColor = System.Drawing.Color.Silver;
-            stateProperties12.FillColor = System.Drawing.Color.White;
-            stateProperties12.ForeColor = System.Drawing.Color.Empty;
-            stateProperties12.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtGoloviDomacin.OnIdleState = stateProperties12;
-            this.txtGoloviDomacin.Padding = new System.Windows.Forms.Padding(3);
-            this.txtGoloviDomacin.PasswordChar = '\0';
-            this.txtGoloviDomacin.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtGoloviDomacin.PlaceholderText = "";
-            this.txtGoloviDomacin.ReadOnly = false;
-            this.txtGoloviDomacin.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtGoloviDomacin.SelectedText = "";
-            this.txtGoloviDomacin.SelectionLength = 0;
-            this.txtGoloviDomacin.SelectionStart = 0;
-            this.txtGoloviDomacin.ShortcutsEnabled = true;
-            this.txtGoloviDomacin.Size = new System.Drawing.Size(40, 23);
-            this.txtGoloviDomacin.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txtGoloviDomacin.TabIndex = 352;
-            this.txtGoloviDomacin.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtGoloviDomacin.TextMarginBottom = 0;
-            this.txtGoloviDomacin.TextMarginLeft = 3;
-            this.txtGoloviDomacin.TextMarginTop = 1;
-            this.txtGoloviDomacin.TextPlaceholder = "";
-            this.txtGoloviDomacin.UseSystemPasswordChar = false;
-            this.txtGoloviDomacin.WordWrap = true;
-            // 
-            // txtGoloviGost
-            // 
-            this.txtGoloviGost.AcceptsReturn = false;
-            this.txtGoloviGost.AcceptsTab = false;
-            this.txtGoloviGost.AnimationSpeed = 200;
-            this.txtGoloviGost.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.txtGoloviGost.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txtGoloviGost.AutoSizeHeight = true;
-            this.txtGoloviGost.BackColor = System.Drawing.Color.Transparent;
-            this.txtGoloviGost.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtGoloviGost.BackgroundImage")));
-            this.txtGoloviGost.BorderColorActive = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
-            this.txtGoloviGost.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.txtGoloviGost.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
-            this.txtGoloviGost.BorderColorIdle = System.Drawing.Color.Silver;
-            this.txtGoloviGost.BorderRadius = 1;
-            this.txtGoloviGost.BorderThickness = 1;
-            this.txtGoloviGost.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtGoloviGost.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtGoloviGost.DefaultFont = new System.Drawing.Font("Oswald", 7F);
-            this.txtGoloviGost.DefaultText = "";
-            this.txtGoloviGost.FillColor = System.Drawing.Color.White;
-            this.txtGoloviGost.HideSelection = true;
-            this.txtGoloviGost.IconLeft = null;
-            this.txtGoloviGost.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtGoloviGost.IconPadding = 3;
-            this.txtGoloviGost.IconRight = global::eBordo.WinUI.Properties.Resources.eBordo_required_izvjestaj2;
-            this.txtGoloviGost.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtGoloviGost.Lines = new string[0];
-            this.txtGoloviGost.Location = new System.Drawing.Point(183, 87);
-            this.txtGoloviGost.MaxLength = 32767;
-            this.txtGoloviGost.MinimumSize = new System.Drawing.Size(1, 1);
-            this.txtGoloviGost.Modified = false;
-            this.txtGoloviGost.Multiline = false;
-            this.txtGoloviGost.Name = "txtGoloviGost";
-            stateProperties5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
-            stateProperties5.FillColor = System.Drawing.Color.Empty;
-            stateProperties5.ForeColor = System.Drawing.Color.Empty;
-            stateProperties5.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtGoloviGost.OnActiveState = stateProperties5;
-            stateProperties6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties6.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtGoloviGost.OnDisabledState = stateProperties6;
-            stateProperties7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
-            stateProperties7.FillColor = System.Drawing.Color.Empty;
-            stateProperties7.ForeColor = System.Drawing.Color.Empty;
-            stateProperties7.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtGoloviGost.OnHoverState = stateProperties7;
-            stateProperties8.BorderColor = System.Drawing.Color.Silver;
-            stateProperties8.FillColor = System.Drawing.Color.White;
-            stateProperties8.ForeColor = System.Drawing.Color.Empty;
-            stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtGoloviGost.OnIdleState = stateProperties8;
-            this.txtGoloviGost.Padding = new System.Windows.Forms.Padding(3);
-            this.txtGoloviGost.PasswordChar = '\0';
-            this.txtGoloviGost.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtGoloviGost.PlaceholderText = "";
-            this.txtGoloviGost.ReadOnly = false;
-            this.txtGoloviGost.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtGoloviGost.SelectedText = "";
-            this.txtGoloviGost.SelectionLength = 0;
-            this.txtGoloviGost.SelectionStart = 0;
-            this.txtGoloviGost.ShortcutsEnabled = true;
-            this.txtGoloviGost.Size = new System.Drawing.Size(40, 23);
-            this.txtGoloviGost.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txtGoloviGost.TabIndex = 353;
-            this.txtGoloviGost.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtGoloviGost.TextMarginBottom = 0;
-            this.txtGoloviGost.TextMarginLeft = 3;
-            this.txtGoloviGost.TextMarginTop = 1;
-            this.txtGoloviGost.TextPlaceholder = "";
-            this.txtGoloviGost.UseSystemPasswordChar = false;
-            this.txtGoloviGost.WordWrap = true;
-            this.txtGoloviGost.TextChanged += new System.EventHandler(this.txtGoloviGost_TextChanged);
             // 
             // frmUpsertIzvjestaj
             // 

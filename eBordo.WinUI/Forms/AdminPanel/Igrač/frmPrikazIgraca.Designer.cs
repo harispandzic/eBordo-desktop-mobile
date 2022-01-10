@@ -51,7 +51,13 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.txtImePrezime = new Bunifu.UI.WinForms.BunifuTextBox();
             this.noSearchResult = new System.Windows.Forms.PictureBox();
             this.loaderIgraci = new Bunifu.UI.WinForms.BunifuLoader();
+            this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.checkBoxZavrseniTreninzi = new Bunifu.UI.WinForms.BunifuCheckBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.gifLoader = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.noSearchResult)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gifLoader)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNaslovStranice
@@ -637,10 +643,111 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.loaderIgraci.Thickness = 2;
             this.loaderIgraci.Transparent = true;
             // 
+            // bunifuLabel1
+            // 
+            this.bunifuLabel1.AllowParentOverrides = false;
+            this.bunifuLabel1.AutoEllipsis = false;
+            this.bunifuLabel1.AutoSize = false;
+            this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel1.Font = new System.Drawing.Font("Oswald", 9F);
+            this.bunifuLabel1.ForeColor = System.Drawing.Color.Black;
+            this.bunifuLabel1.Location = new System.Drawing.Point(431, 81);
+            this.bunifuLabel1.Name = "bunifuLabel1";
+            this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel1.Size = new System.Drawing.Size(40, 17);
+            this.bunifuLabel1.TabIndex = 298;
+            this.bunifuLabel1.Text = "Aktivan";
+            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuLabel1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            // 
+            // checkBoxZavrseniTreninzi
+            // 
+            this.checkBoxZavrseniTreninzi.AllowBindingControlAnimation = true;
+            this.checkBoxZavrseniTreninzi.AllowBindingControlColorChanges = false;
+            this.checkBoxZavrseniTreninzi.AllowBindingControlLocation = true;
+            this.checkBoxZavrseniTreninzi.AllowCheckBoxAnimation = false;
+            this.checkBoxZavrseniTreninzi.AllowCheckmarkAnimation = true;
+            this.checkBoxZavrseniTreninzi.AllowOnHoverStates = true;
+            this.checkBoxZavrseniTreninzi.AutoCheck = true;
+            this.checkBoxZavrseniTreninzi.BackColor = System.Drawing.Color.Transparent;
+            this.checkBoxZavrseniTreninzi.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("checkBoxZavrseniTreninzi.BackgroundImage")));
+            this.checkBoxZavrseniTreninzi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.checkBoxZavrseniTreninzi.BindingControlPosition = Bunifu.UI.WinForms.BunifuCheckBox.BindingControlPositions.Right;
+            this.checkBoxZavrseniTreninzi.BorderRadius = 12;
+            this.checkBoxZavrseniTreninzi.Checked = true;
+            this.checkBoxZavrseniTreninzi.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Checked;
+            this.checkBoxZavrseniTreninzi.Cursor = System.Windows.Forms.Cursors.Default;
+            this.checkBoxZavrseniTreninzi.CustomCheckmarkImage = null;
+            this.checkBoxZavrseniTreninzi.Location = new System.Drawing.Point(407, 77);
+            this.checkBoxZavrseniTreninzi.MinimumSize = new System.Drawing.Size(17, 17);
+            this.checkBoxZavrseniTreninzi.Name = "checkBoxZavrseniTreninzi";
+            this.checkBoxZavrseniTreninzi.OnCheck.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.checkBoxZavrseniTreninzi.OnCheck.BorderRadius = 12;
+            this.checkBoxZavrseniTreninzi.OnCheck.BorderThickness = 2;
+            this.checkBoxZavrseniTreninzi.OnCheck.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.checkBoxZavrseniTreninzi.OnCheck.CheckmarkColor = System.Drawing.Color.White;
+            this.checkBoxZavrseniTreninzi.OnCheck.CheckmarkThickness = 2;
+            this.checkBoxZavrseniTreninzi.OnDisable.BorderColor = System.Drawing.Color.LightGray;
+            this.checkBoxZavrseniTreninzi.OnDisable.BorderRadius = 12;
+            this.checkBoxZavrseniTreninzi.OnDisable.BorderThickness = 2;
+            this.checkBoxZavrseniTreninzi.OnDisable.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.checkBoxZavrseniTreninzi.OnDisable.CheckmarkColor = System.Drawing.Color.LightGray;
+            this.checkBoxZavrseniTreninzi.OnDisable.CheckmarkThickness = 2;
+            this.checkBoxZavrseniTreninzi.OnHoverChecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.checkBoxZavrseniTreninzi.OnHoverChecked.BorderRadius = 12;
+            this.checkBoxZavrseniTreninzi.OnHoverChecked.BorderThickness = 2;
+            this.checkBoxZavrseniTreninzi.OnHoverChecked.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.checkBoxZavrseniTreninzi.OnHoverChecked.CheckmarkColor = System.Drawing.Color.White;
+            this.checkBoxZavrseniTreninzi.OnHoverChecked.CheckmarkThickness = 2;
+            this.checkBoxZavrseniTreninzi.OnHoverUnchecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.checkBoxZavrseniTreninzi.OnHoverUnchecked.BorderRadius = 12;
+            this.checkBoxZavrseniTreninzi.OnHoverUnchecked.BorderThickness = 1;
+            this.checkBoxZavrseniTreninzi.OnHoverUnchecked.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.checkBoxZavrseniTreninzi.OnUncheck.BorderColor = System.Drawing.Color.DarkGray;
+            this.checkBoxZavrseniTreninzi.OnUncheck.BorderRadius = 12;
+            this.checkBoxZavrseniTreninzi.OnUncheck.BorderThickness = 1;
+            this.checkBoxZavrseniTreninzi.OnUncheck.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.checkBoxZavrseniTreninzi.Size = new System.Drawing.Size(21, 21);
+            this.checkBoxZavrseniTreninzi.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu;
+            this.checkBoxZavrseniTreninzi.TabIndex = 297;
+            this.checkBoxZavrseniTreninzi.ThreeState = false;
+            this.checkBoxZavrseniTreninzi.ToolTipText = null;
+            this.checkBoxZavrseniTreninzi.CheckedChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs>(this.checkBoxZavrseniTreninzi_CheckedChanged);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox5.BackgroundImage = global::eBordo.WinUI.Properties.Resources.giphy;
+            this.pictureBox5.Image = global::eBordo.WinUI.Properties.Resources.ezgif1;
+            this.pictureBox5.Location = new System.Drawing.Point(559, 16);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(45, 40);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 322;
+            this.pictureBox5.TabStop = false;
+            // 
+            // gifLoader
+            // 
+            this.gifLoader.BackColor = System.Drawing.Color.Transparent;
+            this.gifLoader.BackgroundImage = global::eBordo.WinUI.Properties.Resources.giphy;
+            this.gifLoader.Image = global::eBordo.WinUI.Properties.Resources.ezgif2;
+            this.gifLoader.Location = new System.Drawing.Point(268, 224);
+            this.gifLoader.Name = "gifLoader";
+            this.gifLoader.Size = new System.Drawing.Size(91, 61);
+            this.gifLoader.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.gifLoader.TabIndex = 323;
+            this.gifLoader.TabStop = false;
+            // 
             // frmPrikazIgraca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.gifLoader);
+            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.bunifuLabel1);
+            this.Controls.Add(this.checkBoxZavrseniTreninzi);
             this.Controls.Add(this.loaderIgraci);
             this.Controls.Add(this.txtBrojIgraca);
             this.Controls.Add(this.lblDrzavljanstvoVrijednost);
@@ -657,6 +764,8 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.Size = new System.Drawing.Size(622, 403);
             this.Load += new System.EventHandler(this.frmPrikazIgraca_Load);
             ((System.ComponentModel.ISupportInitialize)(this.noSearchResult)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gifLoader)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -678,5 +787,9 @@ namespace eBordo.WinUI.Forms.AdminPanel
         private Bunifu.UI.WinForms.BunifuLabel lblDrzavljanstvoVrijednost;
         private Bunifu.UI.WinForms.BunifuLabel txtBrojIgraca;
         private Bunifu.UI.WinForms.BunifuLoader loaderIgraci;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
+        private Bunifu.UI.WinForms.BunifuCheckBox checkBoxZavrseniTreninzi;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox gifLoader;
     }
 }
