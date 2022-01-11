@@ -133,7 +133,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.txtLicenca.BackColor = System.Drawing.Color.Transparent;
             this.txtLicenca.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLicenca.ForeColor = System.Drawing.Color.Transparent;
-            this.txtLicenca.Location = new System.Drawing.Point(4, 8);
+            this.txtLicenca.Location = new System.Drawing.Point(4, 7);
             this.txtLicenca.Name = "txtLicenca";
             this.txtLicenca.Size = new System.Drawing.Size(45, 23);
             this.txtLicenca.TabIndex = 56;
@@ -145,9 +145,9 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.pictureAktivan.BackColor = System.Drawing.Color.Transparent;
             this.pictureAktivan.BackgroundImage = global::eBordo.WinUI.Properties.Resources.eBordo_success_notification;
             this.pictureAktivan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureAktivan.Location = new System.Drawing.Point(7, 28);
+            this.pictureAktivan.Location = new System.Drawing.Point(7, 26);
             this.pictureAktivan.Name = "pictureAktivan";
-            this.pictureAktivan.Size = new System.Drawing.Size(23, 23);
+            this.pictureAktivan.Size = new System.Drawing.Size(15, 15);
             this.pictureAktivan.TabIndex = 115;
             this.pictureAktivan.TabStop = false;
             // 

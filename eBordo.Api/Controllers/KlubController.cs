@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace eBordo.Api.Controllers
 {
-    public class KlubController : BaseCRUDController<eBordo.Model.Models.Klub, object, Model.Requests.Klub.KlubInsertRequest,object>
+    public class KlubController : BaseCRUDController<eBordo.Model.Models.Klub, object, Model.Requests.Klub.KlubInsertRequest, Model.Requests.Klub.KlubUpdateRequest>
     {
         public KlubController(IKlubService service) : base(service) { }
     }

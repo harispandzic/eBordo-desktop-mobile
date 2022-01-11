@@ -41,7 +41,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Igrač
         );
         public frmIgracKartica(BunifuSnackbar snackbar, frmPrikazIgraca prikazIgraca)
         {
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 188, 286, 8, 8));
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 188, 286, 12, 12));
             InitializeComponent();
             _snackbar = snackbar;
             _prikazIgraca = prikazIgraca;

@@ -39,19 +39,20 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Grad
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.Color.Transparent;
-            this.btnDelete.BackgroundImage = global::eBordo.WinUI.Properties.Resources.delete2;
+            this.btnDelete.BackgroundImage = global::eBordo.WinUI.Properties.Resources.edit2;
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.Location = new System.Drawing.Point(181, 7);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(20, 20);
             this.btnDelete.TabIndex = 59;
             this.btnDelete.TabStop = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // lblNazivDrzave
             // 
             this.lblNazivDrzave.BackColor = System.Drawing.Color.Transparent;
             this.lblNazivDrzave.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNazivDrzave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.lblNazivDrzave.ForeColor = System.Drawing.Color.Black;
             this.lblNazivDrzave.Location = new System.Drawing.Point(31, 6);
             this.lblNazivDrzave.Name = "lblNazivDrzave";
             this.lblNazivDrzave.Size = new System.Drawing.Size(116, 23);

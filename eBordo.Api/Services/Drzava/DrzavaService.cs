@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace eBordo.Api.Services.Drzava
 {
-    public class DrzavaService: BaseCRUDService<eBordo.Model.Models.Drzava, eBordo.Api.Database.Drzava, object, eBordo.Model.Requests.Drzava.DrzavaInsertRequest, object>, IDrzavaService
+    public class DrzavaService: BaseCRUDService<eBordo.Model.Models.Drzava, eBordo.Api.Database.Drzava, object, eBordo.Model.Requests.Drzava.DrzavaInsertRequest, eBordo.Model.Requests.Drzava.DrzavaUpdateRequest>, IDrzavaService
     {
         public DrzavaService(eBordoContext db, IMapper mapper) : base(db, mapper) { }
 
@@ -25,6 +25,16 @@ namespace eBordo.Api.Services.Drzava
             _db.SaveChanges();
 
             return _mapper.Map<eBordo.Model.Models.Drzava>(drzava);
+        }
+        public override Model.Models.Drzava Update(int id, DrzavaUpdateRequest request)
+        {
+            var entity = _db.drzave.Where(s => s.drzavaId == id).SingleOrDefault();
+
+            entity.nazivDrzave = request.nazivDrzave;
+
+            _db.SaveChanges();
+
+            return _mapper.Map<eBordo.Model.Models.Drzava>(entity);
         }
     }
 }

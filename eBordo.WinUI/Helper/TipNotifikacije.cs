@@ -31,5 +31,6 @@ namespace eBordo.WinUI.Helper
         IZMJENA_VEC_EVIDENTIRANA,
         FORMA_VALIDACIJA,
         GRESKA_UPLOAD,
+        NOTIFIKACIJA_PROČITANA
     }
 }

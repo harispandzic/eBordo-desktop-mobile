@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace eBordo.Api.Services.Grad
 {
-    public class GradService: BaseCRUDService<eBordo.Model.Models.Grad,eBordo.Api.Database.Grad, object, Model.Requests.Grad.GradInsertRequest, object>, IGradService
+    public class GradService: BaseCRUDService<eBordo.Model.Models.Grad,eBordo.Api.Database.Grad, object, Model.Requests.Grad.GradInsertRequest, Model.Requests.Grad.GradUpdateRequest>, IGradService
     {
         public GradService(eBordoContext db, IMapper mapper) : base(db, mapper) { }
 
@@ -26,6 +26,16 @@ namespace eBordo.Api.Services.Grad
             _db.SaveChanges();
 
             return _mapper.Map<Model.Models.Grad>(grad);
+        }
+        public override Model.Models.Grad Update(int id, GradUpdateRequest request)
+        {
+            var entity = _db.gradovi.Where(s => s.gradId == id).SingleOrDefault();
+
+            entity.nazivGrada = request.nazivGrada;
+
+            _db.SaveChanges();
+
+            return _mapper.Map<eBordo.Model.Models.Grad>(entity);
         }
 
         public override IEnumerable<eBordo.Model.Models.Grad> Get(object search = null)

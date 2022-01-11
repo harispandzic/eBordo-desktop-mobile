@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace eBordo.Api.Services.Klub
 {
-    public class KlubService : BaseCRUDService<eBordo.Model.Models.Klub, eBordo.Api.Database.Klub, object, eBordo.Model.Requests.Klub.KlubInsertRequest,object>, IKlubService
+    public class KlubService : BaseCRUDService<eBordo.Model.Models.Klub, eBordo.Api.Database.Klub, object, eBordo.Model.Requests.Klub.KlubInsertRequest, eBordo.Model.Requests.Klub.KlubUpdateRequest>, IKlubService
     {
         public KlubService(eBordoContext db, IMapper mapper) : base(db, mapper) { }
 
@@ -29,7 +29,16 @@ namespace eBordo.Api.Services.Klub
 
             return _mapper.Map<eBordo.Model.Models.Klub>(klub);
         }
+        public override Model.Models.Klub Update(int id, KlubUpdateRequest request)
+        {
+            var entity = _db.klubovi.Where(s => s.klubId == id).SingleOrDefault();
 
+            entity.nazivKluba = request.nazivKluba;
+
+            _db.SaveChanges();
+
+            return _mapper.Map<eBordo.Model.Models.Klub>(entity);
+        }
         public override IEnumerable<eBordo.Model.Models.Klub> Get(object search = null)
         {
             var entity = _db.Set<Database.Klub>()

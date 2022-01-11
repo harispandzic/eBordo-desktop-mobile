@@ -167,6 +167,8 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.txtPrvaPostavaValidator = new Bunifu.UI.WinForms.BunifuLabel();
             this.txtKlupaValidator = new Bunifu.UI.WinForms.BunifuLabel();
             this.pictureKlupaValidator = new System.Windows.Forms.PictureBox();
+            this.gifLoader = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureIgracSlika)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.domaciDres)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rezervniDres)).BeginInit();
@@ -192,6 +194,8 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             ((System.ComponentModel.ISupportInitialize)(this.pictureDatumOdigravanjaValidator)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureValidacijaPrvaPOstavaka)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureKlupaValidator)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gifLoader)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbProtivnik
@@ -802,7 +806,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.snackbar.InformationOptions.ForeColor = System.Drawing.Color.Black;
             this.snackbar.InformationOptions.Icon = ((System.Drawing.Image)(resources.GetObject("resource.Icon1")));
             this.snackbar.InformationOptions.IconLeftMargin = 12;
-            this.snackbar.Margin = 10;
+            this.snackbar.Margin = 20;
             this.snackbar.MaximumSize = new System.Drawing.Size(0, 0);
             this.snackbar.MaximumViews = 7;
             this.snackbar.MessageRightMargin = 15;
@@ -2742,11 +2746,37 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.pictureKlupaValidator.TabIndex = 357;
             this.pictureKlupaValidator.TabStop = false;
             // 
+            // gifLoader
+            // 
+            this.gifLoader.BackColor = System.Drawing.Color.Transparent;
+            this.gifLoader.BackgroundImage = global::eBordo.WinUI.Properties.Resources.giphy;
+            this.gifLoader.Image = global::eBordo.WinUI.Properties.Resources.ezgif2;
+            this.gifLoader.Location = new System.Drawing.Point(629, 220);
+            this.gifLoader.Name = "gifLoader";
+            this.gifLoader.Size = new System.Drawing.Size(45, 15);
+            this.gifLoader.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.gifLoader.TabIndex = 359;
+            this.gifLoader.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.BackgroundImage = global::eBordo.WinUI.Properties.Resources.giphy;
+            this.pictureBox2.Image = global::eBordo.WinUI.Properties.Resources.ezgif2;
+            this.pictureBox2.Location = new System.Drawing.Point(904, 220);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(45, 15);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 360;
+            this.pictureBox2.TabStop = false;
+            // 
             // frmUpsertUtakmica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(954, 749);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.gifLoader);
             this.Controls.Add(this.txtKlupaValidator);
             this.Controls.Add(this.pictureKlupaValidator);
             this.Controls.Add(this.txtPrvaPostavaValidator);
@@ -2892,6 +2922,8 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             ((System.ComponentModel.ISupportInitialize)(this.pictureDatumOdigravanjaValidator)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureValidacijaPrvaPOstavaka)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureKlupaValidator)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gifLoader)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3014,5 +3046,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
         private Bunifu.UI.WinForms.BunifuLabel txtPrvaPostavaValidator;
         private Bunifu.UI.WinForms.BunifuLabel txtKlupaValidator;
         private System.Windows.Forms.PictureBox pictureKlupaValidator;
+        private System.Windows.Forms.PictureBox gifLoader;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

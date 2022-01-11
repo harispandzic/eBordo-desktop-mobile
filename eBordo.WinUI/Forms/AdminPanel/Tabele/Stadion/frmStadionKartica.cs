@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,12 +13,27 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Stadion
 {
     public partial class frmStadionKartica : UserControl
     {
+        public int stadionId { get; set; }
         public string nazivStadiona { get; set; }
         public string grad { get; set; }
         public Image slikaStadiona { get; set; }
+        frmPrikazStadiona _prikazStadiona { get; set; }
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
 
-        public frmStadionKartica()
+        private static extern IntPtr CreateRoundRectRgn
+        (
+            int nLeftRect,     // x-coordinate of upper-left corner
+            int nTopRect,      // y-coordinate of upper-left corner
+            int nRightRect,    // x-coordinate of lower-right corner
+            int nBottomRect,   // y-coordinate of lower-right corner
+            int nWidthEllipse, // height of ellipse
+            int nHeightEllipse // width of ellipse
+        );
+
+        public frmStadionKartica(frmPrikazStadiona prikazStadiona)
         {
+            _prikazStadiona = prikazStadiona;
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 207, 127, 10, 10));
             InitializeComponent();
         }
 
@@ -26,6 +42,16 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Stadion
             lblNazivKluba.Text = nazivStadiona + ", " + grad;
             pictureSlikaStadiona.BackgroundImage = slikaStadiona;
             pictureSlikaStadiona.BackgroundImageLayout = ImageLayout.Stretch;
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            _prikazStadiona.filterStadioni(stadionId);
+        }
+
+        private void pictureSlikaStadiona_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

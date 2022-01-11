@@ -258,7 +258,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.bunifuSnackbar1.InformationOptions.ForeColor = System.Drawing.Color.Black;
             this.bunifuSnackbar1.InformationOptions.Icon = ((System.Drawing.Image)(resources.GetObject("resource.Icon5")));
             this.bunifuSnackbar1.InformationOptions.IconLeftMargin = 12;
-            this.bunifuSnackbar1.Margin = 10;
+            this.bunifuSnackbar1.Margin = 20;
             this.bunifuSnackbar1.MaximumSize = new System.Drawing.Size(0, 0);
             this.bunifuSnackbar1.MaximumViews = 7;
             this.bunifuSnackbar1.MessageRightMargin = 15;

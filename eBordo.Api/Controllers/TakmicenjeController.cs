@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace eBordo.Api.Controllers
 {
-    public class TakmicenjeController : BaseCRUDController<eBordo.Model.Models.Takmicenje, object,Model.Requests.Takmicenje.TakmicenjeInsertRequest,object>
+    public class TakmicenjeController : BaseCRUDController<eBordo.Model.Models.Takmicenje, object,Model.Requests.Takmicenje.TakmicenjeInsertRequest, Model.Requests.Takmicenje.TakmicenjeUpdateRequest>
     {
         public TakmicenjeController(ITakmicenjeService service) : base(service) { }
 

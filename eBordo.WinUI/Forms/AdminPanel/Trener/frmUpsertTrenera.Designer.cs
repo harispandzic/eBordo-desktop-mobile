@@ -155,7 +155,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.snackbar.InformationOptions.ForeColor = System.Drawing.Color.Black;
             this.snackbar.InformationOptions.Icon = null;
             this.snackbar.InformationOptions.IconLeftMargin = 12;
-            this.snackbar.Margin = 10;
+            this.snackbar.Margin = 20;
             this.snackbar.MaximumSize = new System.Drawing.Size(0, 0);
             this.snackbar.MaximumViews = 7;
             this.snackbar.MessageRightMargin = 15;

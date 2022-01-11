@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace eBordo.Api.Controllers
 {
-    public class DrzavaController : BaseCRUDController<eBordo.Model.Models.Drzava, object,Model.Requests.Drzava.DrzavaInsertRequest,object>
+    public class DrzavaController : BaseCRUDController<eBordo.Model.Models.Drzava, object,Model.Requests.Drzava.DrzavaInsertRequest, Model.Requests.Drzava.DrzavaUpdateRequest>
     {
         public DrzavaController(IDrzavaService service) : base(service) { }
     }

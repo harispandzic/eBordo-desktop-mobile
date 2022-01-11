@@ -29,7 +29,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele
         /// </summary>
         private void InitializeComponent()
         {
-            Utilities.BunifuPages.BunifuAnimatorNS.Animation animation1 = new Utilities.BunifuPages.BunifuAnimatorNS.Animation();
+            Utilities.BunifuPages.BunifuAnimatorNS.Animation animation2 = new Utilities.BunifuPages.BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTabelePocetna));
             this.tabelePages = new Bunifu.UI.WinForms.BunifuPages();
             this.tabKlubovi = new System.Windows.Forms.TabPage();
@@ -62,32 +62,32 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele
             this.tabelePages.Controls.Add(this.tabDrzave);
             this.tabelePages.Controls.Add(this.tabGradovi);
             this.tabelePages.Controls.Add(this.tabTakmicenja);
-            this.tabelePages.Location = new System.Drawing.Point(20, 57);
+            this.tabelePages.Location = new System.Drawing.Point(22, 57);
             this.tabelePages.Multiline = true;
             this.tabelePages.Name = "tabelePages";
-            this.tabelePages.Page = this.tabKlubovi;
-            this.tabelePages.PageIndex = 0;
-            this.tabelePages.PageName = "tabKlubovi";
-            this.tabelePages.PageTitle = "Klubovi";
+            this.tabelePages.Page = this.tabDrzave;
+            this.tabelePages.PageIndex = 2;
+            this.tabelePages.PageName = "tabDrzave";
+            this.tabelePages.PageTitle = "Države";
             this.tabelePages.SelectedIndex = 0;
             this.tabelePages.Size = new System.Drawing.Size(595, 343);
             this.tabelePages.TabIndex = 1;
-            animation1.AnimateOnlyDifferences = false;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.tabelePages.Transition = animation1;
+            animation2.AnimateOnlyDifferences = false;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.tabelePages.Transition = animation2;
             this.tabelePages.TransitionType = Utilities.BunifuPages.BunifuAnimatorNS.AnimationType.Custom;
             // 
             // tabKlubovi
@@ -139,6 +139,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele
             // 
             // frmPrikazDrzava1
             // 
+            this.frmPrikazDrzava1.BackColor = System.Drawing.Color.Transparent;
             this.frmPrikazDrzava1.Location = new System.Drawing.Point(0, 0);
             this.frmPrikazDrzava1.Name = "frmPrikazDrzava1";
             this.frmPrikazDrzava1.Size = new System.Drawing.Size(587, 317);
@@ -200,7 +201,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele
             this.cmbTabele.FillDropDown = true;
             this.cmbTabele.FillIndicator = false;
             this.cmbTabele.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbTabele.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.cmbTabele.Font = new System.Drawing.Font("Oswald", 8.25F);
             this.cmbTabele.ForeColor = System.Drawing.Color.Black;
             this.cmbTabele.FormattingEnabled = true;
             this.cmbTabele.Icon = null;
@@ -213,10 +214,10 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele
             this.cmbTabele.ItemBorderColor = System.Drawing.Color.White;
             this.cmbTabele.ItemForeColor = System.Drawing.Color.Black;
             this.cmbTabele.ItemHeight = 26;
-            this.cmbTabele.ItemHighLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.cmbTabele.ItemHighLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.cmbTabele.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cmbTabele.ItemTopMargin = 3;
-            this.cmbTabele.Location = new System.Drawing.Point(415, 9);
+            this.cmbTabele.Location = new System.Drawing.Point(444, 9);
             this.cmbTabele.Name = "cmbTabele";
             this.cmbTabele.Size = new System.Drawing.Size(165, 32);
             this.cmbTabele.TabIndex = 3;
@@ -231,12 +232,12 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele
             this.lblNaslovStranice.AutoEllipsis = false;
             this.lblNaslovStranice.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblNaslovStranice.CursorType = System.Windows.Forms.Cursors.Default;
-            this.lblNaslovStranice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNaslovStranice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.lblNaslovStranice.Font = new System.Drawing.Font("Oswald", 12F);
+            this.lblNaslovStranice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.lblNaslovStranice.Location = new System.Drawing.Point(20, 16);
             this.lblNaslovStranice.Name = "lblNaslovStranice";
             this.lblNaslovStranice.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblNaslovStranice.Size = new System.Drawing.Size(317, 21);
+            this.lblNaslovStranice.Size = new System.Drawing.Size(248, 24);
             this.lblNaslovStranice.TabIndex = 4;
             this.lblNaslovStranice.Text = "ADMINISTRACIJA POMOĆNIM TABELAMA";
             this.lblNaslovStranice.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -251,10 +252,10 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele
             this.bunifuSeparator1.LineColor = System.Drawing.Color.Silver;
             this.bunifuSeparator1.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
             this.bunifuSeparator1.LineThickness = 1;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(20, 47);
+            this.bunifuSeparator1.Location = new System.Drawing.Point(26, 47);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
             this.bunifuSeparator1.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
-            this.bunifuSeparator1.Size = new System.Drawing.Size(560, 14);
+            this.bunifuSeparator1.Size = new System.Drawing.Size(583, 14);
             this.bunifuSeparator1.TabIndex = 5;
             // 
             // frmTabelePocetna
@@ -291,9 +292,9 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele
         private System.Windows.Forms.TabPage tabTakmicenja;
         private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator1;
         private Klubovi.frmPrikazKlubova frmPrikazKlubova1;
-        private Države.frmPrikazDrzava frmPrikazDrzava1;
         private Takmičenja.frmTakmicenjaPrikaz frmTakmicenjaPrikaz1;
         private Stadion.frmPrikazStadiona frmPrikazStadiona1;
         private Grad.frmPrikazGradova frmPrikazGradova1;
+        private Države.frmPrikazDrzava frmPrikazDrzava1;
     }
 }

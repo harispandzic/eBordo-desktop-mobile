@@ -20,6 +20,8 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Grad
         private List<Model.Models.Grad> _gradovi;
         private List<Model.Models.Drzava> _drzave;
         ByteToImage byteToImage = new ByteToImage();
+        Model.Models.Grad grad;
+        bool isNazivGradaValidated = false, isDrzavaValidated = false;
 
         public frmPrikazGradova()
         {
@@ -43,23 +45,44 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Grad
                 pnlPrikazKlubova.Controls.Clear();
 
                 _gradovi = await _grad.GetAll<List<Model.Models.Grad>>(null);
-                pnlLoader.Hide();
                 loader.Hide();
+                loaderIgraci.Hide();
 
                 frmGradKartica[] listItems = new frmGradKartica[_gradovi.Count];
                 for (int i = 0; i < listItems.Length; i++)
                 {
-                    listItems[i] = new frmGradKartica();
+                    listItems[i] = new frmGradKartica(this);
+                    listItems[i].gradId = _gradovi[i].gradId;
                     listItems[i].nazivGrada = _gradovi[i].nazivGrada;
                     listItems[i].zastavaDrzave = byteToImage.ConvertByteToImage(_gradovi[i].drzava.zastava);
 
                     pnlPrikazKlubova.Controls.Add(listItems[i]);
                 }
+                UpdateBrojDrazva();
+                btnSaveUpdate.Hide();
             }
             catch
             {
                 PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
             }
+        }
+        private bool ValidirajFormu()
+        {
+            bool isUspjesno = true;
+            if (!isNazivGradaValidated || !isDrzavaValidated)
+            {
+                isUspjesno = false;
+            }
+            else
+            {
+                isUspjesno = true;
+            }
+
+            return isUspjesno;
+        }
+        private void UpdateBrojDrazva()
+        {
+            txtBrojIgraca.Text = _gradovi.Count().ToString();
         }
         private async Task LoadDrzave()
         {
@@ -67,9 +90,13 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Grad
             {
                 _drzave = await _drzava.GetAll<List<Model.Models.Drzava>>(null);
 
-                foreach (var item in _drzave)
+                if(_drzave.Count > 0)
                 {
-                    cmbDrzave.Items.Add(item.nazivDrzave);
+                    foreach (var item in _drzave)
+                    {
+                        cmbDrzave.Items.Add(item.nazivDrzave);
+                    }
+                    cmbDrzave.SelectedIndex = 0;
                 }
             }
             catch
@@ -80,6 +107,26 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Grad
 
         private async void btnSave_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void loaderIgraci_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBrojIgraca_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void bunifuButton1_Click(object sender, EventArgs e)
+        {
+            if (!ValidirajFormu())
+            {
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.FORMA_VALIDACIJA);
+                return;
+            }
             GradInsertRequest insertRequest = new GradInsertRequest
             {
                 nazivGrada = txtNazivKluba.Text,
@@ -96,6 +143,74 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Grad
             {
                 PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
             }
+        }
+
+        private void cmbDrzave_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbDrzave.SelectedText != "Grad")
+            {
+                isDrzavaValidated = true;
+            }
+        }
+
+        private void txtNazivKluba_TextChanged(object sender, EventArgs e)
+        {
+            isNazivGradaValidated = Validacija.ValidirajInputString(txtNazivKluba, txtTelefonValidator, Field.NAZIV_TAKMICENJA);
+        }
+        public void filterStadioni(int gradId)
+        {
+            bunifuButton1.Hide();
+            btnSaveUpdate.Show();
+            grad = _gradovi.Where(s => s.gradId == gradId).SingleOrDefault();
+            txtNazivKluba.Text = grad.nazivGrada;
+            int selectedGrad = 0;
+            for (int i = 0; i < _drzave.Count; i++)
+            {
+                if (_drzave[i].drzavaId == grad.drzavaId)
+                {
+                    selectedGrad = i;
+                }
+            }
+            cmbDrzave.SelectedIndex = selectedGrad;
+            cmbDrzave.Enabled = false;
+        }
+
+        private async void btnSaveUpdate_Click(object sender, EventArgs e)
+        {
+            if (!ValidirajFormu())
+            {
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.FORMA_VALIDACIJA);
+                return;
+            }
+            GradUpdateRequest upadte = new GradUpdateRequest
+            {
+                nazivGrada = txtNazivKluba.Text,
+            };
+            try
+            {
+                await _grad.Update<Model.Models.Grad>(grad.gradId, upadte);
+                await LoadGradovi(notifikacija: TipNotifikacije.UREĐIVANJE);
+                OcistiPolja();
+            }
+            catch
+            {
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
+            }
+        }
+
+        private void btnOdustani_Click(object sender, EventArgs e)
+        {
+            OcistiPolja();
+        }
+
+        public void OcistiPolja()
+        {
+            btnSaveUpdate.Hide();
+            bunifuButton1.Show();
+            txtNazivKluba.Text = "";
+            txtTelefonValidator.Text = "";
+            cmbDrzave.SelectedIndex = 0;
+            cmbDrzave.Enabled = true;
         }
     }
 }

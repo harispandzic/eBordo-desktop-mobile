@@ -125,6 +125,11 @@ namespace eBordo.WinUI.Helper
                         posaljiNotifikaciju("Greška pri učitavanju slike!", TipPoruke.WARNING, snackbar, forma, BunifuSnackbar.Positions.BottomRight);
                         break;
                     }
+                case TipNotifikacije.NOTIFIKACIJA_PROČITANA:
+                    {
+                        posaljiNotifikaciju("Notifikacija pročitana!", TipPoruke.SUCCESS, snackbar, forma, BunifuSnackbar.Positions.BottomRight);
+                        break;
+                    }
                 case TipNotifikacije.BEZ: break;
             }
         }

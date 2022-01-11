@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace eBordo.Api.Controllers
 {
-    public class GradController : BaseCRUDController<eBordo.Model.Models.Grad, object, Model.Requests.Grad.GradInsertRequest,object>
+    public class GradController : BaseCRUDController<eBordo.Model.Models.Grad, object, Model.Requests.Grad.GradInsertRequest, Model.Requests.Grad.GradUpdateRequest>
     {
         public GradController(IGradService service) : base(service) { }
     }

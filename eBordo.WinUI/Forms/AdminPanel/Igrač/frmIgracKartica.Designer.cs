@@ -98,7 +98,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Igrač
             this.lblBrojDresa.BackColor = System.Drawing.Color.Transparent;
             this.lblBrojDresa.Font = new System.Drawing.Font("Oswald", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBrojDresa.ForeColor = System.Drawing.Color.Transparent;
-            this.lblBrojDresa.Location = new System.Drawing.Point(-1, 0);
+            this.lblBrojDresa.Location = new System.Drawing.Point(-5, 0);
             this.lblBrojDresa.Name = "lblBrojDresa";
             this.lblBrojDresa.Size = new System.Drawing.Size(44, 36);
             this.lblBrojDresa.TabIndex = 42;
@@ -170,9 +170,9 @@ namespace eBordo.WinUI.Forms.AdminPanel.Igrač
             this.pictureAktivan.BackColor = System.Drawing.Color.Transparent;
             this.pictureAktivan.BackgroundImage = global::eBordo.WinUI.Properties.Resources.eBordo_success_notification;
             this.pictureAktivan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureAktivan.Location = new System.Drawing.Point(4, 32);
+            this.pictureAktivan.Location = new System.Drawing.Point(4, 30);
             this.pictureAktivan.Name = "pictureAktivan";
-            this.pictureAktivan.Size = new System.Drawing.Size(23, 23);
+            this.pictureAktivan.Size = new System.Drawing.Size(15, 15);
             this.pictureAktivan.TabIndex = 116;
             this.pictureAktivan.TabStop = false;
             // 

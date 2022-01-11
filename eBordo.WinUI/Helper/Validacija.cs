@@ -166,7 +166,8 @@ namespace eBordo.WinUI.Helper
                     {
                         if (isPrazanString(kontrola, label) ||
                                 isOdredjenBrojKaraktera(kontrola, label, 1) || 
-                                    isInRange(kontrola, label, 1, 4))
+                                    isBrojevi(kontrola, label) ||
+                                        isInRange(kontrola, label, 1, 4))
                         {
                             isValidiran = false;
                         }
@@ -188,6 +189,38 @@ namespace eBordo.WinUI.Helper
                         if (isPrazanString(kontrola, label, polje) ||
                                 isMinimalnoKaraktera(kontrola, label, 4, polje) ||
                                     ValidacijaPAssword(kontrola, label, polje))
+                        {
+                            isValidiran = false;
+                        }
+                        break;
+                    }
+                case Field.NAZIV_DRZAVE:
+                    {
+                        if (isPrazanString(kontrola, label) ||
+                            isMinimalnoKaraktera(kontrola, label, 2) ||
+                                isPrvoSlovoVeliko(kontrola, label) ||
+                                    isSadrziBroj(kontrola, label))
+                        {
+                            isValidiran = false;
+                        }
+                        break;
+                    }
+                case Field.NAZIV_TAKMICENJA:
+                    {
+                        if (isPrazanString(kontrola, label) ||
+                            isMinimalnoKaraktera(kontrola, label, 2) ||
+                                isPrvoSlovoVeliko(kontrola, label) ||
+                                    isSadrziBroj(kontrola, label))
+                        {
+                            isValidiran = false;
+                        }
+                        break;
+                    }
+                case Field.NAZIV_KLUBA:
+                    {
+                        if (isPrazanString(kontrola, label) ||
+                            isMinimalnoKaraktera(kontrola, label, 2) ||
+                                isPrvoSlovoVeliko(kontrola, label))
                         {
                             isValidiran = false;
                         }
@@ -600,7 +633,7 @@ namespace eBordo.WinUI.Helper
                 }
                 if (label != null)
                 {
-                    label.Text = "Neispravan format";
+                    label.Text = "Mail mora biti na @fksarajevo.ba domeni";
                 }
                 flag = true;
             }

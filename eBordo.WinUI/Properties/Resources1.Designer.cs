@@ -283,6 +283,36 @@ namespace eBordo.WinUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap donefinally {
+            get {
+                object obj = ResourceManager.GetObject("donefinally", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap donefinally1 {
+            get {
+                object obj = ResourceManager.GetObject("donefinally1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap donefinally2 {
+            get {
+                object obj = ResourceManager.GetObject("donefinally2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap dupovac {
             get {
                 object obj = ResourceManager.GetObject("dupovac", resourceCulture);
@@ -563,6 +593,16 @@ namespace eBordo.WinUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap eBordo_slikaSarajevo {
+            get {
+                object obj = ResourceManager.GetObject("eBordo_slikaSarajevo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap eBordo_stadion {
             get {
                 object obj = ResourceManager.GetObject("eBordo_stadion", resourceCulture);
@@ -626,6 +666,16 @@ namespace eBordo.WinUI.Properties {
         public static System.Drawing.Bitmap eBordo_trening_kamp {
             get {
                 object obj = ResourceManager.GetObject("eBordo_trening_kamp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap eBordo_treningCentarBordo {
+            get {
+                object obj = ResourceManager.GetObject("eBordo_treningCentarBordo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -825,6 +875,16 @@ namespace eBordo.WinUI.Properties {
         public static System.Drawing.Bitmap image__2_ {
             get {
                 object obj = ResourceManager.GetObject("image (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap image__5_ {
+            get {
+                object obj = ResourceManager.GetObject("image (5)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

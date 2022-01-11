@@ -41,6 +41,9 @@ namespace eBordo.WinUI.Helper
         DATUM_ODRZAVANJA,
         TRAJANJE_TRENERA,
         KORISNICKO_IME,
-        PASSWORD
+        PASSWORD,
+        NAZIV_DRZAVE,
+        NAZIV_TAKMICENJA,
+        NAZIV_KLUBA
     }
 }

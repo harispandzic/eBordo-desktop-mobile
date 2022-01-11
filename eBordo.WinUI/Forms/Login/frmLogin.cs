@@ -76,6 +76,11 @@ namespace eBordo.WinUI.Forms.Login
             isEmailValidated = Validacija.ValidirajInputString(txtKorisnickoIme, txtKorisnickoImeValidator, Field.KORISNICKO_IME);
         }
 
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void txtLozinka_TextChanged(object sender, EventArgs e)
         {
             isPasswordValidated = Validacija.ValidirajInputString(txtLozinka, txtLozinkaValidator, Field.PASSWORD);
