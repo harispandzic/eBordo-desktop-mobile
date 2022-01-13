@@ -168,9 +168,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Klubovi
                 await LoadKlubovi(notifikacija: TipNotifikacije.UREĐIVANJE);
                 OcistiPolja();
             }
-            catch
+            catch (Flurl.Http.FlurlHttpException ex)
             {
-                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
+                var message = await ex.GetResponseStringAsync();
+                TipNotifikacije tipNotifikacije = Exceptions.getException((message));
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, tipNotifikacije);
             }
         }
 
@@ -238,9 +240,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Klubovi
                 cmbGrad.SelectedIndex = 0;
                 cmbStadion.SelectedIndex = 0;
             }
-            catch
+            catch (Flurl.Http.FlurlHttpException ex)
             {
-                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
+                var message = await ex.GetResponseStringAsync();
+                TipNotifikacije tipNotifikacije = Exceptions.getException((message));
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, tipNotifikacije);
             }
         }
         public void filterKlubovi(int klubId)

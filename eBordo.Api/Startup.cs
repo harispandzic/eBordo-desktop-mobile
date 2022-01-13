@@ -42,6 +42,7 @@ using eBordo.Api.Services.UtakmicaNastup;
 using eBordo.Api.Services.UtakmicaIzmjena;
 using eBordo.Api.Services.Notifikacija;
 using eBordo.Api.Services.Trening;
+using eBordo.Api.Filters;
 
 namespace eBordo.Api
 {
@@ -56,6 +57,8 @@ namespace eBordo.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc(x => x.Filters.Add<ErrorFilter>()).SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+
             services.AddControllers();
 
             services.AddSwaggerGen(c =>
@@ -120,7 +123,7 @@ namespace eBordo.Api
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            
             app.UseHttpsRedirection();
 
             app.UseRouting();

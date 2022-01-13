@@ -571,6 +571,7 @@
       <DependentUpon>frmTrenerPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper\ByteToImage.cs" />
+    <Compile Include="Helper\Exceptions.cs" />
     <Compile Include="Helper\Field.cs" />
     <Compile Include="Helper\PosaljiNotifikaciju.cs" />
     <Compile Include="Helper\TipFiltera.cs" />
@@ -1116,6 +1117,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\donefinally2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\giphy1.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets" Condition="Exists('..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets')" />

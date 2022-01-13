@@ -1,5 +1,8 @@
-﻿using eBordo.Model.Requests.Grad;
+﻿using eBordo.Model;
+using eBordo.Model.Requests.Grad;
 using eBordo.WinUI.Helper;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -139,18 +142,17 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Grad
                 txtNazivKluba.Text = "";
                 cmbDrzave.SelectedIndex = 0;
             }
-            catch
+            catch(Flurl.Http.FlurlHttpException ex)
             {
-                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
+                var message = await ex.GetResponseStringAsync();
+                TipNotifikacije tipNotifikacije = Exceptions.getException((message));
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, tipNotifikacije);
             }
         }
 
         private void cmbDrzave_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbDrzave.SelectedText != "Grad")
-            {
-                isDrzavaValidated = true;
-            }
+            isDrzavaValidated = Validacija.ValidirajDropDown(cmbDrzave, "Država", txtDrzavaValidator, pictureDrzavaValidator);
         }
 
         private void txtNazivKluba_TextChanged(object sender, EventArgs e)
@@ -192,9 +194,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Grad
                 await LoadGradovi(notifikacija: TipNotifikacije.UREĐIVANJE);
                 OcistiPolja();
             }
-            catch
+            catch(Flurl.Http.FlurlHttpException ex)
             {
-                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
+                var message = await ex.GetResponseStringAsync();
+                TipNotifikacije tipNotifikacije = Exceptions.getException((message));
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, tipNotifikacije);
             }
         }
 

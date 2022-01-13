@@ -130,6 +130,51 @@ namespace eBordo.WinUI.Helper
                         posaljiNotifikaciju("Notifikacija pročitana!", TipPoruke.SUCCESS, snackbar, forma, BunifuSnackbar.Positions.BottomRight);
                         break;
                     }
+                case TipNotifikacije.GRAD_POSTOJI:
+                    {
+                        posaljiNotifikaciju("Grad postoji u bazi podataka!", TipPoruke.ERROR, snackbar, forma, BunifuSnackbar.Positions.BottomRight);
+                        break;
+                    }
+                case TipNotifikacije.DRZAVA_POSTOJI:
+                    {
+                        posaljiNotifikaciju("Drzava postoji u bazi podataka!", TipPoruke.ERROR, snackbar, forma, BunifuSnackbar.Positions.BottomRight);
+                        break;
+                    }
+                case TipNotifikacije.KLUB_POSTOJI:
+                    {
+                        posaljiNotifikaciju("Klub postoji u bazi podataka!", TipPoruke.ERROR, snackbar, forma, BunifuSnackbar.Positions.BottomRight);
+                        break;
+                    }
+                case TipNotifikacije.TAKMICENJE_POSTOJI:
+                    {
+                        posaljiNotifikaciju("Takmicenje postoji u bazi podataka!", TipPoruke.ERROR, snackbar, forma, BunifuSnackbar.Positions.BottomRight);
+                        break;
+                    }
+                case TipNotifikacije.STADION_POSTOJI:
+                    {
+                        posaljiNotifikaciju("Stadion postoji u bazi podataka!", TipPoruke.ERROR, snackbar, forma, BunifuSnackbar.Positions.BottomRight);
+                        break;
+                    }
+                case TipNotifikacije.KORISNIK_POSTOJI:
+                    {
+                        posaljiNotifikaciju("Korisnik postoji u bazi podataka!", TipPoruke.ERROR, snackbar, forma, BunifuSnackbar.Positions.BottomRight);
+                        break;
+                    }
+                case TipNotifikacije.DATUM_ZAUZET_UTAKMICA:
+                    {
+                        posaljiNotifikaciju("Odabrani datum je zauzet. Vec je evidentirana utakmica!", TipPoruke.ERROR, snackbar, forma, BunifuSnackbar.Positions.BottomRight);
+                        break;
+                    }
+                case TipNotifikacije.DATUM_ZAUZET_TRENING:
+                    {
+                        posaljiNotifikaciju("Odabrani datum je zauzet. Vec je evidentiran trening!", TipPoruke.ERROR, snackbar, forma, BunifuSnackbar.Positions.BottomRight);
+                        break;
+                    }
+                case TipNotifikacije.SERVER_GRESKA_VALIDACIJE:
+                    {
+                        posaljiNotifikaciju("Greška validacije na serveru!", TipPoruke.ERROR, snackbar, forma, BunifuSnackbar.Positions.BottomRight);
+                        break;
+                    }
                 case TipNotifikacije.BEZ: break;
             }
         }

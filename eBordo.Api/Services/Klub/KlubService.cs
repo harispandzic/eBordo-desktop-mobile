@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using eBordo.Api.Database;
 using eBordo.Api.Services.BaseCRUDService;
+using eBordo.Model.Exceptions;
 using eBordo.Model.Requests.Klub;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -16,6 +17,13 @@ namespace eBordo.Api.Services.Klub
 
         public override Model.Models.Klub Insert(KlubInsertRequest request)
         {
+            foreach (var item in _db.klubovi)
+            {
+                if (item.nazivKluba.StartsWith(request.nazivKluba))
+                {
+                    throw new UserException("Klub postoji u bazi podataka!");
+                }
+            }
             Database.Klub klub = new Database.Klub
             {
                 nazivKluba = request.nazivKluba,
@@ -31,6 +39,13 @@ namespace eBordo.Api.Services.Klub
         }
         public override Model.Models.Klub Update(int id, KlubUpdateRequest request)
         {
+            foreach (var item in _db.klubovi)
+            {
+                if (item.nazivKluba.StartsWith(request.nazivKluba))
+                {
+                    throw new UserException("Klub postoji u bazi podataka!");
+                }
+            }
             var entity = _db.klubovi.Where(s => s.klubId == id).SingleOrDefault();
 
             entity.nazivKluba = request.nazivKluba;

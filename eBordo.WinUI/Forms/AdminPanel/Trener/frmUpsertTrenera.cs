@@ -35,7 +35,9 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
         bool isImeValidated = false, isPrezimeValidate = false, isAdresaValidated = false,
             isTelefonValidated, isEmailValidated = false,
             isSlikaAvatarValidated = false, isSlikaPanelValidated = false,
-            isDatumRodjenjaValidated = false, isDatumPotpisaValidated = false, isDatumZavrsetkaValidated = false;
+            isDatumRodjenjaValidated = false, isDatumPotpisaValidated = false, isDatumZavrsetkaValidated = false,
+            isDrzavljanstvoValidated = false, isGradROdjenjaValidated = false, isFormacijaValidated = false, isPozicijaValidated;
+
 
         private void txtIme_TextChanged(object sender, EventArgs e)
         {
@@ -219,6 +221,23 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
 
         }
 
+        private void cmbDrzavljanstvo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            isDrzavljanstvoValidated = Validacija.ValidirajDropDown(cmbDrzavljanstvo, "Državljanstvo", txtDrzavljanstvoValidator, pictureDrzavljanstvoSlikaValidator);
+        }
+
+        private void cmbGradRodjenja_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            isGradROdjenjaValidated = Validacija.ValidirajDropDown(cmbGradRodjenja, "Grad rođenja", txtGradValidator, pictureGradSlikaValidator);
+
+        }
+
+        private void cmbFormacija_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            isFormacijaValidated = Validacija.ValidirajDropDown(cmbFormacija, "Formacija", txtFormacijaValidator, pictureFormacijaSlikaValidator);
+
+        }
+
         private async void LoadDrzave()
         {
             try
@@ -327,6 +346,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
 
         private void cmbLicenca_SelectedIndexChanged(object sender, EventArgs e)
         {
+            isPozicijaValidated = Validacija.ValidirajDropDown(cmbLicenca, "Licenca", txtLicencaValidator, pictureLicencaSlikaValidator);
 
         }
         private bool ValidirajFormu()
@@ -335,7 +355,9 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             if (!isImeValidated || !isPrezimeValidate || !isAdresaValidated || 
                 !isTelefonValidated || !isEmailValidated ||
                 !isDatumRodjenjaValidated || !isDatumPotpisaValidated || !isDatumZavrsetkaValidated ||
-                !isSlikaAvatarValidated || !isSlikaPanelValidated)
+                !isSlikaAvatarValidated || !isSlikaPanelValidated || !isDrzavljanstvoValidated ||
+                !isGradROdjenjaValidated || !isFormacijaValidated || !isPozicijaValidated
+)
             {
                 isUspjesno = false;
             }
@@ -392,9 +414,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
                 await _prikazTrenera.LoadTreneri(notifikacija: TipNotifikacije.DODAVANJE);
                 this.Hide();
             }
-            catch
+            catch (Flurl.Http.FlurlHttpException ex)
             {
-                PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.GREŠKA_NA_SERVERU);
+                var message = await ex.GetResponseStringAsync();
+                TipNotifikacije tipNotifikacije = Exceptions.getException((message));
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this, tipNotifikacije);
             }
         }
 

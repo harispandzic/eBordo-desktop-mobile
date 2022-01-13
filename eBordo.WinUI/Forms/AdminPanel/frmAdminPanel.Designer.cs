@@ -43,20 +43,14 @@ namespace eBordo.WinUI.Forms.Igrač
             this.snackbar = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
             this.igracTabs = new Bunifu.UI.WinForms.BunifuPages();
             this.tabPocetna = new System.Windows.Forms.TabPage();
-            this.frmPočetna1 = new eBordo.WinUI.Forms.AdminPanel.Početna.frmPočetna();
             this.tabIgraci = new System.Windows.Forms.TabPage();
-            this.frmPrikazIgraca1 = new eBordo.WinUI.Forms.AdminPanel.frmPrikazIgraca();
             this.tabTreneri = new System.Windows.Forms.TabPage();
-            this.frmPrikazTrenera1 = new eBordo.WinUI.Forms.AdminPanel.frmPrikazTrenera();
             this.tabRasporedUtakmica = new System.Windows.Forms.TabPage();
-            this.frmPrikazRasporedaUtakmicacs1 = new eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica.frmPrikazRasporedaUtakmicacs();
             this.tabOdigraneUtakmice = new System.Windows.Forms.TabPage();
-            this.frmPrikazOdigranihUtakmica1 = new eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice.frmPrikazOdigranihUtakmica();
             this.tabRasporedTreninga = new System.Windows.Forms.TabPage();
-            this.frmPrikazTreninga1 = new eBordo.WinUI.Forms.AdminPanel.Upravljanje_treningom.frmPrikazTreninga();
             this.tabTabele = new System.Windows.Forms.TabPage();
-            this.frmTabelePocetna1 = new eBordo.WinUI.Forms.AdminPanel.Tabele.frmTabelePocetna();
             this.pnlMeni = new Bunifu.UI.WinForms.BunifuPanel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.controlIsAktivan = new Bunifu.UI.WinForms.BunifuLabel();
             this.gifLoader = new System.Windows.Forms.PictureBox();
@@ -85,10 +79,18 @@ namespace eBordo.WinUI.Forms.Igrač
             this.lblLogovaniKorisnik = new System.Windows.Forms.Label();
             this.bunifuButton1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.gornjiPanel = new Bunifu.UI.WinForms.BunifuPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlGrb = new System.Windows.Forms.Panel();
             this.lblNaziv = new System.Windows.Forms.Label();
             this.pngLogout = new FontAwesome.Sharp.IconPictureBox();
             this.lblLogout = new System.Windows.Forms.Label();
+            this.frmPočetna1 = new eBordo.WinUI.Forms.AdminPanel.Početna.frmPočetna();
+            this.frmPrikazIgraca1 = new eBordo.WinUI.Forms.AdminPanel.frmPrikazIgraca();
+            this.frmPrikazTrenera1 = new eBordo.WinUI.Forms.AdminPanel.frmPrikazTrenera();
+            this.frmPrikazRasporedaUtakmicacs1 = new eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica.frmPrikazRasporedaUtakmicacs();
+            this.frmPrikazOdigranihUtakmica1 = new eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice.frmPrikazOdigranihUtakmica();
+            this.frmPrikazTreninga1 = new eBordo.WinUI.Forms.AdminPanel.Upravljanje_treningom.frmPrikazTreninga();
+            this.frmTabelePocetna1 = new eBordo.WinUI.Forms.AdminPanel.Tabele.frmTabelePocetna();
             this.igracTabs.SuspendLayout();
             this.tabPocetna.SuspendLayout();
             this.tabIgraci.SuspendLayout();
@@ -98,6 +100,7 @@ namespace eBordo.WinUI.Forms.Igrač
             this.tabRasporedTreninga.SuspendLayout();
             this.tabTabele.SuspendLayout();
             this.pnlMeni.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gifLoader)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox6)).BeginInit();
@@ -108,6 +111,7 @@ namespace eBordo.WinUI.Forms.Igrač
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.korisnickaFotografija)).BeginInit();
             this.gornjiPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pngLogout)).BeginInit();
             this.SuspendLayout();
             // 
@@ -230,13 +234,6 @@ namespace eBordo.WinUI.Forms.Igrač
             this.tabPocetna.Text = "Početna";
             this.tabPocetna.UseVisualStyleBackColor = true;
             // 
-            // frmPočetna1
-            // 
-            this.frmPočetna1.Location = new System.Drawing.Point(0, 0);
-            this.frmPočetna1.Name = "frmPočetna1";
-            this.frmPočetna1.Size = new System.Drawing.Size(622, 403);
-            this.frmPočetna1.TabIndex = 0;
-            // 
             // tabIgraci
             // 
             this.tabIgraci.Controls.Add(this.frmPrikazIgraca1);
@@ -247,13 +244,6 @@ namespace eBordo.WinUI.Forms.Igrač
             this.tabIgraci.TabIndex = 1;
             this.tabIgraci.Text = "Igrači";
             this.tabIgraci.UseVisualStyleBackColor = true;
-            // 
-            // frmPrikazIgraca1
-            // 
-            this.frmPrikazIgraca1.Location = new System.Drawing.Point(0, 0);
-            this.frmPrikazIgraca1.Name = "frmPrikazIgraca1";
-            this.frmPrikazIgraca1.Size = new System.Drawing.Size(622, 403);
-            this.frmPrikazIgraca1.TabIndex = 2;
             // 
             // tabTreneri
             // 
@@ -266,13 +256,6 @@ namespace eBordo.WinUI.Forms.Igrač
             this.tabTreneri.Text = "Treneri";
             this.tabTreneri.UseVisualStyleBackColor = true;
             // 
-            // frmPrikazTrenera1
-            // 
-            this.frmPrikazTrenera1.Location = new System.Drawing.Point(0, 0);
-            this.frmPrikazTrenera1.Name = "frmPrikazTrenera1";
-            this.frmPrikazTrenera1.Size = new System.Drawing.Size(622, 403);
-            this.frmPrikazTrenera1.TabIndex = 0;
-            // 
             // tabRasporedUtakmica
             // 
             this.tabRasporedUtakmica.Controls.Add(this.frmPrikazRasporedaUtakmicacs1);
@@ -283,13 +266,6 @@ namespace eBordo.WinUI.Forms.Igrač
             this.tabRasporedUtakmica.TabIndex = 3;
             this.tabRasporedUtakmica.Text = "Raspored utakmica";
             this.tabRasporedUtakmica.UseVisualStyleBackColor = true;
-            // 
-            // frmPrikazRasporedaUtakmicacs1
-            // 
-            this.frmPrikazRasporedaUtakmicacs1.Location = new System.Drawing.Point(0, 0);
-            this.frmPrikazRasporedaUtakmicacs1.Name = "frmPrikazRasporedaUtakmicacs1";
-            this.frmPrikazRasporedaUtakmicacs1.Size = new System.Drawing.Size(622, 403);
-            this.frmPrikazRasporedaUtakmicacs1.TabIndex = 0;
             // 
             // tabOdigraneUtakmice
             // 
@@ -302,13 +278,6 @@ namespace eBordo.WinUI.Forms.Igrač
             this.tabOdigraneUtakmice.Text = "Odigrane utakmice";
             this.tabOdigraneUtakmice.UseVisualStyleBackColor = true;
             // 
-            // frmPrikazOdigranihUtakmica1
-            // 
-            this.frmPrikazOdigranihUtakmica1.Location = new System.Drawing.Point(0, 0);
-            this.frmPrikazOdigranihUtakmica1.Name = "frmPrikazOdigranihUtakmica1";
-            this.frmPrikazOdigranihUtakmica1.Size = new System.Drawing.Size(622, 403);
-            this.frmPrikazOdigranihUtakmica1.TabIndex = 0;
-            // 
             // tabRasporedTreninga
             // 
             this.tabRasporedTreninga.Controls.Add(this.frmPrikazTreninga1);
@@ -319,13 +288,6 @@ namespace eBordo.WinUI.Forms.Igrač
             this.tabRasporedTreninga.TabIndex = 5;
             this.tabRasporedTreninga.Text = "Raspored treninga";
             this.tabRasporedTreninga.UseVisualStyleBackColor = true;
-            // 
-            // frmPrikazTreninga1
-            // 
-            this.frmPrikazTreninga1.Location = new System.Drawing.Point(0, 0);
-            this.frmPrikazTreninga1.Name = "frmPrikazTreninga1";
-            this.frmPrikazTreninga1.Size = new System.Drawing.Size(622, 403);
-            this.frmPrikazTreninga1.TabIndex = 0;
             // 
             // tabTabele
             // 
@@ -338,13 +300,6 @@ namespace eBordo.WinUI.Forms.Igrač
             this.tabTabele.Text = "Tabele";
             this.tabTabele.UseVisualStyleBackColor = true;
             // 
-            // frmTabelePocetna1
-            // 
-            this.frmTabelePocetna1.Location = new System.Drawing.Point(0, 0);
-            this.frmTabelePocetna1.Name = "frmTabelePocetna1";
-            this.frmTabelePocetna1.Size = new System.Drawing.Size(622, 403);
-            this.frmTabelePocetna1.TabIndex = 0;
-            // 
             // pnlMeni
             // 
             this.pnlMeni.BackgroundColor = System.Drawing.Color.Transparent;
@@ -353,6 +308,7 @@ namespace eBordo.WinUI.Forms.Igrač
             this.pnlMeni.BorderColor = System.Drawing.Color.Transparent;
             this.pnlMeni.BorderRadius = 3;
             this.pnlMeni.BorderThickness = 1;
+            this.pnlMeni.Controls.Add(this.pictureBox2);
             this.pnlMeni.Controls.Add(this.bunifuLabel1);
             this.pnlMeni.Controls.Add(this.controlIsAktivan);
             this.pnlMeni.Controls.Add(this.gifLoader);
@@ -385,6 +341,18 @@ namespace eBordo.WinUI.Forms.Igrač
             this.pnlMeni.ShowBorders = true;
             this.pnlMeni.Size = new System.Drawing.Size(209, 477);
             this.pnlMeni.TabIndex = 0;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.LightGray;
+            this.pictureBox2.BackgroundImage = global::eBordo.WinUI.Properties.Resources.giphy;
+            this.pictureBox2.Image = global::eBordo.WinUI.Properties.Resources.giphy1;
+            this.pictureBox2.Location = new System.Drawing.Point(152, 447);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(89, 33);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 371;
+            this.pictureBox2.TabStop = false;
             // 
             // bunifuLabel1
             // 
@@ -1358,6 +1326,7 @@ namespace eBordo.WinUI.Forms.Igrač
             this.gornjiPanel.BorderColor = System.Drawing.Color.Transparent;
             this.gornjiPanel.BorderRadius = 3;
             this.gornjiPanel.BorderThickness = 1;
+            this.gornjiPanel.Controls.Add(this.pictureBox1);
             this.gornjiPanel.Controls.Add(this.pnlGrb);
             this.gornjiPanel.Controls.Add(this.lblNaziv);
             this.gornjiPanel.Controls.Add(this.pngLogout);
@@ -1367,6 +1336,18 @@ namespace eBordo.WinUI.Forms.Igrač
             this.gornjiPanel.ShowBorders = true;
             this.gornjiPanel.Size = new System.Drawing.Size(635, 50);
             this.gornjiPanel.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::eBordo.WinUI.Properties.Resources.giphy;
+            this.pictureBox1.Image = global::eBordo.WinUI.Properties.Resources.giphy;
+            this.pictureBox1.Location = new System.Drawing.Point(342, 14);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(51, 22);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 326;
+            this.pictureBox1.TabStop = false;
             // 
             // pnlGrb
             // 
@@ -1422,6 +1403,55 @@ namespace eBordo.WinUI.Forms.Igrač
             this.lblLogout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblLogout.Click += new System.EventHandler(this.lblLogout_Click);
             // 
+            // frmPočetna1
+            // 
+            this.frmPočetna1.Location = new System.Drawing.Point(0, 0);
+            this.frmPočetna1.Name = "frmPočetna1";
+            this.frmPočetna1.Size = new System.Drawing.Size(622, 403);
+            this.frmPočetna1.TabIndex = 0;
+            // 
+            // frmPrikazIgraca1
+            // 
+            this.frmPrikazIgraca1.Location = new System.Drawing.Point(0, 0);
+            this.frmPrikazIgraca1.Name = "frmPrikazIgraca1";
+            this.frmPrikazIgraca1.Size = new System.Drawing.Size(622, 403);
+            this.frmPrikazIgraca1.TabIndex = 2;
+            // 
+            // frmPrikazTrenera1
+            // 
+            this.frmPrikazTrenera1.Location = new System.Drawing.Point(0, 0);
+            this.frmPrikazTrenera1.Name = "frmPrikazTrenera1";
+            this.frmPrikazTrenera1.Size = new System.Drawing.Size(622, 403);
+            this.frmPrikazTrenera1.TabIndex = 0;
+            // 
+            // frmPrikazRasporedaUtakmicacs1
+            // 
+            this.frmPrikazRasporedaUtakmicacs1.Location = new System.Drawing.Point(0, 0);
+            this.frmPrikazRasporedaUtakmicacs1.Name = "frmPrikazRasporedaUtakmicacs1";
+            this.frmPrikazRasporedaUtakmicacs1.Size = new System.Drawing.Size(622, 403);
+            this.frmPrikazRasporedaUtakmicacs1.TabIndex = 0;
+            // 
+            // frmPrikazOdigranihUtakmica1
+            // 
+            this.frmPrikazOdigranihUtakmica1.Location = new System.Drawing.Point(0, 0);
+            this.frmPrikazOdigranihUtakmica1.Name = "frmPrikazOdigranihUtakmica1";
+            this.frmPrikazOdigranihUtakmica1.Size = new System.Drawing.Size(622, 403);
+            this.frmPrikazOdigranihUtakmica1.TabIndex = 0;
+            // 
+            // frmPrikazTreninga1
+            // 
+            this.frmPrikazTreninga1.Location = new System.Drawing.Point(0, 0);
+            this.frmPrikazTreninga1.Name = "frmPrikazTreninga1";
+            this.frmPrikazTreninga1.Size = new System.Drawing.Size(622, 403);
+            this.frmPrikazTreninga1.TabIndex = 0;
+            // 
+            // frmTabelePocetna1
+            // 
+            this.frmTabelePocetna1.Location = new System.Drawing.Point(0, 0);
+            this.frmTabelePocetna1.Name = "frmTabelePocetna1";
+            this.frmTabelePocetna1.Size = new System.Drawing.Size(622, 403);
+            this.frmTabelePocetna1.TabIndex = 0;
+            // 
             // fromAdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1446,6 +1476,7 @@ namespace eBordo.WinUI.Forms.Igrač
             this.tabTabele.ResumeLayout(false);
             this.pnlMeni.ResumeLayout(false);
             this.pnlMeni.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gifLoader)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox6)).EndInit();
@@ -1456,6 +1487,7 @@ namespace eBordo.WinUI.Forms.Igrač
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.korisnickaFotografija)).EndInit();
             this.gornjiPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pngLogout)).EndInit();
             this.ResumeLayout(false);
 
@@ -1511,5 +1543,7 @@ namespace eBordo.WinUI.Forms.Igrač
         private System.Windows.Forms.PictureBox gifLoader;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
         private Bunifu.UI.WinForms.BunifuLabel controlIsAktivan;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

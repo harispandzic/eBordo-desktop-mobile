@@ -34,7 +34,8 @@ namespace eBordo.WinUI.Forms.AdminPanel
             isTelefonValidated, isEmailValidated = false, isTezinaValidated = false, isVisinaValidated = false,
             isBrojDresaValidated = false, isTrzisnaVrijednostValidated = false,
             isSlikaAvatarValidated = false, isSlikaPanelValidated = false,
-            isDatumRodjenjaValidated = false, isDatumPotpisaValidated = false, isDatumZavrsetkaValidated = false;
+            isDatumRodjenjaValidated = false, isDatumPotpisaValidated = false, isDatumZavrsetkaValidated = false,
+            isDrzavljanstvoValidated = false, isGradRodjenjaValidated = false, isPozicijaValidated = false;
 
         public frmUpsertIgraca(Model.Models.Igrac odabraniIgrac = null, frmPrikazIgraca prikazIgraca = null)
         {
@@ -324,9 +325,11 @@ namespace eBordo.WinUI.Forms.AdminPanel
                 await _prikazIgraca.LoadIgraci(notifikacija: TipNotifikacije.DODAVANJE);
                 this.Hide();
             }
-            catch
+            catch (Flurl.Http.FlurlHttpException ex)
             {
-                PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.GREŠKA_NA_SERVERU);
+                var message = await ex.GetResponseStringAsync();
+                TipNotifikacije tipNotifikacije = Exceptions.getException((message));
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, tipNotifikacije);
             }
         }
 
@@ -372,18 +375,13 @@ namespace eBordo.WinUI.Forms.AdminPanel
             try
             {
                 await _igrac.Update<Model.Models.Igrac>(_odabraniIgrac.igracId, updateRequest);
-            }
-            catch
-            {
-                PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.GREŠKA_NA_SERVERU);
-            }
-            try
-            {
                 await _prikazIgraca.LoadIgraci(notifikacija: TipNotifikacije.UREĐIVANJE);
             }
-            catch
+            catch (Flurl.Http.FlurlHttpException ex)
             {
-                PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.GREŠKA_NA_SERVERU);
+                var message = await ex.GetResponseStringAsync();
+                TipNotifikacije tipNotifikacije = Exceptions.getException((message));
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, tipNotifikacije);
             }
         }
         private bool ValidirajFormu()
@@ -393,7 +391,9 @@ namespace eBordo.WinUI.Forms.AdminPanel
                 !isTelefonValidated || !isEmailValidated || !isTezinaValidated || 
                 !isVisinaValidated || !isBrojDresaValidated || !isTrzisnaVrijednostValidated || 
                 !isDatumRodjenjaValidated || !isDatumPotpisaValidated || !isDatumZavrsetkaValidated ||
-                !isSlikaAvatarValidated || !isSlikaPanelValidated)
+                !isSlikaAvatarValidated || !isSlikaPanelValidated || !isDrzavljanstvoValidated || 
+                !isGradRodjenjaValidated || !isPozicijaValidated
+         )
             {
                 isUspjesno = false;
             }
@@ -421,6 +421,22 @@ namespace eBordo.WinUI.Forms.AdminPanel
         private void switchIsAktivan_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuToggleSwitch.CheckedChangedEventArgs e)
         {
 
+        }
+
+        private void cmbDrzavljanstvo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            isDrzavljanstvoValidated = Validacija.ValidirajDropDown(cmbDrzavljanstvo, "Državljanstvo", txtDrzavljanstvoValidator, pictureDrzavljanstvoSlikaValidator);
+
+        }
+
+        private void cmbGradRodjenja_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            isGradRodjenjaValidated = Validacija.ValidirajDropDown(cmbGradRodjenja, "Grad rođenja", txtGradValidator, pictureGradSlikaValidator);
+        }
+
+        private void cmbPozicija_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            isPozicijaValidated = Validacija.ValidirajDropDown(cmbPozicija, "Pozicija", txtPozicijaValidator, picturePozicijaSlikaValidator);
         }
 
         private void dtpDatumZavrsetkaUgovora_ValueChanged(object sender, EventArgs e)

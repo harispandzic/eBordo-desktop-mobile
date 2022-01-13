@@ -437,6 +437,28 @@ namespace eBordo.WinUI.Helper
             }
             return isValidiran;
         }
+        public static bool ValidirajDropDown(BunifuDropdown dropDown, string defaultText, BunifuLabel labelValidator, PictureBox pictureValidator)
+        {
+            bool isValidiran = true;
+            
+            if(dropDown.SelectedText == defaultText)
+            {
+                isValidiran = false;
+                pictureValidator.BackgroundImage = Properties.Resources.eBordo_required3;
+                pictureValidator.BackgroundImageLayout = ImageLayout.Zoom;
+                labelValidator.Text = "Polje je obavezno!";
+            }
+
+            if (isValidiran)
+            {
+                pictureValidator.BackgroundImage = Properties.Resources.eBordo_success_notification;
+                pictureValidator.BackgroundImageLayout = ImageLayout.Zoom;
+                labelValidator.Text = "";
+                isValidiran = true;
+            }
+
+            return isValidiran;
+        }
         private static bool isUcitanaSlika(Image image, PictureBox pictureValidator)
         {
             bool flag = false;
@@ -744,8 +766,10 @@ namespace eBordo.WinUI.Helper
         private static bool ValidirajSatnicu(BunifuTextBox kontrola, BunifuLabel label = null)
         {
             bool flag = false;
-            if (kontrola.Text.Length != 5 || (!char.IsDigit(kontrola.Text[0]) || Int32.Parse(kontrola.Text[0].ToString()) > 2) ||
-                (!char.IsDigit(kontrola.Text[1]) || Int32.Parse(kontrola.Text[1].ToString()) > 3) ||
+            if (kontrola.Text.Length != 5 || 
+                (!char.IsDigit(kontrola.Text[0]) || Int32.Parse(kontrola.Text[0].ToString()) > 2) ||
+                (!char.IsDigit(kontrola.Text[1]) || (Int32.Parse(kontrola.Text[0].ToString()) == 1 && Int32.Parse(kontrola.Text[1].ToString()) > 9)) ||
+                (!char.IsDigit(kontrola.Text[1]) || (Int32.Parse(kontrola.Text[0].ToString()) == 2 && Int32.Parse(kontrola.Text[1].ToString()) > 3)) ||
                 kontrola.Text[2].ToString() != ":" ||
                 (!char.IsDigit(kontrola.Text[3]) || Int32.Parse(kontrola.Text[3].ToString()) > 5) ||
                 (!char.IsDigit(kontrola.Text[4]) || Int32.Parse(kontrola.Text[4].ToString()) > 9))

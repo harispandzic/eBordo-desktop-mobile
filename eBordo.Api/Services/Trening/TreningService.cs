@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using eBordo.Api.Database;
+using eBordo.Model.Exceptions;
 using eBordo.Model.Requests.Trening;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -53,6 +54,20 @@ namespace eBordo.Api.Services.Trening
         }
         public override Model.Models.Trening Insert(TreningInsertRequest request)
         {
+            foreach (var item in _db.utakmice)
+            {
+                if (item.datumOdigravanja.Date == request.datumOdrzavanja.Date)
+                {
+                    throw new UserException("Odabrani datum je zauzet. Vec je evidentirana utakmica!");
+                }
+            }
+            foreach (var item in _db.trening)
+            {
+                if (item.datumOdrzavanja.Date == request.datumOdrzavanja.Date)
+                {
+                    throw new UserException("Odabrani datum je zauzet. Vec je evidentiran trening!");
+                }
+            }
             Database.Trening trening = new Database.Trening
             {
                 datumOdrzavanja = request.datumOdrzavanja,
@@ -71,6 +86,20 @@ namespace eBordo.Api.Services.Trening
         }
         public override Model.Models.Trening Update(int id, TreningUpdateRequest request)
         {
+            foreach (var item in _db.utakmice)
+            {
+                if (item.datumOdigravanja.Date == request.datumOdrzavanja.Date)
+                {
+                    throw new UserException("Odabrani datum je zauzet. Vec je evidentirana utakmica!");
+                }
+            }
+            foreach (var item in _db.trening)
+            {
+                if (item.datumOdrzavanja.Date == request.datumOdrzavanja.Date)
+                {
+                    throw new UserException("Odabrani datum je zauzet. Vec je evidentiran trening!");
+                }
+            }
             Database.Trening trening = _db.trening.Where(s => s.treningID == id).SingleOrDefault();
 
             trening.datumOdrzavanja = request.datumOdrzavanja;

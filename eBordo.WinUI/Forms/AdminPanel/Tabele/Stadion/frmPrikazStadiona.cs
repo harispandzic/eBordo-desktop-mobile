@@ -180,9 +180,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Stadion
                 txtNazivKluba.Text = "";
                 cmbGrad.SelectedIndex = 0;
             }
-            catch
+            catch (Flurl.Http.FlurlHttpException ex)
             {
-                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
+                var message = await ex.GetResponseStringAsync();
+                TipNotifikacije tipNotifikacije = Exceptions.getException((message));
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, tipNotifikacije);
             }
         }
 
@@ -203,15 +205,49 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Stadion
                 await LoadStadioni(notifikacija: TipNotifikacije.UREĐIVANJE);
                 OcistiPolja();
             }
-            catch
+            catch (Flurl.Http.FlurlHttpException ex)
             {
-                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
+                var message = await ex.GetResponseStringAsync();
+                TipNotifikacije tipNotifikacije = Exceptions.getException((message));
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, tipNotifikacije);
             }
         }
 
         private void btnOdustani_Click(object sender, EventArgs e)
         {
             OcistiPolja();
+        }
+
+        private void btnUcitajPanelPhoto_Click(object sender, EventArgs e)
+        {
+            var result = grbFileDialog.ShowDialog();
+            try
+            {
+
+                if (result == DialogResult.OK)
+                {
+                    var fileName = grbFileDialog.FileName;
+
+                    var file = System.IO.File.ReadAllBytes(fileName);
+
+                    slikaStadiona = file;
+
+                    Image image = Image.FromFile(fileName);
+                    pictureBox2.BackgroundImageLayout = ImageLayout.Zoom;
+                    pictureBox2.BackgroundImage = image;
+
+                    isSlikaValidated = Validacija.ValidirajSliku(image, pictureSlikaUtakmicaValidator, Field.SLIKA_AVATAR);
+                }
+            }
+            catch
+            {
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GRESKA_UPLOAD);
+            }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
         }
 
         public void filterStadioni(int stadionId)

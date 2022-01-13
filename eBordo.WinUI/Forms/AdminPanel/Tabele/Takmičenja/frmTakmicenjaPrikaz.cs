@@ -112,9 +112,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Takmičenja
                 pictureLogo.BackgroundImageLayout = ImageLayout.Zoom;
                 txtNazivTakmicenja.Text = "";
             }
-            catch
+            catch (Flurl.Http.FlurlHttpException ex)
             {
-                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
+                var message = await ex.GetResponseStringAsync();
+                TipNotifikacije tipNotifikacije = Exceptions.getException((message));
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, tipNotifikacije);
             }
         }
 
@@ -180,9 +182,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Takmičenja
                 await LoadTakmicenja(notifikacija: TipNotifikacije.UREĐIVANJE);
                 OcistiPolja();
             }
-            catch
+            catch (Flurl.Http.FlurlHttpException ex)
             {
-                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
+                var message = await ex.GetResponseStringAsync();
+                TipNotifikacije tipNotifikacije = Exceptions.getException((message));
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, tipNotifikacije);
             }
         }
 

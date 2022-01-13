@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using eBordo.Api.Database;
 using eBordo.Api.Services.BaseCRUDService;
+using eBordo.Model.Exceptions;
 using eBordo.Model.Requests.Drzava;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,13 @@ namespace eBordo.Api.Services.Drzava
 
         public override Model.Models.Drzava Insert(DrzavaInsertRequest request)
         {
+            foreach (var item in _db.drzave)
+            {
+                if (item.nazivDrzave.StartsWith(request.nazivDrzave))
+                {
+                    throw new UserException("Drzava postoji u bazi podataka!");
+                }
+            }
             Database.Drzava drzava = new Database.Drzava
             {
                 nazivDrzave = request.nazivDrzave,
@@ -28,6 +36,13 @@ namespace eBordo.Api.Services.Drzava
         }
         public override Model.Models.Drzava Update(int id, DrzavaUpdateRequest request)
         {
+            foreach (var item in _db.drzave)
+            {
+                if (item.nazivDrzave.StartsWith(request.nazivDrzave))
+                {
+                    throw new UserException("Drzava postoji u bazi podataka!");
+                }
+            }
             var entity = _db.drzave.Where(s => s.drzavaId == id).SingleOrDefault();
 
             entity.nazivDrzave = request.nazivDrzave;

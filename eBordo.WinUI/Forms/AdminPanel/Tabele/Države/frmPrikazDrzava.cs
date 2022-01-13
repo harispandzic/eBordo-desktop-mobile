@@ -151,9 +151,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Države
                 pictureZastava.BackgroundImageLayout = ImageLayout.Zoom;
                 txtNazivDrzave.Text = "";
             }
-            catch
+            catch (Flurl.Http.FlurlHttpException ex)
             {
-                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
+                var message = await ex.GetResponseStringAsync();
+                TipNotifikacije tipNotifikacije = Exceptions.getException((message));
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, tipNotifikacije);
             }
         }
         public void filterStadioni(int drzavaId)
@@ -187,9 +189,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Države
                 await LoadDrzave(notifikacija: TipNotifikacije.UREĐIVANJE);
                 OcistiPolja();
             }
-            catch
+            catch (Flurl.Http.FlurlHttpException ex)
             {
-                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
+                var message = await ex.GetResponseStringAsync();
+                TipNotifikacije tipNotifikacije = Exceptions.getException((message));
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, tipNotifikacije);
             }
         }
 

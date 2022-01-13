@@ -460,9 +460,8 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Države
             this.txtTelefonValidator.Location = new System.Drawing.Point(7, 81);
             this.txtTelefonValidator.Name = "txtTelefonValidator";
             this.txtTelefonValidator.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtTelefonValidator.Size = new System.Drawing.Size(30, 12);
+            this.txtTelefonValidator.Size = new System.Drawing.Size(0, 0);
             this.txtTelefonValidator.TabIndex = 359;
-            this.txtTelefonValidator.Text = "Validator";
             this.txtTelefonValidator.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.txtTelefonValidator.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
