@@ -31,10 +31,13 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOdaberiUtakmicu));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.cmbUtakmica = new Bunifu.UI.WinForms.BunifuDropdown();
             this.snackbar = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
             this.btnSaveIgracSastav = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.pictureOdaberiUtakmicuValidator = new System.Windows.Forms.PictureBox();
+            this.txtOdaberiUtakmicuValidator = new Bunifu.UI.WinForms.BunifuLabel();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureOdaberiUtakmicuValidator)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbUtakmica
@@ -80,6 +83,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             this.cmbUtakmica.Text = "Utakmica";
             this.cmbUtakmica.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbUtakmica.TextLeftMargin = 5;
+            this.cmbUtakmica.SelectedIndexChanged += new System.EventHandler(this.cmbUtakmica_SelectedIndexChanged);
             // 
             // snackbar
             // 
@@ -170,11 +174,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             this.btnSaveIgracSastav.ColorContrastOnClick = 45;
             this.btnSaveIgracSastav.ColorContrastOnHover = 45;
             this.btnSaveIgracSastav.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.btnSaveIgracSastav.CustomizableEdges = borderEdges2;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btnSaveIgracSastav.CustomizableEdges = borderEdges1;
             this.btnSaveIgracSastav.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnSaveIgracSastav.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnSaveIgracSastav.DisabledFillColor = System.Drawing.Color.Empty;
@@ -243,11 +247,38 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             this.btnSaveIgracSastav.UseDefaultRadiusAndThickness = true;
             this.btnSaveIgracSastav.Click += new System.EventHandler(this.btnSaveIgracSastav_Click);
             // 
+            // pictureOdaberiUtakmicuValidator
+            // 
+            this.pictureOdaberiUtakmicuValidator.BackgroundImage = global::eBordo.WinUI.Properties.Resources.eBordo_required3;
+            this.pictureOdaberiUtakmicuValidator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureOdaberiUtakmicuValidator.Location = new System.Drawing.Point(270, 23);
+            this.pictureOdaberiUtakmicuValidator.Name = "pictureOdaberiUtakmicuValidator";
+            this.pictureOdaberiUtakmicuValidator.Size = new System.Drawing.Size(10, 10);
+            this.pictureOdaberiUtakmicuValidator.TabIndex = 382;
+            this.pictureOdaberiUtakmicuValidator.TabStop = false;
+            // 
+            // txtOdaberiUtakmicuValidator
+            // 
+            this.txtOdaberiUtakmicuValidator.AllowParentOverrides = false;
+            this.txtOdaberiUtakmicuValidator.AutoEllipsis = false;
+            this.txtOdaberiUtakmicuValidator.CursorType = null;
+            this.txtOdaberiUtakmicuValidator.Font = new System.Drawing.Font("Oswald", 6F);
+            this.txtOdaberiUtakmicuValidator.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.txtOdaberiUtakmicuValidator.Location = new System.Drawing.Point(12, 44);
+            this.txtOdaberiUtakmicuValidator.Name = "txtOdaberiUtakmicuValidator";
+            this.txtOdaberiUtakmicuValidator.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtOdaberiUtakmicuValidator.Size = new System.Drawing.Size(0, 0);
+            this.txtOdaberiUtakmicuValidator.TabIndex = 384;
+            this.txtOdaberiUtakmicuValidator.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.txtOdaberiUtakmicuValidator.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
             // frmOdaberiUtakmicu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(299, 95);
+            this.Controls.Add(this.txtOdaberiUtakmicuValidator);
+            this.Controls.Add(this.pictureOdaberiUtakmicuValidator);
             this.Controls.Add(this.btnSaveIgracSastav);
             this.Controls.Add(this.cmbUtakmica);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -255,7 +286,9 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "eBordo | Kreiraj izvještaj";
             this.Load += new System.EventHandler(this.frmOdaberiUtakmicu_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureOdaberiUtakmicuValidator)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -264,5 +297,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
         private Bunifu.UI.WinForms.BunifuDropdown cmbUtakmica;
         private Bunifu.UI.WinForms.BunifuSnackbar snackbar;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSaveIgracSastav;
+        private System.Windows.Forms.PictureBox pictureOdaberiUtakmicuValidator;
+        private Bunifu.UI.WinForms.BunifuLabel txtOdaberiUtakmicuValidator;
     }
 }

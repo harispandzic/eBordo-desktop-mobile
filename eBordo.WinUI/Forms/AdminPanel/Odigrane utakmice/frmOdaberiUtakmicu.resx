@@ -196,6 +196,9 @@
         H0b/6VNne0eLIL5XmTzPm+OMibGW5D8a5fMTW5ODsCxB5AtJZ1BowLXfiQAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="txtOdaberiUtakmicuValidator.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Oswald'; font-size: 6pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(64, 5, 7); text-align: left; }</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAUAAAAAAAEAIABdrgAAVgAAADAwAAABACAAqCUAALOuAAAgIAAAAQAgAKgQAABb1AAAGBgAAAEA

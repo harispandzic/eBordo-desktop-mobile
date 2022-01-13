@@ -140,10 +140,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Klubovi
 
         private void cmbStadion_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbStadion.SelectedText != "Stadion")
-            {
-                isStadionValidated = true;
-            }
+            isStadionValidated = Validacija.ValidirajDropDown(cmbStadion, "Stadion", txtStadionValidator, pictureStadionValidator);
         }
 
         private void txtNazivKluba_TextChanged(object sender, EventArgs e)
@@ -178,10 +175,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Klubovi
 
         private void cmbGrad_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cmbGrad.SelectedText != "Grad")
-            {
-                isGradValidated = true;
-            }
+            isGradValidated = Validacija.ValidirajDropDown(cmbGrad, "Grad", txtGradValidator, pictureGradValidator);
         }
 
         private void btnUcitajPanelPhoto_Click(object sender, EventArgs e)

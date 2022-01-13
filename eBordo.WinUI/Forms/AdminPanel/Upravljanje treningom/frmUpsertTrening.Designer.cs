@@ -68,7 +68,10 @@ namespace eBordo.WinUI.Forms.AdminPanel.Upravljanje_treningom
             this.lblOdradjen = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel9 = new Bunifu.UI.WinForms.BunifuLabel();
             this.pictureDatumOdigravanjaValidator = new System.Windows.Forms.PictureBox();
+            this.pictureLokacijaTreningaValidator = new System.Windows.Forms.PictureBox();
+            this.txtLokacijaTreningaValidator = new Bunifu.UI.WinForms.BunifuLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureDatumOdigravanjaValidator)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureLokacijaTreningaValidator)).BeginInit();
             this.SuspendLayout();
             // 
             // dtpDatumTreninga
@@ -269,6 +272,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Upravljanje_treningom
             this.cmbLokacijaTreninga.Text = "Lokacija treninga";
             this.cmbLokacijaTreninga.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbLokacijaTreninga.TextLeftMargin = 5;
+            this.cmbLokacijaTreninga.SelectedIndexChanged += new System.EventHandler(this.cmbLokacijaTreninga_SelectedIndexChanged_1);
             // 
             // txtFokusTreninga
             // 
@@ -836,11 +840,38 @@ namespace eBordo.WinUI.Forms.AdminPanel.Upravljanje_treningom
             this.pictureDatumOdigravanjaValidator.TabIndex = 368;
             this.pictureDatumOdigravanjaValidator.TabStop = false;
             // 
+            // pictureLokacijaTreningaValidator
+            // 
+            this.pictureLokacijaTreningaValidator.BackgroundImage = global::eBordo.WinUI.Properties.Resources.eBordo_required3;
+            this.pictureLokacijaTreningaValidator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureLokacijaTreningaValidator.Location = new System.Drawing.Point(140, 101);
+            this.pictureLokacijaTreningaValidator.Name = "pictureLokacijaTreningaValidator";
+            this.pictureLokacijaTreningaValidator.Size = new System.Drawing.Size(10, 10);
+            this.pictureLokacijaTreningaValidator.TabIndex = 382;
+            this.pictureLokacijaTreningaValidator.TabStop = false;
+            // 
+            // txtLokacijaTreningaValidator
+            // 
+            this.txtLokacijaTreningaValidator.AllowParentOverrides = false;
+            this.txtLokacijaTreningaValidator.AutoEllipsis = false;
+            this.txtLokacijaTreningaValidator.CursorType = null;
+            this.txtLokacijaTreningaValidator.Font = new System.Drawing.Font("Oswald", 6F);
+            this.txtLokacijaTreningaValidator.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.txtLokacijaTreningaValidator.Location = new System.Drawing.Point(10, 121);
+            this.txtLokacijaTreningaValidator.Name = "txtLokacijaTreningaValidator";
+            this.txtLokacijaTreningaValidator.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtLokacijaTreningaValidator.Size = new System.Drawing.Size(0, 0);
+            this.txtLokacijaTreningaValidator.TabIndex = 383;
+            this.txtLokacijaTreningaValidator.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.txtLokacijaTreningaValidator.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
             // frmUpsertTrening
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(316, 251);
+            this.Controls.Add(this.txtLokacijaTreningaValidator);
+            this.Controls.Add(this.pictureLokacijaTreningaValidator);
             this.Controls.Add(this.pictureDatumOdigravanjaValidator);
             this.Controls.Add(this.bunifuLabel9);
             this.Controls.Add(this.lblOdradjen);
@@ -866,6 +897,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Upravljanje_treningom
             this.Text = "frmUpsertTrening";
             this.Load += new System.EventHandler(this.frmUpsertTrening_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureDatumOdigravanjaValidator)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureLokacijaTreningaValidator)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -892,5 +924,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Upravljanje_treningom
         private Bunifu.UI.WinForms.BunifuLabel lblOdradjen;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel9;
         private System.Windows.Forms.PictureBox pictureDatumOdigravanjaValidator;
+        private System.Windows.Forms.PictureBox pictureLokacijaTreningaValidator;
+        private Bunifu.UI.WinForms.BunifuLabel txtLokacijaTreningaValidator;
     }
 }

@@ -249,4 +249,7 @@
         WvsHaegUyKgzBT4/3A2EvHWo6gAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="txtGradValidator.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Oswald'; font-size: 6pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(64, 5, 7); text-align: left; }</value>
+  </data>
 </root>

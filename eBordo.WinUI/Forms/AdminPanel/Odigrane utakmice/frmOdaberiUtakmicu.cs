@@ -18,6 +18,8 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
         private List<Model.Models.Utakmica> _utakmice;
         frmPrikazOdigranihUtakmica _prikazUtakmica;
 
+        bool isOdaberiUtakmicaValidated = false;
+
         public frmOdaberiUtakmicu(frmPrikazOdigranihUtakmica prikazUtakmica)
         {
             InitializeComponent();
@@ -75,7 +77,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
 
         private void btnSaveIgracSastav_Click(object sender, EventArgs e)
         {
-            if(_utakmice.Count() == 0)
+            if(!isOdaberiUtakmicaValidated)
             {
                 PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.BEZ_UTAKMICA);
                 return;
@@ -83,6 +85,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             frmUpsertIzvjestaj insert = new frmUpsertIzvjestaj(_utakmice[cmbUtakmica.SelectedIndex].utakmicaId, _prikazUtakmica, null);
             this.Hide();
             insert.Show();
+        }
+
+        private void cmbUtakmica_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            isOdaberiUtakmicaValidated = Validacija.ValidirajDropDown(cmbUtakmica, "Utakmica", txtOdaberiUtakmicuValidator, pictureOdaberiUtakmicuValidator);
         }
     }
 }

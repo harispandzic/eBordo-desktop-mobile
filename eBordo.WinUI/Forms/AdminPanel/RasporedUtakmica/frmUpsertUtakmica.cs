@@ -323,6 +323,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
+            if(!isIgracSastavValidated || !isIgracPozicijaValidated)
+            {
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.FORMA_VALIDACIJA);
+                return;
+            }
             btnSaveIgracSastav.Text = "DODAJ";  
             frmPozvaniIgracKartica pozvaniIgrac;
             int igracId = _ostaliIgraci[cmbIgraciSastav.SelectedIndex].igracId;
@@ -617,7 +622,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             if (!isOpisUtakmiceValidated || !isDatumOdigravanjaValidated || !isSatnicaValidated ||
                 !isSudijaValidated || flowPanelPrvaPostava.Controls.Count < 5 || flowPanelKlupa.Controls.Count < 4 ||
                 !isProtivnikValidated || !isVRstaUtakmiceValidated || !isTakmicenjeValidated || !isStadionValidated ||
-                !isKapitenValidated || !isIgracSastavValidated || !isIgracPozicijaValidated)
+                !isKapitenValidated)
 
             {
                 isUspjesno = false;

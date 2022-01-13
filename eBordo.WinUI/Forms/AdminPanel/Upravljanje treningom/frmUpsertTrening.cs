@@ -21,7 +21,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Upravljanje_treningom
         private Model.Models.Trening _odabraniTrening;
 
         bool isFokusTreningaValidated = false, isDatumTreningaValidated = false, isSatnicaValidated = false,
-            isTrajanjeValidated = false;
+            isTrajanjeValidated = false, isLokacijaValidated = false;
 
         public frmUpsertTrening(frmPrikazTreninga prikazTreninga, Model.Models.Trening odabraniTrening)
         {
@@ -95,11 +95,16 @@ namespace eBordo.WinUI.Forms.AdminPanel.Upravljanje_treningom
             isTrajanjeValidated = Validacija.ValidirajInputString(txtTrajanjeTreninga, txtTrajanjeValidator, Field.TRAJANJE_TRENERA);
         }
 
+        private void cmbLokacijaTreninga_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            isLokacijaValidated = Validacija.ValidirajDropDown(cmbLokacijaTreninga, "Lokacija treninga", txtLokacijaTreningaValidator, pictureLokacijaTreningaValidator);
+        }
+
         private bool ValidirajFormu()
         {
             bool isUspjesno = true;
             if (!isFokusTreningaValidated || !isDatumTreningaValidated || !isSatnicaValidated ||
-                !isTrajanjeValidated)
+                !isTrajanjeValidated || !isLokacijaValidated)
             {
                 isUspjesno = false;
             }

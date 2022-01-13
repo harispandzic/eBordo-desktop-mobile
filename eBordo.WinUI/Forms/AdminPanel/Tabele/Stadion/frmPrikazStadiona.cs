@@ -147,10 +147,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Stadion
 
         private void cmbGrad_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbGrad.SelectedText != "Grad")
-            {
-                isGradValidated = true;
-            }
+            isGradValidated = Validacija.ValidirajDropDown(cmbGrad, "Grad", txtGradValidator, pictureGradValidator);
         }
 
         private void txtBrojIgraca_Click(object sender, EventArgs e)

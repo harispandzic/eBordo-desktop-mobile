@@ -39,7 +39,9 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
         private List<int> _pozvaniIgraci = new List<int>();
 
         bool isMinuteValidated = false, isGoloviValidated = false, isAsistencijeValidated = false,
-            isZutKartoniValidated = false, isCrveniKartoniValidated = false;
+            isZutKartoniValidated = false, isCrveniKartoniValidated = false, isIgracValidated = false,
+            isIgracUtakmiceValidated = false,isIgracOUTValidated = false,isIgracINValidated = false,isRazlogIzmjeneVAlidated;
+
 
         bool isMinutaIzmjenaValidirana = false;
 
@@ -403,7 +405,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
         {
             bool isUspjesno = true;
             if (!isMinuteValidated || !isGoloviValidated || !isAsistencijeValidated ||
-                !isZutKartoniValidated || !isCrveniKartoniValidated)
+                !isZutKartoniValidated || !isCrveniKartoniValidated || !isIgracValidated)
             {
                 isUspjesno = false;
             }
@@ -417,7 +419,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
         private bool ValidirajIzmjneu()
         {
             bool isUspjesno = true;
-            if (!isMinutaIzmjenaValidirana)
+            if (!isMinutaIzmjenaValidirana || !isIgracOUTValidated || !isIgracINValidated || !isRazlogIzmjeneVAlidated)
             {
                 isUspjesno = false;
             }
@@ -431,7 +433,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
         private bool ValidirajFormu()
         {
             bool isUspjesno = true;
-            if (!isSlikaUtakmiceValidated || !isGoloviGostValidated || !isGoloviDomacinValidated)
+            if (!isSlikaUtakmiceValidated || !isGoloviGostValidated || !isGoloviDomacinValidated || !isIgracUtakmiceValidated)
             {
                 isUspjesno = false;
             }
@@ -564,6 +566,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
         }
         private void cmbIgraciSastav_SelectedIndexChanged(object sender, EventArgs e)
         {
+            isIgracValidated = Validacija.ValidirajDropDown(cmbIgraciSastav, "Igrač", txtIgracOcjenaValidator, pictureIgracOcjenaValidator);
             Model.Models.Igrac igrac = _ostaliIgraci[cmbIgraciSastav.SelectedIndex];
             LoadDetaljiIgraca(igrac);
         }
@@ -719,6 +722,29 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
         private void txtGoloviDomacin_TextChanged(object sender, EventArgs e)
         {
             isGoloviDomacinValidated = Validacija.ValidirajOcjene(txtGoloviDomacin, Field.GOLOVI_DOMACIN);
+        }
+
+        private void cmbIgracUtakmice_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            isIgracUtakmiceValidated = Validacija.ValidirajDropDown(cmbIgracUtakmice, "Igrač utakmice", txtIgracUtakmiceValidator, pictureIgracUtakmiceValidator);
+        }
+
+        private void cmbIgracOut_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            isIgracOUTValidated = Validacija.ValidirajDropDown(cmbIgracOut, "Igrač OUT", txtIgracOutValidator, pictureIgracOutValidator);
+
+        }
+
+        private void cmbIgracIn_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            isIgracINValidated = Validacija.ValidirajDropDown(cmbIgracIn, "Igrač IN", txtIgracInValidator, pictureIgracInValidator);
+
+        }
+
+        private void cmbRazlogIzmjena_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            isRazlogIzmjeneVAlidated = Validacija.ValidirajDropDown(cmbRazlogIzmjena, "Razlog", txtRazlogValidator, pictureRazlogValidator);
+
         }
 
         private void pictureSlikaUtakmice_Click(object sender, EventArgs e)
