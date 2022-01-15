@@ -15,5 +15,6 @@ namespace eBordo.Api.Database
         public bool isOdradjen { get; set; }
         public Trener zabiljezio { get; set; }
         public int zabiljezioID { get; set; }
+        public int trajanje { get; set; }
     }
 }

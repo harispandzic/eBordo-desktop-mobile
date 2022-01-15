@@ -51,6 +51,14 @@ namespace eBordo.Api.Services.Igrac
             {
                 entity = entity.Where(s => s.pozicijaId == search.pozicijaId);
             }
+            if (search.isAktivan == false)
+            {
+                entity = entity.Where(s => !s.korisnik.isAktivan);
+            }
+            else
+            {
+                entity = entity.Where(s => s.korisnik.isAktivan);
+            }
             var result = entity.ToList();
 
             return _mapper.Map<List<Model.Models.Igrac>>(result);
@@ -177,13 +185,13 @@ namespace eBordo.Api.Services.Igrac
 
             var result = entity.FirstOrDefault();
 
-            _db.Remove(result);
-            _db.SaveChanges();
+            //_db.Remove(result);
+            //_db.SaveChanges();
 
             _korisnikService.Delete(result.korisnikId);
-            _statistikaService.Delete(result.igracStatistikaId);
-            _skillsService.Delete(result.igracSkillsId);
-            _ugovorService.Delete(result.ugovorId);
+            //_statistikaService.Delete(result.igracStatistikaId);
+            //_skillsService.Delete(result.igracSkillsId);
+            //_ugovorService.Delete(result.ugovorId);
 
             return _mapper.Map<eBordo.Model.Models.Igrac>(result);
         }

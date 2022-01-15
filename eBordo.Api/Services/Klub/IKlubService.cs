@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace eBordo.Api.Services.Klub
 {
-    public interface IKlubService : IBaseCRUDService<eBordo.Model.Models.Klub, object,eBordo.Model.Requests.Klub.KlubInsertRequest,object>
+    public interface IKlubService : IBaseCRUDService<eBordo.Model.Models.Klub, object,eBordo.Model.Requests.Klub.KlubInsertRequest, eBordo.Model.Requests.Klub.KlubUpdateRequest>
     {
     }
 }

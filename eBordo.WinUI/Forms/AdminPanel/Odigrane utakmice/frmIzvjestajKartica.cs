@@ -36,8 +36,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
         public Image dres { get; set; }
         public string goloviDomacin { get; set; }
         public string goloviGost { get; set; }
+        public string brojDanaString { get; set; }
         public Image rezultat { get; set; }
         public string rezultatOpis { get; set; }
+        public Image statusSlika { get; set; }
+        public string statusText { get; set; }
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -52,7 +55,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
 
         public frmIzvjestajKartica(frmPrikazOdigranihUtakmica prikazOdigranihUtakmica, BunifuSnackbar snackbar)
         {
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 285, 232, 12, 12));
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 285,249, 12, 12));
             InitializeComponent();
             _prikazOdigranihUtakmica = prikazOdigranihUtakmica;
             _snackbar = snackbar;
@@ -81,6 +84,10 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             pictureRezultat.BackgroundImage = rezultat;
             pictureRezultat.BackgroundImageLayout = ImageLayout.Zoom;
             lblRezultatOpis.Text = rezultatOpis;
+            brojDana.Text = brojDanaString;
+            pictureStatus.BackgroundImage = statusSlika;
+            pictureStatus.BackgroundImageLayout = ImageLayout.Zoom;
+            txtStatus.Text = statusText;
         }
 
         private async void btnEdit_Click(object sender, EventArgs e)
@@ -110,10 +117,18 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             }
         }
 
-        private void btnView_Click(object sender, EventArgs e)
+        private async void btnView_Click(object sender, EventArgs e)
         {
-            frmDetaljiOdigraneUtakmice detalji = new frmDetaljiOdigraneUtakmice();
-            detalji.Show();
+            try
+            {
+                var result = await _izvjestaj.GetById<Model.Models.Izvještaj>(izvjestajId);
+                frmDetaljiOdigraneUtakmice detalji = new frmDetaljiOdigraneUtakmice(result);
+                detalji.Show();
+            }
+            catch
+            {
+                PosaljiNotifikaciju.notificationSwitch(_snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
+            }
         }
     }
 }

@@ -54,6 +54,10 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties20 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState toggleState1 = new Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState();
+            Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState toggleState2 = new Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState();
+            Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState toggleState3 = new Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState();
             this.snackbar = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
             this.userProflePicture = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.btnUcitajFotografiju = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -72,7 +76,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.lblDrzavljanstvo = new Bunifu.UI.WinForms.BunifuLabel();
             this.lblGradRodjenja = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuSeparator1 = new Bunifu.UI.WinForms.BunifuSeparator();
-            this.btnSave = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.cmbDrzavljanstvo = new Bunifu.UI.WinForms.BunifuDropdown();
             this.cmbGradRodjenja = new Bunifu.UI.WinForms.BunifuDropdown();
             this.lblDatumPotpisaUgovora = new Bunifu.UI.WinForms.BunifuLabel();
@@ -91,8 +94,44 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.radioBtnGlavni = new Bunifu.UI.WinForms.BunifuRadioButton();
             this.lblGostujuca = new Bunifu.UI.WinForms.BunifuLabel();
             this.lblDomaca = new Bunifu.UI.WinForms.BunifuLabel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.bunifuLabel3 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.btnSave = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.btnSaveUpdate = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.txtImeValidator = new Bunifu.UI.WinForms.BunifuLabel();
+            this.txtDatumRodjenjaValidator = new Bunifu.UI.WinForms.BunifuLabel();
+            this.txtTelefonValidator = new Bunifu.UI.WinForms.BunifuLabel();
+            this.txtPrezimeValidator = new Bunifu.UI.WinForms.BunifuLabel();
+            this.txtAdresaValidator = new Bunifu.UI.WinForms.BunifuLabel();
+            this.txtMailValidator = new Bunifu.UI.WinForms.BunifuLabel();
+            this.txtDatumPotpisaValidator = new Bunifu.UI.WinForms.BunifuLabel();
+            this.txtDatumZavrsetkaValidator = new Bunifu.UI.WinForms.BunifuLabel();
+            this.pictureDatumRodjenjaValidator = new System.Windows.Forms.PictureBox();
+            this.pictureDatumPotpisaValidator = new System.Windows.Forms.PictureBox();
+            this.pictureDatumZavrsetkaUgovora = new System.Windows.Forms.PictureBox();
+            this.pictureSlikaAvatarValidator = new System.Windows.Forms.PictureBox();
+            this.pictureSlikaPanelVAlidator = new System.Windows.Forms.PictureBox();
+            this.controlIsAktivan = new Bunifu.UI.WinForms.BunifuLabel();
+            this.switchIsAktivan = new Bunifu.UI.WinForms.BunifuToggleSwitch();
+            this.txtDrzavljanstvoValidator = new Bunifu.UI.WinForms.BunifuLabel();
+            this.txtGradValidator = new Bunifu.UI.WinForms.BunifuLabel();
+            this.txtFormacijaValidator = new Bunifu.UI.WinForms.BunifuLabel();
+            this.txtLicencaValidator = new Bunifu.UI.WinForms.BunifuLabel();
+            this.pictureDrzavljanstvoSlikaValidator = new System.Windows.Forms.PictureBox();
+            this.pictureGradSlikaValidator = new System.Windows.Forms.PictureBox();
+            this.pictureFormacijaSlikaValidator = new System.Windows.Forms.PictureBox();
+            this.pictureLicencaSlikaValidator = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.userProflePicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureSlikaIgraca)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureDatumRodjenjaValidator)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureDatumPotpisaValidator)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureDatumZavrsetkaUgovora)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSlikaAvatarValidator)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSlikaPanelVAlidator)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureDrzavljanstvoSlikaValidator)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureGradSlikaValidator)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFormacijaSlikaValidator)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureLicencaSlikaValidator)).BeginInit();
             this.SuspendLayout();
             // 
             // snackbar
@@ -128,7 +167,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.snackbar.InformationOptions.ForeColor = System.Drawing.Color.Black;
             this.snackbar.InformationOptions.Icon = null;
             this.snackbar.InformationOptions.IconLeftMargin = 12;
-            this.snackbar.Margin = 10;
+            this.snackbar.Margin = 20;
             this.snackbar.MaximumSize = new System.Drawing.Size(0, 0);
             this.snackbar.MaximumViews = 7;
             this.snackbar.MessageRightMargin = 15;
@@ -169,12 +208,12 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.userProflePicture.AllowFocused = false;
             this.userProflePicture.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.userProflePicture.AutoSizeHeight = true;
-            this.userProflePicture.BorderRadius = 17;
+            this.userProflePicture.BorderRadius = 55;
             this.userProflePicture.Image = global::eBordo.WinUI.Properties.Resources.Default_avatar;
             this.userProflePicture.IsCircle = true;
-            this.userProflePicture.Location = new System.Drawing.Point(12, 167);
+            this.userProflePicture.Location = new System.Drawing.Point(7, 6);
             this.userProflePicture.Name = "userProflePicture";
-            this.userProflePicture.Size = new System.Drawing.Size(35, 35);
+            this.userProflePicture.Size = new System.Drawing.Size(110, 110);
             this.userProflePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.userProflePicture.TabIndex = 1;
             this.userProflePicture.TabStop = false;
@@ -194,7 +233,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.btnUcitajFotografiju.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
             this.btnUcitajFotografiju.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUcitajFotografiju.BackgroundImage")));
             this.btnUcitajFotografiju.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnUcitajFotografiju.ButtonText = "Učitaj fotografiju";
+            this.btnUcitajFotografiju.ButtonText = "     Učitaj fotografiju";
             this.btnUcitajFotografiju.ButtonTextMarginLeft = 0;
             this.btnUcitajFotografiju.ColorContrastOnClick = 45;
             this.btnUcitajFotografiju.ColorContrastOnHover = 45;
@@ -209,7 +248,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.btnUcitajFotografiju.DisabledFillColor = System.Drawing.Color.Empty;
             this.btnUcitajFotografiju.DisabledForecolor = System.Drawing.Color.Empty;
             this.btnUcitajFotografiju.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnUcitajFotografiju.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUcitajFotografiju.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUcitajFotografiju.ForeColor = System.Drawing.Color.White;
             this.btnUcitajFotografiju.IconLeft = null;
             this.btnUcitajFotografiju.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -229,7 +268,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.btnUcitajFotografiju.IdleIconLeftImage = null;
             this.btnUcitajFotografiju.IdleIconRightImage = null;
             this.btnUcitajFotografiju.IndicateFocus = true;
-            this.btnUcitajFotografiju.Location = new System.Drawing.Point(12, 208);
+            this.btnUcitajFotografiju.Location = new System.Drawing.Point(7, 122);
             this.btnUcitajFotografiju.Name = "btnUcitajFotografiju";
             this.btnUcitajFotografiju.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnUcitajFotografiju.OnDisabledState.BorderRadius = 25;
@@ -243,23 +282,23 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.btnUcitajFotografiju.onHoverState.BorderRadius = 25;
             this.btnUcitajFotografiju.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.btnUcitajFotografiju.onHoverState.BorderThickness = 1;
-            this.btnUcitajFotografiju.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.btnUcitajFotografiju.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.btnUcitajFotografiju.onHoverState.ForeColor = System.Drawing.Color.White;
             this.btnUcitajFotografiju.onHoverState.IconLeftImage = null;
             this.btnUcitajFotografiju.onHoverState.IconRightImage = null;
-            this.btnUcitajFotografiju.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.btnUcitajFotografiju.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.btnUcitajFotografiju.OnIdleState.BorderRadius = 25;
             this.btnUcitajFotografiju.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.btnUcitajFotografiju.OnIdleState.BorderThickness = 1;
-            this.btnUcitajFotografiju.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.btnUcitajFotografiju.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.btnUcitajFotografiju.OnIdleState.ForeColor = System.Drawing.Color.White;
             this.btnUcitajFotografiju.OnIdleState.IconLeftImage = null;
             this.btnUcitajFotografiju.OnIdleState.IconRightImage = null;
-            this.btnUcitajFotografiju.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.btnUcitajFotografiju.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.btnUcitajFotografiju.OnPressedState.BorderRadius = 25;
             this.btnUcitajFotografiju.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.btnUcitajFotografiju.OnPressedState.BorderThickness = 1;
-            this.btnUcitajFotografiju.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.btnUcitajFotografiju.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.btnUcitajFotografiju.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnUcitajFotografiju.OnPressedState.IconLeftImage = null;
             this.btnUcitajFotografiju.OnPressedState.IconRightImage = null;
@@ -278,11 +317,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.lblIme.AutoEllipsis = false;
             this.lblIme.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblIme.CursorType = System.Windows.Forms.Cursors.Default;
-            this.lblIme.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIme.Location = new System.Drawing.Point(140, 12);
+            this.lblIme.Font = new System.Drawing.Font("Oswald", 8F);
+            this.lblIme.Location = new System.Drawing.Point(134, 6);
             this.lblIme.Name = "lblIme";
             this.lblIme.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblIme.Size = new System.Drawing.Size(20, 15);
+            this.lblIme.Size = new System.Drawing.Size(16, 16);
             this.lblIme.TabIndex = 9;
             this.lblIme.Text = "Ime";
             this.lblIme.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -306,17 +345,17 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.txtIme.BorderThickness = 1;
             this.txtIme.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtIme.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtIme.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txtIme.DefaultFont = new System.Drawing.Font("Oswald", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIme.DefaultText = "";
             this.txtIme.FillColor = System.Drawing.Color.White;
             this.txtIme.HideSelection = true;
             this.txtIme.IconLeft = null;
             this.txtIme.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtIme.IconPadding = 10;
-            this.txtIme.IconRight = null;
+            this.txtIme.IconRight = ((System.Drawing.Image)(resources.GetObject("txtIme.IconRight")));
             this.txtIme.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtIme.Lines = new string[0];
-            this.txtIme.Location = new System.Drawing.Point(139, 30);
+            this.txtIme.Location = new System.Drawing.Point(133, 22);
             this.txtIme.MaxLength = 32767;
             this.txtIme.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtIme.Modified = false;
@@ -362,6 +401,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.txtIme.TextPlaceholder = "Ime";
             this.txtIme.UseSystemPasswordChar = false;
             this.txtIme.WordWrap = true;
+            this.txtIme.TextChanged += new System.EventHandler(this.txtIme_TextChanged);
             // 
             // txtPrezime
             // 
@@ -381,17 +421,17 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.txtPrezime.BorderThickness = 1;
             this.txtPrezime.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtPrezime.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPrezime.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txtPrezime.DefaultFont = new System.Drawing.Font("Oswald", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrezime.DefaultText = "";
             this.txtPrezime.FillColor = System.Drawing.Color.White;
             this.txtPrezime.HideSelection = true;
             this.txtPrezime.IconLeft = null;
             this.txtPrezime.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPrezime.IconPadding = 10;
-            this.txtPrezime.IconRight = null;
+            this.txtPrezime.IconRight = ((System.Drawing.Image)(resources.GetObject("txtPrezime.IconRight")));
             this.txtPrezime.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPrezime.Lines = new string[0];
-            this.txtPrezime.Location = new System.Drawing.Point(324, 30);
+            this.txtPrezime.Location = new System.Drawing.Point(315, 22);
             this.txtPrezime.MaxLength = 32767;
             this.txtPrezime.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtPrezime.Modified = false;
@@ -437,17 +477,18 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.txtPrezime.TextPlaceholder = "Prezime";
             this.txtPrezime.UseSystemPasswordChar = false;
             this.txtPrezime.WordWrap = true;
+            this.txtPrezime.TextChanged += new System.EventHandler(this.txtPrezime_TextChanged);
             // 
             // lblPrezime
             // 
             this.lblPrezime.AllowParentOverrides = false;
             this.lblPrezime.AutoEllipsis = false;
             this.lblPrezime.CursorType = null;
-            this.lblPrezime.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrezime.Location = new System.Drawing.Point(325, 12);
+            this.lblPrezime.Font = new System.Drawing.Font("Oswald", 8F);
+            this.lblPrezime.Location = new System.Drawing.Point(316, 6);
             this.lblPrezime.Name = "lblPrezime";
             this.lblPrezime.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblPrezime.Size = new System.Drawing.Size(42, 15);
+            this.lblPrezime.Size = new System.Drawing.Size(35, 16);
             this.lblPrezime.TabIndex = 11;
             this.lblPrezime.Text = "Prezime";
             this.lblPrezime.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -472,22 +513,23 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.dtpDatumRodjenja.IconColor = System.Drawing.Color.Gray;
             this.dtpDatumRodjenja.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
             this.dtpDatumRodjenja.LeftTextMargin = 5;
-            this.dtpDatumRodjenja.Location = new System.Drawing.Point(140, 87);
+            this.dtpDatumRodjenja.Location = new System.Drawing.Point(133, 86);
             this.dtpDatumRodjenja.MinimumSize = new System.Drawing.Size(4, 30);
             this.dtpDatumRodjenja.Name = "dtpDatumRodjenja";
             this.dtpDatumRodjenja.Size = new System.Drawing.Size(176, 30);
             this.dtpDatumRodjenja.TabIndex = 13;
+            this.dtpDatumRodjenja.ValueChanged += new System.EventHandler(this.dtpDatumRodjenja_ValueChanged);
             // 
             // lblDatumRodjenja
             // 
             this.lblDatumRodjenja.AllowParentOverrides = false;
             this.lblDatumRodjenja.AutoEllipsis = false;
             this.lblDatumRodjenja.CursorType = null;
-            this.lblDatumRodjenja.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDatumRodjenja.Location = new System.Drawing.Point(140, 68);
+            this.lblDatumRodjenja.Font = new System.Drawing.Font("Oswald", 8F);
+            this.lblDatumRodjenja.Location = new System.Drawing.Point(134, 70);
             this.lblDatumRodjenja.Name = "lblDatumRodjenja";
             this.lblDatumRodjenja.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblDatumRodjenja.Size = new System.Drawing.Size(79, 15);
+            this.lblDatumRodjenja.Size = new System.Drawing.Size(63, 16);
             this.lblDatumRodjenja.TabIndex = 14;
             this.lblDatumRodjenja.Text = "Datum rođenja";
             this.lblDatumRodjenja.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -511,17 +553,17 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.txtAdresa.BorderThickness = 1;
             this.txtAdresa.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtAdresa.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtAdresa.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txtAdresa.DefaultFont = new System.Drawing.Font("Oswald", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAdresa.DefaultText = "";
             this.txtAdresa.FillColor = System.Drawing.Color.White;
             this.txtAdresa.HideSelection = true;
             this.txtAdresa.IconLeft = null;
             this.txtAdresa.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtAdresa.IconPadding = 10;
-            this.txtAdresa.IconRight = null;
+            this.txtAdresa.IconRight = ((System.Drawing.Image)(resources.GetObject("txtAdresa.IconRight")));
             this.txtAdresa.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtAdresa.Lines = new string[0];
-            this.txtAdresa.Location = new System.Drawing.Point(324, 86);
+            this.txtAdresa.Location = new System.Drawing.Point(316, 85);
             this.txtAdresa.MaxLength = 32767;
             this.txtAdresa.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtAdresa.Modified = false;
@@ -567,17 +609,18 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.txtAdresa.TextPlaceholder = "Adresa";
             this.txtAdresa.UseSystemPasswordChar = false;
             this.txtAdresa.WordWrap = true;
+            this.txtAdresa.TextChanged += new System.EventHandler(this.txtAdresa_TextChanged);
             // 
             // lblAdresa
             // 
             this.lblAdresa.AllowParentOverrides = false;
             this.lblAdresa.AutoEllipsis = false;
             this.lblAdresa.CursorType = null;
-            this.lblAdresa.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAdresa.Location = new System.Drawing.Point(325, 68);
+            this.lblAdresa.Font = new System.Drawing.Font("Oswald", 8F);
+            this.lblAdresa.Location = new System.Drawing.Point(317, 70);
             this.lblAdresa.Name = "lblAdresa";
             this.lblAdresa.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblAdresa.Size = new System.Drawing.Size(36, 15);
+            this.lblAdresa.Size = new System.Drawing.Size(31, 16);
             this.lblAdresa.TabIndex = 15;
             this.lblAdresa.Text = "Adresa";
             this.lblAdresa.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -601,17 +644,17 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.txtTelefon.BorderThickness = 1;
             this.txtTelefon.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtTelefon.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTelefon.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txtTelefon.DefaultFont = new System.Drawing.Font("Oswald", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefon.DefaultText = "";
             this.txtTelefon.FillColor = System.Drawing.Color.White;
             this.txtTelefon.HideSelection = true;
             this.txtTelefon.IconLeft = null;
             this.txtTelefon.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTelefon.IconPadding = 10;
-            this.txtTelefon.IconRight = null;
+            this.txtTelefon.IconRight = ((System.Drawing.Image)(resources.GetObject("txtTelefon.IconRight")));
             this.txtTelefon.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTelefon.Lines = new string[0];
-            this.txtTelefon.Location = new System.Drawing.Point(139, 141);
+            this.txtTelefon.Location = new System.Drawing.Point(133, 149);
             this.txtTelefon.MaxLength = 32767;
             this.txtTelefon.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtTelefon.Modified = false;
@@ -647,7 +690,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.txtTelefon.SelectionLength = 0;
             this.txtTelefon.SelectionStart = 0;
             this.txtTelefon.ShortcutsEnabled = true;
-            this.txtTelefon.Size = new System.Drawing.Size(177, 32);
+            this.txtTelefon.Size = new System.Drawing.Size(176, 32);
             this.txtTelefon.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtTelefon.TabIndex = 18;
             this.txtTelefon.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -657,17 +700,18 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.txtTelefon.TextPlaceholder = "Telefon";
             this.txtTelefon.UseSystemPasswordChar = false;
             this.txtTelefon.WordWrap = true;
+            this.txtTelefon.TextChanged += new System.EventHandler(this.txtTelefon_TextChanged);
             // 
             // lblTelefon
             // 
             this.lblTelefon.AllowParentOverrides = false;
             this.lblTelefon.AutoEllipsis = false;
             this.lblTelefon.CursorType = null;
-            this.lblTelefon.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelefon.Location = new System.Drawing.Point(140, 123);
+            this.lblTelefon.Font = new System.Drawing.Font("Oswald", 8F);
+            this.lblTelefon.Location = new System.Drawing.Point(134, 133);
             this.lblTelefon.Name = "lblTelefon";
             this.lblTelefon.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblTelefon.Size = new System.Drawing.Size(39, 15);
+            this.lblTelefon.Size = new System.Drawing.Size(31, 16);
             this.lblTelefon.TabIndex = 17;
             this.lblTelefon.Text = "Telefon";
             this.lblTelefon.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -691,17 +735,17 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.txtEmail.BorderThickness = 1;
             this.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtEmail.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txtEmail.DefaultFont = new System.Drawing.Font("Oswald", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.DefaultText = "";
             this.txtEmail.FillColor = System.Drawing.Color.White;
             this.txtEmail.HideSelection = true;
             this.txtEmail.IconLeft = null;
             this.txtEmail.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtEmail.IconPadding = 10;
-            this.txtEmail.IconRight = null;
+            this.txtEmail.IconRight = ((System.Drawing.Image)(resources.GetObject("txtEmail.IconRight")));
             this.txtEmail.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtEmail.Lines = new string[0];
-            this.txtEmail.Location = new System.Drawing.Point(324, 141);
+            this.txtEmail.Location = new System.Drawing.Point(316, 149);
             this.txtEmail.MaxLength = 32767;
             this.txtEmail.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtEmail.Modified = false;
@@ -747,17 +791,18 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.txtEmail.TextPlaceholder = "E-mail";
             this.txtEmail.UseSystemPasswordChar = false;
             this.txtEmail.WordWrap = true;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // lblEmail
             // 
             this.lblEmail.AllowParentOverrides = false;
             this.lblEmail.AutoEllipsis = false;
             this.lblEmail.CursorType = null;
-            this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(325, 123);
+            this.lblEmail.Font = new System.Drawing.Font("Oswald", 8F);
+            this.lblEmail.Location = new System.Drawing.Point(317, 133);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblEmail.Size = new System.Drawing.Size(34, 15);
+            this.lblEmail.Size = new System.Drawing.Size(26, 16);
             this.lblEmail.TabIndex = 19;
             this.lblEmail.Text = "E-mail";
             this.lblEmail.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -768,11 +813,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.lblDrzavljanstvo.AllowParentOverrides = false;
             this.lblDrzavljanstvo.AutoEllipsis = false;
             this.lblDrzavljanstvo.CursorType = null;
-            this.lblDrzavljanstvo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDrzavljanstvo.Location = new System.Drawing.Point(140, 179);
+            this.lblDrzavljanstvo.Font = new System.Drawing.Font("Oswald", 8F);
+            this.lblDrzavljanstvo.Location = new System.Drawing.Point(134, 196);
             this.lblDrzavljanstvo.Name = "lblDrzavljanstvo";
             this.lblDrzavljanstvo.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblDrzavljanstvo.Size = new System.Drawing.Size(70, 15);
+            this.lblDrzavljanstvo.Size = new System.Drawing.Size(59, 16);
             this.lblDrzavljanstvo.TabIndex = 22;
             this.lblDrzavljanstvo.Text = "Državljanstvo";
             this.lblDrzavljanstvo.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -783,11 +828,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.lblGradRodjenja.AllowParentOverrides = false;
             this.lblGradRodjenja.AutoEllipsis = false;
             this.lblGradRodjenja.CursorType = null;
-            this.lblGradRodjenja.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGradRodjenja.Location = new System.Drawing.Point(325, 179);
+            this.lblGradRodjenja.Font = new System.Drawing.Font("Oswald", 8F);
+            this.lblGradRodjenja.Location = new System.Drawing.Point(317, 196);
             this.lblGradRodjenja.Name = "lblGradRodjenja";
             this.lblGradRodjenja.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblGradRodjenja.Size = new System.Drawing.Size(68, 15);
+            this.lblGradRodjenja.Size = new System.Drawing.Size(56, 16);
             this.lblGradRodjenja.TabIndex = 24;
             this.lblGradRodjenja.Text = "Grad rođenja";
             this.lblGradRodjenja.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -802,103 +847,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.bunifuSeparator1.LineColor = System.Drawing.Color.Silver;
             this.bunifuSeparator1.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
             this.bunifuSeparator1.LineThickness = 1;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(12, 244);
+            this.bunifuSeparator1.Location = new System.Drawing.Point(-6, 256);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
             this.bunifuSeparator1.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
-            this.bunifuSeparator1.Size = new System.Drawing.Size(489, 14);
+            this.bunifuSeparator1.Size = new System.Drawing.Size(671, 14);
             this.bunifuSeparator1.TabIndex = 25;
-            // 
-            // btnSave
-            // 
-            this.btnSave.AllowAnimations = true;
-            this.btnSave.AllowMouseEffects = true;
-            this.btnSave.AllowToggling = false;
-            this.btnSave.AnimationSpeed = 200;
-            this.btnSave.AutoGenerateColors = false;
-            this.btnSave.AutoRoundBorders = false;
-            this.btnSave.AutoSizeLeftIcon = true;
-            this.btnSave.AutoSizeRightIcon = true;
-            this.btnSave.BackColor = System.Drawing.Color.Transparent;
-            this.btnSave.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
-            this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
-            this.btnSave.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnSave.ButtonText = "Spasi";
-            this.btnSave.ButtonTextMarginLeft = 0;
-            this.btnSave.ColorContrastOnClick = 45;
-            this.btnSave.ColorContrastOnHover = 45;
-            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.btnSave.CustomizableEdges = borderEdges2;
-            this.btnSave.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnSave.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnSave.DisabledFillColor = System.Drawing.Color.Empty;
-            this.btnSave.DisabledForecolor = System.Drawing.Color.Empty;
-            this.btnSave.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnSave.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.IconLeft = null;
-            this.btnSave.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.btnSave.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.btnSave.IconMarginLeft = 11;
-            this.btnSave.IconPadding = 10;
-            this.btnSave.IconRight = null;
-            this.btnSave.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSave.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.btnSave.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.btnSave.IconSize = 25;
-            this.btnSave.IdleBorderColor = System.Drawing.Color.Empty;
-            this.btnSave.IdleBorderRadius = 0;
-            this.btnSave.IdleBorderThickness = 0;
-            this.btnSave.IdleFillColor = System.Drawing.Color.Empty;
-            this.btnSave.IdleIconLeftImage = null;
-            this.btnSave.IdleIconRightImage = null;
-            this.btnSave.IndicateFocus = true;
-            this.btnSave.Location = new System.Drawing.Point(390, 371);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnSave.OnDisabledState.BorderRadius = 0;
-            this.btnSave.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnSave.OnDisabledState.BorderThickness = 1;
-            this.btnSave.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnSave.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnSave.OnDisabledState.IconLeftImage = null;
-            this.btnSave.OnDisabledState.IconRightImage = null;
-            this.btnSave.onHoverState.BorderColor = System.Drawing.Color.Empty;
-            this.btnSave.onHoverState.BorderRadius = 0;
-            this.btnSave.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnSave.onHoverState.BorderThickness = 1;
-            this.btnSave.onHoverState.FillColor = System.Drawing.Color.Green;
-            this.btnSave.onHoverState.ForeColor = System.Drawing.Color.White;
-            this.btnSave.onHoverState.IconLeftImage = null;
-            this.btnSave.onHoverState.IconRightImage = null;
-            this.btnSave.OnIdleState.BorderColor = System.Drawing.Color.Green;
-            this.btnSave.OnIdleState.BorderRadius = 0;
-            this.btnSave.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnSave.OnIdleState.BorderThickness = 1;
-            this.btnSave.OnIdleState.FillColor = System.Drawing.Color.Green;
-            this.btnSave.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.btnSave.OnIdleState.IconLeftImage = null;
-            this.btnSave.OnIdleState.IconRightImage = null;
-            this.btnSave.OnPressedState.BorderColor = System.Drawing.Color.Green;
-            this.btnSave.OnPressedState.BorderRadius = 0;
-            this.btnSave.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnSave.OnPressedState.BorderThickness = 1;
-            this.btnSave.OnPressedState.FillColor = System.Drawing.Color.Green;
-            this.btnSave.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.btnSave.OnPressedState.IconLeftImage = null;
-            this.btnSave.OnPressedState.IconRightImage = null;
-            this.btnSave.Size = new System.Drawing.Size(110, 30);
-            this.btnSave.TabIndex = 26;
-            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnSave.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnSave.TextMarginLeft = 0;
-            this.btnSave.TextPadding = new System.Windows.Forms.Padding(0);
-            this.btnSave.UseDefaultRadiusAndThickness = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click_1);
             // 
             // cmbDrzavljanstvo
             // 
@@ -920,7 +873,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.cmbDrzavljanstvo.FillDropDown = true;
             this.cmbDrzavljanstvo.FillIndicator = false;
             this.cmbDrzavljanstvo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbDrzavljanstvo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.cmbDrzavljanstvo.Font = new System.Drawing.Font("Oswald", 8F);
             this.cmbDrzavljanstvo.ForeColor = System.Drawing.Color.Black;
             this.cmbDrzavljanstvo.FormattingEnabled = true;
             this.cmbDrzavljanstvo.Icon = null;
@@ -936,13 +889,14 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.cmbDrzavljanstvo.ItemHighLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
             this.cmbDrzavljanstvo.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cmbDrzavljanstvo.ItemTopMargin = 3;
-            this.cmbDrzavljanstvo.Location = new System.Drawing.Point(140, 197);
+            this.cmbDrzavljanstvo.Location = new System.Drawing.Point(134, 212);
             this.cmbDrzavljanstvo.Name = "cmbDrzavljanstvo";
             this.cmbDrzavljanstvo.Size = new System.Drawing.Size(176, 32);
             this.cmbDrzavljanstvo.TabIndex = 27;
             this.cmbDrzavljanstvo.Text = "Državljanstvo";
             this.cmbDrzavljanstvo.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbDrzavljanstvo.TextLeftMargin = 5;
+            this.cmbDrzavljanstvo.SelectedIndexChanged += new System.EventHandler(this.cmbDrzavljanstvo_SelectedIndexChanged);
             // 
             // cmbGradRodjenja
             // 
@@ -964,7 +918,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.cmbGradRodjenja.FillDropDown = true;
             this.cmbGradRodjenja.FillIndicator = false;
             this.cmbGradRodjenja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbGradRodjenja.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.cmbGradRodjenja.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGradRodjenja.ForeColor = System.Drawing.Color.Black;
             this.cmbGradRodjenja.FormattingEnabled = true;
             this.cmbGradRodjenja.Icon = null;
@@ -980,24 +934,25 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.cmbGradRodjenja.ItemHighLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
             this.cmbGradRodjenja.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cmbGradRodjenja.ItemTopMargin = 3;
-            this.cmbGradRodjenja.Location = new System.Drawing.Point(324, 197);
+            this.cmbGradRodjenja.Location = new System.Drawing.Point(316, 212);
             this.cmbGradRodjenja.Name = "cmbGradRodjenja";
             this.cmbGradRodjenja.Size = new System.Drawing.Size(176, 32);
             this.cmbGradRodjenja.TabIndex = 28;
             this.cmbGradRodjenja.Text = "Grad rođenja";
             this.cmbGradRodjenja.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbGradRodjenja.TextLeftMargin = 5;
+            this.cmbGradRodjenja.SelectedIndexChanged += new System.EventHandler(this.cmbGradRodjenja_SelectedIndexChanged);
             // 
             // lblDatumPotpisaUgovora
             // 
             this.lblDatumPotpisaUgovora.AllowParentOverrides = false;
             this.lblDatumPotpisaUgovora.AutoEllipsis = false;
             this.lblDatumPotpisaUgovora.CursorType = null;
-            this.lblDatumPotpisaUgovora.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDatumPotpisaUgovora.Location = new System.Drawing.Point(268, 257);
+            this.lblDatumPotpisaUgovora.Font = new System.Drawing.Font("Oswald", 8F);
+            this.lblDatumPotpisaUgovora.Location = new System.Drawing.Point(7, 276);
             this.lblDatumPotpisaUgovora.Name = "lblDatumPotpisaUgovora";
             this.lblDatumPotpisaUgovora.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblDatumPotpisaUgovora.Size = new System.Drawing.Size(125, 15);
+            this.lblDatumPotpisaUgovora.Size = new System.Drawing.Size(100, 16);
             this.lblDatumPotpisaUgovora.TabIndex = 52;
             this.lblDatumPotpisaUgovora.Text = "Datum potpisa ugovora";
             this.lblDatumPotpisaUgovora.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -1022,22 +977,23 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.dtpDatumPotpisaUgovora.IconColor = System.Drawing.Color.Gray;
             this.dtpDatumPotpisaUgovora.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
             this.dtpDatumPotpisaUgovora.LeftTextMargin = 5;
-            this.dtpDatumPotpisaUgovora.Location = new System.Drawing.Point(268, 276);
-            this.dtpDatumPotpisaUgovora.MinimumSize = new System.Drawing.Size(4, 30);
+            this.dtpDatumPotpisaUgovora.Location = new System.Drawing.Point(7, 293);
+            this.dtpDatumPotpisaUgovora.MinimumSize = new System.Drawing.Size(4, 32);
             this.dtpDatumPotpisaUgovora.Name = "dtpDatumPotpisaUgovora";
-            this.dtpDatumPotpisaUgovora.Size = new System.Drawing.Size(232, 30);
+            this.dtpDatumPotpisaUgovora.Size = new System.Drawing.Size(232, 32);
             this.dtpDatumPotpisaUgovora.TabIndex = 51;
+            this.dtpDatumPotpisaUgovora.ValueChanged += new System.EventHandler(this.dtpDatumPotpisaUgovora_ValueChanged);
             // 
             // lblDatumZavrsetkaUgovora
             // 
             this.lblDatumZavrsetkaUgovora.AllowParentOverrides = false;
             this.lblDatumZavrsetkaUgovora.AutoEllipsis = false;
             this.lblDatumZavrsetkaUgovora.CursorType = null;
-            this.lblDatumZavrsetkaUgovora.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDatumZavrsetkaUgovora.Location = new System.Drawing.Point(268, 313);
+            this.lblDatumZavrsetkaUgovora.Font = new System.Drawing.Font("Oswald", 8F);
+            this.lblDatumZavrsetkaUgovora.Location = new System.Drawing.Point(7, 342);
             this.lblDatumZavrsetkaUgovora.Name = "lblDatumZavrsetkaUgovora";
             this.lblDatumZavrsetkaUgovora.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblDatumZavrsetkaUgovora.Size = new System.Drawing.Size(134, 15);
+            this.lblDatumZavrsetkaUgovora.Size = new System.Drawing.Size(108, 16);
             this.lblDatumZavrsetkaUgovora.TabIndex = 54;
             this.lblDatumZavrsetkaUgovora.Text = "Datum završetka ugovora";
             this.lblDatumZavrsetkaUgovora.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -1062,11 +1018,12 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.dtpDatumZavrsetkaUgovora.IconColor = System.Drawing.Color.Gray;
             this.dtpDatumZavrsetkaUgovora.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
             this.dtpDatumZavrsetkaUgovora.LeftTextMargin = 5;
-            this.dtpDatumZavrsetkaUgovora.Location = new System.Drawing.Point(268, 332);
+            this.dtpDatumZavrsetkaUgovora.Location = new System.Drawing.Point(7, 359);
             this.dtpDatumZavrsetkaUgovora.MinimumSize = new System.Drawing.Size(4, 30);
             this.dtpDatumZavrsetkaUgovora.Name = "dtpDatumZavrsetkaUgovora";
             this.dtpDatumZavrsetkaUgovora.Size = new System.Drawing.Size(232, 30);
             this.dtpDatumZavrsetkaUgovora.TabIndex = 53;
+            this.dtpDatumZavrsetkaUgovora.ValueChanged += new System.EventHandler(this.dtpDatumZavrsetkaUgovora_ValueChanged);
             // 
             // cmbFormacija
             // 
@@ -1088,7 +1045,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.cmbFormacija.FillDropDown = true;
             this.cmbFormacija.FillIndicator = false;
             this.cmbFormacija.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbFormacija.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.cmbFormacija.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbFormacija.ForeColor = System.Drawing.Color.Black;
             this.cmbFormacija.FormattingEnabled = true;
             this.cmbFormacija.Icon = null;
@@ -1104,24 +1061,25 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.cmbFormacija.ItemHighLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
             this.cmbFormacija.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cmbFormacija.ItemTopMargin = 3;
-            this.cmbFormacija.Location = new System.Drawing.Point(12, 275);
+            this.cmbFormacija.Location = new System.Drawing.Point(245, 293);
             this.cmbFormacija.Name = "cmbFormacija";
-            this.cmbFormacija.Size = new System.Drawing.Size(232, 32);
+            this.cmbFormacija.Size = new System.Drawing.Size(194, 32);
             this.cmbFormacija.TabIndex = 58;
             this.cmbFormacija.Text = "Formacija";
             this.cmbFormacija.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbFormacija.TextLeftMargin = 5;
+            this.cmbFormacija.SelectedIndexChanged += new System.EventHandler(this.cmbFormacija_SelectedIndexChanged);
             // 
             // bunifuLabel1
             // 
             this.bunifuLabel1.AllowParentOverrides = false;
             this.bunifuLabel1.AutoEllipsis = false;
             this.bunifuLabel1.CursorType = null;
-            this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel1.Location = new System.Drawing.Point(12, 257);
+            this.bunifuLabel1.Font = new System.Drawing.Font("Oswald", 8F);
+            this.bunifuLabel1.Location = new System.Drawing.Point(245, 276);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(52, 15);
+            this.bunifuLabel1.Size = new System.Drawing.Size(42, 16);
             this.bunifuLabel1.TabIndex = 57;
             this.bunifuLabel1.Text = "Formacija";
             this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -1147,7 +1105,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.cmbLicenca.FillDropDown = true;
             this.cmbLicenca.FillIndicator = false;
             this.cmbLicenca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbLicenca.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.cmbLicenca.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbLicenca.ForeColor = System.Drawing.Color.Black;
             this.cmbLicenca.FormattingEnabled = true;
             this.cmbLicenca.Icon = null;
@@ -1163,24 +1121,25 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.cmbLicenca.ItemHighLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
             this.cmbLicenca.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cmbLicenca.ItemTopMargin = 3;
-            this.cmbLicenca.Location = new System.Drawing.Point(12, 331);
+            this.cmbLicenca.Location = new System.Drawing.Point(445, 293);
             this.cmbLicenca.Name = "cmbLicenca";
-            this.cmbLicenca.Size = new System.Drawing.Size(232, 32);
+            this.cmbLicenca.Size = new System.Drawing.Size(203, 32);
             this.cmbLicenca.TabIndex = 60;
             this.cmbLicenca.Text = "Licenca";
             this.cmbLicenca.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbLicenca.TextLeftMargin = 5;
+            this.cmbLicenca.SelectedIndexChanged += new System.EventHandler(this.cmbLicenca_SelectedIndexChanged);
             // 
             // bunifuLabel2
             // 
             this.bunifuLabel2.AllowParentOverrides = false;
             this.bunifuLabel2.AutoEllipsis = false;
             this.bunifuLabel2.CursorType = null;
-            this.bunifuLabel2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel2.Location = new System.Drawing.Point(12, 313);
+            this.bunifuLabel2.Font = new System.Drawing.Font("Oswald", 8F);
+            this.bunifuLabel2.Location = new System.Drawing.Point(445, 276);
             this.bunifuLabel2.Name = "bunifuLabel2";
             this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel2.Size = new System.Drawing.Size(40, 15);
+            this.bunifuLabel2.Size = new System.Drawing.Size(32, 16);
             this.bunifuLabel2.TabIndex = 59;
             this.bunifuLabel2.Text = "Licenca";
             this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -1190,9 +1149,9 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             // 
             this.pictureSlikaIgraca.BackgroundImage = global::eBordo.WinUI.Properties.Resources.customIgrac;
             this.pictureSlikaIgraca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureSlikaIgraca.Location = new System.Drawing.Point(12, 12);
+            this.pictureSlikaIgraca.Location = new System.Drawing.Point(498, 32);
             this.pictureSlikaIgraca.Name = "pictureSlikaIgraca";
-            this.pictureSlikaIgraca.Size = new System.Drawing.Size(52, 71);
+            this.pictureSlikaIgraca.Size = new System.Drawing.Size(150, 180);
             this.pictureSlikaIgraca.TabIndex = 124;
             this.pictureSlikaIgraca.TabStop = false;
             // 
@@ -1210,22 +1169,22 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.btnUcitajPanelPhoto.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
             this.btnUcitajPanelPhoto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUcitajPanelPhoto.BackgroundImage")));
             this.btnUcitajPanelPhoto.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnUcitajPanelPhoto.ButtonText = "Učitaj fotografiju";
+            this.btnUcitajPanelPhoto.ButtonText = "     Učitaj fotografiju";
             this.btnUcitajPanelPhoto.ButtonTextMarginLeft = 0;
             this.btnUcitajPanelPhoto.ColorContrastOnClick = 45;
             this.btnUcitajPanelPhoto.ColorContrastOnHover = 45;
             this.btnUcitajPanelPhoto.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.btnUcitajPanelPhoto.CustomizableEdges = borderEdges3;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.btnUcitajPanelPhoto.CustomizableEdges = borderEdges2;
             this.btnUcitajPanelPhoto.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnUcitajPanelPhoto.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnUcitajPanelPhoto.DisabledFillColor = System.Drawing.Color.Empty;
             this.btnUcitajPanelPhoto.DisabledForecolor = System.Drawing.Color.Empty;
             this.btnUcitajPanelPhoto.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnUcitajPanelPhoto.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUcitajPanelPhoto.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUcitajPanelPhoto.ForeColor = System.Drawing.Color.White;
             this.btnUcitajPanelPhoto.IconLeft = null;
             this.btnUcitajPanelPhoto.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1245,7 +1204,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.btnUcitajPanelPhoto.IdleIconLeftImage = null;
             this.btnUcitajPanelPhoto.IdleIconRightImage = null;
             this.btnUcitajPanelPhoto.IndicateFocus = true;
-            this.btnUcitajPanelPhoto.Location = new System.Drawing.Point(12, 89);
+            this.btnUcitajPanelPhoto.Location = new System.Drawing.Point(516, 214);
             this.btnUcitajPanelPhoto.Name = "btnUcitajPanelPhoto";
             this.btnUcitajPanelPhoto.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnUcitajPanelPhoto.OnDisabledState.BorderRadius = 25;
@@ -1259,23 +1218,23 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.btnUcitajPanelPhoto.onHoverState.BorderRadius = 25;
             this.btnUcitajPanelPhoto.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.btnUcitajPanelPhoto.onHoverState.BorderThickness = 1;
-            this.btnUcitajPanelPhoto.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.btnUcitajPanelPhoto.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.btnUcitajPanelPhoto.onHoverState.ForeColor = System.Drawing.Color.White;
             this.btnUcitajPanelPhoto.onHoverState.IconLeftImage = null;
             this.btnUcitajPanelPhoto.onHoverState.IconRightImage = null;
-            this.btnUcitajPanelPhoto.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.btnUcitajPanelPhoto.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.btnUcitajPanelPhoto.OnIdleState.BorderRadius = 25;
             this.btnUcitajPanelPhoto.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.btnUcitajPanelPhoto.OnIdleState.BorderThickness = 1;
-            this.btnUcitajPanelPhoto.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.btnUcitajPanelPhoto.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.btnUcitajPanelPhoto.OnIdleState.ForeColor = System.Drawing.Color.White;
             this.btnUcitajPanelPhoto.OnIdleState.IconLeftImage = null;
             this.btnUcitajPanelPhoto.OnIdleState.IconRightImage = null;
-            this.btnUcitajPanelPhoto.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.btnUcitajPanelPhoto.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.btnUcitajPanelPhoto.OnPressedState.BorderRadius = 25;
             this.btnUcitajPanelPhoto.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.btnUcitajPanelPhoto.OnPressedState.BorderThickness = 1;
-            this.btnUcitajPanelPhoto.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.btnUcitajPanelPhoto.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.btnUcitajPanelPhoto.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnUcitajPanelPhoto.OnPressedState.IconLeftImage = null;
             this.btnUcitajPanelPhoto.OnPressedState.IconRightImage = null;
@@ -1303,7 +1262,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.radioBtnPomocnik.BindingControlPosition = Bunifu.UI.WinForms.BunifuRadioButton.BindingControlPositions.Right;
             this.radioBtnPomocnik.BorderThickness = 1;
             this.radioBtnPomocnik.Checked = false;
-            this.radioBtnPomocnik.Location = new System.Drawing.Point(12, 384);
+            this.radioBtnPomocnik.Location = new System.Drawing.Point(307, 361);
             this.radioBtnPomocnik.Name = "radioBtnPomocnik";
             this.radioBtnPomocnik.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
             this.radioBtnPomocnik.OutlineColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
@@ -1321,7 +1280,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.radioBtnGlavni.BindingControlPosition = Bunifu.UI.WinForms.BunifuRadioButton.BindingControlPositions.Right;
             this.radioBtnGlavni.BorderThickness = 1;
             this.radioBtnGlavni.Checked = true;
-            this.radioBtnGlavni.Location = new System.Drawing.Point(12, 367);
+            this.radioBtnGlavni.Location = new System.Drawing.Point(245, 361);
             this.radioBtnGlavni.Name = "radioBtnGlavni";
             this.radioBtnGlavni.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
             this.radioBtnGlavni.OutlineColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
@@ -1337,11 +1296,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.lblGostujuca.AllowParentOverrides = false;
             this.lblGostujuca.AutoEllipsis = false;
             this.lblGostujuca.CursorType = null;
-            this.lblGostujuca.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGostujuca.Location = new System.Drawing.Point(35, 387);
+            this.lblGostujuca.Font = new System.Drawing.Font("Oswald", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGostujuca.Location = new System.Drawing.Point(330, 361);
             this.lblGostujuca.Name = "lblGostujuca";
             this.lblGostujuca.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblGostujuca.Size = new System.Drawing.Size(48, 15);
+            this.lblGostujuca.Size = new System.Drawing.Size(41, 17);
             this.lblGostujuca.TabIndex = 126;
             this.lblGostujuca.Text = "Pomoćni";
             this.lblGostujuca.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -1352,21 +1311,596 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.lblDomaca.AllowParentOverrides = false;
             this.lblDomaca.AutoEllipsis = false;
             this.lblDomaca.CursorType = null;
-            this.lblDomaca.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDomaca.Location = new System.Drawing.Point(35, 369);
+            this.lblDomaca.Font = new System.Drawing.Font("Oswald", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDomaca.Location = new System.Drawing.Point(268, 361);
             this.lblDomaca.Name = "lblDomaca";
             this.lblDomaca.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblDomaca.Size = new System.Drawing.Size(33, 15);
+            this.lblDomaca.Size = new System.Drawing.Size(30, 17);
             this.lblDomaca.TabIndex = 125;
             this.lblDomaca.Text = "Glavni";
             this.lblDomaca.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblDomaca.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
+            // label14
+            // 
+            this.label14.BackColor = System.Drawing.Color.Gainsboro;
+            this.label14.Font = new System.Drawing.Font("Oswald", 8F);
+            this.label14.ForeColor = System.Drawing.Color.Black;
+            this.label14.Location = new System.Drawing.Point(498, 6);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(150, 23);
+            this.label14.TabIndex = 316;
+            this.label14.Text = "PANEL FOTOGRAFIJA";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bunifuLabel3
+            // 
+            this.bunifuLabel3.AllowParentOverrides = false;
+            this.bunifuLabel3.AutoEllipsis = false;
+            this.bunifuLabel3.CursorType = null;
+            this.bunifuLabel3.Font = new System.Drawing.Font("Oswald", 8F);
+            this.bunifuLabel3.Location = new System.Drawing.Point(245, 342);
+            this.bunifuLabel3.Name = "bunifuLabel3";
+            this.bunifuLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel3.Size = new System.Drawing.Size(25, 16);
+            this.bunifuLabel3.TabIndex = 317;
+            this.bunifuLabel3.Text = "Uloga";
+            this.bunifuLabel3.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel3.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // btnSave
+            // 
+            this.btnSave.AllowAnimations = true;
+            this.btnSave.AllowMouseEffects = true;
+            this.btnSave.AllowToggling = false;
+            this.btnSave.AnimationSpeed = 200;
+            this.btnSave.AutoGenerateColors = false;
+            this.btnSave.AutoRoundBorders = false;
+            this.btnSave.AutoSizeLeftIcon = false;
+            this.btnSave.AutoSizeRightIcon = true;
+            this.btnSave.BackColor = System.Drawing.Color.Transparent;
+            this.btnSave.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
+            this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
+            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnSave.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSave.ButtonText = "DODAJ TRENERA";
+            this.btnSave.ButtonTextMarginLeft = 0;
+            this.btnSave.ColorContrastOnClick = 45;
+            this.btnSave.ColorContrastOnHover = 45;
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges3.BottomLeft = true;
+            borderEdges3.BottomRight = true;
+            borderEdges3.TopLeft = true;
+            borderEdges3.TopRight = true;
+            this.btnSave.CustomizableEdges = borderEdges3;
+            this.btnSave.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnSave.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnSave.DisabledFillColor = System.Drawing.Color.Empty;
+            this.btnSave.DisabledForecolor = System.Drawing.Color.Empty;
+            this.btnSave.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnSave.Font = new System.Drawing.Font("Oswald", 9F);
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.IconLeft = global::eBordo.WinUI.Properties.Resources.save;
+            this.btnSave.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSave.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnSave.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnSave.IconMarginLeft = 11;
+            this.btnSave.IconPadding = 10;
+            this.btnSave.IconRight = null;
+            this.btnSave.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSave.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnSave.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnSave.IconSize = 20;
+            this.btnSave.IdleBorderColor = System.Drawing.Color.Empty;
+            this.btnSave.IdleBorderRadius = 0;
+            this.btnSave.IdleBorderThickness = 0;
+            this.btnSave.IdleFillColor = System.Drawing.Color.Empty;
+            this.btnSave.IdleIconLeftImage = global::eBordo.WinUI.Properties.Resources.save;
+            this.btnSave.IdleIconRightImage = null;
+            this.btnSave.IndicateFocus = true;
+            this.btnSave.Location = new System.Drawing.Point(528, 394);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnSave.OnDisabledState.BorderRadius = 10;
+            this.btnSave.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSave.OnDisabledState.BorderThickness = 1;
+            this.btnSave.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnSave.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnSave.OnDisabledState.IconLeftImage = null;
+            this.btnSave.OnDisabledState.IconRightImage = null;
+            this.btnSave.onHoverState.BorderColor = System.Drawing.Color.Empty;
+            this.btnSave.onHoverState.BorderRadius = 10;
+            this.btnSave.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSave.onHoverState.BorderThickness = 1;
+            this.btnSave.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
+            this.btnSave.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.btnSave.onHoverState.IconLeftImage = global::eBordo.WinUI.Properties.Resources.save;
+            this.btnSave.onHoverState.IconRightImage = null;
+            this.btnSave.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
+            this.btnSave.OnIdleState.BorderRadius = 10;
+            this.btnSave.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSave.OnIdleState.BorderThickness = 1;
+            this.btnSave.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
+            this.btnSave.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnSave.OnIdleState.IconLeftImage = global::eBordo.WinUI.Properties.Resources.save;
+            this.btnSave.OnIdleState.IconRightImage = null;
+            this.btnSave.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
+            this.btnSave.OnPressedState.BorderRadius = 10;
+            this.btnSave.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSave.OnPressedState.BorderThickness = 1;
+            this.btnSave.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
+            this.btnSave.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnSave.OnPressedState.IconLeftImage = global::eBordo.WinUI.Properties.Resources.save;
+            this.btnSave.OnPressedState.IconRightImage = null;
+            this.btnSave.Size = new System.Drawing.Size(120, 30);
+            this.btnSave.TabIndex = 318;
+            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSave.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnSave.TextMarginLeft = 0;
+            this.btnSave.TextPadding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.btnSave.UseDefaultRadiusAndThickness = true;
+            this.btnSave.Visible = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnSaveUpdate
+            // 
+            this.btnSaveUpdate.AllowAnimations = true;
+            this.btnSaveUpdate.AllowMouseEffects = true;
+            this.btnSaveUpdate.AllowToggling = false;
+            this.btnSaveUpdate.AnimationSpeed = 200;
+            this.btnSaveUpdate.AutoGenerateColors = false;
+            this.btnSaveUpdate.AutoRoundBorders = false;
+            this.btnSaveUpdate.AutoSizeLeftIcon = false;
+            this.btnSaveUpdate.AutoSizeRightIcon = true;
+            this.btnSaveUpdate.BackColor = System.Drawing.Color.Transparent;
+            this.btnSaveUpdate.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
+            this.btnSaveUpdate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveUpdate.BackgroundImage")));
+            this.btnSaveUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnSaveUpdate.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSaveUpdate.ButtonText = "SPASI IZMJENE";
+            this.btnSaveUpdate.ButtonTextMarginLeft = 0;
+            this.btnSaveUpdate.ColorContrastOnClick = 45;
+            this.btnSaveUpdate.ColorContrastOnHover = 45;
+            this.btnSaveUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges4.BottomLeft = true;
+            borderEdges4.BottomRight = true;
+            borderEdges4.TopLeft = true;
+            borderEdges4.TopRight = true;
+            this.btnSaveUpdate.CustomizableEdges = borderEdges4;
+            this.btnSaveUpdate.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnSaveUpdate.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnSaveUpdate.DisabledFillColor = System.Drawing.Color.Empty;
+            this.btnSaveUpdate.DisabledForecolor = System.Drawing.Color.Empty;
+            this.btnSaveUpdate.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnSaveUpdate.Font = new System.Drawing.Font("Oswald", 9F);
+            this.btnSaveUpdate.ForeColor = System.Drawing.Color.Black;
+            this.btnSaveUpdate.IconLeft = global::eBordo.WinUI.Properties.Resources.save_black;
+            this.btnSaveUpdate.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSaveUpdate.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnSaveUpdate.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnSaveUpdate.IconMarginLeft = 11;
+            this.btnSaveUpdate.IconPadding = 10;
+            this.btnSaveUpdate.IconRight = null;
+            this.btnSaveUpdate.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSaveUpdate.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnSaveUpdate.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnSaveUpdate.IconSize = 20;
+            this.btnSaveUpdate.IdleBorderColor = System.Drawing.Color.Empty;
+            this.btnSaveUpdate.IdleBorderRadius = 0;
+            this.btnSaveUpdate.IdleBorderThickness = 0;
+            this.btnSaveUpdate.IdleFillColor = System.Drawing.Color.Empty;
+            this.btnSaveUpdate.IdleIconLeftImage = global::eBordo.WinUI.Properties.Resources.save_black;
+            this.btnSaveUpdate.IdleIconRightImage = null;
+            this.btnSaveUpdate.IndicateFocus = true;
+            this.btnSaveUpdate.Location = new System.Drawing.Point(532, 394);
+            this.btnSaveUpdate.Name = "btnSaveUpdate";
+            this.btnSaveUpdate.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnSaveUpdate.OnDisabledState.BorderRadius = 10;
+            this.btnSaveUpdate.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSaveUpdate.OnDisabledState.BorderThickness = 1;
+            this.btnSaveUpdate.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnSaveUpdate.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnSaveUpdate.OnDisabledState.IconLeftImage = null;
+            this.btnSaveUpdate.OnDisabledState.IconRightImage = null;
+            this.btnSaveUpdate.onHoverState.BorderColor = System.Drawing.Color.Empty;
+            this.btnSaveUpdate.onHoverState.BorderRadius = 10;
+            this.btnSaveUpdate.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSaveUpdate.onHoverState.BorderThickness = 1;
+            this.btnSaveUpdate.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnSaveUpdate.onHoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnSaveUpdate.onHoverState.IconLeftImage = global::eBordo.WinUI.Properties.Resources.save_black;
+            this.btnSaveUpdate.onHoverState.IconRightImage = null;
+            this.btnSaveUpdate.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnSaveUpdate.OnIdleState.BorderRadius = 10;
+            this.btnSaveUpdate.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSaveUpdate.OnIdleState.BorderThickness = 1;
+            this.btnSaveUpdate.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnSaveUpdate.OnIdleState.ForeColor = System.Drawing.Color.Black;
+            this.btnSaveUpdate.OnIdleState.IconLeftImage = global::eBordo.WinUI.Properties.Resources.save_black;
+            this.btnSaveUpdate.OnIdleState.IconRightImage = null;
+            this.btnSaveUpdate.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnSaveUpdate.OnPressedState.BorderRadius = 10;
+            this.btnSaveUpdate.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSaveUpdate.OnPressedState.BorderThickness = 1;
+            this.btnSaveUpdate.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnSaveUpdate.OnPressedState.ForeColor = System.Drawing.Color.Black;
+            this.btnSaveUpdate.OnPressedState.IconLeftImage = global::eBordo.WinUI.Properties.Resources.save_black;
+            this.btnSaveUpdate.OnPressedState.IconRightImage = null;
+            this.btnSaveUpdate.Size = new System.Drawing.Size(116, 30);
+            this.btnSaveUpdate.TabIndex = 319;
+            this.btnSaveUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSaveUpdate.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnSaveUpdate.TextMarginLeft = 0;
+            this.btnSaveUpdate.TextPadding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.btnSaveUpdate.UseDefaultRadiusAndThickness = true;
+            this.btnSaveUpdate.Visible = false;
+            this.btnSaveUpdate.Click += new System.EventHandler(this.btnSaveUpdate_Click);
+            // 
+            // txtImeValidator
+            // 
+            this.txtImeValidator.AllowParentOverrides = false;
+            this.txtImeValidator.AutoEllipsis = false;
+            this.txtImeValidator.CursorType = null;
+            this.txtImeValidator.Font = new System.Drawing.Font("Oswald", 6F);
+            this.txtImeValidator.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.txtImeValidator.Location = new System.Drawing.Point(134, 54);
+            this.txtImeValidator.Name = "txtImeValidator";
+            this.txtImeValidator.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtImeValidator.Size = new System.Drawing.Size(0, 0);
+            this.txtImeValidator.TabIndex = 346;
+            this.txtImeValidator.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.txtImeValidator.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.txtImeValidator.Click += new System.EventHandler(this.txtDatumZavrsetkaValidator_Click);
+            // 
+            // txtDatumRodjenjaValidator
+            // 
+            this.txtDatumRodjenjaValidator.AllowParentOverrides = false;
+            this.txtDatumRodjenjaValidator.AutoEllipsis = false;
+            this.txtDatumRodjenjaValidator.CursorType = null;
+            this.txtDatumRodjenjaValidator.Font = new System.Drawing.Font("Oswald", 6F);
+            this.txtDatumRodjenjaValidator.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.txtDatumRodjenjaValidator.Location = new System.Drawing.Point(134, 117);
+            this.txtDatumRodjenjaValidator.Name = "txtDatumRodjenjaValidator";
+            this.txtDatumRodjenjaValidator.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtDatumRodjenjaValidator.Size = new System.Drawing.Size(0, 0);
+            this.txtDatumRodjenjaValidator.TabIndex = 347;
+            this.txtDatumRodjenjaValidator.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.txtDatumRodjenjaValidator.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // txtTelefonValidator
+            // 
+            this.txtTelefonValidator.AllowParentOverrides = false;
+            this.txtTelefonValidator.AutoEllipsis = false;
+            this.txtTelefonValidator.CursorType = null;
+            this.txtTelefonValidator.Font = new System.Drawing.Font("Oswald", 6F);
+            this.txtTelefonValidator.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.txtTelefonValidator.Location = new System.Drawing.Point(134, 181);
+            this.txtTelefonValidator.Name = "txtTelefonValidator";
+            this.txtTelefonValidator.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtTelefonValidator.Size = new System.Drawing.Size(0, 0);
+            this.txtTelefonValidator.TabIndex = 348;
+            this.txtTelefonValidator.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.txtTelefonValidator.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // txtPrezimeValidator
+            // 
+            this.txtPrezimeValidator.AllowParentOverrides = false;
+            this.txtPrezimeValidator.AutoEllipsis = false;
+            this.txtPrezimeValidator.CursorType = null;
+            this.txtPrezimeValidator.Font = new System.Drawing.Font("Oswald", 6F);
+            this.txtPrezimeValidator.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.txtPrezimeValidator.Location = new System.Drawing.Point(317, 54);
+            this.txtPrezimeValidator.Name = "txtPrezimeValidator";
+            this.txtPrezimeValidator.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtPrezimeValidator.Size = new System.Drawing.Size(0, 0);
+            this.txtPrezimeValidator.TabIndex = 349;
+            this.txtPrezimeValidator.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.txtPrezimeValidator.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // txtAdresaValidator
+            // 
+            this.txtAdresaValidator.AllowParentOverrides = false;
+            this.txtAdresaValidator.AutoEllipsis = false;
+            this.txtAdresaValidator.CursorType = null;
+            this.txtAdresaValidator.Font = new System.Drawing.Font("Oswald", 6F);
+            this.txtAdresaValidator.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.txtAdresaValidator.Location = new System.Drawing.Point(318, 117);
+            this.txtAdresaValidator.Name = "txtAdresaValidator";
+            this.txtAdresaValidator.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtAdresaValidator.Size = new System.Drawing.Size(0, 0);
+            this.txtAdresaValidator.TabIndex = 350;
+            this.txtAdresaValidator.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.txtAdresaValidator.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // txtMailValidator
+            // 
+            this.txtMailValidator.AllowParentOverrides = false;
+            this.txtMailValidator.AutoEllipsis = false;
+            this.txtMailValidator.CursorType = null;
+            this.txtMailValidator.Font = new System.Drawing.Font("Oswald", 6F);
+            this.txtMailValidator.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.txtMailValidator.Location = new System.Drawing.Point(318, 181);
+            this.txtMailValidator.Name = "txtMailValidator";
+            this.txtMailValidator.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtMailValidator.Size = new System.Drawing.Size(0, 0);
+            this.txtMailValidator.TabIndex = 351;
+            this.txtMailValidator.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.txtMailValidator.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // txtDatumPotpisaValidator
+            // 
+            this.txtDatumPotpisaValidator.AllowParentOverrides = false;
+            this.txtDatumPotpisaValidator.AutoEllipsis = false;
+            this.txtDatumPotpisaValidator.CursorType = null;
+            this.txtDatumPotpisaValidator.Font = new System.Drawing.Font("Oswald", 6F);
+            this.txtDatumPotpisaValidator.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.txtDatumPotpisaValidator.Location = new System.Drawing.Point(7, 326);
+            this.txtDatumPotpisaValidator.Name = "txtDatumPotpisaValidator";
+            this.txtDatumPotpisaValidator.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtDatumPotpisaValidator.Size = new System.Drawing.Size(0, 0);
+            this.txtDatumPotpisaValidator.TabIndex = 352;
+            this.txtDatumPotpisaValidator.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.txtDatumPotpisaValidator.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // txtDatumZavrsetkaValidator
+            // 
+            this.txtDatumZavrsetkaValidator.AllowParentOverrides = false;
+            this.txtDatumZavrsetkaValidator.AutoEllipsis = false;
+            this.txtDatumZavrsetkaValidator.CursorType = null;
+            this.txtDatumZavrsetkaValidator.Font = new System.Drawing.Font("Oswald", 6F);
+            this.txtDatumZavrsetkaValidator.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.txtDatumZavrsetkaValidator.Location = new System.Drawing.Point(7, 390);
+            this.txtDatumZavrsetkaValidator.Name = "txtDatumZavrsetkaValidator";
+            this.txtDatumZavrsetkaValidator.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtDatumZavrsetkaValidator.Size = new System.Drawing.Size(0, 0);
+            this.txtDatumZavrsetkaValidator.TabIndex = 353;
+            this.txtDatumZavrsetkaValidator.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.txtDatumZavrsetkaValidator.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // pictureDatumRodjenjaValidator
+            // 
+            this.pictureDatumRodjenjaValidator.BackgroundImage = global::eBordo.WinUI.Properties.Resources.eBordo_required3;
+            this.pictureDatumRodjenjaValidator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureDatumRodjenjaValidator.Location = new System.Drawing.Point(289, 97);
+            this.pictureDatumRodjenjaValidator.Name = "pictureDatumRodjenjaValidator";
+            this.pictureDatumRodjenjaValidator.Size = new System.Drawing.Size(10, 10);
+            this.pictureDatumRodjenjaValidator.TabIndex = 354;
+            this.pictureDatumRodjenjaValidator.TabStop = false;
+            // 
+            // pictureDatumPotpisaValidator
+            // 
+            this.pictureDatumPotpisaValidator.BackgroundImage = global::eBordo.WinUI.Properties.Resources.eBordo_required3;
+            this.pictureDatumPotpisaValidator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureDatumPotpisaValidator.Location = new System.Drawing.Point(219, 304);
+            this.pictureDatumPotpisaValidator.Name = "pictureDatumPotpisaValidator";
+            this.pictureDatumPotpisaValidator.Size = new System.Drawing.Size(10, 10);
+            this.pictureDatumPotpisaValidator.TabIndex = 355;
+            this.pictureDatumPotpisaValidator.TabStop = false;
+            // 
+            // pictureDatumZavrsetkaUgovora
+            // 
+            this.pictureDatumZavrsetkaUgovora.BackgroundImage = global::eBordo.WinUI.Properties.Resources.eBordo_required3;
+            this.pictureDatumZavrsetkaUgovora.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureDatumZavrsetkaUgovora.Location = new System.Drawing.Point(219, 368);
+            this.pictureDatumZavrsetkaUgovora.Name = "pictureDatumZavrsetkaUgovora";
+            this.pictureDatumZavrsetkaUgovora.Size = new System.Drawing.Size(10, 10);
+            this.pictureDatumZavrsetkaUgovora.TabIndex = 356;
+            this.pictureDatumZavrsetkaUgovora.TabStop = false;
+            // 
+            // pictureSlikaAvatarValidator
+            // 
+            this.pictureSlikaAvatarValidator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.pictureSlikaAvatarValidator.BackgroundImage = global::eBordo.WinUI.Properties.Resources.eBordo_required3;
+            this.pictureSlikaAvatarValidator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureSlikaAvatarValidator.Location = new System.Drawing.Point(16, 132);
+            this.pictureSlikaAvatarValidator.Name = "pictureSlikaAvatarValidator";
+            this.pictureSlikaAvatarValidator.Size = new System.Drawing.Size(10, 10);
+            this.pictureSlikaAvatarValidator.TabIndex = 357;
+            this.pictureSlikaAvatarValidator.TabStop = false;
+            // 
+            // pictureSlikaPanelVAlidator
+            // 
+            this.pictureSlikaPanelVAlidator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.pictureSlikaPanelVAlidator.BackgroundImage = global::eBordo.WinUI.Properties.Resources.eBordo_required3;
+            this.pictureSlikaPanelVAlidator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureSlikaPanelVAlidator.Location = new System.Drawing.Point(525, 224);
+            this.pictureSlikaPanelVAlidator.Name = "pictureSlikaPanelVAlidator";
+            this.pictureSlikaPanelVAlidator.Size = new System.Drawing.Size(10, 10);
+            this.pictureSlikaPanelVAlidator.TabIndex = 358;
+            this.pictureSlikaPanelVAlidator.TabStop = false;
+            // 
+            // controlIsAktivan
+            // 
+            this.controlIsAktivan.AllowParentOverrides = false;
+            this.controlIsAktivan.AutoEllipsis = false;
+            this.controlIsAktivan.Cursor = System.Windows.Forms.Cursors.Default;
+            this.controlIsAktivan.CursorType = System.Windows.Forms.Cursors.Default;
+            this.controlIsAktivan.Font = new System.Drawing.Font("Oswald", 8F);
+            this.controlIsAktivan.Location = new System.Drawing.Point(7, 158);
+            this.controlIsAktivan.Name = "controlIsAktivan";
+            this.controlIsAktivan.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.controlIsAktivan.Size = new System.Drawing.Size(38, 16);
+            this.controlIsAktivan.TabIndex = 370;
+            this.controlIsAktivan.Text = "AKTIVAN";
+            this.controlIsAktivan.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.controlIsAktivan.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // switchIsAktivan
+            // 
+            this.switchIsAktivan.Animation = 5;
+            this.switchIsAktivan.AnimationSpeed = 5;
+            this.switchIsAktivan.BackColor = System.Drawing.Color.Transparent;
+            this.switchIsAktivan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("switchIsAktivan.BackgroundImage")));
+            this.switchIsAktivan.Checked = true;
+            this.switchIsAktivan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.switchIsAktivan.InnerCirclePadding = 3;
+            this.switchIsAktivan.Location = new System.Drawing.Point(87, 158);
+            this.switchIsAktivan.Name = "switchIsAktivan";
+            this.switchIsAktivan.Size = new System.Drawing.Size(30, 16);
+            this.switchIsAktivan.TabIndex = 369;
+            this.switchIsAktivan.ThumbMargin = 3;
+            toggleState1.BackColor = System.Drawing.Color.DarkGray;
+            toggleState1.BackColorInner = System.Drawing.Color.White;
+            toggleState1.BorderColor = System.Drawing.Color.DarkGray;
+            toggleState1.BorderColorInner = System.Drawing.Color.White;
+            toggleState1.BorderRadius = 17;
+            toggleState1.BorderRadiusInner = 11;
+            toggleState1.BorderThickness = 1;
+            toggleState1.BorderThicknessInner = 1;
+            this.switchIsAktivan.ToggleStateDisabled = toggleState1;
+            toggleState2.BackColor = System.Drawing.Color.Empty;
+            toggleState2.BackColorInner = System.Drawing.Color.Empty;
+            toggleState2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(0)))), ((int)(((byte)(140)))));
+            toggleState2.BorderColorInner = System.Drawing.Color.Empty;
+            toggleState2.BorderRadius = 1;
+            toggleState2.BorderRadiusInner = 1;
+            toggleState2.BorderThickness = 1;
+            toggleState2.BorderThicknessInner = 1;
+            this.switchIsAktivan.ToggleStateOff = toggleState2;
+            toggleState3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            toggleState3.BackColorInner = System.Drawing.Color.White;
+            toggleState3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            toggleState3.BorderColorInner = System.Drawing.Color.White;
+            toggleState3.BorderRadius = 15;
+            toggleState3.BorderRadiusInner = 9;
+            toggleState3.BorderThickness = 1;
+            toggleState3.BorderThicknessInner = 1;
+            this.switchIsAktivan.ToggleStateOn = toggleState3;
+            this.switchIsAktivan.Value = true;
+            this.switchIsAktivan.CheckedChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuToggleSwitch.CheckedChangedEventArgs>(this.switchIsAktivan_CheckedChanged);
+            // 
+            // txtDrzavljanstvoValidator
+            // 
+            this.txtDrzavljanstvoValidator.AllowParentOverrides = false;
+            this.txtDrzavljanstvoValidator.AutoEllipsis = false;
+            this.txtDrzavljanstvoValidator.CursorType = null;
+            this.txtDrzavljanstvoValidator.Font = new System.Drawing.Font("Oswald", 6F);
+            this.txtDrzavljanstvoValidator.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.txtDrzavljanstvoValidator.Location = new System.Drawing.Point(134, 244);
+            this.txtDrzavljanstvoValidator.Name = "txtDrzavljanstvoValidator";
+            this.txtDrzavljanstvoValidator.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtDrzavljanstvoValidator.Size = new System.Drawing.Size(0, 0);
+            this.txtDrzavljanstvoValidator.TabIndex = 372;
+            this.txtDrzavljanstvoValidator.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.txtDrzavljanstvoValidator.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // txtGradValidator
+            // 
+            this.txtGradValidator.AllowParentOverrides = false;
+            this.txtGradValidator.AutoEllipsis = false;
+            this.txtGradValidator.CursorType = null;
+            this.txtGradValidator.Font = new System.Drawing.Font("Oswald", 6F);
+            this.txtGradValidator.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.txtGradValidator.Location = new System.Drawing.Point(316, 244);
+            this.txtGradValidator.Name = "txtGradValidator";
+            this.txtGradValidator.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtGradValidator.Size = new System.Drawing.Size(0, 0);
+            this.txtGradValidator.TabIndex = 373;
+            this.txtGradValidator.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.txtGradValidator.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // txtFormacijaValidator
+            // 
+            this.txtFormacijaValidator.AllowParentOverrides = false;
+            this.txtFormacijaValidator.AutoEllipsis = false;
+            this.txtFormacijaValidator.CursorType = null;
+            this.txtFormacijaValidator.Font = new System.Drawing.Font("Oswald", 6F);
+            this.txtFormacijaValidator.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.txtFormacijaValidator.Location = new System.Drawing.Point(245, 325);
+            this.txtFormacijaValidator.Name = "txtFormacijaValidator";
+            this.txtFormacijaValidator.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtFormacijaValidator.Size = new System.Drawing.Size(0, 0);
+            this.txtFormacijaValidator.TabIndex = 374;
+            this.txtFormacijaValidator.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.txtFormacijaValidator.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // txtLicencaValidator
+            // 
+            this.txtLicencaValidator.AllowParentOverrides = false;
+            this.txtLicencaValidator.AutoEllipsis = false;
+            this.txtLicencaValidator.CursorType = null;
+            this.txtLicencaValidator.Font = new System.Drawing.Font("Oswald", 6F);
+            this.txtLicencaValidator.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.txtLicencaValidator.Location = new System.Drawing.Point(445, 325);
+            this.txtLicencaValidator.Name = "txtLicencaValidator";
+            this.txtLicencaValidator.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtLicencaValidator.Size = new System.Drawing.Size(0, 0);
+            this.txtLicencaValidator.TabIndex = 375;
+            this.txtLicencaValidator.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.txtLicencaValidator.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // pictureDrzavljanstvoSlikaValidator
+            // 
+            this.pictureDrzavljanstvoSlikaValidator.BackgroundImage = global::eBordo.WinUI.Properties.Resources.eBordo_required3;
+            this.pictureDrzavljanstvoSlikaValidator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureDrzavljanstvoSlikaValidator.Location = new System.Drawing.Point(289, 224);
+            this.pictureDrzavljanstvoSlikaValidator.Name = "pictureDrzavljanstvoSlikaValidator";
+            this.pictureDrzavljanstvoSlikaValidator.Size = new System.Drawing.Size(10, 10);
+            this.pictureDrzavljanstvoSlikaValidator.TabIndex = 376;
+            this.pictureDrzavljanstvoSlikaValidator.TabStop = false;
+            // 
+            // pictureGradSlikaValidator
+            // 
+            this.pictureGradSlikaValidator.BackgroundImage = global::eBordo.WinUI.Properties.Resources.eBordo_required3;
+            this.pictureGradSlikaValidator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureGradSlikaValidator.Location = new System.Drawing.Point(471, 224);
+            this.pictureGradSlikaValidator.Name = "pictureGradSlikaValidator";
+            this.pictureGradSlikaValidator.Size = new System.Drawing.Size(10, 10);
+            this.pictureGradSlikaValidator.TabIndex = 377;
+            this.pictureGradSlikaValidator.TabStop = false;
+            // 
+            // pictureFormacijaSlikaValidator
+            // 
+            this.pictureFormacijaSlikaValidator.BackgroundImage = global::eBordo.WinUI.Properties.Resources.eBordo_required3;
+            this.pictureFormacijaSlikaValidator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureFormacijaSlikaValidator.Location = new System.Drawing.Point(420, 304);
+            this.pictureFormacijaSlikaValidator.Name = "pictureFormacijaSlikaValidator";
+            this.pictureFormacijaSlikaValidator.Size = new System.Drawing.Size(10, 10);
+            this.pictureFormacijaSlikaValidator.TabIndex = 378;
+            this.pictureFormacijaSlikaValidator.TabStop = false;
+            // 
+            // pictureLicencaSlikaValidator
+            // 
+            this.pictureLicencaSlikaValidator.BackgroundImage = global::eBordo.WinUI.Properties.Resources.eBordo_required3;
+            this.pictureLicencaSlikaValidator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureLicencaSlikaValidator.Location = new System.Drawing.Point(628, 304);
+            this.pictureLicencaSlikaValidator.Name = "pictureLicencaSlikaValidator";
+            this.pictureLicencaSlikaValidator.Size = new System.Drawing.Size(10, 10);
+            this.pictureLicencaSlikaValidator.TabIndex = 379;
+            this.pictureLicencaSlikaValidator.TabStop = false;
+            // 
             // frmUpsertTrenera
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(520, 416);
+            this.ClientSize = new System.Drawing.Size(660, 434);
+            this.Controls.Add(this.pictureLicencaSlikaValidator);
+            this.Controls.Add(this.pictureFormacijaSlikaValidator);
+            this.Controls.Add(this.pictureGradSlikaValidator);
+            this.Controls.Add(this.pictureDrzavljanstvoSlikaValidator);
+            this.Controls.Add(this.txtLicencaValidator);
+            this.Controls.Add(this.txtFormacijaValidator);
+            this.Controls.Add(this.txtGradValidator);
+            this.Controls.Add(this.txtDrzavljanstvoValidator);
+            this.Controls.Add(this.controlIsAktivan);
+            this.Controls.Add(this.switchIsAktivan);
+            this.Controls.Add(this.pictureSlikaPanelVAlidator);
+            this.Controls.Add(this.pictureSlikaAvatarValidator);
+            this.Controls.Add(this.pictureDatumZavrsetkaUgovora);
+            this.Controls.Add(this.pictureDatumPotpisaValidator);
+            this.Controls.Add(this.pictureDatumRodjenjaValidator);
+            this.Controls.Add(this.txtDatumZavrsetkaValidator);
+            this.Controls.Add(this.txtDatumPotpisaValidator);
+            this.Controls.Add(this.txtMailValidator);
+            this.Controls.Add(this.txtAdresaValidator);
+            this.Controls.Add(this.txtPrezimeValidator);
+            this.Controls.Add(this.txtTelefonValidator);
+            this.Controls.Add(this.txtDatumRodjenjaValidator);
+            this.Controls.Add(this.txtImeValidator);
+            this.Controls.Add(this.btnSaveUpdate);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.bunifuLabel3);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.radioBtnPomocnik);
             this.Controls.Add(this.radioBtnGlavni);
             this.Controls.Add(this.lblGostujuca);
@@ -1383,7 +1917,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.Controls.Add(this.dtpDatumPotpisaUgovora);
             this.Controls.Add(this.cmbGradRodjenja);
             this.Controls.Add(this.cmbDrzavljanstvo);
-            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.bunifuSeparator1);
             this.Controls.Add(this.lblGradRodjenja);
             this.Controls.Add(this.lblDrzavljanstvo);
@@ -1408,6 +1941,15 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.Load += new System.EventHandler(this.frmUpsertTrenera_Load);
             ((System.ComponentModel.ISupportInitialize)(this.userProflePicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureSlikaIgraca)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureDatumRodjenjaValidator)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureDatumPotpisaValidator)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureDatumZavrsetkaUgovora)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSlikaAvatarValidator)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSlikaPanelVAlidator)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureDrzavljanstvoSlikaValidator)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureGradSlikaValidator)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFormacijaSlikaValidator)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureLicencaSlikaValidator)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1432,7 +1974,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
         private Bunifu.UI.WinForms.BunifuLabel lblDrzavljanstvo;
         private Bunifu.UI.WinForms.BunifuLabel lblGradRodjenja;
         private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator1;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSave;
         private Bunifu.UI.WinForms.BunifuDropdown cmbDrzavljanstvo;
         private Bunifu.UI.WinForms.BunifuDropdown cmbGradRodjenja;
         private Bunifu.UI.WinForms.BunifuLabel lblDatumPotpisaUgovora;
@@ -1451,5 +1992,32 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
         private Bunifu.UI.WinForms.BunifuRadioButton radioBtnGlavni;
         private Bunifu.UI.WinForms.BunifuLabel lblGostujuca;
         private Bunifu.UI.WinForms.BunifuLabel lblDomaca;
+        private System.Windows.Forms.Label label14;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel3;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSave;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSaveUpdate;
+        private Bunifu.UI.WinForms.BunifuLabel txtImeValidator;
+        private Bunifu.UI.WinForms.BunifuLabel txtDatumRodjenjaValidator;
+        private Bunifu.UI.WinForms.BunifuLabel txtTelefonValidator;
+        private Bunifu.UI.WinForms.BunifuLabel txtPrezimeValidator;
+        private Bunifu.UI.WinForms.BunifuLabel txtAdresaValidator;
+        private Bunifu.UI.WinForms.BunifuLabel txtMailValidator;
+        private Bunifu.UI.WinForms.BunifuLabel txtDatumPotpisaValidator;
+        private Bunifu.UI.WinForms.BunifuLabel txtDatumZavrsetkaValidator;
+        private System.Windows.Forms.PictureBox pictureDatumRodjenjaValidator;
+        private System.Windows.Forms.PictureBox pictureDatumPotpisaValidator;
+        private System.Windows.Forms.PictureBox pictureDatumZavrsetkaUgovora;
+        private System.Windows.Forms.PictureBox pictureSlikaAvatarValidator;
+        private System.Windows.Forms.PictureBox pictureSlikaPanelVAlidator;
+        private Bunifu.UI.WinForms.BunifuLabel controlIsAktivan;
+        private Bunifu.UI.WinForms.BunifuToggleSwitch switchIsAktivan;
+        private Bunifu.UI.WinForms.BunifuLabel txtDrzavljanstvoValidator;
+        private Bunifu.UI.WinForms.BunifuLabel txtGradValidator;
+        private Bunifu.UI.WinForms.BunifuLabel txtFormacijaValidator;
+        private Bunifu.UI.WinForms.BunifuLabel txtLicencaValidator;
+        private System.Windows.Forms.PictureBox pictureDrzavljanstvoSlikaValidator;
+        private System.Windows.Forms.PictureBox pictureGradSlikaValidator;
+        private System.Windows.Forms.PictureBox pictureFormacijaSlikaValidator;
+        private System.Windows.Forms.PictureBox pictureLicencaSlikaValidator;
     }
 }

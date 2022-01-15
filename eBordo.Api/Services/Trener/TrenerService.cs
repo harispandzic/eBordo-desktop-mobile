@@ -47,6 +47,14 @@ namespace eBordo.Api.Services.Trener
             {
                 entity = entity.Where(s => s.korisnik.ime.StartsWith(search.ime));
             }
+            if (search.isAktivan == false)
+            {
+                entity = entity.Where(s => !s.korisnik.isAktivan);
+            }
+            else
+            {
+                entity = entity.Where(s => s.korisnik.isAktivan);
+            }
             var result = entity.ToList();
 
             return _mapper.Map<List<Model.Models.Trener>>(result);
@@ -163,12 +171,12 @@ namespace eBordo.Api.Services.Trener
 
             var result = entity.FirstOrDefault();
 
-            _db.Remove(result);
-            _db.SaveChanges();
+            //_db.Remove(result);
+            //_db.SaveChanges();
 
             _korisnikService.Delete(result.korisnikId);
-            _statistikaService.Delete(result.trenerStatistikaId);
-            _ugovorService.Delete(result.ugovorId);
+            //_statistikaService.Delete(result.trenerStatistikaId);
+            //_ugovorService.Delete(result.ugovorId);
 
             return _mapper.Map<eBordo.Model.Models.Trener>(result);
         }

@@ -8,5 +8,6 @@ namespace eBordo.Model.Requests.Trening
     {
         public string lokacijaTreninga { get; set; }
         public bool isSearchTop3 { get; set; }
+        public bool zavrsen { get; set; }
     }
 }

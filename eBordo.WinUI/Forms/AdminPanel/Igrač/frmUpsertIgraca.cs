@@ -30,6 +30,13 @@ namespace eBordo.WinUI.Forms.AdminPanel
         private byte[] korisnikAvatar { get; set; }
         ByteToImage byteToImage = new ByteToImage();
 
+        bool isImeValidated = false, isPrezimeValidate = false, isAdresaValidated = false,
+            isTelefonValidated, isEmailValidated = false, isTezinaValidated = false, isVisinaValidated = false,
+            isBrojDresaValidated = false, isTrzisnaVrijednostValidated = false,
+            isSlikaAvatarValidated = false, isSlikaPanelValidated = false,
+            isDatumRodjenjaValidated = false, isDatumPotpisaValidated = false, isDatumZavrsetkaValidated = false,
+            isDrzavljanstvoValidated = false, isGradRodjenjaValidated = false, isPozicijaValidated = false;
+
         public frmUpsertIgraca(Model.Models.Igrac odabraniIgrac = null, frmPrikazIgraca prikazIgraca = null)
         {
             InitializeComponent();
@@ -46,26 +53,41 @@ namespace eBordo.WinUI.Forms.AdminPanel
             LoadPozicije();
             if (_odabraniIgrac != null)
             {
+                btnSaveUpdate.Show();
                 this.Text = "eBordo | Uredi igrača";
-                btnSave.Text = "Spasi izmjene";
                 txtIme.Enabled = false;
                 txtPrezime.Enabled = false;
                 dtpDatumRodjenja.Enabled = false;
                 nmbrSlabijaNoga.Enabled = false;
                 btnUcitajPanelPhoto.Enabled = false;
+                btnUcitajAvatar.Enabled = false;
                 if (_odabraniIgrac.korisnik.Slika.Length != 0)
                 {
                     userProflePicture.Image = byteToImage.ConvertByteToImage(_odabraniIgrac.korisnik.Slika);
                     userProflePicture.SizeMode = PictureBoxSizeMode.StretchImage;
+                    pictureSlikaIgraca.Image = byteToImage.ConvertByteToImage(_odabraniIgrac.slikaPanel);
+                    pictureSlikaIgraca.SizeMode = PictureBoxSizeMode.Zoom;
+                    isSlikaAvatarValidated = true;
+                    isSlikaPanelValidated = true;
+                    pictureSlikaAvatarValidator.BackgroundImage = Properties.Resources.eBordo_success_izvjestaj;
+                    pictureSlikaAvatarValidator.BackgroundImageLayout = ImageLayout.Zoom;
+                    pictureSlikaPanelVAlidator.BackgroundImage = Properties.Resources.eBordo_success_izvjestaj;
+                    pictureSlikaPanelVAlidator.BackgroundImageLayout = ImageLayout.Zoom;
                 }
                 LoadIgrac();
+                pictureSlikaAvatarValidator.BackColor = Color.FromArgb(204, 204, 204);
+                pictureSlikaPanelVAlidator.BackColor = Color.FromArgb(204, 204, 204);
+                radioDesna.Checked = true;
+                radioLijeva.Checked = false;
             }
             else
             {
+                btnSave.Show();
+                controlIsAktivan.Hide();
+                switchIsAktivan.Hide();
                 this.Text = "eBordo | Dodaj igrača";
-                btnSave.BackColor = Color.Green;
-                btnSave.Text = "Spasi igrača";
             }
+            btnUcitajPanelPhoto.TextAlign = ContentAlignment.MiddleCenter;
         }
         private void LoadIgrac()
         {
@@ -83,7 +105,14 @@ namespace eBordo.WinUI.Forms.AdminPanel
             dtpDatumZavrsetkaUgovora.Value = _odabraniIgrac.ugovor.datumZavrsetka;
             txtNapomene.Text = _odabraniIgrac.napomeneOIgracu;
             nmbrSlabijaNoga.Value = _odabraniIgrac.jacinaSlabijeNoge;
-
+            if (_odabraniIgrac.korisnik.isAktivan)
+            {
+                switchIsAktivan.Checked = true;
+            }
+            else
+            {
+                switchIsAktivan.Checked = false;
+            }
             LoadBoljaNoga();
         }
         private void LoadBoljaNoga()
@@ -189,140 +218,290 @@ namespace eBordo.WinUI.Forms.AdminPanel
             }
         }
 
-        private async void btnSave_Click(object sender, EventArgs e)
-        {
-            IgracInsertRequest insertRequest;
-            IgracUpdateRequest updateRequest;
-
-            if (_odabraniIgrac != null)
-            {
-                updateRequest = new IgracUpdateRequest
-                {
-                    korisnikUpdateRequest = new Model.Requests.Korisnik.KorisnikUpdateRequest
-                    {
-                        adresa = txtAdresa.Text,
-                        telefon = txtTelefon.Text,
-                        email = txtEmail.Text
-                    },
-                    ugovorUpdateRequeest = new Model.Requests.Ugovor.UgovorUpdateRequest
-                    {
-                        datumPocetka = dtpDatumPotpisaUgovora.Value,
-                        datumZavrsetka = dtpDatumZavrsetkaUgovora.Value,
-                    },
-                    visina = Int32.Parse(txtVisina.Text),
-                    tezina = Int32.Parse(txtTezina.Text),
-                    brojDresa = Int32.Parse(txtBrojDresa.Text),
-                    trzisnaVrijednost = Int32.Parse(txtTrzisnaVrijednost.Text),
-                    napomeneOIgracu = txtNapomene.Text,
-                    pozicijaId = _pozicije[cmbPozicija.SelectedIndex].pozicijaId,
-                };
-                try
-                {
-                    await _igrac.Update<Model.Models.Igrac>(_odabraniIgrac.igracId, updateRequest);
-                }
-                catch
-                {
-                    PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.GREŠKA_NA_SERVERU);
-                }
-                try
-                {
-                    await _prikazIgraca.LoadIgraci(notifikacija: TipNotifikacije.UREĐIVANJE);
-                }
-                catch
-                {
-                    PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.GREŠKA_NA_SERVERU);
-                }
-
-            }
-            else
-            {
-                string boljaNoga = "";
-                if (radioDesna.Checked)
-                {
-                    boljaNoga = "DESNA";
-                }
-                else if (radioLijeva.Checked)
-                {
-                    boljaNoga = "LIJEVA";
-                }
-
-                insertRequest = new IgracInsertRequest
-                {
-                    korisnikInsertRequest = new Model.Requests.Korisnik.KorisnikInsertRequest
-                    {
-                        ime = txtIme.Text,
-                        prezime = txtPrezime.Text,
-                        datumRodjenja = dtpDatumRodjenja.Value,
-                        adresa = txtAdresa.Text,
-                        telefon = txtTelefon.Text,
-                        email = txtEmail.Text,
-                        drzavljanstvoId = _drzave[cmbDrzavljanstvo.SelectedIndex].drzavaId,
-                        gradRodjenjaId = _gradovi[cmbGradRodjenja.SelectedIndex].gradId,
-                        Slika = korisnikAvatar,
-                    },
-                    ugovorInsertRequest = new Model.Requests.Ugovor.UgovorInsertRequest
-                    {
-                        datumPocetka = dtpDatumPotpisaUgovora.Value,
-                        datumZavrsetka = dtpDatumZavrsetkaUgovora.Value,
-                    },
-                    visina = Int32.Parse(txtVisina.Text),
-                    tezina = Int32.Parse(txtTezina.Text),
-                    brojDresa = Int32.Parse(txtBrojDresa.Text),
-                    trzisnaVrijednost = Int32.Parse(txtTrzisnaVrijednost.Text),
-                    noga=boljaNoga,
-                    jacinaSlabijeNoge = nmbrSlabijaNoga.Value,
-                    napomeneOIgracu = txtNapomene.Text,
-                    pozicijaId = _pozicije[cmbPozicija.SelectedIndex].pozicijaId,
-                    SlikaPanel = korisnikPanelPhoto
-                };
-                try
-                {
-                    await _igrac.Insert<Model.Models.Igrac>(insertRequest);
-                    await _prikazIgraca.LoadIgraci(notifikacija: TipNotifikacije.DODAVANJE);
-                    this.Hide();
-                }
-                catch 
-                {
-                    PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.GREŠKA_NA_SERVERU);
-                }
-            }
-        }
         private void btnUcitajFotografiju_Click(object sender, EventArgs e)
         {
             var result = avatarFileDialog.ShowDialog();
 
-            if (result == DialogResult.OK)
+            try
             {
-                var fileName = avatarFileDialog.FileName;
+                if (result == DialogResult.OK)
+                {
+                    var fileName = avatarFileDialog.FileName;
 
-                var file = System.IO.File.ReadAllBytes(fileName);
+                    var file = System.IO.File.ReadAllBytes(fileName);
 
-                korisnikAvatar = file;
+                    korisnikAvatar = file;
 
-                Image image = Image.FromFile(fileName);
-                userProflePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-                userProflePicture.Image = image;
+                    Image image = Image.FromFile(fileName);
+                    userProflePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+                    userProflePicture.Image = image;
+
+                    isSlikaAvatarValidated = Validacija.ValidirajSliku(image, pictureSlikaAvatarValidator, Field.SLIKA_AVATAR);
+                }
+            }
+            catch
+            {
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.GRESKA_UPLOAD);
             }
         }
 
         private void btnUcitajAvatar_Click(object sender, EventArgs e)
         {
-            
-            
             var result = panelSlikaFileDialog.ShowDialog();
 
-            if (result == DialogResult.OK)
+            try
             {
-                var fileName = panelSlikaFileDialog.FileName;
+                if (result == DialogResult.OK)
+                {
+                    btnUcitajPanelPhoto.TextAlign = ContentAlignment.MiddleRight;
 
-                var file = System.IO.File.ReadAllBytes(fileName);
+                    var fileName = panelSlikaFileDialog.FileName;
 
-                korisnikPanelPhoto = file;
+                    var file = System.IO.File.ReadAllBytes(fileName);
+                    korisnikPanelPhoto = file;
 
-                Image image = Image.FromFile(fileName);
-                pictureSlikaIgraca.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-                pictureSlikaIgraca.Image = image;
+                    Image image = Image.FromFile(fileName);
+                    pictureSlikaIgraca.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+                    pictureSlikaIgraca.Image = image;
+
+                    isSlikaPanelValidated = Validacija.ValidirajSliku(image, pictureSlikaPanelVAlidator, Field.SLIKA_PANEL);
+                }
             }
+            catch
+            {
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.GRESKA_UPLOAD);
+            }
+        }
+
+        private async void btnSave_Click_1(object sender, EventArgs e)
+        {
+            if (!ValidirajFormu())
+            {
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.FORMA_VALIDACIJA);
+                return;
+            }
+            string boljaNoga = "";
+            if (radioDesna.Checked)
+            {
+                boljaNoga = "DESNA";
+            }
+            else if (radioLijeva.Checked)
+            {
+                boljaNoga = "LIJEVA";
+            }
+
+            IgracInsertRequest insertRequest = new IgracInsertRequest
+            {
+                korisnikInsertRequest = new Model.Requests.Korisnik.KorisnikInsertRequest
+                {
+                    ime = txtIme.Text,
+                    prezime = txtPrezime.Text,
+                    datumRodjenja = dtpDatumRodjenja.Value,
+                    adresa = txtAdresa.Text,
+                    telefon = txtTelefon.Text,
+                    email = txtEmail.Text,
+                    drzavljanstvoId = _drzave[cmbDrzavljanstvo.SelectedIndex].drzavaId,
+                    gradRodjenjaId = _gradovi[cmbGradRodjenja.SelectedIndex].gradId,
+                    Slika = korisnikAvatar,
+                },
+                ugovorInsertRequest = new Model.Requests.Ugovor.UgovorInsertRequest
+                {
+                    datumPocetka = dtpDatumPotpisaUgovora.Value,
+                    datumZavrsetka = dtpDatumZavrsetkaUgovora.Value,
+                },
+                visina = Int32.Parse(txtVisina.Text),
+                tezina = Int32.Parse(txtTezina.Text),
+                brojDresa = Int32.Parse(txtBrojDresa.Text),
+                trzisnaVrijednost = Int32.Parse(txtTrzisnaVrijednost.Text),
+                noga = boljaNoga,
+                jacinaSlabijeNoge = nmbrSlabijaNoga.Value,
+                napomeneOIgracu = txtNapomene.Text,
+                pozicijaId = _pozicije[cmbPozicija.SelectedIndex].pozicijaId,
+                SlikaPanel = korisnikPanelPhoto
+            };
+            try
+            {
+                await _igrac.Insert<Model.Models.Igrac>(insertRequest);
+                await _prikazIgraca.LoadIgraci(notifikacija: TipNotifikacije.DODAVANJE);
+                this.Hide();
+            }
+            catch (Flurl.Http.FlurlHttpException ex)
+            {
+                var message = await ex.GetResponseStringAsync();
+                TipNotifikacije tipNotifikacije = Exceptions.getException((message));
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, tipNotifikacije);
+            }
+        }
+
+        private async void btnSaveUpdate_Click(object sender, EventArgs e)
+        {
+            if (!ValidirajFormu())
+            {
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.FORMA_VALIDACIJA);
+                return;
+            }
+            IgracUpdateRequest updateRequest;
+
+            bool isAktivan = true;
+            if (switchIsAktivan.Checked)
+            {
+                isAktivan = true;
+            }
+            else
+            {
+                isAktivan = false;
+            }
+            updateRequest = new IgracUpdateRequest
+            {
+                korisnikUpdateRequest = new Model.Requests.Korisnik.KorisnikUpdateRequest
+                {
+                    adresa = txtAdresa.Text,
+                    telefon = txtTelefon.Text,
+                    email = txtEmail.Text,
+                    isAktivan = isAktivan
+                },
+                ugovorUpdateRequeest = new Model.Requests.Ugovor.UgovorUpdateRequest
+                {
+                    datumPocetka = dtpDatumPotpisaUgovora.Value,
+                    datumZavrsetka = dtpDatumZavrsetkaUgovora.Value,
+                },
+                visina = Int32.Parse(txtVisina.Text),
+                tezina = Int32.Parse(txtTezina.Text),
+                brojDresa = Int32.Parse(txtBrojDresa.Text),
+                trzisnaVrijednost = Int32.Parse(txtTrzisnaVrijednost.Text),
+                napomeneOIgracu = txtNapomene.Text,
+                pozicijaId = _pozicije[cmbPozicija.SelectedIndex].pozicijaId,
+            };
+            try
+            {
+                await _igrac.Update<Model.Models.Igrac>(_odabraniIgrac.igracId, updateRequest);
+                await _prikazIgraca.LoadIgraci(notifikacija: TipNotifikacije.UREĐIVANJE);
+            }
+            catch (Flurl.Http.FlurlHttpException ex)
+            {
+                var message = await ex.GetResponseStringAsync();
+                TipNotifikacije tipNotifikacije = Exceptions.getException((message));
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, tipNotifikacije);
+            }
+        }
+        private bool ValidirajFormu()
+        {
+            bool isUspjesno = true;
+            if (!isImeValidated || !isPrezimeValidate || !isAdresaValidated || 
+                !isTelefonValidated || !isEmailValidated || !isTezinaValidated || 
+                !isVisinaValidated || !isBrojDresaValidated || !isTrzisnaVrijednostValidated || 
+                !isDatumRodjenjaValidated || !isDatumPotpisaValidated || !isDatumZavrsetkaValidated ||
+                !isSlikaAvatarValidated || !isSlikaPanelValidated || !isDrzavljanstvoValidated || 
+                !isGradRodjenjaValidated || !isPozicijaValidated
+         )
+            {
+                isUspjesno = false;
+            }
+            else
+            {
+                isUspjesno = true;
+            }
+
+            return isUspjesno;
+        }
+        private void userProflePicture_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureDatumPotpisaValidator_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void switchIsAktivan_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuToggleSwitch.CheckedChangedEventArgs e)
+        {
+
+        }
+
+        private void cmbDrzavljanstvo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            isDrzavljanstvoValidated = Validacija.ValidirajDropDown(cmbDrzavljanstvo, "Državljanstvo", txtDrzavljanstvoValidator, pictureDrzavljanstvoSlikaValidator);
+
+        }
+
+        private void cmbGradRodjenja_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            isGradRodjenjaValidated = Validacija.ValidirajDropDown(cmbGradRodjenja, "Grad rođenja", txtGradValidator, pictureGradSlikaValidator);
+        }
+
+        private void cmbPozicija_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            isPozicijaValidated = Validacija.ValidirajDropDown(cmbPozicija, "Pozicija", txtPozicijaValidator, picturePozicijaSlikaValidator);
+        }
+
+        private void dtpDatumZavrsetkaUgovora_ValueChanged(object sender, EventArgs e)
+        {
+            isDatumZavrsetkaValidated = Validacija.ValidirajDatum(dtpDatumZavrsetkaUgovora.Value, txtDatumZavrsetkaValidator, pictureDatumZavrsetkaUgovora, Field.DATUM_ZAVRSETKA);
+        }
+
+        private void dtpDatumPotpisaUgovora_ValueChanged(object sender, EventArgs e)
+        {
+            isDatumPotpisaValidated = Validacija.ValidirajDatum(dtpDatumPotpisaUgovora.Value, txtDatumPotpisaValidator, pictureDatumPotpisaValidator, Field.DATUM_POTPISA);
+        }
+
+        private void dtpDatumRodjenja_ValueChanged(object sender, EventArgs e)
+        {
+            isDatumRodjenjaValidated = Validacija.ValidirajDatum(dtpDatumRodjenja.Value, txtDatumRodjenjaValidator, pictureDatumRodjenjaValidator, Field.DATUM_RODJENJA_IGRAC);
+        }
+
+        private void txtIme_TextChanged(object sender, EventArgs e)
+        {
+            isImeValidated = Validacija.ValidirajInputString(txtIme, txtImeValidator, Field.IME);
+        }
+
+        private void txtPrezime_TextChanged(object sender, EventArgs e)
+        {
+            isPrezimeValidate = Validacija.ValidirajInputString(txtPrezime, txtPrezimeValidator, Field.PREZIME);
+        }
+
+        private void txtAdresa_TextChanged(object sender, EventArgs e)
+        {
+            isAdresaValidated = Validacija.ValidirajInputString(txtAdresa, txtAdresaValidator, Field.ADRESA);
+        }
+
+        private void txtTelefon_TextChanged(object sender, EventArgs e)
+        {
+            isTelefonValidated = Validacija.ValidirajInputString(txtTelefon, txtTelefonValidator, Field.TELEFON);
+        }
+
+        private void lblDatumPotpisaUgovora_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+            isEmailValidated = Validacija.ValidirajInputString(txtEmail, txtEmailValidator, Field.EMAIL);
+        }
+
+        private void txtVisina_TextChanged(object sender, EventArgs e)
+        {
+            isVisinaValidated = Validacija.ValidirajInputString(txtVisina, txtVisinaValidator, Field.VISINA);
+        }
+
+        private void txtTezina_TextChanged(object sender, EventArgs e)
+        {
+            isTezinaValidated = Validacija.ValidirajInputString(txtTezina, txtTezinaValidator, Field.TEZINA);
+        }
+
+        private void txtBrojDresa_TextChanged(object sender, EventArgs e)
+        {
+            isBrojDresaValidated = Validacija.ValidirajInputString(txtBrojDresa, txtBrojDresaValidator, Field.DRES);
+        }
+
+        private void txtTrzisnaVrijednost_TextChanged(object sender, EventArgs e)
+        {
+            isTrzisnaVrijednostValidated = Validacija.ValidirajInputString(txtTrzisnaVrijednost, txtTrzisnaVrijednostValidator, Field.TRZISNA_VRIJEDNOST);
         }
     }
 }

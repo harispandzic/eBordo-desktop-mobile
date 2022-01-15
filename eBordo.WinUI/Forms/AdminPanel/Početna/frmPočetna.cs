@@ -49,6 +49,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
         }
         private async Task LoadPodaci()
         {
+            btnSaveIgracSastav.Hide();
             await LoadNarednaUtakmica();
             await LoadZadnjaUtakmica();
             await LoadTop3Utakmice();
@@ -57,7 +58,9 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
             await LoadBrojKorisnika();
             await LoadStatistika();
             loaderPocetna.Hide();
+            loaderPocetna.Hide();
             panelPocetna.Hide();
+            btnSaveIgracSastav.Show();
         }
         public async Task LoadStatistika()
         {
@@ -100,13 +103,14 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
             IgracSearchObject search = new IgracSearchObject
             {
                 ime = "",
-                pozicijaId = -1
+                pozicijaId = -1,
+                isAktivan = true
             };
 
             try
             {
                 var igraci = await _igracApi.GetAll<List<Model.Models.Igrac>>(search);
-                txtAktivniIgraci.Text = igraci.Count().ToString();
+                //txtAktivniIgraci.Text = igraci.Count().ToString();
             }
             catch
             {
@@ -116,13 +120,14 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
             TrenerSearchObject searchTrener = new TrenerSearchObject
             {
                 ime = "",
+                isAktivan = true
             };
 
             try
             {
 
                 var igraci = await _trenerApi.GetAll<List<Model.Models.Trener>>(searchTrener);
-                txtAktivniTreneri.Text = igraci.Count().ToString();
+                //txtAktivniTreneri.Text = igraci.Count().ToString();
             }
             catch
             {
@@ -140,53 +145,55 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
             {
                 _zadnjaUtakmica = await _izvjestsajApi.GetAll<List<Model.Models.Izvještaj>>(search);
 
-                if (_zadnjaUtakmica[0].utakmica.vrstaUtakmice == "Domaća")
+                if(_zadnjaUtakmica.Count > 0)
                 {
-                    grbDomacinZadnjaUtakmica.BackgroundImage = Properties.Resources.grbSarajevo;
-                    grbDomacinZadnjaUtakmica.BackgroundImageLayout = ImageLayout.Zoom;
-                    grbGostZadnjaUtakmica.BackgroundImage = byteToImage.ConvertByteToImage(_zadnjaUtakmica[0].utakmica.protivnik.grb);
-                    grbGostZadnjaUtakmica.BackgroundImageLayout = ImageLayout.Zoom;
-                    //pictureDomacaGostujucaZadnjaUtakmica.BackgroundImage = Properties.Resources.home;
-                    //pictureDomacaGostujucaZadnjaUtakmica.BackgroundImageLayout = ImageLayout.Zoom;
-                    txtRezultat.Text = _zadnjaUtakmica[0].goloviSarajevo.ToString() + " : " + _zadnjaUtakmica[0].goloviProtivnik.ToString();
+                    if (_zadnjaUtakmica[0].utakmica.vrstaUtakmice == "Domaća")
+                    {
+                        grbDomacinZadnjaUtakmica.BackgroundImage = Properties.Resources.grbSarajevo;
+                        grbDomacinZadnjaUtakmica.BackgroundImageLayout = ImageLayout.Zoom;
+                        grbGostZadnjaUtakmica.BackgroundImage = byteToImage.ConvertByteToImage(_zadnjaUtakmica[0].utakmica.protivnik.grb);
+                        grbGostZadnjaUtakmica.BackgroundImageLayout = ImageLayout.Zoom;
+                        //pictureDomacaGostujucaZadnjaUtakmica.BackgroundImage = Properties.Resources.home;
+                        //pictureDomacaGostujucaZadnjaUtakmica.BackgroundImageLayout = ImageLayout.Zoom;
+                        txtRezultat.Text = _zadnjaUtakmica[0].goloviSarajevo.ToString() + " : " + _zadnjaUtakmica[0].goloviProtivnik.ToString();
+                    }
+                    else if (_zadnjaUtakmica[0].utakmica.vrstaUtakmice == "Gostujuća")
+                    {
+                        grbGostZadnjaUtakmica.BackgroundImage = Properties.Resources.grbSarajevo;
+                        grbGostZadnjaUtakmica.BackgroundImageLayout = ImageLayout.Zoom;
+                        grbDomacinZadnjaUtakmica.BackgroundImage = byteToImage.ConvertByteToImage(_zadnjaUtakmica[0].utakmica.protivnik.grb);
+                        grbDomacinZadnjaUtakmica.BackgroundImageLayout = ImageLayout.Zoom;
+                        //pictureDomacaGostujucaZadnjaUtakmica.BackgroundImage = Properties.Resources.away;
+                        //pictureDomacaGostujucaZadnjaUtakmica.BackgroundImageLayout = ImageLayout.Zoom;
+                        txtRezultat.Text = _zadnjaUtakmica[0].goloviProtivnik.ToString() + " : " + _zadnjaUtakmica[0].goloviSarajevo.ToString();
+                    }
+                    if (_zadnjaUtakmica[0].goloviSarajevo > _zadnjaUtakmica[0].goloviProtivnik)
+                    {
+                        pictureRezultatZadnjaUtakmica.BackgroundImage = Properties.Resources.eBordo_success_notification;
+                        pictureRezultatZadnjaUtakmica.BackgroundImageLayout = ImageLayout.Zoom;
+                    }
+                    else if (_zadnjaUtakmica[0].goloviSarajevo < _zadnjaUtakmica[0].goloviProtivnik)
+                    {
+                        pictureRezultatZadnjaUtakmica.BackgroundImage = Properties.Resources.eBordo_error_notification;
+                        pictureRezultatZadnjaUtakmica.BackgroundImageLayout = ImageLayout.Zoom;
+                    }
+                    else if (_zadnjaUtakmica[0].goloviSarajevo == _zadnjaUtakmica[0].goloviProtivnik)
+                    {
+                        pictureRezultatZadnjaUtakmica.BackgroundImage = Properties.Resources.eBordo_nerjeseno;
+                        pictureRezultatZadnjaUtakmica.BackgroundImageLayout = ImageLayout.Zoom;
+                    }
+                    txtDatumZadnjaUtakmica.Text = _zadnjaUtakmica[0].utakmica.datumOdigravanja.ToString("dd.MM.yyyy") + " u " + _zadnjaUtakmica[0].utakmica.satnica + " h";
+                    if (_zadnjaUtakmica[0].utakmica.datumOdigravanja.Date == DateTime.Now.Date)
+                    {
+                        txtPrijeDanaZadnjaUtakmica.Text = "DANAS";
+                    }
+                    else
+                    {
+                        txtPrijeDanaZadnjaUtakmica.Text = "prije " + (DateTime.Now.Date - _zadnjaUtakmica[0].utakmica.datumOdigravanja.Date).TotalDays + " dana";
+                    }
+                    pictureTakmicenjeZadnjaUtakmica.BackgroundImage = byteToImage.ConvertByteToImage(_zadnjaUtakmica[0].utakmica.takmicenje.logo);
+                    pictureTakmicenjeZadnjaUtakmica.BackgroundImageLayout = ImageLayout.Zoom;
                 }
-                else if (_zadnjaUtakmica[0].utakmica.vrstaUtakmice == "Gostujuća")
-                {
-                    grbGostZadnjaUtakmica.BackgroundImage = Properties.Resources.grbSarajevo;
-                    grbGostZadnjaUtakmica.BackgroundImageLayout = ImageLayout.Zoom;
-                    grbDomacinZadnjaUtakmica.BackgroundImage = byteToImage.ConvertByteToImage(_zadnjaUtakmica[0].utakmica.protivnik.grb);
-                    grbDomacinZadnjaUtakmica.BackgroundImageLayout = ImageLayout.Zoom;
-                    //pictureDomacaGostujucaZadnjaUtakmica.BackgroundImage = Properties.Resources.away;
-                    //pictureDomacaGostujucaZadnjaUtakmica.BackgroundImageLayout = ImageLayout.Zoom;
-                    txtRezultat.Text = _zadnjaUtakmica[0].goloviProtivnik.ToString() + " : " + _zadnjaUtakmica[0].goloviSarajevo.ToString();
-                }
-                if (_zadnjaUtakmica[0].goloviSarajevo > _zadnjaUtakmica[0].goloviProtivnik)
-                {
-                    pictureRezultatZadnjaUtakmica.BackgroundImage = Properties.Resources.eBordo_success_notification;
-                    pictureRezultatZadnjaUtakmica.BackgroundImageLayout = ImageLayout.Zoom;
-                }
-                else if (_zadnjaUtakmica[0].goloviSarajevo < _zadnjaUtakmica[0].goloviProtivnik)
-                {
-                    pictureRezultatZadnjaUtakmica.BackgroundImage = Properties.Resources.eBordo_error_notification;
-                    pictureRezultatZadnjaUtakmica.BackgroundImageLayout = ImageLayout.Zoom;
-                }
-                else if (_zadnjaUtakmica[0].goloviSarajevo == _zadnjaUtakmica[0].goloviProtivnik)
-                {
-                    pictureRezultatZadnjaUtakmica.BackgroundImage = Properties.Resources.eBordo_nerjeseno;
-                    pictureRezultatZadnjaUtakmica.BackgroundImageLayout = ImageLayout.Zoom;
-                }
-                txtProtivnikZadnjaUtakmica.Text = _zadnjaUtakmica[0].utakmica.protivnik.nazivKluba;
-                txtDatumZadnjaUtakmica.Text = _zadnjaUtakmica[0].utakmica.datumOdigravanja.ToString("dd.MM.yyyy") + " u " + _zadnjaUtakmica[0].utakmica.satnica + " h";
-                if(_zadnjaUtakmica[0].utakmica.datumOdigravanja.Date == DateTime.Now.Date)
-                {
-                    txtPrijeDanaZadnjaUtakmica.Text = "DANAS";
-                }
-                else
-                {
-                    txtPrijeDanaZadnjaUtakmica.Text = "prije " + (DateTime.Now.Date - _zadnjaUtakmica[0].utakmica.datumOdigravanja.Date).TotalDays + " dana";
-                }
-                pictureTakmicenjeZadnjaUtakmica.BackgroundImage = byteToImage.ConvertByteToImage(_zadnjaUtakmica[0].utakmica.takmicenje.logo);
-                pictureTakmicenjeZadnjaUtakmica.BackgroundImageLayout = ImageLayout.Zoom;
             }
             catch
             {
@@ -204,37 +211,39 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
             {
                 _narednaUtakmica = await _utakmicaApi.GetAll<List<Model.Models.Utakmica>>(search);
 
-                if (_narednaUtakmica[0].vrstaUtakmice == "Domaća")
+                if(_narednaUtakmica.Count > 0)
                 {
-                    grbDomacinNarednaUtakmica.BackgroundImage = Properties.Resources.grbSarajevo;
-                    grbDomacinNarednaUtakmica.BackgroundImageLayout = ImageLayout.Zoom;
-                    grbGostNarednaUtakmica.BackgroundImage = byteToImage.ConvertByteToImage(_narednaUtakmica[0].protivnik.grb);
-                    grbGostNarednaUtakmica.BackgroundImageLayout = ImageLayout.Zoom;
-                    //pictureDomacaGostujucaNarednaUtakmica.BackgroundImage = Properties.Resources.home;
-                    //pictureDomacaGostujucaNarednaUtakmica.BackgroundImageLayout = ImageLayout.Zoom;
+                    if (_narednaUtakmica[0].vrstaUtakmice == "Domaća")
+                    {
+                        grbDomacinNarednaUtakmica.BackgroundImage = Properties.Resources.grbSarajevo;
+                        grbDomacinNarednaUtakmica.BackgroundImageLayout = ImageLayout.Zoom;
+                        grbGostNarednaUtakmica.BackgroundImage = byteToImage.ConvertByteToImage(_narednaUtakmica[0].protivnik.grb);
+                        grbGostNarednaUtakmica.BackgroundImageLayout = ImageLayout.Zoom;
+                        //pictureDomacaGostujucaNarednaUtakmica.BackgroundImage = Properties.Resources.home;
+                        //pictureDomacaGostujucaNarednaUtakmica.BackgroundImageLayout = ImageLayout.Zoom;
+                    }
+                    else if (_narednaUtakmica[0].vrstaUtakmice == "Gostujuća")
+                    {
+                        grbGostNarednaUtakmica.BackgroundImage = Properties.Resources.grbSarajevo;
+                        grbGostNarednaUtakmica.BackgroundImageLayout = ImageLayout.Zoom;
+                        grbDomacinNarednaUtakmica.BackgroundImage = byteToImage.ConvertByteToImage(_narednaUtakmica[0].protivnik.grb);
+                        grbDomacinNarednaUtakmica.BackgroundImageLayout = ImageLayout.Zoom;
+                        //pictureDomacaGostujucaNarednaUtakmica.BackgroundImage = Properties.Resources.away;
+                        //pictureDomacaGostujucaNarednaUtakmica.BackgroundImageLayout = ImageLayout.Zoom;
+                    }
+                    txtSatnicaNaredneUtakmice.Text = _narednaUtakmica[0].datumOdigravanja.ToString("dd.MM.yyyy") + " u " + _narednaUtakmica[0].satnica + " h";
+                    if (_narednaUtakmica[0].datumOdigravanja.Date == DateTime.Now.Date)
+                    {
+                        txtBrojDanaNaredneUtakmice.Text = "DANAS";
+                    }
+                    else
+                    {
+                        txtBrojDanaNaredneUtakmice.Text = "za " + (_narednaUtakmica[0].datumOdigravanja.Date - DateTime.Now.Date).TotalDays + " dana";
+                    }
+                    txtOpisNaredneUtakmice.Text = _narednaUtakmica[0].opisUtakmice;
+                    pictureTakmicenje.BackgroundImage = byteToImage.ConvertByteToImage(_narednaUtakmica[0].takmicenje.logo);
+                    pictureTakmicenje.BackgroundImageLayout = ImageLayout.Zoom;
                 }
-                else if (_podaciUtakmiceTop3[0].vrstaUtakmice == "Gostujuća")
-                {
-                    grbGostNarednaUtakmica.BackgroundImage = Properties.Resources.grbSarajevo;
-                    grbGostNarednaUtakmica.BackgroundImageLayout = ImageLayout.Zoom;
-                    grbDomacinNarednaUtakmica.BackgroundImage = byteToImage.ConvertByteToImage(_narednaUtakmica[0].protivnik.grb);
-                    grbDomacinNarednaUtakmica.BackgroundImageLayout = ImageLayout.Zoom;
-                    //pictureDomacaGostujucaNarednaUtakmica.BackgroundImage = Properties.Resources.away;
-                    //pictureDomacaGostujucaNarednaUtakmica.BackgroundImageLayout = ImageLayout.Zoom;
-                }
-                txtProtivnik.Text = _narednaUtakmica[0].protivnik.nazivKluba;
-                txtSatnicaNaredneUtakmice.Text = _narednaUtakmica[0].datumOdigravanja.ToString("dd.MM.yyyy") + " u " + _narednaUtakmica[0].satnica + " h";
-                if(_narednaUtakmica[0].datumOdigravanja.Date == DateTime.Now.Date)
-                {
-                    txtBrojDanaNaredneUtakmice.Text = "DANAS";
-                }
-                else
-                {
-                    txtBrojDanaNaredneUtakmice.Text = "za " + (_narednaUtakmica[0].datumOdigravanja.Date - DateTime.Now.Date).TotalDays + " dana";
-                }
-                txtOpisNaredneUtakmice.Text = _narednaUtakmica[0].opisUtakmice;
-                pictureTakmicenje.BackgroundImage = byteToImage.ConvertByteToImage(_narednaUtakmica[0].takmicenje.logo);
-                pictureTakmicenje.BackgroundImageLayout = ImageLayout.Zoom;
             }
             catch
             {
@@ -258,31 +267,34 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
                 pnlPrikazNotifikacija.Controls.Clear();
 
                 _podaciNotifikacija = await _notifikacijaApi.GetAll<List<Model.Models.Notifikacija>>(search);
-                loaderNotifikacije.Hide();
+                //loaderNotifikacije.Hide();
 
-                frmNotifikacijaKartica[] listItems = new frmNotifikacijaKartica[_podaciNotifikacija.Count];
-                for (int i = 0; i < listItems.Length; i++)
+                if(_podaciNotifikacija.Count > 0)
                 {
-                    Image tipNotifikacije = Properties.Resources.eBordo_info_notification;
-                    if (_podaciNotifikacija[i].tipNotifikacije == "Upozorenje")
+                    frmNotifikacijaKartica[] listItems = new frmNotifikacijaKartica[_podaciNotifikacija.Count];
+                    for (int i = 0; i < listItems.Length; i++)
                     {
-                        tipNotifikacije = Properties.Resources.eBordo_warning_notification;
-                    }
-                    else if (_podaciNotifikacija[i].tipNotifikacije == "Greška")
-                    {
-                        tipNotifikacije = Properties.Resources.eBordo_error_notification;
-                    }
-                    else if (_podaciNotifikacija[i].tipNotifikacije == "Uspješno")
-                    {
-                        tipNotifikacije = Properties.Resources.eBordo_success_notification;
-                    }
-                    listItems[i] = new frmNotifikacijaKartica(this, snackbar);
-                    listItems[i].notifikacijaId = _podaciNotifikacija[i].notifikacijaId;
-                    listItems[i].tekstNotifikacije = _podaciNotifikacija[i].tekstNotifikacije;
-                    listItems[i].datumNotifikacije = _podaciNotifikacija[i].datumNotifikacije;
-                    listItems[i].tipNotifikacije = tipNotifikacije;
+                        Image tipNotifikacije = Properties.Resources.eBordo_info_notification;
+                        if (_podaciNotifikacija[i].tipNotifikacije == "Upozorenje")
+                        {
+                            tipNotifikacije = Properties.Resources.eBordo_warning_notification;
+                        }
+                        else if (_podaciNotifikacija[i].tipNotifikacije == "Greška")
+                        {
+                            tipNotifikacije = Properties.Resources.eBordo_error_notification;
+                        }
+                        else if (_podaciNotifikacija[i].tipNotifikacije == "Uspješno")
+                        {
+                            tipNotifikacije = Properties.Resources.eBordo_success_notification;
+                        }
+                        listItems[i] = new frmNotifikacijaKartica(this, snackbar);
+                        listItems[i].notifikacijaId = _podaciNotifikacija[i].notifikacijaId;
+                        listItems[i].tekstNotifikacije = _podaciNotifikacija[i].tekstNotifikacije;
+                        listItems[i].datumNotifikacije = _podaciNotifikacija[i].datumNotifikacije;
+                        listItems[i].tipNotifikacije = tipNotifikacije;
 
-                    pnlPrikazNotifikacija.Controls.Add(listItems[i]);
+                        pnlPrikazNotifikacija.Controls.Add(listItems[i]);
+                    }
                 }
             }
             catch
@@ -304,30 +316,32 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
                 _podaciUtakmiceTop3 = await _utakmicaApi.GetAll<List<Model.Models.Utakmica>>(search);
                 bunifuLoader1.Hide();
 
-
-                frmPrikazUtakmica[] listItems = new frmPrikazUtakmica[_podaciUtakmiceTop3.Count];
-                for (int i = 0; i < listItems.Length; i++)
+                if(_podaciUtakmiceTop3.Count > 0)
                 {
-                    listItems[i] = new frmPrikazUtakmica();
-                    listItems[i].utakmicaId = _podaciUtakmiceTop3[i].utakmicaId;
-                    if (_podaciUtakmiceTop3[i].vrstaUtakmice == "Domaća")
+                    frmPrikazUtakmica[] listItems = new frmPrikazUtakmica[_podaciUtakmiceTop3.Count];
+                    for (int i = 0; i < listItems.Length; i++)
                     {
-                        listItems[i].grbDomacinProp = Properties.Resources.grbSarajevo;
-                        listItems[i].domacaGostujuca = Properties.Resources.home_bordo;
-                        listItems[i].grbGostProp = byteToImage.ConvertByteToImage(_podaciUtakmiceTop3[i].protivnik.grb);
+                        listItems[i] = new frmPrikazUtakmica();
+                        listItems[i].utakmicaId = _podaciUtakmiceTop3[i].utakmicaId;
+                        if (_podaciUtakmiceTop3[i].vrstaUtakmice == "Domaća")
+                        {
+                            listItems[i].grbDomacinProp = Properties.Resources.grbSarajevo;
+                            listItems[i].domacaGostujuca = Properties.Resources.home_bordo;
+                            listItems[i].grbGostProp = byteToImage.ConvertByteToImage(_podaciUtakmiceTop3[i].protivnik.grb);
+                        }
+                        else if (_podaciUtakmiceTop3[i].vrstaUtakmice == "Gostujuća")
+                        {
+                            listItems[i].grbGostProp = Properties.Resources.grbSarajevo;
+                            listItems[i].domacaGostujuca = Properties.Resources.away_bordo;
+                            listItems[i].grbDomacinProp = byteToImage.ConvertByteToImage(_podaciUtakmiceTop3[i].protivnik.grb);
+                        }
+                        listItems[i].opisUtakmice = _podaciUtakmiceTop3[i].opisUtakmice;
+                        listItems[i].protivnik = _podaciUtakmiceTop3[i].protivnik.nazivKluba;
+                        listItems[i].datum = _podaciUtakmiceTop3[i].datumOdigravanja;
+                        listItems[i].satnica = _podaciUtakmiceTop3[i].satnica + " h";
+                        listItems[i].takmicenje = byteToImage.ConvertByteToImage(_podaciUtakmiceTop3[i].takmicenje.logo);
+                        pnlLoadUtakmice.Controls.Add(listItems[i]);
                     }
-                    else if (_podaciUtakmiceTop3[i].vrstaUtakmice == "Gostujuća")
-                    {
-                        listItems[i].grbGostProp = Properties.Resources.grbSarajevo;
-                        listItems[i].domacaGostujuca = Properties.Resources.away_bordo;
-                        listItems[i].grbDomacinProp = byteToImage.ConvertByteToImage(_podaciUtakmiceTop3[i].protivnik.grb);
-                    }
-                    listItems[i].opisUtakmice = _podaciUtakmiceTop3[i].opisUtakmice;
-                    listItems[i].protivnik = _podaciUtakmiceTop3[i].protivnik.nazivKluba;
-                    listItems[i].datum = _podaciUtakmiceTop3[i].datumOdigravanja;
-                    listItems[i].satnica = _podaciUtakmiceTop3[i].satnica + " h";
-                    listItems[i].takmicenje = byteToImage.ConvertByteToImage(_podaciUtakmiceTop3[i].takmicenje.logo);
-                    pnlLoadUtakmice.Controls.Add(listItems[i]);
                 }
             }
             catch
@@ -349,33 +363,35 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
                 _podaciTreningTop3 = await _treningApi.GetAll<List<Model.Models.Trening>>(search);
                 treningLoader.Hide();
 
-
-                frmPrikazTreninga[] listItems = new frmPrikazTreninga[_podaciTreningTop3.Count];
-                for (int i = 0; i < listItems.Length; i++)
+                if(_podaciTreningTop3.Count > 0)
                 {
-                    listItems[i] = new frmPrikazTreninga();
-                    listItems[i].treningId = _podaciTreningTop3[i].treningID;
-                    if (_podaciTreningTop3[i].lokacija == "Stadion")
+                    frmPrikazTreninga[] listItems = new frmPrikazTreninga[_podaciTreningTop3.Count];
+                    for (int i = 0; i < listItems.Length; i++)
                     {
-                        listItems[i].lokacija = Properties.Resources.eBordo_stadion;
+                        listItems[i] = new frmPrikazTreninga();
+                        listItems[i].treningId = _podaciTreningTop3[i].treningID;
+                        if (_podaciTreningTop3[i].lokacija == "Stadion")
+                        {
+                            listItems[i].lokacija = Properties.Resources.eBordo_stadion;
+                        }
+                        else
+                        {
+                            listItems[i].lokacija = Properties.Resources.eBordo_treningCentarBordo;
+                        }
+                        listItems[i].datum = _podaciTreningTop3[i].datumOdrzavanja;
+                        listItems[i].satnica = _podaciTreningTop3[i].satnica + " h";
+                        listItems[i].trenerSlika = byteToImage.ConvertByteToImage(_podaciTreningTop3[i].zabiljezio.korisnik.Slika);
+                        listItems[i].trener = _podaciTreningTop3[i].trajanje + "h";
+                        if (_podaciTreningTop3[i].datumOdrzavanja.Date == DateTime.Now.Date)
+                        {
+                            listItems[i].brojDana = "DANAS";
+                        }
+                        else
+                        {
+                            listItems[i].brojDana = "za " + (_podaciTreningTop3[i].datumOdrzavanja.Date - DateTime.Now.Date).TotalDays + " dana";
+                        }
+                        flowPanelPrikazTreninga.Controls.Add(listItems[i]);
                     }
-                    else
-                    {
-                        listItems[i].lokacija = Properties.Resources.home_bordo;
-                    }
-                    listItems[i].datum = _podaciTreningTop3[i].datumOdrzavanja;
-                    listItems[i].satnica = _podaciTreningTop3[i].satnica + " h";
-                    listItems[i].trenerSlika = byteToImage.ConvertByteToImage(_podaciTreningTop3[i].zabiljezio.korisnik.Slika);
-                    listItems[i].trener = _podaciTreningTop3[i].zabiljezio.korisnik.ime + " "+ _podaciTreningTop3[i].zabiljezio.korisnik.prezime;
-                    if(_podaciTreningTop3[i].datumOdrzavanja.Date == DateTime.Now.Date)
-                    {
-                        listItems[i].brojDana = "DANAS";
-                    }
-                    else
-                    {
-                        listItems[i].brojDana = "za " + (_podaciTreningTop3[i].datumOdrzavanja.Date - DateTime.Now.Date).TotalDays + " dana";
-                    }
-                    flowPanelPrikazTreninga.Controls.Add(listItems[i]);
                 }
             }
             catch
@@ -409,6 +425,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
         }
 
         private async void button1_Click(object sender, EventArgs e)
+        {
+            await LoadPodaci();
+        }
+
+        private async void btnSaveIgracSastav_Click(object sender, EventArgs e)
         {
             await LoadPodaci();
         }

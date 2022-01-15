@@ -38,6 +38,15 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
         private List<Model.Models.Igrac> _ostaliIgraci = new List<Model.Models.Igrac>();
         private List<int> _pozvaniIgraci = new List<int>();
 
+        bool isMinuteValidated = false, isGoloviValidated = false, isAsistencijeValidated = false,
+            isZutKartoniValidated = false, isCrveniKartoniValidated = false, isIgracValidated = false,
+            isIgracUtakmiceValidated = false,isIgracOUTValidated = false,isIgracINValidated = false,isRazlogIzmjeneVAlidated;
+
+
+        bool isMinutaIzmjenaValidirana = false;
+
+        bool isSlikaUtakmiceValidated = false, isGoloviDomacinValidated = false, isGoloviGostValidated = false;
+
         public frmUpsertIzvjestaj(int utakmicaId, frmPrikazOdigranihUtakmica prikazUtakmica, Izvještaj izvještaj)
         {
             InitializeComponent();
@@ -53,8 +62,8 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             LoadRazlogIzmjene();
             if (_izvještaj != null)
             {
+                btnSaveUpdate.Show();
                 this.Text = "eBordo | Uredi izvještaj";
-                btnSave.Text = "Spasi izmjene";
                 txtGoloviDomacin.Enabled = false;
                 txtGoloviGost.Enabled = false;
                 radioBtnKisa.Enabled = false;
@@ -73,14 +82,25 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
                     radioBtnSunce.Checked = true;
                 }
                 cmbIgracUtakmice.Enabled = false;
+                pictureSlikaUtakmicaValidator.BackgroundImage = Properties.Resources.eBordo_success_notification;
+                pictureSlikaUtakmicaValidator.BackgroundImageLayout = ImageLayout.Stretch;
+                isSlikaUtakmiceValidated = true;
                 LoadPodaci();
             }
             else
             {
+                btnSave.Show();
                 this.Text = "eBordo | Dodaj izvještaj";
-                btnSave.BackColor = Color.Green;
-                btnSave.Text = "Spasi izvještaj";
+                txtGoloviDomacinhUredjivanje.Visible = false;
+                txtGoloviGostijuUredjivanje.Visible = false;
+                pictureRezultat.Visible = false;
+                radioBtnSunce.Checked = true;
+                cmbIgracUtakmice.SelectedIndex = 1;
             }
+            txtIzmjenaMinutaValidator.Hide();
+            LoadDetaljiIgraca(_ostaliIgraci[0]);
+            UpdateBrojEvidentiranih();
+            UpdateBrojEvidentiranihIzmjena();
         }
         private void LoadPodaci()
         {
@@ -130,7 +150,8 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
                     nastup.utakmicaNastupId = item.utakmicaNastupId;
                     nastup.igracId = item.igracId;
                     nastup.igracSlika = byteToImage.ConvertByteToImage(item.igrac.korisnik.Slika);
-                    nastup.igracImePrezimeBrojDresa = item.igrac.korisnik.ime[0] + ". " + item.igrac.korisnik.prezime;
+                    nastup.igracImePrezime = item.igrac.korisnik.ime[0] + ". " + item.igrac.korisnik.prezime;
+                    nastup.brojDresa = "#" + item.igrac.brojDresa.ToString();
                     nastup.igracPozicija = item.igrac.pozicija.skracenica;
                     nastup.igracMinute = item.minute;
                     nastup.igracGolovi = item.golovi;
@@ -149,8 +170,36 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
                     nastup.klizeciStart = item.klizeciStart;
                     nastup.skok = item.skok;
                     nastup.odbrana = item.odbrana;
+                    nastup.igracKomentar = item.komentar;
 
                     flowPanelOcjene.Controls.Add(nastup);
+                }
+                txtGoloviDomacin.Visible = false;
+                txtGoloviGost.Visible = false;
+                if (_izvještaj.utakmica.vrstaUtakmice == "Domaća")
+                {
+                    txtGoloviDomacinhUredjivanje.Text = _izvještaj.goloviSarajevo.ToString();
+                    txtGoloviGostijuUredjivanje.Text = _izvještaj.goloviProtivnik.ToString();
+                }
+                else if (_izvještaj.utakmica.vrstaUtakmice == "Gostujuća")
+                {
+                    txtGoloviGostijuUredjivanje.Text = _izvještaj.goloviSarajevo.ToString();
+                    txtGoloviDomacinhUredjivanje.Text = _izvještaj.goloviProtivnik.ToString();
+                }
+                if (_izvještaj.goloviSarajevo > _izvještaj.goloviProtivnik)
+                {
+                    pictureRezultat.BackgroundImage = Properties.Resources.eBordo_success_notification;
+                    pictureRezultat.BackgroundImageLayout = ImageLayout.Zoom;
+                }
+                else if (_izvještaj.goloviSarajevo < _izvještaj.goloviProtivnik)
+                {
+                    pictureRezultat.BackgroundImage = Properties.Resources.eBordo_error_notification;
+                    pictureRezultat.BackgroundImageLayout = ImageLayout.Zoom;
+                }
+                else if (_izvještaj.goloviSarajevo == _izvještaj.goloviProtivnik)
+                {
+                    pictureRezultat.BackgroundImage = Properties.Resources.eBordo_nerjeseno;
+                    pictureRezultat.BackgroundImageLayout = ImageLayout.Zoom;
                 }
             }
         }
@@ -166,45 +215,57 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
         }
         private async Task UcitajUtakmicu()
         {
-            var result = await _utakmicaApi.GetById<Model.Models.Utakmica>(_utakmicaId);
-            if (result.vrstaUtakmice == "Domaća")
+            _utakmica = await _utakmicaApi.GetById<Model.Models.Utakmica>(_utakmicaId);
+            if (_utakmica.vrstaUtakmice == "Domaća")
             {
                 grbDomacin.BackgroundImage = Properties.Resources.grbSarajevo;
                 grbDomacin.BackgroundImageLayout = ImageLayout.Zoom;
                 lblDomacin.Text = "FK SARAJEVO";
-                grbGost.BackgroundImage = byteToImage.ConvertByteToImage(result.protivnik.grb);
+                grbGost.BackgroundImage = byteToImage.ConvertByteToImage(_utakmica.protivnik.grb);
                 grbGost.BackgroundImageLayout = ImageLayout.Zoom;
-                lblGost.Text = result.protivnik.nazivKluba.ToUpper();
+                lblGost.Text = _utakmica.protivnik.nazivKluba.ToUpper();
                 pictureGostujucaDomaca.BackgroundImage = Properties.Resources.home_bordo;
             }
-            else if (result.vrstaUtakmice == "Gostujuća")
+            else if (_utakmica.vrstaUtakmice == "Gostujuća")
             {
-                grbDomacin.BackgroundImage = byteToImage.ConvertByteToImage(result.protivnik.grb);
+                grbDomacin.BackgroundImage = byteToImage.ConvertByteToImage(_utakmica.protivnik.grb);
                 grbDomacin.BackgroundImageLayout = ImageLayout.Zoom;
-                lblDomacin.Text = result.protivnik.nazivKluba.ToUpper();
+                lblDomacin.Text = _utakmica.protivnik.nazivKluba.ToUpper();
                 grbGost.BackgroundImage = Properties.Resources.grbSarajevo;
                 grbGost.BackgroundImageLayout = ImageLayout.Zoom;
                 lblGost.Text = "FK SARAJEVO";
                 pictureGostujucaDomaca.BackgroundImage = Properties.Resources.away_bordo;
             }
-            lblOpisUtakmice.Text = result.opisUtakmice;
-            lblStadion.Text = result.stadion.nazivStadiona;
-            lblDatum.Text = result.datumOdigravanja.ToString("dd.MM.yyyy");
-            lblSatnica.Text = result.satnica + "h";
-            if (result.tipGarniture == "Domaća")
+            lblOpisUtakmice.Text = _utakmica.opisUtakmice.ToUpper();
+            lblStadion.Text = _utakmica.stadion.nazivStadiona.ToUpper();
+            lblDatum.Text = _utakmica.datumOdigravanja.ToString("dd.MM.yyyy");
+            lblSatnica.Text = _utakmica.satnica + "h";
+            if (_utakmica.tipGarniture == "Domaća")
             {
                 pictureDres.BackgroundImage = Properties.Resources.domaci;
             }
-            else if (result.tipGarniture == "Gostujuća")
+            else if (_utakmica.tipGarniture == "Gostujuća")
             {
                 pictureDres.BackgroundImage = Properties.Resources.gostujuci;
             }
-            else if (result.tipGarniture == "Rezervna")
+            else if (_utakmica.tipGarniture == "Rezervna")
             {
                 pictureDres.BackgroundImage = Properties.Resources.rezervni;
             }
-            pictureTakmicenje.BackgroundImage = byteToImage.ConvertByteToImage(result.takmicenje.logo);
+            pictureTakmicenje.BackgroundImage = byteToImage.ConvertByteToImage(_utakmica.takmicenje.logo);
             pictureTakmicenje.BackgroundImageLayout = ImageLayout.Zoom;
+            if (_utakmica.datumOdigravanja.Date == DateTime.Now.Date)
+            {
+                txtBrojDana.Text = "DANAS";
+            }
+            else if (_utakmica.datumOdigravanja.Date < DateTime.Now.Date)
+            {
+                txtBrojDana.Text = "PRIJE " + (DateTime.Now.Date - _utakmica.datumOdigravanja.Date.Date).TotalDays + " DANA";
+            }
+            else
+            {
+                txtBrojDana.Text = "ZA " + (_utakmica.datumOdigravanja.Date.Date - DateTime.Now.Date).TotalDays + " DANA";
+            }
         }
         private async Task LoadIgraci()
         {
@@ -245,146 +306,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             catch
             {
                 PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.GREŠKA_NA_SERVERU);
-            }
-        }
-        private void pictureSlikaUtakmice_Click(object sender, EventArgs e)
-        {
-            var result = fileDialog.ShowDialog();
-
-            if (result == DialogResult.OK)
-            {
-                var fileName = fileDialog.FileName;
-
-                var file = System.IO.File.ReadAllBytes(fileName);
-
-                utakmicaSlika = file;
-
-                Image image = Image.FromFile(fileName);
-                pictureSlikaUtakmice.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-                pictureSlikaUtakmice.Image = image;
-            }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            frmIzmjenaKartica izmjena;
-            int igracOutId = _igraciPrvaPostava[cmbIgracOut.SelectedIndex].igracId;
-            int igracInId = _igraciKlupa[cmbIgracIn.SelectedIndex].igracId;
-            int minuta = int.Parse(txtIzmjenaMinuta.Text);
-            string razlogIzmjene = _izmjenaRazlog[cmbRazlogIzmjena.SelectedIndex];
-            int izmjenaId = 0;
-            bool flag = false;
-
-            for (int i = 0; i < flowPanelIzmjene.Controls.Count; i++)
-            {
-                var control = (frmIzmjenaKartica)flowPanelIzmjene.Controls[i];
-                if (control.igracOutId == igracOutId || control.igracInId == igracInId)
-                {
-                    if (cmbIgracOut.Enabled && cmbIgracIn.Enabled)
-                    {
-                        MessageBox.Show("HRAIS");
-                        flag = true;
-                    }
-                    else
-                    {
-                        izmjenaId = control.utakmicaIzmjenaId;
-                        flowPanelIzmjene.Controls.Remove(control);
-                    }
-                }
-            };
-            if (!flag)
-            {
-                izmjena = new frmIzmjenaKartica(flowPanelIzmjene, this, _igraciPrvaPostava, _igraciKlupa, cmbIgracOut, cmbIgracIn, false);
-                izmjena.igracOutId = igracOutId;
-                izmjena.igracInId = igracInId;
-                izmjena.igracOutSlika = byteToImage.ConvertByteToImage(_igraciPrvaPostava[cmbIgracOut.SelectedIndex].korisnik.Slika);
-                izmjena.igracInSlika = byteToImage.ConvertByteToImage(_igraciKlupa[cmbIgracOut.SelectedIndex].korisnik.Slika);
-                izmjena.igracOutPrezime = _igraciPrvaPostava[cmbIgracOut.SelectedIndex].korisnik.ime[0] + ". " + _igraciPrvaPostava[cmbIgracOut.SelectedIndex].korisnik.prezime;
-                izmjena.igracInPrezime = _igraciKlupa[cmbIgracIn.SelectedIndex].korisnik.ime[0] + ". " + _igraciKlupa[cmbIgracIn.SelectedIndex].korisnik.prezime;
-                izmjena.igracOutPozicija = _igraciPrvaPostava[cmbIgracOut.SelectedIndex].pozicija.skracenica;
-                izmjena.igracInPozicija = _igraciKlupa[cmbIgracIn.SelectedIndex].pozicija.skracenica;
-                izmjena.igracOutBroj = "#" + _igraciPrvaPostava[cmbIgracOut.SelectedIndex].brojDresa.ToString();
-                izmjena.igracInBroj = "#" + _igraciKlupa[cmbIgracIn.SelectedIndex].brojDresa.ToString();
-                izmjena.minuta = minuta;
-                izmjena.razlogIzmjene = razlogIzmjene.ToUpper();
-                izmjena.utakmicaIzmjenaId = izmjenaId;
-                flowPanelIzmjene.Controls.Add(izmjena);
-                cmbIgracOut.Enabled = true;
-                cmbIgracIn.Enabled = true;
-                cmbRazlogIzmjena.SelectedIndex = 0;
-                txtIzmjenaMinuta.Clear();
-            }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            frmIgracNastupKartica nastup;
-            int igracId = _ostaliIgraci[cmbIgraciSastav.SelectedIndex].igracId;
-            int nastupId = 0;
-            bool flag = false;
-            for (int i = 0; i < flowPanelOcjene.Controls.Count; i++)
-            {
-                var control = (frmIgracNastupKartica)flowPanelOcjene.Controls[i];
-                if (control.igracId == igracId)
-                {
-                    if (cmbIgraciSastav.Enabled)
-                    {
-                        MessageBox.Show("HRAIS");
-                        flag = true;
-                    }
-                    else
-                    {
-                        nastupId = control.utakmicaNastupId;
-                        flowPanelOcjene.Controls.Remove(control);
-                    }
-                }
-            };
-            if (!flag)
-            {
-                nastup = new frmIgracNastupKartica(this, flowPanelOcjene, _igraci, false);
-                nastup.igracId = igracId;
-                nastup.igracSlika = byteToImage.ConvertByteToImage(_ostaliIgraci[cmbIgraciSastav.SelectedIndex].korisnik.Slika);
-                nastup.igracImePrezimeBrojDresa = _ostaliIgraci[cmbIgraciSastav.SelectedIndex].korisnik.ime[0] + ". " + _ostaliIgraci[cmbIgraciSastav.SelectedIndex].korisnik.prezime;
-                nastup.igracPozicija = _ostaliIgraci[cmbIgraciSastav.SelectedIndex].pozicija.skracenica;
-                nastup.igracMinute= int.Parse(txtMinute.Text);
-                nastup.igracGolovi = int.Parse(txtGolovi.Text);
-                nastup.igracAsistencije = int.Parse(txtAsistencije.Text);
-                nastup.igracZutiKartoni = int.Parse(txtZutiKartoni.Text);
-                nastup.igracCrveniKartoni = int.Parse(txtCrveniKartoni.Text);
-                nastup.kontrolaLopte = ratingKontrolaLopte.Value;
-                nastup.driblanje = ratingDriblanje.Value;
-                nastup.dodavanje = ratingDodavanje.Value;
-                nastup.kretanje = ratingKretanje.Value;
-                nastup.brzina = ratingBrzina.Value;
-                nastup.sut = ratingSut.Value;
-                nastup.snaga = ratingSnaga.Value;
-                nastup.markiranje = ratingMarkiranje.Value;
-                nastup.klizeciStart = ratingKlizeciStart.Value;
-                nastup.skok = ratingSkok.Value;
-                nastup.odbrana = ratingOdbrana.Value;
-                nastup.ocjenaRating = ratingOcjenaNastup.Value;
-                nastup.utakmicaNastupId = nastupId;
-                flowPanelOcjene.Controls.Add(nastup);
-                filterIgraci(TipFiltera.Dodavanje);
-                cmbIgraciSastav.SelectedIndex = 0;
-                txtMinute.Clear();
-                txtGolovi.Clear();
-                txtAsistencije.Clear();
-                txtZutiKartoni.Clear();
-                txtCrveniKartoni.Clear();
-                ratingOcjenaNastup.Clear();
-                ratingKontrolaLopte.Clear();
-                ratingDriblanje.Clear();
-                ratingDodavanje.Clear();
-                ratingKretanje.Clear();
-                ratingBrzina.Clear();
-                ratingSut.Clear();
-                ratingSnaga.Clear();
-                ratingMarkiranje.Clear();
-                ratingKlizeciStart.Clear();
-                ratingSkok.Clear();
-                ratingOdbrana.Clear();
-                ratingOcjenaNastup.Clear();
             }
         }
         public void filterIzmjene(int igracOutId, int igracInId)
@@ -455,6 +376,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
                         ratingSkok.Value = control.skok;
                         ratingOdbrana.Value = control.odbrana;
                         ratingOcjenaNastup.Value = control.ocjenaRating;
+                        txtKomentar.Text = control.igracKomentar;
                         cmbIgraciSastav.Enabled = false;
                     }
                 }
@@ -473,175 +395,160 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             }
         }
        
-
-        private async void btnSave_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
+            cmbIgracOut.Enabled = true;
+            cmbIgracIn.Enabled = true;
+            txtIzmjenaMinuta.Clear();
+            cmbRazlogIzmjena.SelectedIndex = 0;
+        }
+        private bool ValidirajOcjenu()
+        {
+            bool isUspjesno = true;
+            if (!isMinuteValidated || !isGoloviValidated || !isAsistencijeValidated ||
+                !isZutKartoniValidated || !isCrveniKartoniValidated || !isIgracValidated)
+            {
+                isUspjesno = false;
+            }
+            else
+            {
+                isUspjesno = true;
+            }
+
+            return isUspjesno;
+        }
+        private bool ValidirajIzmjneu()
+        {
+            bool isUspjesno = true;
+            if (!isMinutaIzmjenaValidirana || !isIgracOUTValidated || !isIgracINValidated || !isRazlogIzmjeneVAlidated)
+            {
+                isUspjesno = false;
+            }
+            else
+            {
+                isUspjesno = true;
+            }
+
+            return isUspjesno;
+        }
+        private bool ValidirajFormu()
+        {
+            bool isUspjesno = true;
             if(_izvještaj != null)
             {
-                List<UtakmicaNastupUpdateRequest> nastupi = new List<UtakmicaNastupUpdateRequest>();
-                List<UtakmicaIzmjenaUpdateRequest> izmjene = new List<UtakmicaIzmjenaUpdateRequest>();
-
-                for (int i = 0; i < flowPanelOcjene.Controls.Count; i++)
+                if (!isSlikaUtakmiceValidated || !isIgracUtakmiceValidated)
                 {
-                    var controlNastup = (frmIgracNastupKartica)flowPanelOcjene.Controls[i];
-                    UtakmicaNastupUpdateRequest nastup = new UtakmicaNastupUpdateRequest
-                    {
-                        utakmicaNastupId = controlNastup.utakmicaNastupId,
-                        igracId = controlNastup.igracId,
-                        trenerId = 1,
-                        utakmicaId = _utakmicaId,
-                        minute = controlNastup.igracMinute,
-                        golovi = controlNastup.igracGolovi,
-                        asistencije = controlNastup.igracAsistencije,
-                        zutiKartoni = controlNastup.igracZutiKartoni,
-                        crveniKartoni = controlNastup.igracCrveniKartoni,
-                        ocjena = controlNastup.ocjenaRating,
-                        komentar = controlNastup.igracKomentar,
-                        kontrolaLopte = controlNastup.kontrolaLopte,
-                        driblanje = controlNastup.driblanje,
-                        dodavanje = controlNastup.dodavanje,
-                        kretanje = controlNastup.kretanje,
-                        brzina = controlNastup.brzina,
-                        sut = controlNastup.sut,
-                        snaga = controlNastup.snaga,
-                        markiranje = controlNastup.markiranje,
-                        klizeciStart = controlNastup.klizeciStart,
-                        skok = controlNastup.skok,
-                        odbrana = controlNastup.odbrana
-                    };
-                    nastupi.Add(nastup);
-                    var controlOcjene = (frmIgracNastupKartica)flowPanelOcjene.Controls[i];
-                };
-                for (int i = 0; i < flowPanelIzmjene.Controls.Count; i++)
-                {
-                    var controlIzmjene = (frmIzmjenaKartica)flowPanelIzmjene.Controls[i];
-                    UtakmicaIzmjenaUpdateRequest izmjena = new UtakmicaIzmjenaUpdateRequest
-                    {
-                        utakmicaIzmjenaId = controlIzmjene.utakmicaIzmjenaId,
-                        utakmicaId = _utakmicaId,
-                        igracOutId = controlIzmjene.igracOutId,
-                        igracInId = controlIzmjene.igracInId,
-                        minuta = controlIzmjene.minuta,
-                        izmjenaRazlog = controlIzmjene.razlogIzmjene
-                    };
-                    izmjene.Add(izmjena);
-                };
-
-                IzvjestajUpdateRequest updateRequest = new IzvjestajUpdateRequest
-                {
-                    zapisnik = txtZapisnik.Text,
-                    izmjene = izmjene,
-                    utakmicaNastup = nastupi,
-                    utakmicaId = _utakmicaId
-                };
-                try
-                {
-                    await _izvjestajApi.Update<Model.Models.Izvještaj>(_izvještaj.izvještajId, updateRequest);
-                    await _prikazUtakmica.LoadIzvještaj(notifikacija: TipNotifikacije.UREĐIVANJE);
-                    this.Hide();
+                    isUspjesno = false;
                 }
-                catch
+                else
                 {
-                    PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.GREŠKA_NA_SERVERU);
+                    isUspjesno = true;
                 }
             }
             else
             {
-                List<UtakmicaNastupInsertRequest> nastupi = new List<UtakmicaNastupInsertRequest>();
-                List<UtakmicaIzmjenaInsertRequest> izmjene = new List<UtakmicaIzmjenaInsertRequest>();
-                Vrijeme vrijeme = Vrijeme.KIŠA;
-                int goloviSarajevo;
-                int goloviProtivnik;
-
-                if (_utakmica.vrstaUtakmice == "Domaća")
+                if (!isSlikaUtakmiceValidated || !isGoloviGostValidated || !isGoloviDomacinValidated || !isIgracUtakmiceValidated)
                 {
-                    goloviSarajevo = int.Parse(txtGoloviDomacin.Text);
-                    goloviProtivnik = int.Parse(txtGoloviGost.Text);
+                    isUspjesno = false;
                 }
                 else
                 {
-                    goloviProtivnik = int.Parse(txtGoloviDomacin.Text);
-                    goloviSarajevo = int.Parse(txtGoloviGost.Text);
+                    isUspjesno = true;
                 }
+            }
 
-                for (int i = 0; i < flowPanelOcjene.Controls.Count; i++)
+            return isUspjesno;
+        }
+        private void btnSaveIgracSastav_Click(object sender, EventArgs e)
+        {
+            if (!ValidirajOcjenu())
+            {
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.FORMA_VALIDACIJA);
+                return;
+            }
+            frmIgracNastupKartica nastup;
+            int igracId = _ostaliIgraci[cmbIgraciSastav.SelectedIndex].igracId;
+            int nastupId = 0;
+            bool flag = false;
+            for (int i = 0; i < flowPanelOcjene.Controls.Count; i++)
+            {
+                var control = (frmIgracNastupKartica)flowPanelOcjene.Controls[i];
+                if (control.igracId == igracId)
                 {
-                    var controlNastup = (frmIgracNastupKartica)flowPanelOcjene.Controls[i];
-                    UtakmicaNastupInsertRequest nastup = new UtakmicaNastupInsertRequest
+                    if (cmbIgraciSastav.Enabled)
                     {
-                        igracId = controlNastup.igracId,
-                        trenerId = 1,
-                        utakmicaId = _utakmicaId,
-                        minute = controlNastup.igracMinute,
-                        golovi = controlNastup.igracGolovi,
-                        asistencije = controlNastup.igracAsistencije,
-                        zutiKartoni = controlNastup.igracZutiKartoni,
-                        crveniKartoni = controlNastup.igracCrveniKartoni,
-                        ocjena = controlNastup.ocjenaRating,
-                        komentar = controlNastup.igracKomentar,
-                        kontrolaLopte = controlNastup.kontrolaLopte,
-                        driblanje = controlNastup.driblanje,
-                        dodavanje = controlNastup.dodavanje,
-                        kretanje = controlNastup.kretanje,
-                        brzina = controlNastup.brzina,
-                        sut = controlNastup.sut,
-                        snaga = controlNastup.snaga,
-                        markiranje = controlNastup.markiranje,
-                        klizeciStart = controlNastup.klizeciStart,
-                        skok = controlNastup.skok,
-                        odbrana = controlNastup.odbrana
-                    };
-                    nastupi.Add(nastup);
-                };
-                for (int i = 0; i < flowPanelIzmjene.Controls.Count; i++)
-                {
-                    var controlIzmjene = (frmIzmjenaKartica)flowPanelIzmjene.Controls[i];
-                    UtakmicaIzmjenaInsertRequest izmjena = new UtakmicaIzmjenaInsertRequest
+                        PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.IGRAC_OCJENJEN);
+                        flag = true;
+                    }
+                    else
                     {
-                        utakmicaId = _utakmicaId,
-                        igracOutId = controlIzmjene.igracOutId,
-                        igracInId = controlIzmjene.igracInId,
-                        minuta = controlIzmjene.minuta,
-                        izmjenaRazlog = controlIzmjene.razlogIzmjene
-                    };
-                    izmjene.Add(izmjena);
-                };
-                if (radioBtnSunce.Checked)
-                {
-                    vrijeme = Vrijeme.SUNCE;
+                        nastupId = control.utakmicaNastupId;
+                        flowPanelOcjene.Controls.Remove(control);
+                    }
                 }
-                else if (radioBtnOblacno.Checked)
+            };
+            if (!flag)
+            {
+                nastup = new frmIgracNastupKartica(this, flowPanelOcjene, _igraci, false);
+                nastup.igracId = igracId;
+                nastup.igracSlika = byteToImage.ConvertByteToImage(_ostaliIgraci[cmbIgraciSastav.SelectedIndex].korisnik.Slika);
+                nastup.igracImePrezime = _ostaliIgraci[cmbIgraciSastav.SelectedIndex].korisnik.ime[0] + ". " + _ostaliIgraci[cmbIgraciSastav.SelectedIndex].korisnik.prezime;
+                nastup.brojDresa = "#" + _ostaliIgraci[cmbIgraciSastav.SelectedIndex].brojDresa;
+                nastup.igracPozicija = _ostaliIgraci[cmbIgraciSastav.SelectedIndex].pozicija.skracenica;
+                nastup.igracMinute = int.Parse(txtMinute.Text);
+                nastup.igracGolovi = int.Parse(txtGolovi.Text);
+                nastup.igracAsistencije = int.Parse(txtAsistencije.Text);
+                nastup.igracZutiKartoni = int.Parse(txtZutiKartoni.Text);
+                nastup.igracCrveniKartoni = int.Parse(txtCrveniKartoni.Text);
+                nastup.kontrolaLopte = ratingKontrolaLopte.Value;
+                nastup.driblanje = ratingDriblanje.Value;
+                nastup.dodavanje = ratingDodavanje.Value;
+                nastup.kretanje = ratingKretanje.Value;
+                nastup.brzina = ratingBrzina.Value;
+                nastup.sut = ratingSut.Value;
+                nastup.snaga = ratingSnaga.Value;
+                nastup.markiranje = ratingMarkiranje.Value;
+                nastup.klizeciStart = ratingKlizeciStart.Value;
+                nastup.skok = ratingSkok.Value;
+                nastup.odbrana = ratingOdbrana.Value;
+                nastup.ocjenaRating = ratingOcjenaNastup.Value;
+                nastup.utakmicaNastupId = nastupId;
+                nastup.igracKomentar = txtKomentar.Text;
+                flowPanelOcjene.Controls.Add(nastup);
+                if (cmbIgraciSastav.Enabled)
                 {
-                    vrijeme = Vrijeme.OBLAČNO;
+                    PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.IGRAC_USPJESNO_OCJENJEN);
                 }
-
-                IzvjetajInsertRequest insertRequest = new IzvjetajInsertRequest
+                else
                 {
-                    goloviSarajevo = goloviSarajevo,
-                    goloviProtivnik = goloviProtivnik,
-                    zapisnik = txtZapisnik.Text,
-                    slikaSaUtakmice = utakmicaSlika,
-                    vrijeme = vrijeme,
-                    igracUtakmicaID = _igraci[cmbIgracUtakmice.SelectedIndex].igracId,
-                    utakmicaID = _utakmicaId,
-                    trenerID = 1,
-                    izmjene = izmjene,
-                    utakmicaNastup = nastupi
-                };
-                try
-                {
-                    await _izvjestajApi.Insert<Model.Models.Izvještaj>(insertRequest);
-                    await _prikazUtakmica.LoadIzvještaj(notifikacija: TipNotifikacije.DODAVANJE);
-                    this.Hide();
+                    PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.UREĐIVANJE);
                 }
-                catch
-                {
-                    PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.GREŠKA_NA_SERVERU);
-                }
+                filterIgraci(TipFiltera.Dodavanje);
+                cmbIgraciSastav.SelectedIndex = 0;
+                txtMinute.Clear();
+                txtGolovi.Clear();
+                txtAsistencije.Clear();
+                txtZutiKartoni.Clear();
+                txtCrveniKartoni.Clear();
+                ratingOcjenaNastup.Clear();
+                ratingKontrolaLopte.Clear();
+                ratingDriblanje.Clear();
+                ratingDodavanje.Clear();
+                ratingKretanje.Clear();
+                ratingBrzina.Clear();
+                ratingSut.Clear();
+                ratingSnaga.Clear();
+                ratingMarkiranje.Clear();
+                ratingKlizeciStart.Clear();
+                ratingSkok.Clear();
+                ratingOdbrana.Clear();
+                ratingOcjenaNastup.Clear();
+                txtKomentar.Clear();              
+                UpdateBrojEvidentiranih();
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnOdustani_Click(object sender, EventArgs e)
         {
             cmbIgraciSastav.SelectedIndex = 0;
             cmbIgraciSastav.Enabled = true;
@@ -664,13 +571,391 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             ratingOdbrana.Clear();
             ratingOcjenaNastup.Clear();
         }
+        public void LoadDetaljiIgraca(Model.Models.Igrac igrac)
+        {
+            txtBrojDresa.Text = "#" + igrac.brojDresa.ToString();
+            pictureSlikaIgraca.BackgroundImage = byteToImage.ConvertByteToImage(igrac.slikaPanel);
+            pictureSlikaIgraca.BackgroundImageLayout = ImageLayout.Zoom;
+            txtPrezime.Text = (igrac.korisnik.ime[0] + ". " + igrac.korisnik.prezime).ToUpper();
+            igracOcjena.Value = (int)igrac.igracStatistika.prosjecnaOcjena;           
+        }
+        private void cmbIgraciSastav_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            isIgracValidated = Validacija.ValidirajDropDown(cmbIgraciSastav, "Igrač", txtIgracOcjenaValidator, pictureIgracOcjenaValidator);
+            Model.Models.Igrac igrac = _ostaliIgraci[cmbIgraciSastav.SelectedIndex];
+            LoadDetaljiIgraca(igrac);
+        }
+        public void UpdateBrojEvidentiranih()
+        {
+            txtBrojEvidentiranih.Text = flowPanelOcjene.Controls.Count.ToString() + " od " + _utakmicaSastav.Count();
+        }
+        public void UpdateBrojEvidentiranihIzmjena()
+        {
+            txtBrojIzmjena.Text = flowPanelIzmjene.Controls.Count.ToString() + " od 3";
+        }
+        private void txtPrezime_Click(object sender, EventArgs e)
+        {
 
-        private void button4_Click(object sender, EventArgs e)
+        }
+
+        private void bunifuButton2_Click(object sender, EventArgs e)
         {
             cmbIgracOut.Enabled = true;
             cmbIgracIn.Enabled = true;
             txtIzmjenaMinuta.Clear();
             cmbRazlogIzmjena.SelectedIndex = 0;
+        }
+
+        private void bunifuButton1_Click(object sender, EventArgs e)
+        {
+            if (!ValidirajIzmjneu())
+            {
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.FORMA_VALIDACIJA);
+                return;
+            }
+            frmIzmjenaKartica izmjena;
+            int igracOutId = _igraciPrvaPostava[cmbIgracOut.SelectedIndex].igracId;
+            int igracInId = _igraciKlupa[cmbIgracIn.SelectedIndex].igracId;
+            int minuta = int.Parse(txtIzmjenaMinuta.Text);
+            string razlogIzmjene = _izmjenaRazlog[cmbRazlogIzmjena.SelectedIndex];
+            int izmjenaId = 0;
+            bool flag = false;
+
+            for (int i = 0; i < flowPanelIzmjene.Controls.Count; i++)
+            {
+                var control = (frmIzmjenaKartica)flowPanelIzmjene.Controls[i];
+                if (control.igracOutId == igracOutId || control.igracInId == igracInId)
+                {
+                    if (cmbIgracOut.Enabled && cmbIgracIn.Enabled)
+                    {
+                        PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.IZMJENA_VEC_EVIDENTIRANA);
+                        flag = true;
+                    }
+                    else
+                    {
+                        izmjenaId = control.utakmicaIzmjenaId;
+                        flowPanelIzmjene.Controls.Remove(control);
+                    }
+                }
+            };
+            if (!flag)
+            {
+                izmjena = new frmIzmjenaKartica(flowPanelIzmjene, this, _igraciPrvaPostava, _igraciKlupa, cmbIgracOut, cmbIgracIn, false);
+                izmjena.igracOutId = igracOutId;
+                izmjena.igracInId = igracInId;
+                izmjena.igracOutSlika = byteToImage.ConvertByteToImage(_igraciPrvaPostava[cmbIgracOut.SelectedIndex].korisnik.Slika);
+                izmjena.igracInSlika = byteToImage.ConvertByteToImage(_igraciKlupa[cmbIgracIn.SelectedIndex].korisnik.Slika);
+                izmjena.igracOutPrezime = _igraciPrvaPostava[cmbIgracOut.SelectedIndex].korisnik.ime[0] + ". " + _igraciPrvaPostava[cmbIgracOut.SelectedIndex].korisnik.prezime;
+                izmjena.igracInPrezime = _igraciKlupa[cmbIgracIn.SelectedIndex].korisnik.ime[0] + ". " + _igraciKlupa[cmbIgracIn.SelectedIndex].korisnik.prezime;
+                izmjena.igracOutPozicija = _igraciPrvaPostava[cmbIgracOut.SelectedIndex].pozicija.skracenica;
+                izmjena.igracInPozicija = _igraciKlupa[cmbIgracIn.SelectedIndex].pozicija.skracenica;
+                izmjena.igracOutBroj = "#" + _igraciPrvaPostava[cmbIgracOut.SelectedIndex].brojDresa.ToString();
+                izmjena.igracInBroj = "#" + _igraciKlupa[cmbIgracIn.SelectedIndex].brojDresa.ToString();
+                izmjena.minuta = minuta;
+                izmjena.razlogIzmjene = razlogIzmjene.ToUpper();
+                izmjena.utakmicaIzmjenaId = izmjenaId;
+                flowPanelIzmjene.Controls.Add(izmjena);
+                if(cmbIgracIn.Enabled && cmbIgracOut.Enabled)
+                {
+                    PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.IZMJENA_USPJEŠNO_EVIDENTIRANA);
+                }
+                else
+                {
+                    PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.UREĐIVANJE);
+                }
+                cmbIgracOut.Enabled = true;
+                cmbIgracIn.Enabled = true;
+                cmbRazlogIzmjena.SelectedIndex = 0;
+                txtIzmjenaMinuta.Clear();
+                UpdateBrojEvidentiranihIzmjena();
+            }
+        }
+
+        private void txtAsistencije_TextChanged_1(object sender, EventArgs e)
+        {
+            isAsistencijeValidated = Validacija.ValidirajOcjene(txtAsistencije, Field.ASISTENCIJE);
+        }
+
+        private void txtZutiKartoni_TextChanged_1(object sender, EventArgs e)
+        {
+            isZutKartoniValidated = Validacija.ValidirajOcjene(txtZutiKartoni, Field.ZUTI_KARTONI);
+            if(txtZutiKartoni.Text == "2")
+            {
+                txtCrveniKartoni.Text = "1";
+            }
+        }
+
+        private void txtCrveniKartoni_TextChanged_1(object sender, EventArgs e)
+        {
+            isCrveniKartoniValidated = Validacija.ValidirajOcjene(txtCrveniKartoni, Field.CRVENI_KARTONI);
+        }
+
+        private void txtIzmjenaMinuta_TextChanged(object sender, EventArgs e)
+        {
+            isMinutaIzmjenaValidirana = Validacija.ValidirajInputString(txtIzmjenaMinuta, txtIzmjenaMinutaValidator, Field.MINUTA_IZMJENA);
+        }
+
+        private void btnUcitajPanelPhoto_Click(object sender, EventArgs e)
+        {
+            if (_izvještaj != null)
+            {
+                return;
+            }
+            else
+            {
+                try
+                {
+                    var result = fileDialog.ShowDialog();
+
+                    if (result == DialogResult.OK)
+                    {
+                        var fileName = fileDialog.FileName;
+
+                        var file = System.IO.File.ReadAllBytes(fileName);
+
+                        utakmicaSlika = file;
+
+                        Image image = Image.FromFile(fileName);
+                        pictureSlikaUtakmice.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+                        pictureSlikaUtakmice.Image = image;
+
+                        isSlikaUtakmiceValidated = Validacija.ValidirajSliku(image, pictureSlikaUtakmicaValidator, Field.SLIKA_UTAKMICA);
+                    }
+                }
+                catch
+                {
+                    PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.GRESKA_UPLOAD);
+                }
+            }
+        }
+
+        private void txtGoloviGost_TextChanged(object sender, EventArgs e)
+        {
+            isGoloviGostValidated = Validacija.ValidirajOcjene(txtGoloviGost, Field.GOLOVI_GOST);
+        }
+
+        private void txtGoloviDomacin_TextChanged(object sender, EventArgs e)
+        {
+            isGoloviDomacinValidated = Validacija.ValidirajOcjene(txtGoloviDomacin, Field.GOLOVI_DOMACIN);
+        }
+
+        private void cmbIgracUtakmice_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            isIgracUtakmiceValidated = Validacija.ValidirajDropDown(cmbIgracUtakmice, "Igrač utakmice", txtIgracUtakmiceValidator, pictureIgracUtakmiceValidator);
+        }
+
+        private void cmbIgracOut_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            isIgracOUTValidated = Validacija.ValidirajDropDown(cmbIgracOut, "Igrač OUT", txtIgracOutValidator, pictureIgracOutValidator);
+
+        }
+
+        private void cmbIgracIn_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            isIgracINValidated = Validacija.ValidirajDropDown(cmbIgracIn, "Igrač IN", txtIgracInValidator, pictureIgracInValidator);
+
+        }
+
+        private void cmbRazlogIzmjena_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            isRazlogIzmjeneVAlidated = Validacija.ValidirajDropDown(cmbRazlogIzmjena, "Razlog", txtRazlogValidator, pictureRazlogValidator);
+
+        }
+
+        private void pictureSlikaUtakmice_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void xtGoloviDomacin_TextChanged(object sender, EventArgs e)
+        {
+            isGoloviDomacinValidated = Validacija.ValidirajOcjene(txtGoloviDomacin, Field.GOLOVI_DOMACIN);
+        }
+
+        private async void bunifuButton3_Click(object sender, EventArgs e)
+        {
+            if (!ValidirajFormu())
+            {
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.FORMA_VALIDACIJA);
+                return;
+            }
+            List<UtakmicaNastupInsertRequest> nastupi = new List<UtakmicaNastupInsertRequest>();
+            List<UtakmicaIzmjenaInsertRequest> izmjene = new List<UtakmicaIzmjenaInsertRequest>();
+            Vrijeme vrijeme = Vrijeme.KIŠA;
+            int goloviSarajevo = 0;
+            int goloviProtivnik = 0;
+
+            if (_utakmica.vrstaUtakmice == "Domaća")
+            {
+                goloviSarajevo = int.Parse(txtGoloviDomacin.Text);
+                goloviProtivnik = int.Parse(txtGoloviGost.Text);
+            }
+            else if (_utakmica.vrstaUtakmice == "Gostujuća")
+            {
+                goloviProtivnik = int.Parse(txtGoloviDomacin.Text);
+                goloviSarajevo = int.Parse(txtGoloviGost.Text);
+            }
+
+            for (int i = 0; i < flowPanelOcjene.Controls.Count; i++)
+            {
+                var controlNastup = (frmIgracNastupKartica)flowPanelOcjene.Controls[i];
+                UtakmicaNastupInsertRequest nastup = new UtakmicaNastupInsertRequest
+                {
+                    igracId = controlNastup.igracId,
+                    trenerId = 1,
+                    utakmicaId = _utakmicaId,
+                    minute = controlNastup.igracMinute,
+                    golovi = controlNastup.igracGolovi,
+                    asistencije = controlNastup.igracAsistencije,
+                    zutiKartoni = controlNastup.igracZutiKartoni,
+                    crveniKartoni = controlNastup.igracCrveniKartoni,
+                    ocjena = controlNastup.ocjenaRating,
+                    komentar = controlNastup.igracKomentar,
+                    kontrolaLopte = controlNastup.kontrolaLopte,
+                    driblanje = controlNastup.driblanje,
+                    dodavanje = controlNastup.dodavanje,
+                    kretanje = controlNastup.kretanje,
+                    brzina = controlNastup.brzina,
+                    sut = controlNastup.sut,
+                    snaga = controlNastup.snaga,
+                    markiranje = controlNastup.markiranje,
+                    klizeciStart = controlNastup.klizeciStart,
+                    skok = controlNastup.skok,
+                    odbrana = controlNastup.odbrana
+                };
+                nastupi.Add(nastup);
+            };
+            for (int i = 0; i < flowPanelIzmjene.Controls.Count; i++)
+            {
+                var controlIzmjene = (frmIzmjenaKartica)flowPanelIzmjene.Controls[i];
+                UtakmicaIzmjenaInsertRequest izmjena = new UtakmicaIzmjenaInsertRequest
+                {
+                    utakmicaId = _utakmicaId,
+                    igracOutId = controlIzmjene.igracOutId,
+                    igracInId = controlIzmjene.igracInId,
+                    minuta = controlIzmjene.minuta,
+                    izmjenaRazlog = controlIzmjene.razlogIzmjene
+                };
+                izmjene.Add(izmjena);
+            };
+            if (radioBtnSunce.Checked)
+            {
+                vrijeme = Vrijeme.SUNCE;
+            }
+            else if (radioBtnOblacno.Checked)
+            {
+                vrijeme = Vrijeme.OBLAČNO;
+            }
+
+            IzvjetajInsertRequest insertRequest = new IzvjetajInsertRequest
+            {
+                goloviSarajevo = goloviSarajevo,
+                goloviProtivnik = goloviProtivnik,
+                zapisnik = txtZapisnik.Text,
+                slikaSaUtakmice = utakmicaSlika,
+                vrijeme = vrijeme,
+                igracUtakmicaID = _igraci[cmbIgracUtakmice.SelectedIndex].igracId,
+                utakmicaID = _utakmicaId,
+                trenerID = 1,
+                izmjene = izmjene,
+                utakmicaNastup = nastupi
+            };
+            try
+            {
+                await _izvjestajApi.Insert<Model.Models.Izvještaj>(insertRequest);
+                await _prikazUtakmica.LoadIzvještaj(notifikacija: TipNotifikacije.DODAVANJE);
+                this.Hide();
+            }
+            catch
+            {
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.GREŠKA_NA_SERVERU);
+            }
+        }
+
+        private async void btnSaveUpdate_Click(object sender, EventArgs e)
+        {
+            if (!ValidirajFormu())
+            {
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.FORMA_VALIDACIJA);
+                return;
+            }
+            List<UtakmicaNastupUpdateRequest> nastupi = new List<UtakmicaNastupUpdateRequest>();
+            List<UtakmicaIzmjenaUpdateRequest> izmjene = new List<UtakmicaIzmjenaUpdateRequest>();
+
+            for (int i = 0; i < flowPanelOcjene.Controls.Count; i++)
+            {
+                var controlNastup = (frmIgracNastupKartica)flowPanelOcjene.Controls[i];
+                UtakmicaNastupUpdateRequest nastup = new UtakmicaNastupUpdateRequest
+                {
+                    utakmicaNastupId = controlNastup.utakmicaNastupId,
+                    igracId = controlNastup.igracId,
+                    trenerId = 1,
+                    utakmicaId = _utakmicaId,
+                    minute = controlNastup.igracMinute,
+                    golovi = controlNastup.igracGolovi,
+                    asistencije = controlNastup.igracAsistencije,
+                    zutiKartoni = controlNastup.igracZutiKartoni,
+                    crveniKartoni = controlNastup.igracCrveniKartoni,
+                    ocjena = controlNastup.ocjenaRating,
+                    komentar = controlNastup.igracKomentar,
+                    kontrolaLopte = controlNastup.kontrolaLopte,
+                    driblanje = controlNastup.driblanje,
+                    dodavanje = controlNastup.dodavanje,
+                    kretanje = controlNastup.kretanje,
+                    brzina = controlNastup.brzina,
+                    sut = controlNastup.sut,
+                    snaga = controlNastup.snaga,
+                    markiranje = controlNastup.markiranje,
+                    klizeciStart = controlNastup.klizeciStart,
+                    skok = controlNastup.skok,
+                    odbrana = controlNastup.odbrana
+                };
+                nastupi.Add(nastup);
+                var controlOcjene = (frmIgracNastupKartica)flowPanelOcjene.Controls[i];
+            };
+            for (int i = 0; i < flowPanelIzmjene.Controls.Count; i++)
+            {
+                var controlIzmjene = (frmIzmjenaKartica)flowPanelIzmjene.Controls[i];
+                UtakmicaIzmjenaUpdateRequest izmjena = new UtakmicaIzmjenaUpdateRequest
+                {
+                    utakmicaIzmjenaId = controlIzmjene.utakmicaIzmjenaId,
+                    utakmicaId = _utakmicaId,
+                    igracOutId = controlIzmjene.igracOutId,
+                    igracInId = controlIzmjene.igracInId,
+                    minuta = controlIzmjene.minuta,
+                    izmjenaRazlog = controlIzmjene.razlogIzmjene
+                };
+                izmjene.Add(izmjena);
+            };
+
+            IzvjestajUpdateRequest updateRequest = new IzvjestajUpdateRequest
+            {
+                zapisnik = txtZapisnik.Text,
+                izmjene = izmjene,
+                utakmicaNastup = nastupi,
+                utakmicaId = _utakmicaId
+            };
+            try
+            {
+                await _izvjestajApi.Update<Model.Models.Izvještaj>(_izvještaj.izvještajId, updateRequest);
+                await _prikazUtakmica.LoadIzvještaj(notifikacija: TipNotifikacije.UREĐIVANJE);
+                this.Hide();
+            }
+            catch
+            {
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.GREŠKA_NA_SERVERU);
+            }
+        }
+
+        private void txtMinute_TextChanged_1(object sender, EventArgs e)
+        {
+            isMinuteValidated = Validacija.ValidirajOcjene(txtMinute, Field.MINUTE);          
+        }
+
+        private void txtGolovi_TextChanged_1(object sender, EventArgs e)
+        {
+            isGoloviValidated = Validacija.ValidirajOcjene(txtGolovi, Field.GOLOVI);
+
         }
     }
 }

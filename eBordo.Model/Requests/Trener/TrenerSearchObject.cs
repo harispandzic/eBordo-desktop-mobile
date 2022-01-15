@@ -7,5 +7,6 @@ namespace eBordo.Model.Requests.Trener
     public class TrenerSearchObject
     {
         public string ime { get; set; }
+        public bool isAktivan { get; set; }
     }
 }

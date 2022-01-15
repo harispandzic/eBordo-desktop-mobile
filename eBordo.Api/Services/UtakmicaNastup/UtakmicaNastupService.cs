@@ -254,6 +254,21 @@ namespace eBordo.Api.Services.UtakmicaNastup
                 _db.SaveChanges();
             }
 
+            if(utakmicaNastup.minute != request.minute || utakmicaNastup.golovi != request.golovi || utakmicaNastup.asistencije != request.asistencije ||
+                utakmicaNastup.zutiKartoni != request.zutiKartoni || utakmicaNastup.crveniKartoni != request.crveniKartoni ||
+                utakmicaNastup.ocjena != request.ocjena || utakmicaNastup.komentar != request.komentar ||
+                utakmicaNastup.kontrolaLopte != request.kontrolaLopte || utakmicaNastup.driblanje != request.driblanje ||
+                utakmicaNastup.dodavanje != request.dodavanje || utakmicaNastup.kretanje != request.kretanje || utakmicaNastup.brzina != request.brzina ||
+                utakmicaNastup.sut != request.sut ||
+                utakmicaNastup.snaga != request.snaga ||
+                utakmicaNastup.markiranje != request.markiranje ||
+                utakmicaNastup.klizeciStart != request.klizeciStart ||
+                utakmicaNastup.skok != request.skok ||
+                utakmicaNastup.odbrana != request.odbrana)
+            {
+
+            }
+
             utakmicaNastup.minute = request.minute;
             utakmicaNastup.golovi = request.golovi;
             utakmicaNastup.asistencije = request.asistencije;

@@ -55,7 +55,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
             }
         }
         
-        public async Task LoadIgraci(string pretraga = "", int pozicijaId = -1,TipNotifikacije notifikacija = TipNotifikacije.BEZ)
+        public async Task LoadIgraci(string pretraga = "", int pozicijaId = -1, bool isAktivan = true, TipNotifikacije notifikacija = TipNotifikacije.BEZ)
         {
             if(notifikacija != TipNotifikacije.BEZ)
             {
@@ -66,7 +66,8 @@ namespace eBordo.WinUI.Forms.AdminPanel
             IgracSearchObject search = new IgracSearchObject
             {
                 ime = pretraga,
-                pozicijaId = pozicijaId
+                pozicijaId = pozicijaId,
+                isAktivan = isAktivan
             };
 
             try
@@ -74,7 +75,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
                 _podaci = await _igraci.GetAll<List<Model.Models.Igrac>>(search);
                 dataLoader.Hide();
                 noSearchResult.Hide();
-
+                gifLoader.Hide();
                 pnlIgraciWrapper.Controls.Clear();
 
                 if (_podaci.Count == 0 && (pretraga != "" || pozicijaId != -1))
@@ -100,9 +101,12 @@ namespace eBordo.WinUI.Forms.AdminPanel
                     listItems[i].ocjena = (int)_podaci[i].igracStatistika.prosjecnaOcjena;
                     listItems[i].brojDresa = "#" + _podaci[i].brojDresa;
                     listItems[i].pozicija = _podaci[i].pozicija.nazivPozicije;
+                    listItems[i].isAktivan = _podaci[i].korisnik.isAktivan;
                     listItems[i].zastava = byteToImage.ConvertByteToImage(_podaci[i].korisnik.drzavljanstvo.zastava);
                     pnlIgraciWrapper.Controls.Add(listItems[i]);
                 }
+                loaderIgraci.Hide();
+                UcitajBrojIgraca();
             }
             catch 
             {
@@ -143,6 +147,27 @@ namespace eBordo.WinUI.Forms.AdminPanel
         private void pnlIgraciWrapper_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+        private void UcitajBrojIgraca()
+        {
+            txtBrojIgraca.Text = pnlIgraciWrapper.Controls.Count.ToString();
+        }
+        private void btnSaveIgracSastav_Click(object sender, EventArgs e)
+        {
+            Forms.AdminPanel.frmUpsertIgraca insert = new Forms.AdminPanel.frmUpsertIgraca(null, this);
+            insert.Show();
+        }
+
+        private async void checkBoxZavrseniTreninzi_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs e)
+        {
+            if (checkBoxZavrseniTreninzi.Checked)
+            {
+                await LoadIgraci(isAktivan: true);
+            }
+            else
+            {
+                await LoadIgraci(isAktivan: false);
+            }
         }
     }
 }

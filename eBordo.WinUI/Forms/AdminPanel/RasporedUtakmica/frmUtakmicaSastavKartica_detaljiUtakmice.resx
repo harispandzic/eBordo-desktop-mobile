@@ -117,4 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="bunifuPanel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACwAAAAtCAYAAADV2ImkAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACuSURBVGhD7c69CcMwGIThD6yfNTJJpAm8aOq0GcULpMoE
+        sQxvqfZAhjt4uyueuOVarY+e8qvn+l+xlur7MsKN6Kl8ZselSuWAO8Czw4LBNVgWXINlwTVYFlyDZcE1
+        WBZcg2XBNVgWXINlwTVYFlyDZcE1WBZcg2XBNVgWXINlwTVYFlyDZcE1WBZcg2XBNVgW3AFO5ZgdVqrl
+        8oMb0bbaB/o7O67QhX1uZYd7p0WctrQbDCaeFaoAAAAASUVORK5CYII=
+</value>
+  </data>
 </root>

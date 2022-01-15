@@ -23,7 +23,9 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
         public int trenerId { get; set; }
         public string imePrezime { get; set; }
         public string uloga { get; set; }
+        public string licenca { get; set; }
         public Image slika { get; set; }
+        public bool isAktivan { get; set; }
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -36,7 +38,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
         );
         public frmTrenerKartica(BunifuSnackbar snackbar, frmPrikazTrenera prikazTrenera)
         {
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 188, 270, 12, 12));
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 188, 281, 12, 12));
             InitializeComponent();
             _snackbar = snackbar;
             _prikazTrenera = prikazTrenera;
@@ -48,6 +50,20 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             korisnickaFotografija.BackgroundImageLayout = ImageLayout.Zoom;
             lblImePrezime.Text = imePrezime.ToUpper();
             lblUloga.Text = uloga.ToUpper();
+            txtLicenca.Text = licenca.ToUpper();
+            if (!isAktivan)
+            {
+                btnDelete.Hide();
+                btnEdit.Location = new Point(94, 251);
+                btnView.Location = new Point(72, 251);
+                pictureAktivan.BackgroundImage = Properties.Resources.eBordo_error_notification;
+                pictureAktivan.BackgroundImageLayout = ImageLayout.Zoom;
+            }
+            else
+            {
+                pictureAktivan.BackgroundImage = Properties.Resources.eBordo_success_notification;
+                pictureAktivan.BackgroundImageLayout = ImageLayout.Zoom;
+            }
         }
 
         private async void btnView_Click(object sender, EventArgs e)

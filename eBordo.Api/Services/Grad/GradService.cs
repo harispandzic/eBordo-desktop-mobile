@@ -1,6 +1,9 @@
 ﻿using AutoMapper;
 using eBordo.Api.Database;
+using eBordo.Api.Filters;
 using eBordo.Api.Services.BaseCRUDService;
+using eBordo.Model;
+using eBordo.Model.Exceptions;
 using eBordo.Model.Requests.Grad;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -10,12 +13,19 @@ using System.Threading.Tasks;
 
 namespace eBordo.Api.Services.Grad
 {
-    public class GradService: BaseCRUDService<eBordo.Model.Models.Grad,eBordo.Api.Database.Grad, object, Model.Requests.Grad.GradInsertRequest, object>, IGradService
+    public class GradService: BaseCRUDService<eBordo.Model.Models.Grad,eBordo.Api.Database.Grad, object, Model.Requests.Grad.GradInsertRequest, Model.Requests.Grad.GradUpdateRequest>, IGradService
     {
         public GradService(eBordoContext db, IMapper mapper) : base(db, mapper) { }
 
         public override Model.Models.Grad Insert(GradInsertRequest request)
         {
+            foreach (var item in _db.gradovi)
+            {
+                if(item.nazivGrada.StartsWith(request.nazivGrada))
+                {
+                    throw new UserException("Grad postoji u bazi podataka!");
+                }
+            }
             Database.Grad grad = new Database.Grad
             {
                 nazivGrada = request.nazivGrada,
@@ -26,6 +36,23 @@ namespace eBordo.Api.Services.Grad
             _db.SaveChanges();
 
             return _mapper.Map<Model.Models.Grad>(grad);
+        }
+        public override Model.Models.Grad Update(int id, GradUpdateRequest request)
+        {
+            foreach (var item in _db.gradovi)
+            {
+                if (item.nazivGrada.StartsWith(request.nazivGrada))
+                {
+                    throw new UserException("Grad postoji u bazi podataka!");
+                }
+            }
+            var entity = _db.gradovi.Where(s => s.gradId == id).SingleOrDefault();
+
+            entity.nazivGrada = request.nazivGrada;
+
+            _db.SaveChanges();
+
+            return _mapper.Map<eBordo.Model.Models.Grad>(entity);
         }
 
         public override IEnumerable<eBordo.Model.Models.Grad> Get(object search = null)

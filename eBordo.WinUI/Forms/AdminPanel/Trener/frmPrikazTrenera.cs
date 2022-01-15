@@ -36,7 +36,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
         {
             await LoadTreneri();
         }
-        public async Task LoadTreneri(string pretraga = "", TipNotifikacije notifikacija = TipNotifikacije.BEZ)
+        public async Task LoadTreneri(string pretraga = "",bool isAktivan = true, TipNotifikacije notifikacija = TipNotifikacije.BEZ)
         {
             if(notifikacija != TipNotifikacije.BEZ)
             {
@@ -46,6 +46,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
             TrenerSearchObject search = new TrenerSearchObject
             {
                 ime = pretraga,
+                isAktivan = isAktivan
             };
 
             try
@@ -53,7 +54,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
                 _podaci = await _treneri.GetAll<List<Model.Models.Trener>>(search);
                 dataLoader.Hide();
                 noSearchResult.Hide();
-
+                gifLoader.Hide();
                 pnlTreneriWrapper.Controls.Clear();
 
 
@@ -78,8 +79,12 @@ namespace eBordo.WinUI.Forms.AdminPanel
                     listItems[i].trenerId = _podaci[i].trenerId;
                     listItems[i].imePrezime = _podaci[i].korisnik.ime + " " + _podaci[i].korisnik.prezime;
                     listItems[i].uloga = _podaci[i].ulogaTrenera.ToString() + " TRENER";
+                    listItems[i].licenca = _podaci[i].trenerskaLicenca.nazivLicence;
+                    listItems[i].isAktivan = _podaci[i].korisnik.isAktivan;
                     pnlTreneriWrapper.Controls.Add(listItems[i]);
                 }
+                loaderBrojIgraca.Hide();
+                UcitajBrojTrenera();
             }
             catch
             {
@@ -149,6 +154,34 @@ namespace eBordo.WinUI.Forms.AdminPanel
         {
             string pretraga = txtImePrezime.Text;
             await LoadTreneri(pretraga);
+        }
+
+        private void btnSaveIgracSastav_Click(object sender, EventArgs e)
+        {
+            Forms.AdminPanel.Trener.frmUpsertTrenera insert = new Forms.AdminPanel.Trener.frmUpsertTrenera(null, this);
+            insert.Show();
+        }
+        private void UcitajBrojTrenera()
+        {
+            bunifuLabel1.Text = pnlTreneriWrapper.Controls.Count.ToString();
+        }
+
+        private async void bunifuButton1_Click(object sender, EventArgs e)
+        {
+            txtImePrezime.Text = "";
+            await LoadTreneri();
+        }
+
+        private async void checkBoxZavrseniTreninzi_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs e)
+        {
+            if (checkBoxZavrseniTreninzi.Checked)
+            {
+                await LoadTreneri(isAktivan: true);
+            }
+            else
+            {
+                await LoadTreneri(isAktivan: false);
+            }
         }
     }
 }

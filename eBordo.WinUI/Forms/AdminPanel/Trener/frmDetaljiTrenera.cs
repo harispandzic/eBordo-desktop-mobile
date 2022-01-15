@@ -24,35 +24,51 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
         private void frmDetaljiTrenera_Load(object sender, EventArgs e)
         {
             lblImePrezime.Text = (_odabraniTrener.korisnik.ime + " " + _odabraniTrener.korisnik.prezime).ToUpper();
-            trenerFotografija.Image = byteToImage.ConvertByteToImage(_odabraniTrener.korisnik.Slika);
+            txtImePrezime.Text = (_odabraniTrener.korisnik.ime + " " + _odabraniTrener.korisnik.prezime).ToUpper();
+            txtLicenca.Text = _odabraniTrener.trenerskaLicenca.nazivLicence.ToUpper();
+            userProflePicture.Image = byteToImage.ConvertByteToImage(_odabraniTrener.korisnik.Slika);
             lblDrzavljanstvoVrijednost.Text = _odabraniTrener.korisnik.drzavljanstvo.nazivDrzave;
+            pictureZastava.BackgroundImage = byteToImage.ConvertByteToImage(_odabraniTrener.korisnik.drzavljanstvo.zastava);
+            pictureZastava.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox8.BackgroundImage = byteToImage.ConvertByteToImage(_odabraniTrener.korisnik.drzavljanstvo.zastava);
+            pictureZastava.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox2.BackgroundImage = byteToImage.ConvertByteToImage(_odabraniTrener.SlikaPanel);
+            pictureZastava.BackgroundImageLayout = ImageLayout.Zoom;
             lblMjestoRodjenjaVrijednost.Text = _odabraniTrener.korisnik.gradRodjenja.nazivGrada;
             lblDatumRodjenjaVrijednost.Text = _odabraniTrener.korisnik.datumRodjenja.ToString("dd.MM.yyyy");
             lblAdresaPrebivalistaVrijednost.Text = _odabraniTrener.korisnik.adresa;
             lblTelefonVrijednost.Text = _odabraniTrener.korisnik.telefon;
             lblEmailVrijednost.Text = _odabraniTrener.korisnik.email;
-
+            txtUloga.Text = _odabraniTrener.trenerskaLicenca.nazivLicence.ToUpper();
             lblDatumPocetkaUgovoraVrijednost.Text = _odabraniTrener.ugovor.datumPocetka.ToString("dd.MM.yyyy");
             lblDatumZavrsetkaUgovoraVrijednost.Text = _odabraniTrener.ugovor.datumZavrsetka.ToString("dd.MM.yyyy");
 
             lblLicencaVrijednost.Text = _odabraniTrener.trenerskaLicenca.nazivLicence;
             lblFormacijaVrijednost.Text = _odabraniTrener.formacija.nazivFormacije;
 
-            progresBarNastupi.Maximum = 10; //zamijeniti u odigrane utakmice
-            progresBarNastupi.Value = _odabraniTrener.trenerStatistika.brojUtakmica;
             lblNastupiVrijednost.Text = _odabraniTrener.trenerStatistika.brojUtakmica.ToString();
 
-            progresBarPobjede.Maximum = 10; //zamijeniti u broj utakmica pomnožen sa 90
-            progresBarPobjede.Value = _odabraniTrener.trenerStatistika.brojPobjeda;
             lblPobjedeVrijednost.Text = _odabraniTrener.trenerStatistika.brojPobjeda.ToString();
 
-            progresBarPorazi.Maximum = 10; //zamijeniti u broj utakmica pomnožen sa 90
-            progresBarPorazi.Value = _odabraniTrener.trenerStatistika.brojPoraza;
             lblPoraziVrijednost.Text = _odabraniTrener.trenerStatistika.brojPoraza.ToString();
 
-            progresBarNerješene.Maximum = 10; //zamijeniti u broj utakmica pomnožen sa 90
-            progresBarNerješene.Value = _odabraniTrener.trenerStatistika.brojNerjesenih;
             lblNerjeseneVrijednosti.Text = _odabraniTrener.trenerStatistika.brojNerjesenih.ToString();
+
+            if (!_odabraniTrener.korisnik.isAktivan)
+            {
+                pictureAktivan.BackgroundImage = Properties.Resources.eBordo_error_notification;
+                pictureAktivan.BackgroundImageLayout = ImageLayout.Zoom;
+            }
+            else
+            {
+                pictureAktivan.BackgroundImage = Properties.Resources.eBordo_success_notification;
+                pictureAktivan.BackgroundImageLayout = ImageLayout.Zoom;
+            }
+        }
+
+        private void pictureZastava_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

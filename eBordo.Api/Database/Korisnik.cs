@@ -17,6 +17,7 @@ namespace eBordo.Api.Database
         public string korisnickoIme { get; set; }
         public string lozinkaHash { get; set; }
         public string lozinkaSalt { get; set; }
+        public bool isAktivan { get; set; }
 
         public Drzava drzavljanstvo { get; set; }
         public int drzavljanstvoId { get; set; }

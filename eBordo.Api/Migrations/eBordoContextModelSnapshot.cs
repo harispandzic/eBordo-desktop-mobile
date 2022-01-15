@@ -370,6 +370,9 @@ namespace eBordo.Api.Migrations
                     b.Property<bool>("isAdmin")
                         .HasColumnType("bit");
 
+                    b.Property<bool>("isAktivan")
+                        .HasColumnType("bit");
+
                     b.Property<bool>("isIgrac")
                         .HasColumnType("bit");
 
@@ -600,6 +603,9 @@ namespace eBordo.Api.Migrations
 
                     b.Property<string>("satnica")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("trajanje")
+                        .HasColumnType("int");
 
                     b.Property<int>("zabiljezioID")
                         .HasColumnType("int");

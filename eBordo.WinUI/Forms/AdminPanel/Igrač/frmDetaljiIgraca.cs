@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -24,20 +25,28 @@ namespace eBordo.WinUI.Forms.AdminPanel
         private void frmDetaljiIgraca_Load(object sender, EventArgs e)
         {
             lblImePrezime.Text = (_odabraniIgrac.korisnik.ime + " " + _odabraniIgrac.korisnik.prezime).ToUpper();
-            korisnickaFotografija.Image = byteToImage.ConvertByteToImage(_odabraniIgrac.korisnik.Slika);
+            userProflePicture.Image = byteToImage.ConvertByteToImage(_odabraniIgrac.korisnik.Slika);
+            userProflePicture.BackgroundImageLayout = ImageLayout.Zoom;
+            txtImePrezime2.Text = (_odabraniIgrac.korisnik.ime + " " + _odabraniIgrac.korisnik.prezime).ToUpper();
+            korisnickaFotografija.BackgroundImage = byteToImage.ConvertByteToImage(_odabraniIgrac.slikaPanel);
+            korisnickaFotografija.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureZastava.BackgroundImage = byteToImage.ConvertByteToImage(_odabraniIgrac.korisnik.drzavljanstvo.zastava);
+            pictureZastava.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox8.BackgroundImage = byteToImage.ConvertByteToImage(_odabraniIgrac.korisnik.drzavljanstvo.zastava);
+            pictureBox8.BackgroundImageLayout = ImageLayout.Zoom;
+            lblDresVrijednost.Text = "#" + _odabraniIgrac.brojDresa.ToString();
             lblDrzavljanstvoVrijednost.Text = _odabraniIgrac.korisnik.drzavljanstvo.nazivDrzave;
             lblMjestoRodjenjaVrijednost.Text = _odabraniIgrac.korisnik.gradRodjenja.nazivGrada;
             lblDatumRodjenjaVrijednost.Text = _odabraniIgrac.korisnik.datumRodjenja.ToString("dd.MM.yyyy");
             lblAdresaPrebivalistaVrijednost.Text = _odabraniIgrac.korisnik.adresa;
             lblTelefonVrijednost.Text = _odabraniIgrac.korisnik.telefon;
             lblEmailVrijednost.Text = _odabraniIgrac.korisnik.email;
-
-            lblPozicijaVrijednost.Text = _odabraniIgrac.pozicija.nazivPozicije;
+            lblPozicija.Text = _odabraniIgrac.pozicija.nazivPozicije.ToUpper();
+            lblPozicijaVrijednost.Text = _odabraniIgrac.pozicija.nazivPozicije.ToUpper();
             lblBoljaNogaVrijednost.Text = _odabraniIgrac.boljaNoga;
             ratingJacinaSlabijeNogeVrijednost.Value = _odabraniIgrac.jacinaSlabijeNoge;
             lblVisinaVrijednost.Text = _odabraniIgrac.visina.ToString();
             lblTezinaVrijednost.Text = _odabraniIgrac.tezina.ToString();
-            lblDresVrijednost.Text = _odabraniIgrac.brojDresa.ToString();
             lblTrzisnaVrijednostVrijednost.Text = _odabraniIgrac.trzisnaVrijednost.ToString();
             lblNapomeneVrijednost.Text = _odabraniIgrac.napomeneOIgracu;
 
@@ -50,18 +59,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
             lblAsistencije.Text = _odabraniIgrac.igracStatistika.asistencije.ToString();
             lblZutiKartoni.Text = _odabraniIgrac.igracStatistika.zutiKartoni.ToString();
             lblCrveniKartoni.Text = _odabraniIgrac.igracStatistika.crveniKartoni.ToString();
-            lblOcjena.Text = _odabraniIgrac.igracStatistika.prosjecnaOcjena.ToString();
-
-            progresBarNastupi.Maximum = 10; //zamijeniti u odigrane utakmice
-            progresBarNastupi.Value = _odabraniIgrac.igracStatistika.brojNastupa;
-
-            progresBarMinute.Maximum = 10; //zamijeniti u broj utakmica pomnožen sa 90
-            progresBarMinute.Value = (_odabraniIgrac.igracStatistika.brojNastupa * 90);
-
-            progresBarOcjena.Maximum = 5; //zamijeniti u broj utakmica pomnožen sa 90
-            progresBarOcjena.Value = (int)_odabraniIgrac.igracStatistika.prosjecnaOcjena;
-
-            ocjenaIgraca.Value = (int)_odabraniIgrac.igracStatistika.prosjecnaOcjena;
+            lblOcjena.Value = (int)_odabraniIgrac.igracStatistika.prosjecnaOcjena;
             ratingKontrolaLopte.Value = (int)_odabraniIgrac.igracSkills.kontrolaLopte;
             ratingDriblanje.Value = (int)_odabraniIgrac.igracSkills.driblanje;
             ratingDodavanje.Value = (int)_odabraniIgrac.igracSkills.dodavanje;
@@ -73,7 +71,27 @@ namespace eBordo.WinUI.Forms.AdminPanel
             ratingKlizeciStart.Value = (int)_odabraniIgrac.igracSkills.klizeciStart;
             ratingSkok.Value = (int)_odabraniIgrac.igracSkills.skok;
             ratingOdbrana.Value = (int)_odabraniIgrac.igracSkills.odbrana;
-            ratingProsjekOcjena.Value = (int)_odabraniIgrac.igracSkills.prosjekOcjena;
-        }   
+
+            if (!_odabraniIgrac.korisnik.isAktivan)
+            {
+                pictureAktivan.BackgroundImage = Properties.Resources.eBordo_error_notification;
+                pictureAktivan.BackgroundImageLayout = ImageLayout.Zoom;
+            }
+            else
+            {
+                pictureAktivan.BackgroundImage = Properties.Resources.eBordo_success_notification;
+                pictureAktivan.BackgroundImageLayout = ImageLayout.Zoom;
+            }
+        }
+
+        private void lblBrojDresa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iconPictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

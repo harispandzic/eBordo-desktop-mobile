@@ -56,7 +56,7 @@ namespace eBordo.WinUI.Forms.Notifikacije
             this.txtTekstNotifikacije.AutoSize = true;
             this.txtTekstNotifikacije.BackColor = System.Drawing.Color.Transparent;
             this.txtTekstNotifikacije.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTekstNotifikacije.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.txtTekstNotifikacije.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.txtTekstNotifikacije.Location = new System.Drawing.Point(37, 5);
             this.txtTekstNotifikacije.MaximumSize = new System.Drawing.Size(208, 34);
             this.txtTekstNotifikacije.Name = "txtTekstNotifikacije";
@@ -84,10 +84,10 @@ namespace eBordo.WinUI.Forms.Notifikacije
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = global::eBordo.WinUI.Properties.Resources.eBordo_done_button1;
+            this.pictureBox1.BackgroundImage = global::eBordo.WinUI.Properties.Resources.eBordo_DONEDONEDONE;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Location = new System.Drawing.Point(245, 5);
+            this.pictureBox1.Location = new System.Drawing.Point(246, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(20, 20);
             this.pictureBox1.TabIndex = 62;
@@ -116,6 +116,7 @@ namespace eBordo.WinUI.Forms.Notifikacije
             this.Controls.Add(this.txtDatumNotifikacije);
             this.Controls.Add(this.pictureTipNotifikacije);
             this.Controls.Add(this.txtTekstNotifikacije);
+            this.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.Name = "frmNotifikacijaKartica";
             this.Size = new System.Drawing.Size(269, 57);
             this.Load += new System.EventHandler(this.frmNotifikacijaKartica_Load);

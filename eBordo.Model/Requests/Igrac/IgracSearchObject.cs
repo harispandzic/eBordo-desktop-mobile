@@ -8,5 +8,6 @@ namespace eBordo.Model.Requests.Igrac
     {
         public string ime { get; set; }
         public int pozicijaId { get; set; }
+        public bool isAktivan{ get; set; }
     }
 }

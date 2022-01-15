@@ -21,7 +21,7 @@ namespace eBordo.WinUI.Helper
                     }
                 case TipNotifikacije.UREĐIVANJE:
                     {
-                        posaljiNotifikaciju("Promjene uspješno sačuvane!", TipPoruke.SUCCESS, snackbar, forma);
+                        posaljiNotifikaciju("Promjene uspješno sačuvane!", TipPoruke.INFO, snackbar, forma);
                         break;
                     }
                 case TipNotifikacije.BRISANJE:
@@ -65,10 +65,120 @@ namespace eBordo.WinUI.Helper
                         posaljiNotifikaciju("Klupa mora imati 9 igrača", TipPoruke.WARNING, snackbar, forma);
                         break;
                     }
+                case TipNotifikacije.IGRAC_DODAN_U_SASTAV:
+                    {
+                        posaljiNotifikaciju("Igrač se nalazi u sastavu!", TipPoruke.WARNING, snackbar, forma, BunifuSnackbar.Positions.BottomRight);
+                        break;
+                    }
+                case TipNotifikacije.BEZ_UTAKMICA:
+                    {
+                        posaljiNotifikaciju("Nema odigranih utakmica!", TipPoruke.WARNING, snackbar, forma, BunifuSnackbar.Positions.TopCenter);
+                        break;
+                    }
+                case TipNotifikacije.IGRAC_OCJENJEN:
+                    {
+                        posaljiNotifikaciju("Igrač je već ocjenjen!", TipPoruke.WARNING, snackbar, forma, BunifuSnackbar.Positions.BottomRight);
+                        break;
+                    }
+                case TipNotifikacije.POPUNJENA_PRVA_POSTAVA:
+                    {
+                        posaljiNotifikaciju("Prva postava može imati maksimalno 11 igrača!", TipPoruke.WARNING, snackbar, forma, BunifuSnackbar.Positions.BottomRight);
+                        break;
+                    }
+                case TipNotifikacije.POPUNJENA_KLUPA:
+                    {
+                        posaljiNotifikaciju("Klupa može imati maksimalno 9 igrača!", TipPoruke.WARNING, snackbar, forma, BunifuSnackbar.Positions.BottomRight);
+                        break;
+                    }
+                case TipNotifikacije.SASTAV_ODABRAN:
+                    {
+                        posaljiNotifikaciju("Sastav je uspješno odabran!", TipPoruke.INFO, snackbar, forma, BunifuSnackbar.Positions.BottomRight);
+                        break;
+                    }
+                case TipNotifikacije.IGRAC_USPJESNO_DODAN_U_SASTAV:
+                    {
+                        posaljiNotifikaciju("Igrač uspješno dodan u sastav!", TipPoruke.SUCCESS, snackbar, forma, BunifuSnackbar.Positions.BottomRight);
+                        break;
+                    }
+                case TipNotifikacije.IGRAC_USPJESNO_OCJENJEN:
+                    {
+                        posaljiNotifikaciju("Igrač uspješno ocjenjen!", TipPoruke.SUCCESS, snackbar, forma, BunifuSnackbar.Positions.BottomRight);
+                        break;
+                    }
+                case TipNotifikacije.IZMJENA_USPJEŠNO_EVIDENTIRANA:
+                    {
+                        posaljiNotifikaciju("Izmjena uspješno evidentirana!", TipPoruke.SUCCESS, snackbar, forma, BunifuSnackbar.Positions.BottomRight);
+                        break;
+                    }
+                case TipNotifikacije.IZMJENA_VEC_EVIDENTIRANA:
+                    {
+                        posaljiNotifikaciju("Izmjena je već evidentirana!", TipPoruke.WARNING, snackbar, forma, BunifuSnackbar.Positions.BottomRight);
+                        break;
+                    }
+                case TipNotifikacije.FORMA_VALIDACIJA:
+                    {
+                        posaljiNotifikaciju("Podaci nisu ispravni!", TipPoruke.WARNING, snackbar, forma, BunifuSnackbar.Positions.BottomRight);
+                        break;
+                    }
+                case TipNotifikacije.GRESKA_UPLOAD:
+                    {
+                        posaljiNotifikaciju("Greška pri učitavanju slike!", TipPoruke.WARNING, snackbar, forma, BunifuSnackbar.Positions.BottomRight);
+                        break;
+                    }
+                case TipNotifikacije.NOTIFIKACIJA_PROČITANA:
+                    {
+                        posaljiNotifikaciju("Notifikacija pročitana!", TipPoruke.SUCCESS, snackbar, forma, BunifuSnackbar.Positions.BottomRight);
+                        break;
+                    }
+                case TipNotifikacije.GRAD_POSTOJI:
+                    {
+                        posaljiNotifikaciju("Grad postoji u bazi podataka!", TipPoruke.ERROR, snackbar, forma, BunifuSnackbar.Positions.BottomRight);
+                        break;
+                    }
+                case TipNotifikacije.DRZAVA_POSTOJI:
+                    {
+                        posaljiNotifikaciju("Drzava postoji u bazi podataka!", TipPoruke.ERROR, snackbar, forma, BunifuSnackbar.Positions.BottomRight);
+                        break;
+                    }
+                case TipNotifikacije.KLUB_POSTOJI:
+                    {
+                        posaljiNotifikaciju("Klub postoji u bazi podataka!", TipPoruke.ERROR, snackbar, forma, BunifuSnackbar.Positions.BottomRight);
+                        break;
+                    }
+                case TipNotifikacije.TAKMICENJE_POSTOJI:
+                    {
+                        posaljiNotifikaciju("Takmicenje postoji u bazi podataka!", TipPoruke.ERROR, snackbar, forma, BunifuSnackbar.Positions.BottomRight);
+                        break;
+                    }
+                case TipNotifikacije.STADION_POSTOJI:
+                    {
+                        posaljiNotifikaciju("Stadion postoji u bazi podataka!", TipPoruke.ERROR, snackbar, forma, BunifuSnackbar.Positions.BottomRight);
+                        break;
+                    }
+                case TipNotifikacije.KORISNIK_POSTOJI:
+                    {
+                        posaljiNotifikaciju("Korisnik postoji u bazi podataka!", TipPoruke.ERROR, snackbar, forma, BunifuSnackbar.Positions.BottomRight);
+                        break;
+                    }
+                case TipNotifikacije.DATUM_ZAUZET_UTAKMICA:
+                    {
+                        posaljiNotifikaciju("Odabrani datum je zauzet. Vec je evidentirana utakmica!", TipPoruke.ERROR, snackbar, forma, BunifuSnackbar.Positions.BottomRight);
+                        break;
+                    }
+                case TipNotifikacije.DATUM_ZAUZET_TRENING:
+                    {
+                        posaljiNotifikaciju("Odabrani datum je zauzet. Vec je evidentiran trening!", TipPoruke.ERROR, snackbar, forma, BunifuSnackbar.Positions.BottomRight);
+                        break;
+                    }
+                case TipNotifikacije.SERVER_GRESKA_VALIDACIJE:
+                    {
+                        posaljiNotifikaciju("Greška validacije na serveru!", TipPoruke.ERROR, snackbar, forma, BunifuSnackbar.Positions.BottomRight);
+                        break;
+                    }
                 case TipNotifikacije.BEZ: break;
             }
         }
-        public static void posaljiNotifikaciju(string sadrzajNotifikacije, TipPoruke tipNotifikacije, BunifuSnackbar snackbar, System.Windows.Forms.Form forma)
+        public static void posaljiNotifikaciju(string sadrzajNotifikacije, TipPoruke tipNotifikacije, BunifuSnackbar snackbar, System.Windows.Forms.Form forma, Bunifu.UI.WinForms.BunifuSnackbar.Positions pozicija = BunifuSnackbar.Positions.BottomRight)
         {
             switch (tipNotifikacije)
             {
@@ -77,7 +187,7 @@ namespace eBordo.WinUI.Helper
                         snackbar.Show(forma,
                         sadrzajNotifikacije,
                         Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success,
-                        3000, "", Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                        3000, "", pozicija);
                         SoundPlayer simpleSound = new SoundPlayer(Properties.Resources.success);
                         simpleSound.Play();
                         break;
@@ -87,7 +197,7 @@ namespace eBordo.WinUI.Helper
                         snackbar.Show(forma,
                         sadrzajNotifikacije,
                         Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Warning,
-                        3000, "", Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                        3000, "", pozicija);
                         SoundPlayer simpleSound = new SoundPlayer(Properties.Resources.warning);
                         simpleSound.Play();
                         break;
@@ -97,7 +207,7 @@ namespace eBordo.WinUI.Helper
                         snackbar.Show(forma,
                         sadrzajNotifikacije,
                         Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Information,
-                        3000, "", Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                        3000, "", pozicija);
                         SoundPlayer simpleSound = new SoundPlayer(Properties.Resources.info);
                         simpleSound.Play();
                         break;
@@ -107,7 +217,7 @@ namespace eBordo.WinUI.Helper
                         snackbar.Show(forma,
                         sadrzajNotifikacije,
                         Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error,
-                        3000, "", Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                        3000, "", pozicija);
                         SoundPlayer simpleSound = new SoundPlayer(Properties.Resources.error);
                         simpleSound.Play();
                         break;

@@ -26,6 +26,15 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
         private async void frmPrikazOdigranihUtakmica_Load(object sender, EventArgs e)
         {
             await LoadIzvještaj();
+            UcitajPodatke();
+        }
+        public void UcitajPodatke()
+        {
+            cmbVrstaUtakmkce.Items.Add("Domaća");
+            cmbVrstaUtakmkce.Items.Add("Gostujuća");
+            cmbRezultat.Items.Add("Pobjeda");
+            cmbRezultat.Items.Add("Poraz");
+            cmbRezultat.Items.Add("Nerješeno");
         }
         public async Task LoadIzvještaj(string tipUtakmice = "", string rezultat = "", TipNotifikacije notifikacija = TipNotifikacije.BEZ)
         {
@@ -46,6 +55,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
 
                 _podaci = await _izvjestaj.GetAll<List<Model.Models.Izvještaj>>(search);
                 loader.Hide();
+                gifLoader.Hide();
 
                 frmIzvjestajKartica[] listItems = new frmIzvjestajKartica[_podaci.Count];
                 for (int i = 0; i < listItems.Length; i++)
@@ -87,17 +97,17 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
                     }
                     if(_podaci[i].goloviSarajevo > _podaci[i].goloviProtivnik)
                     {
-                        listItems[i].rezultat = Properties.Resources.eBordo_pobjedaUtakmica;
+                        listItems[i].rezultat = Properties.Resources.eBordo_success_notification;
                         listItems[i].rezultatOpis = "POBJEDA";
                     }
                     else if (_podaci[i].goloviSarajevo < _podaci[i].goloviProtivnik)
                     {
-                        listItems[i].rezultat = Properties.Resources.eBordo_porazUtakmica;
+                        listItems[i].rezultat = Properties.Resources.eBordo_error_notification;
                         listItems[i].rezultatOpis = "PORAZ";
                     }
                     else if (_podaci[i].goloviSarajevo == _podaci[i].goloviProtivnik)
                     {
-                        listItems[i].rezultat = Properties.Resources.eBordo_nerjesenaUtakmica;
+                        listItems[i].rezultat = Properties.Resources.eBordo_nerjeseno;
                         listItems[i].rezultatOpis = "NERJEŠENO";
                     }
                     listItems[i].utakmicaOpis = _podaci[i].utakmica.opisUtakmice.ToUpper();
@@ -105,9 +115,34 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
                     listItems[i].satnica = _podaci[i].utakmica.satnica + " h";
                     listItems[i].stadion = "STADION " + _podaci[i].utakmica.stadion.nazivStadiona.ToUpper();
                     listItems[i].logoTakmicenja = byteToImage.ConvertByteToImage(_podaci[i].utakmica.takmicenje.logo);
+                    if (_podaci[i].utakmica.datumOdigravanja.Date == DateTime.Now.Date)
+                    {
+                        listItems[i].brojDanaString = "DANAS";
+                    }
+                    else if (_podaci[i].utakmica.datumOdigravanja.Date < DateTime.Now.Date)
+                    {
+                        listItems[i].brojDanaString = "ZAVRŠENA PRIJE " + (DateTime.Now.Date - _podaci[i].utakmica.datumOdigravanja.Date.Date).TotalDays + " DANA";
+                    }
+                    else
+                    {
+                        listItems[i].brojDanaString = "ZA " + (_podaci[i].utakmica.datumOdigravanja.Date.Date - DateTime.Now.Date).TotalDays + " DANA";
+                    }
+                    int brojNastupa = 11 + _podaci[i].izmjene.Count();
+                    if (_podaci[i].nastupi.Count() != brojNastupa)
+                    {
+                        listItems[i].statusSlika = Properties.Resources.eBordo_inProgress;
+                        listItems[i].statusText = "IN PROGRESS";
 
+                    }
+                    else
+                    {
+                        listItems[i].statusSlika = Properties.Resources.eBordo_success_notification;
+                        listItems[i].statusText = "ZAVRŠEN";
+                    }
                     pnlUtakmiceWrapper.Controls.Add(listItems[i]);
                 }
+                loaderBrojIgraca.Hide();
+                UcitajBrojUtakmica();
             }
             catch
             {
@@ -119,6 +154,55 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
         {
             frmOdaberiUtakmicu odaberiUtakmicu = new frmOdaberiUtakmicu(this);
             odaberiUtakmicu.Show();
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void UcitajBrojUtakmica()
+        {
+            txtBrojUtakmica.Text = pnlUtakmiceWrapper.Controls.Count.ToString();
+        }
+        private void btnSaveIgracSastav_Click(object sender, EventArgs e)
+        {
+            frmOdaberiUtakmicu odaberiUtakmicu = new frmOdaberiUtakmicu(this);
+            odaberiUtakmicu.Show();
+        }
+
+        private async void cmbVrstaUtakmkce_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbVrstaUtakmkce.SelectedIndex == 0)
+            {
+                await LoadIzvještaj(tipUtakmice: "Domaća");
+            }
+            else
+            {
+                await LoadIzvještaj(tipUtakmice: "Gostujuća");
+            }
+        }
+
+        private async void cmbRezultat_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbRezultat.SelectedIndex == 0)
+            {
+                await LoadIzvještaj(rezultat: "Pobjeda");
+            }
+            else if (cmbRezultat.SelectedIndex == 1)
+            {
+                await LoadIzvještaj(rezultat: "Poraz");
+            }
+            else if (cmbRezultat.SelectedIndex == 2)
+            {
+                await LoadIzvještaj(rezultat: "Nerješeno");
+            }
+        }
+
+        private async void bunifuButton1_Click(object sender, EventArgs e)
+        {
+            cmbVrstaUtakmkce.Text = "Vrsta utakmice";
+            cmbRezultat.Text = "Rezultat";
+            await LoadIzvještaj();
         }
     }
 }

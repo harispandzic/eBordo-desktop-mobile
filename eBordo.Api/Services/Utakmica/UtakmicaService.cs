@@ -2,7 +2,9 @@
 using eBordo.Api.Database;
 using eBordo.Api.Services.BaseCRUDService;
 using eBordo.Api.Services.UtakmicaSastav;
+using eBordo.Model.Exceptions;
 using eBordo.Model.Requests.Utakmica;
+using eBordo.Model.Requests.UtakmicaSastav;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -40,6 +42,7 @@ namespace eBordo.Api.Services.Utakmica
                     .ThenInclude(t => t.igrac.igracSkills)
                 .Include(s => s.sastav)
                     .ThenInclude(t => t.igrac.igracStatistika)
+                .OrderByDescending(s => s.datumOdigravanja)
                 .AsQueryable();
 
             if (search != null && !string.IsNullOrEmpty(search.tipUtakmice))
@@ -97,6 +100,20 @@ namespace eBordo.Api.Services.Utakmica
         }
         public override Model.Models.Utakmica Insert(UtakmicaInsertRequest request)
         {
+            foreach (var item in _db.utakmice)
+            {
+                if(item.datumOdigravanja.Date == request.datumOdigravanja.Date)
+                {
+                    throw new UserException("Odabrani datum je zauzet. Vec je evidentirana utakmica!");
+                }
+            }
+            foreach (var item in _db.trening)
+            {
+                if (item.datumOdrzavanja.Date == request.datumOdigravanja.Date)
+                {
+                    throw new UserException("Odabrani datum je zauzet. Vec je evidentiran trening!");
+                }
+            }
             Garnitura tipGarniture = (Garnitura)Enum.Parse(typeof(Garnitura), request.tipGarniture);
             VrstaUtakmice vrstaUtakmice = (VrstaUtakmice)Enum.Parse(typeof(VrstaUtakmice), request.tipUtakmice);
 
@@ -162,6 +179,20 @@ namespace eBordo.Api.Services.Utakmica
         }
         public override Model.Models.Utakmica Update(int id, UtakmicaUpdateRequest request)
         {
+            foreach (var item in _db.utakmice)
+            {
+                if (item.datumOdigravanja.Date == request.datumOdigravanja.Date)
+                {
+                    throw new UserException("Odabrani datum je zauzet. Vec je evidentirana utakmica!");
+                }
+            }
+            foreach (var item in _db.trening)
+            {
+                if (item.datumOdrzavanja.Date == request.datumOdigravanja.Date)
+                {
+                    throw new UserException("Odabrani datum je zauzet. Vec je evidentiran trening!");
+                }
+            }
             Database.Utakmica utakmica = _db.utakmice.Where(s => s.utakmicaId == id).SingleOrDefault();
 
             utakmica.datumOdigravanja = request.datumOdigravanja;
@@ -176,7 +207,21 @@ namespace eBordo.Api.Services.Utakmica
             {
                 foreach (var item in request.sastav)
                 {
-                    Model.Models.UtakmicaSastav sastavResultModel = _utakmicaSastavService.UpdateByUtakmicaId(item, id, item.igracId);
+                    if (item.utakmicaSastavid == 0)
+                    {
+                        UtakmicaSastavInsertRequest sastav = new UtakmicaSastavInsertRequest
+                        {
+                            igracId = item.igracId,
+                            utakmicaId = item.utakmicaId,
+                            pozicijaId = item.pozicijaId,
+                            uloga = item.uloga
+                        };
+                        _utakmicaSastavService.InsertByUtakmicaId(sastav, utakmica.utakmicaId);
+                    }
+                    else
+                    {
+                        _utakmicaSastavService.UpdateByUtakmicaId(item, id, item.igracId);
+                    }
                 }
             }
 

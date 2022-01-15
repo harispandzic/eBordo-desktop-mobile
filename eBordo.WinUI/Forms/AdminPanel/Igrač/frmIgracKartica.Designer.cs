@@ -38,11 +38,13 @@ namespace eBordo.WinUI.Forms.AdminPanel.Igrač
             this.btnEdit = new System.Windows.Forms.PictureBox();
             this.btnDelete = new System.Windows.Forms.PictureBox();
             this.pictureZastava = new System.Windows.Forms.PictureBox();
+            this.pictureAktivan = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.korisnickaFotografija)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureZastava)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureAktivan)).BeginInit();
             this.SuspendLayout();
             // 
             // igracOcjena
@@ -77,11 +79,12 @@ namespace eBordo.WinUI.Forms.AdminPanel.Igrač
             this.korisnickaFotografija.Size = new System.Drawing.Size(188, 203);
             this.korisnickaFotografija.TabIndex = 39;
             this.korisnickaFotografija.TabStop = false;
+            this.korisnickaFotografija.Click += new System.EventHandler(this.korisnickaFotografija_Click);
             // 
             // lblImePrezime
             // 
             this.lblImePrezime.BackColor = System.Drawing.Color.Transparent;
-            this.lblImePrezime.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblImePrezime.Font = new System.Drawing.Font("Oswald", 11F);
             this.lblImePrezime.ForeColor = System.Drawing.Color.Transparent;
             this.lblImePrezime.Location = new System.Drawing.Point(0, 196);
             this.lblImePrezime.Name = "lblImePrezime";
@@ -93,14 +96,14 @@ namespace eBordo.WinUI.Forms.AdminPanel.Igrač
             // lblBrojDresa
             // 
             this.lblBrojDresa.BackColor = System.Drawing.Color.Transparent;
-            this.lblBrojDresa.Font = new System.Drawing.Font("Oswald", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBrojDresa.Font = new System.Drawing.Font("Oswald", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBrojDresa.ForeColor = System.Drawing.Color.Transparent;
-            this.lblBrojDresa.Location = new System.Drawing.Point(-1, 0);
+            this.lblBrojDresa.Location = new System.Drawing.Point(0, 0);
             this.lblBrojDresa.Name = "lblBrojDresa";
             this.lblBrojDresa.Size = new System.Drawing.Size(44, 36);
             this.lblBrojDresa.TabIndex = 42;
             this.lblBrojDresa.Text = "#20";
-            this.lblBrojDresa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblBrojDresa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblPozicija
             // 
@@ -162,6 +165,17 @@ namespace eBordo.WinUI.Forms.AdminPanel.Igrač
             this.pictureZastava.TabIndex = 54;
             this.pictureZastava.TabStop = false;
             // 
+            // pictureAktivan
+            // 
+            this.pictureAktivan.BackColor = System.Drawing.Color.Transparent;
+            this.pictureAktivan.BackgroundImage = global::eBordo.WinUI.Properties.Resources.eBordo_success_notification;
+            this.pictureAktivan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureAktivan.Location = new System.Drawing.Point(4, 30);
+            this.pictureAktivan.Name = "pictureAktivan";
+            this.pictureAktivan.Size = new System.Drawing.Size(15, 15);
+            this.pictureAktivan.TabIndex = 116;
+            this.pictureAktivan.TabStop = false;
+            // 
             // frmIgracKartica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -169,6 +183,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Igrač
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.BackgroundImage = global::eBordo.WinUI.Properties.Resources.Screenshot_11;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.pictureAktivan);
             this.Controls.Add(this.pictureZastava);
             this.Controls.Add(this.igracOcjena);
             this.Controls.Add(this.btnView);
@@ -188,6 +203,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Igrač
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureZastava)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureAktivan)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -202,5 +218,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.Igrač
         private System.Windows.Forms.PictureBox btnEdit;
         private System.Windows.Forms.PictureBox btnDelete;
         private System.Windows.Forms.PictureBox pictureZastava;
+        private System.Windows.Forms.PictureBox pictureAktivan;
     }
 }

@@ -22,6 +22,7 @@ namespace eBordo.Api.Services.UtakmicaSastav
                 .Include(s => s.igrac)
                 .Include(s => s.igrac.pozicija)
                 .Include(s => s.igrac.korisnik)
+                .Include(s => s.igrac.igracStatistika)
                 .AsQueryable();
 
             var result = utakmicaSastav.ToList();

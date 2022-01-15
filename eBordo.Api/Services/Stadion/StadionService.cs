@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using eBordo.Api.Database;
 using eBordo.Api.Services.BaseCRUDService;
+using eBordo.Model.Exceptions;
 using eBordo.Model.Requests.Stadion;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -10,12 +11,19 @@ using System.Threading.Tasks;
 
 namespace eBordo.Api.Services.Stadion
 {
-    public class StadionService : BaseCRUDService<eBordo.Model.Models.Stadion, eBordo.Api.Database.Stadion, object, Model.Requests.Stadion.StadionInsertRequest, object>, IStadionService
+    public class StadionService : BaseCRUDService<eBordo.Model.Models.Stadion, eBordo.Api.Database.Stadion, object, Model.Requests.Stadion.StadionInsertRequest, Model.Requests.Stadion.StadionUpdateRequest>, IStadionService
     {
         public StadionService(eBordoContext db, IMapper mapper) : base(db, mapper) { }
 
         public override Model.Models.Stadion Insert(StadionInsertRequest request)
         {
+            foreach (var item in _db.stadioni)
+            {
+                if (item.nazivStadiona.StartsWith(request.nazivStadiona))
+                {
+                    throw new UserException("Stadion postoji u bazi podataka!");
+                }
+            }
             Database.Stadion stadion = new Database.Stadion
             {
                 nazivStadiona = request.nazivStadiona,
@@ -26,6 +34,23 @@ namespace eBordo.Api.Services.Stadion
             _db.SaveChanges();
 
             return _mapper.Map<eBordo.Model.Models.Stadion>(stadion);
+        }
+        public override Model.Models.Stadion Update(int id, StadionUpdateRequest request)
+        {
+            foreach (var item in _db.stadioni)
+            {
+                if (item.nazivStadiona.StartsWith(request.nazivStadiona))
+                {
+                    throw new UserException("Stadion postoji u bazi podataka!");
+                }
+            }
+            var entity = _db.stadioni.Where(s => s.stadionId == id).SingleOrDefault();
+
+            entity.nazivStadiona = request.nazivStadiona;
+
+            _db.SaveChanges();
+
+            return _mapper.Map<eBordo.Model.Models.Stadion>(entity);
         }
         public override IEnumerable<eBordo.Model.Models.Stadion> Get(object search = null)
         {

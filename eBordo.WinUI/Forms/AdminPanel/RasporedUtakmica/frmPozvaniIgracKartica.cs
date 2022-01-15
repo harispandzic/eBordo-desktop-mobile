@@ -1,5 +1,7 @@
 ﻿using Bunifu.UI.WinForms;
+using Bunifu.UI.WinForms.BunifuButton;
 using eBordo.WinUI.Helper;
+using Flurl.Http;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,15 +17,19 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
 {
     public partial class frmPozvaniIgracKartica : UserControl
     {
+        private readonly ApiService.ApiService _igracApi = new ApiService.ApiService("Igrac");
+
         private List<Model.Models.Igrac> _igraci;
         private List<Model.Models.Pozicija> _pozicije;
 
+        public int utakmicaSastavid { get; set; }
         public int igracId { get; set; }
         public int pozicijaId { get; set; }
         public string sastavUloga { get; set; }
         public Image igracSlika { get; set; }
-        public string igracPrezimeBrojDresa { get; set; }
+        public string igracPrezime { get; set; }
         public string igracPozicija { get; set; }
+        public string brojDresa { get; set; }
 
         frmUpsertUtakmica _upsertUtakmica;
         FlowLayoutPanel _flowPanelPrvaPostava;
@@ -33,6 +39,8 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
         BunifuRadioButton _radioBtnPrvihXI;
         BunifuRadioButton _radioBtnKlupa;
         bool _isUredjivanjeUtakmice;
+        BunifuSnackbar _snackbar;
+        BunifuButton _saveButton;
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -43,9 +51,9 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             int nWidthEllipse, // height of ellipse
             int nHeightEllipse // width of ellipse
         );
-        public frmPozvaniIgracKartica(frmUpsertUtakmica upsertUtakmica, FlowLayoutPanel flowPanelPrvaPostava, FlowLayoutPanel flowPanelKlupa, List<Model.Models.Igrac> igraci, BunifuDropdown cmbIgraci, List<Model.Models.Pozicija> pozicije, BunifuDropdown cmbPozicije,BunifuRadioButton radioBtnPrvihXI, BunifuRadioButton radioBtnKlupa, bool isUredjivanjeUtakmice)
+        public frmPozvaniIgracKartica(frmUpsertUtakmica upsertUtakmica, FlowLayoutPanel flowPanelPrvaPostava, FlowLayoutPanel flowPanelKlupa, List<Model.Models.Igrac> igraci, BunifuDropdown cmbIgraci, List<Model.Models.Pozicija> pozicije, BunifuDropdown cmbPozicije,BunifuRadioButton radioBtnPrvihXI, BunifuRadioButton radioBtnKlupa, bool isUredjivanjeUtakmice, BunifuSnackbar snackbar, BunifuButton saveButton)
         {
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 233, 35, 8, 8));
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 270, 35, 8, 8));
             InitializeComponent();
             _upsertUtakmica = upsertUtakmica;
             _flowPanelPrvaPostava = flowPanelPrvaPostava;
@@ -57,35 +65,32 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             _radioBtnKlupa = radioBtnKlupa;
             _flowPanelKlupa = flowPanelKlupa;
             _isUredjivanjeUtakmice = isUredjivanjeUtakmice;
+            _snackbar = snackbar;
+            _saveButton = saveButton;
         }
 
         private void frmPozvaniIgracKartica_Load(object sender, EventArgs e)
         {
             pictureIgracSlika.Image = igracSlika;
-            lblImePrezimeBrojDresa.Text = igracPrezimeBrojDresa;
+            lblImePrezimeBrojDresa.Text = igracPrezime;
             lblPozicija.Text = igracPozicija;
-            if (_isUredjivanjeUtakmice)
-            {
-                btnDelete.Hide();
-                btnEdit.Location = new Point(205, 8);
-                btnView.Location = new Point(183, 8);
-            }
+            txtBrojDresa.Text = brojDresa;
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private async void btnDelete_Click(object sender, EventArgs e)
         {
-            Control selectedControl;
-            int igracId = 0;
             if(sastavUloga == "PRVA_POSTAVA")
             {
                 for (int i = 0; i < _flowPanelPrvaPostava.Controls.Count; i++)
                 {
                     var control = (frmPozvaniIgracKartica)_flowPanelPrvaPostava.Controls[i];
-                    if (control.igracPrezimeBrojDresa == this.igracPrezimeBrojDresa)
+                    if (control.igracId == this.igracId)
                     {
-                        selectedControl = control;
-                        igracId = control.igracId;
                         _flowPanelPrvaPostava.Controls.Remove(control);
+                        if (utakmicaSastavid != 0)
+                        {
+                            await $"{Properties.Settings.Default.ApiURL}{"UtakmicaSastav"}/{control.utakmicaSastavid}".WithBasicAuth(ApiService.ApiService.username, ApiService.ApiService.password).DeleteAsync().ReceiveJson<Model.Models.UtakmicaSastav>();
+                        }
                     }
                 }
             }
@@ -94,15 +99,24 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
                 for (int i = 0; i < _flowPanelKlupa.Controls.Count; i++)
                 {
                     var control = (frmPozvaniIgracKartica)_flowPanelKlupa.Controls[i];
-                    if (control.igracPrezimeBrojDresa == this.igracPrezimeBrojDresa)
+                    if (control.igracId == this.igracId)
                     {
-                        selectedControl = control;
-                        igracId = control.igracId;
                         _flowPanelKlupa.Controls.Remove(control);
+                        if (utakmicaSastavid != 0)
+                        {
+                            try
+                            {
+                                await $"{Properties.Settings.Default.ApiURL}{"UtakmicaSastav"}/{control.utakmicaSastavid}".WithBasicAuth(ApiService.ApiService.username, ApiService.ApiService.password).DeleteAsync().ReceiveJson<Model.Models.UtakmicaSastav>();
+                            }
+                            catch
+                            {
+                                PosaljiNotifikaciju.notificationSwitch(_snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
+                            }
+                        }
                     }
                 }
             }
-            _upsertUtakmica.filterIgraci(TipFiltera.Brisanje, igracId);
+            _upsertUtakmica.UpdateBrojEvidentiranih();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -116,8 +130,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
                 }
             }
 
-            _upsertUtakmica.filterIgraci(TipFiltera.Uredjivanje, igracId);
-
             int selectedPozicija = 0;
             for (int i = 0; i < _pozicije.Count; i++)
             {
@@ -127,6 +139,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
                 }
             }
             _cmbPozicije.SelectedIndex = selectedPozicija;
+            _cmbIgraci.SelectedIndex = selectedIgrac;
 
             if (sastavUloga == "PRVA_POSTAVA")
             {
@@ -140,11 +153,24 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
                 _radioBtnPrvihXI.Checked = false;
 
             }
+            _cmbIgraci.Enabled = false;
+            _upsertUtakmica.LoadDetaljiIgraca(_igraci[selectedIgrac]);
+            _saveButton.Text = "SPASI";
         }
 
         private async void btnView_Click(object sender, EventArgs e)
         {
-            await _upsertUtakmica.igracPodaci(igracId);
+            try
+            {
+                var igrac = await _igracApi.GetById<Model.Models.Igrac>(igracId);
+                frmDetaljiIgraca getById = new frmDetaljiIgraca(igrac);
+                getById.Show();
+            }
+            catch
+            {
+                PosaljiNotifikaciju.notificationSwitch(_snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
+            }
+            //await _upsertUtakmica.igracPodaci(igracId);
         }
     }
 }

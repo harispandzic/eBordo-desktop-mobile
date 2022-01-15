@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -25,8 +26,20 @@ namespace eBordo.WinUI.Forms.Notifikacije
         private frmPočetna _prikazNotifikacija;
         BunifuSnackbar _snackbar;
 
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+        (
+            int nLeftRect,     // x-coordinate of upper-left corner
+            int nTopRect,      // y-coordinate of upper-left corner
+            int nRightRect,    // x-coordinate of lower-right corner
+            int nBottomRect,   // y-coordinate of lower-right corner
+            int nWidthEllipse, // height of ellipse
+            int nHeightEllipse // width of ellipse
+        );
         public frmNotifikacijaKartica(frmPočetna prikazNotifikacija, BunifuSnackbar snackbar)
         {
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 269, 57, 10, 10));
+
             InitializeComponent();
             _prikazNotifikacija = prikazNotifikacija;
             _snackbar = snackbar;
@@ -45,7 +58,7 @@ namespace eBordo.WinUI.Forms.Notifikacije
             try
             {
                 var result = await _notifikacija.DeleteById<Model.Models.Notifikacija>(notifikacijaId);
-                await _prikazNotifikacija.LoadNotifikacije(notifikacija: TipNotifikacije.BRISANJE);
+                await _prikazNotifikacija.LoadNotifikacije(notifikacija: TipNotifikacije.NOTIFIKACIJA_PROČITANA);
             }
             catch
             {

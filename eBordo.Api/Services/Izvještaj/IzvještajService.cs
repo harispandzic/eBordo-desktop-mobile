@@ -70,15 +70,15 @@ namespace eBordo.Api.Services.Izvještaj
             }
             if (search != null && !string.IsNullOrEmpty(search.rezultat))
             {
-                if (search.tipUtakmice == "Pobjeda")
+                if (search.rezultat == "Pobjeda")
                 {
                     entity = entity.Where(s => s.rezultat == Rezultat.POBJEDA);
                 }
-                if (search.tipUtakmice == "Poraz")
+                if (search.rezultat == "Poraz")
                 {
                     entity = entity.Where(s => s.rezultat == Rezultat.PORAZ);
                 }
-                if (search.tipUtakmice == "Nerješeno")
+                if (search.rezultat == "Nerješeno")
                 {
                     entity = entity.Where(s => s.rezultat == Rezultat.NERJEŠENO);
                 }

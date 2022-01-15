@@ -32,8 +32,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUpsertUtakmica));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
@@ -50,6 +48,10 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties14 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties15 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties16 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.cmbProtivnik = new Bunifu.UI.WinForms.BunifuDropdown();
             this.lblProtivnik = new Bunifu.UI.WinForms.BunifuLabel();
             this.radioBtnPrvihXI = new Bunifu.UI.WinForms.BunifuRadioButton();
@@ -67,7 +69,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.cmbKapiten = new Bunifu.UI.WinForms.BunifuDropdown();
             this.lblKapiten = new Bunifu.UI.WinForms.BunifuLabel();
             this.lblSudija = new Bunifu.UI.WinForms.BunifuLabel();
-            this.lblGarnituraDresova = new Bunifu.UI.WinForms.BunifuLabel();
             this.radioBtnDomacaGarnitura = new System.Windows.Forms.RadioButton();
             this.radioBtnGostujucaGarnitura = new System.Windows.Forms.RadioButton();
             this.radioBtnRezervnaGarnitura = new System.Windows.Forms.RadioButton();
@@ -84,8 +85,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.lblImePrezimeBrojDresa = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureIgracSlika = new Bunifu.UI.WinForms.BunifuPictureBox();
-            this.btnDetaljiIgraca = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.btnSave = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnSaveIgracSastav = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuSeparator1 = new Bunifu.UI.WinForms.BunifuSeparator();
             this.txtNapomene = new Bunifu.UI.WinForms.BunifuTextBox();
@@ -96,10 +95,128 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.txtOpisUtakmice = new Bunifu.UI.WinForms.BunifuTextBox();
             this.txtSatnica = new Bunifu.UI.WinForms.BunifuTextBox();
             this.dtpDatumOdigravanja = new Bunifu.UI.WinForms.BunifuDatePicker();
+            this.txtBrojDresa = new System.Windows.Forms.Label();
+            this.igracOcjena = new Bunifu.UI.WinForms.BunifuRating();
+            this.txtPrezime = new System.Windows.Forms.Label();
+            this.pictureSlikaIgraca = new System.Windows.Forms.PictureBox();
+            this.ratingOdbrana = new Bunifu.UI.WinForms.BunifuRating();
+            this.ratingSkok = new Bunifu.UI.WinForms.BunifuRating();
+            this.ratingKlizeciStart = new Bunifu.UI.WinForms.BunifuRating();
+            this.ratingMarkiranje = new Bunifu.UI.WinForms.BunifuRating();
+            this.ratingSnaga = new Bunifu.UI.WinForms.BunifuRating();
+            this.ratingSut = new Bunifu.UI.WinForms.BunifuRating();
+            this.ratingBrzina = new Bunifu.UI.WinForms.BunifuRating();
+            this.ratingKretanje = new Bunifu.UI.WinForms.BunifuRating();
+            this.ratingDodavanje = new Bunifu.UI.WinForms.BunifuRating();
+            this.ratingDriblanje = new Bunifu.UI.WinForms.BunifuRating();
+            this.ratingKontrolaLopte = new Bunifu.UI.WinForms.BunifuRating();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureCrveniKartoni = new System.Windows.Forms.PictureBox();
+            this.pictureZutiKartoni = new System.Windows.Forms.PictureBox();
+            this.pictureAsistencije = new System.Windows.Forms.PictureBox();
+            this.pictureGolovi = new System.Windows.Forms.PictureBox();
+            this.pictureNastupi = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtNastupi = new System.Windows.Forms.Label();
+            this.txtGolovi = new System.Windows.Forms.Label();
+            this.txtCrveniKartoni = new System.Windows.Forms.Label();
+            this.txtZutiKartoni = new System.Windows.Forms.Label();
+            this.txtAsistencije = new System.Windows.Forms.Label();
+            this.iconPictureBox6 = new FontAwesome.Sharp.IconPictureBox();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtMinute = new System.Windows.Forms.Label();
+            this.iconPictureBox7 = new FontAwesome.Sharp.IconPictureBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.iconPictureBox8 = new FontAwesome.Sharp.IconPictureBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.iconPictureBox9 = new FontAwesome.Sharp.IconPictureBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.iconPictureBox10 = new FontAwesome.Sharp.IconPictureBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.iconPictureBox11 = new FontAwesome.Sharp.IconPictureBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.txtBrojIgracaPrvaPostava = new System.Windows.Forms.Label();
+            this.txtBrojIgracaKlupa = new System.Windows.Forms.Label();
+            this.btnOdustani = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.txtPozicija = new System.Windows.Forms.Label();
+            this.bunifuButton1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnSave = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.btnSaveUpdate = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.txtOpisUtakmiceValidator = new Bunifu.UI.WinForms.BunifuLabel();
+            this.txtDatumOdigravanjaValidator = new Bunifu.UI.WinForms.BunifuLabel();
+            this.txtSudijaValidator = new Bunifu.UI.WinForms.BunifuLabel();
+            this.txtSatnicaValidator = new Bunifu.UI.WinForms.BunifuLabel();
+            this.pictureDatumOdigravanjaValidator = new System.Windows.Forms.PictureBox();
+            this.pictureValidacijaPrvaPOstavaka = new System.Windows.Forms.PictureBox();
+            this.txtPrvaPostavaValidator = new Bunifu.UI.WinForms.BunifuLabel();
+            this.txtKlupaValidator = new Bunifu.UI.WinForms.BunifuLabel();
+            this.pictureKlupaValidator = new System.Windows.Forms.PictureBox();
+            this.gifLoader = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.txtProtivnikValidator = new Bunifu.UI.WinForms.BunifuLabel();
+            this.txtVrstaUtakmiceValidator = new Bunifu.UI.WinForms.BunifuLabel();
+            this.txtTakmicenjeValidator = new Bunifu.UI.WinForms.BunifuLabel();
+            this.txtStadionValidator = new Bunifu.UI.WinForms.BunifuLabel();
+            this.txtKapitenValidator = new Bunifu.UI.WinForms.BunifuLabel();
+            this.pictureProtivnikSlikaValidator = new System.Windows.Forms.PictureBox();
+            this.pictureTakmicenjeSlikaValidator = new System.Windows.Forms.PictureBox();
+            this.pictureKapitenSlikaValidator = new System.Windows.Forms.PictureBox();
+            this.pictureVrstaUtakmiceSlikaValidator = new System.Windows.Forms.PictureBox();
+            this.pictureStadionSlikaValidator = new System.Windows.Forms.PictureBox();
+            this.txtIgracSastavValidator = new Bunifu.UI.WinForms.BunifuLabel();
+            this.txtIgracPozicijaValidator = new Bunifu.UI.WinForms.BunifuLabel();
+            this.pictureIgracSastavSlikaValidator = new System.Windows.Forms.PictureBox();
+            this.pictureIgracSastavPozicijaSlikaValidator = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureIgracSlika)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.domaciDres)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rezervniDres)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gostujuciDres)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSlikaIgraca)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureCrveniKartoni)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureZutiKartoni)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureAsistencije)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureGolovi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureNastupi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureDatumOdigravanjaValidator)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureValidacijaPrvaPOstavaka)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureKlupaValidator)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gifLoader)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureProtivnikSlikaValidator)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureTakmicenjeSlikaValidator)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureKapitenSlikaValidator)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureVrstaUtakmiceSlikaValidator)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureStadionSlikaValidator)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureIgracSastavSlikaValidator)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureIgracSastavPozicijaSlikaValidator)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbProtivnik
@@ -122,7 +239,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.cmbProtivnik.FillDropDown = true;
             this.cmbProtivnik.FillIndicator = false;
             this.cmbProtivnik.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbProtivnik.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.cmbProtivnik.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbProtivnik.ForeColor = System.Drawing.Color.Black;
             this.cmbProtivnik.FormattingEnabled = true;
             this.cmbProtivnik.Icon = null;
@@ -138,26 +255,27 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.cmbProtivnik.ItemHighLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
             this.cmbProtivnik.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cmbProtivnik.ItemTopMargin = 3;
-            this.cmbProtivnik.Location = new System.Drawing.Point(11, 86);
+            this.cmbProtivnik.Location = new System.Drawing.Point(12, 94);
             this.cmbProtivnik.Name = "cmbProtivnik";
             this.cmbProtivnik.Size = new System.Drawing.Size(176, 32);
             this.cmbProtivnik.TabIndex = 30;
             this.cmbProtivnik.Text = "Protivnik";
             this.cmbProtivnik.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbProtivnik.TextLeftMargin = 5;
+            this.cmbProtivnik.SelectedIndexChanged += new System.EventHandler(this.cmbProtivnik_SelectedIndexChanged);
             // 
             // lblProtivnik
             // 
             this.lblProtivnik.AllowParentOverrides = false;
             this.lblProtivnik.AutoEllipsis = false;
             this.lblProtivnik.CursorType = null;
-            this.lblProtivnik.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProtivnik.Location = new System.Drawing.Point(12, 68);
+            this.lblProtivnik.Font = new System.Drawing.Font("Oswald", 8F);
+            this.lblProtivnik.Location = new System.Drawing.Point(12, 78);
             this.lblProtivnik.Name = "lblProtivnik";
             this.lblProtivnik.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblProtivnik.Size = new System.Drawing.Size(50, 15);
+            this.lblProtivnik.Size = new System.Drawing.Size(40, 16);
             this.lblProtivnik.TabIndex = 29;
-            this.lblProtivnik.Text = "Protivnik:";
+            this.lblProtivnik.Text = "Protivnik";
             this.lblProtivnik.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblProtivnik.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -168,7 +286,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.radioBtnPrvihXI.BindingControlPosition = Bunifu.UI.WinForms.BunifuRadioButton.BindingControlPositions.Right;
             this.radioBtnPrvihXI.BorderThickness = 1;
             this.radioBtnPrvihXI.Checked = false;
-            this.radioBtnPrvihXI.Location = new System.Drawing.Point(739, 40);
+            this.radioBtnPrvihXI.Location = new System.Drawing.Point(705, 33);
             this.radioBtnPrvihXI.Name = "radioBtnPrvihXI";
             this.radioBtnPrvihXI.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
             this.radioBtnPrvihXI.OutlineColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
@@ -186,13 +304,13 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.radioBtnKlupa.BindingControlPosition = Bunifu.UI.WinForms.BunifuRadioButton.BindingControlPositions.Right;
             this.radioBtnKlupa.BorderThickness = 1;
             this.radioBtnKlupa.Checked = true;
-            this.radioBtnKlupa.Location = new System.Drawing.Point(739, 56);
+            this.radioBtnKlupa.Location = new System.Drawing.Point(705, 51);
             this.radioBtnKlupa.Name = "radioBtnKlupa";
-            this.radioBtnKlupa.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
-            this.radioBtnKlupa.OutlineColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.radioBtnKlupa.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.radioBtnKlupa.OutlineColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.radioBtnKlupa.OutlineColorUnchecked = System.Drawing.Color.DarkGray;
-            this.radioBtnKlupa.RadioColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
-            this.radioBtnKlupa.RadioColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.radioBtnKlupa.RadioColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.radioBtnKlupa.RadioColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.radioBtnKlupa.Size = new System.Drawing.Size(17, 17);
             this.radioBtnKlupa.TabIndex = 41;
             this.radioBtnKlupa.Text = null;
@@ -202,13 +320,13 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.lblGostujuca.AllowParentOverrides = false;
             this.lblGostujuca.AutoEllipsis = false;
             this.lblGostujuca.CursorType = null;
-            this.lblGostujuca.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGostujuca.Location = new System.Drawing.Point(759, 58);
+            this.lblGostujuca.Font = new System.Drawing.Font("Oswald", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGostujuca.Location = new System.Drawing.Point(725, 51);
             this.lblGostujuca.Name = "lblGostujuca";
             this.lblGostujuca.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblGostujuca.Size = new System.Drawing.Size(30, 15);
+            this.lblGostujuca.Size = new System.Drawing.Size(37, 17);
             this.lblGostujuca.TabIndex = 40;
-            this.lblGostujuca.Text = "Klupa";
+            this.lblGostujuca.Text = "Izmjena";
             this.lblGostujuca.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblGostujuca.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -217,13 +335,13 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.lblDomaca.AllowParentOverrides = false;
             this.lblDomaca.AutoEllipsis = false;
             this.lblDomaca.CursorType = null;
-            this.lblDomaca.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDomaca.Location = new System.Drawing.Point(759, 40);
+            this.lblDomaca.Font = new System.Drawing.Font("Oswald", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDomaca.Location = new System.Drawing.Point(725, 32);
             this.lblDomaca.Name = "lblDomaca";
             this.lblDomaca.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblDomaca.Size = new System.Drawing.Size(40, 15);
+            this.lblDomaca.Size = new System.Drawing.Size(61, 17);
             this.lblDomaca.TabIndex = 39;
-            this.lblDomaca.Text = "Prvih XI";
+            this.lblDomaca.Text = "Prva postava";
             this.lblDomaca.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblDomaca.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -232,13 +350,13 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.lblVrstaUtakmice.AllowParentOverrides = false;
             this.lblVrstaUtakmice.AutoEllipsis = false;
             this.lblVrstaUtakmice.CursorType = null;
-            this.lblVrstaUtakmice.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVrstaUtakmice.Location = new System.Drawing.Point(200, 68);
+            this.lblVrstaUtakmice.Font = new System.Drawing.Font("Oswald", 8F);
+            this.lblVrstaUtakmice.Location = new System.Drawing.Point(200, 78);
             this.lblVrstaUtakmice.Name = "lblVrstaUtakmice";
             this.lblVrstaUtakmice.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblVrstaUtakmice.Size = new System.Drawing.Size(81, 15);
+            this.lblVrstaUtakmice.Size = new System.Drawing.Size(66, 16);
             this.lblVrstaUtakmice.TabIndex = 38;
-            this.lblVrstaUtakmice.Text = "Vrsta utakmice: ";
+            this.lblVrstaUtakmice.Text = "Vrsta utakmice";
             this.lblVrstaUtakmice.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblVrstaUtakmice.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -262,7 +380,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.cmbTakmicenja.FillDropDown = true;
             this.cmbTakmicenja.FillIndicator = false;
             this.cmbTakmicenja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbTakmicenja.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.cmbTakmicenja.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTakmicenja.ForeColor = System.Drawing.Color.Black;
             this.cmbTakmicenja.FormattingEnabled = true;
             this.cmbTakmicenja.Icon = null;
@@ -275,29 +393,30 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.cmbTakmicenja.ItemBorderColor = System.Drawing.Color.White;
             this.cmbTakmicenja.ItemForeColor = System.Drawing.Color.Black;
             this.cmbTakmicenja.ItemHeight = 26;
-            this.cmbTakmicenja.ItemHighLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.cmbTakmicenja.ItemHighLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.cmbTakmicenja.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cmbTakmicenja.ItemTopMargin = 3;
-            this.cmbTakmicenja.Location = new System.Drawing.Point(11, 197);
+            this.cmbTakmicenja.Location = new System.Drawing.Point(13, 223);
             this.cmbTakmicenja.Name = "cmbTakmicenja";
             this.cmbTakmicenja.Size = new System.Drawing.Size(176, 32);
             this.cmbTakmicenja.TabIndex = 44;
             this.cmbTakmicenja.Text = "Takmičenje";
             this.cmbTakmicenja.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbTakmicenja.TextLeftMargin = 5;
+            this.cmbTakmicenja.SelectedIndexChanged += new System.EventHandler(this.cmbTakmicenja_SelectedIndexChanged);
             // 
             // lblTakmicenje
             // 
             this.lblTakmicenje.AllowParentOverrides = false;
             this.lblTakmicenje.AutoEllipsis = false;
             this.lblTakmicenje.CursorType = null;
-            this.lblTakmicenje.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTakmicenje.Location = new System.Drawing.Point(12, 179);
+            this.lblTakmicenje.Font = new System.Drawing.Font("Oswald", 8F);
+            this.lblTakmicenje.Location = new System.Drawing.Point(13, 207);
             this.lblTakmicenje.Name = "lblTakmicenje";
             this.lblTakmicenje.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblTakmicenje.Size = new System.Drawing.Size(63, 15);
+            this.lblTakmicenje.Size = new System.Drawing.Size(49, 16);
             this.lblTakmicenje.TabIndex = 43;
-            this.lblTakmicenje.Text = "Takmičenje: ";
+            this.lblTakmicenje.Text = "Takmičenje";
             this.lblTakmicenje.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblTakmicenje.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -321,7 +440,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.cmbStadion.FillDropDown = true;
             this.cmbStadion.FillIndicator = false;
             this.cmbStadion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbStadion.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.cmbStadion.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbStadion.ForeColor = System.Drawing.Color.Black;
             this.cmbStadion.FormattingEnabled = true;
             this.cmbStadion.Icon = null;
@@ -334,29 +453,30 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.cmbStadion.ItemBorderColor = System.Drawing.Color.White;
             this.cmbStadion.ItemForeColor = System.Drawing.Color.Black;
             this.cmbStadion.ItemHeight = 26;
-            this.cmbStadion.ItemHighLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.cmbStadion.ItemHighLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.cmbStadion.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cmbStadion.ItemTopMargin = 3;
-            this.cmbStadion.Location = new System.Drawing.Point(199, 197);
+            this.cmbStadion.Location = new System.Drawing.Point(199, 223);
             this.cmbStadion.Name = "cmbStadion";
             this.cmbStadion.Size = new System.Drawing.Size(176, 32);
             this.cmbStadion.TabIndex = 46;
             this.cmbStadion.Text = "Stadion";
             this.cmbStadion.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbStadion.TextLeftMargin = 5;
+            this.cmbStadion.SelectedIndexChanged += new System.EventHandler(this.cmbStadion_SelectedIndexChanged);
             // 
             // lblStadion
             // 
             this.lblStadion.AllowParentOverrides = false;
             this.lblStadion.AutoEllipsis = false;
             this.lblStadion.CursorType = null;
-            this.lblStadion.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStadion.Location = new System.Drawing.Point(200, 179);
+            this.lblStadion.Font = new System.Drawing.Font("Oswald", 8F);
+            this.lblStadion.Location = new System.Drawing.Point(200, 207);
             this.lblStadion.Name = "lblStadion";
             this.lblStadion.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblStadion.Size = new System.Drawing.Size(43, 15);
+            this.lblStadion.Size = new System.Drawing.Size(34, 16);
             this.lblStadion.TabIndex = 45;
-            this.lblStadion.Text = "Stadion: ";
+            this.lblStadion.Text = "Stadion";
             this.lblStadion.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblStadion.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -365,13 +485,13 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.lblDatumRodjenja.AllowParentOverrides = false;
             this.lblDatumRodjenja.AutoEllipsis = false;
             this.lblDatumRodjenja.CursorType = null;
-            this.lblDatumRodjenja.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDatumRodjenja.Location = new System.Drawing.Point(12, 124);
+            this.lblDatumRodjenja.Font = new System.Drawing.Font("Oswald", 8F);
+            this.lblDatumRodjenja.Location = new System.Drawing.Point(12, 143);
             this.lblDatumRodjenja.Name = "lblDatumRodjenja";
             this.lblDatumRodjenja.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblDatumRodjenja.Size = new System.Drawing.Size(104, 15);
+            this.lblDatumRodjenja.Size = new System.Drawing.Size(81, 16);
             this.lblDatumRodjenja.TabIndex = 48;
-            this.lblDatumRodjenja.Text = "Datum odigravanja: ";
+            this.lblDatumRodjenja.Text = "Datum odigravanja";
             this.lblDatumRodjenja.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblDatumRodjenja.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -381,13 +501,13 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.lblSatnica.AutoEllipsis = false;
             this.lblSatnica.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblSatnica.CursorType = System.Windows.Forms.Cursors.Default;
-            this.lblSatnica.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSatnica.Location = new System.Drawing.Point(200, 124);
+            this.lblSatnica.Font = new System.Drawing.Font("Oswald", 8F);
+            this.lblSatnica.Location = new System.Drawing.Point(200, 143);
             this.lblSatnica.Name = "lblSatnica";
             this.lblSatnica.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblSatnica.Size = new System.Drawing.Size(41, 15);
+            this.lblSatnica.Size = new System.Drawing.Size(33, 16);
             this.lblSatnica.TabIndex = 49;
-            this.lblSatnica.Text = "Satnica: ";
+            this.lblSatnica.Text = "Satnica";
             this.lblSatnica.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblSatnica.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -397,13 +517,13 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.lblOpisUtakmice.AutoEllipsis = false;
             this.lblOpisUtakmice.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblOpisUtakmice.CursorType = System.Windows.Forms.Cursors.Default;
-            this.lblOpisUtakmice.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOpisUtakmice.Location = new System.Drawing.Point(12, 12);
+            this.lblOpisUtakmice.Font = new System.Drawing.Font("Oswald", 8F);
+            this.lblOpisUtakmice.Location = new System.Drawing.Point(12, 13);
             this.lblOpisUtakmice.Name = "lblOpisUtakmice";
             this.lblOpisUtakmice.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblOpisUtakmice.Size = new System.Drawing.Size(79, 15);
+            this.lblOpisUtakmice.Size = new System.Drawing.Size(62, 16);
             this.lblOpisUtakmice.TabIndex = 51;
-            this.lblOpisUtakmice.Text = "Opis utakmice: ";
+            this.lblOpisUtakmice.Text = "Opis utakmice";
             this.lblOpisUtakmice.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblOpisUtakmice.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -427,7 +547,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.cmbKapiten.FillDropDown = true;
             this.cmbKapiten.FillIndicator = false;
             this.cmbKapiten.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbKapiten.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.cmbKapiten.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbKapiten.ForeColor = System.Drawing.Color.Black;
             this.cmbKapiten.FormattingEnabled = true;
             this.cmbKapiten.Icon = null;
@@ -440,29 +560,30 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.cmbKapiten.ItemBorderColor = System.Drawing.Color.White;
             this.cmbKapiten.ItemForeColor = System.Drawing.Color.Black;
             this.cmbKapiten.ItemHeight = 26;
-            this.cmbKapiten.ItemHighLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.cmbKapiten.ItemHighLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.cmbKapiten.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cmbKapiten.ItemTopMargin = 3;
-            this.cmbKapiten.Location = new System.Drawing.Point(11, 253);
+            this.cmbKapiten.Location = new System.Drawing.Point(13, 288);
             this.cmbKapiten.Name = "cmbKapiten";
             this.cmbKapiten.Size = new System.Drawing.Size(176, 32);
             this.cmbKapiten.TabIndex = 54;
             this.cmbKapiten.Text = "Kapiten";
             this.cmbKapiten.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbKapiten.TextLeftMargin = 5;
+            this.cmbKapiten.SelectedIndexChanged += new System.EventHandler(this.cmbKapiten_SelectedIndexChanged);
             // 
             // lblKapiten
             // 
             this.lblKapiten.AllowParentOverrides = false;
             this.lblKapiten.AutoEllipsis = false;
             this.lblKapiten.CursorType = null;
-            this.lblKapiten.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKapiten.Location = new System.Drawing.Point(12, 235);
+            this.lblKapiten.Font = new System.Drawing.Font("Oswald", 8F);
+            this.lblKapiten.Location = new System.Drawing.Point(13, 272);
             this.lblKapiten.Name = "lblKapiten";
             this.lblKapiten.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblKapiten.Size = new System.Drawing.Size(43, 15);
+            this.lblKapiten.Size = new System.Drawing.Size(34, 16);
             this.lblKapiten.TabIndex = 53;
-            this.lblKapiten.Text = "Kapiten: ";
+            this.lblKapiten.Text = "Kapiten";
             this.lblKapiten.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblKapiten.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -472,38 +593,23 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.lblSudija.AutoEllipsis = false;
             this.lblSudija.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblSudija.CursorType = System.Windows.Forms.Cursors.Default;
-            this.lblSudija.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSudija.Location = new System.Drawing.Point(200, 235);
+            this.lblSudija.Font = new System.Drawing.Font("Oswald", 8F);
+            this.lblSudija.Location = new System.Drawing.Point(200, 272);
             this.lblSudija.Name = "lblSudija";
             this.lblSudija.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblSudija.Size = new System.Drawing.Size(35, 15);
+            this.lblSudija.Size = new System.Drawing.Size(28, 16);
             this.lblSudija.TabIndex = 55;
-            this.lblSudija.Text = "Sudija: ";
+            this.lblSudija.Text = "Sudija";
             this.lblSudija.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblSudija.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // lblGarnituraDresova
-            // 
-            this.lblGarnituraDresova.AllowParentOverrides = false;
-            this.lblGarnituraDresova.AutoEllipsis = false;
-            this.lblGarnituraDresova.AutoSize = false;
-            this.lblGarnituraDresova.CursorType = null;
-            this.lblGarnituraDresova.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGarnituraDresova.Location = new System.Drawing.Point(12, 291);
-            this.lblGarnituraDresova.Name = "lblGarnituraDresova";
-            this.lblGarnituraDresova.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblGarnituraDresova.Size = new System.Drawing.Size(364, 15);
-            this.lblGarnituraDresova.TabIndex = 60;
-            this.lblGarnituraDresova.Text = "Garnitura dresova: ";
-            this.lblGarnituraDresova.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblGarnituraDresova.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // radioBtnDomacaGarnitura
             // 
             this.radioBtnDomacaGarnitura.AutoSize = true;
-            this.radioBtnDomacaGarnitura.Location = new System.Drawing.Point(42, 449);
+            this.radioBtnDomacaGarnitura.Font = new System.Drawing.Font("Oswald", 9F);
+            this.radioBtnDomacaGarnitura.Location = new System.Drawing.Point(42, 491);
             this.radioBtnDomacaGarnitura.Name = "radioBtnDomacaGarnitura";
-            this.radioBtnDomacaGarnitura.Size = new System.Drawing.Size(65, 17);
+            this.radioBtnDomacaGarnitura.Size = new System.Drawing.Size(65, 21);
             this.radioBtnDomacaGarnitura.TabIndex = 63;
             this.radioBtnDomacaGarnitura.TabStop = true;
             this.radioBtnDomacaGarnitura.Text = "Domaća";
@@ -512,9 +618,10 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             // radioBtnGostujucaGarnitura
             // 
             this.radioBtnGostujucaGarnitura.AutoSize = true;
-            this.radioBtnGostujucaGarnitura.Location = new System.Drawing.Point(154, 449);
+            this.radioBtnGostujucaGarnitura.Font = new System.Drawing.Font("Oswald", 9F);
+            this.radioBtnGostujucaGarnitura.Location = new System.Drawing.Point(154, 491);
             this.radioBtnGostujucaGarnitura.Name = "radioBtnGostujucaGarnitura";
-            this.radioBtnGostujucaGarnitura.Size = new System.Drawing.Size(73, 17);
+            this.radioBtnGostujucaGarnitura.Size = new System.Drawing.Size(74, 21);
             this.radioBtnGostujucaGarnitura.TabIndex = 64;
             this.radioBtnGostujucaGarnitura.TabStop = true;
             this.radioBtnGostujucaGarnitura.Text = "Gostujuća";
@@ -523,9 +630,10 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             // radioBtnRezervnaGarnitura
             // 
             this.radioBtnRezervnaGarnitura.AutoSize = true;
-            this.radioBtnRezervnaGarnitura.Location = new System.Drawing.Point(278, 449);
+            this.radioBtnRezervnaGarnitura.Font = new System.Drawing.Font("Oswald", 9F);
+            this.radioBtnRezervnaGarnitura.Location = new System.Drawing.Point(278, 491);
             this.radioBtnRezervnaGarnitura.Name = "radioBtnRezervnaGarnitura";
-            this.radioBtnRezervnaGarnitura.Size = new System.Drawing.Size(71, 17);
+            this.radioBtnRezervnaGarnitura.Size = new System.Drawing.Size(68, 21);
             this.radioBtnRezervnaGarnitura.TabIndex = 65;
             this.radioBtnRezervnaGarnitura.TabStop = true;
             this.radioBtnRezervnaGarnitura.Text = "Rezervna";
@@ -536,11 +644,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.lblNapoemeneOUtakmici.AllowParentOverrides = false;
             this.lblNapoemeneOUtakmici.AutoEllipsis = false;
             this.lblNapoemeneOUtakmici.CursorType = null;
-            this.lblNapoemeneOUtakmici.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNapoemeneOUtakmici.Location = new System.Drawing.Point(11, 472);
+            this.lblNapoemeneOUtakmici.Font = new System.Drawing.Font("Oswald", 8F);
+            this.lblNapoemeneOUtakmici.Location = new System.Drawing.Point(11, 513);
             this.lblNapoemeneOUtakmici.Name = "lblNapoemeneOUtakmici";
             this.lblNapoemeneOUtakmici.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblNapoemeneOUtakmici.Size = new System.Drawing.Size(118, 15);
+            this.lblNapoemeneOUtakmici.Size = new System.Drawing.Size(92, 16);
             this.lblNapoemeneOUtakmici.TabIndex = 66;
             this.lblNapoemeneOUtakmici.Text = "Napomene o utakmici";
             this.lblNapoemeneOUtakmici.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -552,9 +660,9 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.lblImePrezime.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblImePrezime.ForeColor = System.Drawing.Color.Black;
             this.lblImePrezime.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblImePrezime.Location = new System.Drawing.Point(399, 12);
+            this.lblImePrezime.Location = new System.Drawing.Point(398, 8);
             this.lblImePrezime.Name = "lblImePrezime";
-            this.lblImePrezime.Size = new System.Drawing.Size(504, 23);
+            this.lblImePrezime.Size = new System.Drawing.Size(544, 23);
             this.lblImePrezime.TabIndex = 69;
             this.lblImePrezime.Text = "SPISAK POZVANIH IGRAČA NA UTAKMICU";
             this.lblImePrezime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -579,7 +687,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.cmbIgraciSastav.FillDropDown = true;
             this.cmbIgraciSastav.FillIndicator = false;
             this.cmbIgraciSastav.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbIgraciSastav.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.cmbIgraciSastav.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbIgraciSastav.ForeColor = System.Drawing.Color.Black;
             this.cmbIgraciSastav.FormattingEnabled = true;
             this.cmbIgraciSastav.Icon = null;
@@ -592,36 +700,37 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.cmbIgraciSastav.ItemBorderColor = System.Drawing.Color.White;
             this.cmbIgraciSastav.ItemForeColor = System.Drawing.Color.Black;
             this.cmbIgraciSastav.ItemHeight = 26;
-            this.cmbIgraciSastav.ItemHighLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.cmbIgraciSastav.ItemHighLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.cmbIgraciSastav.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cmbIgraciSastav.ItemTopMargin = 3;
-            this.cmbIgraciSastav.Location = new System.Drawing.Point(436, 40);
+            this.cmbIgraciSastav.Location = new System.Drawing.Point(431, 34);
             this.cmbIgraciSastav.Name = "cmbIgraciSastav";
-            this.cmbIgraciSastav.Size = new System.Drawing.Size(145, 32);
+            this.cmbIgraciSastav.Size = new System.Drawing.Size(120, 32);
             this.cmbIgraciSastav.TabIndex = 71;
-            this.cmbIgraciSastav.Text = "Kapiten";
+            this.cmbIgraciSastav.Text = "Igrač";
             this.cmbIgraciSastav.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbIgraciSastav.TextLeftMargin = 5;
+            this.cmbIgraciSastav.SelectedIndexChanged += new System.EventHandler(this.cmbIgraciSastav_SelectedIndexChanged);
             // 
             // lblPrvaPostava
             // 
             this.lblPrvaPostava.BackColor = System.Drawing.Color.Gainsboro;
             this.lblPrvaPostava.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrvaPostava.ForeColor = System.Drawing.Color.Black;
-            this.lblPrvaPostava.Location = new System.Drawing.Point(399, 84);
+            this.lblPrvaPostava.Location = new System.Drawing.Point(398, 200);
             this.lblPrvaPostava.Name = "lblPrvaPostava";
-            this.lblPrvaPostava.Size = new System.Drawing.Size(256, 23);
+            this.lblPrvaPostava.Size = new System.Drawing.Size(269, 23);
             this.lblPrvaPostava.TabIndex = 80;
             this.lblPrvaPostava.Text = "PRVA POSTAVA";
-            this.lblPrvaPostava.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblPrvaPostava.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // flowPanelPrvaPostava
             // 
             this.flowPanelPrvaPostava.AutoScroll = true;
-            this.flowPanelPrvaPostava.Location = new System.Drawing.Point(399, 110);
+            this.flowPanelPrvaPostava.Location = new System.Drawing.Point(395, 240);
             this.flowPanelPrvaPostava.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.flowPanelPrvaPostava.Name = "flowPanelPrvaPostava";
-            this.flowPanelPrvaPostava.Size = new System.Drawing.Size(256, 451);
+            this.flowPanelPrvaPostava.Size = new System.Drawing.Size(300, 451);
             this.flowPanelPrvaPostava.TabIndex = 0;
             // 
             // cmbPozicije
@@ -644,7 +753,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.cmbPozicije.FillDropDown = true;
             this.cmbPozicije.FillIndicator = false;
             this.cmbPozicije.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbPozicije.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.cmbPozicije.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbPozicije.ForeColor = System.Drawing.Color.Black;
             this.cmbPozicije.FormattingEnabled = true;
             this.cmbPozicije.Icon = null;
@@ -657,24 +766,25 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.cmbPozicije.ItemBorderColor = System.Drawing.Color.White;
             this.cmbPozicije.ItemForeColor = System.Drawing.Color.Black;
             this.cmbPozicije.ItemHeight = 26;
-            this.cmbPozicije.ItemHighLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.cmbPozicije.ItemHighLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.cmbPozicije.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cmbPozicije.ItemTopMargin = 3;
-            this.cmbPozicije.Location = new System.Drawing.Point(587, 40);
+            this.cmbPozicije.Location = new System.Drawing.Point(554, 34);
             this.cmbPozicije.Name = "cmbPozicije";
             this.cmbPozicije.Size = new System.Drawing.Size(146, 32);
             this.cmbPozicije.TabIndex = 128;
             this.cmbPozicije.Text = "Pozicija";
             this.cmbPozicije.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbPozicije.TextLeftMargin = 5;
+            this.cmbPozicije.SelectedIndexChanged += new System.EventHandler(this.cmbPozicije_SelectedIndexChanged);
             // 
             // flowPanelKlupa
             // 
             this.flowPanelKlupa.AutoScroll = true;
-            this.flowPanelKlupa.Location = new System.Drawing.Point(655, 110);
+            this.flowPanelKlupa.Location = new System.Drawing.Point(671, 240);
             this.flowPanelKlupa.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.flowPanelKlupa.Name = "flowPanelKlupa";
-            this.flowPanelKlupa.Size = new System.Drawing.Size(256, 451);
+            this.flowPanelKlupa.Size = new System.Drawing.Size(300, 451);
             this.flowPanelKlupa.TabIndex = 130;
             // 
             // lblKlupa
@@ -682,12 +792,12 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.lblKlupa.BackColor = System.Drawing.Color.Gainsboro;
             this.lblKlupa.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKlupa.ForeColor = System.Drawing.Color.Black;
-            this.lblKlupa.Location = new System.Drawing.Point(655, 84);
+            this.lblKlupa.Location = new System.Drawing.Point(674, 200);
             this.lblKlupa.Name = "lblKlupa";
-            this.lblKlupa.Size = new System.Drawing.Size(256, 23);
+            this.lblKlupa.Size = new System.Drawing.Size(269, 23);
             this.lblKlupa.TabIndex = 131;
             this.lblKlupa.Text = "KLUPA";
-            this.lblKlupa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblKlupa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // snackbar
             // 
@@ -722,7 +832,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.snackbar.InformationOptions.ForeColor = System.Drawing.Color.Black;
             this.snackbar.InformationOptions.Icon = ((System.Drawing.Image)(resources.GetObject("resource.Icon1")));
             this.snackbar.InformationOptions.IconLeftMargin = 12;
-            this.snackbar.Margin = 10;
+            this.snackbar.Margin = 20;
             this.snackbar.MaximumSize = new System.Drawing.Size(0, 0);
             this.snackbar.MaximumViews = 7;
             this.snackbar.MessageRightMargin = 15;
@@ -778,7 +888,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.cmbVrstaUtakmice.FillDropDown = true;
             this.cmbVrstaUtakmice.FillIndicator = false;
             this.cmbVrstaUtakmice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbVrstaUtakmice.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.cmbVrstaUtakmice.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbVrstaUtakmice.ForeColor = System.Drawing.Color.Black;
             this.cmbVrstaUtakmice.FormattingEnabled = true;
             this.cmbVrstaUtakmice.Icon = null;
@@ -791,23 +901,24 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.cmbVrstaUtakmice.ItemBorderColor = System.Drawing.Color.White;
             this.cmbVrstaUtakmice.ItemForeColor = System.Drawing.Color.Black;
             this.cmbVrstaUtakmice.ItemHeight = 26;
-            this.cmbVrstaUtakmice.ItemHighLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.cmbVrstaUtakmice.ItemHighLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.cmbVrstaUtakmice.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cmbVrstaUtakmice.ItemTopMargin = 3;
-            this.cmbVrstaUtakmice.Location = new System.Drawing.Point(200, 86);
+            this.cmbVrstaUtakmice.Location = new System.Drawing.Point(200, 94);
             this.cmbVrstaUtakmice.Name = "cmbVrstaUtakmice";
             this.cmbVrstaUtakmice.Size = new System.Drawing.Size(175, 32);
             this.cmbVrstaUtakmice.TabIndex = 134;
             this.cmbVrstaUtakmice.Text = "Vrsta utakmice";
             this.cmbVrstaUtakmice.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbVrstaUtakmice.TextLeftMargin = 5;
+            this.cmbVrstaUtakmice.SelectedIndexChanged += new System.EventHandler(this.cmbVrstaUtakmice_SelectedIndexChanged);
             // 
             // lblImePrezimeBrojDresa
             // 
             this.lblImePrezimeBrojDresa.BackColor = System.Drawing.Color.Transparent;
             this.lblImePrezimeBrojDresa.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblImePrezimeBrojDresa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
-            this.lblImePrezimeBrojDresa.Location = new System.Drawing.Point(427, 589);
+            this.lblImePrezimeBrojDresa.ForeColor = System.Drawing.Color.Black;
+            this.lblImePrezimeBrojDresa.Location = new System.Drawing.Point(426, 714);
             this.lblImePrezimeBrojDresa.Name = "lblImePrezimeBrojDresa";
             this.lblImePrezimeBrojDresa.Size = new System.Drawing.Size(116, 23);
             this.lblImePrezimeBrojDresa.TabIndex = 138;
@@ -819,7 +930,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(399, 563);
+            this.label1.Location = new System.Drawing.Point(399, 690);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(252, 23);
             this.label1.TabIndex = 139;
@@ -834,198 +945,13 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.pictureIgracSlika.BorderRadius = 14;
             this.pictureIgracSlika.Image = global::eBordo.WinUI.Properties.Resources.Screenshot_12;
             this.pictureIgracSlika.IsCircle = true;
-            this.pictureIgracSlika.Location = new System.Drawing.Point(399, 586);
+            this.pictureIgracSlika.Location = new System.Drawing.Point(400, 706);
             this.pictureIgracSlika.Name = "pictureIgracSlika";
             this.pictureIgracSlika.Size = new System.Drawing.Size(28, 28);
             this.pictureIgracSlika.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureIgracSlika.TabIndex = 137;
             this.pictureIgracSlika.TabStop = false;
             this.pictureIgracSlika.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
-            // 
-            // btnDetaljiIgraca
-            // 
-            this.btnDetaljiIgraca.AllowAnimations = true;
-            this.btnDetaljiIgraca.AllowMouseEffects = true;
-            this.btnDetaljiIgraca.AllowToggling = false;
-            this.btnDetaljiIgraca.AnimationSpeed = 200;
-            this.btnDetaljiIgraca.AutoGenerateColors = false;
-            this.btnDetaljiIgraca.AutoRoundBorders = false;
-            this.btnDetaljiIgraca.AutoSizeLeftIcon = false;
-            this.btnDetaljiIgraca.AutoSizeRightIcon = true;
-            this.btnDetaljiIgraca.BackColor = System.Drawing.Color.Transparent;
-            this.btnDetaljiIgraca.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
-            this.btnDetaljiIgraca.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDetaljiIgraca.BackgroundImage")));
-            this.btnDetaljiIgraca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnDetaljiIgraca.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnDetaljiIgraca.ButtonText = "";
-            this.btnDetaljiIgraca.ButtonTextMarginLeft = 0;
-            this.btnDetaljiIgraca.ColorContrastOnClick = 45;
-            this.btnDetaljiIgraca.ColorContrastOnHover = 45;
-            this.btnDetaljiIgraca.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.btnDetaljiIgraca.CustomizableEdges = borderEdges1;
-            this.btnDetaljiIgraca.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnDetaljiIgraca.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnDetaljiIgraca.DisabledFillColor = System.Drawing.Color.Empty;
-            this.btnDetaljiIgraca.DisabledForecolor = System.Drawing.Color.Empty;
-            this.btnDetaljiIgraca.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnDetaljiIgraca.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetaljiIgraca.ForeColor = System.Drawing.Color.White;
-            this.btnDetaljiIgraca.IconLeft = global::eBordo.WinUI.Properties.Resources.infoIgrac;
-            this.btnDetaljiIgraca.IconLeftAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnDetaljiIgraca.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.btnDetaljiIgraca.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.btnDetaljiIgraca.IconMarginLeft = 11;
-            this.btnDetaljiIgraca.IconPadding = 10;
-            this.btnDetaljiIgraca.IconRight = null;
-            this.btnDetaljiIgraca.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDetaljiIgraca.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.btnDetaljiIgraca.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.btnDetaljiIgraca.IconSize = 25;
-            this.btnDetaljiIgraca.IdleBorderColor = System.Drawing.Color.Empty;
-            this.btnDetaljiIgraca.IdleBorderRadius = 0;
-            this.btnDetaljiIgraca.IdleBorderThickness = 0;
-            this.btnDetaljiIgraca.IdleFillColor = System.Drawing.Color.Empty;
-            this.btnDetaljiIgraca.IdleIconLeftImage = global::eBordo.WinUI.Properties.Resources.infoIgrac;
-            this.btnDetaljiIgraca.IdleIconRightImage = null;
-            this.btnDetaljiIgraca.IndicateFocus = true;
-            this.btnDetaljiIgraca.Location = new System.Drawing.Point(399, 41);
-            this.btnDetaljiIgraca.Name = "btnDetaljiIgraca";
-            this.btnDetaljiIgraca.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnDetaljiIgraca.OnDisabledState.BorderRadius = 10;
-            this.btnDetaljiIgraca.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnDetaljiIgraca.OnDisabledState.BorderThickness = 1;
-            this.btnDetaljiIgraca.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnDetaljiIgraca.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnDetaljiIgraca.OnDisabledState.IconLeftImage = null;
-            this.btnDetaljiIgraca.OnDisabledState.IconRightImage = null;
-            this.btnDetaljiIgraca.onHoverState.BorderColor = System.Drawing.Color.Empty;
-            this.btnDetaljiIgraca.onHoverState.BorderRadius = 10;
-            this.btnDetaljiIgraca.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnDetaljiIgraca.onHoverState.BorderThickness = 1;
-            this.btnDetaljiIgraca.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
-            this.btnDetaljiIgraca.onHoverState.ForeColor = System.Drawing.Color.White;
-            this.btnDetaljiIgraca.onHoverState.IconLeftImage = global::eBordo.WinUI.Properties.Resources.infoIgrac;
-            this.btnDetaljiIgraca.onHoverState.IconRightImage = null;
-            this.btnDetaljiIgraca.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
-            this.btnDetaljiIgraca.OnIdleState.BorderRadius = 10;
-            this.btnDetaljiIgraca.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnDetaljiIgraca.OnIdleState.BorderThickness = 1;
-            this.btnDetaljiIgraca.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
-            this.btnDetaljiIgraca.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.btnDetaljiIgraca.OnIdleState.IconLeftImage = global::eBordo.WinUI.Properties.Resources.infoIgrac;
-            this.btnDetaljiIgraca.OnIdleState.IconRightImage = null;
-            this.btnDetaljiIgraca.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
-            this.btnDetaljiIgraca.OnPressedState.BorderRadius = 10;
-            this.btnDetaljiIgraca.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnDetaljiIgraca.OnPressedState.BorderThickness = 1;
-            this.btnDetaljiIgraca.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
-            this.btnDetaljiIgraca.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.btnDetaljiIgraca.OnPressedState.IconLeftImage = global::eBordo.WinUI.Properties.Resources.infoIgrac;
-            this.btnDetaljiIgraca.OnPressedState.IconRightImage = null;
-            this.btnDetaljiIgraca.Size = new System.Drawing.Size(34, 31);
-            this.btnDetaljiIgraca.TabIndex = 136;
-            this.btnDetaljiIgraca.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnDetaljiIgraca.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnDetaljiIgraca.TextMarginLeft = 0;
-            this.btnDetaljiIgraca.TextPadding = new System.Windows.Forms.Padding(0);
-            this.btnDetaljiIgraca.UseDefaultRadiusAndThickness = true;
-            this.btnDetaljiIgraca.Click += new System.EventHandler(this.bunifuButton1_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.AllowAnimations = true;
-            this.btnSave.AllowMouseEffects = true;
-            this.btnSave.AllowToggling = false;
-            this.btnSave.AnimationSpeed = 200;
-            this.btnSave.AutoGenerateColors = false;
-            this.btnSave.AutoRoundBorders = false;
-            this.btnSave.AutoSizeLeftIcon = true;
-            this.btnSave.AutoSizeRightIcon = true;
-            this.btnSave.BackColor = System.Drawing.Color.Transparent;
-            this.btnSave.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
-            this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
-            this.btnSave.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnSave.ButtonText = "Spasi";
-            this.btnSave.ButtonTextMarginLeft = 0;
-            this.btnSave.ColorContrastOnClick = 45;
-            this.btnSave.ColorContrastOnHover = 45;
-            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.btnSave.CustomizableEdges = borderEdges2;
-            this.btnSave.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnSave.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnSave.DisabledFillColor = System.Drawing.Color.Empty;
-            this.btnSave.DisabledForecolor = System.Drawing.Color.Empty;
-            this.btnSave.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnSave.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.IconLeft = null;
-            this.btnSave.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.btnSave.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.btnSave.IconMarginLeft = 11;
-            this.btnSave.IconPadding = 10;
-            this.btnSave.IconRight = null;
-            this.btnSave.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSave.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.btnSave.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.btnSave.IconSize = 25;
-            this.btnSave.IdleBorderColor = System.Drawing.Color.Empty;
-            this.btnSave.IdleBorderRadius = 0;
-            this.btnSave.IdleBorderThickness = 0;
-            this.btnSave.IdleFillColor = System.Drawing.Color.Empty;
-            this.btnSave.IdleIconLeftImage = null;
-            this.btnSave.IdleIconRightImage = null;
-            this.btnSave.IndicateFocus = true;
-            this.btnSave.Location = new System.Drawing.Point(793, 582);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnSave.OnDisabledState.BorderRadius = 0;
-            this.btnSave.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnSave.OnDisabledState.BorderThickness = 1;
-            this.btnSave.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnSave.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnSave.OnDisabledState.IconLeftImage = null;
-            this.btnSave.OnDisabledState.IconRightImage = null;
-            this.btnSave.onHoverState.BorderColor = System.Drawing.Color.Empty;
-            this.btnSave.onHoverState.BorderRadius = 0;
-            this.btnSave.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnSave.onHoverState.BorderThickness = 1;
-            this.btnSave.onHoverState.FillColor = System.Drawing.Color.Green;
-            this.btnSave.onHoverState.ForeColor = System.Drawing.Color.White;
-            this.btnSave.onHoverState.IconLeftImage = null;
-            this.btnSave.onHoverState.IconRightImage = null;
-            this.btnSave.OnIdleState.BorderColor = System.Drawing.Color.Green;
-            this.btnSave.OnIdleState.BorderRadius = 0;
-            this.btnSave.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnSave.OnIdleState.BorderThickness = 1;
-            this.btnSave.OnIdleState.FillColor = System.Drawing.Color.Green;
-            this.btnSave.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.btnSave.OnIdleState.IconLeftImage = null;
-            this.btnSave.OnIdleState.IconRightImage = null;
-            this.btnSave.OnPressedState.BorderColor = System.Drawing.Color.Green;
-            this.btnSave.OnPressedState.BorderRadius = 0;
-            this.btnSave.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnSave.OnPressedState.BorderThickness = 1;
-            this.btnSave.OnPressedState.FillColor = System.Drawing.Color.Green;
-            this.btnSave.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.btnSave.OnPressedState.IconLeftImage = null;
-            this.btnSave.OnPressedState.IconRightImage = null;
-            this.btnSave.Size = new System.Drawing.Size(110, 30);
-            this.btnSave.TabIndex = 127;
-            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnSave.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnSave.TextMarginLeft = 0;
-            this.btnSave.TextPadding = new System.Windows.Forms.Padding(0);
-            this.btnSave.UseDefaultRadiusAndThickness = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnSaveIgracSastav
             // 
@@ -1042,25 +968,25 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.btnSaveIgracSastav.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveIgracSastav.BackgroundImage")));
             this.btnSaveIgracSastav.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnSaveIgracSastav.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnSaveIgracSastav.ButtonText = "";
+            this.btnSaveIgracSastav.ButtonText = "DODAJ";
             this.btnSaveIgracSastav.ButtonTextMarginLeft = 0;
             this.btnSaveIgracSastav.ColorContrastOnClick = 45;
             this.btnSaveIgracSastav.ColorContrastOnHover = 45;
             this.btnSaveIgracSastav.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.btnSaveIgracSastav.CustomizableEdges = borderEdges3;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btnSaveIgracSastav.CustomizableEdges = borderEdges1;
             this.btnSaveIgracSastav.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnSaveIgracSastav.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnSaveIgracSastav.DisabledFillColor = System.Drawing.Color.Empty;
             this.btnSaveIgracSastav.DisabledForecolor = System.Drawing.Color.Empty;
             this.btnSaveIgracSastav.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnSaveIgracSastav.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveIgracSastav.Font = new System.Drawing.Font("Oswald", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveIgracSastav.ForeColor = System.Drawing.Color.White;
             this.btnSaveIgracSastav.IconLeft = global::eBordo.WinUI.Properties.Resources.save;
-            this.btnSaveIgracSastav.IconLeftAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSaveIgracSastav.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSaveIgracSastav.IconLeftCursor = System.Windows.Forms.Cursors.Default;
             this.btnSaveIgracSastav.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
             this.btnSaveIgracSastav.IconMarginLeft = 11;
@@ -1077,7 +1003,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.btnSaveIgracSastav.IdleIconLeftImage = global::eBordo.WinUI.Properties.Resources.save;
             this.btnSaveIgracSastav.IdleIconRightImage = null;
             this.btnSaveIgracSastav.IndicateFocus = true;
-            this.btnSaveIgracSastav.Location = new System.Drawing.Point(869, 41);
+            this.btnSaveIgracSastav.Location = new System.Drawing.Point(809, 35);
             this.btnSaveIgracSastav.Name = "btnSaveIgracSastav";
             this.btnSaveIgracSastav.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnSaveIgracSastav.OnDisabledState.BorderRadius = 10;
@@ -1091,32 +1017,32 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.btnSaveIgracSastav.onHoverState.BorderRadius = 10;
             this.btnSaveIgracSastav.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.btnSaveIgracSastav.onHoverState.BorderThickness = 1;
-            this.btnSaveIgracSastav.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.btnSaveIgracSastav.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
             this.btnSaveIgracSastav.onHoverState.ForeColor = System.Drawing.Color.White;
             this.btnSaveIgracSastav.onHoverState.IconLeftImage = global::eBordo.WinUI.Properties.Resources.save;
             this.btnSaveIgracSastav.onHoverState.IconRightImage = null;
-            this.btnSaveIgracSastav.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.btnSaveIgracSastav.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
             this.btnSaveIgracSastav.OnIdleState.BorderRadius = 10;
             this.btnSaveIgracSastav.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.btnSaveIgracSastav.OnIdleState.BorderThickness = 1;
-            this.btnSaveIgracSastav.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.btnSaveIgracSastav.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
             this.btnSaveIgracSastav.OnIdleState.ForeColor = System.Drawing.Color.White;
             this.btnSaveIgracSastav.OnIdleState.IconLeftImage = global::eBordo.WinUI.Properties.Resources.save;
             this.btnSaveIgracSastav.OnIdleState.IconRightImage = null;
-            this.btnSaveIgracSastav.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.btnSaveIgracSastav.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
             this.btnSaveIgracSastav.OnPressedState.BorderRadius = 10;
             this.btnSaveIgracSastav.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.btnSaveIgracSastav.OnPressedState.BorderThickness = 1;
-            this.btnSaveIgracSastav.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.btnSaveIgracSastav.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
             this.btnSaveIgracSastav.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnSaveIgracSastav.OnPressedState.IconLeftImage = global::eBordo.WinUI.Properties.Resources.save;
             this.btnSaveIgracSastav.OnPressedState.IconRightImage = null;
-            this.btnSaveIgracSastav.Size = new System.Drawing.Size(34, 31);
+            this.btnSaveIgracSastav.Size = new System.Drawing.Size(84, 31);
             this.btnSaveIgracSastav.TabIndex = 125;
-            this.btnSaveIgracSastav.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSaveIgracSastav.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSaveIgracSastav.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnSaveIgracSastav.TextMarginLeft = 0;
-            this.btnSaveIgracSastav.TextPadding = new System.Windows.Forms.Padding(0);
+            this.btnSaveIgracSastav.TextPadding = new System.Windows.Forms.Padding(0, 0, 7, 0);
             this.btnSaveIgracSastav.UseDefaultRadiusAndThickness = true;
             this.btnSaveIgracSastav.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
@@ -1129,10 +1055,10 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.bunifuSeparator1.LineColor = System.Drawing.Color.Silver;
             this.bunifuSeparator1.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
             this.bunifuSeparator1.LineThickness = 1;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(382, 12);
+            this.bunifuSeparator1.Location = new System.Drawing.Point(379, 2);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
             this.bunifuSeparator1.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Vertical;
-            this.bunifuSeparator1.Size = new System.Drawing.Size(14, 602);
+            this.bunifuSeparator1.Size = new System.Drawing.Size(14, 725);
             this.bunifuSeparator1.TabIndex = 68;
             // 
             // txtNapomene
@@ -1153,7 +1079,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.txtNapomene.BorderThickness = 1;
             this.txtNapomene.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtNapomene.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNapomene.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txtNapomene.DefaultFont = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNapomene.DefaultText = "";
             this.txtNapomene.FillColor = System.Drawing.Color.White;
             this.txtNapomene.HideSelection = true;
@@ -1163,7 +1089,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.txtNapomene.IconRight = null;
             this.txtNapomene.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNapomene.Lines = new string[0];
-            this.txtNapomene.Location = new System.Drawing.Point(11, 490);
+            this.txtNapomene.Location = new System.Drawing.Point(11, 531);
             this.txtNapomene.MaxLength = 32767;
             this.txtNapomene.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtNapomene.Modified = false;
@@ -1199,7 +1125,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.txtNapomene.SelectionLength = 0;
             this.txtNapomene.SelectionStart = 0;
             this.txtNapomene.ShortcutsEnabled = true;
-            this.txtNapomene.Size = new System.Drawing.Size(365, 124);
+            this.txtNapomene.Size = new System.Drawing.Size(365, 209);
             this.txtNapomene.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtNapomene.TabIndex = 67;
             this.txtNapomene.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1214,7 +1140,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             // 
             this.domaciDres.BackgroundImage = global::eBordo.WinUI.Properties.Resources.domaci;
             this.domaciDres.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.domaciDres.Location = new System.Drawing.Point(18, 310);
+            this.domaciDres.Location = new System.Drawing.Point(18, 356);
             this.domaciDres.Name = "domaciDres";
             this.domaciDres.Size = new System.Drawing.Size(112, 133);
             this.domaciDres.TabIndex = 62;
@@ -1224,7 +1150,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             // 
             this.rezervniDres.BackgroundImage = global::eBordo.WinUI.Properties.Resources.rezervni;
             this.rezervniDres.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.rezervniDres.Location = new System.Drawing.Point(254, 310);
+            this.rezervniDres.Location = new System.Drawing.Point(254, 356);
             this.rezervniDres.Name = "rezervniDres";
             this.rezervniDres.Size = new System.Drawing.Size(112, 133);
             this.rezervniDres.TabIndex = 61;
@@ -1234,7 +1160,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             // 
             this.gostujuciDres.BackgroundImage = global::eBordo.WinUI.Properties.Resources.gostujuci;
             this.gostujuciDres.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.gostujuciDres.Location = new System.Drawing.Point(136, 310);
+            this.gostujuciDres.Location = new System.Drawing.Point(136, 356);
             this.gostujuciDres.Name = "gostujuciDres";
             this.gostujuciDres.Size = new System.Drawing.Size(112, 133);
             this.gostujuciDres.TabIndex = 57;
@@ -1256,20 +1182,19 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.txtSudija.BorderColorIdle = System.Drawing.Color.Silver;
             this.txtSudija.BorderRadius = 1;
             this.txtSudija.BorderThickness = 1;
-            this.txtSudija.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtSudija.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtSudija.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSudija.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.txtSudija.DefaultText = "Sudija";
+            this.txtSudija.DefaultFont = new System.Drawing.Font("Oswald", 8F);
+            this.txtSudija.DefaultText = "";
             this.txtSudija.FillColor = System.Drawing.Color.White;
             this.txtSudija.HideSelection = true;
             this.txtSudija.IconLeft = null;
             this.txtSudija.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSudija.IconPadding = 10;
-            this.txtSudija.IconRight = null;
+            this.txtSudija.IconRight = ((System.Drawing.Image)(resources.GetObject("txtSudija.IconRight")));
             this.txtSudija.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSudija.Lines = new string[] {
-        "Sudija"};
-            this.txtSudija.Location = new System.Drawing.Point(199, 253);
+            this.txtSudija.Lines = new string[0];
+            this.txtSudija.Location = new System.Drawing.Point(199, 288);
             this.txtSudija.MaxLength = 32767;
             this.txtSudija.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtSudija.Modified = false;
@@ -1298,12 +1223,12 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.txtSudija.Padding = new System.Windows.Forms.Padding(3);
             this.txtSudija.PasswordChar = '\0';
             this.txtSudija.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtSudija.PlaceholderText = "";
+            this.txtSudija.PlaceholderText = "SUDIJA";
             this.txtSudija.ReadOnly = false;
             this.txtSudija.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtSudija.SelectedText = "";
             this.txtSudija.SelectionLength = 0;
-            this.txtSudija.SelectionStart = 6;
+            this.txtSudija.SelectionStart = 0;
             this.txtSudija.ShortcutsEnabled = true;
             this.txtSudija.Size = new System.Drawing.Size(177, 32);
             this.txtSudija.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
@@ -1312,9 +1237,10 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.txtSudija.TextMarginBottom = 0;
             this.txtSudija.TextMarginLeft = 3;
             this.txtSudija.TextMarginTop = 1;
-            this.txtSudija.TextPlaceholder = "";
+            this.txtSudija.TextPlaceholder = "SUDIJA";
             this.txtSudija.UseSystemPasswordChar = false;
             this.txtSudija.WordWrap = true;
+            this.txtSudija.TextChanged += new System.EventHandler(this.txtSudija_TextChanged);
             // 
             // txtOpisUtakmice
             // 
@@ -1332,16 +1258,16 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.txtOpisUtakmice.BorderColorIdle = System.Drawing.Color.Silver;
             this.txtOpisUtakmice.BorderRadius = 1;
             this.txtOpisUtakmice.BorderThickness = 1;
-            this.txtOpisUtakmice.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtOpisUtakmice.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtOpisUtakmice.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtOpisUtakmice.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txtOpisUtakmice.DefaultFont = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOpisUtakmice.DefaultText = "";
             this.txtOpisUtakmice.FillColor = System.Drawing.Color.White;
             this.txtOpisUtakmice.HideSelection = true;
             this.txtOpisUtakmice.IconLeft = null;
             this.txtOpisUtakmice.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtOpisUtakmice.IconPadding = 10;
-            this.txtOpisUtakmice.IconRight = null;
+            this.txtOpisUtakmice.IconRight = ((System.Drawing.Image)(resources.GetObject("txtOpisUtakmice.IconRight")));
             this.txtOpisUtakmice.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtOpisUtakmice.Lines = new string[0];
             this.txtOpisUtakmice.Location = new System.Drawing.Point(11, 30);
@@ -1373,7 +1299,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.txtOpisUtakmice.Padding = new System.Windows.Forms.Padding(3);
             this.txtOpisUtakmice.PasswordChar = '\0';
             this.txtOpisUtakmice.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtOpisUtakmice.PlaceholderText = "ex. 1/2 finala Kupa BiH";
+            this.txtOpisUtakmice.PlaceholderText = "EX. 1/2 FINALA KUPA BIH";
             this.txtOpisUtakmice.ReadOnly = false;
             this.txtOpisUtakmice.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtOpisUtakmice.SelectedText = "";
@@ -1387,9 +1313,10 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.txtOpisUtakmice.TextMarginBottom = 0;
             this.txtOpisUtakmice.TextMarginLeft = 3;
             this.txtOpisUtakmice.TextMarginTop = 1;
-            this.txtOpisUtakmice.TextPlaceholder = "ex. 1/2 finala Kupa BiH";
+            this.txtOpisUtakmice.TextPlaceholder = "EX. 1/2 FINALA KUPA BIH";
             this.txtOpisUtakmice.UseSystemPasswordChar = false;
             this.txtOpisUtakmice.WordWrap = true;
+            this.txtOpisUtakmice.TextChanged += new System.EventHandler(this.txtOpisUtakmice_TextChanged);
             // 
             // txtSatnica
             // 
@@ -1409,17 +1336,17 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.txtSatnica.BorderThickness = 1;
             this.txtSatnica.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtSatnica.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSatnica.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txtSatnica.DefaultFont = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSatnica.DefaultText = "";
             this.txtSatnica.FillColor = System.Drawing.Color.White;
             this.txtSatnica.HideSelection = true;
             this.txtSatnica.IconLeft = null;
             this.txtSatnica.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSatnica.IconPadding = 10;
-            this.txtSatnica.IconRight = null;
+            this.txtSatnica.IconRight = ((System.Drawing.Image)(resources.GetObject("txtSatnica.IconRight")));
             this.txtSatnica.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSatnica.Lines = new string[0];
-            this.txtSatnica.Location = new System.Drawing.Point(199, 142);
+            this.txtSatnica.Location = new System.Drawing.Point(199, 160);
             this.txtSatnica.MaxLength = 32767;
             this.txtSatnica.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtSatnica.Modified = false;
@@ -1465,6 +1392,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.txtSatnica.TextPlaceholder = "Satnica";
             this.txtSatnica.UseSystemPasswordChar = false;
             this.txtSatnica.WordWrap = true;
+            this.txtSatnica.TextChanged += new System.EventHandler(this.txtSatnica_TextChanged);
             // 
             // dtpDatumOdigravanja
             // 
@@ -1485,28 +1413,1669 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.dtpDatumOdigravanja.IconColor = System.Drawing.Color.Gray;
             this.dtpDatumOdigravanja.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
             this.dtpDatumOdigravanja.LeftTextMargin = 5;
-            this.dtpDatumOdigravanja.Location = new System.Drawing.Point(12, 143);
+            this.dtpDatumOdigravanja.Location = new System.Drawing.Point(12, 160);
             this.dtpDatumOdigravanja.MinimumSize = new System.Drawing.Size(4, 30);
             this.dtpDatumOdigravanja.Name = "dtpDatumOdigravanja";
             this.dtpDatumOdigravanja.Size = new System.Drawing.Size(176, 30);
             this.dtpDatumOdigravanja.TabIndex = 47;
+            this.dtpDatumOdigravanja.ValueChanged += new System.EventHandler(this.dtpDatumOdigravanja_ValueChanged);
+            // 
+            // txtBrojDresa
+            // 
+            this.txtBrojDresa.BackColor = System.Drawing.Color.Transparent;
+            this.txtBrojDresa.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBrojDresa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.txtBrojDresa.Location = new System.Drawing.Point(395, 80);
+            this.txtBrojDresa.Name = "txtBrojDresa";
+            this.txtBrojDresa.Size = new System.Drawing.Size(33, 23);
+            this.txtBrojDresa.TabIndex = 150;
+            this.txtBrojDresa.Text = "#20";
+            this.txtBrojDresa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // igracOcjena
+            // 
+            this.igracOcjena.BackColor = System.Drawing.Color.Transparent;
+            this.igracOcjena.DisabledEmptyFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.igracOcjena.DisabledRatedFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.igracOcjena.EmptyBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.igracOcjena.EmptyFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.igracOcjena.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.igracOcjena.HoverFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.igracOcjena.InnerRadius = 1F;
+            this.igracOcjena.Location = new System.Drawing.Point(399, 180);
+            this.igracOcjena.Name = "igracOcjena";
+            this.igracOcjena.OuterRadius = 7F;
+            this.igracOcjena.RatedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.igracOcjena.RatedFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.igracOcjena.ReadOnly = true;
+            this.igracOcjena.RightClickToClear = true;
+            this.igracOcjena.Size = new System.Drawing.Size(81, 16);
+            this.igracOcjena.Spacing = 2;
+            this.igracOcjena.TabIndex = 149;
+            this.igracOcjena.Text = "jacinaSlabijeNogeVrijednost";
+            this.igracOcjena.Value = 0;
+            // 
+            // txtPrezime
+            // 
+            this.txtPrezime.BackColor = System.Drawing.Color.Transparent;
+            this.txtPrezime.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrezime.ForeColor = System.Drawing.Color.Black;
+            this.txtPrezime.Location = new System.Drawing.Point(398, 162);
+            this.txtPrezime.Name = "txtPrezime";
+            this.txtPrezime.Size = new System.Drawing.Size(80, 23);
+            this.txtPrezime.TabIndex = 148;
+            this.txtPrezime.Text = "PREZIME";
+            this.txtPrezime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureSlikaIgraca
+            // 
+            this.pictureSlikaIgraca.BackgroundImage = global::eBordo.WinUI.Properties.Resources.customIgrac;
+            this.pictureSlikaIgraca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureSlikaIgraca.Location = new System.Drawing.Point(398, 79);
+            this.pictureSlikaIgraca.Name = "pictureSlikaIgraca";
+            this.pictureSlikaIgraca.Size = new System.Drawing.Size(80, 83);
+            this.pictureSlikaIgraca.TabIndex = 147;
+            this.pictureSlikaIgraca.TabStop = false;
+            // 
+            // ratingOdbrana
+            // 
+            this.ratingOdbrana.BackColor = System.Drawing.Color.Transparent;
+            this.ratingOdbrana.DisabledEmptyFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.ratingOdbrana.DisabledRatedFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingOdbrana.EmptyBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.ratingOdbrana.EmptyFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.ratingOdbrana.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingOdbrana.HoverFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingOdbrana.InnerRadius = 1F;
+            this.ratingOdbrana.Location = new System.Drawing.Point(872, 161);
+            this.ratingOdbrana.Name = "ratingOdbrana";
+            this.ratingOdbrana.OuterRadius = 6F;
+            this.ratingOdbrana.RatedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingOdbrana.RatedFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingOdbrana.ReadOnly = true;
+            this.ratingOdbrana.RightClickToClear = true;
+            this.ratingOdbrana.Size = new System.Drawing.Size(71, 14);
+            this.ratingOdbrana.Spacing = 2;
+            this.ratingOdbrana.TabIndex = 172;
+            this.ratingOdbrana.Text = "jacinaSlabijeNogeVrijednost";
+            this.ratingOdbrana.Value = 0;
+            // 
+            // ratingSkok
+            // 
+            this.ratingSkok.BackColor = System.Drawing.Color.Transparent;
+            this.ratingSkok.DisabledEmptyFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.ratingSkok.DisabledRatedFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingSkok.EmptyBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.ratingSkok.EmptyFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.ratingSkok.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingSkok.HoverFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingSkok.InnerRadius = 1F;
+            this.ratingSkok.Location = new System.Drawing.Point(872, 143);
+            this.ratingSkok.Name = "ratingSkok";
+            this.ratingSkok.OuterRadius = 6F;
+            this.ratingSkok.RatedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingSkok.RatedFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingSkok.ReadOnly = true;
+            this.ratingSkok.RightClickToClear = true;
+            this.ratingSkok.Size = new System.Drawing.Size(71, 14);
+            this.ratingSkok.Spacing = 2;
+            this.ratingSkok.TabIndex = 171;
+            this.ratingSkok.Text = "jacinaSlabijeNogeVrijednost";
+            this.ratingSkok.Value = 0;
+            // 
+            // ratingKlizeciStart
+            // 
+            this.ratingKlizeciStart.BackColor = System.Drawing.Color.Transparent;
+            this.ratingKlizeciStart.DisabledEmptyFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.ratingKlizeciStart.DisabledRatedFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingKlizeciStart.EmptyBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.ratingKlizeciStart.EmptyFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.ratingKlizeciStart.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingKlizeciStart.HoverFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingKlizeciStart.InnerRadius = 1F;
+            this.ratingKlizeciStart.Location = new System.Drawing.Point(872, 125);
+            this.ratingKlizeciStart.Name = "ratingKlizeciStart";
+            this.ratingKlizeciStart.OuterRadius = 6F;
+            this.ratingKlizeciStart.RatedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingKlizeciStart.RatedFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingKlizeciStart.ReadOnly = true;
+            this.ratingKlizeciStart.RightClickToClear = true;
+            this.ratingKlizeciStart.Size = new System.Drawing.Size(71, 14);
+            this.ratingKlizeciStart.Spacing = 2;
+            this.ratingKlizeciStart.TabIndex = 170;
+            this.ratingKlizeciStart.Text = "jacinaSlabijeNogeVrijednost";
+            this.ratingKlizeciStart.Value = 0;
+            // 
+            // ratingMarkiranje
+            // 
+            this.ratingMarkiranje.BackColor = System.Drawing.Color.Transparent;
+            this.ratingMarkiranje.DisabledEmptyFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.ratingMarkiranje.DisabledRatedFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingMarkiranje.EmptyBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.ratingMarkiranje.EmptyFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.ratingMarkiranje.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingMarkiranje.HoverFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingMarkiranje.InnerRadius = 1F;
+            this.ratingMarkiranje.Location = new System.Drawing.Point(872, 107);
+            this.ratingMarkiranje.Name = "ratingMarkiranje";
+            this.ratingMarkiranje.OuterRadius = 6F;
+            this.ratingMarkiranje.RatedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingMarkiranje.RatedFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingMarkiranje.ReadOnly = true;
+            this.ratingMarkiranje.RightClickToClear = true;
+            this.ratingMarkiranje.Size = new System.Drawing.Size(71, 14);
+            this.ratingMarkiranje.Spacing = 2;
+            this.ratingMarkiranje.TabIndex = 169;
+            this.ratingMarkiranje.Text = "jacinaSlabijeNogeVrijednost";
+            this.ratingMarkiranje.Value = 0;
+            // 
+            // ratingSnaga
+            // 
+            this.ratingSnaga.BackColor = System.Drawing.Color.Transparent;
+            this.ratingSnaga.DisabledEmptyFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.ratingSnaga.DisabledRatedFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingSnaga.EmptyBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.ratingSnaga.EmptyFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.ratingSnaga.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingSnaga.HoverFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingSnaga.InnerRadius = 1F;
+            this.ratingSnaga.Location = new System.Drawing.Point(872, 87);
+            this.ratingSnaga.Name = "ratingSnaga";
+            this.ratingSnaga.OuterRadius = 6F;
+            this.ratingSnaga.RatedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingSnaga.RatedFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingSnaga.ReadOnly = true;
+            this.ratingSnaga.RightClickToClear = true;
+            this.ratingSnaga.Size = new System.Drawing.Size(71, 14);
+            this.ratingSnaga.Spacing = 2;
+            this.ratingSnaga.TabIndex = 168;
+            this.ratingSnaga.Text = "jacinaSlabijeNogeVrijednost";
+            this.ratingSnaga.Value = 0;
+            // 
+            // ratingSut
+            // 
+            this.ratingSut.BackColor = System.Drawing.Color.Transparent;
+            this.ratingSut.DisabledEmptyFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.ratingSut.DisabledRatedFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingSut.EmptyBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.ratingSut.EmptyFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.ratingSut.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingSut.HoverFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingSut.InnerRadius = 1F;
+            this.ratingSut.Location = new System.Drawing.Point(706, 179);
+            this.ratingSut.Name = "ratingSut";
+            this.ratingSut.OuterRadius = 6F;
+            this.ratingSut.RatedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingSut.RatedFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingSut.ReadOnly = true;
+            this.ratingSut.RightClickToClear = true;
+            this.ratingSut.Size = new System.Drawing.Size(71, 14);
+            this.ratingSut.Spacing = 2;
+            this.ratingSut.TabIndex = 167;
+            this.ratingSut.Text = "jacinaSlabijeNogeVrijednost";
+            this.ratingSut.Value = 0;
+            this.ratingSut.ValueChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuRating.ValueChangedEventArgs>(this.ratingSut_ValueChanged);
+            // 
+            // ratingBrzina
+            // 
+            this.ratingBrzina.BackColor = System.Drawing.Color.Transparent;
+            this.ratingBrzina.DisabledEmptyFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.ratingBrzina.DisabledRatedFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingBrzina.EmptyBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.ratingBrzina.EmptyFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.ratingBrzina.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingBrzina.HoverFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingBrzina.InnerRadius = 1F;
+            this.ratingBrzina.Location = new System.Drawing.Point(706, 161);
+            this.ratingBrzina.Name = "ratingBrzina";
+            this.ratingBrzina.OuterRadius = 6F;
+            this.ratingBrzina.RatedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingBrzina.RatedFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingBrzina.ReadOnly = true;
+            this.ratingBrzina.RightClickToClear = true;
+            this.ratingBrzina.Size = new System.Drawing.Size(71, 14);
+            this.ratingBrzina.Spacing = 2;
+            this.ratingBrzina.TabIndex = 166;
+            this.ratingBrzina.Text = "jacinaSlabijeNogeVrijednost";
+            this.ratingBrzina.Value = 0;
+            this.ratingBrzina.ValueChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuRating.ValueChangedEventArgs>(this.ratingBrzina_ValueChanged);
+            // 
+            // ratingKretanje
+            // 
+            this.ratingKretanje.BackColor = System.Drawing.Color.Transparent;
+            this.ratingKretanje.DisabledEmptyFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.ratingKretanje.DisabledRatedFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingKretanje.EmptyBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.ratingKretanje.EmptyFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.ratingKretanje.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingKretanje.HoverFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingKretanje.InnerRadius = 1F;
+            this.ratingKretanje.Location = new System.Drawing.Point(706, 142);
+            this.ratingKretanje.Name = "ratingKretanje";
+            this.ratingKretanje.OuterRadius = 6F;
+            this.ratingKretanje.RatedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingKretanje.RatedFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingKretanje.ReadOnly = true;
+            this.ratingKretanje.RightClickToClear = true;
+            this.ratingKretanje.Size = new System.Drawing.Size(71, 14);
+            this.ratingKretanje.Spacing = 2;
+            this.ratingKretanje.TabIndex = 165;
+            this.ratingKretanje.Text = "jacinaSlabijeNogeVrijednost";
+            this.ratingKretanje.Value = 0;
+            this.ratingKretanje.ValueChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuRating.ValueChangedEventArgs>(this.ratingKretanje_ValueChanged);
+            // 
+            // ratingDodavanje
+            // 
+            this.ratingDodavanje.BackColor = System.Drawing.Color.Transparent;
+            this.ratingDodavanje.DisabledEmptyFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.ratingDodavanje.DisabledRatedFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingDodavanje.EmptyBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.ratingDodavanje.EmptyFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.ratingDodavanje.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingDodavanje.HoverFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingDodavanje.InnerRadius = 1F;
+            this.ratingDodavanje.Location = new System.Drawing.Point(706, 124);
+            this.ratingDodavanje.Name = "ratingDodavanje";
+            this.ratingDodavanje.OuterRadius = 6F;
+            this.ratingDodavanje.RatedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingDodavanje.RatedFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingDodavanje.ReadOnly = true;
+            this.ratingDodavanje.RightClickToClear = true;
+            this.ratingDodavanje.Size = new System.Drawing.Size(71, 14);
+            this.ratingDodavanje.Spacing = 2;
+            this.ratingDodavanje.TabIndex = 164;
+            this.ratingDodavanje.Text = "jacinaSlabijeNogeVrijednost";
+            this.ratingDodavanje.Value = 0;
+            this.ratingDodavanje.ValueChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuRating.ValueChangedEventArgs>(this.ratingDodavanje_ValueChanged);
+            // 
+            // ratingDriblanje
+            // 
+            this.ratingDriblanje.BackColor = System.Drawing.Color.Transparent;
+            this.ratingDriblanje.DisabledEmptyFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.ratingDriblanje.DisabledRatedFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingDriblanje.EmptyBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.ratingDriblanje.EmptyFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.ratingDriblanje.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingDriblanje.HoverFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingDriblanje.InnerRadius = 1F;
+            this.ratingDriblanje.Location = new System.Drawing.Point(706, 106);
+            this.ratingDriblanje.Name = "ratingDriblanje";
+            this.ratingDriblanje.OuterRadius = 6F;
+            this.ratingDriblanje.RatedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingDriblanje.RatedFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingDriblanje.ReadOnly = true;
+            this.ratingDriblanje.RightClickToClear = true;
+            this.ratingDriblanje.Size = new System.Drawing.Size(71, 14);
+            this.ratingDriblanje.Spacing = 2;
+            this.ratingDriblanje.TabIndex = 163;
+            this.ratingDriblanje.Text = "jacinaSlabijeNogeVrijednost";
+            this.ratingDriblanje.Value = 0;
+            this.ratingDriblanje.ValueChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuRating.ValueChangedEventArgs>(this.ratingDriblanje_ValueChanged);
+            // 
+            // ratingKontrolaLopte
+            // 
+            this.ratingKontrolaLopte.BackColor = System.Drawing.Color.Transparent;
+            this.ratingKontrolaLopte.DisabledEmptyFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.ratingKontrolaLopte.DisabledRatedFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingKontrolaLopte.EmptyBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.ratingKontrolaLopte.EmptyFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.ratingKontrolaLopte.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingKontrolaLopte.HoverFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingKontrolaLopte.InnerRadius = 1F;
+            this.ratingKontrolaLopte.Location = new System.Drawing.Point(706, 87);
+            this.ratingKontrolaLopte.Name = "ratingKontrolaLopte";
+            this.ratingKontrolaLopte.OuterRadius = 6F;
+            this.ratingKontrolaLopte.RatedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingKontrolaLopte.RatedFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingKontrolaLopte.ReadOnly = true;
+            this.ratingKontrolaLopte.RightClickToClear = true;
+            this.ratingKontrolaLopte.Size = new System.Drawing.Size(71, 14);
+            this.ratingKontrolaLopte.Spacing = 2;
+            this.ratingKontrolaLopte.TabIndex = 162;
+            this.ratingKontrolaLopte.Text = "jacinaSlabijeNogeVrijednost";
+            this.ratingKontrolaLopte.Value = 0;
+            this.ratingKontrolaLopte.ValueChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuRating.ValueChangedEventArgs>(this.ratingKontrolaLopte_ValueChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.label2.Location = new System.Drawing.Point(622, 86);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(81, 16);
+            this.label2.TabIndex = 173;
+            this.label2.Text = "KONTROLA LOPTE";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // pictureCrveniKartoni
+            // 
+            this.pictureCrveniKartoni.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureCrveniKartoni.Image = global::eBordo.WinUI.Properties.Resources.ezgif_com_gif_maker__3_;
+            this.pictureCrveniKartoni.Location = new System.Drawing.Point(484, 177);
+            this.pictureCrveniKartoni.Name = "pictureCrveniKartoni";
+            this.pictureCrveniKartoni.Size = new System.Drawing.Size(12, 16);
+            this.pictureCrveniKartoni.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureCrveniKartoni.TabIndex = 178;
+            this.pictureCrveniKartoni.TabStop = false;
+            // 
+            // pictureZutiKartoni
+            // 
+            this.pictureZutiKartoni.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureZutiKartoni.Image = global::eBordo.WinUI.Properties.Resources.ezgif_com_gif_maker__2_;
+            this.pictureZutiKartoni.Location = new System.Drawing.Point(484, 157);
+            this.pictureZutiKartoni.Name = "pictureZutiKartoni";
+            this.pictureZutiKartoni.Size = new System.Drawing.Size(12, 15);
+            this.pictureZutiKartoni.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureZutiKartoni.TabIndex = 177;
+            this.pictureZutiKartoni.TabStop = false;
+            // 
+            // pictureAsistencije
+            // 
+            this.pictureAsistencije.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureAsistencije.Image = global::eBordo.WinUI.Properties.Resources.ezgif_com_gif_maker__1_;
+            this.pictureAsistencije.Location = new System.Drawing.Point(484, 137);
+            this.pictureAsistencije.Name = "pictureAsistencije";
+            this.pictureAsistencije.Size = new System.Drawing.Size(13, 22);
+            this.pictureAsistencije.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureAsistencije.TabIndex = 176;
+            this.pictureAsistencije.TabStop = false;
+            // 
+            // pictureGolovi
+            // 
+            this.pictureGolovi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureGolovi.Image = global::eBordo.WinUI.Properties.Resources.ezgif_com_gif_maker;
+            this.pictureGolovi.Location = new System.Drawing.Point(484, 119);
+            this.pictureGolovi.Name = "pictureGolovi";
+            this.pictureGolovi.Size = new System.Drawing.Size(13, 22);
+            this.pictureGolovi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureGolovi.TabIndex = 175;
+            this.pictureGolovi.TabStop = false;
+            // 
+            // pictureNastupi
+            // 
+            this.pictureNastupi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureNastupi.Image = global::eBordo.WinUI.Properties.Resources.Spiele;
+            this.pictureNastupi.Location = new System.Drawing.Point(484, 82);
+            this.pictureNastupi.Name = "pictureNastupi";
+            this.pictureNastupi.Size = new System.Drawing.Size(13, 22);
+            this.pictureNastupi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureNastupi.TabIndex = 174;
+            this.pictureNastupi.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.label3.Location = new System.Drawing.Point(496, 86);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(47, 16);
+            this.label3.TabIndex = 179;
+            this.label3.Text = "NASTUPI";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.label4.Location = new System.Drawing.Point(496, 123);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(39, 16);
+            this.label4.TabIndex = 180;
+            this.label4.Text = "GOLOVI";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.label5.Location = new System.Drawing.Point(496, 141);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(62, 16);
+            this.label5.TabIndex = 181;
+            this.label5.Text = "ASISTENCIJE";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.label6.Location = new System.Drawing.Point(496, 159);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(68, 16);
+            this.label6.TabIndex = 182;
+            this.label6.Text = "ŽUTI KARTONI";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.label7.Location = new System.Drawing.Point(496, 178);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(80, 16);
+            this.label7.TabIndex = 183;
+            this.label7.Text = "CRVENI KARTONI";
+            // 
+            // txtNastupi
+            // 
+            this.txtNastupi.AutoSize = true;
+            this.txtNastupi.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNastupi.ForeColor = System.Drawing.Color.Black;
+            this.txtNastupi.Location = new System.Drawing.Point(584, 86);
+            this.txtNastupi.Name = "txtNastupi";
+            this.txtNastupi.Size = new System.Drawing.Size(26, 16);
+            this.txtNastupi.TabIndex = 184;
+            this.txtNastupi.Text = "456";
+            this.txtNastupi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtGolovi
+            // 
+            this.txtGolovi.AutoSize = true;
+            this.txtGolovi.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGolovi.ForeColor = System.Drawing.Color.Black;
+            this.txtGolovi.Location = new System.Drawing.Point(584, 123);
+            this.txtGolovi.Name = "txtGolovi";
+            this.txtGolovi.Size = new System.Drawing.Size(26, 16);
+            this.txtGolovi.TabIndex = 185;
+            this.txtGolovi.Text = "456";
+            this.txtGolovi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtCrveniKartoni
+            // 
+            this.txtCrveniKartoni.AutoSize = true;
+            this.txtCrveniKartoni.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCrveniKartoni.ForeColor = System.Drawing.Color.Black;
+            this.txtCrveniKartoni.Location = new System.Drawing.Point(584, 178);
+            this.txtCrveniKartoni.Name = "txtCrveniKartoni";
+            this.txtCrveniKartoni.Size = new System.Drawing.Size(26, 16);
+            this.txtCrveniKartoni.TabIndex = 186;
+            this.txtCrveniKartoni.Text = "456";
+            this.txtCrveniKartoni.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtZutiKartoni
+            // 
+            this.txtZutiKartoni.AutoSize = true;
+            this.txtZutiKartoni.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtZutiKartoni.ForeColor = System.Drawing.Color.Black;
+            this.txtZutiKartoni.Location = new System.Drawing.Point(584, 159);
+            this.txtZutiKartoni.Name = "txtZutiKartoni";
+            this.txtZutiKartoni.Size = new System.Drawing.Size(26, 16);
+            this.txtZutiKartoni.TabIndex = 187;
+            this.txtZutiKartoni.Text = "456";
+            this.txtZutiKartoni.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtAsistencije
+            // 
+            this.txtAsistencije.AutoSize = true;
+            this.txtAsistencije.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAsistencije.ForeColor = System.Drawing.Color.Black;
+            this.txtAsistencije.Location = new System.Drawing.Point(584, 141);
+            this.txtAsistencije.Name = "txtAsistencije";
+            this.txtAsistencije.Size = new System.Drawing.Size(26, 16);
+            this.txtAsistencije.TabIndex = 188;
+            this.txtAsistencije.Text = "456";
+            this.txtAsistencije.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // iconPictureBox6
+            // 
+            this.iconPictureBox6.BackColor = System.Drawing.Color.Transparent;
+            this.iconPictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.iconPictureBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.iconPictureBox6.IconChar = FontAwesome.Sharp.IconChar.StarHalfAlt;
+            this.iconPictureBox6.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.iconPictureBox6.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox6.IconSize = 12;
+            this.iconPictureBox6.Location = new System.Drawing.Point(611, 89);
+            this.iconPictureBox6.Name = "iconPictureBox6";
+            this.iconPictureBox6.Size = new System.Drawing.Size(12, 12);
+            this.iconPictureBox6.TabIndex = 189;
+            this.iconPictureBox6.TabStop = false;
+            // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.iconPictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.iconPictureBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.StarHalfAlt;
+            this.iconPictureBox1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 12;
+            this.iconPictureBox1.Location = new System.Drawing.Point(611, 108);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(12, 12);
+            this.iconPictureBox1.TabIndex = 191;
+            this.iconPictureBox1.TabStop = false;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.label13.Location = new System.Drawing.Point(622, 105);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(53, 16);
+            this.label13.TabIndex = 190;
+            this.label13.Text = "DRIBLANJE";
+            // 
+            // iconPictureBox2
+            // 
+            this.iconPictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.iconPictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.iconPictureBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.StarHalfAlt;
+            this.iconPictureBox2.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox2.IconSize = 12;
+            this.iconPictureBox2.Location = new System.Drawing.Point(611, 126);
+            this.iconPictureBox2.Name = "iconPictureBox2";
+            this.iconPictureBox2.Size = new System.Drawing.Size(12, 12);
+            this.iconPictureBox2.TabIndex = 193;
+            this.iconPictureBox2.TabStop = false;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.label14.Location = new System.Drawing.Point(622, 123);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(58, 16);
+            this.label14.TabIndex = 192;
+            this.label14.Text = "DODAVANJE";
+            // 
+            // iconPictureBox3
+            // 
+            this.iconPictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.iconPictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.iconPictureBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.StarHalfAlt;
+            this.iconPictureBox3.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox3.IconSize = 12;
+            this.iconPictureBox3.Location = new System.Drawing.Point(611, 144);
+            this.iconPictureBox3.Name = "iconPictureBox3";
+            this.iconPictureBox3.Size = new System.Drawing.Size(12, 12);
+            this.iconPictureBox3.TabIndex = 195;
+            this.iconPictureBox3.TabStop = false;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.label15.Location = new System.Drawing.Point(622, 141);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(50, 16);
+            this.label15.TabIndex = 194;
+            this.label15.Text = "KRETANJE";
+            // 
+            // iconPictureBox4
+            // 
+            this.iconPictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.iconPictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.iconPictureBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.StarHalfAlt;
+            this.iconPictureBox4.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox4.IconSize = 12;
+            this.iconPictureBox4.Location = new System.Drawing.Point(611, 163);
+            this.iconPictureBox4.Name = "iconPictureBox4";
+            this.iconPictureBox4.Size = new System.Drawing.Size(12, 12);
+            this.iconPictureBox4.TabIndex = 197;
+            this.iconPictureBox4.TabStop = false;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.label16.Location = new System.Drawing.Point(622, 160);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(40, 16);
+            this.label16.TabIndex = 196;
+            this.label16.Text = "BRZINA";
+            // 
+            // iconPictureBox5
+            // 
+            this.iconPictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.iconPictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.iconPictureBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.StarHalfAlt;
+            this.iconPictureBox5.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox5.IconSize = 12;
+            this.iconPictureBox5.Location = new System.Drawing.Point(611, 181);
+            this.iconPictureBox5.Name = "iconPictureBox5";
+            this.iconPictureBox5.Size = new System.Drawing.Size(12, 12);
+            this.iconPictureBox5.TabIndex = 199;
+            this.iconPictureBox5.TabStop = false;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.label17.Location = new System.Drawing.Point(622, 178);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(26, 16);
+            this.label17.TabIndex = 198;
+            this.label17.Text = "ŠUT";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox1.Image = global::eBordo.WinUI.Properties.Resources.Spiele;
+            this.pictureBox1.Location = new System.Drawing.Point(484, 101);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(13, 22);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 200;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.label18.Location = new System.Drawing.Point(496, 105);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(42, 16);
+            this.label18.TabIndex = 201;
+            this.label18.Text = "MINUTE";
+            // 
+            // txtMinute
+            // 
+            this.txtMinute.AutoSize = true;
+            this.txtMinute.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMinute.ForeColor = System.Drawing.Color.Black;
+            this.txtMinute.Location = new System.Drawing.Point(584, 105);
+            this.txtMinute.Name = "txtMinute";
+            this.txtMinute.Size = new System.Drawing.Size(26, 16);
+            this.txtMinute.TabIndex = 202;
+            this.txtMinute.Text = "456";
+            this.txtMinute.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // iconPictureBox7
+            // 
+            this.iconPictureBox7.BackColor = System.Drawing.Color.Transparent;
+            this.iconPictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.iconPictureBox7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.iconPictureBox7.IconChar = FontAwesome.Sharp.IconChar.StarHalfAlt;
+            this.iconPictureBox7.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.iconPictureBox7.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox7.IconSize = 12;
+            this.iconPictureBox7.Location = new System.Drawing.Point(780, 163);
+            this.iconPictureBox7.Name = "iconPictureBox7";
+            this.iconPictureBox7.Size = new System.Drawing.Size(12, 12);
+            this.iconPictureBox7.TabIndex = 212;
+            this.iconPictureBox7.TabStop = false;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.label20.Location = new System.Drawing.Point(791, 160);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(50, 16);
+            this.label20.TabIndex = 211;
+            this.label20.Text = "ODRBANA";
+            // 
+            // iconPictureBox8
+            // 
+            this.iconPictureBox8.BackColor = System.Drawing.Color.Transparent;
+            this.iconPictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.iconPictureBox8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.iconPictureBox8.IconChar = FontAwesome.Sharp.IconChar.StarHalfAlt;
+            this.iconPictureBox8.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.iconPictureBox8.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox8.IconSize = 12;
+            this.iconPictureBox8.Location = new System.Drawing.Point(780, 144);
+            this.iconPictureBox8.Name = "iconPictureBox8";
+            this.iconPictureBox8.Size = new System.Drawing.Size(12, 12);
+            this.iconPictureBox8.TabIndex = 210;
+            this.iconPictureBox8.TabStop = false;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.label21.Location = new System.Drawing.Point(791, 141);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(32, 16);
+            this.label21.TabIndex = 209;
+            this.label21.Text = "SKOK";
+            // 
+            // iconPictureBox9
+            // 
+            this.iconPictureBox9.BackColor = System.Drawing.Color.Transparent;
+            this.iconPictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.iconPictureBox9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.iconPictureBox9.IconChar = FontAwesome.Sharp.IconChar.StarHalfAlt;
+            this.iconPictureBox9.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.iconPictureBox9.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox9.IconSize = 12;
+            this.iconPictureBox9.Location = new System.Drawing.Point(780, 126);
+            this.iconPictureBox9.Name = "iconPictureBox9";
+            this.iconPictureBox9.Size = new System.Drawing.Size(12, 12);
+            this.iconPictureBox9.TabIndex = 208;
+            this.iconPictureBox9.TabStop = false;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.label22.Location = new System.Drawing.Point(791, 123);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(70, 16);
+            this.label22.TabIndex = 207;
+            this.label22.Text = "KLIZEĆI START";
+            // 
+            // iconPictureBox10
+            // 
+            this.iconPictureBox10.BackColor = System.Drawing.Color.Transparent;
+            this.iconPictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.iconPictureBox10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.iconPictureBox10.IconChar = FontAwesome.Sharp.IconChar.StarHalfAlt;
+            this.iconPictureBox10.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.iconPictureBox10.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox10.IconSize = 12;
+            this.iconPictureBox10.Location = new System.Drawing.Point(780, 108);
+            this.iconPictureBox10.Name = "iconPictureBox10";
+            this.iconPictureBox10.Size = new System.Drawing.Size(12, 12);
+            this.iconPictureBox10.TabIndex = 206;
+            this.iconPictureBox10.TabStop = false;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.label23.Location = new System.Drawing.Point(791, 105);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(63, 16);
+            this.label23.TabIndex = 205;
+            this.label23.Text = "MARKIRANJE";
+            // 
+            // iconPictureBox11
+            // 
+            this.iconPictureBox11.BackColor = System.Drawing.Color.Transparent;
+            this.iconPictureBox11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.iconPictureBox11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.iconPictureBox11.IconChar = FontAwesome.Sharp.IconChar.StarHalfAlt;
+            this.iconPictureBox11.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.iconPictureBox11.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox11.IconSize = 12;
+            this.iconPictureBox11.Location = new System.Drawing.Point(780, 89);
+            this.iconPictureBox11.Name = "iconPictureBox11";
+            this.iconPictureBox11.Size = new System.Drawing.Size(12, 12);
+            this.iconPictureBox11.TabIndex = 204;
+            this.iconPictureBox11.TabStop = false;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.label24.Location = new System.Drawing.Point(791, 86);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(38, 16);
+            this.label24.TabIndex = 203;
+            this.label24.Text = "SNAGA";
+            // 
+            // txtBrojIgracaPrvaPostava
+            // 
+            this.txtBrojIgracaPrvaPostava.AutoSize = true;
+            this.txtBrojIgracaPrvaPostava.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtBrojIgracaPrvaPostava.Font = new System.Drawing.Font("Oswald", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBrojIgracaPrvaPostava.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.txtBrojIgracaPrvaPostava.Location = new System.Drawing.Point(628, 204);
+            this.txtBrojIgracaPrvaPostava.Name = "txtBrojIgracaPrvaPostava";
+            this.txtBrojIgracaPrvaPostava.Size = new System.Drawing.Size(26, 17);
+            this.txtBrojIgracaPrvaPostava.TabIndex = 213;
+            this.txtBrojIgracaPrvaPostava.Text = "456";
+            this.txtBrojIgracaPrvaPostava.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtBrojIgracaKlupa
+            // 
+            this.txtBrojIgracaKlupa.AutoSize = true;
+            this.txtBrojIgracaKlupa.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtBrojIgracaKlupa.Font = new System.Drawing.Font("Oswald", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBrojIgracaKlupa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.txtBrojIgracaKlupa.Location = new System.Drawing.Point(906, 204);
+            this.txtBrojIgracaKlupa.Name = "txtBrojIgracaKlupa";
+            this.txtBrojIgracaKlupa.Size = new System.Drawing.Size(26, 17);
+            this.txtBrojIgracaKlupa.TabIndex = 214;
+            this.txtBrojIgracaKlupa.Text = "456";
+            this.txtBrojIgracaKlupa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // btnOdustani
+            // 
+            this.btnOdustani.AllowAnimations = true;
+            this.btnOdustani.AllowMouseEffects = true;
+            this.btnOdustani.AllowToggling = false;
+            this.btnOdustani.AnimationSpeed = 200;
+            this.btnOdustani.AutoGenerateColors = false;
+            this.btnOdustani.AutoRoundBorders = false;
+            this.btnOdustani.AutoSizeLeftIcon = false;
+            this.btnOdustani.AutoSizeRightIcon = true;
+            this.btnOdustani.BackColor = System.Drawing.Color.Transparent;
+            this.btnOdustani.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
+            this.btnOdustani.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnOdustani.BackgroundImage")));
+            this.btnOdustani.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnOdustani.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnOdustani.ButtonText = "";
+            this.btnOdustani.ButtonTextMarginLeft = 0;
+            this.btnOdustani.ColorContrastOnClick = 45;
+            this.btnOdustani.ColorContrastOnHover = 45;
+            this.btnOdustani.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.btnOdustani.CustomizableEdges = borderEdges2;
+            this.btnOdustani.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnOdustani.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnOdustani.DisabledFillColor = System.Drawing.Color.Empty;
+            this.btnOdustani.DisabledForecolor = System.Drawing.Color.Empty;
+            this.btnOdustani.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnOdustani.Font = new System.Drawing.Font("Oswald", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOdustani.ForeColor = System.Drawing.Color.White;
+            this.btnOdustani.IconLeft = global::eBordo.WinUI.Properties.Resources.eBordo_close;
+            this.btnOdustani.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOdustani.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnOdustani.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnOdustani.IconMarginLeft = 11;
+            this.btnOdustani.IconPadding = 10;
+            this.btnOdustani.IconRight = null;
+            this.btnOdustani.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnOdustani.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnOdustani.IconRightPadding = new System.Windows.Forms.Padding(3);
+            this.btnOdustani.IconSize = 25;
+            this.btnOdustani.IdleBorderColor = System.Drawing.Color.Empty;
+            this.btnOdustani.IdleBorderRadius = 0;
+            this.btnOdustani.IdleBorderThickness = 0;
+            this.btnOdustani.IdleFillColor = System.Drawing.Color.Empty;
+            this.btnOdustani.IdleIconLeftImage = global::eBordo.WinUI.Properties.Resources.eBordo_close;
+            this.btnOdustani.IdleIconRightImage = null;
+            this.btnOdustani.IndicateFocus = true;
+            this.btnOdustani.Location = new System.Drawing.Point(897, 35);
+            this.btnOdustani.Name = "btnOdustani";
+            this.btnOdustani.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnOdustani.OnDisabledState.BorderRadius = 10;
+            this.btnOdustani.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnOdustani.OnDisabledState.BorderThickness = 1;
+            this.btnOdustani.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnOdustani.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnOdustani.OnDisabledState.IconLeftImage = null;
+            this.btnOdustani.OnDisabledState.IconRightImage = null;
+            this.btnOdustani.onHoverState.BorderColor = System.Drawing.Color.Empty;
+            this.btnOdustani.onHoverState.BorderRadius = 10;
+            this.btnOdustani.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnOdustani.onHoverState.BorderThickness = 1;
+            this.btnOdustani.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnOdustani.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.btnOdustani.onHoverState.IconLeftImage = global::eBordo.WinUI.Properties.Resources.eBordo_close;
+            this.btnOdustani.onHoverState.IconRightImage = null;
+            this.btnOdustani.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnOdustani.OnIdleState.BorderRadius = 10;
+            this.btnOdustani.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnOdustani.OnIdleState.BorderThickness = 1;
+            this.btnOdustani.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnOdustani.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnOdustani.OnIdleState.IconLeftImage = global::eBordo.WinUI.Properties.Resources.eBordo_close;
+            this.btnOdustani.OnIdleState.IconRightImage = null;
+            this.btnOdustani.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnOdustani.OnPressedState.BorderRadius = 10;
+            this.btnOdustani.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnOdustani.OnPressedState.BorderThickness = 1;
+            this.btnOdustani.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnOdustani.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnOdustani.OnPressedState.IconLeftImage = global::eBordo.WinUI.Properties.Resources.eBordo_close;
+            this.btnOdustani.OnPressedState.IconRightImage = null;
+            this.btnOdustani.Size = new System.Drawing.Size(45, 31);
+            this.btnOdustani.TabIndex = 215;
+            this.btnOdustani.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnOdustani.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnOdustani.TextMarginLeft = 0;
+            this.btnOdustani.TextPadding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.btnOdustani.UseDefaultRadiusAndThickness = true;
+            this.btnOdustani.Click += new System.EventHandler(this.bunifuButton1_Click_1);
+            // 
+            // txtPozicija
+            // 
+            this.txtPozicija.BackColor = System.Drawing.Color.Transparent;
+            this.txtPozicija.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPozicija.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.txtPozicija.Location = new System.Drawing.Point(448, 80);
+            this.txtPozicija.Name = "txtPozicija";
+            this.txtPozicija.Size = new System.Drawing.Size(33, 23);
+            this.txtPozicija.TabIndex = 216;
+            this.txtPozicija.Text = "CMD";
+            this.txtPozicija.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // bunifuButton1
+            // 
+            this.bunifuButton1.AllowAnimations = true;
+            this.bunifuButton1.AllowMouseEffects = true;
+            this.bunifuButton1.AllowToggling = false;
+            this.bunifuButton1.AnimationSpeed = 200;
+            this.bunifuButton1.AutoGenerateColors = false;
+            this.bunifuButton1.AutoRoundBorders = false;
+            this.bunifuButton1.AutoSizeLeftIcon = false;
+            this.bunifuButton1.AutoSizeRightIcon = true;
+            this.bunifuButton1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuButton1.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
+            this.bunifuButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton1.BackgroundImage")));
+            this.bunifuButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.bunifuButton1.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.bunifuButton1.ButtonText = "";
+            this.bunifuButton1.ButtonTextMarginLeft = 0;
+            this.bunifuButton1.ColorContrastOnClick = 45;
+            this.bunifuButton1.ColorContrastOnHover = 45;
+            this.bunifuButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges3.BottomLeft = true;
+            borderEdges3.BottomRight = true;
+            borderEdges3.TopLeft = true;
+            borderEdges3.TopRight = true;
+            this.bunifuButton1.CustomizableEdges = borderEdges3;
+            this.bunifuButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.bunifuButton1.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.bunifuButton1.DisabledFillColor = System.Drawing.Color.Empty;
+            this.bunifuButton1.DisabledForecolor = System.Drawing.Color.Empty;
+            this.bunifuButton1.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.bunifuButton1.Font = new System.Drawing.Font("Oswald", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuButton1.ForeColor = System.Drawing.Color.White;
+            this.bunifuButton1.IconLeft = global::eBordo.WinUI.Properties.Resources.infoIgrac;
+            this.bunifuButton1.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuButton1.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuButton1.IconLeftPadding = new System.Windows.Forms.Padding(3);
+            this.bunifuButton1.IconMarginLeft = 11;
+            this.bunifuButton1.IconPadding = 10;
+            this.bunifuButton1.IconRight = null;
+            this.bunifuButton1.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bunifuButton1.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuButton1.IconRightPadding = new System.Windows.Forms.Padding(3);
+            this.bunifuButton1.IconSize = 25;
+            this.bunifuButton1.IdleBorderColor = System.Drawing.Color.Empty;
+            this.bunifuButton1.IdleBorderRadius = 0;
+            this.bunifuButton1.IdleBorderThickness = 0;
+            this.bunifuButton1.IdleFillColor = System.Drawing.Color.Empty;
+            this.bunifuButton1.IdleIconLeftImage = global::eBordo.WinUI.Properties.Resources.infoIgrac;
+            this.bunifuButton1.IdleIconRightImage = null;
+            this.bunifuButton1.IndicateFocus = true;
+            this.bunifuButton1.Location = new System.Drawing.Point(398, 34);
+            this.bunifuButton1.Name = "bunifuButton1";
+            this.bunifuButton1.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.bunifuButton1.OnDisabledState.BorderRadius = 10;
+            this.bunifuButton1.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.bunifuButton1.OnDisabledState.BorderThickness = 1;
+            this.bunifuButton1.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.bunifuButton1.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.bunifuButton1.OnDisabledState.IconLeftImage = null;
+            this.bunifuButton1.OnDisabledState.IconRightImage = null;
+            this.bunifuButton1.onHoverState.BorderColor = System.Drawing.Color.Empty;
+            this.bunifuButton1.onHoverState.BorderRadius = 10;
+            this.bunifuButton1.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.bunifuButton1.onHoverState.BorderThickness = 1;
+            this.bunifuButton1.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.bunifuButton1.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.bunifuButton1.onHoverState.IconLeftImage = global::eBordo.WinUI.Properties.Resources.infoIgrac;
+            this.bunifuButton1.onHoverState.IconRightImage = null;
+            this.bunifuButton1.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.bunifuButton1.OnIdleState.BorderRadius = 10;
+            this.bunifuButton1.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.bunifuButton1.OnIdleState.BorderThickness = 1;
+            this.bunifuButton1.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.bunifuButton1.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.bunifuButton1.OnIdleState.IconLeftImage = global::eBordo.WinUI.Properties.Resources.infoIgrac;
+            this.bunifuButton1.OnIdleState.IconRightImage = null;
+            this.bunifuButton1.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.bunifuButton1.OnPressedState.BorderRadius = 10;
+            this.bunifuButton1.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.bunifuButton1.OnPressedState.BorderThickness = 1;
+            this.bunifuButton1.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.bunifuButton1.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.bunifuButton1.OnPressedState.IconLeftImage = global::eBordo.WinUI.Properties.Resources.infoIgrac;
+            this.bunifuButton1.OnPressedState.IconRightImage = null;
+            this.bunifuButton1.Size = new System.Drawing.Size(30, 31);
+            this.bunifuButton1.TabIndex = 217;
+            this.bunifuButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bunifuButton1.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.bunifuButton1.TextMarginLeft = 0;
+            this.bunifuButton1.TextPadding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.bunifuButton1.UseDefaultRadiusAndThickness = true;
+            this.bunifuButton1.Click += new System.EventHandler(this.bunifuButton1_Click_2);
+            // 
+            // label8
+            // 
+            this.label8.BackColor = System.Drawing.Color.Gainsboro;
+            this.label8.Font = new System.Drawing.Font("Oswald", 8F);
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(11, 336);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(364, 17);
+            this.label8.TabIndex = 218;
+            this.label8.Text = "GARNITURA DRESOVA";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnSave
+            // 
+            this.btnSave.AllowAnimations = true;
+            this.btnSave.AllowMouseEffects = true;
+            this.btnSave.AllowToggling = false;
+            this.btnSave.AnimationSpeed = 200;
+            this.btnSave.AutoGenerateColors = false;
+            this.btnSave.AutoRoundBorders = false;
+            this.btnSave.AutoSizeLeftIcon = false;
+            this.btnSave.AutoSizeRightIcon = true;
+            this.btnSave.BackColor = System.Drawing.Color.Transparent;
+            this.btnSave.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
+            this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
+            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnSave.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSave.ButtonText = "DODAJ UTAKMICU";
+            this.btnSave.ButtonTextMarginLeft = 0;
+            this.btnSave.ColorContrastOnClick = 45;
+            this.btnSave.ColorContrastOnHover = 45;
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges4.BottomLeft = true;
+            borderEdges4.BottomRight = true;
+            borderEdges4.TopLeft = true;
+            borderEdges4.TopRight = true;
+            this.btnSave.CustomizableEdges = borderEdges4;
+            this.btnSave.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnSave.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnSave.DisabledFillColor = System.Drawing.Color.Empty;
+            this.btnSave.DisabledForecolor = System.Drawing.Color.Empty;
+            this.btnSave.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnSave.Font = new System.Drawing.Font("Oswald", 9F);
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.IconLeft = global::eBordo.WinUI.Properties.Resources.save;
+            this.btnSave.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSave.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnSave.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnSave.IconMarginLeft = 11;
+            this.btnSave.IconPadding = 10;
+            this.btnSave.IconRight = null;
+            this.btnSave.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSave.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnSave.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnSave.IconSize = 20;
+            this.btnSave.IdleBorderColor = System.Drawing.Color.Empty;
+            this.btnSave.IdleBorderRadius = 0;
+            this.btnSave.IdleBorderThickness = 0;
+            this.btnSave.IdleFillColor = System.Drawing.Color.Empty;
+            this.btnSave.IdleIconLeftImage = global::eBordo.WinUI.Properties.Resources.save;
+            this.btnSave.IdleIconRightImage = null;
+            this.btnSave.IndicateFocus = true;
+            this.btnSave.Location = new System.Drawing.Point(813, 710);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnSave.OnDisabledState.BorderRadius = 10;
+            this.btnSave.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSave.OnDisabledState.BorderThickness = 1;
+            this.btnSave.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnSave.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnSave.OnDisabledState.IconLeftImage = null;
+            this.btnSave.OnDisabledState.IconRightImage = null;
+            this.btnSave.onHoverState.BorderColor = System.Drawing.Color.Empty;
+            this.btnSave.onHoverState.BorderRadius = 10;
+            this.btnSave.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSave.onHoverState.BorderThickness = 1;
+            this.btnSave.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
+            this.btnSave.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.btnSave.onHoverState.IconLeftImage = global::eBordo.WinUI.Properties.Resources.save;
+            this.btnSave.onHoverState.IconRightImage = null;
+            this.btnSave.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
+            this.btnSave.OnIdleState.BorderRadius = 10;
+            this.btnSave.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSave.OnIdleState.BorderThickness = 1;
+            this.btnSave.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
+            this.btnSave.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnSave.OnIdleState.IconLeftImage = global::eBordo.WinUI.Properties.Resources.save;
+            this.btnSave.OnIdleState.IconRightImage = null;
+            this.btnSave.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
+            this.btnSave.OnPressedState.BorderRadius = 10;
+            this.btnSave.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSave.OnPressedState.BorderThickness = 1;
+            this.btnSave.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
+            this.btnSave.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnSave.OnPressedState.IconLeftImage = global::eBordo.WinUI.Properties.Resources.save;
+            this.btnSave.OnPressedState.IconRightImage = null;
+            this.btnSave.Size = new System.Drawing.Size(130, 30);
+            this.btnSave.TabIndex = 319;
+            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSave.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnSave.TextMarginLeft = 0;
+            this.btnSave.TextPadding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.btnSave.UseDefaultRadiusAndThickness = true;
+            this.btnSave.Visible = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click_1);
+            // 
+            // btnSaveUpdate
+            // 
+            this.btnSaveUpdate.AllowAnimations = true;
+            this.btnSaveUpdate.AllowMouseEffects = true;
+            this.btnSaveUpdate.AllowToggling = false;
+            this.btnSaveUpdate.AnimationSpeed = 200;
+            this.btnSaveUpdate.AutoGenerateColors = false;
+            this.btnSaveUpdate.AutoRoundBorders = false;
+            this.btnSaveUpdate.AutoSizeLeftIcon = false;
+            this.btnSaveUpdate.AutoSizeRightIcon = true;
+            this.btnSaveUpdate.BackColor = System.Drawing.Color.Transparent;
+            this.btnSaveUpdate.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
+            this.btnSaveUpdate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveUpdate.BackgroundImage")));
+            this.btnSaveUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnSaveUpdate.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSaveUpdate.ButtonText = "SPASI IZMJENE";
+            this.btnSaveUpdate.ButtonTextMarginLeft = 0;
+            this.btnSaveUpdate.ColorContrastOnClick = 45;
+            this.btnSaveUpdate.ColorContrastOnHover = 45;
+            this.btnSaveUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges5.BottomLeft = true;
+            borderEdges5.BottomRight = true;
+            borderEdges5.TopLeft = true;
+            borderEdges5.TopRight = true;
+            this.btnSaveUpdate.CustomizableEdges = borderEdges5;
+            this.btnSaveUpdate.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnSaveUpdate.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnSaveUpdate.DisabledFillColor = System.Drawing.Color.Empty;
+            this.btnSaveUpdate.DisabledForecolor = System.Drawing.Color.Empty;
+            this.btnSaveUpdate.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnSaveUpdate.Font = new System.Drawing.Font("Oswald", 9F);
+            this.btnSaveUpdate.ForeColor = System.Drawing.Color.Black;
+            this.btnSaveUpdate.IconLeft = global::eBordo.WinUI.Properties.Resources.save_black;
+            this.btnSaveUpdate.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSaveUpdate.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnSaveUpdate.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnSaveUpdate.IconMarginLeft = 11;
+            this.btnSaveUpdate.IconPadding = 10;
+            this.btnSaveUpdate.IconRight = null;
+            this.btnSaveUpdate.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSaveUpdate.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnSaveUpdate.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnSaveUpdate.IconSize = 20;
+            this.btnSaveUpdate.IdleBorderColor = System.Drawing.Color.Empty;
+            this.btnSaveUpdate.IdleBorderRadius = 0;
+            this.btnSaveUpdate.IdleBorderThickness = 0;
+            this.btnSaveUpdate.IdleFillColor = System.Drawing.Color.Empty;
+            this.btnSaveUpdate.IdleIconLeftImage = global::eBordo.WinUI.Properties.Resources.save_black;
+            this.btnSaveUpdate.IdleIconRightImage = null;
+            this.btnSaveUpdate.IndicateFocus = true;
+            this.btnSaveUpdate.Location = new System.Drawing.Point(827, 710);
+            this.btnSaveUpdate.Name = "btnSaveUpdate";
+            this.btnSaveUpdate.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnSaveUpdate.OnDisabledState.BorderRadius = 10;
+            this.btnSaveUpdate.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSaveUpdate.OnDisabledState.BorderThickness = 1;
+            this.btnSaveUpdate.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnSaveUpdate.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnSaveUpdate.OnDisabledState.IconLeftImage = null;
+            this.btnSaveUpdate.OnDisabledState.IconRightImage = null;
+            this.btnSaveUpdate.onHoverState.BorderColor = System.Drawing.Color.Empty;
+            this.btnSaveUpdate.onHoverState.BorderRadius = 10;
+            this.btnSaveUpdate.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSaveUpdate.onHoverState.BorderThickness = 1;
+            this.btnSaveUpdate.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnSaveUpdate.onHoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnSaveUpdate.onHoverState.IconLeftImage = global::eBordo.WinUI.Properties.Resources.save_black;
+            this.btnSaveUpdate.onHoverState.IconRightImage = null;
+            this.btnSaveUpdate.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnSaveUpdate.OnIdleState.BorderRadius = 10;
+            this.btnSaveUpdate.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSaveUpdate.OnIdleState.BorderThickness = 1;
+            this.btnSaveUpdate.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnSaveUpdate.OnIdleState.ForeColor = System.Drawing.Color.Black;
+            this.btnSaveUpdate.OnIdleState.IconLeftImage = global::eBordo.WinUI.Properties.Resources.save_black;
+            this.btnSaveUpdate.OnIdleState.IconRightImage = null;
+            this.btnSaveUpdate.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnSaveUpdate.OnPressedState.BorderRadius = 10;
+            this.btnSaveUpdate.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSaveUpdate.OnPressedState.BorderThickness = 1;
+            this.btnSaveUpdate.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnSaveUpdate.OnPressedState.ForeColor = System.Drawing.Color.Black;
+            this.btnSaveUpdate.OnPressedState.IconLeftImage = global::eBordo.WinUI.Properties.Resources.save_black;
+            this.btnSaveUpdate.OnPressedState.IconRightImage = null;
+            this.btnSaveUpdate.Size = new System.Drawing.Size(116, 30);
+            this.btnSaveUpdate.TabIndex = 320;
+            this.btnSaveUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSaveUpdate.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnSaveUpdate.TextMarginLeft = 0;
+            this.btnSaveUpdate.TextPadding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.btnSaveUpdate.UseDefaultRadiusAndThickness = true;
+            this.btnSaveUpdate.Visible = false;
+            this.btnSaveUpdate.Click += new System.EventHandler(this.btnSaveUpdate_Click);
+            // 
+            // txtOpisUtakmiceValidator
+            // 
+            this.txtOpisUtakmiceValidator.AllowParentOverrides = false;
+            this.txtOpisUtakmiceValidator.AutoEllipsis = false;
+            this.txtOpisUtakmiceValidator.CursorType = null;
+            this.txtOpisUtakmiceValidator.Font = new System.Drawing.Font("Oswald", 6F);
+            this.txtOpisUtakmiceValidator.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.txtOpisUtakmiceValidator.Location = new System.Drawing.Point(14, 62);
+            this.txtOpisUtakmiceValidator.Name = "txtOpisUtakmiceValidator";
+            this.txtOpisUtakmiceValidator.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtOpisUtakmiceValidator.Size = new System.Drawing.Size(0, 0);
+            this.txtOpisUtakmiceValidator.TabIndex = 335;
+            this.txtOpisUtakmiceValidator.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.txtOpisUtakmiceValidator.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // txtDatumOdigravanjaValidator
+            // 
+            this.txtDatumOdigravanjaValidator.AllowParentOverrides = false;
+            this.txtDatumOdigravanjaValidator.AutoEllipsis = false;
+            this.txtDatumOdigravanjaValidator.CursorType = null;
+            this.txtDatumOdigravanjaValidator.Font = new System.Drawing.Font("Oswald", 6F);
+            this.txtDatumOdigravanjaValidator.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.txtDatumOdigravanjaValidator.Location = new System.Drawing.Point(13, 191);
+            this.txtDatumOdigravanjaValidator.Name = "txtDatumOdigravanjaValidator";
+            this.txtDatumOdigravanjaValidator.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtDatumOdigravanjaValidator.Size = new System.Drawing.Size(0, 0);
+            this.txtDatumOdigravanjaValidator.TabIndex = 337;
+            this.txtDatumOdigravanjaValidator.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.txtDatumOdigravanjaValidator.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // txtSudijaValidator
+            // 
+            this.txtSudijaValidator.AllowParentOverrides = false;
+            this.txtSudijaValidator.AutoEllipsis = false;
+            this.txtSudijaValidator.CursorType = null;
+            this.txtSudijaValidator.Font = new System.Drawing.Font("Oswald", 6F);
+            this.txtSudijaValidator.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.txtSudijaValidator.Location = new System.Drawing.Point(200, 320);
+            this.txtSudijaValidator.Name = "txtSudijaValidator";
+            this.txtSudijaValidator.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtSudijaValidator.Size = new System.Drawing.Size(0, 0);
+            this.txtSudijaValidator.TabIndex = 339;
+            this.txtSudijaValidator.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.txtSudijaValidator.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // txtSatnicaValidator
+            // 
+            this.txtSatnicaValidator.AllowParentOverrides = false;
+            this.txtSatnicaValidator.AutoEllipsis = false;
+            this.txtSatnicaValidator.CursorType = null;
+            this.txtSatnicaValidator.Font = new System.Drawing.Font("Oswald", 6F);
+            this.txtSatnicaValidator.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.txtSatnicaValidator.Location = new System.Drawing.Point(200, 192);
+            this.txtSatnicaValidator.Name = "txtSatnicaValidator";
+            this.txtSatnicaValidator.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtSatnicaValidator.Size = new System.Drawing.Size(0, 0);
+            this.txtSatnicaValidator.TabIndex = 340;
+            this.txtSatnicaValidator.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.txtSatnicaValidator.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // pictureDatumOdigravanjaValidator
+            // 
+            this.pictureDatumOdigravanjaValidator.BackgroundImage = global::eBordo.WinUI.Properties.Resources.eBordo_required3;
+            this.pictureDatumOdigravanjaValidator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureDatumOdigravanjaValidator.Location = new System.Drawing.Point(168, 170);
+            this.pictureDatumOdigravanjaValidator.Name = "pictureDatumOdigravanjaValidator";
+            this.pictureDatumOdigravanjaValidator.Size = new System.Drawing.Size(10, 10);
+            this.pictureDatumOdigravanjaValidator.TabIndex = 354;
+            this.pictureDatumOdigravanjaValidator.TabStop = false;
+            // 
+            // pictureValidacijaPrvaPOstavaka
+            // 
+            this.pictureValidacijaPrvaPOstavaka.BackgroundImage = global::eBordo.WinUI.Properties.Resources.eBordo_required3;
+            this.pictureValidacijaPrvaPOstavaka.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureValidacijaPrvaPOstavaka.Location = new System.Drawing.Point(398, 226);
+            this.pictureValidacijaPrvaPOstavaka.Name = "pictureValidacijaPrvaPOstavaka";
+            this.pictureValidacijaPrvaPOstavaka.Size = new System.Drawing.Size(10, 10);
+            this.pictureValidacijaPrvaPOstavaka.TabIndex = 355;
+            this.pictureValidacijaPrvaPOstavaka.TabStop = false;
+            // 
+            // txtPrvaPostavaValidator
+            // 
+            this.txtPrvaPostavaValidator.AllowParentOverrides = false;
+            this.txtPrvaPostavaValidator.AutoEllipsis = false;
+            this.txtPrvaPostavaValidator.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtPrvaPostavaValidator.CursorType = System.Windows.Forms.Cursors.Default;
+            this.txtPrvaPostavaValidator.Font = new System.Drawing.Font("Oswald", 6F);
+            this.txtPrvaPostavaValidator.Location = new System.Drawing.Point(410, 225);
+            this.txtPrvaPostavaValidator.Name = "txtPrvaPostavaValidator";
+            this.txtPrvaPostavaValidator.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtPrvaPostavaValidator.Size = new System.Drawing.Size(63, 12);
+            this.txtPrvaPostavaValidator.TabIndex = 356;
+            this.txtPrvaPostavaValidator.Text = "Minimalno 5 igrača";
+            this.txtPrvaPostavaValidator.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.txtPrvaPostavaValidator.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // txtKlupaValidator
+            // 
+            this.txtKlupaValidator.AllowParentOverrides = false;
+            this.txtKlupaValidator.AutoEllipsis = false;
+            this.txtKlupaValidator.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtKlupaValidator.CursorType = System.Windows.Forms.Cursors.Default;
+            this.txtKlupaValidator.Font = new System.Drawing.Font("Oswald", 6F);
+            this.txtKlupaValidator.Location = new System.Drawing.Point(686, 225);
+            this.txtKlupaValidator.Name = "txtKlupaValidator";
+            this.txtKlupaValidator.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtKlupaValidator.Size = new System.Drawing.Size(63, 12);
+            this.txtKlupaValidator.TabIndex = 358;
+            this.txtKlupaValidator.Text = "Minimalno 4 igrača";
+            this.txtKlupaValidator.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.txtKlupaValidator.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // pictureKlupaValidator
+            // 
+            this.pictureKlupaValidator.BackgroundImage = global::eBordo.WinUI.Properties.Resources.eBordo_required3;
+            this.pictureKlupaValidator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureKlupaValidator.Location = new System.Drawing.Point(674, 226);
+            this.pictureKlupaValidator.Name = "pictureKlupaValidator";
+            this.pictureKlupaValidator.Size = new System.Drawing.Size(10, 10);
+            this.pictureKlupaValidator.TabIndex = 357;
+            this.pictureKlupaValidator.TabStop = false;
+            // 
+            // gifLoader
+            // 
+            this.gifLoader.BackColor = System.Drawing.Color.Transparent;
+            this.gifLoader.BackgroundImage = global::eBordo.WinUI.Properties.Resources.giphy;
+            this.gifLoader.Image = global::eBordo.WinUI.Properties.Resources.ezgif2;
+            this.gifLoader.Location = new System.Drawing.Point(629, 226);
+            this.gifLoader.Name = "gifLoader";
+            this.gifLoader.Size = new System.Drawing.Size(45, 15);
+            this.gifLoader.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.gifLoader.TabIndex = 359;
+            this.gifLoader.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.BackgroundImage = global::eBordo.WinUI.Properties.Resources.giphy;
+            this.pictureBox2.Image = global::eBordo.WinUI.Properties.Resources.ezgif2;
+            this.pictureBox2.Location = new System.Drawing.Point(904, 226);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(45, 15);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 360;
+            this.pictureBox2.TabStop = false;
+            // 
+            // txtProtivnikValidator
+            // 
+            this.txtProtivnikValidator.AllowParentOverrides = false;
+            this.txtProtivnikValidator.AutoEllipsis = false;
+            this.txtProtivnikValidator.CursorType = null;
+            this.txtProtivnikValidator.Font = new System.Drawing.Font("Oswald", 6F);
+            this.txtProtivnikValidator.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.txtProtivnikValidator.Location = new System.Drawing.Point(12, 127);
+            this.txtProtivnikValidator.Name = "txtProtivnikValidator";
+            this.txtProtivnikValidator.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtProtivnikValidator.Size = new System.Drawing.Size(0, 0);
+            this.txtProtivnikValidator.TabIndex = 373;
+            this.txtProtivnikValidator.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.txtProtivnikValidator.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // txtVrstaUtakmiceValidator
+            // 
+            this.txtVrstaUtakmiceValidator.AllowParentOverrides = false;
+            this.txtVrstaUtakmiceValidator.AutoEllipsis = false;
+            this.txtVrstaUtakmiceValidator.CursorType = null;
+            this.txtVrstaUtakmiceValidator.Font = new System.Drawing.Font("Oswald", 6F);
+            this.txtVrstaUtakmiceValidator.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.txtVrstaUtakmiceValidator.Location = new System.Drawing.Point(200, 127);
+            this.txtVrstaUtakmiceValidator.Name = "txtVrstaUtakmiceValidator";
+            this.txtVrstaUtakmiceValidator.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtVrstaUtakmiceValidator.Size = new System.Drawing.Size(0, 0);
+            this.txtVrstaUtakmiceValidator.TabIndex = 374;
+            this.txtVrstaUtakmiceValidator.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.txtVrstaUtakmiceValidator.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // txtTakmicenjeValidator
+            // 
+            this.txtTakmicenjeValidator.AllowParentOverrides = false;
+            this.txtTakmicenjeValidator.AutoEllipsis = false;
+            this.txtTakmicenjeValidator.CursorType = null;
+            this.txtTakmicenjeValidator.Font = new System.Drawing.Font("Oswald", 6F);
+            this.txtTakmicenjeValidator.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.txtTakmicenjeValidator.Location = new System.Drawing.Point(13, 256);
+            this.txtTakmicenjeValidator.Name = "txtTakmicenjeValidator";
+            this.txtTakmicenjeValidator.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtTakmicenjeValidator.Size = new System.Drawing.Size(0, 0);
+            this.txtTakmicenjeValidator.TabIndex = 375;
+            this.txtTakmicenjeValidator.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.txtTakmicenjeValidator.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // txtStadionValidator
+            // 
+            this.txtStadionValidator.AllowParentOverrides = false;
+            this.txtStadionValidator.AutoEllipsis = false;
+            this.txtStadionValidator.CursorType = null;
+            this.txtStadionValidator.Font = new System.Drawing.Font("Oswald", 6F);
+            this.txtStadionValidator.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.txtStadionValidator.Location = new System.Drawing.Point(199, 256);
+            this.txtStadionValidator.Name = "txtStadionValidator";
+            this.txtStadionValidator.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtStadionValidator.Size = new System.Drawing.Size(0, 0);
+            this.txtStadionValidator.TabIndex = 376;
+            this.txtStadionValidator.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.txtStadionValidator.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // txtKapitenValidator
+            // 
+            this.txtKapitenValidator.AllowParentOverrides = false;
+            this.txtKapitenValidator.AutoEllipsis = false;
+            this.txtKapitenValidator.CursorType = null;
+            this.txtKapitenValidator.Font = new System.Drawing.Font("Oswald", 6F);
+            this.txtKapitenValidator.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.txtKapitenValidator.Location = new System.Drawing.Point(13, 321);
+            this.txtKapitenValidator.Name = "txtKapitenValidator";
+            this.txtKapitenValidator.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtKapitenValidator.Size = new System.Drawing.Size(0, 0);
+            this.txtKapitenValidator.TabIndex = 377;
+            this.txtKapitenValidator.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.txtKapitenValidator.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // pictureProtivnikSlikaValidator
+            // 
+            this.pictureProtivnikSlikaValidator.BackgroundImage = global::eBordo.WinUI.Properties.Resources.eBordo_required3;
+            this.pictureProtivnikSlikaValidator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureProtivnikSlikaValidator.Location = new System.Drawing.Point(167, 105);
+            this.pictureProtivnikSlikaValidator.Name = "pictureProtivnikSlikaValidator";
+            this.pictureProtivnikSlikaValidator.Size = new System.Drawing.Size(10, 10);
+            this.pictureProtivnikSlikaValidator.TabIndex = 378;
+            this.pictureProtivnikSlikaValidator.TabStop = false;
+            // 
+            // pictureTakmicenjeSlikaValidator
+            // 
+            this.pictureTakmicenjeSlikaValidator.BackgroundImage = global::eBordo.WinUI.Properties.Resources.eBordo_required3;
+            this.pictureTakmicenjeSlikaValidator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureTakmicenjeSlikaValidator.Location = new System.Drawing.Point(168, 234);
+            this.pictureTakmicenjeSlikaValidator.Name = "pictureTakmicenjeSlikaValidator";
+            this.pictureTakmicenjeSlikaValidator.Size = new System.Drawing.Size(10, 10);
+            this.pictureTakmicenjeSlikaValidator.TabIndex = 379;
+            this.pictureTakmicenjeSlikaValidator.TabStop = false;
+            // 
+            // pictureKapitenSlikaValidator
+            // 
+            this.pictureKapitenSlikaValidator.BackgroundImage = global::eBordo.WinUI.Properties.Resources.eBordo_required3;
+            this.pictureKapitenSlikaValidator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureKapitenSlikaValidator.Location = new System.Drawing.Point(169, 300);
+            this.pictureKapitenSlikaValidator.Name = "pictureKapitenSlikaValidator";
+            this.pictureKapitenSlikaValidator.Size = new System.Drawing.Size(10, 10);
+            this.pictureKapitenSlikaValidator.TabIndex = 380;
+            this.pictureKapitenSlikaValidator.TabStop = false;
+            // 
+            // pictureVrstaUtakmiceSlikaValidator
+            // 
+            this.pictureVrstaUtakmiceSlikaValidator.BackgroundImage = global::eBordo.WinUI.Properties.Resources.eBordo_required3;
+            this.pictureVrstaUtakmiceSlikaValidator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureVrstaUtakmiceSlikaValidator.Location = new System.Drawing.Point(354, 105);
+            this.pictureVrstaUtakmiceSlikaValidator.Name = "pictureVrstaUtakmiceSlikaValidator";
+            this.pictureVrstaUtakmiceSlikaValidator.Size = new System.Drawing.Size(10, 10);
+            this.pictureVrstaUtakmiceSlikaValidator.TabIndex = 381;
+            this.pictureVrstaUtakmiceSlikaValidator.TabStop = false;
+            // 
+            // pictureStadionSlikaValidator
+            // 
+            this.pictureStadionSlikaValidator.BackgroundImage = global::eBordo.WinUI.Properties.Resources.eBordo_required3;
+            this.pictureStadionSlikaValidator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureStadionSlikaValidator.Location = new System.Drawing.Point(354, 234);
+            this.pictureStadionSlikaValidator.Name = "pictureStadionSlikaValidator";
+            this.pictureStadionSlikaValidator.Size = new System.Drawing.Size(10, 10);
+            this.pictureStadionSlikaValidator.TabIndex = 382;
+            this.pictureStadionSlikaValidator.TabStop = false;
+            // 
+            // txtIgracSastavValidator
+            // 
+            this.txtIgracSastavValidator.AllowParentOverrides = false;
+            this.txtIgracSastavValidator.AutoEllipsis = false;
+            this.txtIgracSastavValidator.CursorType = null;
+            this.txtIgracSastavValidator.Font = new System.Drawing.Font("Oswald", 6F);
+            this.txtIgracSastavValidator.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.txtIgracSastavValidator.Location = new System.Drawing.Point(431, 67);
+            this.txtIgracSastavValidator.Name = "txtIgracSastavValidator";
+            this.txtIgracSastavValidator.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtIgracSastavValidator.Size = new System.Drawing.Size(17, 12);
+            this.txtIgracSastavValidator.TabIndex = 383;
+            this.txtIgracSastavValidator.Text = "Haris";
+            this.txtIgracSastavValidator.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.txtIgracSastavValidator.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // txtIgracPozicijaValidator
+            // 
+            this.txtIgracPozicijaValidator.AllowParentOverrides = false;
+            this.txtIgracPozicijaValidator.AutoEllipsis = false;
+            this.txtIgracPozicijaValidator.CursorType = null;
+            this.txtIgracPozicijaValidator.Font = new System.Drawing.Font("Oswald", 6F);
+            this.txtIgracPozicijaValidator.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.txtIgracPozicijaValidator.Location = new System.Drawing.Point(554, 67);
+            this.txtIgracPozicijaValidator.Name = "txtIgracPozicijaValidator";
+            this.txtIgracPozicijaValidator.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtIgracPozicijaValidator.Size = new System.Drawing.Size(30, 12);
+            this.txtIgracPozicijaValidator.TabIndex = 384;
+            this.txtIgracPozicijaValidator.Text = "VAlidator";
+            this.txtIgracPozicijaValidator.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.txtIgracPozicijaValidator.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // pictureIgracSastavSlikaValidator
+            // 
+            this.pictureIgracSastavSlikaValidator.BackgroundImage = global::eBordo.WinUI.Properties.Resources.eBordo_required3;
+            this.pictureIgracSastavSlikaValidator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureIgracSastavSlikaValidator.Location = new System.Drawing.Point(531, 47);
+            this.pictureIgracSastavSlikaValidator.Name = "pictureIgracSastavSlikaValidator";
+            this.pictureIgracSastavSlikaValidator.Size = new System.Drawing.Size(10, 10);
+            this.pictureIgracSastavSlikaValidator.TabIndex = 385;
+            this.pictureIgracSastavSlikaValidator.TabStop = false;
+            // 
+            // pictureIgracSastavPozicijaSlikaValidator
+            // 
+            this.pictureIgracSastavPozicijaSlikaValidator.BackgroundImage = global::eBordo.WinUI.Properties.Resources.eBordo_required3;
+            this.pictureIgracSastavPozicijaSlikaValidator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureIgracSastavPozicijaSlikaValidator.Location = new System.Drawing.Point(680, 47);
+            this.pictureIgracSastavPozicijaSlikaValidator.Name = "pictureIgracSastavPozicijaSlikaValidator";
+            this.pictureIgracSastavPozicijaSlikaValidator.Size = new System.Drawing.Size(10, 10);
+            this.pictureIgracSastavPozicijaSlikaValidator.TabIndex = 386;
+            this.pictureIgracSastavPozicijaSlikaValidator.TabStop = false;
             // 
             // frmUpsertUtakmica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(916, 629);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(954, 749);
+            this.Controls.Add(this.pictureIgracSastavPozicijaSlikaValidator);
+            this.Controls.Add(this.pictureIgracSastavSlikaValidator);
+            this.Controls.Add(this.txtIgracPozicijaValidator);
+            this.Controls.Add(this.txtIgracSastavValidator);
+            this.Controls.Add(this.pictureStadionSlikaValidator);
+            this.Controls.Add(this.pictureVrstaUtakmiceSlikaValidator);
+            this.Controls.Add(this.pictureKapitenSlikaValidator);
+            this.Controls.Add(this.pictureTakmicenjeSlikaValidator);
+            this.Controls.Add(this.pictureProtivnikSlikaValidator);
+            this.Controls.Add(this.txtKapitenValidator);
+            this.Controls.Add(this.txtStadionValidator);
+            this.Controls.Add(this.txtTakmicenjeValidator);
+            this.Controls.Add(this.txtVrstaUtakmiceValidator);
+            this.Controls.Add(this.txtProtivnikValidator);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.gifLoader);
+            this.Controls.Add(this.txtKlupaValidator);
+            this.Controls.Add(this.pictureKlupaValidator);
+            this.Controls.Add(this.txtPrvaPostavaValidator);
+            this.Controls.Add(this.pictureValidacijaPrvaPOstavaka);
+            this.Controls.Add(this.pictureDatumOdigravanjaValidator);
+            this.Controls.Add(this.txtSatnicaValidator);
+            this.Controls.Add(this.txtSudijaValidator);
+            this.Controls.Add(this.txtDatumOdigravanjaValidator);
+            this.Controls.Add(this.txtOpisUtakmiceValidator);
+            this.Controls.Add(this.btnSaveUpdate);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.bunifuButton1);
+            this.Controls.Add(this.txtPozicija);
+            this.Controls.Add(this.btnSaveIgracSastav);
+            this.Controls.Add(this.btnOdustani);
             this.Controls.Add(this.pictureIgracSlika);
+            this.Controls.Add(this.txtBrojIgracaKlupa);
+            this.Controls.Add(this.txtBrojIgracaPrvaPostava);
+            this.Controls.Add(this.iconPictureBox7);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.iconPictureBox8);
+            this.Controls.Add(this.label21);
+            this.Controls.Add(this.iconPictureBox9);
+            this.Controls.Add(this.label22);
+            this.Controls.Add(this.iconPictureBox10);
+            this.Controls.Add(this.label23);
+            this.Controls.Add(this.iconPictureBox11);
+            this.Controls.Add(this.label24);
+            this.Controls.Add(this.txtMinute);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.iconPictureBox5);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.iconPictureBox4);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.iconPictureBox3);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.iconPictureBox2);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.iconPictureBox1);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.iconPictureBox6);
+            this.Controls.Add(this.txtAsistencije);
+            this.Controls.Add(this.txtZutiKartoni);
+            this.Controls.Add(this.txtCrveniKartoni);
+            this.Controls.Add(this.txtGolovi);
+            this.Controls.Add(this.txtNastupi);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.pictureCrveniKartoni);
+            this.Controls.Add(this.pictureZutiKartoni);
+            this.Controls.Add(this.pictureAsistencije);
+            this.Controls.Add(this.pictureGolovi);
+            this.Controls.Add(this.pictureNastupi);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.ratingOdbrana);
+            this.Controls.Add(this.ratingSkok);
+            this.Controls.Add(this.ratingKlizeciStart);
+            this.Controls.Add(this.ratingMarkiranje);
+            this.Controls.Add(this.ratingSnaga);
+            this.Controls.Add(this.ratingSut);
+            this.Controls.Add(this.ratingBrzina);
+            this.Controls.Add(this.ratingKretanje);
+            this.Controls.Add(this.ratingDodavanje);
+            this.Controls.Add(this.ratingDriblanje);
+            this.Controls.Add(this.ratingKontrolaLopte);
+            this.Controls.Add(this.txtBrojDresa);
+            this.Controls.Add(this.igracOcjena);
+            this.Controls.Add(this.txtPrezime);
+            this.Controls.Add(this.pictureSlikaIgraca);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblImePrezimeBrojDresa);
-            this.Controls.Add(this.btnDetaljiIgraca);
             this.Controls.Add(this.cmbVrstaUtakmice);
             this.Controls.Add(this.lblKlupa);
             this.Controls.Add(this.flowPanelKlupa);
             this.Controls.Add(this.cmbPozicije);
-            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.flowPanelPrvaPostava);
-            this.Controls.Add(this.btnSaveIgracSastav);
             this.Controls.Add(this.lblPrvaPostava);
             this.Controls.Add(this.cmbIgraciSastav);
             this.Controls.Add(this.lblImePrezime);
@@ -1518,7 +3087,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.Controls.Add(this.radioBtnDomacaGarnitura);
             this.Controls.Add(this.domaciDres);
             this.Controls.Add(this.rezervniDres);
-            this.Controls.Add(this.lblGarnituraDresova);
             this.Controls.Add(this.gostujuciDres);
             this.Controls.Add(this.txtSudija);
             this.Controls.Add(this.lblSudija);
@@ -1542,6 +3110,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.Controls.Add(this.cmbProtivnik);
             this.Controls.Add(this.lblProtivnik);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmUpsertUtakmica";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmUpsertUtakmica";
@@ -1550,6 +3119,36 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             ((System.ComponentModel.ISupportInitialize)(this.domaciDres)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rezervniDres)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gostujuciDres)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSlikaIgraca)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureCrveniKartoni)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureZutiKartoni)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureAsistencije)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureGolovi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureNastupi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureDatumOdigravanjaValidator)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureValidacijaPrvaPOstavaka)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureKlupaValidator)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gifLoader)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureProtivnikSlikaValidator)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureTakmicenjeSlikaValidator)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureKapitenSlikaValidator)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureVrstaUtakmiceSlikaValidator)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureStadionSlikaValidator)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureIgracSastavSlikaValidator)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureIgracSastavPozicijaSlikaValidator)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1579,7 +3178,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
         private Bunifu.UI.WinForms.BunifuTextBox txtSudija;
         private Bunifu.UI.WinForms.BunifuLabel lblSudija;
         private System.Windows.Forms.PictureBox gostujuciDres;
-        private Bunifu.UI.WinForms.BunifuLabel lblGarnituraDresova;
         private System.Windows.Forms.PictureBox rezervniDres;
         private System.Windows.Forms.PictureBox domaciDres;
         private System.Windows.Forms.RadioButton radioBtnDomacaGarnitura;
@@ -1593,15 +3191,101 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
         private System.Windows.Forms.Label lblPrvaPostava;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSaveIgracSastav;
         private System.Windows.Forms.FlowLayoutPanel flowPanelPrvaPostava;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSave;
         private Bunifu.UI.WinForms.BunifuDropdown cmbPozicije;
         private System.Windows.Forms.FlowLayoutPanel flowPanelKlupa;
         private System.Windows.Forms.Label lblKlupa;
         private Bunifu.UI.WinForms.BunifuSnackbar snackbar;
         private Bunifu.UI.WinForms.BunifuDropdown cmbVrstaUtakmice;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnDetaljiIgraca;
         private Bunifu.UI.WinForms.BunifuPictureBox pictureIgracSlika;
         private System.Windows.Forms.Label lblImePrezimeBrojDresa;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label txtBrojDresa;
+        private Bunifu.UI.WinForms.BunifuRating igracOcjena;
+        private System.Windows.Forms.Label txtPrezime;
+        private System.Windows.Forms.PictureBox pictureSlikaIgraca;
+        private Bunifu.UI.WinForms.BunifuRating ratingOdbrana;
+        private Bunifu.UI.WinForms.BunifuRating ratingSkok;
+        private Bunifu.UI.WinForms.BunifuRating ratingKlizeciStart;
+        private Bunifu.UI.WinForms.BunifuRating ratingMarkiranje;
+        private Bunifu.UI.WinForms.BunifuRating ratingSnaga;
+        private Bunifu.UI.WinForms.BunifuRating ratingSut;
+        private Bunifu.UI.WinForms.BunifuRating ratingBrzina;
+        private Bunifu.UI.WinForms.BunifuRating ratingKretanje;
+        private Bunifu.UI.WinForms.BunifuRating ratingDodavanje;
+        private Bunifu.UI.WinForms.BunifuRating ratingDriblanje;
+        private Bunifu.UI.WinForms.BunifuRating ratingKontrolaLopte;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureCrveniKartoni;
+        private System.Windows.Forms.PictureBox pictureZutiKartoni;
+        private System.Windows.Forms.PictureBox pictureAsistencije;
+        private System.Windows.Forms.PictureBox pictureGolovi;
+        private System.Windows.Forms.PictureBox pictureNastupi;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label txtNastupi;
+        private System.Windows.Forms.Label txtGolovi;
+        private System.Windows.Forms.Label txtCrveniKartoni;
+        private System.Windows.Forms.Label txtZutiKartoni;
+        private System.Windows.Forms.Label txtAsistencije;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox6;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private System.Windows.Forms.Label label13;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
+        private System.Windows.Forms.Label label14;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
+        private System.Windows.Forms.Label label15;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox4;
+        private System.Windows.Forms.Label label16;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox5;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label txtMinute;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox7;
+        private System.Windows.Forms.Label label20;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox8;
+        private System.Windows.Forms.Label label21;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox9;
+        private System.Windows.Forms.Label label22;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox10;
+        private System.Windows.Forms.Label label23;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox11;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label txtBrojIgracaPrvaPostava;
+        private System.Windows.Forms.Label txtBrojIgracaKlupa;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnOdustani;
+        private System.Windows.Forms.Label txtPozicija;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton1;
+        private System.Windows.Forms.Label label8;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSave;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSaveUpdate;
+        private Bunifu.UI.WinForms.BunifuLabel txtOpisUtakmiceValidator;
+        private Bunifu.UI.WinForms.BunifuLabel txtDatumOdigravanjaValidator;
+        private Bunifu.UI.WinForms.BunifuLabel txtSudijaValidator;
+        private Bunifu.UI.WinForms.BunifuLabel txtSatnicaValidator;
+        private System.Windows.Forms.PictureBox pictureDatumOdigravanjaValidator;
+        private System.Windows.Forms.PictureBox pictureValidacijaPrvaPOstavaka;
+        private Bunifu.UI.WinForms.BunifuLabel txtPrvaPostavaValidator;
+        private Bunifu.UI.WinForms.BunifuLabel txtKlupaValidator;
+        private System.Windows.Forms.PictureBox pictureKlupaValidator;
+        private System.Windows.Forms.PictureBox gifLoader;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private Bunifu.UI.WinForms.BunifuLabel txtProtivnikValidator;
+        private Bunifu.UI.WinForms.BunifuLabel txtVrstaUtakmiceValidator;
+        private Bunifu.UI.WinForms.BunifuLabel txtTakmicenjeValidator;
+        private Bunifu.UI.WinForms.BunifuLabel txtStadionValidator;
+        private Bunifu.UI.WinForms.BunifuLabel txtKapitenValidator;
+        private System.Windows.Forms.PictureBox pictureProtivnikSlikaValidator;
+        private System.Windows.Forms.PictureBox pictureTakmicenjeSlikaValidator;
+        private System.Windows.Forms.PictureBox pictureKapitenSlikaValidator;
+        private System.Windows.Forms.PictureBox pictureVrstaUtakmiceSlikaValidator;
+        private System.Windows.Forms.PictureBox pictureStadionSlikaValidator;
+        private Bunifu.UI.WinForms.BunifuLabel txtIgracSastavValidator;
+        private Bunifu.UI.WinForms.BunifuLabel txtIgracPozicijaValidator;
+        private System.Windows.Forms.PictureBox pictureIgracSastavSlikaValidator;
+        private System.Windows.Forms.PictureBox pictureIgracSastavPozicijaSlikaValidator;
     }
 }

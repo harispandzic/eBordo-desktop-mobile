@@ -1,4 +1,5 @@
-﻿using eBordo.WinUI.Helper;
+﻿using eBordo.WinUI.Forms.AdminPanel;
+using eBordo.WinUI.Helper;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,7 @@ namespace eBordo.WinUI.Forms.Login
 {
     public partial class frmLogin : Form
     {
+        bool isEmailValidated = false, isPasswordValidated = false;
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -49,6 +51,10 @@ namespace eBordo.WinUI.Forms.Login
                     Forms.Igrač.fromAdminPanel prikazIgraca = new Forms.Igrač.fromAdminPanel();
                     this.Hide();
                     prikazIgraca.Show();
+
+                    frmAbout_eBordo about = new frmAbout_eBordo();
+                    about.Show();
+                    about.BringToFront();
                 }
                 if (ApiService.ApiService.logovaniKorisnik.isTrener)
                 {
@@ -59,7 +65,7 @@ namespace eBordo.WinUI.Forms.Login
             }
             catch
             {
-                PosaljiNotifikaciju.notificationSwitch(bnfSnackBar, this, TipNotifikacije.NEISPRAVNI_KREDENCIJALI);             
+                PosaljiNotifikaciju.notificationSwitch(bnfSnackBar, this, TipNotifikacije.NEISPRAVNI_KREDENCIJALI);
                 loader.Hide();
                 btnPrijava.Show();
             } 
@@ -68,6 +74,21 @@ namespace eBordo.WinUI.Forms.Login
         private void frmLogin_Load(object sender, EventArgs e)
         {
             loader.Hide();
+        }
+
+        private void txtKorisnickoIme_TextChanged(object sender, EventArgs e)
+        {
+            isEmailValidated = Validacija.ValidirajInputString(txtKorisnickoIme, txtKorisnickoImeValidator, Field.KORISNICKO_IME);
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtLozinka_TextChanged(object sender, EventArgs e)
+        {
+            isPasswordValidated = Validacija.ValidirajInputString(txtLozinka, txtLozinkaValidator, Field.PASSWORD);
         }
     }
 }
