@@ -130,6 +130,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.Controls.Add(this.pictureIgracSlika);
             this.Controls.Add(this.lblPozicija);
             this.Controls.Add(this.lblImePrezime);
+            this.Margin = new System.Windows.Forms.Padding(3, 3, 3, 1);
             this.Name = "frmUtakmicaSastavKartica_detaljiUtakmice";
             this.Size = new System.Drawing.Size(235, 35);
             this.Load += new System.EventHandler(this.frmUtakmicaSastavKartica_detaljiUtakmice_Load);

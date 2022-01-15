@@ -808,9 +808,9 @@ namespace eBordo.WinUI.Forms.AdminPanel.Upravljanje_treningom
             this.lblOdradjen.Location = new System.Drawing.Point(12, 192);
             this.lblOdradjen.Name = "lblOdradjen";
             this.lblOdradjen.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblOdradjen.Size = new System.Drawing.Size(37, 16);
+            this.lblOdradjen.Size = new System.Drawing.Size(41, 16);
             this.lblOdradjen.TabIndex = 366;
-            this.lblOdradjen.Text = "Odrađen";
+            this.lblOdradjen.Text = "ODRAĐEN";
             this.lblOdradjen.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblOdradjen.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -844,7 +844,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Upravljanje_treningom
             // 
             this.pictureLokacijaTreningaValidator.BackgroundImage = global::eBordo.WinUI.Properties.Resources.eBordo_required3;
             this.pictureLokacijaTreningaValidator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureLokacijaTreningaValidator.Location = new System.Drawing.Point(140, 101);
+            this.pictureLokacijaTreningaValidator.Location = new System.Drawing.Point(134, 101);
             this.pictureLokacijaTreningaValidator.Name = "pictureLokacijaTreningaValidator";
             this.pictureLokacijaTreningaValidator.Size = new System.Drawing.Size(10, 10);
             this.pictureLokacijaTreningaValidator.TabIndex = 382;

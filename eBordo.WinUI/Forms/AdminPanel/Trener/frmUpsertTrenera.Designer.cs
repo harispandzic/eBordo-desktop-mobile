@@ -1853,7 +1853,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             // 
             this.pictureFormacijaSlikaValidator.BackgroundImage = global::eBordo.WinUI.Properties.Resources.eBordo_required3;
             this.pictureFormacijaSlikaValidator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureFormacijaSlikaValidator.Location = new System.Drawing.Point(421, 304);
+            this.pictureFormacijaSlikaValidator.Location = new System.Drawing.Point(420, 304);
             this.pictureFormacijaSlikaValidator.Name = "pictureFormacijaSlikaValidator";
             this.pictureFormacijaSlikaValidator.Size = new System.Drawing.Size(10, 10);
             this.pictureFormacijaSlikaValidator.TabIndex = 378;
@@ -1863,7 +1863,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             // 
             this.pictureLicencaSlikaValidator.BackgroundImage = global::eBordo.WinUI.Properties.Resources.eBordo_required3;
             this.pictureLicencaSlikaValidator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureLicencaSlikaValidator.Location = new System.Drawing.Point(629, 304);
+            this.pictureLicencaSlikaValidator.Location = new System.Drawing.Point(628, 304);
             this.pictureLicencaSlikaValidator.Name = "pictureLicencaSlikaValidator";
             this.pictureLicencaSlikaValidator.Size = new System.Drawing.Size(10, 10);
             this.pictureLicencaSlikaValidator.TabIndex = 379;

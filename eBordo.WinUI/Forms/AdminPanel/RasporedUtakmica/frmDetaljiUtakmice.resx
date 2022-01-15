@@ -201,6 +201,17 @@
         SUVORK5CYII=
 </value>
   </data>
+  <data name="btnSaveUpdate.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACgAAAAhCAYAAACr8emlAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEHSURBVFhH7Zg9CgJBDEan2YmlR7C09CTWHsHGswiewStY
+        6szYeARrCxEUEQUVFDNmd/1D0gV2p8jAazZh9/ENWyTm96DLehjsjNjFALFK8m9igAU66L90vic60yyK
+        AY7R8y+oChI9Y8iW0UHrpUfJkVzdYv+Q04qCa9C1woCsT1xTnTw8XMlrVKbHNKQAers26OHCFVPBcA9T
+        QgWlqKAUFZSiglJUUIoKSlFBKSooRQWlqKCUfOy8c4VUIMFsyRVSgObio8E5DGmKTy9FX6w/JvniqIHB
+        btimGiG5w2eBFF3WoTi36OHGNVdKmdwep7ZbyL1PsYKb23Gdq5D8h6XbnEVn26WVMU+uHRW8JuJcMwAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAUAAAAAAAEAIABdrgAAVgAAADAwAAABACAAqCUAALOuAAAgIAAAAQAgAKgQAABb1AAAGBgAAAEA

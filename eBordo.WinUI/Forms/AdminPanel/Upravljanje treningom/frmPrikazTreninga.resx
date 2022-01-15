@@ -223,4 +223,15 @@
         YII=
 </value>
   </data>
+  <data name="btnSaveUpdate.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACgAAAAgCAYAAABgrToAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAENSURBVFhH7ZixagJBEIa3uR1LH8HS0iex9hHS5FkEnyGv
+        kDLurk0eIXWKICgiBmJAcdb/7jQJYbqBuy1m4WtuhruPf7lixv09HKoZJ78E25wod0n9TU70yoEebjq/
+        Jwc3bIqJDjnKL+gKiH5xqt5yoNFND8lBrm+x/8DpHcENcK30COtPqalPLpG+4bVo0xMaSoCj/3Ac6SgV
+        S8FJD0vCBLWYoBYT1GKCWkxQiwlqMUEtJqjFBLWUL4ip7iwVSgGCmOKFQglg7Dw4XtEcQ3J5KcZmu/Bc
+        72UGmODXYlOPQG7/s5/JoZogzg2G+JPU3Cltcjt+8dNG7n6aDdfKP/W5aah/WNzmMgc/bq2cuwLH+aa9
+        0Vs9XQAAAABJRU5ErkJggg==
+</value>
+  </data>
 </root>

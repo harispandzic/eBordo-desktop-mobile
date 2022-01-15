@@ -49,11 +49,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.lblOpisUtakmice = new System.Windows.Forms.Label();
             this.loader = new Bunifu.UI.WinForms.BunifuLoader();
             this.panelDelete = new System.Windows.Forms.Panel();
+            this.gifLoader = new System.Windows.Forms.PictureBox();
             this.pictureDres = new System.Windows.Forms.PictureBox();
             this.brojDana = new System.Windows.Forms.Label();
             this.pictureStatus = new System.Windows.Forms.PictureBox();
             this.txtStatus = new System.Windows.Forms.Label();
-            this.gifLoader = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.grbGost)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grbDomacin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnView)).BeginInit();
@@ -66,9 +66,9 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panelDelete.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gifLoader)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureDres)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureStatus)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gifLoader)).BeginInit();
             this.SuspendLayout();
             // 
             // grbGost
@@ -307,6 +307,18 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.panelDelete.TabIndex = 61;
             this.panelDelete.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDelete_Paint);
             // 
+            // gifLoader
+            // 
+            this.gifLoader.BackColor = System.Drawing.Color.Transparent;
+            this.gifLoader.BackgroundImage = global::eBordo.WinUI.Properties.Resources.giphy;
+            this.gifLoader.Image = global::eBordo.WinUI.Properties.Resources.giphy;
+            this.gifLoader.Location = new System.Drawing.Point(105, 81);
+            this.gifLoader.Name = "gifLoader";
+            this.gifLoader.Size = new System.Drawing.Size(74, 45);
+            this.gifLoader.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.gifLoader.TabIndex = 326;
+            this.gifLoader.TabStop = false;
+            // 
             // pictureDres
             // 
             this.pictureDres.BackColor = System.Drawing.Color.Transparent;
@@ -353,18 +365,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.txtStatus.Text = "POBJEDA";
             this.txtStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // gifLoader
-            // 
-            this.gifLoader.BackColor = System.Drawing.Color.Transparent;
-            this.gifLoader.BackgroundImage = global::eBordo.WinUI.Properties.Resources.giphy;
-            this.gifLoader.Image = global::eBordo.WinUI.Properties.Resources.giphy;
-            this.gifLoader.Location = new System.Drawing.Point(105, 81);
-            this.gifLoader.Name = "gifLoader";
-            this.gifLoader.Size = new System.Drawing.Size(74, 45);
-            this.gifLoader.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.gifLoader.TabIndex = 326;
-            this.gifLoader.TabStop = false;
-            // 
             // frmUtakmicaKartica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -409,9 +409,9 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panelDelete.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gifLoader)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureDres)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureStatus)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gifLoader)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -83,7 +83,8 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
                 }
                 cmbIgracUtakmice.Enabled = false;
                 pictureSlikaUtakmicaValidator.BackgroundImage = Properties.Resources.eBordo_success_notification;
-                pictureSlikaUtakmicaValidator.BackgroundImageLayout = ImageLayout.Zoom;
+                pictureSlikaUtakmicaValidator.BackgroundImageLayout = ImageLayout.Stretch;
+                isSlikaUtakmiceValidated = true;
                 LoadPodaci();
             }
             else
@@ -223,7 +224,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
                 grbGost.BackgroundImage = byteToImage.ConvertByteToImage(_utakmica.protivnik.grb);
                 grbGost.BackgroundImageLayout = ImageLayout.Zoom;
                 lblGost.Text = _utakmica.protivnik.nazivKluba.ToUpper();
-                pictureGostujucaDomaca.BackgroundImage = Properties.Resources.home;
+                pictureGostujucaDomaca.BackgroundImage = Properties.Resources.home_bordo;
             }
             else if (_utakmica.vrstaUtakmice == "Gostujuća")
             {
@@ -233,7 +234,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
                 grbGost.BackgroundImage = Properties.Resources.grbSarajevo;
                 grbGost.BackgroundImageLayout = ImageLayout.Zoom;
                 lblGost.Text = "FK SARAJEVO";
-                pictureGostujucaDomaca.BackgroundImage = Properties.Resources.away;
+                pictureGostujucaDomaca.BackgroundImage = Properties.Resources.away_bordo;
             }
             lblOpisUtakmice.Text = _utakmica.opisUtakmice.ToUpper();
             lblStadion.Text = _utakmica.stadion.nazivStadiona.ToUpper();
@@ -433,13 +434,27 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
         private bool ValidirajFormu()
         {
             bool isUspjesno = true;
-            if (!isSlikaUtakmiceValidated || !isGoloviGostValidated || !isGoloviDomacinValidated || !isIgracUtakmiceValidated)
+            if(_izvještaj != null)
             {
-                isUspjesno = false;
+                if (!isSlikaUtakmiceValidated || !isIgracUtakmiceValidated)
+                {
+                    isUspjesno = false;
+                }
+                else
+                {
+                    isUspjesno = true;
+                }
             }
             else
             {
-                isUspjesno = true;
+                if (!isSlikaUtakmiceValidated || !isGoloviGostValidated || !isGoloviDomacinValidated || !isIgracUtakmiceValidated)
+                {
+                    isUspjesno = false;
+                }
+                else
+                {
+                    isUspjesno = true;
+                }
             }
 
             return isUspjesno;

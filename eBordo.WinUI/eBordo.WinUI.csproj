@@ -312,6 +312,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiService\ApiService.cs" />
+    <Compile Include="Forms\AdminPanel\frmAbout_eBordo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\frmAbout_eBordo.Designer.cs">
+      <DependentUpon>frmAbout_eBordo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AdminPanel\frmAdminPanel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -360,11 +366,23 @@
     <Compile Include="Forms\AdminPanel\Odigrane utakmice\frmIgracNastupKartica.Designer.cs">
       <DependentUpon>frmIgracNastupKartica.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AdminPanel\Odigrane utakmice\frmIgracUtakmice_detaljiUtakmice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Odigrane utakmice\frmIgracUtakmice_detaljiUtakmice.Designer.cs">
+      <DependentUpon>frmIgracUtakmice_detaljiUtakmice.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AdminPanel\Odigrane utakmice\frmIzmjenaKartica.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forms\AdminPanel\Odigrane utakmice\frmIzmjenaKartica.Designer.cs">
       <DependentUpon>frmIzmjenaKartica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Odigrane utakmice\frmIzmjeneKartica_detalji.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Odigrane utakmice\frmIzmjeneKartica_detalji.Designer.cs">
+      <DependentUpon>frmIzmjeneKartica_detalji.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\AdminPanel\Odigrane utakmice\frmIzvjestajKartica.cs">
       <SubType>UserControl</SubType>
@@ -372,11 +390,41 @@
     <Compile Include="Forms\AdminPanel\Odigrane utakmice\frmIzvjestajKartica.Designer.cs">
       <DependentUpon>frmIzvjestajKartica.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AdminPanel\Odigrane utakmice\frmKratkiIzvjestajKartica.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Odigrane utakmice\frmKratkiIzvjestajKartica.Designer.cs">
+      <DependentUpon>frmKratkiIzvjestajKartica.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AdminPanel\Odigrane utakmice\frmOdaberiUtakmicu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\AdminPanel\Odigrane utakmice\frmOdaberiUtakmicu.Designer.cs">
       <DependentUpon>frmOdaberiUtakmicu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Odigrane utakmice\frmPictures\frmAsistencijeControl.cs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Odigrane utakmice\frmPictures\frmAsistencijeControl.cs.Designer.cs">
+      <DependentUpon>frmAsistencijeControl.cs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Odigrane utakmice\frmPictures\frmCrveniKartonControl.cs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Odigrane utakmice\frmPictures\frmCrveniKartonControl.cs.Designer.cs">
+      <DependentUpon>frmCrveniKartonControl.cs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Odigrane utakmice\frmPictures\frmGoloviControl.cs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Odigrane utakmice\frmPictures\frmGoloviControl.cs.Designer.cs">
+      <DependentUpon>frmGoloviControl.cs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Odigrane utakmice\frmPictures\frmZutiKartonControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Odigrane utakmice\frmPictures\frmZutiKartonControl.Designer.cs">
+      <DependentUpon>frmZutiKartonControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\AdminPanel\Odigrane utakmice\frmPrikazOdigranihUtakmica.cs">
       <SubType>UserControl</SubType>
@@ -580,6 +628,9 @@
     <Compile Include="Helper\Validacija.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\AdminPanel\frmAbout_eBordo.resx">
+      <DependentUpon>frmAbout_eBordo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminPanel\frmAdminPanel.resx">
       <DependentUpon>frmAdminPanel.cs</DependentUpon>
     </EmbeddedResource>
@@ -595,20 +646,44 @@
     <EmbeddedResource Include="Forms\AdminPanel\Igrač\frmUpsertIgraca.resx">
       <DependentUpon>frmUpsertIgraca.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminPanel\Odigrane utakmice\frmDetaljiOdigraneUtakmice.resx">
+      <DependentUpon>frmDetaljiOdigraneUtakmice.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminPanel\Odigrane utakmice\frmDetaljneOcjeneIgraca.resx">
       <DependentUpon>frmDetaljneOcjeneIgraca.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminPanel\Odigrane utakmice\frmIgracNastupKartica.resx">
       <DependentUpon>frmIgracNastupKartica.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminPanel\Odigrane utakmice\frmIgracUtakmice_detaljiUtakmice.resx">
+      <DependentUpon>frmIgracUtakmice_detaljiUtakmice.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminPanel\Odigrane utakmice\frmIzmjenaKartica.resx">
       <DependentUpon>frmIzmjenaKartica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminPanel\Odigrane utakmice\frmIzmjeneKartica_detalji.resx">
+      <DependentUpon>frmIzmjeneKartica_detalji.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminPanel\Odigrane utakmice\frmIzvjestajKartica.resx">
       <DependentUpon>frmIzvjestajKartica.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminPanel\Odigrane utakmice\frmKratkiIzvjestajKartica.resx">
+      <DependentUpon>frmKratkiIzvjestajKartica.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminPanel\Odigrane utakmice\frmOdaberiUtakmicu.resx">
       <DependentUpon>frmOdaberiUtakmicu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminPanel\Odigrane utakmice\frmPictures\frmAsistencijeControl.cs.resx">
+      <DependentUpon>frmAsistencijeControl.cs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminPanel\Odigrane utakmice\frmPictures\frmCrveniKartonControl.cs.resx">
+      <DependentUpon>frmCrveniKartonControl.cs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminPanel\Odigrane utakmice\frmPictures\frmGoloviControl.cs.resx">
+      <DependentUpon>frmGoloviControl.cs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminPanel\Odigrane utakmice\frmPictures\frmZutiKartonControl.resx">
+      <DependentUpon>frmZutiKartonControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminPanel\Odigrane utakmice\frmPrikazOdigranihUtakmica.resx">
       <DependentUpon>frmPrikazOdigranihUtakmica.cs</DependentUpon>
@@ -1120,6 +1195,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\giphy1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eBordo_GITHUB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eBordo_linkedin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mailNaHaris.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eBordo_infoAplikacija.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eBordo_DONEDONEDONE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eBordo_bestPlaer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eBordo_infoBlack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pdf.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets" Condition="Exists('..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets')" />

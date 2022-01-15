@@ -251,7 +251,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             // 
             this.pictureOdaberiUtakmicuValidator.BackgroundImage = global::eBordo.WinUI.Properties.Resources.eBordo_required3;
             this.pictureOdaberiUtakmicuValidator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureOdaberiUtakmicuValidator.Location = new System.Drawing.Point(270, 23);
+            this.pictureOdaberiUtakmicuValidator.Location = new System.Drawing.Point(266, 23);
             this.pictureOdaberiUtakmicuValidator.Name = "pictureOdaberiUtakmicuValidator";
             this.pictureOdaberiUtakmicuValidator.Size = new System.Drawing.Size(10, 10);
             this.pictureOdaberiUtakmicuValidator.TabIndex = 382;

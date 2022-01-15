@@ -54,7 +54,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             // 
             this.txtIgracInPrezime.BackColor = System.Drawing.Color.Transparent;
             this.txtIgracInPrezime.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIgracInPrezime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.txtIgracInPrezime.ForeColor = System.Drawing.Color.Black;
             this.txtIgracInPrezime.Location = new System.Drawing.Point(172, 9);
             this.txtIgracInPrezime.Name = "txtIgracInPrezime";
             this.txtIgracInPrezime.Size = new System.Drawing.Size(84, 23);
@@ -66,7 +66,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             // 
             this.txtIgracOutPrezime.BackColor = System.Drawing.Color.Transparent;
             this.txtIgracOutPrezime.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIgracOutPrezime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.txtIgracOutPrezime.ForeColor = System.Drawing.Color.Black;
             this.txtIgracOutPrezime.Location = new System.Drawing.Point(72, 9);
             this.txtIgracOutPrezime.Name = "txtIgracOutPrezime";
             this.txtIgracOutPrezime.Size = new System.Drawing.Size(80, 23);
@@ -78,7 +78,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             // 
             this.txtRazlogIzmjene.BackColor = System.Drawing.Color.Transparent;
             this.txtRazlogIzmjene.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRazlogIzmjene.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.txtRazlogIzmjene.ForeColor = System.Drawing.Color.Black;
             this.txtRazlogIzmjene.Location = new System.Drawing.Point(253, 9);
             this.txtRazlogIzmjene.Name = "txtRazlogIzmjene";
             this.txtRazlogIzmjene.Size = new System.Drawing.Size(56, 23);

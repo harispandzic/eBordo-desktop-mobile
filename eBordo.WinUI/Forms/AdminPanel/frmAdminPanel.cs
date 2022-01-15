@@ -1,4 +1,5 @@
-﻿using eBordo.WinUI.Helper;
+﻿using eBordo.WinUI.Forms.AdminPanel;
+using eBordo.WinUI.Helper;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,9 +24,11 @@ namespace eBordo.WinUI.Forms.Igrač
         {
             hideActiveLabels("Početna");
             igracTabs.SetPage("tabPocetna");
+
             //korisnickaFotografija.Image = byteToImage.ConvertByteToImage(ApiService.ApiService.logovaniKorisnik.Slika);
             //lblLogovaniKorisnik.Text = (ApiService.ApiService.logovaniKorisnik.ime + " " + ApiService.ApiService.logovaniKorisnik.prezime).ToUpper();
             //PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.PORUKA_DOBRODOSLICE);
+         
         }
         void hideActiveLabels(string opcija)
         {
@@ -155,6 +158,12 @@ namespace eBordo.WinUI.Forms.Igrač
 
         private void iconPictureBox8_Click(object sender, EventArgs e)
         {
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            frmAbout_eBordo info = new frmAbout_eBordo();
+            info.Show();
         }
     }
 }

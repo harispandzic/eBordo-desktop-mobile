@@ -10,8 +10,6 @@ namespace eBordo.Model.Requests.Izvještaj
     public class IzvjestajUpdateRequest
     {
         public string zapisnik { get; set; }
-
-        [Required]
         public int utakmicaId { get; set; }
         public ICollection<UtakmicaNastupUpdateRequest> utakmicaNastup { get; set; }
         public ICollection<UtakmicaIzmjenaUpdateRequest> izmjene { get; set; }

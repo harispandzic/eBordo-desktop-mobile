@@ -36,29 +36,29 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             this.btnView = new System.Windows.Forms.PictureBox();
             this.btnDelete = new System.Windows.Forms.PictureBox();
             this.btnEdit = new System.Windows.Forms.PictureBox();
-            this.pictureCrveniKartoni = new System.Windows.Forms.PictureBox();
-            this.pictureZutiKartoni = new System.Windows.Forms.PictureBox();
-            this.pictureAsistencije = new System.Windows.Forms.PictureBox();
-            this.pictureGolovi = new System.Windows.Forms.PictureBox();
             this.pictureNastupi = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.ratingSnaga = new Bunifu.UI.WinForms.BunifuRating();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
             this.txtBrojDresa = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.pictureAsistencije = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pictureGolovi = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.pictureCrveniKartoni = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureZutiKartoni = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureIgracSlika)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureCrveniKartoni)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureZutiKartoni)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureAsistencije)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureGolovi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureNastupi)).BeginInit();
             this.bunifuPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureAsistencije)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureGolovi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureCrveniKartoni)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureZutiKartoni)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureIgracSlika
@@ -81,7 +81,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             // 
             this.lblPozicija.BackColor = System.Drawing.Color.Transparent;
             this.lblPozicija.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPozicija.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.lblPozicija.ForeColor = System.Drawing.Color.Black;
             this.lblPozicija.Location = new System.Drawing.Point(184, 8);
             this.lblPozicija.Name = "lblPozicija";
             this.lblPozicija.Size = new System.Drawing.Size(34, 23);
@@ -93,7 +93,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             // 
             this.txtImePrezimeBrojDresa.BackColor = System.Drawing.Color.Transparent;
             this.txtImePrezimeBrojDresa.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtImePrezimeBrojDresa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.txtImePrezimeBrojDresa.ForeColor = System.Drawing.Color.Black;
             this.txtImePrezimeBrojDresa.Location = new System.Drawing.Point(73, 8);
             this.txtImePrezimeBrojDresa.Name = "txtImePrezimeBrojDresa";
             this.txtImePrezimeBrojDresa.Size = new System.Drawing.Size(116, 23);
@@ -137,50 +137,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             this.btnEdit.TabStop = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // pictureCrveniKartoni
-            // 
-            this.pictureCrveniKartoni.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureCrveniKartoni.Image = global::eBordo.WinUI.Properties.Resources.ezgif_com_gif_maker__3_;
-            this.pictureCrveniKartoni.Location = new System.Drawing.Point(327, 6);
-            this.pictureCrveniKartoni.Name = "pictureCrveniKartoni";
-            this.pictureCrveniKartoni.Size = new System.Drawing.Size(16, 25);
-            this.pictureCrveniKartoni.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureCrveniKartoni.TabIndex = 156;
-            this.pictureCrveniKartoni.TabStop = false;
-            // 
-            // pictureZutiKartoni
-            // 
-            this.pictureZutiKartoni.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureZutiKartoni.Image = global::eBordo.WinUI.Properties.Resources.ezgif_com_gif_maker__2_;
-            this.pictureZutiKartoni.Location = new System.Drawing.Point(288, 6);
-            this.pictureZutiKartoni.Name = "pictureZutiKartoni";
-            this.pictureZutiKartoni.Size = new System.Drawing.Size(16, 25);
-            this.pictureZutiKartoni.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureZutiKartoni.TabIndex = 155;
-            this.pictureZutiKartoni.TabStop = false;
-            // 
-            // pictureAsistencije
-            // 
-            this.pictureAsistencije.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureAsistencije.Image = global::eBordo.WinUI.Properties.Resources.ezgif_com_gif_maker__1_;
-            this.pictureAsistencije.Location = new System.Drawing.Point(410, 6);
-            this.pictureAsistencije.Name = "pictureAsistencije";
-            this.pictureAsistencije.Size = new System.Drawing.Size(16, 25);
-            this.pictureAsistencije.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureAsistencije.TabIndex = 154;
-            this.pictureAsistencije.TabStop = false;
-            // 
-            // pictureGolovi
-            // 
-            this.pictureGolovi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureGolovi.Image = global::eBordo.WinUI.Properties.Resources.ezgif_com_gif_maker;
-            this.pictureGolovi.Location = new System.Drawing.Point(368, 6);
-            this.pictureGolovi.Name = "pictureGolovi";
-            this.pictureGolovi.Size = new System.Drawing.Size(16, 25);
-            this.pictureGolovi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureGolovi.TabIndex = 153;
-            this.pictureGolovi.TabStop = false;
-            // 
             // pictureNastupi
             // 
             this.pictureNastupi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -196,61 +152,13 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(253, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 23);
             this.label1.TabIndex = 157;
             this.label1.Text = "90";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
-            this.label2.Location = new System.Drawing.Point(305, 8);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(16, 23);
-            this.label2.TabIndex = 158;
-            this.label2.Text = "2";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
-            this.label3.Location = new System.Drawing.Point(385, 8);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(19, 23);
-            this.label3.TabIndex = 159;
-            this.label3.Text = "3";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label4
-            // 
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
-            this.label4.Location = new System.Drawing.Point(427, 8);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(23, 23);
-            this.label4.TabIndex = 160;
-            this.label4.Text = "1";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label5
-            // 
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
-            this.label5.Location = new System.Drawing.Point(345, 8);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(17, 23);
-            this.label5.TabIndex = 161;
-            this.label5.Text = "1";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ratingSnaga
             // 
@@ -302,6 +210,98 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             this.txtBrojDresa.Text = "#12";
             this.txtBrojDresa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(427, 8);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(23, 23);
+            this.label4.TabIndex = 160;
+            this.label4.Text = "1";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pictureAsistencije
+            // 
+            this.pictureAsistencije.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureAsistencije.Image = global::eBordo.WinUI.Properties.Resources.ezgif_com_gif_maker__1_;
+            this.pictureAsistencije.Location = new System.Drawing.Point(410, 6);
+            this.pictureAsistencije.Name = "pictureAsistencije";
+            this.pictureAsistencije.Size = new System.Drawing.Size(16, 25);
+            this.pictureAsistencije.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureAsistencije.TabIndex = 154;
+            this.pictureAsistencije.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(385, 8);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(19, 23);
+            this.label3.TabIndex = 159;
+            this.label3.Text = "3";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pictureGolovi
+            // 
+            this.pictureGolovi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureGolovi.Image = global::eBordo.WinUI.Properties.Resources.ezgif_com_gif_maker;
+            this.pictureGolovi.Location = new System.Drawing.Point(368, 6);
+            this.pictureGolovi.Name = "pictureGolovi";
+            this.pictureGolovi.Size = new System.Drawing.Size(16, 25);
+            this.pictureGolovi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureGolovi.TabIndex = 153;
+            this.pictureGolovi.TabStop = false;
+            // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(345, 8);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(17, 23);
+            this.label5.TabIndex = 161;
+            this.label5.Text = "1";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pictureCrveniKartoni
+            // 
+            this.pictureCrveniKartoni.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureCrveniKartoni.Image = global::eBordo.WinUI.Properties.Resources.ezgif_com_gif_maker__3_;
+            this.pictureCrveniKartoni.Location = new System.Drawing.Point(327, 6);
+            this.pictureCrveniKartoni.Name = "pictureCrveniKartoni";
+            this.pictureCrveniKartoni.Size = new System.Drawing.Size(16, 25);
+            this.pictureCrveniKartoni.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureCrveniKartoni.TabIndex = 156;
+            this.pictureCrveniKartoni.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(305, 8);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(16, 23);
+            this.label2.TabIndex = 158;
+            this.label2.Text = "2";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pictureZutiKartoni
+            // 
+            this.pictureZutiKartoni.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureZutiKartoni.Image = global::eBordo.WinUI.Properties.Resources.ezgif_com_gif_maker__2_;
+            this.pictureZutiKartoni.Location = new System.Drawing.Point(288, 6);
+            this.pictureZutiKartoni.Name = "pictureZutiKartoni";
+            this.pictureZutiKartoni.Size = new System.Drawing.Size(16, 25);
+            this.pictureZutiKartoni.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureZutiKartoni.TabIndex = 155;
+            this.pictureZutiKartoni.TabStop = false;
+            // 
             // frmIgracNastupKartica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -332,12 +332,12 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             ((System.ComponentModel.ISupportInitialize)(this.btnView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureCrveniKartoni)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureZutiKartoni)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureAsistencije)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureGolovi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureNastupi)).EndInit();
             this.bunifuPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureAsistencije)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureGolovi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureCrveniKartoni)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureZutiKartoni)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -350,18 +350,18 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
         private System.Windows.Forms.PictureBox btnView;
         private System.Windows.Forms.PictureBox btnDelete;
         private System.Windows.Forms.PictureBox btnEdit;
-        private System.Windows.Forms.PictureBox pictureCrveniKartoni;
-        private System.Windows.Forms.PictureBox pictureZutiKartoni;
-        private System.Windows.Forms.PictureBox pictureAsistencije;
-        private System.Windows.Forms.PictureBox pictureGolovi;
         private System.Windows.Forms.PictureBox pictureNastupi;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private Bunifu.UI.WinForms.BunifuRating ratingSnaga;
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel1;
         private System.Windows.Forms.Label txtBrojDresa;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureAsistencije;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pictureGolovi;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.PictureBox pictureCrveniKartoni;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureZutiKartoni;
     }
 }

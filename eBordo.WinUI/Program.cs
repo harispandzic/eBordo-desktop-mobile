@@ -1,4 +1,5 @@
-﻿using System;
+﻿using eBordo.WinUI.Forms.AdminPanel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,7 +18,7 @@ namespace eBordo.WinUI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Forms.Login.frmLogin());
-            Application.Run(new Forms.Igrač.fromAdminPanel());
+            Application.Run(new frmAbout_eBordo());
         }
     }
 }

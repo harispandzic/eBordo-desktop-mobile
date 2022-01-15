@@ -57,7 +57,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             int nWidthEllipse, // height of ellipse
             int nHeightEllipse // width of ellipse
         );
-        public frmIgracNastupKartica(frmUpsertIzvjestaj upsertIzvjestaj, FlowLayoutPanel flowPanelOcjene, List<Model.Models.Igrac> igraciSastav, bool isUpdate)
+        public frmIgracNastupKartica(frmUpsertIzvjestaj upsertIzvjestaj = null, FlowLayoutPanel flowPanelOcjene = null, List<Model.Models.Igrac> igraciSastav = null, bool isUpdate = false)
         {
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 632, 37, 8, 8));
             InitializeComponent();
@@ -83,26 +83,35 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
         private async void btnDelete_Click(object sender, EventArgs e)
         {
             int igracId = 0;
-            for (int i = 0; i < _flowPanelOcjene.Controls.Count; i++)
+            if(_flowPanelOcjene != null)
             {
-                var control = (frmIgracNastupKartica)_flowPanelOcjene.Controls[i];
-                if (control.igracId == this.igracId)
+                for (int i = 0; i < _flowPanelOcjene.Controls.Count; i++)
                 {
-                    igracId = control.igracId;
-                    _flowPanelOcjene.Controls.Remove(control);
-                    if (_isUpdate)
+                    var control = (frmIgracNastupKartica)_flowPanelOcjene.Controls[i];
+                    if (control.igracId == this.igracId)
                     {
-                        await _nastupiApi.DeleteById<Model.Models.UtakmicaNastup>(control.utakmicaNastupId);
+                        igracId = control.igracId;
+                        _flowPanelOcjene.Controls.Remove(control);
+                        if (_isUpdate)
+                        {
+                            await _nastupiApi.DeleteById<Model.Models.UtakmicaNastup>(control.utakmicaNastupId);
+                        }
                     }
                 }
+                if(_upsertIzvjestaj != null)
+                {
+                    _upsertIzvjestaj.filterIgraci(TipFiltera.Brisanje, igracId);
+                    _upsertIzvjestaj.UpdateBrojEvidentiranih();
+                }
             }
-            _upsertIzvjestaj.filterIgraci(TipFiltera.Brisanje, igracId);
-            _upsertIzvjestaj.UpdateBrojEvidentiranih();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            _upsertIzvjestaj.filterIgraci(TipFiltera.Uredjivanje, igracId);
+            if(_upsertIzvjestaj != null)
+            {
+                _upsertIzvjestaj.filterIgraci(TipFiltera.Uredjivanje, igracId);
+            }
         }
 
         private void btnView_Click(object sender, EventArgs e)

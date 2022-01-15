@@ -37,6 +37,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.lblNaslovStranice = new Bunifu.UI.WinForms.BunifuLabel();
             this.cmbPozicije = new Bunifu.UI.WinForms.BunifuDropdown();
             this.dataLoader = new Bunifu.UI.WinForms.BunifuLoader();
@@ -55,6 +56,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.checkBoxZavrseniTreninzi = new Bunifu.UI.WinForms.BunifuCheckBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.gifLoader = new System.Windows.Forms.PictureBox();
+            this.btnSaveUpdate = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             ((System.ComponentModel.ISupportInitialize)(this.noSearchResult)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gifLoader)).BeginInit();
@@ -113,9 +115,9 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.cmbPozicije.ItemHighLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.cmbPozicije.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cmbPozicije.ItemTopMargin = 3;
-            this.cmbPozicije.Location = new System.Drawing.Point(236, 70);
+            this.cmbPozicije.Location = new System.Drawing.Point(208, 70);
             this.cmbPozicije.Name = "cmbPozicije";
-            this.cmbPozicije.Size = new System.Drawing.Size(165, 32);
+            this.cmbPozicije.Size = new System.Drawing.Size(122, 32);
             this.cmbPozicije.TabIndex = 2;
             this.cmbPozicije.Text = "Pozicija";
             this.cmbPozicije.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
@@ -596,7 +598,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.txtImePrezime.SelectionLength = 0;
             this.txtImePrezime.SelectionStart = 0;
             this.txtImePrezime.ShortcutsEnabled = true;
-            this.txtImePrezime.Size = new System.Drawing.Size(165, 34);
+            this.txtImePrezime.Size = new System.Drawing.Size(137, 34);
             this.txtImePrezime.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtImePrezime.TabIndex = 11;
             this.txtImePrezime.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -652,7 +654,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.Font = new System.Drawing.Font("Oswald", 9F);
             this.bunifuLabel1.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel1.Location = new System.Drawing.Point(431, 81);
+            this.bunifuLabel1.Location = new System.Drawing.Point(357, 81);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel1.Size = new System.Drawing.Size(40, 17);
@@ -680,7 +682,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.checkBoxZavrseniTreninzi.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Checked;
             this.checkBoxZavrseniTreninzi.Cursor = System.Windows.Forms.Cursors.Default;
             this.checkBoxZavrseniTreninzi.CustomCheckmarkImage = null;
-            this.checkBoxZavrseniTreninzi.Location = new System.Drawing.Point(407, 77);
+            this.checkBoxZavrseniTreninzi.Location = new System.Drawing.Point(333, 77);
             this.checkBoxZavrseniTreninzi.MinimumSize = new System.Drawing.Size(17, 17);
             this.checkBoxZavrseniTreninzi.Name = "checkBoxZavrseniTreninzi";
             this.checkBoxZavrseniTreninzi.OnCheck.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
@@ -740,10 +742,104 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.gifLoader.TabIndex = 323;
             this.gifLoader.TabStop = false;
             // 
+            // btnSaveUpdate
+            // 
+            this.btnSaveUpdate.AllowAnimations = true;
+            this.btnSaveUpdate.AllowMouseEffects = true;
+            this.btnSaveUpdate.AllowToggling = false;
+            this.btnSaveUpdate.AnimationSpeed = 200;
+            this.btnSaveUpdate.AutoGenerateColors = false;
+            this.btnSaveUpdate.AutoRoundBorders = false;
+            this.btnSaveUpdate.AutoSizeLeftIcon = false;
+            this.btnSaveUpdate.AutoSizeRightIcon = true;
+            this.btnSaveUpdate.BackColor = System.Drawing.Color.Transparent;
+            this.btnSaveUpdate.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
+            this.btnSaveUpdate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveUpdate.BackgroundImage")));
+            this.btnSaveUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnSaveUpdate.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSaveUpdate.ButtonText = "";
+            this.btnSaveUpdate.ButtonTextMarginLeft = 0;
+            this.btnSaveUpdate.ColorContrastOnClick = 45;
+            this.btnSaveUpdate.ColorContrastOnHover = 45;
+            this.btnSaveUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges3.BottomLeft = true;
+            borderEdges3.BottomRight = true;
+            borderEdges3.TopLeft = true;
+            borderEdges3.TopRight = true;
+            this.btnSaveUpdate.CustomizableEdges = borderEdges3;
+            this.btnSaveUpdate.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnSaveUpdate.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnSaveUpdate.DisabledFillColor = System.Drawing.Color.Empty;
+            this.btnSaveUpdate.DisabledForecolor = System.Drawing.Color.Empty;
+            this.btnSaveUpdate.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnSaveUpdate.Font = new System.Drawing.Font("Oswald", 9F);
+            this.btnSaveUpdate.ForeColor = System.Drawing.Color.Black;
+            this.btnSaveUpdate.IconLeft = global::eBordo.WinUI.Properties.Resources.pdf;
+            this.btnSaveUpdate.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSaveUpdate.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnSaveUpdate.IconLeftPadding = new System.Windows.Forms.Padding(11, 5, 3, 3);
+            this.btnSaveUpdate.IconMarginLeft = 11;
+            this.btnSaveUpdate.IconPadding = 10;
+            this.btnSaveUpdate.IconRight = null;
+            this.btnSaveUpdate.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSaveUpdate.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnSaveUpdate.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnSaveUpdate.IconSize = 20;
+            this.btnSaveUpdate.IdleBorderColor = System.Drawing.Color.Empty;
+            this.btnSaveUpdate.IdleBorderRadius = 0;
+            this.btnSaveUpdate.IdleBorderThickness = 0;
+            this.btnSaveUpdate.IdleFillColor = System.Drawing.Color.Empty;
+            this.btnSaveUpdate.IdleIconLeftImage = global::eBordo.WinUI.Properties.Resources.pdf;
+            this.btnSaveUpdate.IdleIconRightImage = null;
+            this.btnSaveUpdate.IndicateFocus = true;
+            this.btnSaveUpdate.Location = new System.Drawing.Point(434, 69);
+            this.btnSaveUpdate.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
+            this.btnSaveUpdate.Name = "btnSaveUpdate";
+            this.btnSaveUpdate.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnSaveUpdate.OnDisabledState.BorderRadius = 10;
+            this.btnSaveUpdate.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSaveUpdate.OnDisabledState.BorderThickness = 1;
+            this.btnSaveUpdate.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnSaveUpdate.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnSaveUpdate.OnDisabledState.IconLeftImage = null;
+            this.btnSaveUpdate.OnDisabledState.IconRightImage = null;
+            this.btnSaveUpdate.onHoverState.BorderColor = System.Drawing.Color.Empty;
+            this.btnSaveUpdate.onHoverState.BorderRadius = 10;
+            this.btnSaveUpdate.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSaveUpdate.onHoverState.BorderThickness = 1;
+            this.btnSaveUpdate.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnSaveUpdate.onHoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnSaveUpdate.onHoverState.IconLeftImage = global::eBordo.WinUI.Properties.Resources.pdf;
+            this.btnSaveUpdate.onHoverState.IconRightImage = null;
+            this.btnSaveUpdate.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnSaveUpdate.OnIdleState.BorderRadius = 10;
+            this.btnSaveUpdate.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSaveUpdate.OnIdleState.BorderThickness = 1;
+            this.btnSaveUpdate.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnSaveUpdate.OnIdleState.ForeColor = System.Drawing.Color.Black;
+            this.btnSaveUpdate.OnIdleState.IconLeftImage = global::eBordo.WinUI.Properties.Resources.pdf;
+            this.btnSaveUpdate.OnIdleState.IconRightImage = null;
+            this.btnSaveUpdate.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnSaveUpdate.OnPressedState.BorderRadius = 10;
+            this.btnSaveUpdate.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSaveUpdate.OnPressedState.BorderThickness = 1;
+            this.btnSaveUpdate.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnSaveUpdate.OnPressedState.ForeColor = System.Drawing.Color.Black;
+            this.btnSaveUpdate.OnPressedState.IconLeftImage = global::eBordo.WinUI.Properties.Resources.pdf;
+            this.btnSaveUpdate.OnPressedState.IconRightImage = null;
+            this.btnSaveUpdate.Size = new System.Drawing.Size(40, 33);
+            this.btnSaveUpdate.TabIndex = 326;
+            this.btnSaveUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSaveUpdate.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnSaveUpdate.TextMarginLeft = 0;
+            this.btnSaveUpdate.TextPadding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.btnSaveUpdate.UseDefaultRadiusAndThickness = true;
+            // 
             // frmPrikazIgraca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnSaveUpdate);
             this.Controls.Add(this.gifLoader);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.bunifuLabel1);
@@ -791,5 +887,6 @@ namespace eBordo.WinUI.Forms.AdminPanel
         private Bunifu.UI.WinForms.BunifuCheckBox checkBoxZavrseniTreninzi;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox gifLoader;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSaveUpdate;
     }
 }

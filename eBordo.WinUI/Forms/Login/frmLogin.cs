@@ -1,4 +1,5 @@
-﻿using eBordo.WinUI.Helper;
+﻿using eBordo.WinUI.Forms.AdminPanel;
+using eBordo.WinUI.Helper;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -50,6 +51,10 @@ namespace eBordo.WinUI.Forms.Login
                     Forms.Igrač.fromAdminPanel prikazIgraca = new Forms.Igrač.fromAdminPanel();
                     this.Hide();
                     prikazIgraca.Show();
+
+                    frmAbout_eBordo about = new frmAbout_eBordo();
+                    about.Show();
+                    about.BringToFront();
                 }
                 if (ApiService.ApiService.logovaniKorisnik.isTrener)
                 {

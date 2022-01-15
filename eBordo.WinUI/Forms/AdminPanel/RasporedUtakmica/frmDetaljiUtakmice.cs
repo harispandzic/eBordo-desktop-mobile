@@ -17,10 +17,9 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
         public Model.Models.Utakmica _odabranaUtakmica { get; set; }
         ByteToImage byteToImage = new ByteToImage();
 
-        public frmDetaljiUtakmice(Model.Models.Utakmica odabranaUtakmica, frmPrikazRasporedaUtakmicacs prikazUtakmica)
+        public frmDetaljiUtakmice(Model.Models.Utakmica odabranaUtakmica)
         {
             InitializeComponent();
-            _prikazUtakmica = prikazUtakmica;
             _odabranaUtakmica = odabranaUtakmica;
         }
 

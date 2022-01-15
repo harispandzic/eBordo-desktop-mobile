@@ -117,10 +117,18 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             }
         }
 
-        private void btnView_Click(object sender, EventArgs e)
+        private async void btnView_Click(object sender, EventArgs e)
         {
-            frmDetaljiOdigraneUtakmice detalji = new frmDetaljiOdigraneUtakmice();
-            detalji.Show();
+            try
+            {
+                var result = await _izvjestaj.GetById<Model.Models.Izvještaj>(izvjestajId);
+                frmDetaljiOdigraneUtakmice detalji = new frmDetaljiOdigraneUtakmice(result);
+                detalji.Show();
+            }
+            catch
+            {
+                PosaljiNotifikaciju.notificationSwitch(_snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
+            }
         }
     }
 }

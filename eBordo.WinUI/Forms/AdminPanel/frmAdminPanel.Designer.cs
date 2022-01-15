@@ -57,6 +57,7 @@ namespace eBordo.WinUI.Forms.Igrač
             this.tabTabele = new System.Windows.Forms.TabPage();
             this.frmTabelePocetna1 = new eBordo.WinUI.Forms.AdminPanel.Tabele.frmTabelePocetna();
             this.pnlMeni = new Bunifu.UI.WinForms.BunifuPanel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.controlIsAktivan = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuButton2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -89,6 +90,7 @@ namespace eBordo.WinUI.Forms.Igrač
             this.lblNaziv = new System.Windows.Forms.Label();
             this.pngLogout = new FontAwesome.Sharp.IconPictureBox();
             this.lblLogout = new System.Windows.Forms.Label();
+            this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
             this.igracTabs.SuspendLayout();
             this.tabPocetna.SuspendLayout();
             this.tabIgraci.SuspendLayout();
@@ -98,6 +100,7 @@ namespace eBordo.WinUI.Forms.Igrač
             this.tabRasporedTreninga.SuspendLayout();
             this.tabTabele.SuspendLayout();
             this.pnlMeni.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox5)).BeginInit();
@@ -353,6 +356,8 @@ namespace eBordo.WinUI.Forms.Igrač
             this.pnlMeni.BorderColor = System.Drawing.Color.Transparent;
             this.pnlMeni.BorderRadius = 3;
             this.pnlMeni.BorderThickness = 1;
+            this.pnlMeni.Controls.Add(this.bunifuLabel2);
+            this.pnlMeni.Controls.Add(this.pictureBox3);
             this.pnlMeni.Controls.Add(this.bunifuLabel1);
             this.pnlMeni.Controls.Add(this.controlIsAktivan);
             this.pnlMeni.Controls.Add(this.bunifuButton2);
@@ -384,6 +389,20 @@ namespace eBordo.WinUI.Forms.Igrač
             this.pnlMeni.ShowBorders = true;
             this.pnlMeni.Size = new System.Drawing.Size(209, 477);
             this.pnlMeni.TabIndex = 0;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.BackgroundImage = global::eBordo.WinUI.Properties.Resources.eBordo_infoAplikacija;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox3.Location = new System.Drawing.Point(189, 455);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(15, 15);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 335;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // bunifuLabel1
             // 
@@ -1422,6 +1441,22 @@ namespace eBordo.WinUI.Forms.Igrač
             this.lblLogout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblLogout.Click += new System.EventHandler(this.lblLogout_Click);
             // 
+            // bunifuLabel2
+            // 
+            this.bunifuLabel2.AllowParentOverrides = false;
+            this.bunifuLabel2.AutoEllipsis = false;
+            this.bunifuLabel2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel2.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel2.Font = new System.Drawing.Font("Oswald", 6F);
+            this.bunifuLabel2.Location = new System.Drawing.Point(4, 2);
+            this.bunifuLabel2.Name = "bunifuLabel2";
+            this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel2.Size = new System.Drawing.Size(15, 12);
+            this.bunifuLabel2.TabIndex = 371;
+            this.bunifuLabel2.Text = "V 1.0";
+            this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
             // fromAdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1446,6 +1481,7 @@ namespace eBordo.WinUI.Forms.Igrač
             this.tabTabele.ResumeLayout(false);
             this.pnlMeni.ResumeLayout(false);
             this.pnlMeni.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox5)).EndInit();
@@ -1511,5 +1547,7 @@ namespace eBordo.WinUI.Forms.Igrač
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
         private Bunifu.UI.WinForms.BunifuLabel controlIsAktivan;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
     }
 }

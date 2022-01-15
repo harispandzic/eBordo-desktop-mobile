@@ -121,7 +121,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             try
             {
                 var result = await _utakmica.GetById<Model.Models.Utakmica>(utakmicaId);
-                frmDetaljiUtakmice detalji = new frmDetaljiUtakmice(result, _prikazRasporeda);
+                frmDetaljiUtakmice detalji = new frmDetaljiUtakmice(result);
                 detalji.Show();
             }
             catch
