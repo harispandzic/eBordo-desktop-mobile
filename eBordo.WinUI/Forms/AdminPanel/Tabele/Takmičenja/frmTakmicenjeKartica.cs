@@ -31,7 +31,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Takmičenja
 
         public frmTakmicenjeKartica(frmTakmicenjaPrikaz prikazTakmicenje)
         {
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 207, 35, 10, 10));
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 115, 98, 10, 10));
             InitializeComponent();
             _prikazTakmicenje = prikazTakmicenje;
         }

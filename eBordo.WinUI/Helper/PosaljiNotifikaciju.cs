@@ -175,6 +175,11 @@ namespace eBordo.WinUI.Helper
                         posaljiNotifikaciju("Greška validacije na serveru!", TipPoruke.ERROR, snackbar, forma, BunifuSnackbar.Positions.BottomRight);
                         break;
                     }
+                case TipNotifikacije.NEMA_PODATAKA_U_BAZI:
+                    {
+                        posaljiNotifikaciju("Nema podataka!", TipPoruke.WARNING, snackbar, forma, BunifuSnackbar.Positions.BottomRight);
+                        break;
+                    }
                 case TipNotifikacije.BEZ: break;
             }
         }

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using eBordo.Api.Services.BaseCRUDService;
 using Microsoft.EntityFrameworkCore;
 using eBordo.Model.Requests.Trener;
+using eBordo.Model.Exceptions;
 
 namespace eBordo.Api.Services.Trener
 {
@@ -42,6 +43,11 @@ namespace eBordo.Api.Services.Trener
                 .Include(s => s.formacija)
                 .Include(s => s.ugovor)
                 .AsQueryable();
+
+            if (entity.Count() == 0)
+            {
+                throw new UserException("Nema podataka!");
+            }
 
             if (search != null && !string.IsNullOrEmpty(search.ime))
             {

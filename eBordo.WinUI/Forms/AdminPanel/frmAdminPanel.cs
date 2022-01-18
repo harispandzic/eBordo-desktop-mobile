@@ -25,10 +25,16 @@ namespace eBordo.WinUI.Forms.Igrač
             hideActiveLabels("Početna");
             igracTabs.SetPage("tabPocetna");
 
-            //korisnickaFotografija.Image = byteToImage.ConvertByteToImage(ApiService.ApiService.logovaniKorisnik.Slika);
-            //lblLogovaniKorisnik.Text = (ApiService.ApiService.logovaniKorisnik.ime + " " + ApiService.ApiService.logovaniKorisnik.prezime).ToUpper();
-            //PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.PORUKA_DOBRODOSLICE);
-         
+            korisnickaFotografija.Image = byteToImage.ConvertByteToImage(ApiService.ApiService.logovaniKorisnik.Slika);
+            lblLogovaniKorisnik.Text = (ApiService.ApiService.logovaniKorisnik.ime + " " + ApiService.ApiService.logovaniKorisnik.prezime).ToUpper();
+            PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.PORUKA_DOBRODOSLICE);
+
+            //if (!ApiService.ApiService.logovaniKorisnik.isAdmin)
+            //{
+            //    pnlTabele.Hide();
+            //    iconPictureBox7.Hide();
+            //    bunifuButton1.Hide();
+            //}
         }
         void hideActiveLabels(string opcija)
         {

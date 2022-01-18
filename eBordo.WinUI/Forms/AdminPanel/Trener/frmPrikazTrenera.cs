@@ -34,6 +34,15 @@ namespace eBordo.WinUI.Forms.AdminPanel
 
         private async void frmPrikazTrenera_Load(object sender, EventArgs e)
         {
+            if (!ApiService.ApiService.logovaniKorisnik.isAdmin)
+            {
+                btnSaveUpdate.Hide();
+                btnSaveIgracSastav.Hide();
+            }
+            else
+            {
+                bunifuButton2.Hide();
+            }
             await LoadTreneri();
         }
         public async Task LoadTreneri(string pretraga = "",bool isAktivan = true, TipNotifikacije notifikacija = TipNotifikacije.BEZ)
@@ -86,9 +95,11 @@ namespace eBordo.WinUI.Forms.AdminPanel
                 loaderBrojIgraca.Hide();
                 UcitajBrojTrenera();
             }
-            catch
+            catch (Flurl.Http.FlurlHttpException ex)
             {
-                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
+                var message = await ex.GetResponseStringAsync();
+                TipNotifikacije tipNotifikacije = Exceptions.getException((message));
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, tipNotifikacije);
             }
         }
 
@@ -110,9 +121,11 @@ namespace eBordo.WinUI.Forms.AdminPanel
                         frmDetaljiTrenera getById = new frmDetaljiTrenera(trener);
                         getById.Show();
                     }
-                    catch 
+                    catch (Flurl.Http.FlurlHttpException ex)
                     {
-                        PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
+                        var message = await ex.GetResponseStringAsync();
+                        TipNotifikacije tipNotifikacije = Exceptions.getException((message));
+                        PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, tipNotifikacije);
                     }
                 }
                 else if (e.ColumnIndex == 4)
@@ -124,9 +137,11 @@ namespace eBordo.WinUI.Forms.AdminPanel
                         frmUpsertTrenera update = new frmUpsertTrenera(result, this);
                         update.Show();
                     }
-                    catch 
+                    catch (Flurl.Http.FlurlHttpException ex)
                     {
-                        PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
+                        var message = await ex.GetResponseStringAsync();
+                        TipNotifikacije tipNotifikacije = Exceptions.getException((message));
+                        PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, tipNotifikacije);
                     }
                 }
                 else if (e.ColumnIndex == 5)
@@ -137,9 +152,11 @@ namespace eBordo.WinUI.Forms.AdminPanel
                         var result = await _treneri.DeleteById<Model.Models.Trener>(trenerId);
                         await LoadTreneri(notifikacija: TipNotifikacije.BRISANJE);
                     }
-                    catch 
+                    catch (Flurl.Http.FlurlHttpException ex)
                     {
-                        PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
+                        var message = await ex.GetResponseStringAsync();
+                        TipNotifikacije tipNotifikacije = Exceptions.getException((message));
+                        PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, tipNotifikacije);
                     }
                 }
             }

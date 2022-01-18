@@ -26,6 +26,15 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
 
         private async void frmPrikazRasporedaUtakmicacs_Load(object sender, EventArgs e)
         {
+            if (!ApiService.ApiService.logovaniKorisnik.isAdmin)
+            {
+                btnSaveUpdate.Hide();
+                btnSaveIgracSastav.Hide();
+            }
+            else
+            {
+                bunifuButton2.Hide();
+            }
             await LoadUtakmice();
             cmbPozicije.Items.Add("Domaća");
             cmbPozicije.Items.Add("Gostujuća");
@@ -117,9 +126,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
                 loaderBrojIgraca.Hide();
                 UcitajBrojUtakmica();
             }
-            catch
+            catch (Flurl.Http.FlurlHttpException ex)
             {
-                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
+                var message = await ex.GetResponseStringAsync();
+                TipNotifikacije tipNotifikacije = Exceptions.getException((message));
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, tipNotifikacije);
             }
         }
 

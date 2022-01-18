@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using eBordo.Api.Database;
+using eBordo.Model.Exceptions;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;

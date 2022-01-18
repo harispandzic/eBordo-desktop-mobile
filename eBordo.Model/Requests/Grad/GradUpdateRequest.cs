@@ -7,7 +7,6 @@ namespace eBordo.Model.Requests.Grad
 {
     public class GradUpdateRequest
     {
-        [MinLength(2)]
         public string nazivGrada { get; set; }
     }
 }

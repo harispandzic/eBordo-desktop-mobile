@@ -19,8 +19,8 @@ namespace eBordo.WinUI.Forms.AdminPanel
 
         private void frmAbout_eBordo_Load(object sender, EventArgs e)
         {
-            Forms.Igrač.fromAdminPanel prikazIgraca = new Forms.Igrač.fromAdminPanel();
-            prikazIgraca.Show();
+            //Forms.Igrač.fromAdminPanel prikazIgraca = new Forms.Igrač.fromAdminPanel();
+            //prikazIgraca.Show();
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)

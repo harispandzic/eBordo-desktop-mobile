@@ -30,7 +30,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Države
         frmPrikazDrzava _prikazDrzava { get; set; }
         public frmDrzavaKartica(frmPrikazDrzava prikazDrzava)
         {
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 207, 35, 10, 10));
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 115, 98, 10, 10));
             InitializeComponent();
             _prikazDrzava = prikazDrzava;
         }
@@ -38,7 +38,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Države
         private void frmDrzavaKartica_Load(object sender, EventArgs e)
         {
             picureZastava.BackgroundImage = zastavaDrzave;
-            picureZastava.BackgroundImageLayout = ImageLayout.Zoom;
+            picureZastava.BackgroundImageLayout = ImageLayout.Stretch;
             lblNazivDrzave.Text = nazivDrzave;
         }
 

@@ -57,9 +57,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Države
                 UpdateBrojDrazva();
                 btnSaveUpdate.Hide();
             }
-            catch
+            catch (Flurl.Http.FlurlHttpException ex)
             {
-                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
+                var message = await ex.GetResponseStringAsync();
+                TipNotifikacije tipNotifikacije = Exceptions.getException((message));
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, tipNotifikacije);
             }
         }
         private void pictureGrb_Click(object sender, EventArgs e)
@@ -110,7 +112,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Države
                     zastava = file;
 
                     Image image = Image.FromFile(fileName);
-                    pictureZastava.BackgroundImageLayout = ImageLayout.Zoom;
+                    pictureZastava.BackgroundImageLayout = ImageLayout.Stretch;
                     pictureZastava.BackgroundImage = image;
 
                     isSlikaAvatarValidated = Validacija.ValidirajSliku(image, pictureSlikaUtakmicaValidator, Field.SLIKA_AVATAR);
@@ -200,6 +202,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Države
         private void btnOdustani_Click(object sender, EventArgs e)
         {
             OcistiPolja();
+        }
+
+        private async void btnRefresh_Click(object sender, EventArgs e)
+        {
+            await LoadDrzave();
         }
 
         public void OcistiPolja()

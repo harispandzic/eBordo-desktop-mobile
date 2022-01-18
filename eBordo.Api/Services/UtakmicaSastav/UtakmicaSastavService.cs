@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using eBordo.Api.Database;
 using eBordo.Api.Services.BaseCRUDService;
+using eBordo.Model.Exceptions;
 using eBordo.Model.Requests.UtakmicaSastav;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -24,6 +25,11 @@ namespace eBordo.Api.Services.UtakmicaSastav
                 .Include(s => s.igrac.korisnik)
                 .Include(s => s.igrac.igracStatistika)
                 .AsQueryable();
+
+            if (utakmicaSastav.Count() == 0)
+            {
+                throw new UserException("Nema podataka!");
+            }
 
             var result = utakmicaSastav.ToList();
 

@@ -15,13 +15,17 @@ namespace eBordo.Api.Services.Takmicenje
         public TakmicenjeService(eBordoContext db, IMapper mapper) : base(db, mapper) { }
         public override Model.Models.Takmicenje Insert(TakmicenjeInsertRequest request)
         {
-            foreach (var item in _db.takmicenje)
+            if (_db.takmicenje.Count() != 0)
             {
-                if (item.nazivTakmicenja.StartsWith(request.nazivTakmicenja))
+                foreach (var item in _db.takmicenje)
                 {
-                    throw new UserException("Takmicenje postoji u bazi podataka!");
+                    if (item.nazivTakmicenja.StartsWith(request.nazivTakmicenja))
+                    {
+                        throw new UserException("Takmicenje postoji u bazi podataka!");
+                    }
                 }
             }
+            
             Database.Takmicenje takmicenje = new Database.Takmicenje
             {
                 nazivTakmicenja = request.nazivTakmicenja,

@@ -7,10 +7,7 @@ namespace eBordo.Model.Requests.Ugovor
 {
     public class UgovorInsertRequest
     {
-        [Required]
         public DateTime datumPocetka { get; set; }
-
-        [Required]
         public DateTime datumZavrsetka { get; set; }
     }
 }

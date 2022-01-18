@@ -753,6 +753,26 @@ namespace eBordo.WinUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap eBordo_visibility {
+            get {
+                object obj = ResourceManager.GetObject("eBordo_visibility", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap eBordo_visibilityOff {
+            get {
+                object obj = ResourceManager.GetObject("eBordo_visibilityOff", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap eBordo_warning_notification {
             get {
                 object obj = ResourceManager.GetObject("eBordo_warning_notification", resourceCulture);

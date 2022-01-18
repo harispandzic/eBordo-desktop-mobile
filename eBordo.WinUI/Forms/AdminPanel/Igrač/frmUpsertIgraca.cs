@@ -159,9 +159,11 @@ namespace eBordo.WinUI.Forms.AdminPanel
                     cmbPozicija.SelectedIndex = 0;
                 }
             }
-            catch 
+            catch (Flurl.Http.FlurlHttpException ex)
             {
-                PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.GREŠKA_NA_SERVERU);
+                var message = await ex.GetResponseStringAsync();
+                TipNotifikacije tipNotifikacije = Exceptions.getException((message));
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, tipNotifikacije);
             }
 
         }
@@ -186,10 +188,12 @@ namespace eBordo.WinUI.Forms.AdminPanel
                     cmbDrzavljanstvo.SelectedIndex = 0;
                 }
             }
-            catch
+            catch (Flurl.Http.FlurlHttpException ex)
             {
-                PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.GREŠKA_NA_SERVERU);
-            }   
+                var message = await ex.GetResponseStringAsync();
+                TipNotifikacije tipNotifikacije = Exceptions.getException((message));
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, tipNotifikacije);
+            }
         }
         private async void LoadGradovi()
         {
@@ -212,13 +216,15 @@ namespace eBordo.WinUI.Forms.AdminPanel
                     cmbGradRodjenja.SelectedIndex = 0;
                 }
             }
-            catch
+            catch (Flurl.Http.FlurlHttpException ex)
             {
-                PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.GREŠKA_NA_SERVERU);
+                var message = await ex.GetResponseStringAsync();
+                TipNotifikacije tipNotifikacije = Exceptions.getException((message));
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, tipNotifikacije);
             }
         }
 
-        private void btnUcitajFotografiju_Click(object sender, EventArgs e)
+        private async void btnUcitajFotografiju_Click(object sender, EventArgs e)
         {
             var result = avatarFileDialog.ShowDialog();
 
@@ -241,11 +247,11 @@ namespace eBordo.WinUI.Forms.AdminPanel
             }
             catch
             {
-                PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.GRESKA_UPLOAD);
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GRESKA_UPLOAD);
             }
         }
 
-        private void btnUcitajAvatar_Click(object sender, EventArgs e)
+        private async void btnUcitajAvatar_Click(object sender, EventArgs e)
         {
             var result = panelSlikaFileDialog.ShowDialog();
 
@@ -262,14 +268,14 @@ namespace eBordo.WinUI.Forms.AdminPanel
 
                     Image image = Image.FromFile(fileName);
                     pictureSlikaIgraca.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-                    pictureSlikaIgraca.Image = image;
+                    pictureSlikaIgraca.BackgroundImage = image;
 
                     isSlikaPanelValidated = Validacija.ValidirajSliku(image, pictureSlikaPanelVAlidator, Field.SLIKA_PANEL);
                 }
             }
             catch
             {
-                PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.GRESKA_UPLOAD);
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GRESKA_UPLOAD);
             }
         }
 

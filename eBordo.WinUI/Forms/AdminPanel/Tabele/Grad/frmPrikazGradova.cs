@@ -64,9 +64,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Grad
                 UpdateBrojDrazva();
                 btnSaveUpdate.Hide();
             }
-            catch
+            catch (Flurl.Http.FlurlHttpException ex)
             {
-                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
+                var message = await ex.GetResponseStringAsync();
+                TipNotifikacije tipNotifikacije = Exceptions.getException((message));
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, tipNotifikacije);
             }
         }
         private bool ValidirajFormu()
@@ -102,9 +104,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Grad
                     cmbDrzave.SelectedIndex = 0;
                 }
             }
-            catch
+            catch (Flurl.Http.FlurlHttpException ex)
             {
-                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
+                var message = await ex.GetResponseStringAsync();
+                TipNotifikacije tipNotifikacije = Exceptions.getException((message));
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, tipNotifikacije);
             }
         }
 
@@ -205,6 +209,12 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Grad
         private void btnOdustani_Click(object sender, EventArgs e)
         {
             OcistiPolja();
+        }
+
+        private async void btnRefresh_Click(object sender, EventArgs e)
+        {
+            await LoadGradovi();
+            await LoadDrzave();
         }
 
         public void OcistiPolja()

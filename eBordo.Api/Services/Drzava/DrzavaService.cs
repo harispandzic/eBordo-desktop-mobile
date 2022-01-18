@@ -14,15 +14,21 @@ namespace eBordo.Api.Services.Drzava
     {
         public DrzavaService(eBordoContext db, IMapper mapper) : base(db, mapper) { }
 
+
+
         public override Model.Models.Drzava Insert(DrzavaInsertRequest request)
         {
-            foreach (var item in _db.drzave)
+            if (_db.drzave.Count() != 0)
             {
-                if (item.nazivDrzave.StartsWith(request.nazivDrzave))
+                foreach (var item in _db.drzave)
                 {
-                    throw new UserException("Drzava postoji u bazi podataka!");
+                    if (item.nazivDrzave.StartsWith(request.nazivDrzave))
+                    {
+                        throw new UserException("Drzava postoji u bazi podataka!");
+                    }
                 }
             }
+            
             Database.Drzava drzava = new Database.Drzava
             {
                 nazivDrzave = request.nazivDrzave,

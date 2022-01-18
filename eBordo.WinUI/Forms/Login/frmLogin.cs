@@ -33,9 +33,15 @@ namespace eBordo.WinUI.Forms.Login
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, this.Width, this.Height, 12, 12));
+            visibilityOn.Hide();
         }
         private async void btnPrijava_Click(object sender, EventArgs e)
         {
+            if (!ValidirajFormu())
+            {
+                PosaljiNotifikaciju.notificationSwitch(bnfSnackBar, this, TipNotifikacije.FORMA_VALIDACIJA);
+                return;
+            }
             btnPrijava.Hide();
             loader.Show();
 
@@ -46,22 +52,15 @@ namespace eBordo.WinUI.Forms.Login
             {
                 ApiService.ApiService.logovaniKorisnik = await _apiService.Auth<Model.Models.Korisnik>();
                 loader.Hide();
-                if (ApiService.ApiService.logovaniKorisnik.isIgrac)
-                {
-                    Forms.Igrač.fromAdminPanel prikazIgraca = new Forms.Igrač.fromAdminPanel();
-                    this.Hide();
-                    prikazIgraca.Show();
 
-                    frmAbout_eBordo about = new frmAbout_eBordo();
-                    about.Show();
-                    about.BringToFront();
-                }
-                if (ApiService.ApiService.logovaniKorisnik.isTrener)
-                {
-                    Forms.TrenerPanel.frmTrenerPanel prikazTrenera = new Forms.TrenerPanel.frmTrenerPanel();
-                    this.Hide();
-                    prikazTrenera.Show();
-                } 
+
+                Forms.Igrač.fromAdminPanel panel = new Forms.Igrač.fromAdminPanel();
+                this.Hide();
+                panel.Show();
+
+                frmAbout_eBordo about = new frmAbout_eBordo();
+                about.Show();
+                about.BringToFront();
             }
             catch
             {
@@ -70,7 +69,21 @@ namespace eBordo.WinUI.Forms.Login
                 btnPrijava.Show();
             } 
         }
+        private bool ValidirajFormu()
+        {
+            bool isUspjesno = true;
+            if (!isEmailValidated || !isPasswordValidated)
 
+            {
+                isUspjesno = false;
+            }
+            else
+            {
+                isUspjesno = true;
+            }
+
+            return isUspjesno;
+        }
         private void frmLogin_Load(object sender, EventArgs e)
         {
             loader.Hide();
@@ -86,8 +99,24 @@ namespace eBordo.WinUI.Forms.Login
 
         }
 
+        private void pictureDrzavljanstvoSlikaValidator_Click(object sender, EventArgs e)
+        {
+            txtLozinka.PasswordChar = '\0';
+            visibilityOff.Hide();
+            visibilityOn.Show();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            txtLozinka.UseSystemPasswordChar = false;
+            txtLozinka.PasswordChar = '●';
+            visibilityOff.Show();
+            visibilityOn.Hide();
+        }
+
         private void txtLozinka_TextChanged(object sender, EventArgs e)
         {
+            txtLozinka.UseSystemPasswordChar = true;
             isPasswordValidated = Validacija.ValidirajInputString(txtLozinka, txtLozinkaValidator, Field.PASSWORD);
         }
     }

@@ -17,6 +17,7 @@ namespace eBordo.WinUI.ApiService
 
         public static string username { get; set; }
         public static string password { get; set; }
+
         public static Model.Models.Korisnik logovaniKorisnik { get; set; }
 
         public ApiService(string resource)

@@ -55,12 +55,26 @@ namespace eBordo.WinUI.Forms.AdminPanel.Upravljanje_treningom
         
         private void frmTreningKartica_Load(object sender, EventArgs e)
         {
+            if (ApiService.ApiService.logovaniKorisnik.isAdmin)
+            {
+                btnEdit.Hide();
+            }
+            else if (ApiService.ApiService.logovaniKorisnik.isTrener)
+            {
+                btnDelete.Hide();
+                btnEdit.Location = new Point(260, 7);
+            }
+            else if (ApiService.ApiService.logovaniKorisnik.isIgrac)
+            {
+                btnEdit.Hide();
+                btnDelete.Hide();
+            }
             lblDatum.Text = datumOdrzavanja.ToString("dd.MM.yyyy");
             lblSatnica.Text = satnica;
             lblLokacija.Text = lokacija;
             lblFokusTreninga.Text = fokusTreninga;
             txtImePrezimeTrener.Text = trener.ToUpper();
-            pictureIgracSlika.BackgroundImage = igracSlikaAvatar;
+            pictureIgracSlika.Image = igracSlikaAvatar;
             pictureIgracSlika.BackgroundImageLayout = ImageLayout.Zoom;
             pictureSlikaPanelIgraca.BackgroundImage = igracSlikaPanel;
             pictureSlikaPanelIgraca.BackgroundImageLayout = ImageLayout.Zoom;

@@ -8,6 +8,8 @@ using eBordo.Api.Services.BaseCRUDService;
 using eBordo.Model.Requests.Igrac;
 using Microsoft.EntityFrameworkCore;
 using eBordo.Model.Helpers;
+using eBordo.Model.Requests.Notifikacija;
+using eBordo.Model.Exceptions;
 
 namespace eBordo.Api.Services.Igrac
 {
@@ -16,7 +18,8 @@ namespace eBordo.Api.Services.Igrac
         private Korisnik.IKorisnikService _korisnikService { get; set; }
         private IgracStatistika.IIgracStatistikaService _statistikaService { get; set; }
         private IgracSkills.IIgracSkillsService _skillsService { get; set; }
-        private Ugovor.IUgovorService _ugovorService { get; set; }
+        private Ugovor.IUgovorService _ugovorService { get; set; }      
+
         public IgracService(eBordoContext db, IMapper mapper,
             Korisnik.IKorisnikService korisnikService,
             IgracStatistika.IIgracStatistikaService statistikaService,
@@ -41,6 +44,11 @@ namespace eBordo.Api.Services.Igrac
                 .Include(s => s.igracSkills)
                 .Include(s => s.ugovor)
                 .AsQueryable();
+
+            if (entity.Count() == 0)
+            {
+                throw new UserException("Nema podataka!");
+            }
 
             if (search!= null && !string.IsNullOrEmpty(search.ime))
             {
@@ -142,7 +150,7 @@ namespace eBordo.Api.Services.Igrac
                 .AsQueryable();
 
             var result = entity.FirstOrDefault();
-
+         
             return _mapper.Map<eBordo.Model.Models.Igrac>(result);
         }
         public override Model.Models.Igrac Update(int id, eBordo.Model.Requests.Igrac.IgracUpdateRequest request)

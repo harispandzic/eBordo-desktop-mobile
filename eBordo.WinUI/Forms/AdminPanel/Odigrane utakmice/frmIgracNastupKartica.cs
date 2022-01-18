@@ -67,17 +67,17 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
 
         private void frmIgracNastupKartica_Load(object sender, EventArgs e)
         {
-            pictureIgracSlika.BackgroundImage = igracSlika;
-            pictureIgracSlika.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureIgracSlika.Image = igracSlika;
+            //pictureIgracSlika.BackgroundImageLayout = ImageLayout.Zoom;
             txtImePrezimeBrojDresa.Text = igracImePrezime;
             txtBrojDresa.Text = brojDresa;
             lblPozicija.Text = igracPozicija;
-            label1.Text = igracGolovi.ToString();
-            label2.Text = igracAsistencije.ToString();
-            label3.Text = igracMinute.ToString();
-            label4.Text = igracZutiKartoni.ToString();
-            label5.Text = igracCrveniKartoni.ToString();
-            ratingSnaga.Value = ocjenaRating;
+            txtBrojMinuta.Text = igracMinute.ToString();
+            txtZutiKartoni.Text = igracZutiKartoni.ToString();
+            txtGolovi.Text = igracGolovi.ToString();
+            txtAsistencije.Text = igracAsistencije.ToString();
+            txtCrveniKartoni.Text = igracCrveniKartoni.ToString();
+            ratingOcjena.Value = ocjenaRating;
         }
 
         private async void btnDelete_Click(object sender, EventArgs e)

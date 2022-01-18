@@ -35,6 +35,15 @@ namespace eBordo.WinUI.Forms.AdminPanel
         }
         private async void frmPrikazIgraca_Load(object sender, EventArgs e)
         {
+            if (!ApiService.ApiService.logovaniKorisnik.isAdmin)
+            {
+                btnSaveUpdate.Hide();
+                btnSaveIgracSastav.Hide();
+            }
+            else
+            {
+                bunifuButton1.Hide();
+            }
             await LoadIgraci();
             await LoadPozicije();
         }
@@ -49,9 +58,11 @@ namespace eBordo.WinUI.Forms.AdminPanel
                     cmbPozicije.Items.Add(item.nazivPozicije);
                 }
             }
-            catch
+            catch (Flurl.Http.FlurlHttpException ex)
             {
-                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
+                var message = await ex.GetResponseStringAsync();
+                TipNotifikacije tipNotifikacije = Exceptions.getException((message));
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, tipNotifikacije);
             }
         }
         
@@ -108,9 +119,11 @@ namespace eBordo.WinUI.Forms.AdminPanel
                 loaderIgraci.Hide();
                 UcitajBrojIgraca();
             }
-            catch 
+            catch (Flurl.Http.FlurlHttpException ex)
             {
-                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
+                var message = await ex.GetResponseStringAsync();
+                TipNotifikacije tipNotifikacije = Exceptions.getException((message));
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, tipNotifikacije);
             }
         } 
 

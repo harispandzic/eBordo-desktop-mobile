@@ -39,24 +39,20 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Stadion
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.cmbGrad = new Bunifu.UI.WinForms.BunifuDropdown();
-            this.pnlPrikazKlubova = new System.Windows.Forms.FlowLayoutPanel();
             this.grbFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.txtNazivKluba = new Bunifu.UI.WinForms.BunifuTextBox();
             this.snackbar = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
-            this.pnlLoader = new System.Windows.Forms.Panel();
-            this.loader = new Bunifu.UI.WinForms.BunifuLoader();
             this.pictureSlikaUtakmicaValidator = new System.Windows.Forms.PictureBox();
             this.btnUcitajPanelPhoto = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.txtTelefonValidator = new Bunifu.UI.WinForms.BunifuLabel();
             this.loaderIgraci = new Bunifu.UI.WinForms.BunifuLoader();
             this.txtBrojIgraca = new Bunifu.UI.WinForms.BunifuLabel();
             this.lblDrzavljanstvoVrijednost = new Bunifu.UI.WinForms.BunifuLabel();
             this.lblNaslovStranice = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuButton1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnSaveUpdate = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnOdustani = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -64,10 +60,10 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Stadion
             this.txtGradValidator = new Bunifu.UI.WinForms.BunifuLabel();
             this.lblIme = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.pnlLoader.SuspendLayout();
+            this.pnlPrikazKlubova = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnRefresh = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureSlikaUtakmicaValidator)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureGradValidator)).BeginInit();
             this.SuspendLayout();
@@ -104,26 +100,18 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Stadion
             this.cmbGrad.ItemBackColor = System.Drawing.Color.White;
             this.cmbGrad.ItemBorderColor = System.Drawing.Color.White;
             this.cmbGrad.ItemForeColor = System.Drawing.Color.Black;
-            this.cmbGrad.ItemHeight = 26;
+            this.cmbGrad.ItemHeight = 24;
             this.cmbGrad.ItemHighLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.cmbGrad.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cmbGrad.ItemTopMargin = 3;
-            this.cmbGrad.Location = new System.Drawing.Point(192, 64);
+            this.cmbGrad.Location = new System.Drawing.Point(149, 124);
             this.cmbGrad.Name = "cmbGrad";
-            this.cmbGrad.Size = new System.Drawing.Size(179, 32);
+            this.cmbGrad.Size = new System.Drawing.Size(193, 30);
             this.cmbGrad.TabIndex = 134;
             this.cmbGrad.Text = "Grad";
             this.cmbGrad.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbGrad.TextLeftMargin = 5;
             this.cmbGrad.SelectedIndexChanged += new System.EventHandler(this.cmbGrad_SelectedIndexChanged);
-            // 
-            // pnlPrikazKlubova
-            // 
-            this.pnlPrikazKlubova.AutoScroll = true;
-            this.pnlPrikazKlubova.Location = new System.Drawing.Point(377, 27);
-            this.pnlPrikazKlubova.Name = "pnlPrikazKlubova";
-            this.pnlPrikazKlubova.Size = new System.Drawing.Size(236, 290);
-            this.pnlPrikazKlubova.TabIndex = 131;
             // 
             // grbFileDialog
             // 
@@ -157,7 +145,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Stadion
             this.txtNazivKluba.IconRight = global::eBordo.WinUI.Properties.Resources.eBordo_required3;
             this.txtNazivKluba.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNazivKluba.Lines = new string[0];
-            this.txtNazivKluba.Location = new System.Drawing.Point(6, 63);
+            this.txtNazivKluba.Location = new System.Drawing.Point(147, 61);
             this.txtNazivKluba.MaxLength = 32767;
             this.txtNazivKluba.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtNazivKluba.Modified = false;
@@ -193,7 +181,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Stadion
             this.txtNazivKluba.SelectionLength = 0;
             this.txtNazivKluba.SelectionStart = 0;
             this.txtNazivKluba.ShortcutsEnabled = true;
-            this.txtNazivKluba.Size = new System.Drawing.Size(180, 32);
+            this.txtNazivKluba.Size = new System.Drawing.Size(195, 32);
             this.txtNazivKluba.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtNazivKluba.TabIndex = 132;
             this.txtNazivKluba.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -274,45 +262,12 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Stadion
             this.snackbar.WarningOptions.IconLeftMargin = 12;
             this.snackbar.ZoomCloseIcon = true;
             // 
-            // pnlLoader
-            // 
-            this.pnlLoader.Controls.Add(this.loader);
-            this.pnlLoader.Location = new System.Drawing.Point(376, 0);
-            this.pnlLoader.Name = "pnlLoader";
-            this.pnlLoader.Size = new System.Drawing.Size(211, 317);
-            this.pnlLoader.TabIndex = 137;
-            // 
-            // loader
-            // 
-            this.loader.AllowStylePresets = true;
-            this.loader.BackColor = System.Drawing.Color.Transparent;
-            this.loader.CapStyle = Bunifu.UI.WinForms.BunifuLoader.CapStyles.Round;
-            this.loader.Color = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
-            this.loader.Colors = new Bunifu.UI.WinForms.Bloom[0];
-            this.loader.Customization = "";
-            this.loader.DashWidth = 0.5F;
-            this.loader.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.loader.Image = null;
-            this.loader.Location = new System.Drawing.Point(98, 122);
-            this.loader.Name = "loader";
-            this.loader.NoRounding = false;
-            this.loader.Preset = Bunifu.UI.WinForms.BunifuLoader.StylePresets.Solid;
-            this.loader.RingStyle = Bunifu.UI.WinForms.BunifuLoader.RingStyles.Solid;
-            this.loader.ShowText = false;
-            this.loader.Size = new System.Drawing.Size(40, 40);
-            this.loader.Speed = 7;
-            this.loader.TabIndex = 130;
-            this.loader.Text = "loader";
-            this.loader.TextPadding = new System.Windows.Forms.Padding(0);
-            this.loader.Thickness = 6;
-            this.loader.Transparent = true;
-            // 
             // pictureSlikaUtakmicaValidator
             // 
             this.pictureSlikaUtakmicaValidator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.pictureSlikaUtakmicaValidator.BackgroundImage = global::eBordo.WinUI.Properties.Resources.eBordo_required3;
             this.pictureSlikaUtakmicaValidator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureSlikaUtakmicaValidator.Location = new System.Drawing.Point(13, 168);
+            this.pictureSlikaUtakmicaValidator.Location = new System.Drawing.Point(43, 160);
             this.pictureSlikaUtakmicaValidator.Name = "pictureSlikaUtakmicaValidator";
             this.pictureSlikaUtakmicaValidator.Size = new System.Drawing.Size(10, 10);
             this.pictureSlikaUtakmicaValidator.TabIndex = 409;
@@ -367,7 +322,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Stadion
             this.btnUcitajPanelPhoto.IdleIconLeftImage = null;
             this.btnUcitajPanelPhoto.IdleIconRightImage = null;
             this.btnUcitajPanelPhoto.IndicateFocus = true;
-            this.btnUcitajPanelPhoto.Location = new System.Drawing.Point(7, 162);
+            this.btnUcitajPanelPhoto.Location = new System.Drawing.Point(6, 154);
             this.btnUcitajPanelPhoto.Name = "btnUcitajPanelPhoto";
             this.btnUcitajPanelPhoto.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnUcitajPanelPhoto.OnDisabledState.BorderRadius = 10;
@@ -401,7 +356,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Stadion
             this.btnUcitajPanelPhoto.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnUcitajPanelPhoto.OnPressedState.IconLeftImage = null;
             this.btnUcitajPanelPhoto.OnPressedState.IconRightImage = null;
-            this.btnUcitajPanelPhoto.Size = new System.Drawing.Size(98, 22);
+            this.btnUcitajPanelPhoto.Size = new System.Drawing.Size(135, 22);
             this.btnUcitajPanelPhoto.TabIndex = 408;
             this.btnUcitajPanelPhoto.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnUcitajPanelPhoto.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -415,24 +370,13 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Stadion
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = global::eBordo.WinUI.Properties.Resources.giphy;
             this.pictureBox1.Image = global::eBordo.WinUI.Properties.Resources.ezgif2;
-            this.pictureBox1.Location = new System.Drawing.Point(441, 127);
+            this.pictureBox1.Location = new System.Drawing.Point(433, 142);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(91, 61);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 407;
             this.pictureBox1.TabStop = false;
-            // 
-            // label14
-            // 
-            this.label14.BackColor = System.Drawing.Color.Gainsboro;
-            this.label14.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(379, 4);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(208, 23);
-            this.label14.TabIndex = 406;
-            this.label14.Text = "STADIONI";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // txtTelefonValidator
             // 
@@ -441,7 +385,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Stadion
             this.txtTelefonValidator.CursorType = null;
             this.txtTelefonValidator.Font = new System.Drawing.Font("Oswald", 6F);
             this.txtTelefonValidator.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
-            this.txtTelefonValidator.Location = new System.Drawing.Point(8, 94);
+            this.txtTelefonValidator.Location = new System.Drawing.Point(149, 93);
             this.txtTelefonValidator.Name = "txtTelefonValidator";
             this.txtTelefonValidator.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtTelefonValidator.Size = new System.Drawing.Size(0, 0);
@@ -580,7 +524,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Stadion
             this.bunifuButton1.IdleIconLeftImage = global::eBordo.WinUI.Properties.Resources.save;
             this.bunifuButton1.IdleIconRightImage = null;
             this.bunifuButton1.IndicateFocus = true;
-            this.bunifuButton1.Location = new System.Drawing.Point(200, 124);
+            this.bunifuButton1.Location = new System.Drawing.Point(171, 173);
             this.bunifuButton1.Name = "bunifuButton1";
             this.bunifuButton1.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton1.OnDisabledState.BorderRadius = 10;
@@ -623,25 +567,14 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Stadion
             this.bunifuButton1.UseDefaultRadiusAndThickness = true;
             this.bunifuButton1.Click += new System.EventHandler(this.bunifuButton1_Click);
             // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.BackgroundImage = global::eBordo.WinUI.Properties.Resources.giphy;
-            this.pictureBox5.Image = global::eBordo.WinUI.Properties.Resources.ezgif1;
-            this.pictureBox5.Location = new System.Drawing.Point(333, 4);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(45, 40);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 399;
-            this.pictureBox5.TabStop = false;
-            // 
             // pictureBox2
             // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Gainsboro;
             this.pictureBox2.BackgroundImage = global::eBordo.WinUI.Properties.Resources.uploadFile;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(7, 109);
+            this.pictureBox2.Location = new System.Drawing.Point(6, 47);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(98, 50);
+            this.pictureBox2.Size = new System.Drawing.Size(135, 102);
             this.pictureBox2.TabIndex = 398;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
@@ -696,7 +629,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Stadion
             this.btnSaveUpdate.IdleIconLeftImage = global::eBordo.WinUI.Properties.Resources.save_black;
             this.btnSaveUpdate.IdleIconRightImage = null;
             this.btnSaveUpdate.IndicateFocus = true;
-            this.btnSaveUpdate.Location = new System.Drawing.Point(200, 124);
+            this.btnSaveUpdate.Location = new System.Drawing.Point(171, 173);
             this.btnSaveUpdate.Name = "btnSaveUpdate";
             this.btnSaveUpdate.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnSaveUpdate.OnDisabledState.BorderRadius = 10;
@@ -790,7 +723,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Stadion
             this.btnOdustani.IdleIconLeftImage = global::eBordo.WinUI.Properties.Resources.eBordo_close;
             this.btnOdustani.IdleIconRightImage = null;
             this.btnOdustani.IndicateFocus = true;
-            this.btnOdustani.Location = new System.Drawing.Point(326, 124);
+            this.btnOdustani.Location = new System.Drawing.Point(297, 173);
             this.btnOdustani.Name = "btnOdustani";
             this.btnOdustani.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnOdustani.OnDisabledState.BorderRadius = 10;
@@ -837,7 +770,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Stadion
             // 
             this.pictureGradValidator.BackgroundImage = global::eBordo.WinUI.Properties.Resources.eBordo_required3;
             this.pictureGradValidator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureGradValidator.Location = new System.Drawing.Point(351, 75);
+            this.pictureGradValidator.Location = new System.Drawing.Point(320, 134);
             this.pictureGradValidator.Name = "pictureGradValidator";
             this.pictureGradValidator.Size = new System.Drawing.Size(10, 10);
             this.pictureGradValidator.TabIndex = 415;
@@ -850,7 +783,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Stadion
             this.txtGradValidator.CursorType = null;
             this.txtGradValidator.Font = new System.Drawing.Font("Oswald", 6F);
             this.txtGradValidator.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
-            this.txtGradValidator.Location = new System.Drawing.Point(192, 96);
+            this.txtGradValidator.Location = new System.Drawing.Point(149, 155);
             this.txtGradValidator.Name = "txtGradValidator";
             this.txtGradValidator.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtGradValidator.Size = new System.Drawing.Size(0, 0);
@@ -865,7 +798,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Stadion
             this.lblIme.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblIme.CursorType = System.Windows.Forms.Cursors.Default;
             this.lblIme.Font = new System.Drawing.Font("Oswald", 8F);
-            this.lblIme.Location = new System.Drawing.Point(6, 48);
+            this.lblIme.Location = new System.Drawing.Point(149, 46);
             this.lblIme.Name = "lblIme";
             this.lblIme.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblIme.Size = new System.Drawing.Size(56, 16);
@@ -881,7 +814,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Stadion
             this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.Font = new System.Drawing.Font("Oswald", 8F);
-            this.bunifuLabel1.Location = new System.Drawing.Point(192, 48);
+            this.bunifuLabel1.Location = new System.Drawing.Point(149, 108);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel1.Size = new System.Drawing.Size(21, 16);
@@ -890,10 +823,113 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Stadion
             this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
+            // pnlPrikazKlubova
+            // 
+            this.pnlPrikazKlubova.AutoScroll = true;
+            this.pnlPrikazKlubova.Location = new System.Drawing.Point(348, 61);
+            this.pnlPrikazKlubova.Name = "pnlPrikazKlubova";
+            this.pnlPrikazKlubova.Size = new System.Drawing.Size(278, 256);
+            this.pnlPrikazKlubova.TabIndex = 131;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.AllowAnimations = true;
+            this.btnRefresh.AllowMouseEffects = true;
+            this.btnRefresh.AllowToggling = false;
+            this.btnRefresh.AnimationSpeed = 200;
+            this.btnRefresh.AutoGenerateColors = false;
+            this.btnRefresh.AutoRoundBorders = false;
+            this.btnRefresh.AutoSizeLeftIcon = false;
+            this.btnRefresh.AutoSizeRightIcon = true;
+            this.btnRefresh.BackColor = System.Drawing.Color.Transparent;
+            this.btnRefresh.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
+            this.btnRefresh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRefresh.BackgroundImage")));
+            this.btnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnRefresh.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnRefresh.ButtonText = "";
+            this.btnRefresh.ButtonTextMarginLeft = 0;
+            this.btnRefresh.ColorContrastOnClick = 45;
+            this.btnRefresh.ColorContrastOnHover = 45;
+            this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges5.BottomLeft = true;
+            borderEdges5.BottomRight = true;
+            borderEdges5.TopLeft = true;
+            borderEdges5.TopRight = true;
+            this.btnRefresh.CustomizableEdges = borderEdges5;
+            this.btnRefresh.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnRefresh.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnRefresh.DisabledFillColor = System.Drawing.Color.Empty;
+            this.btnRefresh.DisabledForecolor = System.Drawing.Color.Empty;
+            this.btnRefresh.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnRefresh.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.ForeColor = System.Drawing.Color.White;
+            this.btnRefresh.IconLeft = global::eBordo.WinUI.Properties.Resources.refresh;
+            this.btnRefresh.IconLeftAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnRefresh.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnRefresh.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnRefresh.IconMarginLeft = 11;
+            this.btnRefresh.IconPadding = 10;
+            this.btnRefresh.IconRight = null;
+            this.btnRefresh.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRefresh.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnRefresh.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnRefresh.IconSize = 25;
+            this.btnRefresh.IdleBorderColor = System.Drawing.Color.Empty;
+            this.btnRefresh.IdleBorderRadius = 0;
+            this.btnRefresh.IdleBorderThickness = 0;
+            this.btnRefresh.IdleFillColor = System.Drawing.Color.Empty;
+            this.btnRefresh.IdleIconLeftImage = global::eBordo.WinUI.Properties.Resources.refresh;
+            this.btnRefresh.IdleIconRightImage = null;
+            this.btnRefresh.IndicateFocus = true;
+            this.btnRefresh.Location = new System.Drawing.Point(540, 11);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnRefresh.OnDisabledState.BorderRadius = 10;
+            this.btnRefresh.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnRefresh.OnDisabledState.BorderThickness = 1;
+            this.btnRefresh.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnRefresh.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnRefresh.OnDisabledState.IconLeftImage = null;
+            this.btnRefresh.OnDisabledState.IconRightImage = null;
+            this.btnRefresh.onHoverState.BorderColor = System.Drawing.Color.Empty;
+            this.btnRefresh.onHoverState.BorderRadius = 10;
+            this.btnRefresh.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnRefresh.onHoverState.BorderThickness = 1;
+            this.btnRefresh.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.btnRefresh.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.btnRefresh.onHoverState.IconLeftImage = global::eBordo.WinUI.Properties.Resources.refresh;
+            this.btnRefresh.onHoverState.IconRightImage = null;
+            this.btnRefresh.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.btnRefresh.OnIdleState.BorderRadius = 10;
+            this.btnRefresh.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnRefresh.OnIdleState.BorderThickness = 1;
+            this.btnRefresh.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.btnRefresh.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnRefresh.OnIdleState.IconLeftImage = global::eBordo.WinUI.Properties.Resources.refresh;
+            this.btnRefresh.OnIdleState.IconRightImage = null;
+            this.btnRefresh.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.btnRefresh.OnPressedState.BorderRadius = 10;
+            this.btnRefresh.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnRefresh.OnPressedState.BorderThickness = 1;
+            this.btnRefresh.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
+            this.btnRefresh.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnRefresh.OnPressedState.IconLeftImage = global::eBordo.WinUI.Properties.Resources.refresh;
+            this.btnRefresh.OnPressedState.IconRightImage = null;
+            this.btnRefresh.Size = new System.Drawing.Size(44, 31);
+            this.btnRefresh.TabIndex = 422;
+            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnRefresh.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnRefresh.TextMarginLeft = 0;
+            this.btnRefresh.TextPadding = new System.Windows.Forms.Padding(0);
+            this.btnRefresh.UseDefaultRadiusAndThickness = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // frmPrikazStadiona
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnRefresh);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.bunifuLabel1);
             this.Controls.Add(this.lblIme);
             this.Controls.Add(this.txtGradValidator);
@@ -902,27 +938,21 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Stadion
             this.Controls.Add(this.btnSaveUpdate);
             this.Controls.Add(this.pictureSlikaUtakmicaValidator);
             this.Controls.Add(this.btnUcitajPanelPhoto);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label14);
             this.Controls.Add(this.txtTelefonValidator);
             this.Controls.Add(this.loaderIgraci);
             this.Controls.Add(this.txtBrojIgraca);
             this.Controls.Add(this.lblDrzavljanstvoVrijednost);
             this.Controls.Add(this.lblNaslovStranice);
             this.Controls.Add(this.bunifuButton1);
-            this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.cmbGrad);
             this.Controls.Add(this.pnlPrikazKlubova);
             this.Controls.Add(this.txtNazivKluba);
-            this.Controls.Add(this.pnlLoader);
             this.Name = "frmPrikazStadiona";
             this.Size = new System.Drawing.Size(587, 317);
             this.Load += new System.EventHandler(this.frmPrikazStadiona_Load);
-            this.pnlLoader.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureSlikaUtakmicaValidator)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureGradValidator)).EndInit();
             this.ResumeLayout(false);
@@ -933,23 +963,18 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Stadion
         #endregion
 
         private Bunifu.UI.WinForms.BunifuDropdown cmbGrad;
-        private System.Windows.Forms.FlowLayoutPanel pnlPrikazKlubova;
         private System.Windows.Forms.OpenFileDialog grbFileDialog;
         private Bunifu.UI.WinForms.BunifuTextBox txtNazivKluba;
         private Bunifu.UI.WinForms.BunifuSnackbar snackbar;
-        private System.Windows.Forms.Panel pnlLoader;
-        private Bunifu.UI.WinForms.BunifuLoader loader;
         private System.Windows.Forms.PictureBox pictureSlikaUtakmicaValidator;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnUcitajPanelPhoto;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label14;
         private Bunifu.UI.WinForms.BunifuLabel txtTelefonValidator;
         private Bunifu.UI.WinForms.BunifuLoader loaderIgraci;
         private Bunifu.UI.WinForms.BunifuLabel txtBrojIgraca;
         private Bunifu.UI.WinForms.BunifuLabel lblDrzavljanstvoVrijednost;
         private Bunifu.UI.WinForms.BunifuLabel lblNaslovStranice;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton1;
-        private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox2;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSaveUpdate;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnOdustani;
@@ -957,5 +982,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Stadion
         private Bunifu.UI.WinForms.BunifuLabel txtGradValidator;
         private Bunifu.UI.WinForms.BunifuLabel lblIme;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
+        private System.Windows.Forms.FlowLayoutPanel pnlPrikazKlubova;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnRefresh;
     }
 }

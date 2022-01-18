@@ -25,6 +25,15 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
 
         private async void frmPrikazOdigranihUtakmica_Load(object sender, EventArgs e)
         {
+            if (!ApiService.ApiService.logovaniKorisnik.isAdmin)
+            {
+                btnSaveUpdate.Hide();
+                btnSaveIgracSastav.Hide();
+            }
+            else
+            {
+                bunifuButton2.Hide();
+            }
             await LoadIzvještaj();
             UcitajPodatke();
         }
@@ -144,9 +153,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
                 loaderBrojIgraca.Hide();
                 UcitajBrojUtakmica();
             }
-            catch
+            catch (Flurl.Http.FlurlHttpException ex)
             {
-                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
+                var message = await ex.GetResponseStringAsync();
+                TipNotifikacije tipNotifikacije = Exceptions.getException((message));
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, tipNotifikacije);
             }
         }
 

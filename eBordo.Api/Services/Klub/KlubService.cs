@@ -17,13 +17,17 @@ namespace eBordo.Api.Services.Klub
 
         public override Model.Models.Klub Insert(KlubInsertRequest request)
         {
-            foreach (var item in _db.klubovi)
+            if (_db.klubovi.Count() != 0)
             {
-                if (item.nazivKluba.StartsWith(request.nazivKluba))
+                foreach (var item in _db.klubovi)
                 {
-                    throw new UserException("Klub postoji u bazi podataka!");
+                    if (item.nazivKluba.StartsWith(request.nazivKluba))
+                    {
+                        throw new UserException("Klub postoji u bazi podataka!");
+                    }
                 }
             }
+            
             Database.Klub klub = new Database.Klub
             {
                 nazivKluba = request.nazivKluba,
@@ -63,6 +67,11 @@ namespace eBordo.Api.Services.Klub
                 .Include(s => s.stadion.lokacijaStadiona)
                 .Include(s => s.stadion.lokacijaStadiona.drzava)
                 .AsQueryable();
+
+            if (entity.Count() == 0)
+            {
+                throw new UserException("Nema podataka!");
+            }
 
             var result = entity.ToList();
 
