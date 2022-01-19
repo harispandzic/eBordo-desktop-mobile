@@ -22,6 +22,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Takmičenja
         ByteToImage byteToImage = new ByteToImage();
         Model.Models.Takmicenje takmicenje;
         bool isNazivTakmicenjaValidated = false, isSlikaValidated = false;
+        int brojPonavljanja = 0;
 
         public frmTakmicenjaPrikaz()
         {
@@ -42,6 +43,23 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Takmičenja
                 loader.Hide();
                 loaderIgraci.Hide();
 
+
+                if (_takmicenja.Count == 0)
+                {
+                    if (brojPonavljanja < 1)
+                    {
+                        PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.NEMA_PODATAKA);
+                    }
+                    noSearchResults.Show();
+                    noSearchResultsText.Show();
+                    brojPonavljanja++;
+                }
+                else
+                {
+                    noSearchResults.Hide();
+                    noSearchResultsText.Hide();
+                }
+
                 frmTakmicenjeKartica[] listItems = new frmTakmicenjeKartica[_takmicenja.Count];
                 for (int i = 0; i < listItems.Length; i++)
                 {
@@ -53,9 +71,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Takmičenja
                     pnlPrikazDrzava.Controls.Add(listItems[i]);
                 }
             }
-            catch
+            catch (Flurl.Http.FlurlHttpException ex)
             {
-                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
+                var message = await ex.GetResponseStringAsync();
+                TipNotifikacije tipNotifikacije = Exceptions.getException((message));
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, tipNotifikacije);
             }
             UpdateBrojDrazva();
             btnSaveUpdate.Hide();
@@ -193,6 +213,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Takmičenja
         private void btnOdustani_Click(object sender, EventArgs e)
         {
             OcistiPolja();
+        }
+
+        private async void btnRefresh_Click(object sender, EventArgs e)
+        {
+            await LoadTakmicenja();
         }
 
         public void OcistiPolja()

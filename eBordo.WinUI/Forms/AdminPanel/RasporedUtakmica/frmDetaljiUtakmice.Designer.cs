@@ -94,7 +94,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.flowPanelKlupa.Location = new System.Drawing.Point(239, 150);
             this.flowPanelKlupa.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.flowPanelKlupa.Name = "flowPanelKlupa";
-            this.flowPanelKlupa.Size = new System.Drawing.Size(258, 452);
+            this.flowPanelKlupa.Size = new System.Drawing.Size(258, 436);
             this.flowPanelKlupa.TabIndex = 132;
             // 
             // label1
@@ -102,7 +102,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(1, 604);
+            this.label1.Location = new System.Drawing.Point(1, 586);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(237, 23);
             this.label1.TabIndex = 142;
@@ -114,7 +114,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.lblImePrezimeBrojDresa.BackColor = System.Drawing.Color.Transparent;
             this.lblImePrezimeBrojDresa.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblImePrezimeBrojDresa.ForeColor = System.Drawing.Color.Black;
-            this.lblImePrezimeBrojDresa.Location = new System.Drawing.Point(31, 629);
+            this.lblImePrezimeBrojDresa.Location = new System.Drawing.Point(31, 611);
             this.lblImePrezimeBrojDresa.Name = "lblImePrezimeBrojDresa";
             this.lblImePrezimeBrojDresa.Size = new System.Drawing.Size(116, 23);
             this.lblImePrezimeBrojDresa.TabIndex = 141;
@@ -127,7 +127,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.flowPanelPrvaPostava.Location = new System.Drawing.Point(1, 150);
             this.flowPanelPrvaPostava.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.flowPanelPrvaPostava.Name = "flowPanelPrvaPostava";
-            this.flowPanelPrvaPostava.Size = new System.Drawing.Size(258, 452);
+            this.flowPanelPrvaPostava.Size = new System.Drawing.Size(258, 436);
             this.flowPanelPrvaPostava.TabIndex = 131;
             // 
             // label3
@@ -415,7 +415,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.pictureIgracSlika.BorderRadius = 14;
             this.pictureIgracSlika.Image = global::eBordo.WinUI.Properties.Resources.Screenshot_12;
             this.pictureIgracSlika.IsCircle = true;
-            this.pictureIgracSlika.Location = new System.Drawing.Point(4, 626);
+            this.pictureIgracSlika.Location = new System.Drawing.Point(4, 608);
             this.pictureIgracSlika.Name = "pictureIgracSlika";
             this.pictureIgracSlika.Size = new System.Drawing.Size(28, 28);
             this.pictureIgracSlika.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -542,7 +542,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.btnSaveUpdate.IdleIconLeftImage = global::eBordo.WinUI.Properties.Resources.pdf;
             this.btnSaveUpdate.IdleIconRightImage = null;
             this.btnSaveUpdate.IndicateFocus = true;
-            this.btnSaveUpdate.Location = new System.Drawing.Point(436, 619);
+            this.btnSaveUpdate.Location = new System.Drawing.Point(436, 601);
             this.btnSaveUpdate.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
             this.btnSaveUpdate.Name = "btnSaveUpdate";
             this.btnSaveUpdate.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -589,7 +589,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(482, 660);
+            this.ClientSize = new System.Drawing.Size(482, 643);
             this.Controls.Add(this.btnSaveUpdate);
             this.Controls.Add(this.bunifuPanel3);
             this.Controls.Add(this.label3);

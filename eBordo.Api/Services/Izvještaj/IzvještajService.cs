@@ -4,7 +4,9 @@ using eBordo.Api.Services.BaseCRUDService;
 using eBordo.Api.Services.Notifikacija;
 using eBordo.Api.Services.UtakmicaIzmjena;
 using eBordo.Api.Services.UtakmicaNastupService;
+using eBordo.Model.Exceptions;
 using eBordo.Model.Requests.Izvještaj;
+using eBordo.Model.Requests.Notifikacija;
 using eBordo.Model.Requests.UtakmicaIzmjena;
 using eBordo.Model.Requests.UtakmicaNastup;
 using Microsoft.EntityFrameworkCore;
@@ -56,6 +58,11 @@ namespace eBordo.Api.Services.Izvještaj
                 .Include(s => s.trener)
                 .Include(s => s.trener.korisnik)
                 .AsQueryable();
+
+            if (entity.Count() == 0)
+            {
+                throw new UserException("Nema podataka!");
+            }
 
             if (search != null && !string.IsNullOrEmpty(search.tipUtakmice))
             {
@@ -164,19 +171,7 @@ namespace eBordo.Api.Services.Izvještaj
             _db.SaveChanges();
 
             var igraciUtakmica = _db.utakmicaSastav.Where(s => s.utakmicaId == request.utakmicaID).Include(s => s.igrac).ToList();
-
-            foreach (var item in igraciUtakmica)
-            {
-                Model.Requests.Notifikacija.NotifikacijaInsertRequest notifikacijaInsert = new Model.Requests.Notifikacija.NotifikacijaInsertRequest
-                {
-                    tekstNotifikacije = "Utakmica je uspješno pohranjena!",
-                    korisnikId = item.igrac.korisnikId,
-                    tipNotifikacije = "Obavještenje"
-                };
-                _notifikacijaService.Insert(notifikacijaInsert);
-            }
-
-           
+         
             Database.Izvještaj izvjestajSearch = _db.izvještaj.Where(s => s.utakmicaID == request.utakmicaID).SingleOrDefault();
 
             if (request.utakmicaNastup.Count != 0)
@@ -207,6 +202,19 @@ namespace eBordo.Api.Services.Izvještaj
             utakmicaSearch.odigrana = true;
 
             _db.SaveChanges();
+
+            //foreach (var item in izvjestajSearch.nastupi)
+            //{
+            //    NotifikacijaInsertRequest notifikacijaInsertRequest = new NotifikacijaInsertRequest
+            //    {
+            //        korisnikId = item.igrac.korisnik.korisnikId,
+            //        tekstNotifikacije = "Izvještaj za utakmicu protiv" + utakmicaSearch.protivnik.nazivKluba + " je kreiran!",
+            //        tipNotifikacije = "Info"
+            //    };
+
+            //    _notifikacijaService.Insert(notifikacijaInsertRequest);
+            //}
+
 
             return _mapper.Map<Model.Models.Izvještaj>(izvjestaj);
         }

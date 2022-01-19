@@ -203,13 +203,13 @@
   </data>
   <data name="btnSaveIgracSastav.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAHoAAAAgCAYAAADdTGx1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEySURBVGhD7ds/SkNBEMfxKS29gVbuxEZvEMQZ7aw9go1n
-        EbxAmmRWD2Br6xGsLUQwiERQQYu4m8Q/yFxgd34Ln1dk91VfFlK8ob+LJ3o8yHLNWaacdQ4tkunA9CaZ
-        nKyy/q6d0XC9bvKFzPyXoTXJ9LXEvk35cHOVmWgR2fwXoHl3G6PhGiXbP2WTF+cA9MDknS/1fHmbvQPQ
-        k3sqj7d/P0KHamh3A/qC0EEgdBAIHQRCB4HQQSB0EAgdBEIHgdBBIHQQCB0EQgeB0EEgdBAIHQRCB4HQ
-        QSB0EAgdBLHpp7cBfaH6Nb+3AR0xnVHKesYmuNW9Mp2XxldUxzU4y4N7CDogzz/zV9tj3S23+rGU//AP
-        Q5vkKdne0SLy96oTlWVzXGByo3XlD3Ydf96aHPCyLtEXaaN2G++pPzUAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAAHwAAAAhCAYAAAAbDs+XAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE1SURBVHhe7ds/SkNBEMfxKS29gVbuxEZvEMQZ7axzBBvP
+        IniBNMmsHsA2bY5gbSGCQUIEFbSIu0n8g+wF3sxv4fOK7L7qm4XXDP1dPNZBL8uEs8w46xK6TGY902ky
+        Od/k/V0Hw/523eRrWbRfhq5Kpq8l+l3Kp7ub3ESr2NZ+Ady43xn2tyjZ8QWbvDQOgCcm73yjV+vb3ToA
+        Hj1Qebz9+xEcq8GbG+ATggeD4MEgeDAIHgyCB4PgwSB4MAgeDIIHg+DBIHgwCB4MggeD4MEgeDAIHgyC
+        B4PgwSB4MAgeDLHpZ2sDfKI6htLaAIdMF5SyXrIJbrl3psvS+pbqvBFneWweAkdk/jNQuD/Sw3LLn8o/
+        4KN9GLpNnpMdna1if686Mlw2RwVGj7woH+R13n9vfMLrykRfjS78HimqmicAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="checkBoxZavrseniTreninzi.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -225,13 +225,27 @@
   </data>
   <data name="btnSaveUpdate.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACgAAAAgCAYAAABgrToAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAENSURBVFhH7ZixagJBEIa3uR1LH8HS0iex9hHS5FkEnyGv
-        kDLurk0eIXWKICgiBmJAcdb/7jQJYbqBuy1m4WtuhruPf7lixv09HKoZJ78E25wod0n9TU70yoEebjq/
-        Jwc3bIqJDjnKL+gKiH5xqt5yoNFND8lBrm+x/8DpHcENcK30COtPqalPLpG+4bVo0xMaSoCj/3Ac6SgV
-        S8FJD0vCBLWYoBYT1GKCWkxQiwlqMUEtJqjFBLWUL4ip7iwVSgGCmOKFQglg7Dw4XtEcQ3J5KcZmu/Bc
-        72UGmODXYlOPQG7/s5/JoZogzg2G+JPU3Cltcjt+8dNG7n6aDdfKP/W5aah/WNzmMgc/bq2cuwLH+aa9
-        0Vs9XQAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAACgAAAAhCAYAAACr8emlAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEHSURBVFhH7Zg9CgJBDEan2YmlR7C09CTWHsHGswiewStY
+        6szYeARrCxEUEQUVFDNmd/1D0gV2p8jAazZh9/ENWyTm96DLehjsjNjFALFK8m9igAU66L90vic60yyK
+        AY7R8y+oChI9Y8iW0UHrpUfJkVzdYv+Q04qCa9C1woCsT1xTnTw8XMlrVKbHNKQAers26OHCFVPBcA9T
+        QgWlqKAUFZSiglJUUIoKSlFBKSooRQWlqKCUfOy8c4VUIMFsyRVSgObio8E5DGmKTy9FX6w/JvniqIHB
+        btimGiG5w2eBFF3WoTi36OHGNVdKmdwep7ZbyL1PsYKb23Gdq5D8h6XbnEVn26WVMU+uHRW8JuJcMwAA
+        AABJRU5ErkJggg==
 </value>
+  </data>
+  <data name="bunifuButton2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAHAAAAAiCAYAAACHpl23AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE0SURBVGhD7ds9agMxEIZhNatx6SO4dJmTpM4R0uQsBp/B
+        V3AZS3KTI7hOEQwOwTiQBBI8yuyu81PMAfTBJ3ialdjmZRYXVvi/NHU3WuLGPNcildrRN9EiD5rk9pLr
+        b9UUpsNmkVPN/guoDRbyTUu3q0lml3w2eRaP4bBYs0cbvIl9NuXOqr56h6hd5ywf1m05Tp9zgNqnOT4F
+        zfLubRKG4D0kHAwIjgHBMSA4BgTHgOAYEBwDgmNAcAwIjgHBMSA4BgTHgOAYEBwDgmNAcAwIjgHBMSA4
+        BgTHgOD6/4V+eRuEwQJ2O2+D2qc5noJuZXHOnEI4ebgfse5vJk20xL17iJpl8Y6/N5Rq6q5sHA+a5dM7
+        TA0ZJ+9F7+P1EO9nDXcEt3HFuxLt6n9w2tdyU1Ocj9VC+AYqPguho1vv3wAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="noSearchResultsText.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Oswald'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(64, 64, 64); text-align: left; }</value>
   </data>
 </root>

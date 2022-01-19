@@ -55,6 +55,20 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
         }
         private void frmUtakmicaKartica_Load(object sender, EventArgs e)
         {
+            if (ApiService.ApiService.logovaniKorisnik.isAdmin)
+            {
+                btnEdit.Hide();
+                btnDelete.Location = new Point(36, 203);
+            }
+            else if (ApiService.ApiService.logovaniKorisnik.isTrener)
+            {
+                btnDelete.Hide();
+            }
+            else if (ApiService.ApiService.logovaniKorisnik.isIgrac)
+            {
+                btnEdit.Hide();
+                btnDelete.Hide();
+            }
             panelDelete.Hide();
             loader.Hide();
             gifLoader.Hide();

@@ -18,6 +18,8 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
         private List<Model.Models.Izvještaj> _podaci;
         ByteToImage byteToImage = new ByteToImage();
 
+        int brojPonavljanja = 0;
+
         public frmPrikazOdigranihUtakmica()
         {
             InitializeComponent();
@@ -25,6 +27,15 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
 
         private async void frmPrikazOdigranihUtakmica_Load(object sender, EventArgs e)
         {
+            if (!ApiService.ApiService.logovaniKorisnik.isAdmin)
+            {
+                btnSaveUpdate.Hide();
+                btnSaveIgracSastav.Hide();
+            }
+            else
+            {
+                bunifuButton2.Hide();
+            }
             await LoadIzvještaj();
             UcitajPodatke();
         }
@@ -56,6 +67,25 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
                 _podaci = await _izvjestaj.GetAll<List<Model.Models.Izvještaj>>(search);
                 loader.Hide();
                 gifLoader.Hide();
+
+
+                if (_podaci.Count == 0)
+                {
+                    if (brojPonavljanja < 1)
+                    {
+                        PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.NEMA_PODATAKA);
+                    }
+                    noSearchResults.Show();
+                    noSearchResultsText.Show();
+                    txtNemaRezultataOpis.Show();
+                    brojPonavljanja++;
+                }
+                else
+                {
+                    noSearchResults.Hide();
+                    noSearchResultsText.Hide();
+                    txtNemaRezultataOpis.Hide();
+                }
 
                 frmIzvjestajKartica[] listItems = new frmIzvjestajKartica[_podaci.Count];
                 for (int i = 0; i < listItems.Length; i++)
@@ -144,9 +174,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
                 loaderBrojIgraca.Hide();
                 UcitajBrojUtakmica();
             }
-            catch
+            catch (Flurl.Http.FlurlHttpException ex)
             {
-                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
+                var message = await ex.GetResponseStringAsync();
+                TipNotifikacije tipNotifikacije = Exceptions.getException((message));
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, tipNotifikacije);
             }
         }
 

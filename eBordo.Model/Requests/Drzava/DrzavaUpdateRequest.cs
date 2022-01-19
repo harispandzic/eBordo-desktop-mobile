@@ -7,7 +7,6 @@ namespace eBordo.Model.Requests.Drzava
 {
     public class DrzavaUpdateRequest
     {
-        [MinLength(2)]
         public string nazivDrzave { get; set; }
     }
 }

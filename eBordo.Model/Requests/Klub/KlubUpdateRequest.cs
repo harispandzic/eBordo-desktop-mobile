@@ -7,7 +7,6 @@ namespace eBordo.Model.Requests.Klub
 {
     public class KlubUpdateRequest
     {
-        [MinLength(2)]
         public string nazivKluba { get; set; }
     }
 }

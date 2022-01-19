@@ -17,6 +17,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Stadion
         public string nazivStadiona { get; set; }
         public string grad { get; set; }
         public Image slikaStadiona { get; set; }
+        public Image imgZastava { get; set; }
         frmPrikazStadiona _prikazStadiona { get; set; }
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
 
@@ -33,15 +34,17 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Stadion
         public frmStadionKartica(frmPrikazStadiona prikazStadiona)
         {
             _prikazStadiona = prikazStadiona;
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 207, 127, 10, 10));
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 115, 98, 10, 10));
             InitializeComponent();
         }
 
         private void frmStadionKartica_Load(object sender, EventArgs e)
         {
-            lblNazivKluba.Text = nazivStadiona + ", " + grad;
+            lblNazivKluba.Text = nazivStadiona;
             pictureSlikaStadiona.BackgroundImage = slikaStadiona;
             pictureSlikaStadiona.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureZastava.BackgroundImage = imgZastava;
+            pictureZastava.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

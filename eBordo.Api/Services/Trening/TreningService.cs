@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using eBordo.Api.Database;
+using eBordo.Api.Services.Notifikacija;
 using eBordo.Model.Exceptions;
+using eBordo.Model.Requests.Notifikacija;
 using eBordo.Model.Requests.Trening;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -12,8 +14,12 @@ namespace eBordo.Api.Services.Trening
 {
     public class TreningService : BaseCRUDService.BaseCRUDService<eBordo.Model.Models.Trening, Database.Trening, eBordo.Model.Requests.Trening.TreningSearchObject, eBordo.Model.Requests.Trening.TreningInsertRequest, eBordo.Model.Requests.Trening.TreningUpdateRequest>, ITreningService
     {
-        public TreningService(eBordoContext db, IMapper mapper)
-            : base(db, mapper){}
+        private INotifikacijaService _notifikacijaService { get; set; }
+
+        public TreningService(eBordoContext db, IMapper mapper, INotifikacijaService notifikacijaService)
+            : base(db, mapper) {
+            _notifikacijaService = notifikacijaService;
+        }
 
         public override IEnumerable<Model.Models.Trening> Get(TreningSearchObject search = null)
         {
@@ -21,6 +27,11 @@ namespace eBordo.Api.Services.Trening
                 .Include(s => s.zabiljezio)
                 .Include(s => s.zabiljezio.korisnik)
                 .AsQueryable();
+
+            if (entity.Count() == 0)
+            {
+                throw new UserException("Nema podataka!");
+            }
 
             if (search != null && !string.IsNullOrEmpty(search.lokacijaTreninga))
             {
@@ -54,20 +65,25 @@ namespace eBordo.Api.Services.Trening
         }
         public override Model.Models.Trening Insert(TreningInsertRequest request)
         {
-            foreach (var item in _db.utakmice)
+            if (_db.trening.Count() != 0)
             {
-                if (item.datumOdigravanja.Date == request.datumOdrzavanja.Date)
+                foreach (var item in _db.utakmice)
                 {
-                    throw new UserException("Odabrani datum je zauzet. Vec je evidentirana utakmica!");
+                    if (item.datumOdigravanja.Date == request.datumOdrzavanja.Date)
+                    {
+                        throw new UserException("Odabrani datum je zauzet. Vec je evidentirana utakmica!");
+                    }
+                }
+                foreach (var item in _db.trening)
+                {
+                    if (item.datumOdrzavanja.Date == request.datumOdrzavanja.Date)
+                    {
+                        throw new UserException("Odabrani datum je zauzet. Vec je evidentiran trening!");
+                    }
                 }
             }
-            foreach (var item in _db.trening)
-            {
-                if (item.datumOdrzavanja.Date == request.datumOdrzavanja.Date)
-                {
-                    throw new UserException("Odabrani datum je zauzet. Vec je evidentiran trening!");
-                }
-            }
+            
+            
             Database.Trening trening = new Database.Trening
             {
                 datumOdrzavanja = request.datumOdrzavanja,
@@ -82,17 +98,22 @@ namespace eBordo.Api.Services.Trening
             _db.Add(trening);
             _db.SaveChanges();
 
+            //foreach (var item in _db.igraci)
+            //{
+            //    NotifikacijaInsertRequest notifikacijaInsertRequest = new NotifikacijaInsertRequest
+            //    {
+            //        korisnikId = item.korisnikId,
+            //        tekstNotifikacije = "Trening je zakazan za " +  trening.datumOdrzavanja.ToString("dd.MM.yyyy") + " za " + trening.satnica + " sati",
+            //        tipNotifikacije = "Info"
+            //    };
+
+            //    _notifikacijaService.Insert(notifikacijaInsertRequest);
+            //}
+
             return _mapper.Map<Model.Models.Trening>(trening);
         }
         public override Model.Models.Trening Update(int id, TreningUpdateRequest request)
         {
-            foreach (var item in _db.utakmice)
-            {
-                if (item.datumOdigravanja.Date == request.datumOdrzavanja.Date)
-                {
-                    throw new UserException("Odabrani datum je zauzet. Vec je evidentirana utakmica!");
-                }
-            }
             foreach (var item in _db.trening)
             {
                 if (item.datumOdrzavanja.Date == request.datumOdrzavanja.Date)

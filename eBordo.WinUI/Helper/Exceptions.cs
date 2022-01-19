@@ -48,7 +48,11 @@ namespace eBordo.WinUI.Helper
             {
                 tipNotifikacije = TipNotifikacije.SERVER_GRESKA_VALIDACIJE;
             }
-            
+            if (tekstErrora.Contains("Nema podataka!"))
+            {
+                tipNotifikacije = TipNotifikacije.NEMA_PODATAKA_U_BAZI;
+            }
+
             return tipNotifikacije;
         }
     }

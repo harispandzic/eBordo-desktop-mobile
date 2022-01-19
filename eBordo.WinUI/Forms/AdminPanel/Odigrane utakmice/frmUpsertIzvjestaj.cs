@@ -85,6 +85,8 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
                 pictureSlikaUtakmicaValidator.BackgroundImage = Properties.Resources.eBordo_success_notification;
                 pictureSlikaUtakmicaValidator.BackgroundImageLayout = ImageLayout.Stretch;
                 isSlikaUtakmiceValidated = true;
+                btnUcitajPanelPhoto.Enabled = false;
+                pictureSlikaUtakmicaValidator.BackColor = Color.FromArgb(204, 204, 204);
                 LoadPodaci();
             }
             else
@@ -530,20 +532,20 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
                 txtAsistencije.Clear();
                 txtZutiKartoni.Clear();
                 txtCrveniKartoni.Clear();
-                ratingOcjenaNastup.Clear();
-                ratingKontrolaLopte.Clear();
-                ratingDriblanje.Clear();
-                ratingDodavanje.Clear();
-                ratingKretanje.Clear();
-                ratingBrzina.Clear();
-                ratingSut.Clear();
-                ratingSnaga.Clear();
-                ratingMarkiranje.Clear();
-                ratingKlizeciStart.Clear();
-                ratingSkok.Clear();
-                ratingOdbrana.Clear();
-                ratingOcjenaNastup.Clear();
-                txtKomentar.Clear();              
+                ratingOcjenaNastup.Value = 1;
+                ratingKontrolaLopte.Value = 1;
+                ratingDriblanje.Value = 1;
+                ratingDodavanje.Value = 1;
+                ratingKretanje.Value = 1;
+                ratingBrzina.Value = 1;
+                ratingSut.Value = 1;
+                ratingSnaga.Value = 1;
+                ratingMarkiranje.Value = 1;
+                ratingKlizeciStart.Value = 1;
+                ratingSkok.Value = 1;
+                ratingOdbrana.Value = 1;
+                ratingOcjenaNastup.Value = 1;
+                txtKomentar.Clear();
                 UpdateBrojEvidentiranih();
             }
         }
@@ -557,19 +559,20 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             txtAsistencije.Clear();
             txtZutiKartoni.Clear();
             txtCrveniKartoni.Clear();
-            ratingOcjenaNastup.Clear();
-            ratingKontrolaLopte.Clear();
-            ratingDriblanje.Clear();
-            ratingDodavanje.Clear();
-            ratingKretanje.Clear();
-            ratingBrzina.Clear();
-            ratingSut.Clear();
-            ratingSnaga.Clear();
-            ratingMarkiranje.Clear();
-            ratingKlizeciStart.Clear();
-            ratingSkok.Clear();
-            ratingOdbrana.Clear();
-            ratingOcjenaNastup.Clear();
+            ratingOcjenaNastup.Value = 1;
+            ratingKontrolaLopte.Value = 1;
+            ratingDriblanje.Value = 1;
+            ratingDodavanje.Value = 1;
+            ratingKretanje.Value = 1;
+            ratingBrzina.Value = 1;
+            ratingSut.Value = 1;
+            ratingSnaga.Value = 1;
+            ratingMarkiranje.Value = 1;
+            ratingKlizeciStart.Value = 1;
+            ratingSkok.Value = 1;
+            ratingOdbrana.Value = 1;
+            ratingOcjenaNastup.Value = 1;
+            txtKomentar.Clear();
         }
         public void LoadDetaljiIgraca(Model.Models.Igrac igrac)
         {
@@ -587,7 +590,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
         }
         public void UpdateBrojEvidentiranih()
         {
-            txtBrojEvidentiranih.Text = flowPanelOcjene.Controls.Count.ToString() + " od " + _utakmicaSastav.Count();
+            txtBrojEvidentiranih.Text = flowPanelOcjene.Controls.Count.ToString() + " od " + (11 + flowPanelIzmjene.Controls.Count).ToString();
         }
         public void UpdateBrojEvidentiranihIzmjena()
         {
@@ -716,8 +719,8 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
                         utakmicaSlika = file;
 
                         Image image = Image.FromFile(fileName);
-                        pictureSlikaUtakmice.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-                        pictureSlikaUtakmice.Image = image;
+                        pictureSlikaUtakmice.BackgroundImage = image;
+                        pictureSlikaUtakmice.BackgroundImageLayout = ImageLayout.Stretch;
 
                         isSlikaUtakmiceValidated = Validacija.ValidirajSliku(image, pictureSlikaUtakmicaValidator, Field.SLIKA_UTAKMICA);
                     }
@@ -732,6 +735,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
         private void txtGoloviGost_TextChanged(object sender, EventArgs e)
         {
             isGoloviGostValidated = Validacija.ValidirajOcjene(txtGoloviGost, Field.GOLOVI_GOST);
+        }
+
+        private void bunifuPanel7_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void txtGoloviDomacin_TextChanged(object sender, EventArgs e)

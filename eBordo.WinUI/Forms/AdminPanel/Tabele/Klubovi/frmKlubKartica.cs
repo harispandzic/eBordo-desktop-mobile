@@ -16,6 +16,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Klubovi
         public int klubId { get; set; }
         public string nazivKluba { get; set; }
         public Image igracSlika { get; set; }
+        public Image zastava { get; set; }
 
         frmPrikazKlubova _prikazKlubova { get; set; }
 
@@ -32,7 +33,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Klubovi
 
         public frmKlubKartica(frmPrikazKlubova prikazKlubova)
         {
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 207, 35, 10, 10));
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 115, 98, 10, 10));
             InitializeComponent();
             _prikazKlubova = prikazKlubova;
         }
@@ -42,6 +43,8 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Klubovi
             picureGrb.BackgroundImage = igracSlika;
             picureGrb.BackgroundImageLayout = ImageLayout.Zoom;
             lblNazivKluba.Text = nazivKluba;
+            pictureZastava.BackgroundImage = zastava;
+            pictureZastava.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
 

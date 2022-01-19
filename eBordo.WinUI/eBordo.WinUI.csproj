@@ -348,6 +348,12 @@
     <Compile Include="Forms\AdminPanel\Igrač\frmUpsertIgraca.Designer.cs">
       <DependentUpon>frmUpsertIgraca.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AdminPanel\Odigrane utakmice\frmBezUcinka.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\Odigrane utakmice\frmBezUcinka.Designer.cs">
+      <DependentUpon>frmBezUcinka.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AdminPanel\Odigrane utakmice\frmDetaljiOdigraneUtakmice.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -645,6 +651,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminPanel\Igrač\frmUpsertIgraca.resx">
       <DependentUpon>frmUpsertIgraca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminPanel\Odigrane utakmice\frmBezUcinka.resx">
+      <DependentUpon>frmBezUcinka.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminPanel\Odigrane utakmice\frmDetaljiOdigraneUtakmice.resx">
       <DependentUpon>frmDetaljiOdigraneUtakmice.cs</DependentUpon>
@@ -1219,6 +1228,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pdf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eBordo_visibilityOff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eBordo_visibility.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no-result.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nema rezultata pretrage.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets" Condition="Exists('..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets')" />

@@ -46,6 +46,8 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
         private async void frmPočetna_Load(object sender, EventArgs e)
         {
             await LoadPodaci();
+            pictureSlika.Image = byteToImage.ConvertByteToImage(ApiService.ApiService.logovaniKorisnik.Slika);
+            label3.Text = ApiService.ApiService.logovaniKorisnik.ime + " " + ApiService.ApiService.logovaniKorisnik.prezime + ", dobrodošao na eBordo!";
         }
         private async Task LoadPodaci()
         {
@@ -93,9 +95,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
                 txtPorazi.Text = porazi.ToString();
                 txtNerjesene.Text = nerjsene.ToString();
             }
-            catch
+            catch (Flurl.Http.FlurlHttpException ex)
             {
-                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
+                var message = await ex.GetResponseStringAsync();
+                TipNotifikacije tipNotifikacije = Exceptions.getException((message));
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, tipNotifikacije);
             }
         }
         public async Task LoadBrojKorisnika()
@@ -112,9 +116,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
                 var igraci = await _igracApi.GetAll<List<Model.Models.Igrac>>(search);
                 //txtAktivniIgraci.Text = igraci.Count().ToString();
             }
-            catch
+            catch (Flurl.Http.FlurlHttpException ex)
             {
-                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
+                var message = await ex.GetResponseStringAsync();
+                TipNotifikacije tipNotifikacije = Exceptions.getException((message));
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, tipNotifikacije);
             }
 
             TrenerSearchObject searchTrener = new TrenerSearchObject
@@ -129,9 +135,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
                 var igraci = await _trenerApi.GetAll<List<Model.Models.Trener>>(searchTrener);
                 //txtAktivniTreneri.Text = igraci.Count().ToString();
             }
-            catch
+            catch (Flurl.Http.FlurlHttpException ex)
             {
-                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
+                var message = await ex.GetResponseStringAsync();
+                TipNotifikacije tipNotifikacije = Exceptions.getException((message));
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, tipNotifikacije);
             }
         }
         public async Task LoadZadnjaUtakmica()
@@ -195,9 +203,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
                     pictureTakmicenjeZadnjaUtakmica.BackgroundImageLayout = ImageLayout.Zoom;
                 }
             }
-            catch
+            catch (Flurl.Http.FlurlHttpException ex)
             {
-                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
+                var message = await ex.GetResponseStringAsync();
+                TipNotifikacije tipNotifikacije = Exceptions.getException((message));
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, tipNotifikacije);
             }
         }
         public async Task LoadNarednaUtakmica()
@@ -245,9 +255,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
                     pictureTakmicenje.BackgroundImageLayout = ImageLayout.Zoom;
                 }
             }
-            catch
+            catch (Flurl.Http.FlurlHttpException ex)
             {
-                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
+                var message = await ex.GetResponseStringAsync();
+                TipNotifikacije tipNotifikacije = Exceptions.getException((message));
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, tipNotifikacije);
             }
         }
         public async Task LoadNotifikacije(TipNotifikacije notifikacija = TipNotifikacije.BEZ)
@@ -297,9 +309,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
                     }
                 }
             }
-            catch
+            catch (Flurl.Http.FlurlHttpException ex)
             {
-                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
+                var message = await ex.GetResponseStringAsync();
+                TipNotifikacije tipNotifikacije = Exceptions.getException((message));
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, tipNotifikacije);
             }
         }
         public async Task LoadTop3Utakmice()
@@ -344,9 +358,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
                     }
                 }
             }
-            catch
+            catch (Flurl.Http.FlurlHttpException ex)
             {
-                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
+                var message = await ex.GetResponseStringAsync();
+                TipNotifikacije tipNotifikacije = Exceptions.getException((message));
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, tipNotifikacije);
             }
         }
         public async Task LoadTreningTop3()
@@ -394,9 +410,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
                     }
                 }
             }
-            catch
+            catch (Flurl.Http.FlurlHttpException ex)
             {
-                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
+                var message = await ex.GetResponseStringAsync();
+                TipNotifikacije tipNotifikacije = Exceptions.getException((message));
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, tipNotifikacije);
             }
         }
         private void pnlBrojIgrača_Click(object sender, EventArgs e)

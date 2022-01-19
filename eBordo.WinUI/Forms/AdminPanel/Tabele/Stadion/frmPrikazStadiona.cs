@@ -24,6 +24,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Stadion
         ByteToImage byteToImage = new ByteToImage();
 
         bool isNazivTakmicenjaValidated = false, isSlikaValidated = false, isGradValidated = false;
+        int brojPonavljanja = 0;
 
         public frmPrikazStadiona()
         {
@@ -49,6 +50,23 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Stadion
                 pictureBox1.Hide();
                 loaderIgraci.Hide();
 
+
+                if (_stadioni.Count == 0)
+                {
+                    if (brojPonavljanja < 1)
+                    {
+                        PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.NEMA_PODATAKA);
+                    }
+                    noSearchResults.Show();
+                    noSearchResultsText.Show();
+                    brojPonavljanja++;
+                }
+                else
+                {
+                    noSearchResults.Hide();
+                    noSearchResultsText.Hide();
+                }
+
                 frmStadionKartica[] listItems = new frmStadionKartica[_stadioni.Count];
                 for (int i = 0; i < listItems.Length; i++)
                 {
@@ -57,15 +75,18 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Stadion
                     listItems[i].nazivStadiona = _stadioni[i].nazivStadiona;
                     listItems[i].grad = _stadioni[i].lokacijaStadiona.nazivGrada;
                     listItems[i].slikaStadiona = byteToImage.ConvertByteToImage(_stadioni[i].slikaStadiona);
+                    listItems[i].imgZastava = byteToImage.ConvertByteToImage(_stadioni[i].lokacijaStadiona.drzava.zastava);
 
                     pnlPrikazKlubova.Controls.Add(listItems[i]);
                 }
                 UpdateBrojDrazva();
                 btnSaveUpdate.Hide();
             }
-            catch
+            catch (Flurl.Http.FlurlHttpException ex)
             {
-                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
+                var message = await ex.GetResponseStringAsync();
+                TipNotifikacije tipNotifikacije = Exceptions.getException((message));
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, tipNotifikacije);
             }
         }
         private bool ValidirajFormu()
@@ -101,9 +122,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Stadion
                     cmbGrad.SelectedIndex = 0;
                 }
             }
-            catch
+            catch (Flurl.Http.FlurlHttpException ex)
             {
-                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
+                var message = await ex.GetResponseStringAsync();
+                TipNotifikacije tipNotifikacije = Exceptions.getException((message));
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, tipNotifikacije);
             }
         }
 
@@ -230,7 +253,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Stadion
                     slikaStadiona = file;
 
                     Image image = Image.FromFile(fileName);
-                    pictureBox2.BackgroundImageLayout = ImageLayout.Zoom;
+                    pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
                     pictureBox2.BackgroundImage = image;
 
                     isSlikaValidated = Validacija.ValidirajSliku(image, pictureSlikaUtakmicaValidator, Field.SLIKA_AVATAR);
@@ -245,6 +268,17 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Stadion
         private void pictureBox2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void btnRefresh_Click(object sender, EventArgs e)
+        {
+            await LoadStadioni();
+            await LoadGradovi();
         }
 
         public void filterStadioni(int stadionId)
@@ -265,7 +299,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Stadion
             cmbGrad.Enabled = false;
 
             pictureBox2.BackgroundImage = byteToImage.ConvertByteToImage(stadion.slikaStadiona);
-            pictureBox2.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
 
             isSlikaValidated = true;
             btnUcitajPanelPhoto.Enabled = false;

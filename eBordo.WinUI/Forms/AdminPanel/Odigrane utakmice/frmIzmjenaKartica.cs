@@ -65,20 +65,14 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
 
         private void frmIzmjenaKartica_Load(object sender, EventArgs e)
         {
-            pictureIgracOut.BackgroundImage = igracOutSlika;
+            pictureIgracOut.Image = igracOutSlika;
             pictureIgracOut.BackgroundImageLayout = ImageLayout.Zoom;
 
-            pictureIgracIn.BackgroundImage = igracInSlika;
+            pictureIgracIn.Image = igracInSlika;
             pictureIgracIn.BackgroundImageLayout = ImageLayout.Zoom;
 
             txtIgracOutPrezime.Text = igracOutPrezime;
             txtIgracInPrezime.Text = igracInPrezime;
-
-            //txtIgracOutPozicija.Text = igracOutPozicija;
-            //txtIgracInPozicija.Text = igracInPozicija;
-
-            //txtIgracOutBroj.Text = igracOutBroj;
-            //txtIgracInBroj.Text = igracInBroj;
 
             txtMinuta.Text = minuta.ToString() + "'";
             txtRazlogIzmjene.Text = razlogIzmjene;

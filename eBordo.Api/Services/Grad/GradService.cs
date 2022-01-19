@@ -19,13 +19,17 @@ namespace eBordo.Api.Services.Grad
 
         public override Model.Models.Grad Insert(GradInsertRequest request)
         {
-            foreach (var item in _db.gradovi)
+            if (_db.gradovi.Count() != 0)
             {
-                if(item.nazivGrada.StartsWith(request.nazivGrada))
+                foreach (var item in _db.gradovi)
                 {
-                    throw new UserException("Grad postoji u bazi podataka!");
+                    if (item.nazivGrada.StartsWith(request.nazivGrada))
+                    {
+                        throw new UserException("Grad postoji u bazi podataka!");
+                    }
                 }
             }
+            
             Database.Grad grad = new Database.Grad
             {
                 nazivGrada = request.nazivGrada,
@@ -60,6 +64,11 @@ namespace eBordo.Api.Services.Grad
             var entity = _db.Set<Database.Grad>()
                 .Include(s => s.drzava)
                 .AsQueryable();
+
+            if (entity.Count() == 0)
+            {
+                throw new UserException("Nema podataka!");
+            }
 
             var result = entity.ToList();
 

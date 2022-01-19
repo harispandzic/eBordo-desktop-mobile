@@ -38,7 +38,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             this.flowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.txtMinute = new System.Windows.Forms.Label();
             this.pictureNastupi = new System.Windows.Forms.PictureBox();
-            this.ratingSnaga = new Bunifu.UI.WinForms.BunifuRating();
+            this.ratingOcjena = new Bunifu.UI.WinForms.BunifuRating();
             this.btnView = new System.Windows.Forms.PictureBox();
             this.bunifuPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureIgracSlika)).BeginInit();
@@ -144,28 +144,28 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             this.pictureNastupi.TabIndex = 359;
             this.pictureNastupi.TabStop = false;
             // 
-            // ratingSnaga
+            // ratingOcjena
             // 
-            this.ratingSnaga.BackColor = System.Drawing.Color.Transparent;
-            this.ratingSnaga.DisabledEmptyFillColor = System.Drawing.Color.DarkGray;
-            this.ratingSnaga.DisabledRatedFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
-            this.ratingSnaga.EmptyBorderColor = System.Drawing.Color.DarkGray;
-            this.ratingSnaga.EmptyFillColor = System.Drawing.Color.DarkGray;
-            this.ratingSnaga.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
-            this.ratingSnaga.HoverFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
-            this.ratingSnaga.InnerRadius = 1F;
-            this.ratingSnaga.Location = new System.Drawing.Point(361, 8);
-            this.ratingSnaga.Name = "ratingSnaga";
-            this.ratingSnaga.OuterRadius = 8F;
-            this.ratingSnaga.RatedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
-            this.ratingSnaga.RatedFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
-            this.ratingSnaga.ReadOnly = true;
-            this.ratingSnaga.RightClickToClear = true;
-            this.ratingSnaga.Size = new System.Drawing.Size(91, 18);
-            this.ratingSnaga.Spacing = 2;
-            this.ratingSnaga.TabIndex = 361;
-            this.ratingSnaga.Text = "jacinaSlabijeNogeVrijednost";
-            this.ratingSnaga.Value = 4;
+            this.ratingOcjena.BackColor = System.Drawing.Color.Transparent;
+            this.ratingOcjena.DisabledEmptyFillColor = System.Drawing.Color.DarkGray;
+            this.ratingOcjena.DisabledRatedFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingOcjena.EmptyBorderColor = System.Drawing.Color.DarkGray;
+            this.ratingOcjena.EmptyFillColor = System.Drawing.Color.DarkGray;
+            this.ratingOcjena.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingOcjena.HoverFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingOcjena.InnerRadius = 1F;
+            this.ratingOcjena.Location = new System.Drawing.Point(361, 8);
+            this.ratingOcjena.Name = "ratingOcjena";
+            this.ratingOcjena.OuterRadius = 8F;
+            this.ratingOcjena.RatedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingOcjena.RatedFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingOcjena.ReadOnly = true;
+            this.ratingOcjena.RightClickToClear = true;
+            this.ratingOcjena.Size = new System.Drawing.Size(91, 18);
+            this.ratingOcjena.Spacing = 2;
+            this.ratingOcjena.TabIndex = 361;
+            this.ratingOcjena.Text = "jacinaSlabijeNogeVrijednost";
+            this.ratingOcjena.Value = 4;
             // 
             // btnView
             // 
@@ -185,7 +185,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.Controls.Add(this.btnView);
-            this.Controls.Add(this.ratingSnaga);
+            this.Controls.Add(this.ratingOcjena);
             this.Controls.Add(this.txtMinute);
             this.Controls.Add(this.pictureNastupi);
             this.Controls.Add(this.flowPanel);
@@ -215,7 +215,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
         private System.Windows.Forms.FlowLayoutPanel flowPanel;
         private System.Windows.Forms.Label txtMinute;
         private System.Windows.Forms.PictureBox pictureNastupi;
-        private Bunifu.UI.WinForms.BunifuRating ratingSnaga;
+        private Bunifu.UI.WinForms.BunifuRating ratingOcjena;
         private System.Windows.Forms.PictureBox btnView;
     }
 }

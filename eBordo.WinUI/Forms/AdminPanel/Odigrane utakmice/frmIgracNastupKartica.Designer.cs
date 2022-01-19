@@ -37,17 +37,17 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             this.btnDelete = new System.Windows.Forms.PictureBox();
             this.btnEdit = new System.Windows.Forms.PictureBox();
             this.pictureNastupi = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.ratingSnaga = new Bunifu.UI.WinForms.BunifuRating();
+            this.txtBrojMinuta = new System.Windows.Forms.Label();
+            this.ratingOcjena = new Bunifu.UI.WinForms.BunifuRating();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
             this.txtBrojDresa = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.txtAsistencije = new System.Windows.Forms.Label();
             this.pictureAsistencije = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.txtGolovi = new System.Windows.Forms.Label();
             this.pictureGolovi = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.txtCrveniKartoni = new System.Windows.Forms.Label();
             this.pictureCrveniKartoni = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.txtZutiKartoni = new System.Windows.Forms.Label();
             this.pictureZutiKartoni = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureIgracSlika)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnView)).BeginInit();
@@ -148,40 +148,40 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             this.pictureNastupi.TabIndex = 152;
             this.pictureNastupi.TabStop = false;
             // 
-            // label1
+            // txtBrojMinuta
             // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(253, 8);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 23);
-            this.label1.TabIndex = 157;
-            this.label1.Text = "90";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txtBrojMinuta.BackColor = System.Drawing.Color.Transparent;
+            this.txtBrojMinuta.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBrojMinuta.ForeColor = System.Drawing.Color.Black;
+            this.txtBrojMinuta.Location = new System.Drawing.Point(253, 8);
+            this.txtBrojMinuta.Name = "txtBrojMinuta";
+            this.txtBrojMinuta.Size = new System.Drawing.Size(29, 23);
+            this.txtBrojMinuta.TabIndex = 157;
+            this.txtBrojMinuta.Text = "90";
+            this.txtBrojMinuta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // ratingSnaga
+            // ratingOcjena
             // 
-            this.ratingSnaga.BackColor = System.Drawing.Color.Transparent;
-            this.ratingSnaga.DisabledEmptyFillColor = System.Drawing.Color.DarkGray;
-            this.ratingSnaga.DisabledRatedFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
-            this.ratingSnaga.EmptyBorderColor = System.Drawing.Color.DarkGray;
-            this.ratingSnaga.EmptyFillColor = System.Drawing.Color.DarkGray;
-            this.ratingSnaga.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
-            this.ratingSnaga.HoverFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
-            this.ratingSnaga.InnerRadius = 1F;
-            this.ratingSnaga.Location = new System.Drawing.Point(460, 10);
-            this.ratingSnaga.Name = "ratingSnaga";
-            this.ratingSnaga.OuterRadius = 8F;
-            this.ratingSnaga.RatedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
-            this.ratingSnaga.RatedFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
-            this.ratingSnaga.ReadOnly = true;
-            this.ratingSnaga.RightClickToClear = true;
-            this.ratingSnaga.Size = new System.Drawing.Size(91, 18);
-            this.ratingSnaga.Spacing = 2;
-            this.ratingSnaga.TabIndex = 162;
-            this.ratingSnaga.Text = "jacinaSlabijeNogeVrijednost";
-            this.ratingSnaga.Value = 4;
+            this.ratingOcjena.BackColor = System.Drawing.Color.Transparent;
+            this.ratingOcjena.DisabledEmptyFillColor = System.Drawing.Color.DarkGray;
+            this.ratingOcjena.DisabledRatedFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingOcjena.EmptyBorderColor = System.Drawing.Color.DarkGray;
+            this.ratingOcjena.EmptyFillColor = System.Drawing.Color.DarkGray;
+            this.ratingOcjena.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingOcjena.HoverFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingOcjena.InnerRadius = 1F;
+            this.ratingOcjena.Location = new System.Drawing.Point(460, 10);
+            this.ratingOcjena.Name = "ratingOcjena";
+            this.ratingOcjena.OuterRadius = 8F;
+            this.ratingOcjena.RatedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingOcjena.RatedFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(217)))), ((int)(((byte)(20)))));
+            this.ratingOcjena.ReadOnly = true;
+            this.ratingOcjena.RightClickToClear = true;
+            this.ratingOcjena.Size = new System.Drawing.Size(91, 18);
+            this.ratingOcjena.Spacing = 2;
+            this.ratingOcjena.TabIndex = 162;
+            this.ratingOcjena.Text = "jacinaSlabijeNogeVrijednost";
+            this.ratingOcjena.Value = 4;
             // 
             // bunifuPanel1
             // 
@@ -210,17 +210,17 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             this.txtBrojDresa.Text = "#12";
             this.txtBrojDresa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label4
+            // txtAsistencije
             // 
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(427, 8);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(23, 23);
-            this.label4.TabIndex = 160;
-            this.label4.Text = "1";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txtAsistencije.BackColor = System.Drawing.Color.Transparent;
+            this.txtAsistencije.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAsistencije.ForeColor = System.Drawing.Color.Black;
+            this.txtAsistencije.Location = new System.Drawing.Point(427, 8);
+            this.txtAsistencije.Name = "txtAsistencije";
+            this.txtAsistencije.Size = new System.Drawing.Size(23, 23);
+            this.txtAsistencije.TabIndex = 160;
+            this.txtAsistencije.Text = "1";
+            this.txtAsistencije.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureAsistencije
             // 
@@ -233,17 +233,17 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             this.pictureAsistencije.TabIndex = 154;
             this.pictureAsistencije.TabStop = false;
             // 
-            // label3
+            // txtGolovi
             // 
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(385, 8);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(19, 23);
-            this.label3.TabIndex = 159;
-            this.label3.Text = "3";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txtGolovi.BackColor = System.Drawing.Color.Transparent;
+            this.txtGolovi.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGolovi.ForeColor = System.Drawing.Color.Black;
+            this.txtGolovi.Location = new System.Drawing.Point(385, 8);
+            this.txtGolovi.Name = "txtGolovi";
+            this.txtGolovi.Size = new System.Drawing.Size(19, 23);
+            this.txtGolovi.TabIndex = 159;
+            this.txtGolovi.Text = "3";
+            this.txtGolovi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureGolovi
             // 
@@ -256,17 +256,17 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             this.pictureGolovi.TabIndex = 153;
             this.pictureGolovi.TabStop = false;
             // 
-            // label5
+            // txtCrveniKartoni
             // 
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(345, 8);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(17, 23);
-            this.label5.TabIndex = 161;
-            this.label5.Text = "1";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txtCrveniKartoni.BackColor = System.Drawing.Color.Transparent;
+            this.txtCrveniKartoni.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCrveniKartoni.ForeColor = System.Drawing.Color.Black;
+            this.txtCrveniKartoni.Location = new System.Drawing.Point(345, 8);
+            this.txtCrveniKartoni.Name = "txtCrveniKartoni";
+            this.txtCrveniKartoni.Size = new System.Drawing.Size(17, 23);
+            this.txtCrveniKartoni.TabIndex = 161;
+            this.txtCrveniKartoni.Text = "1";
+            this.txtCrveniKartoni.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureCrveniKartoni
             // 
@@ -279,17 +279,17 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             this.pictureCrveniKartoni.TabIndex = 156;
             this.pictureCrveniKartoni.TabStop = false;
             // 
-            // label2
+            // txtZutiKartoni
             // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(305, 8);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(16, 23);
-            this.label2.TabIndex = 158;
-            this.label2.Text = "2";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txtZutiKartoni.BackColor = System.Drawing.Color.Transparent;
+            this.txtZutiKartoni.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtZutiKartoni.ForeColor = System.Drawing.Color.Black;
+            this.txtZutiKartoni.Location = new System.Drawing.Point(305, 8);
+            this.txtZutiKartoni.Name = "txtZutiKartoni";
+            this.txtZutiKartoni.Size = new System.Drawing.Size(16, 23);
+            this.txtZutiKartoni.TabIndex = 158;
+            this.txtZutiKartoni.Text = "2";
+            this.txtZutiKartoni.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureZutiKartoni
             // 
@@ -308,12 +308,12 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.Controls.Add(this.bunifuPanel1);
-            this.Controls.Add(this.ratingSnaga);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.ratingOcjena);
+            this.Controls.Add(this.txtCrveniKartoni);
+            this.Controls.Add(this.txtAsistencije);
+            this.Controls.Add(this.txtGolovi);
+            this.Controls.Add(this.txtZutiKartoni);
+            this.Controls.Add(this.txtBrojMinuta);
             this.Controls.Add(this.pictureCrveniKartoni);
             this.Controls.Add(this.pictureZutiKartoni);
             this.Controls.Add(this.pictureAsistencije);
@@ -351,17 +351,17 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
         private System.Windows.Forms.PictureBox btnDelete;
         private System.Windows.Forms.PictureBox btnEdit;
         private System.Windows.Forms.PictureBox pictureNastupi;
-        private System.Windows.Forms.Label label1;
-        private Bunifu.UI.WinForms.BunifuRating ratingSnaga;
+        private System.Windows.Forms.Label txtBrojMinuta;
+        private Bunifu.UI.WinForms.BunifuRating ratingOcjena;
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel1;
         private System.Windows.Forms.Label txtBrojDresa;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label txtAsistencije;
         private System.Windows.Forms.PictureBox pictureAsistencije;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label txtGolovi;
         private System.Windows.Forms.PictureBox pictureGolovi;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label txtCrveniKartoni;
         private System.Windows.Forms.PictureBox pictureCrveniKartoni;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label txtZutiKartoni;
         private System.Windows.Forms.PictureBox pictureZutiKartoni;
     }
 }

@@ -63,6 +63,20 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
 
         private void frmIzvjestajKartica_Load(object sender, EventArgs e)
         {
+            if (ApiService.ApiService.logovaniKorisnik.isAdmin)
+            {
+                btnEdit.Hide();
+                btnDelete.Location = new Point(36, 222);
+            }
+            else if (ApiService.ApiService.logovaniKorisnik.isTrener)
+            {
+                btnDelete.Hide();
+            }
+            else if (ApiService.ApiService.logovaniKorisnik.isIgrac)
+            {
+                btnEdit.Hide();
+                btnDelete.Hide();
+            }
             lblOpisUtakmice.Text = utakmicaOpis;
             lblDomacin.Text = domacin;
             lblGost.Text = gost;

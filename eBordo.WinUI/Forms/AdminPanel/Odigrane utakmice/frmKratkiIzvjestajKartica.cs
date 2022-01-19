@@ -58,17 +58,21 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
 
         private void frmKratkiIzvjestajKartica_Load(object sender, EventArgs e)
         {
-            pictureIgracSlika.BackgroundImage = igracSlika;
+            pictureIgracSlika.Image = igracSlika;
             pictureIgracSlika.BackgroundImageLayout = ImageLayout.Zoom;
             txtImePrezimeBrojDresa.Text = igracImePrezime;
             txtMinute.Text = minute.ToString();
             txtBrojDresa.Text = brojDresa;
             lblPozicija.Text = igracPozicija;
-            ratingSnaga.Value = ocjena;
+            ratingOcjena.Value = ocjena;
             getOcjene();
         }
         private void getOcjene()
         {
+            if(brojZutih == 0 && brojCrvenih == 0 && brojGolova == 0 && brojAsistencija == 0)
+            {
+                flowPanel.Controls.Add(new frmBezUcinka());
+            }
             for (int i = 0; i < brojZutih; i++)
             {
                 flowPanel.Controls.Add((Control)new frmZutiKartonControl());

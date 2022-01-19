@@ -32,7 +32,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Grad
 
         public frmGradKartica(frmPrikazGradova prikazGradova)
         {
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 207, 35, 10, 10));
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 115, 98, 10, 10));
             InitializeComponent();
             _prikazGradova = prikazGradova;
         }
@@ -40,7 +40,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Grad
         private void frmGradKartica_Load(object sender, EventArgs e)
         {
             picureZastava.BackgroundImage = zastavaDrzave;
-            picureZastava.BackgroundImageLayout = ImageLayout.Zoom;
+            picureZastava.BackgroundImageLayout = ImageLayout.Stretch;
             lblNazivDrzave.Text = nazivGrada;
         }
 

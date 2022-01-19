@@ -25,10 +25,17 @@ namespace eBordo.WinUI.Forms.Igrač
             hideActiveLabels("Početna");
             igracTabs.SetPage("tabPocetna");
 
-            //korisnickaFotografija.Image = byteToImage.ConvertByteToImage(ApiService.ApiService.logovaniKorisnik.Slika);
-            //lblLogovaniKorisnik.Text = (ApiService.ApiService.logovaniKorisnik.ime + " " + ApiService.ApiService.logovaniKorisnik.prezime).ToUpper();
-            //PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.PORUKA_DOBRODOSLICE);
-         
+            korisnickaFotografija.Image = byteToImage.ConvertByteToImage(ApiService.ApiService.logovaniKorisnik.Slika);
+            lblLogovaniKorisnik.Text = (ApiService.ApiService.logovaniKorisnik.ime + " " + ApiService.ApiService.logovaniKorisnik.prezime).ToUpper();
+            PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.PORUKA_DOBRODOSLICE);
+
+            if (!ApiService.ApiService.logovaniKorisnik.isAdmin)
+            {
+                pnlTabele.Hide();
+                iconPictureBox7.Hide();
+                bunifuButton1.Text = "";
+                bunifuButton1.Cursor = Cursors.Default;
+            }
         }
         void hideActiveLabels(string opcija)
         {
@@ -152,6 +159,10 @@ namespace eBordo.WinUI.Forms.Igrač
 
         private void bunifuButton1_Click(object sender, EventArgs e)
         {
+            if (!ApiService.ApiService.logovaniKorisnik.isAdmin)
+            {
+                return;
+            }
             hideActiveLabels("Tabele");
             igracTabs.SetPage("Tabele");
         }

@@ -2,6 +2,7 @@
 using eBordo.Api.Database;
 using eBordo.Api.Services.BaseCRUDService;
 using eBordo.Api.Services.UtakmicaNastupService;
+using eBordo.Model.Exceptions;
 using eBordo.Model.Requests.UtakmicaNastup;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -21,6 +22,11 @@ namespace eBordo.Api.Services.UtakmicaNastup
         {
             var entity = _db.utakmicaNastup
                 .AsQueryable();
+
+            if (entity.Count() == 0)
+            {
+                throw new UserException("Nema podataka!");
+            }
 
             if (search != null)
             {

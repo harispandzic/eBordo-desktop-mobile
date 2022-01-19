@@ -197,9 +197,9 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.BackgroundImage = global::eBordo.WinUI.Properties.Resources.customIgrac;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(13, -18);
+            this.pictureBox2.Location = new System.Drawing.Point(13, 3);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(165, 231);
+            this.pictureBox2.Size = new System.Drawing.Size(165, 210);
             this.pictureBox2.TabIndex = 239;
             this.pictureBox2.TabStop = false;
             // 

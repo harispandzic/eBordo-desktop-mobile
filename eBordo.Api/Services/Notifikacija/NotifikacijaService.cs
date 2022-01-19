@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using eBordo.Api.Database;
 using eBordo.Api.Services.BaseCRUDService;
+using eBordo.Model.Exceptions;
 using eBordo.Model.Requests.Notifikacija;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -19,6 +20,11 @@ namespace eBordo.Api.Services.Notifikacija
             var entity = _db.notifikacije
                 .Include(s => s.korisnik)
                 .AsQueryable();
+
+            if (entity.Count() == 0)
+            {
+                throw new UserException("Nema podataka!");
+            }
 
             if (search != null)
             {

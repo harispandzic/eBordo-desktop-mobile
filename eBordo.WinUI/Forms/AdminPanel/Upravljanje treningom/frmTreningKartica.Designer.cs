@@ -212,9 +212,9 @@ namespace eBordo.WinUI.Forms.AdminPanel.Upravljanje_treningom
             this.pictureSlikaPanelIgraca.BackColor = System.Drawing.Color.Transparent;
             this.pictureSlikaPanelIgraca.BackgroundImage = global::eBordo.WinUI.Properties.Resources.Picture11;
             this.pictureSlikaPanelIgraca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureSlikaPanelIgraca.Location = new System.Drawing.Point(-22, -27);
+            this.pictureSlikaPanelIgraca.Location = new System.Drawing.Point(-21, 3);
             this.pictureSlikaPanelIgraca.Name = "pictureSlikaPanelIgraca";
-            this.pictureSlikaPanelIgraca.Size = new System.Drawing.Size(152, 205);
+            this.pictureSlikaPanelIgraca.Size = new System.Drawing.Size(134, 163);
             this.pictureSlikaPanelIgraca.TabIndex = 315;
             this.pictureSlikaPanelIgraca.TabStop = false;
             // 

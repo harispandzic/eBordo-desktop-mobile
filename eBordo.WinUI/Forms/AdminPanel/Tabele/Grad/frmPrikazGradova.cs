@@ -25,6 +25,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Grad
         ByteToImage byteToImage = new ByteToImage();
         Model.Models.Grad grad;
         bool isNazivGradaValidated = false, isDrzavaValidated = false;
+        int brojPonavljanja = 0;
 
         public frmPrikazGradova()
         {
@@ -51,6 +52,23 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Grad
                 loader.Hide();
                 loaderIgraci.Hide();
 
+
+                if (_gradovi.Count == 0)
+                {
+                    if (brojPonavljanja < 1)
+                    {
+                        PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.NEMA_PODATAKA);
+                    }
+                    noSearchResults.Show();
+                    noSearchResultsText.Show();
+                    brojPonavljanja++;
+                }
+                else
+                {
+                    noSearchResults.Hide();
+                    noSearchResultsText.Hide();
+                }
+
                 frmGradKartica[] listItems = new frmGradKartica[_gradovi.Count];
                 for (int i = 0; i < listItems.Length; i++)
                 {
@@ -64,9 +82,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Grad
                 UpdateBrojDrazva();
                 btnSaveUpdate.Hide();
             }
-            catch
+            catch (Flurl.Http.FlurlHttpException ex)
             {
-                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
+                var message = await ex.GetResponseStringAsync();
+                TipNotifikacije tipNotifikacije = Exceptions.getException((message));
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, tipNotifikacije);
             }
         }
         private bool ValidirajFormu()
@@ -102,9 +122,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Grad
                     cmbDrzave.SelectedIndex = 0;
                 }
             }
-            catch
+            catch (Flurl.Http.FlurlHttpException ex)
             {
-                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
+                var message = await ex.GetResponseStringAsync();
+                TipNotifikacije tipNotifikacije = Exceptions.getException((message));
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, tipNotifikacije);
             }
         }
 
@@ -205,6 +227,12 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Grad
         private void btnOdustani_Click(object sender, EventArgs e)
         {
             OcistiPolja();
+        }
+
+        private async void btnRefresh_Click(object sender, EventArgs e)
+        {
+            await LoadGradovi();
+            await LoadDrzave();
         }
 
         public void OcistiPolja()

@@ -40,10 +40,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Takmičenja
             // 
             this.btnDelete.BackColor = System.Drawing.Color.Transparent;
             this.btnDelete.BackgroundImage = global::eBordo.WinUI.Properties.Resources.edit2;
+            this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelete.Location = new System.Drawing.Point(181, 8);
+            this.btnDelete.Location = new System.Drawing.Point(95, 79);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(20, 20);
+            this.btnDelete.Size = new System.Drawing.Size(15, 15);
             this.btnDelete.TabIndex = 56;
             this.btnDelete.TabStop = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -51,20 +52,20 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Takmičenja
             // lblNazivTakmicenja
             // 
             this.lblNazivTakmicenja.BackColor = System.Drawing.Color.Transparent;
-            this.lblNazivTakmicenja.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNazivTakmicenja.Font = new System.Drawing.Font("Oswald", 7F);
             this.lblNazivTakmicenja.ForeColor = System.Drawing.Color.Black;
-            this.lblNazivTakmicenja.Location = new System.Drawing.Point(31, 7);
+            this.lblNazivTakmicenja.Location = new System.Drawing.Point(0, 76);
             this.lblNazivTakmicenja.Name = "lblNazivTakmicenja";
-            this.lblNazivTakmicenja.Size = new System.Drawing.Size(116, 23);
+            this.lblNazivTakmicenja.Size = new System.Drawing.Size(97, 20);
             this.lblNazivTakmicenja.TabIndex = 55;
             this.lblNazivTakmicenja.Text = "M:tel Premier Liga";
             this.lblNazivTakmicenja.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // picureLogo
             // 
-            this.picureLogo.Location = new System.Drawing.Point(5, 5);
+            this.picureLogo.Location = new System.Drawing.Point(0, 7);
             this.picureLogo.Name = "picureLogo";
-            this.picureLogo.Size = new System.Drawing.Size(25, 25);
+            this.picureLogo.Size = new System.Drawing.Size(115, 60);
             this.picureLogo.TabIndex = 54;
             this.picureLogo.TabStop = false;
             // 
@@ -76,8 +77,9 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Takmičenja
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.lblNazivTakmicenja);
             this.Controls.Add(this.picureLogo);
+            this.Margin = new System.Windows.Forms.Padding(0, 0, 3, 3);
             this.Name = "frmTakmicenjeKartica";
-            this.Size = new System.Drawing.Size(207, 35);
+            this.Size = new System.Drawing.Size(115, 98);
             this.Load += new System.EventHandler(this.frmTakmicenjeKartica_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picureLogo)).EndInit();

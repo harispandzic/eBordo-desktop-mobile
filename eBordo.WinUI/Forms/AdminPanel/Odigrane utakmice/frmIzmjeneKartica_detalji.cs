@@ -42,11 +42,9 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
 
         private void frmIzmjeneKartica_detalji_Load(object sender, EventArgs e)
         {
-            pictureIgracOut.BackgroundImage = igracOutSlika;
-            pictureIgracOut.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureIgracOut.Image = igracOutSlika;
             label1.Text = razlogIzmjene[0].ToString().ToUpper();
-            pictureIgracIn.BackgroundImage = igracInSlika;
-            pictureIgracIn.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureIgracIn.Image = igracInSlika;
 
             txtIgracOutPrezime.Text = igracOutPrezime;
             txtIgracInPrezime.Text = igracInPrezime;

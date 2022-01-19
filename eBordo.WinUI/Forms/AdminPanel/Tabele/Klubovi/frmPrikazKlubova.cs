@@ -26,6 +26,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Klubovi
         ByteToImage byteToImage = new ByteToImage();
 
         bool isNazivTakmicenjaValidated = false, isSlikaValidated = false, isGradValidated = false, isStadionValidated = false;
+        int brojPonavljanja = 0;
 
         public frmPrikazKlubova()
         {
@@ -52,6 +53,23 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Klubovi
                 loaderIgraci.Hide();
                 loader.Hide();
 
+
+                if (_klubovi.Count == 0)
+                {
+                    if (brojPonavljanja < 1)
+                    {
+                        PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.NEMA_PODATAKA);
+                    }
+                    noSearchResults.Show();
+                    noSearchResultsText.Show();
+                    brojPonavljanja++;
+                }
+                else
+                {
+                    noSearchResults.Hide();
+                    noSearchResultsText.Hide();
+                }
+
                 frmKlubKartica[] listItems = new frmKlubKartica[_klubovi.Count];
                 for (int i = 0; i < listItems.Length; i++)
                 {
@@ -59,15 +77,18 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Klubovi
                     listItems[i].klubId = _klubovi[i].klubId;
                     listItems[i].nazivKluba = _klubovi[i].nazivKluba;
                     listItems[i].igracSlika = byteToImage.ConvertByteToImage(_klubovi[i].grb);
+                    listItems[i].zastava = byteToImage.ConvertByteToImage(_klubovi[i].grad.drzava.zastava);
 
                     pnlPrikazKlubova.Controls.Add(listItems[i]);
                 }
                 UpdateBrojDrazva();
                 btnSaveUpdate.Hide();
             }
-            catch
+            catch (Flurl.Http.FlurlHttpException ex)
             {
-                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
+                var message = await ex.GetResponseStringAsync();
+                TipNotifikacije tipNotifikacije = Exceptions.getException((message));
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, tipNotifikacije);
             }
         }
         private bool ValidirajFormu()
@@ -103,9 +124,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Klubovi
                     cmbGrad.SelectedIndex = 0;
                 }
             }
-            catch
+            catch (Flurl.Http.FlurlHttpException ex)
             {
-                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
+                var message = await ex.GetResponseStringAsync();
+                TipNotifikacije tipNotifikacije = Exceptions.getException((message));
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, tipNotifikacije);
             }
         }
         private async Task LoadStadioni()
@@ -123,9 +146,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Klubovi
                     cmbStadion.SelectedIndex = 0;
                 }
             }
-            catch
+            catch (Flurl.Http.FlurlHttpException ex)
             {
-                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
+                var message = await ex.GetResponseStringAsync();
+                TipNotifikacije tipNotifikacije = Exceptions.getException((message));
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, tipNotifikacije);
             }
         }
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -208,6 +233,13 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Klubovi
         private void btnOdustani_Click(object sender, EventArgs e)
         {
             OcistiPolja();
+        }
+
+        private async void btnRefresh_Click(object sender, EventArgs e)
+        {
+            await LoadKlubovi();
+            await LoadGradovi();
+            await LoadStadioni();
         }
 
         private async void bunifuButton1_Click(object sender, EventArgs e)

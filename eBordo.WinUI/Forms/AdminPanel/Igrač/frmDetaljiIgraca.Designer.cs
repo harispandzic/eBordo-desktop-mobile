@@ -805,9 +805,9 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.korisnickaFotografija.BackColor = System.Drawing.Color.Transparent;
             this.korisnickaFotografija.BackgroundImage = global::eBordo.WinUI.Properties.Resources.customIgrac;
             this.korisnickaFotografija.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.korisnickaFotografija.Location = new System.Drawing.Point(-4, -33);
+            this.korisnickaFotografija.Location = new System.Drawing.Point(-4, 11);
             this.korisnickaFotografija.Name = "korisnickaFotografija";
-            this.korisnickaFotografija.Size = new System.Drawing.Size(232, 325);
+            this.korisnickaFotografija.Size = new System.Drawing.Size(232, 267);
             this.korisnickaFotografija.TabIndex = 239;
             this.korisnickaFotografija.TabStop = false;
             // 

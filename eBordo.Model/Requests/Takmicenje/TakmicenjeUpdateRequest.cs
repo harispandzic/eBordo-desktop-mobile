@@ -7,7 +7,6 @@ namespace eBordo.Model.Requests.Takmicenje
 {
     public class TakmicenjeUpdateRequest
     {
-        [MinLength(2)]
         public string nazivTakmicenja { get; set; }
     }
 }

@@ -17,13 +17,17 @@ namespace eBordo.Api.Services.Stadion
 
         public override Model.Models.Stadion Insert(StadionInsertRequest request)
         {
-            foreach (var item in _db.stadioni)
+            if (_db.stadioni.Count() != 0)
             {
-                if (item.nazivStadiona.StartsWith(request.nazivStadiona))
+                foreach (var item in _db.stadioni)
                 {
-                    throw new UserException("Stadion postoji u bazi podataka!");
+                    if (item.nazivStadiona.StartsWith(request.nazivStadiona))
+                    {
+                        throw new UserException("Stadion postoji u bazi podataka!");
+                    }
                 }
             }
+            
             Database.Stadion stadion = new Database.Stadion
             {
                 nazivStadiona = request.nazivStadiona,
@@ -58,6 +62,11 @@ namespace eBordo.Api.Services.Stadion
                 .Include(s => s.lokacijaStadiona)
                 .Include(s => s.lokacijaStadiona.drzava)
                 .AsQueryable();
+
+            if (entity.Count() == 0)
+            {
+                throw new UserException("Nema podataka!");
+            }
 
             var result = entity.ToList();
 

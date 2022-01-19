@@ -333,7 +333,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
 
                     Image image = Image.FromFile(fileName);
                     pictureSlikaIgraca.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-                    pictureSlikaIgraca.Image = image;
+                    pictureSlikaIgraca.BackgroundImage = image;
 
                     isSlikaPanelValidated = Validacija.ValidirajSliku(image, pictureSlikaPanelVAlidator, Field.SLIKA_PANEL);
                 }

@@ -93,32 +93,31 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             frmKratkiIzvjestajKartica kratkiNastup;
             foreach (var item in _odabraniIzvjestaj.nastupi)
             {
-                if (item.golovi > 0 || item.asistencije > 0 || item.zutiKartoni > 0 || item.crveniKartoni > 0)
-                {
-                    kratkiNastup = new frmKratkiIzvjestajKartica();
-                    kratkiNastup.igracId = item.igracId;
-                    kratkiNastup.igracSlika = byteToImage.ConvertByteToImage(item.igrac.korisnik.Slika);
-                    kratkiNastup.igracImePrezime = item.igrac.korisnik.ime[0] + ". " + item.igrac.korisnik.prezime;
-                    kratkiNastup.brojDresa = "#" + item.igrac.brojDresa.ToString();
-                    kratkiNastup.igracPozicija = item.igrac.pozicija.skracenica;
-                    kratkiNastup.brojGolova = item.golovi;
-                    kratkiNastup.brojAsistencija = item.asistencije;
-                    kratkiNastup.brojZutih = item.zutiKartoni;
-                    kratkiNastup.brojCrvenih = item.crveniKartoni;
-                    kratkiNastup.kontrolaLopte = item.kontrolaLopte;
-                    kratkiNastup.driblanje = item.driblanje;
-                    kratkiNastup.dodavanje = item.dodavanje;
-                    kratkiNastup.kretanje = item.kretanje;
-                    kratkiNastup.brzina = item.brzina;
-                    kratkiNastup.sut = item.sut;
-                    kratkiNastup.snaga = item.snaga;
-                    kratkiNastup.markiranje = item.markiranje;
-                    kratkiNastup.klizeciStart = item.klizeciStart;
-                    kratkiNastup.skok = item.skok;
-                    kratkiNastup.odbrana = item.odbrana;
-                    kratkiNastup.igracKomentar = item.komentar;
-                    flowPanelOcjene.Controls.Add(kratkiNastup);
-                }
+                kratkiNastup = new frmKratkiIzvjestajKartica();
+                kratkiNastup.brojGolova = item.golovi;
+                kratkiNastup.brojAsistencija = item.asistencije;
+                kratkiNastup.brojZutih = item.zutiKartoni;
+                kratkiNastup.brojCrvenih = item.crveniKartoni;
+                kratkiNastup.igracId = item.igracId;
+                kratkiNastup.igracSlika = byteToImage.ConvertByteToImage(item.igrac.korisnik.Slika);
+                kratkiNastup.igracImePrezime = item.igrac.korisnik.ime[0] + ". " + item.igrac.korisnik.prezime;
+                kratkiNastup.brojDresa = "#" + item.igrac.brojDresa.ToString();
+                kratkiNastup.igracPozicija = item.igrac.pozicija.skracenica;
+                kratkiNastup.minute = item.minute;
+                kratkiNastup.ocjena = item.ocjena;
+                kratkiNastup.kontrolaLopte = item.kontrolaLopte;
+                kratkiNastup.driblanje = item.driblanje;
+                kratkiNastup.dodavanje = item.dodavanje;
+                kratkiNastup.kretanje = item.kretanje;
+                kratkiNastup.brzina = item.brzina;
+                kratkiNastup.sut = item.sut;
+                kratkiNastup.snaga = item.snaga;
+                kratkiNastup.markiranje = item.markiranje;
+                kratkiNastup.klizeciStart = item.klizeciStart;
+                kratkiNastup.skok = item.skok;
+                kratkiNastup.odbrana = item.odbrana;
+                kratkiNastup.igracKomentar = item.komentar;
+                flowPanelOcjene.Controls.Add(kratkiNastup);
             }
             foreach (var item in _odabraniIzvjestaj.izmjene)
             {

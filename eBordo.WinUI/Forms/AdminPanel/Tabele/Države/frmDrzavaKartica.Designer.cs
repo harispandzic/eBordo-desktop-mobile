@@ -39,11 +39,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Države
             // lblNazivDrzave
             // 
             this.lblNazivDrzave.BackColor = System.Drawing.Color.Transparent;
-            this.lblNazivDrzave.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNazivDrzave.Font = new System.Drawing.Font("Oswald", 7F);
             this.lblNazivDrzave.ForeColor = System.Drawing.Color.Black;
-            this.lblNazivDrzave.Location = new System.Drawing.Point(31, 7);
+            this.lblNazivDrzave.Location = new System.Drawing.Point(0, 76);
             this.lblNazivDrzave.Name = "lblNazivDrzave";
-            this.lblNazivDrzave.Size = new System.Drawing.Size(116, 23);
+            this.lblNazivDrzave.Size = new System.Drawing.Size(97, 20);
             this.lblNazivDrzave.TabIndex = 55;
             this.lblNazivDrzave.Text = "Bosna i Hercegovina";
             this.lblNazivDrzave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -54,18 +54,18 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Države
             this.btnDelete.BackgroundImage = global::eBordo.WinUI.Properties.Resources.edit2;
             this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelete.Location = new System.Drawing.Point(181, 8);
+            this.btnDelete.Location = new System.Drawing.Point(95, 79);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(20, 20);
+            this.btnDelete.Size = new System.Drawing.Size(15, 15);
             this.btnDelete.TabIndex = 56;
             this.btnDelete.TabStop = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // picureZastava
             // 
-            this.picureZastava.Location = new System.Drawing.Point(5, 6);
+            this.picureZastava.Location = new System.Drawing.Point(0, 0);
             this.picureZastava.Name = "picureZastava";
-            this.picureZastava.Size = new System.Drawing.Size(25, 25);
+            this.picureZastava.Size = new System.Drawing.Size(115, 76);
             this.picureZastava.TabIndex = 54;
             this.picureZastava.TabStop = false;
             // 
@@ -77,8 +77,9 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Države
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.lblNazivDrzave);
             this.Controls.Add(this.picureZastava);
+            this.Margin = new System.Windows.Forms.Padding(0, 0, 3, 3);
             this.Name = "frmDrzavaKartica";
-            this.Size = new System.Drawing.Size(207, 35);
+            this.Size = new System.Drawing.Size(115, 98);
             this.Load += new System.EventHandler(this.frmDrzavaKartica_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picureZastava)).EndInit();

@@ -63,7 +63,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
             this.treningLoader = new System.Windows.Forms.PictureBox();
             this.bunifuLoader1 = new System.Windows.Forms.PictureBox();
             this.btnSaveIgracSastav = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.pictureTrenerSlika = new Bunifu.UI.WinForms.BunifuPictureBox();
+            this.pictureSlika = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.bunifuPanel8 = new Bunifu.UI.WinForms.BunifuPanel();
             this.pictureRezultatZadnjaUtakmica = new System.Windows.Forms.PictureBox();
             this.pictureTakmicenjeZadnjaUtakmica = new System.Windows.Forms.PictureBox();
@@ -94,7 +94,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
             ((System.ComponentModel.ISupportInitialize)(this.loaderPocetna)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.treningLoader)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuLoader1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureTrenerSlika)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSlika)).BeginInit();
             this.bunifuPanel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureRezultatZadnjaUtakmica)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureTakmicenjeZadnjaUtakmica)).BeginInit();
@@ -625,21 +625,21 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
             this.btnSaveIgracSastav.UseDefaultRadiusAndThickness = true;
             this.btnSaveIgracSastav.Click += new System.EventHandler(this.btnSaveIgracSastav_Click);
             // 
-            // pictureTrenerSlika
+            // pictureSlika
             // 
-            this.pictureTrenerSlika.AllowFocused = false;
-            this.pictureTrenerSlika.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureTrenerSlika.AutoSizeHeight = true;
-            this.pictureTrenerSlika.BorderRadius = 17;
-            this.pictureTrenerSlika.Image = global::eBordo.WinUI.Properties.Resources.eBordo_ADMIN;
-            this.pictureTrenerSlika.IsCircle = true;
-            this.pictureTrenerSlika.Location = new System.Drawing.Point(12, 6);
-            this.pictureTrenerSlika.Name = "pictureTrenerSlika";
-            this.pictureTrenerSlika.Size = new System.Drawing.Size(35, 35);
-            this.pictureTrenerSlika.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureTrenerSlika.TabIndex = 117;
-            this.pictureTrenerSlika.TabStop = false;
-            this.pictureTrenerSlika.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
+            this.pictureSlika.AllowFocused = false;
+            this.pictureSlika.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureSlika.AutoSizeHeight = true;
+            this.pictureSlika.BorderRadius = 17;
+            this.pictureSlika.Image = global::eBordo.WinUI.Properties.Resources.eBordo_ADMIN;
+            this.pictureSlika.IsCircle = true;
+            this.pictureSlika.Location = new System.Drawing.Point(12, 6);
+            this.pictureSlika.Name = "pictureSlika";
+            this.pictureSlika.Size = new System.Drawing.Size(35, 35);
+            this.pictureSlika.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureSlika.TabIndex = 117;
+            this.pictureSlika.TabStop = false;
+            this.pictureSlika.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
             // 
             // bunifuPanel8
             // 
@@ -857,7 +857,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
             this.Controls.Add(this.treningLoader);
             this.Controls.Add(this.bunifuLoader1);
             this.Controls.Add(this.btnSaveIgracSastav);
-            this.Controls.Add(this.pictureTrenerSlika);
+            this.Controls.Add(this.pictureSlika);
             this.Controls.Add(this.bunifuPanel8);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label14);
@@ -883,7 +883,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
             ((System.ComponentModel.ISupportInitialize)(this.loaderPocetna)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.treningLoader)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuLoader1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureTrenerSlika)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSlika)).EndInit();
             this.bunifuPanel8.ResumeLayout(false);
             this.bunifuPanel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureRezultatZadnjaUtakmica)).EndInit();
@@ -939,7 +939,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private Bunifu.UI.WinForms.BunifuPictureBox pictureTrenerSlika;
+        private Bunifu.UI.WinForms.BunifuPictureBox pictureSlika;
         private System.Windows.Forms.PictureBox pictureRezultatZadnjaUtakmica;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSaveIgracSastav;
         private System.Windows.Forms.PictureBox loaderPocetna;

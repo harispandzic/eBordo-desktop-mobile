@@ -46,6 +46,12 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
 
         private void frmTrenerKartica_Load(object sender, EventArgs e)
         {
+            if (!ApiService.ApiService.logovaniKorisnik.isAdmin)
+            {
+                btnEdit.Hide();
+                btnDelete.Hide();
+                btnView.Location = new Point(82, 251);
+            }
             korisnickaFotografija.BackgroundImage = slika;
             korisnickaFotografija.BackgroundImageLayout = ImageLayout.Zoom;
             lblImePrezime.Text = imePrezime.ToUpper();

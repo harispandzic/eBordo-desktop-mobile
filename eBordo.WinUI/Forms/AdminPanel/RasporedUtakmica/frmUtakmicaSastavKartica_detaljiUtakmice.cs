@@ -44,8 +44,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
 
         private void frmUtakmicaSastavKartica_detaljiUtakmice_Load(object sender, EventArgs e)
         {
-            pictureIgracSlika.BackgroundImage = igracSlika;
-            pictureIgracSlika.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureIgracSlika.Image = igracSlika;
             lblImePrezime.Text = igracImePrezime;
             lblPozicija.Text = igracPozicija;
             lblBrojDresa.Text = brojDresa;
