@@ -65,7 +65,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
                 {
                     userProflePicture.Image = byteToImage.ConvertByteToImage(_odabraniIgrac.korisnik.Slika);
                     userProflePicture.SizeMode = PictureBoxSizeMode.StretchImage;
-                    pictureSlikaIgraca.Image = byteToImage.ConvertByteToImage(_odabraniIgrac.slikaPanel);
+                    pictureSlikaIgraca.BackgroundImage = byteToImage.ConvertByteToImage(_odabraniIgrac.slikaPanel);
                     pictureSlikaIgraca.SizeMode = PictureBoxSizeMode.Zoom;
                     isSlikaAvatarValidated = true;
                     isSlikaPanelValidated = true;

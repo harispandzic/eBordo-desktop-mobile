@@ -1364,7 +1364,7 @@ namespace eBordo.WinUI.Forms.Igrač
             this.gornjiPanel.BorderColor = System.Drawing.Color.Transparent;
             this.gornjiPanel.BorderRadius = 3;
             this.gornjiPanel.BorderThickness = 1;
-            this.gornjiPanel.Controls.Add(this.pictureBox1);
+            //this.gornjiPanel.Controls.Add(this.pictureBox1);
             this.gornjiPanel.Controls.Add(this.pnlGrb);
             this.gornjiPanel.Controls.Add(this.lblNaziv);
             this.gornjiPanel.Controls.Add(this.pngLogout);

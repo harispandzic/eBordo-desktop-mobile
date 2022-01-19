@@ -24,6 +24,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Stadion
         ByteToImage byteToImage = new ByteToImage();
 
         bool isNazivTakmicenjaValidated = false, isSlikaValidated = false, isGradValidated = false;
+        int brojPonavljanja = 0;
 
         public frmPrikazStadiona()
         {
@@ -48,6 +49,23 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Stadion
                 _stadioni = await _stadion.GetAll<List<Model.Models.Stadion>>(null);
                 pictureBox1.Hide();
                 loaderIgraci.Hide();
+
+
+                if (_stadioni.Count == 0)
+                {
+                    if (brojPonavljanja < 1)
+                    {
+                        PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.NEMA_PODATAKA);
+                    }
+                    noSearchResults.Show();
+                    noSearchResultsText.Show();
+                    brojPonavljanja++;
+                }
+                else
+                {
+                    noSearchResults.Hide();
+                    noSearchResultsText.Hide();
+                }
 
                 frmStadionKartica[] listItems = new frmStadionKartica[_stadioni.Count];
                 for (int i = 0; i < listItems.Length; i++)

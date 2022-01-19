@@ -22,6 +22,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Takmičenja
         ByteToImage byteToImage = new ByteToImage();
         Model.Models.Takmicenje takmicenje;
         bool isNazivTakmicenjaValidated = false, isSlikaValidated = false;
+        int brojPonavljanja = 0;
 
         public frmTakmicenjaPrikaz()
         {
@@ -41,6 +42,23 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Takmičenja
                 _takmicenja = await _takmicenje.GetAll<List<Model.Models.Takmicenje>>(null);
                 loader.Hide();
                 loaderIgraci.Hide();
+
+
+                if (_takmicenja.Count == 0)
+                {
+                    if (brojPonavljanja < 1)
+                    {
+                        PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.NEMA_PODATAKA);
+                    }
+                    noSearchResults.Show();
+                    noSearchResultsText.Show();
+                    brojPonavljanja++;
+                }
+                else
+                {
+                    noSearchResults.Hide();
+                    noSearchResultsText.Hide();
+                }
 
                 frmTakmicenjeKartica[] listItems = new frmTakmicenjeKartica[_takmicenja.Count];
                 for (int i = 0; i < listItems.Length; i++)

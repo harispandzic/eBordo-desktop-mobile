@@ -26,6 +26,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Klubovi
         ByteToImage byteToImage = new ByteToImage();
 
         bool isNazivTakmicenjaValidated = false, isSlikaValidated = false, isGradValidated = false, isStadionValidated = false;
+        int brojPonavljanja = 0;
 
         public frmPrikazKlubova()
         {
@@ -51,6 +52,23 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Klubovi
                 _klubovi = await _klub.GetAll<List<Model.Models.Klub>>(null);
                 loaderIgraci.Hide();
                 loader.Hide();
+
+
+                if (_klubovi.Count == 0)
+                {
+                    if (brojPonavljanja < 1)
+                    {
+                        PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.NEMA_PODATAKA);
+                    }
+                    noSearchResults.Show();
+                    noSearchResultsText.Show();
+                    brojPonavljanja++;
+                }
+                else
+                {
+                    noSearchResults.Hide();
+                    noSearchResultsText.Hide();
+                }
 
                 frmKlubKartica[] listItems = new frmKlubKartica[_klubovi.Count];
                 for (int i = 0; i < listItems.Length; i++)

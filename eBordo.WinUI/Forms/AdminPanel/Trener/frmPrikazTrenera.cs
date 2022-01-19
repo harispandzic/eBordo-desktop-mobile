@@ -26,6 +26,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
         DataGridViewImageColumn btnDelete = new DataGridViewImageColumn();
 
         ByteToImage byteToImage = new ByteToImage();
+        int brojPonavljanja = 0;
 
         public frmPrikazTrenera()
         {
@@ -66,18 +67,22 @@ namespace eBordo.WinUI.Forms.AdminPanel
                 gifLoader.Hide();
                 pnlTreneriWrapper.Controls.Clear();
 
-
-                if (_podaci.Count == 0 && (pretraga != ""))
+                if (_podaci.Count == 0)
                 {
-                    //PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.NEMA_REZULTATA_PRETRAGE);
-                    noSearchResult.Show();
-                    noSearchResult.BringToFront();
+                    if(brojPonavljanja < 1)
+                    {
+                        PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.NEMA_PODATAKA);
+                    }
+                    noSearchResults.Show();
+                    noSearchResultsText.Show();
+                    txtNemaRezultataOpis.Show();
+                    brojPonavljanja++;
                 }
-                else if (_podaci.Count == 0)
+                else
                 {
-                    PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.NEMA_PODATAKA);
-                    noSearchResult.Show();
-                    noSearchResult.BringToFront();
+                    noSearchResults.Hide();
+                    noSearchResultsText.Hide();
+                    txtNemaRezultataOpis.Hide();
                 }
 
                 frmTrenerKartica[] listItems = new frmTrenerKartica[_podaci.Count];

@@ -66,7 +66,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             if (ApiService.ApiService.logovaniKorisnik.isAdmin)
             {
                 btnEdit.Hide();
-                btnDelete.Location = new Point(36, 203);
+                btnDelete.Location = new Point(36, 222);
             }
             else if (ApiService.ApiService.logovaniKorisnik.isTrener)
             {

@@ -24,6 +24,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Države
         ByteToImage byteToImage = new ByteToImage();
 
         bool isNazivDrzaveValidated = false, isSlikaAvatarValidated = false;
+        int brojPonavljanja = 0;
 
         public frmPrikazDrzava()
         {
@@ -43,6 +44,23 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Države
                 _drzave = await _drzava.GetAll<List<Model.Models.Drzava>>(null);
                 loader.Hide();
                 loaderIgraci.Hide();
+
+
+                if (_drzave.Count == 0)
+                {
+                    if (brojPonavljanja < 1)
+                    {
+                        PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.NEMA_PODATAKA);
+                    }
+                    noSearchResults.Show();
+                    noSearchResultsText.Show();
+                    brojPonavljanja++;
+                }
+                else
+                {
+                    noSearchResults.Hide();
+                    noSearchResultsText.Hide();
+                }
 
                 frmDrzavaKartica[] listItems = new frmDrzavaKartica[_drzave.Count];
                 for (int i = 0; i < listItems.Length; i++)

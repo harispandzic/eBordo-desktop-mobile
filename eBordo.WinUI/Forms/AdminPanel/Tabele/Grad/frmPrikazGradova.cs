@@ -25,6 +25,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Grad
         ByteToImage byteToImage = new ByteToImage();
         Model.Models.Grad grad;
         bool isNazivGradaValidated = false, isDrzavaValidated = false;
+        int brojPonavljanja = 0;
 
         public frmPrikazGradova()
         {
@@ -50,6 +51,23 @@ namespace eBordo.WinUI.Forms.AdminPanel.Tabele.Grad
                 _gradovi = await _grad.GetAll<List<Model.Models.Grad>>(null);
                 loader.Hide();
                 loaderIgraci.Hide();
+
+
+                if (_gradovi.Count == 0)
+                {
+                    if (brojPonavljanja < 1)
+                    {
+                        PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.NEMA_PODATAKA);
+                    }
+                    noSearchResults.Show();
+                    noSearchResultsText.Show();
+                    brojPonavljanja++;
+                }
+                else
+                {
+                    noSearchResults.Hide();
+                    noSearchResultsText.Hide();
+                }
 
                 frmGradKartica[] listItems = new frmGradKartica[_gradovi.Count];
                 for (int i = 0; i < listItems.Length; i++)

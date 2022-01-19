@@ -1041,6 +1041,26 @@ namespace eBordo.WinUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap nema_rezultata_pretrage {
+            get {
+                object obj = ResourceManager.GetObject("nema rezultata pretrage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap no_result {
+            get {
+                object obj = ResourceManager.GetObject("no-result", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap no_search {
             get {
                 object obj = ResourceManager.GetObject("no search", resourceCulture);

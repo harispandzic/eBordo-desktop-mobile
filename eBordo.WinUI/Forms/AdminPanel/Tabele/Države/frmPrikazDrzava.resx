@@ -259,4 +259,7 @@
         ftHg82bRA8hvkx49XGS/phwEBWmpC54OK7UWuRKiUWMJcAav2sI65HgOGQAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="noSearchResultsText.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Oswald'; font-size: 10pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(64, 64, 64); text-align: left; }</value>
+  </data>
 </root>

@@ -28,6 +28,8 @@ namespace eBordo.WinUI.Forms.AdminPanel
 
         ByteToImage byteToImage = new ByteToImage();
 
+        int brojPonavljanja = 0;
+
         public frmPrikazIgraca()
         {
             InitializeComponent();
@@ -84,22 +86,26 @@ namespace eBordo.WinUI.Forms.AdminPanel
             try
             {
                 _podaci = await _igraci.GetAll<List<Model.Models.Igrac>>(search);
-                dataLoader.Hide();
-                noSearchResult.Hide();
                 gifLoader.Hide();
                 pnlIgraciWrapper.Controls.Clear();
 
-                if (_podaci.Count == 0 && (pretraga != "" || pozicijaId != -1))
+
+                if (_podaci.Count == 0)
                 {
-                    //PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.NEMA_REZULTATA_PRETRAGE);
-                    noSearchResult.Show();
-                    noSearchResult.BringToFront();
+                    if (brojPonavljanja < 1)
+                    {
+                        PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.NEMA_PODATAKA);
+                    }
+                    noSearchResults.Show();
+                    noSearchResultsText.Show();
+                    txtNemaRezultataOpis.Show();
+                    brojPonavljanja++;
                 }
-                else if(_podaci.Count == 0)
+                else
                 {
-                    PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.NEMA_PODATAKA);
-                    noSearchResult.Show();
-                    noSearchResult.BringToFront();
+                    noSearchResults.Hide();
+                    noSearchResultsText.Hide();
+                    txtNemaRezultataOpis.Hide();
                 }
 
                 frmIgracKartica[] listItems = new frmIgracKartica[_podaci.Count];

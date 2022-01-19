@@ -303,7 +303,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.panelDelete.Controls.Add(this.loader);
             this.panelDelete.Location = new System.Drawing.Point(0, 0);
             this.panelDelete.Name = "panelDelete";
-            this.panelDelete.Size = new System.Drawing.Size(285, 191);
+            this.panelDelete.Size = new System.Drawing.Size(285, 232);
             this.panelDelete.TabIndex = 61;
             this.panelDelete.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDelete_Paint);
             // 

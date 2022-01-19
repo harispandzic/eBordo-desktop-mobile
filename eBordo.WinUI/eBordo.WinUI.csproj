@@ -1235,6 +1235,12 @@
   <ItemGroup>
     <None Include="Resources\eBordo_visibility.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no-result.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nema rezultata pretrage.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets" Condition="Exists('..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
