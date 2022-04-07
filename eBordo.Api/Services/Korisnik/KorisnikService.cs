@@ -38,7 +38,7 @@ namespace eBordo.Api.Services.Korisnik
         {
             var user = _httpContext.GetUserId();
 
-            var korisnik = _db.korisnici.Where(s => s.korisnickoIme == user).SingleOrDefault();
+            var korisnik = _db.korisnici.Where(s => s.korisnickoIme == user).Include(s => s.drzavljanstvo).SingleOrDefault();
             
             if(korisnik != null)
             {
