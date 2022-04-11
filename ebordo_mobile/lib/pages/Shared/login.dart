@@ -86,8 +86,10 @@ class _LoginState extends State<Login> {
                 height: MediaQuery.of(context).size.height - 220,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
-                  color: HexColor("#FAFAFA"),
-                ),
+                    borderRadius: BorderRadius.circular(10),
+                    image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: AssetImage('assets/login-background.png'))),
                 child: Padding(
                   padding: EdgeInsets.only(left: 20, top: 20, right: 20),
                   child: Column(
@@ -195,11 +197,16 @@ class _LoginState extends State<Login> {
                                   suffixIcon: IconButton(
                                     icon: Padding(
                                       padding: EdgeInsets.only(right: 16),
-                                      child: Icon(
+                                      child: Padding(
+                                        padding: EdgeInsets.only(right: 10),
+                                        child: Icon(
                                           widget._passwordVisible
                                               ? Icons.visibility
                                               : Icons.visibility_off,
-                                          color: Colors.black),
+                                          color: Colors.black,
+                                          size: 17,
+                                        ),
+                                      ),
                                     ),
                                     onPressed: () {
                                       setState(() {

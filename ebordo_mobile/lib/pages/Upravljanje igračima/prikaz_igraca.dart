@@ -16,6 +16,7 @@ import '../../models/pozicija-podpozicija.dart';
 import '../../models/pozicija.dart';
 import '../../services/APIService.dart';
 import '../Shared/shared_app_bar.dart';
+import 'detalji_igraca.dart';
 
 List<Igrac> dobavljeniIgraci = [];
 List<Pozicija> dobavljenePozicije = [];
@@ -34,11 +35,13 @@ class _PrikazIgracaState extends State<PrikazIgraca> {
   var _filterIgracaController = TextEditingController();
   List<Igrac> _igraciState = [];
   List<Pozicija> _pozicijeState = [];
+  bool isDataLoading = true;
+  bool isPorukaPrikazana = false;
 
   @override
   void initState() {
     super.initState();
-    GetIgrace();
+    Future.delayed(const Duration(seconds: 4), GetIgrace);
     dobavljenePozicije.length == 0 ? GetPozicije() : "";
   }
 
@@ -49,6 +52,10 @@ class _PrikazIgracaState extends State<PrikazIgraca> {
     isTrenutniIgraci = isAktivan;
 
     var result = await APIService.Get("Igrac", queryParams) as List;
+
+    setState(() {
+      isDataLoading = false;
+    });
 
     List<Igrac> igraciList = result.map((i) => Igrac.fromJson(i)).toList();
 
@@ -433,11 +440,11 @@ class _PrikazIgracaState extends State<PrikazIgraca> {
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.calendar_month),
-              label: 'Raspored utakmica',
+              label: 'Raspored',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.sports_soccer),
-              label: 'Odigrane utakmice',
+              label: 'Rezultati',
             ),
           ],
         ),
@@ -477,14 +484,58 @@ class _PrikazIgracaState extends State<PrikazIgraca> {
             ]),
             SizedBox(height: 15),
             FilteriPrikazIgracaWidget(),
-            ListView(
-              scrollDirection: Axis.vertical,
-              shrinkWrap: true,
-              children: filtered_igraciPoPozicijama
-                  .map<Widget>((element) => PozicijaIgraciState(
-                      element.igraci, element.nazivPozicije))
-                  .toList(),
-            )
+            isDataLoading
+                ? Padding(
+                    padding: EdgeInsets.only(top: 120),
+                    child: Center(
+                        child: Column(
+                      children: [
+                        Image.asset("assets/loader.gif", height: 45.0),
+                        SizedBox(height: 5),
+                        Text("Učitavanje...",
+                            style: GoogleFonts.oswald(
+                                fontSize: 16,
+                                color: Colors.black,
+                                letterSpacing: 0,
+                                fontWeight: FontWeight.bold))
+                      ],
+                    )),
+                  )
+                : (_igraciState.length == 0)
+                    ? Padding(
+                        padding: EdgeInsets.only(left: 21, right: 21),
+                        child: Center(
+                            child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Image.asset("assets/nema-rezultata-pretrage.png",
+                                height: 330.0),
+                            Text("NEMA REZULTATA PRETRAGE!",
+                                style: GoogleFonts.oswald(
+                                    fontSize: 17,
+                                    color: Colors.black,
+                                    letterSpacing: 0,
+                                    fontWeight: FontWeight.bold)),
+                            Text(
+                                "Baza podataka je pretražena i nisu pronađeni odgovarajući rezultati. Osvježite vašu pretragu!",
+                                style: GoogleFonts.oswald(
+                                  fontSize: 14.5,
+                                  color: Colors.black,
+                                  letterSpacing: 0,
+                                ),
+                                textAlign: TextAlign.center),
+                          ],
+                        )),
+                      )
+                    : ListView(
+                        scrollDirection: Axis.vertical,
+                        shrinkWrap: true,
+                        children: filtered_igraciPoPozicijama
+                            .map<Widget>((element) => PozicijaIgraciState(
+                                element.igraci, element.nazivPozicije))
+                            .toList(),
+                      )
           ],
         ));
   }
@@ -503,6 +554,43 @@ class FilteredPozicije extends StatefulWidget {
   _PozicijeState createState() => _PozicijeState();
 }
 
+List<int> getSelectedIds(PozicijaPodpozicija? podpozicija) {
+  List<int> selectedIds = [];
+  if (podpozicija!.nazivPodpozicije == "GOLMAN") {
+    selectedIds.add(1);
+  } else if (podpozicija.nazivPodpozicije == "ODBRANA") {
+    selectedIds.addAll([2, 3, 4]);
+  } else if (podpozicija.nazivPodpozicije == "VEZNI RED") {
+    selectedIds.addAll([5, 6, 7, 8, 9]);
+  } else if (podpozicija.nazivPodpozicije == "KRILO") {
+    selectedIds.addAll([10, 11]);
+  } else if (podpozicija.nazivPodpozicije == "NAPAD") {
+    selectedIds.add(12);
+  }
+
+  return selectedIds;
+}
+
+void PretragaPozicije(PozicijaPodpozicija? podpozicija, bool isChecked) {
+  List<int> selectedIds = getSelectedIds(podpozicija);
+  if (isChecked) {
+    bool found = selectedPozicijeZaPretragu.any((r) => selectedIds.contains(r));
+    if (found) return;
+    selectedPozicijeZaPretragu.addAll(selectedIds);
+  } else {
+    selectedIds.forEach((element) {
+      if (selectedPozicijeZaPretragu.contains(element)) {
+        selectedPozicijeZaPretragu.remove(element);
+      }
+    });
+  }
+}
+
+bool isSelectedPozicijeSadrzePoziciju(PozicijaPodpozicija? podpozicija) {
+  List<int> selectedIds = getSelectedIds(podpozicija);
+  return selectedPozicijeZaPretragu.any((r) => selectedIds.contains(r));
+}
+
 class _PozicijeState extends State<FilteredPozicije> {
   @override
   Widget build(BuildContext context) {
@@ -511,56 +599,71 @@ class _PozicijeState extends State<FilteredPozicije> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(height: 5),
-        Text(widget.podpozicija!.nazivPodpozicije.toString(),
-            style: GoogleFonts.oswald(
-                fontSize: 15,
-                color: Colors.black,
-                letterSpacing: 0,
-                fontWeight: FontWeight.bold)),
-        ListView(
-          scrollDirection: Axis.vertical,
-          shrinkWrap: true,
-          children: widget.podpozicija!.pozicije
-              .map<Widget>((element) => Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          Checkbox(
-                            activeColor: HexColor("#400507"),
-                            value: selectedPozicijeZaPretragu
-                                .contains(element.pozicijaId),
-                            onChanged: (newValue) {
-                              if (newValue!) {
-                                if (selectedPozicijeZaPretragu
-                                    .contains(element.pozicijaId)) return;
-                                selectedPozicijeZaPretragu.insert(
-                                    selectedPozicijeZaPretragu.length,
-                                    element.pozicijaId);
-                              } else {
-                                selectedPozicijeZaPretragu
-                                    .remove(element.pozicijaId);
-                              }
-                              widget.filtirajIgrace!();
-                            },
-                          ),
-                          Text(element.nazivPozicije.toString().toUpperCase(),
-                              style: GoogleFonts.oswald(
-                                  fontSize: 12,
-                                  color: HexColor("#400507"),
-                                  letterSpacing: 0,
-                                  fontWeight: FontWeight.bold)),
-                        ],
-                      ),
-                      Text(element.skracenica.toString().toUpperCase(),
-                          style: GoogleFonts.oswald(
-                              fontSize: 12,
-                              color: HexColor("#400507"),
-                              letterSpacing: 0,
-                              fontWeight: FontWeight.bold))
-                    ],
-                  ))
-              .toList(),
+        Row(
+          children: [
+            Checkbox(
+              activeColor: Colors.black,
+              value: isSelectedPozicijeSadrzePoziciju(widget.podpozicija),
+              onChanged: (newValue) {
+                PretragaPozicije(widget.podpozicija, newValue!);
+                widget.filtirajIgrace!();
+              },
+            ),
+            Text(widget.podpozicija!.nazivPodpozicije.toString(),
+                style: GoogleFonts.oswald(
+                    fontSize: 15,
+                    color: Colors.black,
+                    letterSpacing: 0,
+                    fontWeight: FontWeight.bold)),
+          ],
+        ),
+        Padding(
+          padding: EdgeInsets.only(left: 15),
+          child: ListView(
+            scrollDirection: Axis.vertical,
+            shrinkWrap: true,
+            children: widget.podpozicija!.pozicije
+                .map<Widget>((element) => Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            Checkbox(
+                              activeColor: HexColor("#400507"),
+                              value: selectedPozicijeZaPretragu
+                                  .contains(element.pozicijaId),
+                              onChanged: (newValue) {
+                                if (newValue!) {
+                                  if (selectedPozicijeZaPretragu
+                                      .contains(element.pozicijaId)) return;
+                                  selectedPozicijeZaPretragu.insert(
+                                      selectedPozicijeZaPretragu.length,
+                                      element.pozicijaId);
+                                } else {
+                                  selectedPozicijeZaPretragu
+                                      .remove(element.pozicijaId);
+                                }
+                                widget.filtirajIgrace!();
+                              },
+                            ),
+                            Text(element.nazivPozicije.toString().toUpperCase(),
+                                style: GoogleFonts.oswald(
+                                    fontSize: 12,
+                                    color: HexColor("#400507"),
+                                    letterSpacing: 0,
+                                    fontWeight: FontWeight.bold)),
+                          ],
+                        ),
+                        Text(element.skracenica.toString().toUpperCase(),
+                            style: GoogleFonts.oswald(
+                                fontSize: 12,
+                                color: HexColor("#400507"),
+                                letterSpacing: 0,
+                                fontWeight: FontWeight.bold))
+                      ],
+                    ))
+                .toList(),
+          ),
         )
       ],
     );
@@ -619,7 +722,7 @@ class _PozicijaIgrac extends State<PozicijaIgraciState> {
                 SizedBox(height: 5),
                 CarouselSlider(
                   items: widget._igraci
-                      .map((element) => IgracKartica(element))
+                      .map((element) => IgracKartica(context, element))
                       .toList(),
                   carouselController: _controller,
                   options: CarouselOptions(
@@ -670,221 +773,238 @@ class _PozicijaIgrac extends State<PozicijaIgraciState> {
   }
 }
 
-Widget IgracKartica(igrac) {
+Widget IgracKartica(context, igrac) {
   return Stack(
     children: [
       Card(
-        child: Container(
-          height: 180,
-          width: double.infinity,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              image: DecorationImage(
-                  fit: BoxFit.cover,
-                  image: AssetImage('assets/igrac-kartica-pozadina.png'))),
-          child: Padding(
-            padding: const EdgeInsets.all(0),
-            child: Stack(
-              children: [
-                Positioned(
-                  top: 10.0,
-                  left: 15.0,
-                  right: 0.0,
-                  child: Text("#" + igrac.brojDresa.toString(),
-                      style: GoogleFonts.oswald(
-                        fontSize: 16,
-                        color: Colors.white,
-                        letterSpacing: 0,
+        child: TextButton(
+          style: TextButton.styleFrom(
+              padding: EdgeInsets.zero,
+              minimumSize: Size(50, 30),
+              alignment: Alignment.centerLeft),
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => DetaljiIgraca(
+                          igrac: igrac,
+                        )));
+          },
+          child: Container(
+            height: 180,
+            width: double.infinity,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: AssetImage('assets/igrac-kartica-pozadina.png'))),
+            child: Padding(
+              padding: const EdgeInsets.all(0),
+              child: Stack(
+                children: [
+                  Positioned(
+                    top: 10.0,
+                    left: 15.0,
+                    right: 0.0,
+                    child: Text("#" + igrac.brojDresa.toString(),
+                        style: GoogleFonts.oswald(
+                          fontSize: 16,
+                          color: Colors.white,
+                          letterSpacing: 0,
+                        )),
+                  ),
+                  Container(
+                      margin: EdgeInsets.fromLTRB(15, 0, 0, 0),
+                      height: 300,
+                      width: 100,
+                      child: FittedBox(
+                        child:
+                            Image.memory(Uint8List.fromList(igrac.slikaPanel)),
+                        fit: BoxFit.cover,
                       )),
-                ),
-                Container(
-                    margin: EdgeInsets.fromLTRB(15, 0, 0, 0),
-                    height: 300,
-                    width: 100,
-                    child: FittedBox(
-                      child: Image.memory(Uint8List.fromList(igrac.slikaPanel)),
-                      fit: BoxFit.cover,
-                    )),
-                Padding(
-                  padding: EdgeInsets.fromLTRB(125, 15, 0, 0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          igrac.korisnik.isAktivan
-                              ? Icon(
-                                  Icons.check_circle,
-                                  color: HexColor("#28A731"),
-                                  size: 19,
-                                )
-                              : Icon(
-                                  Icons.do_disturb_on,
-                                  color: Colors.red[800]!,
-                                  size: 19,
-                                ),
-                          SizedBox(width: 3),
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(125, 15, 0, 0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            igrac.korisnik.isAktivan
+                                ? Icon(
+                                    Icons.check_circle,
+                                    color: HexColor("#28A731"),
+                                    size: 19,
+                                  )
+                                : Icon(
+                                    Icons.do_disturb_on,
+                                    color: Colors.red[800]!,
+                                    size: 19,
+                                  ),
+                            SizedBox(width: 3),
+                            Text(
+                                igrac.korisnik.ime.toString().toUpperCase() +
+                                    " " +
+                                    igrac.korisnik.prezime
+                                        .toString()
+                                        .toUpperCase(),
+                                style: GoogleFonts.oswald(
+                                    fontSize: 17,
+                                    color: Colors.white,
+                                    letterSpacing: 0,
+                                    fontWeight: FontWeight.w600)),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 7,
+                        ),
+                        Row(children: [
+                          Icon(
+                            Icons.fact_check_outlined,
+                            color: Colors.white,
+                            size: 18,
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
                           Text(
-                              igrac.korisnik.ime.toString().toUpperCase() +
-                                  " " +
-                                  igrac.korisnik.prezime
+                              igrac!.pozicija.skracenica +
+                                  " - " +
+                                  igrac!.pozicija.nazivPozicije
                                       .toString()
                                       .toUpperCase(),
                               style: GoogleFonts.oswald(
-                                fontSize: 15,
-                                color: Colors.white,
-                                letterSpacing: 0,
-                              )),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 7,
-                      ),
-                      Row(children: [
-                        Icon(
-                          Icons.fact_check_outlined,
-                          color: Colors.white,
-                          size: 18,
-                        ),
-                        SizedBox(
-                          width: 5,
-                        ),
-                        Text(
-                            igrac.pozicija.nazivPozicije
-                                .toString()
-                                .toUpperCase(),
-                            style: GoogleFonts.oswald(
-                              fontSize: 14,
-                              color: Colors.white,
-                              letterSpacing: 0,
-                            )),
-                      ]),
-                      SizedBox(
-                        height: 6,
-                      ),
-                      Row(children: [
-                        Icon(
-                          Icons.calendar_month,
-                          color: Colors.white,
-                          size: 18,
-                        ),
-                        SizedBox(
-                          width: 5,
-                        ),
-                        Text(
-                            DateFormat.yMMMd()
-                                .format(DateTime.parse(
-                                    igrac.korisnik.datumRodjenja))
-                                .toString(),
-                            style: GoogleFonts.oswald(
-                              fontSize: 14,
-                              color: Colors.white,
-                              letterSpacing: 0,
-                            ))
-                      ]),
-                      SizedBox(
-                        height: 6,
-                      ),
-                      Row(children: [
-                        CircleAvatar(
-                          radius: 8,
-                          backgroundColor: Colors.white,
-                          child: CircleAvatar(
-                            radius: 18,
-                            backgroundColor: Colors.white,
-                            child: ClipOval(
-                              child: Image.memory(
-                                Uint8List.fromList(
-                                    igrac.korisnik.drzavljanstvo.zastava),
-                                width: 17.5,
-                                height: 17.5,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 5,
-                        ),
-                        Text(igrac.korisnik.drzavljanstvo.nazivDrzave,
-                            style: GoogleFonts.oswald(
-                              fontSize: 14,
-                              color: Colors.white,
-                              letterSpacing: 0,
-                            ))
-                      ]),
-                      SizedBox(
-                        height: 8,
-                      ),
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Image.asset(
-                            'assets/nastupi.png',
-                            height: 18,
-                          ),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          Text(igrac.igracStatistika.brojNastupa.toString(),
-                              style: GoogleFonts.oswald(
                                 fontSize: 14,
                                 color: Colors.white,
                                 letterSpacing: 0,
                               )),
-                          SizedBox(
-                            width: 7,
-                          ),
-                          Image.asset(
-                            'assets/golovi.png',
-                            height: 18,
-                          ),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          Text(igrac.igracStatistika.golovi.toString(),
-                              style: GoogleFonts.oswald(
-                                fontSize: 14,
-                                color: Colors.white,
-                                letterSpacing: 0,
-                              )),
-                          SizedBox(
-                            width: 7,
-                          ),
-                          Image.asset(
-                            'assets/asistencije.png',
-                            height: 18,
+                        ]),
+                        SizedBox(
+                          height: 6,
+                        ),
+                        Row(children: [
+                          Icon(
+                            Icons.calendar_month,
+                            color: Colors.white,
+                            size: 18,
                           ),
                           SizedBox(
                             width: 5,
                           ),
-                          Text(igrac.igracStatistika.asistencije.toString(),
+                          Text(
+                              DateFormat.yMMMd()
+                                  .format(DateTime.parse(
+                                      igrac.korisnik.datumRodjenja))
+                                  .toString(),
                               style: GoogleFonts.oswald(
                                 fontSize: 14,
                                 color: Colors.white,
                                 letterSpacing: 0,
                               ))
-                        ],
-                      ),
-                      SizedBox(
-                        height: 6,
-                      ),
-                      RatingBarIndicator(
-                        rating:
-                            igrac.igracStatistika.prosjecnaOcjena.toDouble(),
-                        itemBuilder: (context, index) => Icon(
-                          Icons.star,
-                          color: Colors.amber,
+                        ]),
+                        SizedBox(
+                          height: 6,
                         ),
-                        itemCount: 5,
-                        itemSize: 20.0,
-                        direction: Axis.horizontal,
-                      )
-                    ],
-                  ),
-                )
-              ],
+                        Row(children: [
+                          CircleAvatar(
+                            radius: 8,
+                            backgroundColor: Colors.white,
+                            child: CircleAvatar(
+                              radius: 18,
+                              backgroundColor: Colors.white,
+                              child: ClipOval(
+                                child: Image.memory(
+                                  Uint8List.fromList(
+                                      igrac.korisnik.drzavljanstvo.zastava),
+                                  width: 17.5,
+                                  height: 17.5,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Text(igrac.korisnik.drzavljanstvo.nazivDrzave,
+                              style: GoogleFonts.oswald(
+                                fontSize: 14,
+                                color: Colors.white,
+                                letterSpacing: 0,
+                              ))
+                        ]),
+                        SizedBox(
+                          height: 8,
+                        ),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Image.asset(
+                              'assets/nastupi.png',
+                              height: 18,
+                            ),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Text(igrac.igracStatistika.brojNastupa.toString(),
+                                style: GoogleFonts.oswald(
+                                  fontSize: 14,
+                                  color: Colors.white,
+                                  letterSpacing: 0,
+                                )),
+                            SizedBox(
+                              width: 7,
+                            ),
+                            Image.asset(
+                              'assets/golovi.png',
+                              height: 18,
+                            ),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Text(igrac.igracStatistika.golovi.toString(),
+                                style: GoogleFonts.oswald(
+                                  fontSize: 14,
+                                  color: Colors.white,
+                                  letterSpacing: 0,
+                                )),
+                            SizedBox(
+                              width: 7,
+                            ),
+                            Image.asset(
+                              'assets/asistencije.png',
+                              height: 18,
+                            ),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Text(igrac.igracStatistika.asistencije.toString(),
+                                style: GoogleFonts.oswald(
+                                  fontSize: 14,
+                                  color: Colors.white,
+                                  letterSpacing: 0,
+                                ))
+                          ],
+                        ),
+                        SizedBox(
+                          height: 6,
+                        ),
+                        RatingBarIndicator(
+                          rating:
+                              igrac.igracStatistika.prosjecnaOcjena.toDouble(),
+                          itemBuilder: (context, index) => Icon(
+                            Icons.star,
+                            color: Colors.amber,
+                          ),
+                          itemCount: 5,
+                          itemSize: 20.0,
+                          direction: Axis.horizontal,
+                        )
+                      ],
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
         ),

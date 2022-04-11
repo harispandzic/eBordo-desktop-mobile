@@ -1,5 +1,6 @@
 import 'package:ebordo_mobile/pages/Shared/login.dart';
 import 'package:ebordo_mobile/pages/Shared/pocetna.dart';
+import 'package:ebordo_mobile/pages/Upravljanje%20igra%C4%8Dima/detalji_igraca.dart';
 import 'package:ebordo_mobile/pages/Upravljanje%20igra%C4%8Dima/prikaz_igraca.dart';
 import 'package:flutter/material.dart';
 
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
         '/login': (context) => Login(),
         '/pocetna': (context) => Pocetna(),
         '/prikaz_igraca': (context) => PrikazIgraca(),
+        '/detalji_igraca': (context) => DetaljiIgraca(),
       },
     );
   }
