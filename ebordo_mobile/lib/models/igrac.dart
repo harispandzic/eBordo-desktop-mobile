@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:ebordo_mobile/models/igrac_statistika.dart';
+import 'package:ebordo_mobile/models/igrac-statistika.dart';
 import 'package:ebordo_mobile/models/korisnik.dart';
 import 'package:ebordo_mobile/models/pozicija.dart';
 import 'package:ebordo_mobile/models/ugovor.dart';

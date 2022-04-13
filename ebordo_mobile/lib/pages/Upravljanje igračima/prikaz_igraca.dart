@@ -2,6 +2,7 @@
 import 'dart:typed_data';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:expandable/expandable.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -41,7 +42,7 @@ class _PrikazIgracaState extends State<PrikazIgraca> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(seconds: 4), GetIgrace);
+    Future.delayed(const Duration(seconds: 3), GetIgrace);
     dobavljenePozicije.length == 0 ? GetPozicije() : "";
   }
 
@@ -729,7 +730,7 @@ class _PozicijaIgrac extends State<PozicijaIgraciState> {
                       viewportFraction: 0.9,
                       enableInfiniteScroll: true,
                       initialPage: 1,
-                      height: 215,
+                      height: 220,
                       reverse: false,
                       autoPlay: false,
                       enlargeCenterPage: true,
@@ -836,7 +837,7 @@ Widget IgracKartica(context, igrac) {
                                     size: 19,
                                   )
                                 : Icon(
-                                    Icons.do_disturb_on,
+                                    CupertinoIcons.clear_circled_solid,
                                     color: Colors.red[800]!,
                                     size: 19,
                                   ),
