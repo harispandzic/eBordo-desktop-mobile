@@ -14,7 +14,7 @@ namespace eBordo.Model.Models
         public Korisnik korisnik { get; set; }
         public Formacija formacija { get; set; }
         public TrenerskaLicenca trenerskaLicenca { get; set; }
-        public UlogaTrenera ulogaTrenera { get; set; }
+        public string ulogaTrenera { get; set; }
         public byte[] SlikaPanel { get; set; }
     }
 }

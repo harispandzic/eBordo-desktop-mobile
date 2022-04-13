@@ -9,14 +9,7 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:intl/intl.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
-import '../../models/igrac.dart';
-
-class LineChartData {
-  LineChartData(this.x, this.y);
-
-  final String x;
-  final double y;
-}
+import '../../models/trener.dart';
 
 class PieChartData {
   PieChartData(this.x, this.y, this.color);
@@ -25,39 +18,21 @@ class PieChartData {
   final Color color;
 }
 
-class DetaljiIgraca extends StatefulWidget {
-  final Igrac? igrac;
-  DetaljiIgraca({Key? key, this.igrac}) : super(key: key);
-
-  @override
-  late List<LineChartData> data_skills = [
-    LineChartData('KON', igrac!.igracSkills.kontrolaLopte.toDouble()),
-    LineChartData('DRI', igrac!.igracSkills.driblanje.toDouble()),
-    LineChartData('DOD', igrac!.igracSkills.dodavanje.toDouble()),
-    LineChartData('KRE', igrac!.igracSkills.kretanje.toDouble()),
-    LineChartData('BRZ', igrac!.igracSkills.brzina.toDouble()),
-    LineChartData('ŠUT', igrac!.igracSkills.sut.toDouble()),
-    LineChartData('SNA', igrac!.igracSkills.snaga.toDouble()),
-    LineChartData('MAR', igrac!.igracSkills.markiranje.toDouble()),
-    LineChartData('KLI', igrac!.igracSkills.klizeciStart.toDouble()),
-    LineChartData('SKO', igrac!.igracSkills.skok.toDouble()),
-    LineChartData('ODB', igrac!.igracSkills.odbrana.toDouble()),
-  ];
-  late TooltipBehavior _tooltip = TooltipBehavior(enable: true);
+class DetaljiTrenera extends StatefulWidget {
+  final Trener? trener;
+  DetaljiTrenera({Key? key, this.trener}) : super(key: key);
 
   late List<PieChartData> data_statistika = [
-    PieChartData('GOLOVI', igrac!.igracStatistika.golovi.toDouble(),
-        HexColor("#1A3150")),
-    PieChartData('ASISTENCIJE', igrac!.igracStatistika.asistencije.toDouble(),
-        HexColor("#729C2C")),
-    PieChartData('ŽUTI KARTONI', igrac!.igracStatistika.zutiKartoni.toDouble(),
-        HexColor("#F8D827")),
-    PieChartData('CRVENI KARTONI',
-        igrac!.igracStatistika.crveniKartoni.toDouble(), HexColor("#8F1A29")),
+    PieChartData('POBJEDE', trener!.trenerStatistika.brojPobjeda.toDouble(),
+        HexColor("#28A731")),
+    PieChartData('PORAZI', trener!.trenerStatistika.brojPoraza.toDouble(),
+        Colors.red[800]!),
+    PieChartData('NERJEŠENE',
+        trener!.trenerStatistika.brojNerjesenih.toDouble(), Colors.grey),
   ];
 
   @override
-  _DetaljiIgracaState createState() => _DetaljiIgracaState();
+  _DetaljiTreneraState createState() => _DetaljiTreneraState();
 }
 
 Widget opisGrafa(String opis, Color boja) {
@@ -76,40 +51,6 @@ Widget opisGrafa(String opis, Color boja) {
       width: 10,
     ),
   ]);
-}
-
-Widget statistika(String slika, String vrijednost, String opis) {
-  return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      Container(
-          child: Row(
-        children: [
-          Image.asset(
-            slika,
-            height: 23,
-          ),
-          SizedBox(
-            width: 7,
-          ),
-          Text(vrijednost,
-              style: GoogleFonts.oswald(
-                  fontSize: 25,
-                  color: HexColor("#400507"),
-                  letterSpacing: 0,
-                  fontWeight: FontWeight.bold)),
-        ],
-      )),
-      Container(
-        child: Text(opis,
-            style: GoogleFonts.oswald(
-                fontSize: 12,
-                color: HexColor("#400507"),
-                letterSpacing: 0,
-                fontWeight: FontWeight.bold)),
-      ),
-    ],
-  );
 }
 
 Widget ocjene(String tekst, double rating) {
@@ -145,7 +86,7 @@ Widget ocjene(String tekst, double rating) {
   ]);
 }
 
-class _DetaljiIgracaState extends State<DetaljiIgraca> {
+class _DetaljiTreneraState extends State<DetaljiTrenera> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -165,17 +106,6 @@ class _DetaljiIgracaState extends State<DetaljiIgraca> {
             padding: const EdgeInsets.all(0),
             child: Stack(
               children: [
-                Positioned(
-                  top: 40.0,
-                  left: 10.5,
-                  right: 0.0,
-                  child: Text("#" + widget.igrac!.brojDresa.toString(),
-                      style: GoogleFonts.oswald(
-                        fontSize: 16,
-                        color: Colors.white,
-                        letterSpacing: 0,
-                      )),
-                ),
                 Positioned(
                   top: 12.0,
                   left: -310.0,
@@ -197,7 +127,7 @@ class _DetaljiIgracaState extends State<DetaljiIgraca> {
                     width: 100,
                     child: FittedBox(
                       child: Image.memory(
-                          Uint8List.fromList(widget.igrac!.slikaPanel)),
+                          Uint8List.fromList(widget.trener!.slikaPanel)),
                       fit: BoxFit.cover,
                     )),
                 Padding(
@@ -208,11 +138,11 @@ class _DetaljiIgracaState extends State<DetaljiIgraca> {
                       Row(
                         children: [
                           Text(
-                              widget.igrac!.korisnik.ime
+                              widget.trener!.korisnik.ime
                                       .toString()
                                       .toUpperCase() +
                                   " " +
-                                  widget.igrac!.korisnik.prezime
+                                  widget.trener!.korisnik.prezime
                                       .toString()
                                       .toUpperCase(),
                               style: GoogleFonts.oswald(
@@ -222,7 +152,7 @@ class _DetaljiIgracaState extends State<DetaljiIgraca> {
                                   fontWeight: FontWeight.bold)),
                         ],
                       ),
-                      Text(widget.igrac!.korisnik.korisnickoIme,
+                      Text(widget.trener!.korisnik.korisnickoIme,
                           style: GoogleFonts.oswald(
                               fontSize: 13,
                               color: Colors.white,
@@ -233,19 +163,14 @@ class _DetaljiIgracaState extends State<DetaljiIgraca> {
                       ),
                       Row(children: [
                         Icon(
-                          Icons.fact_check_outlined,
+                          Icons.workspace_premium_sharp,
                           color: Colors.white,
                           size: 18,
                         ),
                         SizedBox(
                           width: 5,
                         ),
-                        Text(
-                            widget.igrac!.pozicija.skracenica +
-                                " - " +
-                                widget.igrac!.pozicija.nazivPozicije
-                                    .toString()
-                                    .toUpperCase(),
+                        Text(widget.trener!.ulogaTrenera.toString() + " TRENER",
                             style: GoogleFonts.oswald(
                               fontSize: 14,
                               color: Colors.white,
@@ -253,7 +178,7 @@ class _DetaljiIgracaState extends State<DetaljiIgraca> {
                             )),
                       ]),
                       SizedBox(
-                        height: 6,
+                        height: 7,
                       ),
                       Row(children: [
                         Icon(
@@ -267,7 +192,7 @@ class _DetaljiIgracaState extends State<DetaljiIgraca> {
                         Text(
                             DateFormat.yMMMd()
                                 .format(DateTime.parse(
-                                    widget.igrac!.korisnik.datumRodjenja))
+                                    widget.trener!.korisnik.datumRodjenja))
                                 .toString(),
                             style: GoogleFonts.oswald(
                               fontSize: 14,
@@ -288,7 +213,7 @@ class _DetaljiIgracaState extends State<DetaljiIgraca> {
                             child: ClipOval(
                               child: Image.memory(
                                 Uint8List.fromList(widget
-                                    .igrac!.korisnik.drzavljanstvo.zastava),
+                                    .trener!.korisnik.drzavljanstvo.zastava),
                                 width: 17.5,
                                 height: 17.5,
                                 fit: BoxFit.cover,
@@ -299,7 +224,7 @@ class _DetaljiIgracaState extends State<DetaljiIgraca> {
                         SizedBox(
                           width: 5,
                         ),
-                        Text(widget.igrac!.korisnik.drzavljanstvo.nazivDrzave,
+                        Text(widget.trener!.korisnik.drzavljanstvo.nazivDrzave,
                             style: GoogleFonts.oswald(
                               fontSize: 14,
                               color: Colors.white,
@@ -307,7 +232,45 @@ class _DetaljiIgracaState extends State<DetaljiIgraca> {
                             ))
                       ]),
                       SizedBox(
-                        height: 8,
+                        height: 7,
+                      ),
+                      Row(children: [
+                        Icon(
+                          Icons.verified_user,
+                          color: Colors.white,
+                          size: 18,
+                        ),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Text(
+                            widget.trener!.trenerskaLicenca.nazivLicence
+                                .toString(),
+                            style: GoogleFonts.oswald(
+                              fontSize: 14,
+                              color: Colors.white,
+                              letterSpacing: 0,
+                            )),
+                        SizedBox(
+                          width: 7,
+                        ),
+                        Icon(
+                          Icons.favorite,
+                          color: Colors.white,
+                          size: 18,
+                        ),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Text(widget.trener!.formacija.nazivFormacije.toString(),
+                            style: GoogleFonts.oswald(
+                              fontSize: 14,
+                              color: Colors.white,
+                              letterSpacing: 0,
+                            )),
+                      ]),
+                      SizedBox(
+                        height: 6,
                       ),
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -321,7 +284,7 @@ class _DetaljiIgracaState extends State<DetaljiIgraca> {
                             width: 5,
                           ),
                           Text(
-                              widget.igrac!.igracStatistika.brojNastupa
+                              widget.trener!.trenerStatistika.brojUtakmica
                                   .toString(),
                               style: GoogleFonts.oswald(
                                 fontSize: 14,
@@ -331,14 +294,17 @@ class _DetaljiIgracaState extends State<DetaljiIgraca> {
                           SizedBox(
                             width: 7,
                           ),
-                          Image.asset(
-                            'assets/golovi.png',
-                            height: 18,
+                          Icon(
+                            Icons.check_circle,
+                            color: HexColor("#28A731"),
+                            size: 18,
                           ),
                           SizedBox(
                             width: 5,
                           ),
-                          Text(widget.igrac!.igracStatistika.golovi.toString(),
+                          Text(
+                              widget.trener!.trenerStatistika.brojPobjeda
+                                  .toString(),
                               style: GoogleFonts.oswald(
                                 fontSize: 14,
                                 color: Colors.white,
@@ -347,15 +313,35 @@ class _DetaljiIgracaState extends State<DetaljiIgraca> {
                           SizedBox(
                             width: 7,
                           ),
-                          Image.asset(
-                            'assets/asistencije.png',
-                            height: 18,
+                          Icon(
+                            CupertinoIcons.clear_circled_solid,
+                            color: Colors.red[800]!,
+                            size: 18,
                           ),
                           SizedBox(
                             width: 5,
                           ),
                           Text(
-                              widget.igrac!.igracStatistika.asistencije
+                              widget.trener!.trenerStatistika.brojPoraza
+                                  .toString(),
+                              style: GoogleFonts.oswald(
+                                fontSize: 14,
+                                color: Colors.white,
+                                letterSpacing: 0,
+                              )),
+                          SizedBox(
+                            width: 7,
+                          ),
+                          Icon(
+                            Icons.do_disturb_on,
+                            color: Colors.grey,
+                            size: 18,
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Text(
+                              widget.trener!.trenerStatistika.brojNerjesenih
                                   .toString(),
                               style: GoogleFonts.oswald(
                                 fontSize: 14,
@@ -367,17 +353,6 @@ class _DetaljiIgracaState extends State<DetaljiIgraca> {
                       SizedBox(
                         height: 6,
                       ),
-                      RatingBarIndicator(
-                        rating: widget.igrac!.igracStatistika.prosjecnaOcjena
-                            .toDouble(),
-                        itemBuilder: (context, index) => Icon(
-                          Icons.star,
-                          color: Colors.amber,
-                        ),
-                        itemCount: 5,
-                        itemSize: 20.0,
-                        direction: Axis.horizontal,
-                      )
                     ],
                   ),
                 ),
@@ -390,7 +365,7 @@ class _DetaljiIgracaState extends State<DetaljiIgraca> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text("DETALJI O IGRAČU",
+              Text("DETALJI O TRENERU",
                   style: GoogleFonts.oswald(
                       fontSize: 18,
                       color: HexColor("#400507"),
@@ -438,7 +413,7 @@ class _DetaljiIgracaState extends State<DetaljiIgraca> {
                 SizedBox(
                   width: 3,
                 ),
-                widget.igrac!.korisnik.isAktivan
+                widget.trener!.korisnik.isAktivan
                     ? Row(
                         children: [
                           Icon(
@@ -505,8 +480,8 @@ class _DetaljiIgracaState extends State<DetaljiIgraca> {
                     backgroundColor: Colors.white,
                     child: ClipOval(
                       child: Image.memory(
-                        Uint8List.fromList(
-                            widget.igrac!.korisnik.gradRodjenja.drzava.zastava),
+                        Uint8List.fromList(widget
+                            .trener!.korisnik.gradRodjenja.drzava.zastava),
                         width: 17.5,
                         height: 17.5,
                         fit: BoxFit.cover,
@@ -518,9 +493,9 @@ class _DetaljiIgracaState extends State<DetaljiIgraca> {
                   width: 3,
                 ),
                 Text(
-                    widget.igrac!.korisnik.gradRodjenja.nazivGrada +
+                    widget.trener!.korisnik.gradRodjenja.nazivGrada +
                         ", " +
-                        widget.igrac!.korisnik.gradRodjenja.drzava.nazivDrzave,
+                        widget.trener!.korisnik.gradRodjenja.drzava.nazivDrzave,
                     style: GoogleFonts.oswald(
                       fontSize: 14,
                       color: Colors.black,
@@ -548,7 +523,7 @@ class _DetaljiIgracaState extends State<DetaljiIgraca> {
                 SizedBox(
                   width: 3,
                 ),
-                Text(widget.igrac!.korisnik.adresa,
+                Text(widget.trener!.korisnik.adresa,
                     style: GoogleFonts.oswald(
                       fontSize: 14,
                       color: Colors.black,
@@ -576,7 +551,7 @@ class _DetaljiIgracaState extends State<DetaljiIgraca> {
                 SizedBox(
                   width: 3,
                 ),
-                Text("+" + widget.igrac!.korisnik.telefon,
+                Text("+" + widget.trener!.korisnik.telefon,
                     style: GoogleFonts.oswald(
                       fontSize: 14,
                       color: Colors.black,
@@ -604,7 +579,7 @@ class _DetaljiIgracaState extends State<DetaljiIgraca> {
                 SizedBox(
                   width: 3,
                 ),
-                Text(widget.igrac!.korisnik.email,
+                Text(widget.trener!.korisnik.email,
                     style: GoogleFonts.oswald(
                       fontSize: 14,
                       color: Colors.black,
@@ -642,7 +617,7 @@ class _DetaljiIgracaState extends State<DetaljiIgraca> {
                 Text(
                     DateFormat.yMMMd()
                         .format(
-                            DateTime.parse(widget.igrac!.ugovor.datumPocetka))
+                            DateTime.parse(widget.trener!.ugovor.datumPocetka))
                         .toString(),
                     style: GoogleFonts.oswald(
                       fontSize: 14,
@@ -673,8 +648,8 @@ class _DetaljiIgracaState extends State<DetaljiIgraca> {
                 ),
                 Text(
                     DateFormat.yMMMd()
-                        .format(
-                            DateTime.parse(widget.igrac!.ugovor.datumZavrsetka))
+                        .format(DateTime.parse(
+                            widget.trener!.ugovor.datumZavrsetka))
                         .toString(),
                     style: GoogleFonts.oswald(
                       fontSize: 14,
@@ -683,7 +658,7 @@ class _DetaljiIgracaState extends State<DetaljiIgraca> {
                     )),
               ]),
               Divider(),
-              Text("PODACI O IGRAČU",
+              Text("PODACI O TRENERU",
                   style: GoogleFonts.oswald(
                       fontSize: 14,
                       color: Colors.black,
@@ -696,42 +671,144 @@ class _DetaljiIgracaState extends State<DetaljiIgraca> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    statistika(
-                        'assets/minute.png',
-                        (widget.igrac!.igracStatistika.brojNastupa * 90)
-                            .toString(),
-                        "UKUPNO MINUTA"),
-                    SizedBox(width: 35),
-                    statistika(
-                        'assets/nastupi.png',
-                        widget.igrac!.igracStatistika.brojNastupa.toString(),
-                        "NASTUPI"),
-                    SizedBox(width: 55),
-                    statistika(
-                        'assets/golovi.png',
-                        widget.igrac!.igracStatistika.golovi.toString(),
-                        "GOLOVI"),
-                  ],
-                ),
-              ),
-              Container(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    statistika(
-                        'assets/asistencije.png',
-                        widget.igrac!.igracStatistika.asistencije.toString(),
-                        "ASISTENCIJE"),
-                    SizedBox(width: 60),
-                    statistika(
-                        'assets/zuti.png',
-                        widget.igrac!.igracStatistika.zutiKartoni.toString(),
-                        "ŽUTI KARTONI"),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                            child: Row(
+                          children: [
+                            Image.asset(
+                              'assets/nastupi.png',
+                              height: 23,
+                            ),
+                            SizedBox(
+                              width: 7,
+                            ),
+                            Text(
+                                widget.trener!.trenerStatistika.brojUtakmica
+                                    .toString(),
+                                style: GoogleFonts.oswald(
+                                    fontSize: 25,
+                                    color: HexColor("#400507"),
+                                    letterSpacing: 0,
+                                    fontWeight: FontWeight.bold)),
+                          ],
+                        )),
+                        Container(
+                          child: Text("NASTUPI",
+                              style: GoogleFonts.oswald(
+                                  fontSize: 12,
+                                  color: HexColor("#400507"),
+                                  letterSpacing: 0,
+                                  fontWeight: FontWeight.bold)),
+                        ),
+                      ],
+                    ),
                     SizedBox(width: 30),
-                    statistika(
-                        'assets/crveni.png',
-                        widget.igrac!.igracStatistika.crveniKartoni.toString(),
-                        "CRVENI KARTONI")
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                            child: Row(
+                          children: [
+                            Icon(
+                              Icons.check_circle,
+                              color: HexColor("#28A731"),
+                              size: 23,
+                            ),
+                            SizedBox(
+                              width: 7,
+                            ),
+                            Text(
+                                widget.trener!.trenerStatistika.brojPobjeda
+                                    .toString(),
+                                style: GoogleFonts.oswald(
+                                    fontSize: 25,
+                                    color: HexColor("#400507"),
+                                    letterSpacing: 0,
+                                    fontWeight: FontWeight.bold)),
+                          ],
+                        )),
+                        Container(
+                          child: Text("POBJEDE",
+                              style: GoogleFonts.oswald(
+                                  fontSize: 12,
+                                  color: HexColor("#400507"),
+                                  letterSpacing: 0,
+                                  fontWeight: FontWeight.bold)),
+                        ),
+                      ],
+                    ),
+                    SizedBox(width: 30),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                            child: Row(
+                          children: [
+                            Icon(
+                              CupertinoIcons.clear_circled_solid,
+                              color: Colors.red[800]!,
+                              size: 23,
+                            ),
+                            SizedBox(
+                              width: 7,
+                            ),
+                            Text(
+                                widget.trener!.trenerStatistika.brojPoraza
+                                    .toString(),
+                                style: GoogleFonts.oswald(
+                                    fontSize: 25,
+                                    color: HexColor("#400507"),
+                                    letterSpacing: 0,
+                                    fontWeight: FontWeight.bold)),
+                          ],
+                        )),
+                        Container(
+                          child: Text("PORAZI",
+                              style: GoogleFonts.oswald(
+                                  fontSize: 12,
+                                  color: HexColor("#400507"),
+                                  letterSpacing: 0,
+                                  fontWeight: FontWeight.bold)),
+                        ),
+                      ],
+                    ),
+                    SizedBox(width: 30),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                            child: Row(
+                          children: [
+                            Icon(
+                              Icons.do_disturb_on,
+                              color: Colors.grey,
+                              size: 23,
+                            ),
+                            SizedBox(
+                              width: 7,
+                            ),
+                            Text(
+                                widget.trener!.trenerStatistika.brojNerjesenih
+                                    .toString(),
+                                style: GoogleFonts.oswald(
+                                    fontSize: 25,
+                                    color: HexColor("#400507"),
+                                    letterSpacing: 0,
+                                    fontWeight: FontWeight.bold)),
+                          ],
+                        )),
+                        Container(
+                          child: Text("NERJEŠENE",
+                              style: GoogleFonts.oswald(
+                                  fontSize: 12,
+                                  color: HexColor("#400507"),
+                                  letterSpacing: 0,
+                                  fontWeight: FontWeight.bold)),
+                        ),
+                      ],
+                    )
                   ],
                 ),
               ),
@@ -761,332 +838,6 @@ class _DetaljiIgracaState extends State<DetaljiIgraca> {
                 children: widget.data_statistika
                     .map<Widget>((item) => opisGrafa(item.x, item.color))
                     .toList(),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Row(children: [
-                Icon(
-                  Icons.fact_check_outlined,
-                  color: HexColor("#400507"),
-                  size: 18,
-                ),
-                SizedBox(
-                  width: 3,
-                ),
-                Text("Pozicija:".toString(),
-                    style: GoogleFonts.oswald(
-                        fontSize: 14,
-                        color: HexColor("#400507"),
-                        letterSpacing: 0,
-                        fontWeight: FontWeight.bold)),
-                SizedBox(
-                  width: 3,
-                ),
-                Text(
-                    widget.igrac!.pozicija.skracenica +
-                        " - " +
-                        widget.igrac!.pozicija.nazivPozicije
-                            .toString()
-                            .toUpperCase(),
-                    style: GoogleFonts.oswald(
-                        fontSize: 14,
-                        color: Colors.black,
-                        letterSpacing: 0,
-                        fontWeight: FontWeight.bold)),
-              ]),
-              SizedBox(
-                height: 3,
-              ),
-              Row(children: [
-                Icon(
-                  Icons.done,
-                  color: HexColor("#400507"),
-                  size: 18,
-                ),
-                SizedBox(
-                  width: 3,
-                ),
-                Text("Bolja noga:".toString(),
-                    style: GoogleFonts.oswald(
-                        fontSize: 14,
-                        color: HexColor("#400507"),
-                        letterSpacing: 0,
-                        fontWeight: FontWeight.bold)),
-                SizedBox(
-                  width: 3,
-                ),
-                Text(widget.igrac!.boljaNoga,
-                    style: GoogleFonts.oswald(
-                      fontSize: 14,
-                      color: Colors.black,
-                      letterSpacing: 0,
-                    )),
-              ]),
-              SizedBox(
-                height: 3,
-              ),
-              Row(children: [
-                Icon(
-                  Icons.bolt,
-                  color: HexColor("#400507"),
-                  size: 18,
-                ),
-                SizedBox(
-                  width: 3,
-                ),
-                Text("Jačina slabije noge:".toString(),
-                    style: GoogleFonts.oswald(
-                        fontSize: 14,
-                        color: HexColor("#400507"),
-                        letterSpacing: 0,
-                        fontWeight: FontWeight.bold)),
-                SizedBox(
-                  width: 3,
-                ),
-                RatingBarIndicator(
-                  rating: widget.igrac!.jacinaSlabijeNoge.toDouble(),
-                  itemBuilder: (context, index) => Icon(
-                    Icons.star,
-                    color: Colors.amber,
-                  ),
-                  itemCount: 5,
-                  itemSize: 20.0,
-                  direction: Axis.horizontal,
-                )
-              ]),
-              SizedBox(
-                height: 3,
-              ),
-              Row(
-                children: [
-                  Row(children: [
-                    Icon(
-                      Icons.height,
-                      color: HexColor("#400507"),
-                      size: 18,
-                    ),
-                    SizedBox(
-                      width: 3,
-                    ),
-                    Text("Visina (cm):".toString(),
-                        style: GoogleFonts.oswald(
-                            fontSize: 14,
-                            color: HexColor("#400507"),
-                            letterSpacing: 0,
-                            fontWeight: FontWeight.bold)),
-                    SizedBox(
-                      width: 3,
-                    ),
-                    Text(widget.igrac!.visina.toString(),
-                        style: GoogleFonts.oswald(
-                          fontSize: 14,
-                          color: Colors.black,
-                          letterSpacing: 0,
-                        )),
-                    SizedBox(
-                      width: 6,
-                    ),
-                    Icon(
-                      Icons.fitness_center,
-                      color: HexColor("#400507"),
-                      size: 18,
-                    ),
-                    SizedBox(
-                      width: 3,
-                    ),
-                    Text("Težina (kg):".toString(),
-                        style: GoogleFonts.oswald(
-                            fontSize: 14,
-                            color: HexColor("#400507"),
-                            letterSpacing: 0,
-                            fontWeight: FontWeight.bold)),
-                    SizedBox(
-                      width: 3,
-                    ),
-                    Text(widget.igrac!.tezina.toString(),
-                        style: GoogleFonts.oswald(
-                          fontSize: 14,
-                          color: Colors.black,
-                          letterSpacing: 0,
-                        ))
-                  ]),
-                ],
-              ),
-              SizedBox(
-                height: 3,
-              ),
-              Row(children: [
-                Icon(
-                  Icons.paid,
-                  color: HexColor("#400507"),
-                  size: 18,
-                ),
-                SizedBox(
-                  width: 3,
-                ),
-                Text("Tržišna vrijednost (€):".toString(),
-                    style: GoogleFonts.oswald(
-                        fontSize: 14,
-                        color: HexColor("#400507"),
-                        letterSpacing: 0,
-                        fontWeight: FontWeight.bold)),
-                SizedBox(
-                  width: 5,
-                ),
-                Text(widget.igrac!.trzisnaVrijednost.toString(),
-                    style: GoogleFonts.oswald(
-                      fontSize: 14,
-                      color: Colors.black,
-                      letterSpacing: 0,
-                    )),
-              ]),
-              SizedBox(
-                height: 3,
-              ),
-              Row(children: [
-                Icon(
-                  Icons.text_snippet,
-                  color: HexColor("#400507"),
-                  size: 18,
-                ),
-                SizedBox(
-                  width: 3,
-                ),
-                Text("Napomene:".toString(),
-                    style: GoogleFonts.oswald(
-                        fontSize: 14,
-                        color: HexColor("#400507"),
-                        letterSpacing: 0,
-                        fontWeight: FontWeight.bold)),
-                SizedBox(
-                  width: 3,
-                ),
-                Text(widget.igrac!.napomeneOIgracu.toString(),
-                    style: GoogleFonts.oswald(
-                      fontSize: 14,
-                      color: Colors.black,
-                      letterSpacing: 0,
-                    )),
-              ]),
-              Divider(),
-              ExpandablePanel(
-                theme: ExpandableThemeData(
-                    inkWellBorderRadius: BorderRadius.all(Radius.circular(12))),
-                header: Padding(
-                  padding: EdgeInsets.only(top: 5, left: 5),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.auto_graph,
-                        color: HexColor("#400507"),
-                        size: 20,
-                      ),
-                      SizedBox(width: 5),
-                      Text("STATISTIKA IGRAČA",
-                          style: GoogleFonts.oswald(
-                              fontSize: 18,
-                              color: HexColor("#400507"),
-                              letterSpacing: 0,
-                              fontWeight: FontWeight.bold))
-                    ],
-                  ),
-                ),
-                collapsed: Text(""),
-                expanded: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      height: 7,
-                    ),
-                    ocjene("KONTROLA LOPTE",
-                        widget.igrac!.igracSkills.kontrolaLopte.toDouble()),
-                    SizedBox(
-                      height: 3,
-                    ),
-                    ocjene("DRIBLANJE",
-                        widget.igrac!.igracSkills.driblanje.toDouble()),
-                    SizedBox(
-                      height: 3,
-                    ),
-                    ocjene("DODAVANJE",
-                        widget.igrac!.igracSkills.dodavanje.toDouble()),
-                    SizedBox(
-                      height: 3,
-                    ),
-                    ocjene("KRETANJE",
-                        widget.igrac!.igracSkills.kretanje.toDouble()),
-                    SizedBox(
-                      height: 3,
-                    ),
-                    ocjene(
-                        "BRZINA", widget.igrac!.igracSkills.brzina.toDouble()),
-                    SizedBox(
-                      height: 3,
-                    ),
-                    ocjene("ŠUT", widget.igrac!.igracSkills.sut.toDouble()),
-                    SizedBox(
-                      height: 3,
-                    ),
-                    ocjene("SNAGA", widget.igrac!.igracSkills.snaga.toDouble()),
-                    SizedBox(
-                      height: 3,
-                    ),
-                    ocjene("MARKIRANJE",
-                        widget.igrac!.igracSkills.markiranje.toDouble()),
-                    SizedBox(
-                      height: 3,
-                    ),
-                    ocjene("KLIZEĆI START",
-                        widget.igrac!.igracSkills.klizeciStart.toDouble()),
-                    SizedBox(
-                      height: 3,
-                    ),
-                    ocjene("SKOK", widget.igrac!.igracSkills.skok.toDouble()),
-                    SizedBox(
-                      height: 3,
-                    ),
-                    ocjene("ODBRANA",
-                        widget.igrac!.igracSkills.odbrana.toDouble()),
-                    SizedBox(
-                      height: 3,
-                    ),
-                    Divider(),
-                    SizedBox(
-                      height: 3,
-                    ),
-                    ocjene("PROSJEČNA OCJENA",
-                        widget.igrac!.igracSkills.prosjekOcjena.toDouble()),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Text("GRAFIČKI PRIKAZ STATISTIKE",
-                        style: GoogleFonts.oswald(
-                            fontSize: 14,
-                            color: Colors.black,
-                            letterSpacing: 0,
-                            fontWeight: FontWeight.bold)),
-                    SizedBox(
-                      height: 5,
-                    ),
-                    Container(
-                        child: SfCartesianChart(
-                            primaryXAxis: CategoryAxis(),
-                            primaryYAxis: NumericAxis(
-                                minimum: 0, maximum: 5, interval: 1),
-                            tooltipBehavior: widget._tooltip,
-                            series: <ChartSeries<LineChartData, String>>[
-                          ColumnSeries<LineChartData, String>(
-                              dataSource: widget.data_skills,
-                              xValueMapper: (LineChartData data, _) => data.x,
-                              yValueMapper: (LineChartData data, _) => data.y,
-                              name: 'Gold',
-                              color: HexColor("#400507"))
-                        ])),
-                  ],
-                ),
               ),
               SizedBox(height: 20)
             ],
