@@ -34,7 +34,6 @@ class _PrikazTreneraState extends State<PrikazTrenera> {
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 3), GetTrenere);
-    GetTrenere();
     if (selectedStatusZaPretragu.length == 0) {
       GetStatusi();
     }
@@ -377,7 +376,7 @@ class _PrikazTreneraState extends State<PrikazTrenera> {
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                 Padding(
                   padding: EdgeInsets.only(left: 21),
-                  child: Text("PRIKAZ TRENERA",
+                  child: Text("TRENERI",
                       style: GoogleFonts.oswald(
                           fontSize: 18,
                           color: HexColor("#400507"),
@@ -412,14 +411,17 @@ class _PrikazTreneraState extends State<PrikazTrenera> {
                     child: Center(
                         child: Column(
                       children: [
-                        Image.asset("assets/loader.gif", height: 45.0),
-                        SizedBox(height: 5),
-                        Text("Učitavanje...",
-                            style: GoogleFonts.oswald(
-                                fontSize: 16,
-                                color: Colors.black,
-                                letterSpacing: 0,
-                                fontWeight: FontWeight.bold))
+                        CircularProgressIndicator(
+                          color: HexColor("#400507"),
+                        ),
+                        // Image.asset("assets/loader.gif", height: 45.0),
+                        // SizedBox(height: 5),
+                        // Text("Učitavanje...",
+                        //     style: GoogleFonts.oswald(
+                        //         fontSize: 16,
+                        //         color: Colors.black,
+                        //         letterSpacing: 0,
+                        //         fontWeight: FontWeight.bold))
                       ],
                     )),
                   )

@@ -165,7 +165,7 @@ class _PocetnaState extends State<Pocetna> {
                       fontWeight: FontWeight.w500,
                     )),
                 onTap: () {
-                  Navigator.pop(context);
+                  Navigator.of(context).pushNamed('/prikaz_rasporeda');
                 }),
             ListTile(
                 leading: Icon(

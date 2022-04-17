@@ -41,6 +41,7 @@ dependencies:
   expandable: ^5.0.1
   toggle_switch: ^1.4.0
   syncfusion_flutter_charts: ^20.1.47+1
+  loading_overlay: ^0.3.0
 
 dev_dependencies:
   flutter_test:
@@ -63,6 +64,7 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
+    - assets/login-background-slika.png
     - assets/login-background.png
     - assets/fksarajevo-grb.png
     - assets/loader.gif
@@ -76,6 +78,10 @@ flutter:
     - assets/crveni.png
     - assets/grb-animacija.gif
     - assets/nema-rezultata-pretrage.png
+    - assets/domaci.png
+    - assets/gostujuci.png
+    - assets/rezervni.png
+
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
