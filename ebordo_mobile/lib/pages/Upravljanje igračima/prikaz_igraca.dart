@@ -229,188 +229,104 @@ class _PrikazIgracaState extends State<PrikazIgraca> {
   Widget FilteriPrikazIgracaWidget() {
     return Padding(
       padding: EdgeInsets.only(left: 21, right: 21),
-      child: ExpandablePanel(
-        theme: ExpandableThemeData(
-            inkWellBorderRadius: BorderRadius.all(Radius.circular(12))),
-        header: Padding(
-          padding: EdgeInsets.only(top: 5, left: 5),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Icon(
-                Icons.filter_list_outlined,
-                color: HexColor("#400507"),
-                size: 20,
-              ),
-              SizedBox(width: 5),
-              Text("FILTERI",
-                  style: GoogleFonts.oswald(
-                      fontSize: 18,
-                      color: HexColor("#400507"),
-                      letterSpacing: 0,
-                      fontWeight: FontWeight.bold))
-            ],
-          ),
-        ),
-        collapsed: Text(""),
-        expanded: ListView(shrinkWrap: true, children: [
-          SizedBox(height: 5),
-          Row(children: [
-            Text("PRETRAGA IGRAČA PO STATUSU",
-                style: GoogleFonts.oswald(
-                    fontSize: 15,
-                    color: Colors.black,
-                    letterSpacing: 0,
-                    fontWeight: FontWeight.bold))
-          ]),
-          SizedBox(height: 5),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text("TRENUTNI/BIVŠI FUDBALERI",
-                  style: GoogleFonts.oswald(
-                      fontSize: 15,
-                      color: HexColor("#400507"),
-                      letterSpacing: 0,
-                      fontWeight: FontWeight.bold)),
-              ToggleSwitch(
-                  minHeight: 22,
-                  minWidth: 30.0,
-                  cornerRadius: 20.0,
-                  activeBgColors: [
-                    [HexColor("#28A731")],
-                    [Colors.red[800]!]
-                  ],
-                  icons: [Icons.done, Icons.close],
-                  activeFgColor: Colors.white,
-                  inactiveBgColor: Colors.grey,
-                  inactiveFgColor: Colors.white,
-                  initialLabelIndex: isTrenutniIgraci ? 0 : 1,
-                  totalSwitches: 2,
-                  labels: ['', ''],
-                  radiusStyle: false,
-                  onToggle: (index) {
-                    if (index == 0) {
-                      GetIgrace(isAktivan: true);
-                    } else {
-                      GetIgrace(isAktivan: false);
-                    }
-                  },
-                  customTextStyles: [
-                    GoogleFonts.oswald(
-                        fontSize: 16,
-                        color: Colors.white,
-                        letterSpacing: 0,
-                        fontWeight: FontWeight.bold),
-                    GoogleFonts.oswald(
-                        fontSize: 16,
-                        color: Colors.white,
-                        letterSpacing: 0,
-                        fontWeight: FontWeight.bold)
-                  ])
-            ],
-          ),
-          SizedBox(height: 3),
-          Divider(),
-          Row(
-            children: [
-              Text("PRETRAGA IGRAČA PO POZICIJI",
-                  style: GoogleFonts.oswald(
-                      fontSize: 15,
-                      color: Colors.black,
-                      letterSpacing: 0,
-                      fontWeight: FontWeight.bold))
-            ],
-          ),
-          ListView(
-            shrinkWrap: true,
-            children: filtered_pozicijePodpozicije
-                .map<Widget>((e) => FilteredPozicije(
-                    podpozicija: e, filtirajIgrace: FiltirajIgrace))
-                .toList(),
-          ),
-          SizedBox(height: 3),
-          Divider(),
-          Row(
-            children: [
-              Text("PRETRAGA IGRAČA PO IMENU I PREZIMENU",
-                  style: GoogleFonts.oswald(
-                      fontSize: 15,
-                      color: Colors.black,
-                      letterSpacing: 0,
-                      fontWeight: FontWeight.bold))
-            ],
-          ),
-          SizedBox(
-            height: 5,
-          ),
-          TextFormField(
-            controller: _filterIgracaController,
-            style: TextStyle(height: 1),
-            onChanged: (text) {
-              FiltirajIgrace(ime: text);
-            },
-            decoration: InputDecoration(
-              hintText: "ex. Sušić",
-              enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10.0),
-                borderSide: BorderSide(color: HexColor("#D9D9D9"), width: 1),
-              ),
-              focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10.0),
-                borderSide: BorderSide(color: HexColor("#400507"), width: 1),
-              ),
-              labelStyle: TextStyle(color: HexColor("#400507")),
-              prefixIcon: Icon(
-                Icons.search,
-                color: HexColor("#400507"),
-              ),
-              suffixIcon: IconButton(
-                onPressed: _filterIgracaController.clear,
-                icon: Icon(Icons.clear, color: HexColor("#7F7F7F")),
-              ),
-            ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          SizedBox(
-            width: 200,
-            height: 30,
-            child: TextButton.icon(
-              style: TextButton.styleFrom(
-                textStyle: TextStyle(color: Colors.blue),
-                backgroundColor: HexColor("#400507"),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(9),
-                ),
-              ),
-              onPressed: () => {OsvjeziFiltere()},
-              icon: Icon(
-                Icons.autorenew,
-                color: Colors.white,
-                size: 17,
-              ),
-              label: Text("OSVJEŽI FILTERE",
-                  style: GoogleFonts.ubuntu(
-                      fontSize: 14,
-                      color: Colors.white,
-                      letterSpacing: 0,
-                      fontWeight: FontWeight.bold)),
-            ),
-          ),
-          SizedBox(height: 7),
-          ExpandableButton(
+      child: Container(
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            color: Color.fromARGB(255, 98, 105, 99).withOpacity(0.2)),
+        padding: EdgeInsets.all(10),
+        child: ExpandablePanel(
+          theme: ExpandableThemeData(
+              inkWellBorderRadius: BorderRadius.all(Radius.circular(12))),
+          header: Padding(
+            padding: EdgeInsets.only(top: 5, left: 5),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Icon(
-                  Icons.close,
-                  color: Colors.black,
+                  Icons.filter_list_outlined,
+                  color: HexColor("#400507"),
                   size: 20,
                 ),
-                SizedBox(width: 3),
-                Text("ZATVORI FILTERE",
+                SizedBox(width: 5),
+                Text("FILTERI",
+                    style: GoogleFonts.oswald(
+                        fontSize: 18,
+                        color: HexColor("#400507"),
+                        letterSpacing: 0,
+                        fontWeight: FontWeight.bold))
+              ],
+            ),
+          ),
+          collapsed: Padding(
+              padding: EdgeInsets.only(left: 5),
+              child: Text("ZA PRETRAGU OTVORI FILTERE!",
+                  style: GoogleFonts.oswald(
+                      fontSize: 13,
+                      color: Colors.black,
+                      letterSpacing: 0,
+                      fontWeight: FontWeight.w500))),
+          expanded: ListView(shrinkWrap: true, children: [
+            SizedBox(height: 5),
+            Row(children: [
+              Text("PRETRAGA IGRAČA PO STATUSU",
+                  style: GoogleFonts.oswald(
+                      fontSize: 15,
+                      color: Colors.black,
+                      letterSpacing: 0,
+                      fontWeight: FontWeight.bold))
+            ]),
+            SizedBox(height: 5),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("TRENUTNI/BIVŠI FUDBALERI",
+                    style: GoogleFonts.oswald(
+                        fontSize: 15,
+                        color: HexColor("#400507"),
+                        letterSpacing: 0,
+                        fontWeight: FontWeight.bold)),
+                ToggleSwitch(
+                    minHeight: 22,
+                    minWidth: 30.0,
+                    cornerRadius: 20.0,
+                    activeBgColors: [
+                      [HexColor("#28A731")],
+                      [Colors.red[800]!]
+                    ],
+                    icons: [Icons.done, Icons.close],
+                    activeFgColor: Colors.white,
+                    inactiveBgColor: Colors.grey,
+                    inactiveFgColor: Colors.white,
+                    initialLabelIndex: isTrenutniIgraci ? 0 : 1,
+                    totalSwitches: 2,
+                    labels: ['', ''],
+                    radiusStyle: false,
+                    onToggle: (index) {
+                      if (index == 0) {
+                        GetIgrace(isAktivan: true);
+                      } else {
+                        GetIgrace(isAktivan: false);
+                      }
+                    },
+                    customTextStyles: [
+                      GoogleFonts.oswald(
+                          fontSize: 16,
+                          color: Colors.white,
+                          letterSpacing: 0,
+                          fontWeight: FontWeight.bold),
+                      GoogleFonts.oswald(
+                          fontSize: 16,
+                          color: Colors.white,
+                          letterSpacing: 0,
+                          fontWeight: FontWeight.bold)
+                    ])
+              ],
+            ),
+            SizedBox(height: 3),
+            Divider(),
+            Row(
+              children: [
+                Text("PRETRAGA IGRAČA PO POZICIJI",
                     style: GoogleFonts.oswald(
                         fontSize: 15,
                         color: Colors.black,
@@ -418,9 +334,106 @@ class _PrikazIgracaState extends State<PrikazIgraca> {
                         fontWeight: FontWeight.bold))
               ],
             ),
-          ),
-          SizedBox(height: 10)
-        ]),
+            ListView(
+              shrinkWrap: true,
+              children: filtered_pozicijePodpozicije
+                  .map<Widget>((e) => FilteredPozicije(
+                      podpozicija: e, filtirajIgrace: FiltirajIgrace))
+                  .toList(),
+            ),
+            SizedBox(height: 3),
+            Divider(),
+            Row(
+              children: [
+                Text("PRETRAGA IGRAČA PO IMENU I PREZIMENU",
+                    style: GoogleFonts.oswald(
+                        fontSize: 15,
+                        color: Colors.black,
+                        letterSpacing: 0,
+                        fontWeight: FontWeight.bold))
+              ],
+            ),
+            SizedBox(
+              height: 5,
+            ),
+            TextFormField(
+              controller: _filterIgracaController,
+              style: TextStyle(height: 1),
+              onChanged: (text) {
+                FiltirajIgrace(ime: text);
+              },
+              decoration: InputDecoration(
+                hintText: "ex. Sušić",
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                  borderSide: BorderSide(color: HexColor("#400507"), width: 1),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                  borderSide: BorderSide(color: HexColor("#400507"), width: 1),
+                ),
+                labelStyle: TextStyle(color: HexColor("#400507")),
+                prefixIcon: Icon(
+                  Icons.search,
+                  color: HexColor("#400507"),
+                ),
+                suffixIcon: IconButton(
+                  onPressed: _filterIgracaController.clear,
+                  icon: Icon(Icons.clear, color: HexColor("#7F7F7F")),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            SizedBox(
+              width: 200,
+              height: 30,
+              child: TextButton.icon(
+                style: TextButton.styleFrom(
+                  textStyle: TextStyle(color: Colors.blue),
+                  backgroundColor: HexColor("#400507"),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(9),
+                  ),
+                ),
+                onPressed: () => {OsvjeziFiltere()},
+                icon: Icon(
+                  Icons.autorenew,
+                  color: Colors.white,
+                  size: 17,
+                ),
+                label: Text("OSVJEŽI FILTERE",
+                    style: GoogleFonts.ubuntu(
+                        fontSize: 14,
+                        color: Colors.white,
+                        letterSpacing: 0,
+                        fontWeight: FontWeight.bold)),
+              ),
+            ),
+            SizedBox(height: 7),
+            ExpandableButton(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.close,
+                    color: Colors.black,
+                    size: 20,
+                  ),
+                  SizedBox(width: 3),
+                  Text("ZATVORI FILTERE",
+                      style: GoogleFonts.oswald(
+                          fontSize: 15,
+                          color: Colors.black,
+                          letterSpacing: 0,
+                          fontWeight: FontWeight.bold))
+                ],
+              ),
+            ),
+            SizedBox(height: 10)
+          ]),
+        ),
       ),
     );
   }
@@ -436,111 +449,140 @@ class _PrikazIgracaState extends State<PrikazIgraca> {
           unselectedFontSize: 13,
           items: [
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
+              icon: TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/pocetna');
+                  },
+                  child: Icon(
+                    Icons.home,
+                    color: HexColor("#400507"),
+                  )),
               label: 'Početna',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.calendar_month),
+              icon: TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/prikaz_rasporeda');
+                  },
+                  child: Icon(
+                    Icons.calendar_month,
+                    color: HexColor("#400507"),
+                  )),
               label: 'Raspored',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.sports_soccer),
+              icon: TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/prikaz_rezultata');
+                  },
+                  child: Icon(
+                    Icons.sports_soccer,
+                    color: HexColor("#400507"),
+                  )),
               label: 'Rezultati',
             ),
           ],
         ),
-        body: ListView(
-          children: [
-            SizedBox(height: 5),
-            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Padding(
-                  padding: EdgeInsets.only(left: 21),
-                  child: Text("IGRAČI",
-                      style: GoogleFonts.oswald(
-                          fontSize: 18,
-                          color: HexColor("#400507"),
-                          letterSpacing: 0,
-                          fontWeight: FontWeight.bold)),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 21),
-                  child:
-                      Text("Ukupno igrača: " + _igraciState.length.toString(),
-                          style: GoogleFonts.oswald(
-                            fontSize: 11,
-                            color: Colors.black,
+        body: Container(
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: AssetImage('assets/login-background-slika.png'))),
+          child: ListView(
+            children: [
+              SizedBox(height: 5),
+              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                  Padding(
+                    padding: EdgeInsets.only(left: 21),
+                    child: Text("IGRAČI",
+                        style: GoogleFonts.oswald(
+                            fontSize: 18,
+                            color: HexColor("#400507"),
                             letterSpacing: 0,
-                          )),
-                ),
+                            fontWeight: FontWeight.bold)),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 21),
+                    child:
+                        Text("Ukupno igrača: " + _igraciState.length.toString(),
+                            style: GoogleFonts.oswald(
+                              fontSize: 11,
+                              color: Colors.black,
+                              letterSpacing: 0,
+                            )),
+                  ),
+                ]),
+                Padding(
+                  padding: EdgeInsets.only(right: 21),
+                  child: Image.asset(
+                    'assets/grb-animacija.gif',
+                    fit: BoxFit.contain,
+                    height: 42,
+                  ),
+                )
               ]),
-              Padding(
-                padding: EdgeInsets.only(right: 21),
-                child: Image.asset(
-                  'assets/grb-animacija.gif',
-                  fit: BoxFit.contain,
-                  height: 42,
-                ),
-              )
-            ]),
-            SizedBox(height: 15),
-            FilteriPrikazIgracaWidget(),
-            isDataLoading
-                ? Padding(
-                    padding: EdgeInsets.only(top: 120),
-                    child: Center(
-                        child: Column(
-                      children: [
-                        CircularProgressIndicator(
-                          color: HexColor("#400507"),
-                        ),
-                        // Image.asset("assets/loader.gif", height: 45.0),
-                        // SizedBox(height: 5),
-                        // Text("Učitavanje...",
-                        //     style: GoogleFonts.oswald(
-                        //         fontSize: 16,
-                        //         color: Colors.black,
-                        //         letterSpacing: 0,
-                        //         fontWeight: FontWeight.bold))
-                      ],
-                    )),
-                  )
-                : (_igraciState.length == 0)
-                    ? Padding(
-                        padding: EdgeInsets.only(left: 21, right: 21),
-                        child: Center(
-                            child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Image.asset("assets/nema-rezultata-pretrage.png",
-                                height: 330.0),
-                            Text("NEMA REZULTATA PRETRAGE!",
-                                style: GoogleFonts.oswald(
-                                    fontSize: 17,
+              SizedBox(height: 15),
+              FilteriPrikazIgracaWidget(),
+              SizedBox(height: 5),
+              isDataLoading
+                  ? Padding(
+                      padding: EdgeInsets.only(top: 120),
+                      child: Center(
+                          child: Column(
+                        children: [
+                          CircularProgressIndicator(
+                            color: HexColor("#400507"),
+                          ),
+                          // Image.asset("assets/loader.gif", height: 45.0),
+                          // SizedBox(height: 5),
+                          // Text("Učitavanje...",
+                          //     style: GoogleFonts.oswald(
+                          //         fontSize: 16,
+                          //         color: Colors.black,
+                          //         letterSpacing: 0,
+                          //         fontWeight: FontWeight.bold))
+                        ],
+                      )),
+                    )
+                  : (_igraciState.length == 0)
+                      ? Padding(
+                          padding: EdgeInsets.only(left: 21, right: 21),
+                          child: Center(
+                              child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Image.asset("assets/nema-rezultata-pretrage.png",
+                                  height: 330.0),
+                              Text("NEMA REZULTATA PRETRAGE!",
+                                  style: GoogleFonts.oswald(
+                                      fontSize: 17,
+                                      color: Colors.black,
+                                      letterSpacing: 0,
+                                      fontWeight: FontWeight.bold)),
+                              Text(
+                                  "Baza podataka je pretražena i nisu pronađeni odgovarajući rezultati. Osvježite vašu pretragu!",
+                                  style: GoogleFonts.oswald(
+                                    fontSize: 14.5,
                                     color: Colors.black,
                                     letterSpacing: 0,
-                                    fontWeight: FontWeight.bold)),
-                            Text(
-                                "Baza podataka je pretražena i nisu pronađeni odgovarajući rezultati. Osvježite vašu pretragu!",
-                                style: GoogleFonts.oswald(
-                                  fontSize: 14.5,
-                                  color: Colors.black,
-                                  letterSpacing: 0,
-                                ),
-                                textAlign: TextAlign.center),
-                          ],
-                        )),
-                      )
-                    : ListView(
-                        scrollDirection: Axis.vertical,
-                        shrinkWrap: true,
-                        children: filtered_igraciPoPozicijama
-                            .map<Widget>((element) => PozicijaIgraciState(
-                                element.igraci, element.nazivPozicije))
-                            .toList(),
-                      )
-          ],
+                                  ),
+                                  textAlign: TextAlign.center),
+                            ],
+                          )),
+                        )
+                      : ListView(
+                          scrollDirection: Axis.vertical,
+                          shrinkWrap: true,
+                          children: filtered_igraciPoPozicijama
+                              .map<Widget>((element) => PozicijaIgraciState(
+                                  element.igraci, element.nazivPozicije))
+                              .toList(),
+                        )
+            ],
+          ),
         ));
   }
 }

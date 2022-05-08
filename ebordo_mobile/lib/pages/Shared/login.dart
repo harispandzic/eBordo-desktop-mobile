@@ -52,6 +52,7 @@ class _LoginState extends State<Login> {
         setState(() {
           _isLoading = false;
         });
+
         Navigator.of(context).pushReplacementNamed('/pocetna');
       }
     } catch (e) {

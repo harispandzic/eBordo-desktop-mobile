@@ -31,6 +31,7 @@ class DetaljiUtakmice extends StatefulWidget {
 
 class _DetaljiUtakmiceState extends State<DetaljiUtakmice> {
   @override
+  // ignore: must_call_super
   void initState() {
     if (prvaPostava.length == 0) {
       GetSastav();
@@ -61,26 +62,45 @@ class _DetaljiUtakmiceState extends State<DetaljiUtakmice> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: SharedAppBar(),
-      body: Stack(
+      body: ListView(
         children: [
           Container(
-            height: 370,
-            margin: EdgeInsets.only(top: 0),
-            width: double.infinity,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                    bottomRight: Radius.circular(15),
-                    bottomLeft: Radius.circular(15)),
-                image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: AssetImage('assets/igrac-kartica-pozadina.png'))),
-            child: Padding(
-                padding: const EdgeInsets.only(
-                    top: 15, left: 15, bottom: 0, right: 5),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                      bottomRight: Radius.circular(0),
+                      bottomLeft: Radius.circular(0)),
+                  image: DecorationImage(
+                      fit: BoxFit.cover,
+                      image: AssetImage('assets/login-background-slika.png'))),
+              child: Padding(
+                padding:
+                    EdgeInsets.only(left: 13, top: 10, right: 13, bottom: 30),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text("DETALJI O UTAKMICI",
+                            style: GoogleFonts.oswald(
+                                fontSize: 18,
+                                color: HexColor("#400507"),
+                                letterSpacing: 0,
+                                fontWeight: FontWeight.bold)),
+                        Padding(
+                          padding: EdgeInsets.only(right: 0),
+                          child: Image.asset(
+                            'assets/grb-animacija.gif',
+                            fit: BoxFit.contain,
+                            height: 35,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
                     widget.utakmica!.vrstaUtakmice == "Domaća"
                         ? Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -102,7 +122,7 @@ class _DetaljiUtakmiceState extends State<DetaljiUtakmice> {
                                   Text("SARAJEVO",
                                       style: GoogleFonts.oswald(
                                           fontSize: 19,
-                                          color: Colors.white,
+                                          color: Colors.black,
                                           letterSpacing: 0,
                                           fontWeight: FontWeight.w600)),
                                 ],
@@ -140,7 +160,7 @@ class _DetaljiUtakmiceState extends State<DetaljiUtakmice> {
                                           .toUpperCase(),
                                       style: GoogleFonts.oswald(
                                           fontSize: 19,
-                                          color: Colors.white,
+                                          color: Colors.black,
                                           letterSpacing: 0,
                                           fontWeight: FontWeight.w600)),
                                 ],
@@ -177,7 +197,7 @@ class _DetaljiUtakmiceState extends State<DetaljiUtakmice> {
                                   Text("SARAJEVO",
                                       style: GoogleFonts.oswald(
                                           fontSize: 19,
-                                          color: Colors.white,
+                                          color: Colors.black,
                                           letterSpacing: 0,
                                           fontWeight: FontWeight.w600)),
                                 ],
@@ -207,7 +227,7 @@ class _DetaljiUtakmiceState extends State<DetaljiUtakmice> {
                                           .toUpperCase(),
                                       style: GoogleFonts.oswald(
                                           fontSize: 19,
-                                          color: Colors.white,
+                                          color: Colors.black,
                                           letterSpacing: 0,
                                           fontWeight: FontWeight.w600)),
                                 ],
@@ -217,10 +237,10 @@ class _DetaljiUtakmiceState extends State<DetaljiUtakmice> {
                     SizedBox(height: 10),
                     Row(children: [
                       Icon(
-                        widget.utakmica!.vrstaUtakmice == "Domaća"
+                        widget.utakmica!.vrstaUtakmice == "Gostujuća"
                             ? CupertinoIcons.airplane
                             : Icons.home,
-                        color: Colors.white,
+                        color: HexColor("#400507"),
                         size: 18,
                       ),
                       SizedBox(
@@ -232,7 +252,7 @@ class _DetaljiUtakmiceState extends State<DetaljiUtakmice> {
                               : "GOSTUJUĆA UTAKMICA",
                           style: GoogleFonts.oswald(
                             fontSize: 14,
-                            color: Colors.white,
+                            color: Colors.black,
                             letterSpacing: 0,
                           )),
                     ]),
@@ -242,7 +262,7 @@ class _DetaljiUtakmiceState extends State<DetaljiUtakmice> {
                     Row(children: [
                       Icon(
                         Icons.emoji_events,
-                        color: Colors.white,
+                        color: HexColor("#400507"),
                         size: 18,
                       ),
                       SizedBox(
@@ -254,9 +274,17 @@ class _DetaljiUtakmiceState extends State<DetaljiUtakmice> {
                               .toUpperCase(),
                           style: GoogleFonts.oswald(
                             fontSize: 14,
-                            color: Colors.white,
+                            color: Colors.black,
                             letterSpacing: 0,
                           )),
+                      SizedBox(
+                        width: 5,
+                      ),
+                      Image.memory(
+                        Uint8List.fromList(widget.utakmica!.takmicenje.logo),
+                        height: 18,
+                        fit: BoxFit.cover,
+                      )
                     ]),
                     SizedBox(
                       height: 6,
@@ -264,7 +292,7 @@ class _DetaljiUtakmiceState extends State<DetaljiUtakmice> {
                     Row(children: [
                       Icon(
                         Icons.calendar_month,
-                        color: Colors.white,
+                        color: HexColor("#400507"),
                         size: 18,
                       ),
                       SizedBox(
@@ -277,7 +305,7 @@ class _DetaljiUtakmiceState extends State<DetaljiUtakmice> {
                               .toString(),
                           style: GoogleFonts.oswald(
                             fontSize: 14,
-                            color: Colors.white,
+                            color: Colors.black,
                             letterSpacing: 0,
                           )),
                       SizedBox(
@@ -311,7 +339,7 @@ class _DetaljiUtakmiceState extends State<DetaljiUtakmice> {
                     Row(children: [
                       Icon(
                         Icons.access_alarm,
-                        color: Colors.white,
+                        color: HexColor("#400507"),
                         size: 18,
                       ),
                       SizedBox(
@@ -320,7 +348,7 @@ class _DetaljiUtakmiceState extends State<DetaljiUtakmice> {
                       Text(widget.utakmica!.satnica + " h",
                           style: GoogleFonts.oswald(
                             fontSize: 14,
-                            color: Colors.white,
+                            color: Colors.black,
                             letterSpacing: 0,
                           ))
                     ]),
@@ -330,7 +358,7 @@ class _DetaljiUtakmiceState extends State<DetaljiUtakmice> {
                     Row(children: [
                       Icon(
                         Icons.location_on,
-                        color: Colors.white,
+                        color: HexColor("#400507"),
                         size: 18,
                       ),
                       SizedBox(
@@ -346,7 +374,7 @@ class _DetaljiUtakmiceState extends State<DetaljiUtakmice> {
                                   .nazivGrada,
                           style: GoogleFonts.oswald(
                             fontSize: 14,
-                            color: Colors.white,
+                            color: Colors.black,
                             letterSpacing: 0,
                           )),
                       SizedBox(
@@ -376,7 +404,7 @@ class _DetaljiUtakmiceState extends State<DetaljiUtakmice> {
                     Row(children: [
                       Icon(
                         Icons.sports,
-                        color: Colors.white,
+                        color: HexColor("#400507"),
                         size: 18,
                       ),
                       SizedBox(
@@ -385,7 +413,7 @@ class _DetaljiUtakmiceState extends State<DetaljiUtakmice> {
                       Text(widget.utakmica!.sudija.toString().toUpperCase(),
                           style: GoogleFonts.oswald(
                             fontSize: 14,
-                            color: Colors.white,
+                            color: Colors.black,
                             letterSpacing: 0,
                           )),
                     ]),
@@ -405,7 +433,7 @@ class _DetaljiUtakmiceState extends State<DetaljiUtakmice> {
                       Text(garnituraDresaNaziv,
                           style: GoogleFonts.oswald(
                             fontSize: 14,
-                            color: Colors.white,
+                            color: Colors.black,
                             letterSpacing: 0,
                           ))
                     ]),
@@ -413,7 +441,7 @@ class _DetaljiUtakmiceState extends State<DetaljiUtakmice> {
                     Text("KAPITEN",
                         style: GoogleFonts.oswald(
                             fontSize: 15,
-                            color: Colors.white,
+                            color: Colors.black,
                             letterSpacing: 0,
                             fontWeight: FontWeight.bold)),
                     SizedBox(height: 3),
@@ -447,118 +475,108 @@ class _DetaljiUtakmiceState extends State<DetaljiUtakmice> {
                                     .toUpperCase(),
                             style: GoogleFonts.oswald(
                                 fontSize: 15,
-                                color: Colors.white,
+                                color: Colors.black,
                                 letterSpacing: 0,
                                 fontWeight: FontWeight.bold)),
+                        SizedBox(
+                          height: 20,
+                        ),
                       ],
-                    )
+                    ),
                   ],
-                )),
+                ),
+              )),
+          SizedBox(
+            height: 20,
           ),
           Padding(
-              padding:
-                  EdgeInsets.only(left: 13, top: 380, right: 13, bottom: 30),
-              child: ListView(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text("POSTAVE ZA UTAKMICU",
-                          style: GoogleFonts.oswald(
-                              fontSize: 18,
-                              color: HexColor("#400507"),
-                              letterSpacing: 0,
-                              fontWeight: FontWeight.bold)),
-                      Padding(
-                        padding: EdgeInsets.only(right: 0),
-                        child: Image.asset(
-                          'assets/grb-animacija.gif',
-                          fit: BoxFit.contain,
-                          height: 35,
-                        ),
-                      )
-                    ],
-                  ),
-                  Text("POČETNA POSTAVA",
-                      style: GoogleFonts.oswald(
-                          fontSize: 18,
-                          color: Colors.black,
-                          letterSpacing: 0,
-                          fontWeight: FontWeight.bold)),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  ListView(
-                    scrollDirection: Axis.vertical,
-                    shrinkWrap: true,
-                    children: prvaPostava
-                        .map((element) => IgracNastupKartica(context, element))
-                        .toList(),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Text("KLUPA",
-                      style: GoogleFonts.oswald(
-                          fontSize: 18,
-                          color: Colors.black,
-                          letterSpacing: 0,
-                          fontWeight: FontWeight.bold)),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  ListView(
-                    scrollDirection: Axis.vertical,
-                    shrinkWrap: true,
-                    children: klupa
-                        .map((element) => IgracNastupKartica(context, element))
-                        .toList(),
-                  ),
-                  Divider(),
-                  Text("TRENER",
-                      style: GoogleFonts.oswald(
-                          fontSize: 15,
-                          color: Colors.black,
-                          letterSpacing: 0,
-                          fontWeight: FontWeight.bold)),
-                  SizedBox(height: 3),
-                  Row(
-                    children: [
-                      CircleAvatar(
-                        radius: 14,
+            padding: EdgeInsets.only(left: 13, top: 10, right: 13, bottom: 30),
+            child: Container(
+                child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text("POČETNA POSTAVA",
+                    style: GoogleFonts.oswald(
+                        fontSize: 18,
+                        color: Colors.black,
+                        letterSpacing: 0,
+                        fontWeight: FontWeight.bold)),
+                SizedBox(
+                  height: 10,
+                ),
+                ListView(
+                  scrollDirection: Axis.vertical,
+                  shrinkWrap: true,
+                  children: prvaPostava
+                      .map((element) => IgracNastupKartica(context, element))
+                      .toList(),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Text("KLUPA",
+                    style: GoogleFonts.oswald(
+                        fontSize: 18,
+                        color: Colors.black,
+                        letterSpacing: 0,
+                        fontWeight: FontWeight.bold)),
+                SizedBox(
+                  height: 10,
+                ),
+                ListView(
+                  scrollDirection: Axis.vertical,
+                  shrinkWrap: true,
+                  children: klupa
+                      .map((element) => IgracNastupKartica(context, element))
+                      .toList(),
+                ),
+                Divider(),
+                Text("TRENER",
+                    style: GoogleFonts.oswald(
+                        fontSize: 15,
+                        color: Colors.black,
+                        letterSpacing: 0,
+                        fontWeight: FontWeight.bold)),
+                SizedBox(height: 3),
+                Row(
+                  children: [
+                    CircleAvatar(
+                      radius: 14,
+                      backgroundColor: Colors.white,
+                      child: CircleAvatar(
+                        radius: 13.5,
                         backgroundColor: Colors.white,
-                        child: CircleAvatar(
-                          radius: 13.5,
-                          backgroundColor: Colors.white,
-                          child: ClipOval(
-                            child: Image.memory(
-                              Uint8List.fromList(
-                                  widget.utakmica!.trener.korisnik.slika),
-                              width: 30,
-                              height: 30,
-                              fit: BoxFit.cover,
-                            ),
+                        child: ClipOval(
+                          child: Image.memory(
+                            Uint8List.fromList(
+                                widget.utakmica!.trener.korisnik.slika),
+                            width: 30,
+                            height: 30,
+                            fit: BoxFit.cover,
                           ),
                         ),
                       ),
-                      SizedBox(width: 3),
-                      Text(
-                          widget.utakmica!.trener.korisnik.ime
-                                  .toString()
-                                  .toUpperCase() +
-                              " " +
-                              widget.utakmica!.trener.korisnik.prezime
-                                  .toString()
-                                  .toUpperCase(),
-                          style: GoogleFonts.oswald(
-                              fontSize: 15,
-                              color: Colors.black,
-                              letterSpacing: 0,
-                              fontWeight: FontWeight.bold)),
-                    ],
-                  )
-                ],
-              )),
+                    ),
+                    SizedBox(width: 3),
+                    Text(
+                        widget.utakmica!.trener.korisnik.ime
+                                .toString()
+                                .toUpperCase() +
+                            " " +
+                            widget.utakmica!.trener.korisnik.prezime
+                                .toString()
+                                .toUpperCase(),
+                        style: GoogleFonts.oswald(
+                            fontSize: 15,
+                            color: Colors.black,
+                            letterSpacing: 0,
+                            fontWeight: FontWeight.bold)),
+                  ],
+                )
+              ],
+            )),
+          ),
         ],
       ),
     );
@@ -639,7 +657,7 @@ Widget IgracNastupKartica(BuildContext context, UtakmicaSastav element) {
           ),
           Container(
             height: 40,
-            width: 110,
+            width: 125,
             child: Padding(
               padding: EdgeInsets.only(left: 4),
               child: Align(
@@ -662,7 +680,7 @@ Widget IgracNastupKartica(BuildContext context, UtakmicaSastav element) {
           ),
           Container(
             height: 40,
-            width: 40,
+            width: 50,
             child: Padding(
               padding: EdgeInsets.only(left: 4),
               child: Align(
