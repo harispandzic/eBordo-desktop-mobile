@@ -1406,7 +1406,7 @@ namespace eBordo.WinUI.Forms.Igrač
             this.lblNaziv.Name = "lblNaziv";
             this.lblNaziv.Size = new System.Drawing.Size(164, 22);
             this.lblNaziv.TabIndex = 5;
-            this.lblNaziv.Text = "FUDBALSKI KLUB SARAJEVO";
+            this.lblNaziv.Text = "eBORDO";
             this.lblNaziv.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pngLogout

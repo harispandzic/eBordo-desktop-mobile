@@ -1,7 +1,7 @@
 // ignore_for_file: must_be_immutable
 import 'dart:typed_data';
+import 'package:ebordo_mobile/models/izvjestaj.dart';
 import 'package:ebordo_mobile/models/takmicenje.dart';
-import 'package:ebordo_mobile/pages/Upravljanje%20rasporedom/detalji_utakmice.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -10,22 +10,23 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:intl/intl.dart';
 import 'package:motion_toast/motion_toast.dart';
 import 'package:motion_toast/resources/arrays.dart';
-import '../../models/utakmica.dart';
 import '../../services/APIService.dart';
 import '../Shared/shared_app_bar.dart';
+import 'detalji_izvjestaja.dart';
 
 List<String> selectedVrsteUtakmice = [];
+List<int> selectedRezultati = [];
 List<int> selectedTakmicenja = [];
-List<Utakmica> dobavljeneUtakmice = [];
+List<Izvjestaj> dobavljeneUtakmice = [];
 List<Takmicenje> dobavljenaTakmicenja = [];
 
-class PrikazRasporeda extends StatefulWidget {
+class PrikazRezultata extends StatefulWidget {
   @override
-  _PrikazRasporedaState createState() => _PrikazRasporedaState();
+  _PrikazRezultataState createState() => _PrikazRezultataState();
 }
 
-class _PrikazRasporedaState extends State<PrikazRasporeda> {
-  List<Utakmica> _utakmiceState = [];
+class _PrikazRezultataState extends State<PrikazRezultata> {
+  List<Izvjestaj> _utakmiceState = [];
   List<Takmicenje> _takmicenjaState = [];
   bool isDataLoading = true;
   bool isPorukaPrikazana = false;
@@ -38,20 +39,23 @@ class _PrikazRasporedaState extends State<PrikazRasporeda> {
     if (selectedVrsteUtakmice.length == 0) {
       GetVrsteUtakmice();
     }
+    if (selectedRezultati.length == 0) {
+      GetRezultati();
+    }
   }
 
-  Future<List<Utakmica>> GetUtakmice({tipUtakmice = ""}) async {
+  Future<List<Izvjestaj>> GetUtakmice() async {
     Map<String, String>? queryParams = null;
-    queryParams = {'tipUtakmice': '${tipUtakmice}', 'odigrana': "false"};
+    queryParams = {'tipUtakmice': "", 'odigrana': "false"};
 
-    var result = await APIService.Get("Utakmica", queryParams) as List;
+    var result = await APIService.Get("Izvještaj", queryParams) as List;
 
     setState(() {
       isDataLoading = false;
     });
 
-    List<Utakmica> utakmiceList =
-        result.map((i) => Utakmica.fromJson(i)).toList();
+    List<Izvjestaj> utakmiceList =
+        result.map((i) => Izvjestaj.fromJson(i)).toList();
 
     dobavljeneUtakmice = utakmiceList;
 
@@ -66,6 +70,13 @@ class _PrikazRasporedaState extends State<PrikazRasporeda> {
     selectedVrsteUtakmice.add("GOSTUJUĆA");
   }
 
+  void GetRezultati() {
+    selectedRezultati = [];
+    selectedRezultati.add(1);
+    selectedRezultati.add(2);
+    selectedRezultati.add(3);
+  }
+
   Future<List<Takmicenje>> GetTakmicenja() async {
     var result = await APIService.Get('Takmicenje', null) as List;
 
@@ -78,12 +89,12 @@ class _PrikazRasporedaState extends State<PrikazRasporeda> {
 
     dobavljenaTakmicenja = takmicenjeList;
 
-    OdaberiPozicijeZaFilter();
+    OdaberiTakmicenjaZaFilter();
 
     return takmicenjeList;
   }
 
-  void OdaberiPozicijeZaFilter() {
+  void OdaberiTakmicenjaZaFilter() {
     setState(() {
       _takmicenjaState = dobavljenaTakmicenja;
     });
@@ -99,13 +110,17 @@ class _PrikazRasporedaState extends State<PrikazRasporeda> {
     });
 
     _utakmiceState = _utakmiceState
-        .where((element) =>
-            selectedVrsteUtakmice.contains(element.vrstaUtakmice.toUpperCase()))
+        .where((element) => selectedVrsteUtakmice
+            .contains(element.utakmica.vrstaUtakmice.toUpperCase()))
         .toList();
 
     _utakmiceState = _utakmiceState
-        .where((element) =>
-            selectedTakmicenja.contains(element.takmicenje.takmicenjeId))
+        .where((element) => selectedRezultati.contains(element.rezultat))
+        .toList();
+
+    _utakmiceState = _utakmiceState
+        .where((element) => selectedTakmicenja
+            .contains(element.utakmica.takmicenje.takmicenjeId))
         .toList();
 
     return null;
@@ -114,6 +129,7 @@ class _PrikazRasporedaState extends State<PrikazRasporeda> {
   VoidCallback? OsvjeziFiltere() {
     GetUtakmice();
     GetVrsteUtakmice();
+    GetRezultati();
 
     setState(() {
       _utakmiceState = _utakmiceState;
@@ -142,11 +158,25 @@ class _PrikazRasporedaState extends State<PrikazRasporeda> {
     }
   }
 
+  void PretragaPoRezultatu(int rezultat, bool isChecked) {
+    bool found = isSelectedRezultat(rezultat);
+    if (isChecked) {
+      if (found) return;
+      selectedRezultati.add(rezultat);
+    } else {
+      if (found) selectedRezultati.remove(rezultat);
+    }
+  }
+
   bool isSelectedVrsteSadrzeVrstu(String status) {
     return selectedVrsteUtakmice.contains(status);
   }
 
-  Widget FilteriPrikazTreneraWidget() {
+  bool isSelectedRezultat(int rezultat) {
+    return selectedRezultati.contains(rezultat);
+  }
+
+  Widget FilteriPrikazIzvjetajaWidget() {
     return Padding(
       padding: EdgeInsets.only(left: 21, right: 21),
       child: Container(
@@ -241,6 +271,95 @@ class _PrikazRasporedaState extends State<PrikazRasporeda> {
                   width: 5,
                 ),
                 Text("GOSTUJUĆA UTAKMICA",
+                    style: GoogleFonts.oswald(
+                        fontSize: 15,
+                        color: HexColor("#400507"),
+                        letterSpacing: 0,
+                        fontWeight: FontWeight.bold)),
+              ],
+            ),
+            SizedBox(height: 5),
+            Divider(),
+            Row(children: [
+              Text("PRETRAGA PO REZULTATU",
+                  style: GoogleFonts.oswald(
+                      fontSize: 15,
+                      color: Colors.black,
+                      letterSpacing: 0,
+                      fontWeight: FontWeight.bold))
+            ]),
+            SizedBox(height: 5),
+            Row(
+              children: [
+                Checkbox(
+                  activeColor: HexColor("#400507"),
+                  value: isSelectedRezultat(1),
+                  onChanged: (newValue) {
+                    PretragaPoRezultatu(1, newValue!);
+                    FiltrirajUtakmice();
+                  },
+                ),
+                Icon(
+                  Icons.check_circle,
+                  color: HexColor("#28A731"),
+                  size: 18,
+                ),
+                SizedBox(
+                  width: 5,
+                ),
+                Text("POBJEDA",
+                    style: GoogleFonts.oswald(
+                        fontSize: 15,
+                        color: HexColor("#400507"),
+                        letterSpacing: 0,
+                        fontWeight: FontWeight.bold)),
+              ],
+            ),
+            Row(
+              children: [
+                Checkbox(
+                  activeColor: HexColor("#400507"),
+                  value: isSelectedRezultat(2),
+                  onChanged: (newValue) {
+                    PretragaPoRezultatu(2, newValue!);
+                    FiltrirajUtakmice();
+                  },
+                ),
+                Icon(
+                  CupertinoIcons.clear_circled_solid,
+                  color: Colors.red[800]!,
+                  size: 18,
+                ),
+                SizedBox(
+                  width: 5,
+                ),
+                Text("PORAZ",
+                    style: GoogleFonts.oswald(
+                        fontSize: 15,
+                        color: HexColor("#400507"),
+                        letterSpacing: 0,
+                        fontWeight: FontWeight.bold)),
+              ],
+            ),
+            Row(
+              children: [
+                Checkbox(
+                  activeColor: HexColor("#400507"),
+                  value: isSelectedRezultat(3),
+                  onChanged: (newValue) {
+                    PretragaPoRezultatu(3, newValue!);
+                    FiltrirajUtakmice();
+                  },
+                ),
+                Icon(
+                  Icons.do_disturb_on,
+                  color: Colors.grey,
+                  size: 18,
+                ),
+                SizedBox(
+                  width: 5,
+                ),
+                Text("NERJEŠENO",
                     style: GoogleFonts.oswald(
                         fontSize: 15,
                         color: HexColor("#400507"),
@@ -355,14 +474,14 @@ class _PrikazRasporedaState extends State<PrikazRasporeda> {
             BottomNavigationBarItem(
               icon: TextButton(
                   onPressed: () {
-                    Navigator.of(context).pushNamed('/prikaz_rezultata');
+                    Navigator.of(context).pushNamed('/prikaz_rasporeda');
                   },
                   child: Icon(
-                    Icons.sports_soccer,
+                    Icons.calendar_month,
                     color: HexColor("#400507"),
                   )),
-              label: 'Rezultati',
-            )
+              label: 'Raspored',
+            ),
           ],
         ),
         body: Container(
@@ -378,7 +497,7 @@ class _PrikazRasporedaState extends State<PrikazRasporeda> {
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                   Padding(
                     padding: EdgeInsets.only(left: 21),
-                    child: Text("RASPORED UTAKMICA",
+                    child: Text("REZULTATI UTAKMICA",
                         style: GoogleFonts.oswald(
                             fontSize: 18,
                             color: HexColor("#400507"),
@@ -406,7 +525,7 @@ class _PrikazRasporedaState extends State<PrikazRasporeda> {
                 )
               ]),
               SizedBox(height: 15),
-              FilteriPrikazTreneraWidget(),
+              FilteriPrikazIzvjetajaWidget(),
               SizedBox(height: 5),
               isDataLoading
                   ? Padding(
@@ -463,7 +582,7 @@ class _PrikazRasporedaState extends State<PrikazRasporeda> {
                             shrinkWrap: true,
                             children: _utakmiceState
                                 .map((element) =>
-                                    UtakmicaKartica(context, element))
+                                    IzvjestajKartica(context, element))
                                 .toList(),
                           ),
                         )
@@ -550,7 +669,52 @@ int daysBetween(DateTime from, DateTime to) {
   return (to.difference(from).inHours / 24).round();
 }
 
-Widget UtakmicaKartica(context, utakmica) {
+Widget getRezultat(izvjestaj) {
+  Widget ikonica;
+  String rezultat;
+  if (izvjestaj.rezultat == 1) {
+    ikonica = Icon(
+      Icons.check_circle,
+      color: HexColor("#28A731"),
+      size: 18,
+    );
+  } else if (izvjestaj.rezultat == 2) {
+    ikonica = Icon(
+      CupertinoIcons.clear_circled_solid,
+      color: Colors.red[800]!,
+      size: 18,
+    );
+  } else {
+    ikonica = Icon(
+      Icons.do_disturb_on,
+      color: Colors.grey,
+      size: 18,
+    );
+  }
+  ;
+  rezultat = izvjestaj.utakmica.vrstaUtakmice == "Domaća"
+      ? izvjestaj.goloviSarajevo.toString() +
+          ":" +
+          izvjestaj.goloviProtivnik.toString()
+      : izvjestaj.goloviProtivnik.toString() +
+          ":" +
+          izvjestaj.goloviSarajevo.toString();
+
+  return Row(children: [
+    ikonica,
+    SizedBox(
+      width: 5,
+    ),
+    Text(rezultat,
+        style: GoogleFonts.oswald(
+          fontSize: 14,
+          color: Colors.white,
+          letterSpacing: 0,
+        )),
+  ]);
+}
+
+Widget IzvjestajKartica(context, izvjestaj) {
   return Stack(
     children: [
       Padding(
@@ -565,12 +729,12 @@ Widget UtakmicaKartica(context, utakmica) {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => DetaljiUtakmice(
-                            utakmica: utakmica,
+                      builder: (context) => DetaljiIzvjestaja(
+                            izvjestaj: izvjestaj,
                           )));
             },
             child: Container(
-              height: 265,
+              height: 280,
               width: double.infinity,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
@@ -584,7 +748,7 @@ Widget UtakmicaKartica(context, utakmica) {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      utakmica.vrstaUtakmice == "Domaća"
+                      izvjestaj.utakmica.vrstaUtakmice == "Domaća"
                           ? Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -613,7 +777,7 @@ Widget UtakmicaKartica(context, utakmica) {
                                 Container(
                                   child: Image.memory(
                                     Uint8List.fromList(
-                                        utakmica.takmicenje.logo),
+                                        izvjestaj.utakmica.takmicenje.logo),
                                     height: 40,
                                     width: 40,
                                   ),
@@ -631,14 +795,14 @@ Widget UtakmicaKartica(context, utakmica) {
                                     Container(
                                       child: Image.memory(
                                         Uint8List.fromList(
-                                            utakmica.protivnik.grb),
+                                            izvjestaj.utakmica.protivnik.grb),
                                         height: 40,
                                         width: 40,
                                       ),
                                     ),
                                     SizedBox(width: 7),
                                     Text(
-                                        utakmica.protivnik.nazivKluba
+                                        izvjestaj.utakmica.protivnik.nazivKluba
                                             .toString()
                                             .toUpperCase(),
                                         style: GoogleFonts.oswald(
@@ -651,7 +815,7 @@ Widget UtakmicaKartica(context, utakmica) {
                                 Container(
                                   child: Image.memory(
                                     Uint8List.fromList(
-                                        utakmica.takmicenje.logo),
+                                        izvjestaj.utakmica.takmicenje.logo),
                                     height: 40,
                                     width: 40,
                                   ),
@@ -659,7 +823,7 @@ Widget UtakmicaKartica(context, utakmica) {
                               ],
                             ),
                       SizedBox(height: 10),
-                      utakmica.vrstaUtakmice == "Gostujuća"
+                      izvjestaj.utakmica.vrstaUtakmice == "Gostujuća"
                           ? Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -698,14 +862,14 @@ Widget UtakmicaKartica(context, utakmica) {
                                     Container(
                                       child: Image.memory(
                                         Uint8List.fromList(
-                                            utakmica.protivnik.grb),
+                                            izvjestaj.utakmica.protivnik.grb),
                                         height: 40,
                                         width: 40,
                                       ),
                                     ),
                                     SizedBox(width: 7),
                                     Text(
-                                        utakmica.protivnik.nazivKluba
+                                        izvjestaj.utakmica.protivnik.nazivKluba
                                             .toString()
                                             .toUpperCase(),
                                         style: GoogleFonts.oswald(
@@ -718,9 +882,13 @@ Widget UtakmicaKartica(context, utakmica) {
                               ],
                             ),
                       SizedBox(height: 10),
+                      getRezultat(izvjestaj),
+                      SizedBox(
+                        height: 6,
+                      ),
                       Row(children: [
                         Icon(
-                          utakmica.vrstaUtakmice == "Gostujuća"
+                          izvjestaj.utakmica.vrstaUtakmice == "Gostujuća"
                               ? CupertinoIcons.airplane
                               : Icons.home,
                           color: Colors.white,
@@ -730,7 +898,7 @@ Widget UtakmicaKartica(context, utakmica) {
                           width: 5,
                         ),
                         Text(
-                            utakmica.vrstaUtakmice == "Domaća"
+                            izvjestaj.utakmica.vrstaUtakmice == "Domaća"
                                 ? "DOMAĆA UTAKMICA"
                                 : "GOSTUJUĆA UTAKMICA",
                             style: GoogleFonts.oswald(
@@ -751,7 +919,10 @@ Widget UtakmicaKartica(context, utakmica) {
                         SizedBox(
                           width: 5,
                         ),
-                        Text(utakmica.opisUtakmice.toString().toUpperCase(),
+                        Text(
+                            izvjestaj.utakmica.opisUtakmice
+                                .toString()
+                                .toUpperCase(),
                             style: GoogleFonts.oswald(
                               fontSize: 14,
                               color: Colors.white,
@@ -772,8 +943,8 @@ Widget UtakmicaKartica(context, utakmica) {
                         ),
                         Text(
                             DateFormat.yMMMd()
-                                .format(
-                                    DateTime.parse(utakmica.datumOdigravanja))
+                                .format(DateTime.parse(
+                                    izvjestaj.utakmica.datumOdigravanja))
                                 .toString(),
                             style: GoogleFonts.oswald(
                               fontSize: 14,
@@ -791,12 +962,12 @@ Widget UtakmicaKartica(context, utakmica) {
                           child: Padding(
                             padding: EdgeInsets.only(left: 7, right: 7),
                             child: Text(
-                                "za " +
+                                "prije " +
                                     daysBetween(
-                                            DateTime.now(),
-                                            DateTime.parse(
-                                                utakmica.datumOdigravanja))
-                                        .toString() +
+                                      DateTime.parse(
+                                          izvjestaj.utakmica.datumOdigravanja),
+                                      DateTime.now(),
+                                    ).toString() +
                                     " dana",
                                 style: GoogleFonts.oswald(
                                     fontSize: 10,
@@ -818,7 +989,7 @@ Widget UtakmicaKartica(context, utakmica) {
                         SizedBox(
                           width: 5,
                         ),
-                        Text(utakmica.satnica + " h",
+                        Text(izvjestaj.utakmica.satnica + " h",
                             style: GoogleFonts.oswald(
                               fontSize: 14,
                               color: Colors.white,
@@ -839,11 +1010,12 @@ Widget UtakmicaKartica(context, utakmica) {
                         ),
                         Text(
                             "STADION " +
-                                utakmica.stadion.nazivStadiona
+                                izvjestaj.utakmica.stadion.nazivStadiona
                                     .toString()
                                     .toUpperCase() +
                                 ", " +
-                                utakmica.stadion.lokacijaStadiona.nazivGrada,
+                                izvjestaj.utakmica.stadion.lokacijaStadiona
+                                    .nazivGrada,
                             style: GoogleFonts.oswald(
                               fontSize: 14,
                               color: Colors.white,
@@ -860,8 +1032,8 @@ Widget UtakmicaKartica(context, utakmica) {
                             backgroundColor: Colors.white,
                             child: ClipOval(
                               child: Image.memory(
-                                Uint8List.fromList(utakmica
-                                    .stadion.lokacijaStadiona.drzava.zastava),
+                                Uint8List.fromList(izvjestaj.utakmica.stadion
+                                    .lokacijaStadiona.drzava.zastava),
                                 width: 15.5,
                                 height: 15.5,
                                 fit: BoxFit.cover,

@@ -52,4 +52,19 @@ class APIService {
     }
     return null;
   }
+
+  static Future<dynamic> DeleteById(String route, int id) async {
+    String baseUrl =
+        "http://127.0.0.1:58250/api/" + route + "/" + id.toString();
+    final response = await http.delete(
+      Uri.parse(baseUrl),
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+    );
+
+    if (response.statusCode == 201) {
+      return json.decode(response.body);
+    }
+  }
 }

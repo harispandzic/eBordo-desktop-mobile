@@ -25,7 +25,13 @@ namespace eBordo.Api.Services.Trening
         {
             var entity = _db.trening
                 .Include(s => s.zabiljezio)
+                .Include(s => s.zabiljezio.trenerStatistika)
+                .Include(s => s.zabiljezio.trenerskaLicenca)
+                .Include(s => s.zabiljezio.formacija)
+                .Include(s => s.zabiljezio.ugovor)
                 .Include(s => s.zabiljezio.korisnik)
+                .Include(s => s.zabiljezio.korisnik.drzavljanstvo)
+                .Include(s => s.zabiljezio.korisnik.gradRodjenja.drzava)
                 .AsQueryable();
 
             if (entity.Count() == 0)

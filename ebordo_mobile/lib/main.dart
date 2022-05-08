@@ -2,9 +2,11 @@ import 'package:ebordo_mobile/pages/Shared/login.dart';
 import 'package:ebordo_mobile/pages/Shared/pocetna.dart';
 import 'package:ebordo_mobile/pages/Upravljanje%20igra%C4%8Dima/detalji_igraca.dart';
 import 'package:ebordo_mobile/pages/Upravljanje%20igra%C4%8Dima/prikaz_igraca.dart';
+import 'package:ebordo_mobile/pages/Upravljanje%20izvje%C5%A1tajem/prikaz_izvjestaja.dart';
 import 'package:ebordo_mobile/pages/Upravljanje%20rasporedom/prikaz_rasporeda.dart';
 import 'package:ebordo_mobile/pages/Upravljanje%20trenerima/detalji_trenera.dart';
 import 'package:ebordo_mobile/pages/Upravljanje%20trenerima/prikaz_trenera.dart';
+import 'package:ebordo_mobile/pages/Upravljanje%20treningom/prikaz_treninga.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -25,6 +27,8 @@ class MyApp extends StatelessWidget {
         '/prikaz_trenera': (context) => PrikazTrenera(),
         '/detalji_trenera': (context) => DetaljiTrenera(),
         '/prikaz_rasporeda': (context) => PrikazRasporeda(),
+        '/prikaz_rezultata': (context) => PrikazRezultata(),
+        '/prikaz_treninga': (context) => PrikazTreninga(),
       },
     );
   }
