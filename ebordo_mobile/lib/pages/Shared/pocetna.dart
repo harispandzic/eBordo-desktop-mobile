@@ -49,12 +49,12 @@ class _PocetnaState extends State<Pocetna> {
   void initState() {
     super.initState();
 
-    Future.delayed(const Duration(seconds: 0), GetNotifikacije);
-    Future.delayed(const Duration(seconds: 0), GetPosljednjaUtakmica);
-    Future.delayed(const Duration(seconds: 0), GetNarednaUtakmica);
-    Future.delayed(const Duration(seconds: 0), GetStatistika);
-    Future.delayed(const Duration(seconds: 0), GetUtakmice);
-    Future.delayed(const Duration(seconds: 0), GetTreninzi);
+    Future.delayed(const Duration(seconds: 6), GetNotifikacije);
+    Future.delayed(const Duration(seconds: 6), GetPosljednjaUtakmica);
+    Future.delayed(const Duration(seconds: 6), GetNarednaUtakmica);
+    Future.delayed(const Duration(seconds: 6), GetStatistika);
+    Future.delayed(const Duration(seconds: 6), GetUtakmice);
+    Future.delayed(const Duration(seconds: 6), GetTreninzi);
   }
 
   late List<PieChartData> data_statistika = [

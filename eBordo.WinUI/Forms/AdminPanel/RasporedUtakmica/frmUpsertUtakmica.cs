@@ -33,10 +33,14 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
         private List<Model.Models.Igrac> _ostaliIgraci = new List<Model.Models.Igrac>();
         private List<int> _pozvaniIgraci = new List<int>();
 
+        private List<Model.Models.Igrac> _recomendedIgraciPoPoziciji = new List<Model.Models.Igrac>();
+
         frmPrikazRasporedaUtakmicacs _prikazUtakmica;
         public Model.Models.Utakmica _odabranaUtakmica { get; set; }
 
         ByteToImage byteToImage = new ByteToImage();
+
+        int brojPonavljanja = 0;
 
         bool isOpisUtakmiceValidated = false, isDatumOdigravanjaValidated = false, isSatnicaValidated = false,
             isSudijaValidated = false, isProtivnikValidated = false, isVRstaUtakmiceValidated = false,
@@ -106,7 +110,6 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             txtOpisUtakmice.Text = _odabranaUtakmica.opisUtakmice;
             txtSudija.Text = _odabranaUtakmica.sudija;
             txtSatnica.Text = _odabranaUtakmica.satnica;
-            txtNapomene.Text = _odabranaUtakmica.napomene;
             dtpDatumOdigravanja.Value = _odabranaUtakmica.datumOdigravanja;
             foreach (var item in _odabranaUtakmica.sastav)
             {
@@ -163,8 +166,80 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             {
                 PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.GREŠKA_NA_SERVERU);
             }
-
         }
+
+        private async Task LoadRecomendedIgraci(int igracId,List<int> selectedIgraci)
+        {
+
+            Model.Requests.Igrac.RecommendedIgraci search = new Model.Requests.Igrac.RecommendedIgraci
+            {
+                igracId = igracId,
+                selectedIds = selectedIgraci
+            };
+
+            try
+            {
+
+                _recomendedIgraciPoPoziciji = await _igrac.GetRecommendedById<List<Model.Models.Igrac>>("GetPreporuceneIgrace", search);
+                gifLoader.Hide();
+               preporuceniIgraciPanel.Controls.Clear();
+
+
+                if (_recomendedIgraciPoPoziciji.Count == 0)
+                {
+                    if (brojPonavljanja < 1)
+                    {
+                        PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.NEMA_PODATAKA);
+                    }
+                    noSearchResults.Show();
+                    noSearchResultsText.Show();
+                    txtNemaRezultataOpis.Show();
+                    brojPonavljanja++;
+                }
+                else
+                {
+                    noSearchResults.Hide();
+                    noSearchResultsText.Hide();
+                    txtNemaRezultataOpis.Hide();
+                }
+
+                frmPreporuceniIgracKartica[] listItems = new frmPreporuceniIgracKartica[_recomendedIgraciPoPoziciji.Count];
+                for (int i = 0; i < listItems.Length; i++)
+                {
+                    listItems[i] = new frmPreporuceniIgracKartica();
+                    listItems[i].igrac = _recomendedIgraciPoPoziciji[i];
+                    preporuceniIgraciPanel.Controls.Add(listItems[i]);
+                }
+                //loaderIgraci.Hide();
+                //foreach (var item in _recomendedIgraciPoPoziciji)
+                //{
+                //    cmbStadion.Items.Add(item.nazivStadiona);
+                //}
+
+                //if (_odabranaUtakmica != null)
+                //{
+                //    int selectedStadion = 0;
+                //    for (int i = 0; i < _stadioni.Count; i++)
+                //    {
+                //        if (_stadioni[i].stadionId == _odabranaUtakmica.stadionId)
+                //        {
+                //            selectedStadion = i;
+                //        }
+                //    }
+                //    cmbStadion.SelectedIndex = selectedStadion;
+                //    cmbStadion.Enabled = false;
+                //}
+                //else
+                //{
+                //    cmbStadion.SelectedIndex = 0;
+                //}
+            }
+            catch
+            {
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.GREŠKA_NA_SERVERU);
+            }
+        }
+
         private async Task LoadTakmicenja()
         {
             try
@@ -328,7 +403,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
                 PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.FORMA_VALIDACIJA);
                 return;
             }
-            btnSaveIgracSastav.Text = "DODAJ";  
+            //btnSaveIgracSastav.Text = "DODAJ";  
             frmPozvaniIgracKartica pozvaniIgrac;
             int igracId = _ostaliIgraci[cmbIgraciSastav.SelectedIndex].igracId;
             int pozicijaId = _pozicije[cmbPozicije.SelectedIndex].pozicijaId;
@@ -486,17 +561,33 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             await igracPodaci(igracId);
         }
 
-        private void cmbIgraciSastav_SelectedIndexChanged(object sender, EventArgs e)
+        private async void cmbIgraciSastav_SelectedIndexChanged(object sender, EventArgs e)
         {
             isIgracSastavValidated = Validacija.ValidirajDropDown(cmbIgraciSastav, "Igrač", txtIgracSastavValidator, pictureIgracSastavSlikaValidator);
             Model.Models.Igrac igrac = _ostaliIgraci[cmbIgraciSastav.SelectedIndex];
             LoadDetaljiIgraca(igrac);
+            List<int> sastav = new List<int>();
+            sastav.Clear();
+
+            for (int i = 0; i < flowPanelPrvaPostava.Controls.Count; i++)
+            {
+                var control = (frmPozvaniIgracKartica)flowPanelPrvaPostava.Controls[i];
+                sastav.Add(control.igracId);
+            };
+
+            for (int i = 0; i < flowPanelKlupa.Controls.Count; i++)
+            {
+                var control = (frmPozvaniIgracKartica)flowPanelKlupa.Controls[i];            
+                sastav.Add(control.igracId);
+            };
+            await LoadRecomendedIgraci(igrac.igracId,sastav);
         }
+
         public void LoadDetaljiIgraca(Model.Models.Igrac igrac)
         {
             txtBrojDresa.Text = "#" + igrac.brojDresa.ToString();
-            pictureSlikaIgraca.BackgroundImage = byteToImage.ConvertByteToImage(igrac.slikaPanel);
-            pictureSlikaIgraca.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureSlikaIgraca1.BackgroundImage = byteToImage.ConvertByteToImage(igrac.slikaPanel);
+            pictureSlikaIgraca1.BackgroundImageLayout = ImageLayout.Zoom;
             txtPrezime.Text = (igrac.korisnik.ime[0] + ". " + igrac.korisnik.prezime).ToUpper();
             igracOcjena.Value = (int)igrac.igracStatistika.prosjecnaOcjena;
             ratingKontrolaLopte.Value = (int)igrac.igracSkills.kontrolaLopte;
@@ -600,7 +691,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             cmbPozicije.SelectedIndex = 0;
             radioBtnPrvihXI.Checked = true;
             radioBtnKlupa.Checked = false;
-            btnSaveIgracSastav.Text = "DODAJ";
+            //btnSaveIgracSastav.Text = "DODAJ";
         }
 
         private async void bunifuButton1_Click_2(object sender, EventArgs e)
@@ -704,7 +795,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
                 tipGarniture = tipGarniture,
                 tipUtakmice = tipUtakmice,
                 odigrana = false,
-                napomene = txtNapomene.Text,
+                napomene = "NEMA NAPOMENE",
                 sastav = sastav
             };
 
@@ -762,8 +853,8 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
                 datumOdigravanja = dtpDatumOdigravanja.Value,
                 satnica = txtSatnica.Text,
                 kapitenId = _igraci[cmbKapiten.SelectedIndex].igracId,
-                napomene = txtNapomene.Text,
-                sastav = sastav
+                napomene = "NEMA NAPOMENE",
+            sastav = sastav
             };
 
             try
@@ -780,12 +871,17 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             }
         }
 
+        private void txtNemaRezultataOpis_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void txtOpisUtakmice_TextChanged(object sender, EventArgs e)
         {
             isOpisUtakmiceValidated = Validacija.ValidirajInputString(txtOpisUtakmice, txtOpisUtakmiceValidator, Field.OPIS_UTAKMICE);
         }
 
-        private void cmbPozicije_SelectedIndexChanged(object sender, EventArgs e)
+        private async void cmbPozicije_SelectedIndexChanged(object sender, EventArgs e)
         {
             isIgracPozicijaValidated = Validacija.ValidirajDropDown(cmbPozicije, "Pozicija", txtIgracPozicijaValidator, pictureIgracSastavPozicijaSlikaValidator);
         }
