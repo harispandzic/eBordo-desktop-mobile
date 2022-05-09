@@ -46,8 +46,13 @@ namespace eBordo.Api.ML
                 {
                     preporuceniIgraci.Add(_db.igraci.Where(s => s.igracId == item.Key)
                         .Include(s => s.korisnik)
+                        .Include(s => s.korisnik.drzavljanstvo)
+                        .Include(s => s.korisnik.gradRodjenja)
+                        .Include(s => s.korisnik.gradRodjenja.drzava)
                         .Include(s => s.pozicija)
+                        .Include(s => s.ugovor)
                         .Include(s => s.igracStatistika)
+                        .Include(s => s.igracSkills)
                         .FirstOrDefault());
                 }
                 zajednickiNastupi_1.Clear();

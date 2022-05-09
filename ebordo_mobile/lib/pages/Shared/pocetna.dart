@@ -225,6 +225,7 @@ class _PocetnaState extends State<Pocetna> {
                   badgeColor: HexColor("#FFC107"),
                   position: BadgePosition.topEnd(top: -8, end: -5),
                   padding: EdgeInsets.all(3),
+                  showBadge: _obavijestiState.length > 0,
                   badgeContent: Container(
                     child: Text(_obavijestiState.length.toString(),
                         style: GoogleFonts.oswald(
