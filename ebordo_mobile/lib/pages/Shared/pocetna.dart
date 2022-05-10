@@ -805,7 +805,7 @@ class _PocetnaState extends State<Pocetna> {
                     viewportFraction: 1,
                     enableInfiniteScroll: true,
                     initialPage: 1,
-                    height: 300,
+                    height: 327,
                     reverse: false,
                     autoPlay: true,
                     enlargeCenterPage: true,
@@ -817,7 +817,7 @@ class _PocetnaState extends State<Pocetna> {
                     }),
               ),
               Container(
-                transform: Matrix4.translationValues(0.0, -12.0, 10.0),
+                transform: Matrix4.translationValues(0.0, -20.0, 10.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,

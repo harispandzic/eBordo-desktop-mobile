@@ -89,4 +89,23 @@ class APIService {
       return json.decode(response.body);
     }
   }
+
+  static Future<dynamic> Update(String route, int id, dynamic body) async {
+    String baseUrl =
+        "http://127.0.0.1:58250/api/" + route + "/" + id.toString();
+
+    final String basicAuth =
+        'Basic ' + base64Encode(utf8.encode('$username:$password'));
+
+    final response = await http.put(Uri.parse(baseUrl),
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+        body: body);
+
+    if (response.statusCode == 200) {
+      return json.decode(response.body) as List;
+    }
+    return null;
+  }
 }
