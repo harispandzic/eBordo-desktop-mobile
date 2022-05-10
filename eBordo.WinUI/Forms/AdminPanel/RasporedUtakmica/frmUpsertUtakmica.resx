@@ -185,46 +185,101 @@
         SUVORK5CYII=
 </value>
   </data>
+  <data name="txtOpisUtakmiceValidator.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Oswald'; font-size: 6pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(64, 5, 7); text-align: left; }</value>
+  </data>
+  <data name="txtDatumOdigravanjaValidator.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Oswald'; font-size: 6pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(64, 5, 7); text-align: left; }</value>
+  </data>
+  <data name="txtSudijaValidator.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Oswald'; font-size: 6pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(64, 5, 7); text-align: left; }</value>
+  </data>
+  <data name="txtSatnicaValidator.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Oswald'; font-size: 6pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(64, 5, 7); text-align: left; }</value>
+  </data>
+  <data name="txtProtivnikValidator.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Oswald'; font-size: 6pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(64, 5, 7); text-align: left; }</value>
+  </data>
+  <data name="txtVrstaUtakmiceValidator.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Oswald'; font-size: 6pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(64, 5, 7); text-align: left; }</value>
+  </data>
+  <data name="txtTakmicenjeValidator.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Oswald'; font-size: 6pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(64, 5, 7); text-align: left; }</value>
+  </data>
+  <data name="txtStadionValidator.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Oswald'; font-size: 6pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(64, 5, 7); text-align: left; }</value>
+  </data>
+  <data name="txtKapitenValidator.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Oswald'; font-size: 6pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(64, 5, 7); text-align: left; }</value>
+  </data>
+  <data name="txtIgracSastavValidator.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Oswald'; font-size: 6pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(64, 5, 7); text-align: left; }</value>
+  </data>
+  <data name="txtIgracPozicijaValidator.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Oswald'; font-size: 6pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(64, 5, 7); text-align: left; }</value>
+  </data>
+  <data name="btnSaveUpdate.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAHQAAAAeCAYAAAD99TobAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAErSURBVGhD7dsxbgIxEIVhN+uh5AgpKXOS1DlCmpwFKWfI
+        FSjBNk2OQE0RIRFFEUiARMQ4s7skoZgD7Iyepa/BFs2vWW3hDbeLU/PIJS7ERy1UYbjaRlzojRM9XfP9
+        r5rCuNsstKtZ/wMYJgl74NKsaqK7a06ZTImJkLZJw7UM5kges/QslffaIbDjkukkHV/66VQOgD2c43vg
+        TEdtE2wK2o9gF4I6g6DOIKgzCOoMgjqDoM4gqDMI6gyCOoOgziCoMwjqDII6g6DOIKgzCOoMgjrT3in6
+        1jbAJgnarLQNsIdz3AVe0vSSMaXm5e5u7qy9NT/iEjfqITBDYn793Z6vqbmXcd1yprN2GAasn8xPnseH
+        Lubv6r5vWcZX3NO1o32hlafroqY46SuG8AMneH216sv6JgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="btnSave.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAIIAAAAeCAYAAADgp8bFAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEsSURBVGhD7ds/SoMxGIDxjI7eQCeTuugNivhGN2eP4OJZ
+        BC/QpX2jB3B19QidO4hgEamggg41eVv/IDlB8gR+Hfrmm76HQKFxf1eYxNNBktuQZB5SXKJFMh9ovPMq
+        Z+vX/rv2RsPNMgxXsqg/jNZ4ja85hqlPx9vrDJyzCLT+AJo32xoNN5zXw/Og8lLZgB6ovIfreLk6DWob
+        0JN7lz/e/n2JDpUQqgP0hRBgCAGGEGAIAYYQYAgBhhBgCAGGEGAIAYYQYAgBhhBgCAGGEGAIAYYQYFzQ
+        +FkboC+u/Le9NkBHNC6cT/EiqHAq9ErjMjdw48rlhpDkoboJHZDnn9tOu+O4n0+Fx1zGR30z2iRPXg9O
+        LILvVe4/5uE4455D6/IPhHLZeWdyFFZv37kv91Ntz42BfKAAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="bunifuButton1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAfCAYAAADwbH0HAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADsSURBVEhL7Zc9DsIwDEYt4cSMHIGRkROQnoCZI7BwFiTO
+        wBVYu/YIzAwICYRQkQCJDmDT8tdmbDwl0lv6OX1yJht+jzNmkqBNmUNi6NEK5b8yhzStNN/jAHoSJkj5
+        36VWsZcEzdoR9SstAAdZszAQSBtutAv8BDN+jrO3KAw37n6h222FQ7sV8bUeaCBibxCaKFYjitWIYjWi
+        WI0oViOK1RBxUf+oAciQ7QtC4ozNpeM5o9o1z/IrWV+6PNDvfAVBQDp91hhe1oYs33NwbxS2CdJx1LHj
+        l/R9ZHHjCX/JBSEG/IIbS521g9IG8ARsMZD20+YwpQAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="btnSaveIgracSastav.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAFQAAAAfCAYAAAB59OpuAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEtSURBVGhD7do/SkNBEMfxKS29gVbuxEZvEMSZ2Fl7BBvP
-        IniBNMmsOYCtrUewTiGCQSSCClrE3ST+QcaQvEz5W/i8Iruv+bKQ4g39XtzXk1aWa84y4qwTWERGLdOb
-        ZHI6z/ez9rrtzbrJlzL2X4b/JNOXEvU25aPteU6iaUzzX4ClDbe67Q1KdnjGJs/OAViFyRsP9GJ2O70D
-        0MQdlcfrnx9hDTWouwHNIGgwBA2GoMEQNBiCBkPQYAgaDEGDIWgwBA2GoMEQNBiCBkPQYAgaDEGDIWgw
-        BA1GbPrhbUAzVD/SexvQgOmYUtZzNsEtXZfppLS8ojrtwFnu3UOwAnn6HsfZ7el+uaUPpfC7fxgWk8dk
-        B8fTmF+rDoyVzV6BwYdllT/0Oq240+/wrCLRJ++87PqxAlofAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAAGEAAAAfCAYAAAD3LqMSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEzSURBVGhD7do/SkNBEMfxKS29QazciY3eIIgz2ll7BBvP
+        IniBNMmsOYBt2hwhdQoREkQiqKBF3E3iH2TL99Ypfg8+Kd7ua/bLQoqh3w8P9aIbZcxRFhx1BU2TRdd0
+        Ekwut0f+8xz2e7t5kW9lWf4YmhRMX1KIaYhne9sEROsAVv4AWjXr9Hs7FOzkik2eCxugbSZvPNKbzS0o
+        bYBa7in9vP55CZXlCMUFqAcRHEAEBxDBAURwABEcQAQHEMEBRHAAERxABAcQwQFEcAARHEAEBxDBAURw
+        ABEcQAQHiE0/SgtQD+UhpNICVGK6pBD1mk1wG/6D6Sqd/x3lCTCO8lDcBC2Tp+9RyIOBHqXbME9V3sub
+        oXnyGOz4fB3g68lDwWlxkGAYrE3pj1CefN8fnvLm5Ik+AXGBMR/YUSxMAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnOdustani.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAGEAAAAfCAYAAAD3LqMSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEISURBVGhD7doxCsJAFIThV6b0CJaWnsTaI9h4FsEzeAVL
+        N3YeIbWFCIpIBBVMofNMRAkpzWaKCXxodlO9n+3Wfp/UbAxhbXaEp/ydz3WDGU+qkX8fLPZ8E/LqY2nX
+        FTLMvV8lMMOCB2j6WNq1RYjET8EUL5fapkQQzO74nesUdAyHYOcn4da0KfH4SWjckHgUgYAiEFAEAopA
+        QBEIKAIBRSCgCAQUgYAiEFAEAopAQBEIKAIBRSCgCAQUgYAiEPAIRX1R4vIIWX1R4knNco8wCzoNnUGE
+        pV95SfCyr29KFGfMv7wKiT9DOMCj4UNpx2llNnoH+DwI4JeCF/jVZbB2FZhxgEE5ebMXFNBbcF6s5dgA
+        AAAASUVORK5CYII=
 </value>
   </data>
   <data name="bunifuSeparator1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAA4AAALVCAYAAADwLtAUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAD+SURBVHhe7cuhDQAxDMDA7D9VNuuTxyeVVj5k4pHdPX/e
-        aYRGaIRGaIRGaIRGaIRGaIRGaIRGaIRGaIRGaIRGaIRGaIRGaIRGaIRGaIRGaIRGaIRGaIRGaIRGaIRG
-        aIRGaIRGaIRGaIRGaIRGaIRGaIRGaIRGaIRGaIRGaIRGaIRGaIRGaIRGaIRGaIRGaIRGaIRGaIRGaIRG
-        aIRGaIRGaIRGaIRGaIRGaIRGaIRGaIRGaIRGaIRGaIRGaIRGaIRGaIRGaIRGaIRGaIRGaIRGaIRGaIRG
-        aIRGaIRGaIRGaIRGaIRGaIRGaIRGaIRGaIRGaIRGaIRGaIRGeGKc+QDZFzHzO5pMvQAAAABJRU5ErkJg
-        gg==
-</value>
-  </data>
-  <data name="txtNapomene.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAW0AAADRCAYAAAAHfuOYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMbSURBVHhe7dRBCQQxAATB+FeVJTJOxgm4JZDPOUhDFcxn
-        BPQAIGat9Zlz/szM7M7tTp9kj7EPAO61O32SLdoAtxNtgBDRBggRbYAQ0QYIEW2AENEGCBFtgBDRBggR
-        bYAQ0QYIEW2AENEGCBFtgBDRBggRbYAQ0QYIEW2AENEGCBFtgBDRBggRbYAQ0QYIEW2AENEGCBFtgBDR
-        BggRbYAQ0QYIEW2AENEGCBFtgBDRBggRbYAQ0QYIEW2AENEGCBFtgBDRBggRbYAQ0QYIEW2AENEGCBFt
-        gBDRBggRbYAQ0QYIEW2AENEGCBFtgBDRBggRbYAQ0QYIEW2AENEGCBFtgBDRBggRbYAQ0QYIEW2AENEG
-        CBFtgBDRBggRbYAQ0QYIEW2AENEGCBFtgBDRBggRbYAQ0QYIEW2AENEGCBFtgBDRBggRbYAQ0QYIEW2A
-        ENEGCBFtgBDRBggRbYAQ0QYIEW2AENEGCBFtgBDRBggRbYAQ0QYIEW2AENEGCBFtgBDRBggRbYAQ0QYI
-        EW2AENEGCBFtgBDRBggRbYAQ0QYIEW2AENEGCBFtgBDRBggRbYAQ0QYIEW2AENEGCBFtgBDRBggRbYAQ
-        0QYIEW2AENEGCBFtgBDRBggRbYAQ0QYIEW2AENEGCBFtgBDRBggRbYAQ0QYIEW2AENEGCBFtgBDRBggR
-        bYAQ0QYIEW2AENEGCBFtgBDRBggRbYAQ0QYIEW2AENEGCBFtgBDRBggRbYAQ0QYIEW2AENEGCBFtgBDR
-        BggRbYAQ0QYIEW2AENEGCBFtgBDRBggRbYAQ0QYIEW2AENEGCBFtgBDRBggRbYAQ0QYIEW2AENEGCBFt
-        gBDRBggRbYAQ0QYIEW2AENEGCBFtgBDRBggRbYAQ0QYIEW2AENEGCBFtgBDRBggRbYAQ0QYIEW2AENEG
-        CBFtgBDRBggRbYAQ0QYIEW2AENEGCBFtgBDRBggRbYAQ0QYIEW2AENEGCBFtgBDRBggRbYAQ0QYIEW2A
-        ENEGCBFtgBDRBggRbYAQ0QYIEW2AkL9oP8/z3YeZmd253emTbAAaxngBks17R78IIg0AAAAASUVORK5C
-        YII=
+        iVBORw0KGgoAAAANSUhEUgAAAA4AAAIWCAYAAABnUrwOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADFSURBVHhe7cuhDcAwEMDA33+q3ywlxSeFBfiQiUd29/x5
+        pxEaoREaoREaoREaoREaoREaoREaoREaoREaoREaoREaoREaoREaoREaoREaoREaoREaoREaoREaoREa
+        oREaoREaoREaoREaoREaoREaoREaoREaoREaoREaoREaoREaoREaoREaoREaoREaoREaoREaoREaoREa
+        oREaoREaoREaoREaoREaoREaoREaoREaoREaoREaoREaoREaoREa4aVx5gPaLsXFWnWBewAAAABJRU5E
+        rkJggg==
 </value>
   </data>
   <data name="txtSudija.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -3525,80 +3580,11 @@
         AABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnOdustani.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAC0AAAAfCAYAAABzqEQ8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADhSURBVFhH7ZgxCsJAEEV/mdIjWFp6EmuPYONZBM/gFSxd
-        7TxCagsRFJEIGjCF/klWlGXrYQKz8NjszBSP32Xwf7bAlIQdcCFvA4jHnk6zqPg7LA6kSao4bI0HKek5
-        jMoACyKcG7bGgeKFpDzn4540TRKAmveyTym3MOSjJP3MNS0jSWcblnFpLVxaC5fWwqW1cGktXFoLl9bC
-        pbVwaS1EukmL1hHpMi1ahj/ilUgvQo/SpvRaVggFH6e0aZQbfbvVGD/G5ExemUErXDfApBX+HgrLEnLF
-        29rypqFTIKPOFPgA+gFcF9RNpjQAAAAASUVORK5CYII=
-</value>
+  <data name="txtNemaRezultataOpis.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: -1px;font-family: 'Oswald'; font-size: 9pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; }</value>
   </data>
-  <data name="bunifuButton1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAfCAYAAADwbH0HAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADsSURBVEhL7Zc9DsIwDEYt4cSMHIGRkROQnoCZI7BwFiTO
-        wBVYu/YIzAwICYRQkQCJDmDT8tdmbDwl0lv6OX1yJht+jzNmkqBNmUNi6NEK5b8yhzStNN/jAHoSJkj5
-        36VWsZcEzdoR9SstAAdZszAQSBtutAv8BDN+jrO3KAw37n6h222FQ7sV8bUeaCBibxCaKFYjitWIYjWi
-        WI0oViOK1RBxUf+oAciQ7QtC4ozNpeM5o9o1z/IrWV+6PNDvfAVBQDp91hhe1oYs33NwbxS2CdJx1LHj
-        l/R9ZHHjCX/JBSEG/IIbS521g9IG8ARsMZD20+YwpQAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="btnSave.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAIIAAAAeCAYAAADgp8bFAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEsSURBVGhD7ds/SoMxGIDxjI7eQCeTuugNivhGN2eP4OJZ
-        BC/QpX2jB3B19QidO4hgEamggg41eVv/IDlB8gR+Hfrmm76HQKFxf1eYxNNBktuQZB5SXKJFMh9ovPMq
-        Z+vX/rv2RsPNMgxXsqg/jNZ4ja85hqlPx9vrDJyzCLT+AJo32xoNN5zXw/Og8lLZgB6ovIfreLk6DWob
-        0JN7lz/e/n2JDpUQqgP0hRBgCAGGEGAIAYYQYAgBhhBgCAGGEGAIAYYQYAgBhhBgCAGGEGAIAYYQYFzQ
-        +FkboC+u/Le9NkBHNC6cT/EiqHAq9ErjMjdw48rlhpDkoboJHZDnn9tOu+O4n0+Fx1zGR30z2iRPXg9O
-        LILvVe4/5uE4455D6/IPhHLZeWdyFFZv37kv91Ntz42BfKAAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="btnSaveUpdate.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAHQAAAAeCAYAAAD99TobAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAErSURBVGhD7dsxbgIxEIVhN+uh5AgpKXOS1DlCmpwFKWfI
-        FSjBNk2OQE0RIRFFEUiARMQ4s7skoZgD7Iyepa/BFs2vWW3hDbeLU/PIJS7ERy1UYbjaRlzojRM9XfP9
-        r5rCuNsstKtZ/wMYJgl74NKsaqK7a06ZTImJkLZJw7UM5kges/QslffaIbDjkukkHV/66VQOgD2c43vg
-        TEdtE2wK2o9gF4I6g6DOIKgzCOoMgjqDoM4gqDMI6gyCOoOgziCoMwjqDII6g6DOIKgzCOoMgjrT3in6
-        1jbAJgnarLQNsIdz3AVe0vSSMaXm5e5u7qy9NT/iEjfqITBDYn793Z6vqbmXcd1yprN2GAasn8xPnseH
-        Lubv6r5vWcZX3NO1o32hlafroqY46SuG8AMneH216sv6JgAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="txtOpisUtakmiceValidator.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Oswald'; font-size: 6pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(64, 5, 7); text-align: left; }</value>
-  </data>
-  <data name="txtDatumOdigravanjaValidator.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Oswald'; font-size: 6pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(64, 5, 7); text-align: left; }</value>
-  </data>
-  <data name="txtSudijaValidator.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Oswald'; font-size: 6pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(64, 5, 7); text-align: left; }</value>
-  </data>
-  <data name="txtSatnicaValidator.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Oswald'; font-size: 6pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(64, 5, 7); text-align: left; }</value>
-  </data>
-  <data name="txtProtivnikValidator.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Oswald'; font-size: 6pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(64, 5, 7); text-align: left; }</value>
-  </data>
-  <data name="txtVrstaUtakmiceValidator.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Oswald'; font-size: 6pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(64, 5, 7); text-align: left; }</value>
-  </data>
-  <data name="txtTakmicenjeValidator.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Oswald'; font-size: 6pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(64, 5, 7); text-align: left; }</value>
-  </data>
-  <data name="txtStadionValidator.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Oswald'; font-size: 6pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(64, 5, 7); text-align: left; }</value>
-  </data>
-  <data name="txtKapitenValidator.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Oswald'; font-size: 6pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(64, 5, 7); text-align: left; }</value>
-  </data>
-  <data name="txtIgracSastavValidator.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Oswald'; font-size: 6pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(64, 5, 7); text-align: left; }</value>
-  </data>
-  <data name="txtIgracPozicijaValidator.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Oswald'; font-size: 6pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(64, 5, 7); text-align: left; }</value>
+  <data name="noSearchResultsText.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 0px;font-family: 'Oswald'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(64, 64, 64); text-align: center; }</value>
   </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>25</value>

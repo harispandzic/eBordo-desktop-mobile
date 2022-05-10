@@ -570,7 +570,7 @@ Widget UtakmicaKartica(context, utakmica) {
                           )));
             },
             child: Container(
-              height: 265,
+              height: 280,
               width: double.infinity,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
@@ -870,6 +870,42 @@ Widget UtakmicaKartica(context, utakmica) {
                           ),
                         )
                       ]),
+                      SizedBox(
+                        height: 6,
+                      ),
+                      utakmica.sastav.length != 20
+                          ? Row(children: [
+                              Icon(
+                                Icons.pending,
+                                color: Colors.amber,
+                                size: 18,
+                              ),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              Text("SASTAV JOŠ UVIJEK NIJE ODABRAN!",
+                                  style: GoogleFonts.oswald(
+                                    fontSize: 14,
+                                    color: Colors.amber,
+                                    letterSpacing: 0,
+                                  ))
+                            ])
+                          : Row(children: [
+                              Icon(
+                                Icons.check_circle,
+                                color: HexColor("#28A731"),
+                                size: 18,
+                              ),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              Text("SASTAV ODABRAN",
+                                  style: GoogleFonts.oswald(
+                                    fontSize: 14,
+                                    color: HexColor("#28A731"),
+                                    letterSpacing: 0,
+                                  ))
+                            ]),
                     ],
                   )),
             ),

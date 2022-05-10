@@ -49,10 +49,10 @@ namespace eBordo.Api.Mapping
             CreateMap<eBordo.Model.Requests.Trener.TrenerUpdateRequest, eBordo.Api.Database.Trener>();
 
             CreateMap<eBordo.Model.Requests.Utakmica.UtakmicaInsertRequest, eBordo.Api.Database.Utakmica>();
-            CreateMap<eBordo.Model.Requests.Utakmica.UtakmicaUpdateRequest, eBordo.Api.Database.Utakmica>();
+            CreateMap<eBordo.Model.Requests.Utakmica.UtakmicaUpdateRequest, eBordo.Api.Database.Utakmica>().ReverseMap(); ;
 
             CreateMap<eBordo.Model.Requests.UtakmicaSastav.UtakmicaSastavInsertRequest, eBordo.Api.Database.UtakmicaSastav>();
-            CreateMap<eBordo.Model.Requests.UtakmicaSastav.UtakmicaSastavUpdateRequest, eBordo.Api.Database.UtakmicaSastav>();
+            CreateMap<eBordo.Model.Requests.UtakmicaSastav.UtakmicaSastavUpdateRequest, eBordo.Api.Database.UtakmicaSastav>().ReverseMap(); ;
 
             CreateMap<eBordo.Api.Database.Izvještaj, eBordo.Model.Models.Izvještaj>();
             CreateMap<eBordo.Api.Database.UtakmicaNastup, eBordo.Model.Models.UtakmicaNastup>();

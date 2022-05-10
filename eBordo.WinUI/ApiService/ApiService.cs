@@ -37,6 +37,12 @@ namespace eBordo.WinUI.ApiService
                 throw;
             }
         }
+
+        public async Task<T> GetRecommendedById<T>(string naziv, object request = null)
+        {
+            return await $"{endpoint}{_resource}/{naziv}".WithBasicAuth(username, password).PostJsonAsync(request).ReceiveJson<T>();
+        }
+
         public async Task<T> GetAll<T>(object request = null)
         {
             var query = "";

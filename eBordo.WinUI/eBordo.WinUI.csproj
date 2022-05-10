@@ -474,6 +474,12 @@
     <Compile Include="Forms\AdminPanel\RasporedUtakmica\frmPozvaniIgracKartica.Designer.cs">
       <DependentUpon>frmPozvaniIgracKartica.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AdminPanel\RasporedUtakmica\frmPreporuceniIgracKartica.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminPanel\RasporedUtakmica\frmPreporuceniIgracKartica.Designer.cs">
+      <DependentUpon>frmPreporuceniIgracKartica.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AdminPanel\RasporedUtakmica\frmPrikazRasporedaUtakmicacs.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -714,6 +720,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminPanel\RasporedUtakmica\frmPozvaniIgracKartica.resx">
       <DependentUpon>frmPozvaniIgracKartica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminPanel\RasporedUtakmica\frmPreporuceniIgracKartica.resx">
+      <DependentUpon>frmPreporuceniIgracKartica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminPanel\RasporedUtakmica\frmPrikazRasporedaUtakmicacs.resx">
       <DependentUpon>frmPrikazRasporedaUtakmicacs.cs</DependentUpon>

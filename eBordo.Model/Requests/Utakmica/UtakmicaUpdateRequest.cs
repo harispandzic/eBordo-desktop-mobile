@@ -12,6 +12,6 @@ namespace eBordo.Model.Requests.Utakmica
         public string satnica { get; set; }
         public string napomene { get; set; }
         public int kapitenId { get; set; }
-        public ICollection<UtakmicaSastavUpdateRequest> sastav { get; set; }
+        public List<UtakmicaSastavUpdateRequest> sastav { get; set; }
     }
 }

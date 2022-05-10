@@ -49,12 +49,12 @@ class _PocetnaState extends State<Pocetna> {
   void initState() {
     super.initState();
 
-    Future.delayed(const Duration(seconds: 0), GetNotifikacije);
-    Future.delayed(const Duration(seconds: 0), GetPosljednjaUtakmica);
-    Future.delayed(const Duration(seconds: 0), GetNarednaUtakmica);
-    Future.delayed(const Duration(seconds: 0), GetStatistika);
-    Future.delayed(const Duration(seconds: 0), GetUtakmice);
-    Future.delayed(const Duration(seconds: 0), GetTreninzi);
+    Future.delayed(const Duration(seconds: 6), GetNotifikacije);
+    Future.delayed(const Duration(seconds: 6), GetPosljednjaUtakmica);
+    Future.delayed(const Duration(seconds: 6), GetNarednaUtakmica);
+    Future.delayed(const Duration(seconds: 6), GetStatistika);
+    Future.delayed(const Duration(seconds: 6), GetUtakmice);
+    Future.delayed(const Duration(seconds: 6), GetTreninzi);
   }
 
   late List<PieChartData> data_statistika = [
@@ -225,6 +225,7 @@ class _PocetnaState extends State<Pocetna> {
                   badgeColor: HexColor("#FFC107"),
                   position: BadgePosition.topEnd(top: -8, end: -5),
                   padding: EdgeInsets.all(3),
+                  showBadge: _obavijestiState.length > 0,
                   badgeContent: Container(
                     child: Text(_obavijestiState.length.toString(),
                         style: GoogleFonts.oswald(
@@ -804,7 +805,7 @@ class _PocetnaState extends State<Pocetna> {
                     viewportFraction: 1,
                     enableInfiniteScroll: true,
                     initialPage: 1,
-                    height: 300,
+                    height: 327,
                     reverse: false,
                     autoPlay: true,
                     enlargeCenterPage: true,
@@ -816,7 +817,7 @@ class _PocetnaState extends State<Pocetna> {
                     }),
               ),
               Container(
-                transform: Matrix4.translationValues(0.0, -12.0, 10.0),
+                transform: Matrix4.translationValues(0.0, -20.0, 10.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
