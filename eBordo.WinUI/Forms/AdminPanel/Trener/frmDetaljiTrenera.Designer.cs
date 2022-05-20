@@ -780,7 +780,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.lblPobjedeVrijednost.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.lblPobjedeVrijednost.Location = new System.Drawing.Point(584, 68);
             this.lblPobjedeVrijednost.Name = "lblPobjedeVrijednost";
-            this.lblPobjedeVrijednost.Size = new System.Drawing.Size(26, 16);
+            this.lblPobjedeVrijednost.Size = new System.Drawing.Size(25, 16);
             this.lblPobjedeVrijednost.TabIndex = 380;
             this.lblPobjedeVrijednost.Text = "456";
             this.lblPobjedeVrijednost.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -792,7 +792,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.label18.Location = new System.Drawing.Point(493, 68);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(45, 16);
+            this.label18.Size = new System.Drawing.Size(44, 16);
             this.label18.TabIndex = 379;
             this.label18.Text = "POBJEDE";
             // 
@@ -814,7 +814,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.lblNerjeseneVrijednosti.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.lblNerjeseneVrijednosti.Location = new System.Drawing.Point(584, 104);
             this.lblNerjeseneVrijednosti.Name = "lblNerjeseneVrijednosti";
-            this.lblNerjeseneVrijednosti.Size = new System.Drawing.Size(26, 16);
+            this.lblNerjeseneVrijednosti.Size = new System.Drawing.Size(25, 16);
             this.lblNerjeseneVrijednosti.TabIndex = 377;
             this.lblNerjeseneVrijednosti.Text = "456";
             this.lblNerjeseneVrijednosti.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -826,7 +826,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.lblPoraziVrijednost.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.lblPoraziVrijednost.Location = new System.Drawing.Point(584, 86);
             this.lblPoraziVrijednost.Name = "lblPoraziVrijednost";
-            this.lblPoraziVrijednost.Size = new System.Drawing.Size(26, 16);
+            this.lblPoraziVrijednost.Size = new System.Drawing.Size(25, 16);
             this.lblPoraziVrijednost.TabIndex = 374;
             this.lblPoraziVrijednost.Text = "456";
             this.lblPoraziVrijednost.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -838,7 +838,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.lblNastupiVrijednost.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.lblNastupiVrijednost.Location = new System.Drawing.Point(584, 49);
             this.lblNastupiVrijednost.Name = "lblNastupiVrijednost";
-            this.lblNastupiVrijednost.Size = new System.Drawing.Size(26, 16);
+            this.lblNastupiVrijednost.Size = new System.Drawing.Size(25, 16);
             this.lblNastupiVrijednost.TabIndex = 373;
             this.lblNastupiVrijednost.Text = "456";
             this.lblNastupiVrijednost.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -850,7 +850,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.label26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.label26.Location = new System.Drawing.Point(493, 104);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(55, 16);
+            this.label26.Size = new System.Drawing.Size(54, 16);
             this.label26.TabIndex = 370;
             this.label26.Text = "NERJEŠENE";
             // 
@@ -861,7 +861,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.label27.Location = new System.Drawing.Point(493, 86);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(40, 16);
+            this.label27.Size = new System.Drawing.Size(39, 16);
             this.label27.TabIndex = 369;
             this.label27.Text = "PORAZI";
             // 
@@ -872,7 +872,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.label28.Location = new System.Drawing.Point(493, 49);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(47, 16);
+            this.label28.Size = new System.Drawing.Size(46, 16);
             this.label28.TabIndex = 368;
             this.label28.Text = "NASTUPI";
             // 
@@ -959,7 +959,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.btnSaveUpdate.IdleIconLeftImage = global::eBordo.WinUI.Properties.Resources.pdf;
             this.btnSaveUpdate.IdleIconRightImage = null;
             this.btnSaveUpdate.IndicateFocus = true;
-            this.btnSaveUpdate.Location = new System.Drawing.Point(570, 5);
+            this.btnSaveUpdate.Location = new System.Drawing.Point(569, 5);
             this.btnSaveUpdate.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
             this.btnSaveUpdate.Name = "btnSaveUpdate";
             this.btnSaveUpdate.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -1001,6 +1001,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
             this.btnSaveUpdate.TextMarginLeft = 0;
             this.btnSaveUpdate.TextPadding = new System.Windows.Forms.Padding(0, 0, 7, 0);
             this.btnSaveUpdate.UseDefaultRadiusAndThickness = true;
+            this.btnSaveUpdate.Click += new System.EventHandler(this.btnSaveUpdate_Click);
             // 
             // frmDetaljiTrenera
             // 

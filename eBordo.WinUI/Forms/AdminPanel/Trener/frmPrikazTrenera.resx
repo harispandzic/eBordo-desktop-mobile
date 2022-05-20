@@ -199,6 +199,9 @@
         YII=
 </value>
   </data>
+  <data name="noSearchResultsText.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Oswald'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(64, 64, 64); text-align: left; }</value>
+  </data>
   <data name="btnSaveUpdate.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACgAAAAhCAYAAACr8emlAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -220,9 +223,6 @@
         cKDG63lf3gbFZuGGtbdBcWnNm6QrudhWTh2MOl1Dvx4/+Fhoyw/uIQrHor38fvjRy3Bs4/eoVT69wxTA
         PGnPepNPpmg/a/rUapWveCU9nvEF0p6Ky17y0VwrpW8DAx3XJymX0QAAAABJRU5ErkJggg==
 </value>
-  </data>
-  <data name="noSearchResultsText.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Oswald'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(64, 64, 64); text-align: left; }</value>
   </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>47</value>

@@ -1,6 +1,7 @@
 ﻿using eBordo.Model.Requests.Igrac;
 using eBordo.WinUI.Forms.AdminPanel.Igrač;
 using eBordo.WinUI.Helper;
+using eBordo.WinUI.Reports;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -187,6 +188,18 @@ namespace eBordo.WinUI.Forms.AdminPanel
             {
                 await LoadIgraci(isAktivan: false);
             }
+        }
+
+        private void btnSaveUpdate_Click(object sender, EventArgs e)
+        {
+            frmReportPregled pregledIzvjestaja = new frmReportPregled(null, _podaci, null,null, null,null,null,null, null);
+            pregledIzvjestaja.Show();
+        }
+
+        private void bunifuButton1_Click(object sender, EventArgs e)
+        {
+            frmReportPregled pregledIzvjestaja = new frmReportPregled(null, _podaci, null,null, null,null,null, null, null);
+            pregledIzvjestaja.Show();
         }
     }
 }

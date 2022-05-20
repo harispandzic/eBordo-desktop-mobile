@@ -17,6 +17,7 @@ namespace eBordo.WinUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            SqlServerTypes.Utilities.LoadNativeAssemblies(AppDomain.CurrentDomain.BaseDirectory);
             Application.Run(new Forms.Login.frmLogin());
             //Application.Run(new frmAbout_eBordo());
         }

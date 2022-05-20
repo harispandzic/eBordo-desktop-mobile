@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsTrener" targetNamespace="http://tempuri.org/dsTrener.xsd" xmlns:mstns="http://tempuri.org/dsTrener.xsd" xmlns="http://tempuri.org/dsTrener.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsTrener" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsTrener" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsTrener">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Trener" msprop:Generator_RowClassName="TrenerRow" msprop:Generator_RowEvHandlerName="TrenerRowChangeEventHandler" msprop:Generator_RowDeletedName="TrenerRowDeleted" msprop:Generator_RowDeletingName="TrenerRowDeleting" msprop:Generator_RowEvArgName="TrenerRowChangeEvent" msprop:Generator_TablePropName="Trener" msprop:Generator_RowChangedName="TrenerRowChanged" msprop:Generator_UserTableName="Trener" msprop:Generator_RowChangingName="TrenerRowChanging" msprop:Generator_TableClassName="TrenerDataTable" msprop:Generator_TableVarName="tableTrener">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ImePrezime" msprop:Generator_UserColumnName="ImePrezime" msprop:Generator_ColumnPropNameInTable="ImePrezimeColumn" msprop:Generator_ColumnPropNameInRow="ImePrezime" msprop:Generator_ColumnVarNameInTable="columnImePrezime" type="xs:string" minOccurs="0" />
+              <xs:element name="MjestoRodjenja" msprop:Generator_UserColumnName="MjestoRodjenja" msprop:Generator_ColumnPropNameInTable="MjestoRodjenjaColumn" msprop:Generator_ColumnPropNameInRow="MjestoRodjenja" msprop:Generator_ColumnVarNameInTable="columnMjestoRodjenja" type="xs:string" minOccurs="0" />
+              <xs:element name="DatumRodjenja" msprop:Generator_UserColumnName="DatumRodjenja" msprop:Generator_ColumnPropNameInTable="DatumRodjenjaColumn" msprop:Generator_ColumnPropNameInRow="DatumRodjenja" msprop:Generator_ColumnVarNameInTable="columnDatumRodjenja" type="xs:string" minOccurs="0" />
+              <xs:element name="Adresa" msprop:Generator_UserColumnName="Adresa" msprop:Generator_ColumnPropNameInTable="AdresaColumn" msprop:Generator_ColumnPropNameInRow="Adresa" msprop:Generator_ColumnVarNameInTable="columnAdresa" type="xs:string" minOccurs="0" />
+              <xs:element name="Telefon" msprop:Generator_UserColumnName="Telefon" msprop:Generator_ColumnPropNameInTable="TelefonColumn" msprop:Generator_ColumnPropNameInRow="Telefon" msprop:Generator_ColumnVarNameInTable="columnTelefon" type="xs:string" minOccurs="0" />
+              <xs:element name="Email" msprop:Generator_UserColumnName="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnVarNameInTable="columnEmail" type="xs:string" minOccurs="0" />
+              <xs:element name="Drzavljanstvo" msprop:Generator_UserColumnName="Drzavljanstvo" msprop:Generator_ColumnPropNameInTable="DrzavljanstvoColumn" msprop:Generator_ColumnPropNameInRow="Drzavljanstvo" msprop:Generator_ColumnVarNameInTable="columnDrzavljanstvo" type="xs:string" minOccurs="0" />
+              <xs:element name="PocetakUgovora" msprop:Generator_UserColumnName="PocetakUgovora" msprop:Generator_ColumnPropNameInTable="PocetakUgovoraColumn" msprop:Generator_ColumnPropNameInRow="PocetakUgovora" msprop:Generator_ColumnVarNameInTable="columnPocetakUgovora" type="xs:string" minOccurs="0" />
+              <xs:element name="KrajUgovora" msprop:Generator_UserColumnName="KrajUgovora" msprop:Generator_ColumnPropNameInTable="KrajUgovoraColumn" msprop:Generator_ColumnPropNameInRow="KrajUgovora" msprop:Generator_ColumnVarNameInTable="columnKrajUgovora" type="xs:string" minOccurs="0" />
+              <xs:element name="Licenca" msdata:Caption="Pozicija" msprop:Generator_UserColumnName="Licenca" msprop:Generator_ColumnPropNameInTable="LicencaColumn" msprop:Generator_ColumnPropNameInRow="Licenca" msprop:Generator_ColumnVarNameInTable="columnLicenca" type="xs:string" minOccurs="0" />
+              <xs:element name="Formacija" msdata:Caption="BoljaNoga" msprop:Generator_UserColumnName="Formacija" msprop:Generator_ColumnPropNameInTable="FormacijaColumn" msprop:Generator_ColumnPropNameInRow="Formacija" msprop:Generator_ColumnVarNameInTable="columnFormacija" type="xs:string" minOccurs="0" />
+              <xs:element name="Nastupi" msdata:Caption="Visina" msprop:Generator_UserColumnName="Nastupi" msprop:Generator_ColumnPropNameInTable="NastupiColumn" msprop:Generator_ColumnPropNameInRow="Nastupi" msprop:Generator_ColumnVarNameInTable="columnNastupi" type="xs:string" minOccurs="0" />
+              <xs:element name="Pobjede" msdata:Caption="Tezina" msprop:Generator_UserColumnName="Pobjede" msprop:Generator_ColumnPropNameInTable="PobjedeColumn" msprop:Generator_ColumnPropNameInRow="Pobjede" msprop:Generator_ColumnVarNameInTable="columnPobjede" type="xs:string" minOccurs="0" />
+              <xs:element name="Porazi" msdata:Caption="TrzisnaVrijednosot" msprop:Generator_UserColumnName="Porazi" msprop:Generator_ColumnPropNameInTable="PoraziColumn" msprop:Generator_ColumnPropNameInRow="Porazi" msprop:Generator_ColumnVarNameInTable="columnPorazi" type="xs:string" minOccurs="0" />
+              <xs:element name="Nerješene" msdata:Caption="Napomene" msprop:Generator_UserColumnName="Nerješene" msprop:Generator_ColumnPropNameInTable="NerješeneColumn" msprop:Generator_ColumnPropNameInRow="Nerješene" msprop:Generator_ColumnVarNameInTable="columnNerješene" type="xs:string" minOccurs="0" />
+              <xs:element name="Slika" msprop:Generator_UserColumnName="Slika" msprop:Generator_ColumnPropNameInTable="SlikaColumn" msprop:Generator_ColumnPropNameInRow="Slika" msprop:Generator_ColumnVarNameInTable="columnSlika" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="DrzavljanstvoZastava" msprop:Generator_UserColumnName="DrzavljanstvoZastava" msprop:Generator_ColumnPropNameInTable="DrzavljanstvoZastavaColumn" msprop:Generator_ColumnPropNameInRow="DrzavljanstvoZastava" msprop:Generator_ColumnVarNameInTable="columnDrzavljanstvoZastava" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="BrojPodataka" msprop:Generator_UserColumnName="BrojPodataka" msprop:Generator_ColumnPropNameInTable="BrojPodatakaColumn" msprop:Generator_ColumnPropNameInRow="BrojPodataka" msprop:Generator_ColumnVarNameInTable="columnBrojPodataka" type="xs:string" minOccurs="0" />
+              <xs:element name="Starost" msprop:Generator_UserColumnName="Starost" msprop:Generator_ColumnPropNameInTable="StarostColumn" msprop:Generator_ColumnPropNameInRow="Starost" msprop:Generator_ColumnVarNameInTable="columnStarost" type="xs:string" minOccurs="0" />
+              <xs:element name="Uloga" msprop:Generator_ColumnPropNameInRow="Uloga" msprop:Generator_ColumnPropNameInTable="UlogaColumn" msprop:Generator_ColumnVarNameInTable="columnUloga" msprop:Generator_UserColumnName="Uloga" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

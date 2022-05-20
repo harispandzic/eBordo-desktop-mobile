@@ -1,4 +1,5 @@
 ﻿using eBordo.WinUI.Helper;
+using eBordo.WinUI.Reports;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -107,6 +108,12 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
                     flowPanelKlupa.Controls.Add(pozvaniIgrac);
                 }
             }
+        }
+
+        private void btnSaveUpdate_Click(object sender, EventArgs e)
+        {
+            frmReportPregled pregledIzvjestaja = new frmReportPregled(null, null, _odabranaUtakmica,null, null,null,null, null, null);
+            pregledIzvjestaja.Show();
         }
     }
 }

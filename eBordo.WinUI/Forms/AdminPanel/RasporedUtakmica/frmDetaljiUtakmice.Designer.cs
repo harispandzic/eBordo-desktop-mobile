@@ -285,7 +285,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.txtBrojDana.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBrojDana.Location = new System.Drawing.Point(316, 21);
             this.txtBrojDana.Name = "txtBrojDana";
-            this.txtBrojDana.Size = new System.Drawing.Size(52, 16);
+            this.txtBrojDana.Size = new System.Drawing.Size(51, 16);
             this.txtBrojDana.TabIndex = 327;
             this.txtBrojDana.Text = "ZA 2 DANA";
             // 
@@ -584,6 +584,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.btnSaveUpdate.TextMarginLeft = 0;
             this.btnSaveUpdate.TextPadding = new System.Windows.Forms.Padding(0, 0, 7, 0);
             this.btnSaveUpdate.UseDefaultRadiusAndThickness = true;
+            this.btnSaveUpdate.Click += new System.EventHandler(this.btnSaveUpdate_Click);
             // 
             // frmDetaljiUtakmice
             // 

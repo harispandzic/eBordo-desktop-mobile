@@ -1,5 +1,6 @@
 ﻿using eBordo.Model.Requests.Utakmica;
 using eBordo.WinUI.Helper;
+using eBordo.WinUI.Reports;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -192,6 +193,18 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
         private void UcitajBrojUtakmica()
         {
             txtBrojUtakmica.Text = pnlUtakmiceWrapper.Controls.Count.ToString();
+        }
+
+        private void btnSaveUpdate_Click(object sender, EventArgs e)
+        {
+            frmReportPregled pregledIzvjestaja = new frmReportPregled(null, null, null, _podaci, null,null,null, null, null);
+            pregledIzvjestaja.Show();
+        }
+
+        private void bunifuButton2_Click(object sender, EventArgs e)
+        {
+            frmReportPregled pregledIzvjestaja = new frmReportPregled(null, null, null, _podaci, null,null,null, null, null);
+            pregledIzvjestaja.Show();
         }
     }
 }

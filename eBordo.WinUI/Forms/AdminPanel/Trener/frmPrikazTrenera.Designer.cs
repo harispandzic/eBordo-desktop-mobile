@@ -31,14 +31,14 @@ namespace eBordo.WinUI.Forms.AdminPanel
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrikazTrenera));
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties21 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties22 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties23 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties24 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges21 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges22 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges23 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges24 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.lblNaslovStranice = new Bunifu.UI.WinForms.BunifuLabel();
             this.dataLoader = new Bunifu.UI.WinForms.BunifuLoader();
             this.snackbar = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
@@ -55,11 +55,11 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.checkBoxZavrseniTreninzi = new Bunifu.UI.WinForms.BunifuCheckBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.gifLoader = new System.Windows.Forms.PictureBox();
-            this.btnSaveUpdate = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.bunifuButton2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.noSearchResults = new System.Windows.Forms.PictureBox();
             this.noSearchResultsText = new Bunifu.UI.WinForms.BunifuLabel();
             this.txtNemaRezultataOpis = new Bunifu.UI.WinForms.BunifuLabel();
+            this.btnSaveUpdate = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.bunifuButton2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.pnlIgraci.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.noSearchResult)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -212,26 +212,26 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.txtImePrezime.Modified = false;
             this.txtImePrezime.Multiline = false;
             this.txtImePrezime.Name = "txtImePrezime";
-            stateProperties21.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
-            stateProperties21.FillColor = System.Drawing.Color.Empty;
-            stateProperties21.ForeColor = System.Drawing.Color.Empty;
-            stateProperties21.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtImePrezime.OnActiveState = stateProperties21;
-            stateProperties22.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties22.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties22.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtImePrezime.OnDisabledState = stateProperties22;
-            stateProperties23.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
-            stateProperties23.FillColor = System.Drawing.Color.Empty;
-            stateProperties23.ForeColor = System.Drawing.Color.Empty;
-            stateProperties23.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtImePrezime.OnHoverState = stateProperties23;
-            stateProperties24.BorderColor = System.Drawing.Color.Silver;
-            stateProperties24.FillColor = System.Drawing.Color.White;
-            stateProperties24.ForeColor = System.Drawing.Color.Empty;
-            stateProperties24.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtImePrezime.OnIdleState = stateProperties24;
+            stateProperties1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            stateProperties1.FillColor = System.Drawing.Color.Empty;
+            stateProperties1.ForeColor = System.Drawing.Color.Empty;
+            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtImePrezime.OnActiveState = stateProperties1;
+            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txtImePrezime.OnDisabledState = stateProperties2;
+            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
+            stateProperties3.FillColor = System.Drawing.Color.Empty;
+            stateProperties3.ForeColor = System.Drawing.Color.Empty;
+            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtImePrezime.OnHoverState = stateProperties3;
+            stateProperties4.BorderColor = System.Drawing.Color.Silver;
+            stateProperties4.FillColor = System.Drawing.Color.White;
+            stateProperties4.ForeColor = System.Drawing.Color.Empty;
+            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtImePrezime.OnIdleState = stateProperties4;
             this.txtImePrezime.Padding = new System.Windows.Forms.Padding(3);
             this.txtImePrezime.PasswordChar = '\0';
             this.txtImePrezime.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -370,11 +370,11 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.btnSaveIgracSastav.ColorContrastOnClick = 45;
             this.btnSaveIgracSastav.ColorContrastOnHover = 45;
             this.btnSaveIgracSastav.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges21.BottomLeft = true;
-            borderEdges21.BottomRight = true;
-            borderEdges21.TopLeft = true;
-            borderEdges21.TopRight = true;
-            this.btnSaveIgracSastav.CustomizableEdges = borderEdges21;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btnSaveIgracSastav.CustomizableEdges = borderEdges1;
             this.btnSaveIgracSastav.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnSaveIgracSastav.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnSaveIgracSastav.DisabledFillColor = System.Drawing.Color.Empty;
@@ -463,11 +463,11 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.bunifuButton1.ColorContrastOnClick = 45;
             this.bunifuButton1.ColorContrastOnHover = 45;
             this.bunifuButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges22.BottomLeft = true;
-            borderEdges22.BottomRight = true;
-            borderEdges22.TopLeft = true;
-            borderEdges22.TopRight = true;
-            this.bunifuButton1.CustomizableEdges = borderEdges22;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.bunifuButton1.CustomizableEdges = borderEdges2;
             this.bunifuButton1.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bunifuButton1.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton1.DisabledFillColor = System.Drawing.Color.Empty;
@@ -633,6 +633,55 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.gifLoader.TabIndex = 324;
             this.gifLoader.TabStop = false;
             // 
+            // noSearchResults
+            // 
+            this.noSearchResults.BackColor = System.Drawing.Color.Transparent;
+            this.noSearchResults.BackgroundImage = global::eBordo.WinUI.Properties.Resources.nema_rezultata_pretrage;
+            this.noSearchResults.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.noSearchResults.Location = new System.Drawing.Point(183, 116);
+            this.noSearchResults.Name = "noSearchResults";
+            this.noSearchResults.Size = new System.Drawing.Size(280, 242);
+            this.noSearchResults.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.noSearchResults.TabIndex = 329;
+            this.noSearchResults.TabStop = false;
+            this.noSearchResults.Visible = false;
+            // 
+            // noSearchResultsText
+            // 
+            this.noSearchResultsText.AllowParentOverrides = false;
+            this.noSearchResultsText.AutoEllipsis = false;
+            this.noSearchResultsText.Cursor = System.Windows.Forms.Cursors.Default;
+            this.noSearchResultsText.CursorType = System.Windows.Forms.Cursors.Default;
+            this.noSearchResultsText.Font = new System.Drawing.Font("Oswald", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.noSearchResultsText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.noSearchResultsText.Location = new System.Drawing.Point(266, 345);
+            this.noSearchResultsText.Name = "noSearchResultsText";
+            this.noSearchResultsText.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.noSearchResultsText.Size = new System.Drawing.Size(108, 24);
+            this.noSearchResultsText.TabIndex = 330;
+            this.noSearchResultsText.Text = "NEMA REZULTATA";
+            this.noSearchResultsText.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.noSearchResultsText.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.noSearchResultsText.Visible = false;
+            // 
+            // txtNemaRezultataOpis
+            // 
+            this.txtNemaRezultataOpis.AllowParentOverrides = false;
+            this.txtNemaRezultataOpis.AutoEllipsis = false;
+            this.txtNemaRezultataOpis.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtNemaRezultataOpis.CursorType = System.Windows.Forms.Cursors.Default;
+            this.txtNemaRezultataOpis.Font = new System.Drawing.Font("Oswald", 9F);
+            this.txtNemaRezultataOpis.ForeColor = System.Drawing.Color.Black;
+            this.txtNemaRezultataOpis.Location = new System.Drawing.Point(141, 369);
+            this.txtNemaRezultataOpis.Name = "txtNemaRezultataOpis";
+            this.txtNemaRezultataOpis.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtNemaRezultataOpis.Size = new System.Drawing.Size(360, 17);
+            this.txtNemaRezultataOpis.TabIndex = 331;
+            this.txtNemaRezultataOpis.Text = "BAZA PODATAKA JE PRETRAŽENA I NISU PRONAĐENI ODGOVARAJUĆI REZULTATI! ";
+            this.txtNemaRezultataOpis.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.txtNemaRezultataOpis.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.txtNemaRezultataOpis.Visible = false;
+            // 
             // btnSaveUpdate
             // 
             this.btnSaveUpdate.AllowAnimations = true;
@@ -653,11 +702,11 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.btnSaveUpdate.ColorContrastOnClick = 45;
             this.btnSaveUpdate.ColorContrastOnHover = 45;
             this.btnSaveUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges23.BottomLeft = true;
-            borderEdges23.BottomRight = true;
-            borderEdges23.TopLeft = true;
-            borderEdges23.TopRight = true;
-            this.btnSaveUpdate.CustomizableEdges = borderEdges23;
+            borderEdges3.BottomLeft = true;
+            borderEdges3.BottomRight = true;
+            borderEdges3.TopLeft = true;
+            borderEdges3.TopRight = true;
+            this.btnSaveUpdate.CustomizableEdges = borderEdges3;
             this.btnSaveUpdate.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnSaveUpdate.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnSaveUpdate.DisabledFillColor = System.Drawing.Color.Empty;
@@ -725,6 +774,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.btnSaveUpdate.TextMarginLeft = 0;
             this.btnSaveUpdate.TextPadding = new System.Windows.Forms.Padding(0, 0, 7, 0);
             this.btnSaveUpdate.UseDefaultRadiusAndThickness = true;
+            this.btnSaveUpdate.Click += new System.EventHandler(this.btnSaveUpdate_Click);
             // 
             // bunifuButton2
             // 
@@ -746,11 +796,11 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.bunifuButton2.ColorContrastOnClick = 45;
             this.bunifuButton2.ColorContrastOnHover = 45;
             this.bunifuButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges24.BottomLeft = true;
-            borderEdges24.BottomRight = true;
-            borderEdges24.TopLeft = true;
-            borderEdges24.TopRight = true;
-            this.bunifuButton2.CustomizableEdges = borderEdges24;
+            borderEdges4.BottomLeft = true;
+            borderEdges4.BottomRight = true;
+            borderEdges4.TopLeft = true;
+            borderEdges4.TopRight = true;
+            this.bunifuButton2.CustomizableEdges = borderEdges4;
             this.bunifuButton2.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bunifuButton2.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton2.DisabledFillColor = System.Drawing.Color.Empty;
@@ -818,55 +868,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.bunifuButton2.TextMarginLeft = 0;
             this.bunifuButton2.TextPadding = new System.Windows.Forms.Padding(0, 0, 7, 0);
             this.bunifuButton2.UseDefaultRadiusAndThickness = true;
-            // 
-            // noSearchResults
-            // 
-            this.noSearchResults.BackColor = System.Drawing.Color.Transparent;
-            this.noSearchResults.BackgroundImage = global::eBordo.WinUI.Properties.Resources.nema_rezultata_pretrage;
-            this.noSearchResults.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.noSearchResults.Location = new System.Drawing.Point(183, 116);
-            this.noSearchResults.Name = "noSearchResults";
-            this.noSearchResults.Size = new System.Drawing.Size(280, 242);
-            this.noSearchResults.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.noSearchResults.TabIndex = 329;
-            this.noSearchResults.TabStop = false;
-            this.noSearchResults.Visible = false;
-            // 
-            // noSearchResultsText
-            // 
-            this.noSearchResultsText.AllowParentOverrides = false;
-            this.noSearchResultsText.AutoEllipsis = false;
-            this.noSearchResultsText.Cursor = System.Windows.Forms.Cursors.Default;
-            this.noSearchResultsText.CursorType = System.Windows.Forms.Cursors.Default;
-            this.noSearchResultsText.Font = new System.Drawing.Font("Oswald", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.noSearchResultsText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.noSearchResultsText.Location = new System.Drawing.Point(266, 345);
-            this.noSearchResultsText.Name = "noSearchResultsText";
-            this.noSearchResultsText.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.noSearchResultsText.Size = new System.Drawing.Size(108, 24);
-            this.noSearchResultsText.TabIndex = 330;
-            this.noSearchResultsText.Text = "NEMA REZULTATA";
-            this.noSearchResultsText.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.noSearchResultsText.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.noSearchResultsText.Visible = false;
-            // 
-            // txtNemaRezultataOpis
-            // 
-            this.txtNemaRezultataOpis.AllowParentOverrides = false;
-            this.txtNemaRezultataOpis.AutoEllipsis = false;
-            this.txtNemaRezultataOpis.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtNemaRezultataOpis.CursorType = System.Windows.Forms.Cursors.Default;
-            this.txtNemaRezultataOpis.Font = new System.Drawing.Font("Oswald", 9F);
-            this.txtNemaRezultataOpis.ForeColor = System.Drawing.Color.Black;
-            this.txtNemaRezultataOpis.Location = new System.Drawing.Point(141, 369);
-            this.txtNemaRezultataOpis.Name = "txtNemaRezultataOpis";
-            this.txtNemaRezultataOpis.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtNemaRezultataOpis.Size = new System.Drawing.Size(360, 17);
-            this.txtNemaRezultataOpis.TabIndex = 331;
-            this.txtNemaRezultataOpis.Text = "BAZA PODATAKA JE PRETRAŽENA I NISU PRONAĐENI ODGOVARAJUĆI REZULTATI! ";
-            this.txtNemaRezultataOpis.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.txtNemaRezultataOpis.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.txtNemaRezultataOpis.Visible = false;
+            this.bunifuButton2.Click += new System.EventHandler(this.bunifuButton2_Click);
             // 
             // frmPrikazTrenera
             // 
@@ -921,10 +923,10 @@ namespace eBordo.WinUI.Forms.AdminPanel
         private Bunifu.UI.WinForms.BunifuCheckBox checkBoxZavrseniTreninzi;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox gifLoader;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSaveUpdate;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton2;
         private System.Windows.Forms.PictureBox noSearchResults;
         private Bunifu.UI.WinForms.BunifuLabel noSearchResultsText;
         private Bunifu.UI.WinForms.BunifuLabel txtNemaRezultataOpis;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSaveUpdate;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton2;
     }
 }
