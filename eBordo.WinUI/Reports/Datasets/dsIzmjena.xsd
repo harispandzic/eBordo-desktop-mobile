@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsIzmjena" targetNamespace="http://tempuri.org/dsIzmjena.xsd" xmlns:mstns="http://tempuri.org/dsIzmjena.xsd" xmlns="http://tempuri.org/dsIzmjena.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsIzmjena" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="dsIzmjena" msprop:Generator_DataSetName="dsIzmjena">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Izmjena" msprop:Generator_RowEvHandlerName="IzmjenaRowChangeEventHandler" msprop:Generator_RowDeletedName="IzmjenaRowDeleted" msprop:Generator_RowDeletingName="IzmjenaRowDeleting" msprop:Generator_RowEvArgName="IzmjenaRowChangeEvent" msprop:Generator_TablePropName="Izmjena" msprop:Generator_RowChangedName="IzmjenaRowChanged" msprop:Generator_RowChangingName="IzmjenaRowChanging" msprop:Generator_TableClassName="IzmjenaDataTable" msprop:Generator_RowClassName="IzmjenaRow" msprop:Generator_TableVarName="tableIzmjena" msprop:Generator_UserTableName="Izmjena">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IgracIN" msprop:Generator_ColumnPropNameInRow="IgracIN" msprop:Generator_ColumnPropNameInTable="IgracINColumn" msprop:Generator_ColumnVarNameInTable="columnIgracIN" msprop:Generator_UserColumnName="IgracIN" type="xs:string" minOccurs="0" />
+              <xs:element name="IgracOUT" msprop:Generator_ColumnPropNameInRow="IgracOUT" msprop:Generator_ColumnPropNameInTable="IgracOUTColumn" msprop:Generator_ColumnVarNameInTable="columnIgracOUT" msprop:Generator_UserColumnName="IgracOUT" type="xs:string" minOccurs="0" />
+              <xs:element name="Minuta" msprop:Generator_ColumnPropNameInRow="Minuta" msprop:Generator_ColumnPropNameInTable="MinutaColumn" msprop:Generator_ColumnVarNameInTable="columnMinuta" msprop:Generator_UserColumnName="Minuta" type="xs:string" minOccurs="0" />
+              <xs:element name="RazlogIzmjene" msprop:Generator_ColumnPropNameInRow="RazlogIzmjene" msprop:Generator_ColumnPropNameInTable="RazlogIzmjeneColumn" msprop:Generator_ColumnVarNameInTable="columnRazlogIzmjene" msprop:Generator_UserColumnName="RazlogIzmjene" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,6 +1,8 @@
 import 'dart:convert';
+import 'package:ebordo_mobile/models/change-password.dart';
 import 'package:http/http.dart' as http;
 import 'dart:io';
+import '../models/change-password.dart';
 import '../models/get-preporuceni.dart';
 import '../models/korisnik.dart';
 
@@ -13,8 +15,10 @@ class APIService {
   APIService({required this.route});
 
   static void PostaviKredencijale(String Username, String Password) {
-    username = "goran.sablic@fksarajevo.ba";
-    password = "Test1234!";
+    // username = "goran.sablic@fksarajevo.ba";
+    // password = "Test1234!";
+    username = Username;
+    password = Password;
   }
 
   static void PostaviLogovanogKorisnika(var result) {
@@ -29,6 +33,27 @@ class APIService {
       Uri.parse(baseUrl),
       headers: {HttpHeaders.authorizationHeader: basicAuth},
     );
+    if (response.statusCode == 200) {
+      return json.decode(response.body);
+    }
+    return null;
+  }
+
+  static Future<dynamic> ChangeUserPassword(ChangePassword body) async {
+    String baseUrl = "http://127.0.0.1:58250/api/Korisnik/ChangePassword";
+
+    Map data = {
+      'korisnikId': body.korisnikId,
+      'oldPassword': body.oldPassword,
+      'newPassword': body.newPassword,
+    };
+
+    final response = await http.post(Uri.parse(baseUrl),
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+        body: json.encode(data));
+
     if (response.statusCode == 200) {
       return json.decode(response.body);
     }
@@ -104,7 +129,7 @@ class APIService {
         body: body);
 
     if (response.statusCode == 200) {
-      return json.decode(response.body) as List;
+      return json.decode(response.body);
     }
     return null;
   }

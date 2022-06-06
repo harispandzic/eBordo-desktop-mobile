@@ -1,5 +1,6 @@
 ﻿using eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica;
 using eBordo.WinUI.Helper;
+using eBordo.WinUI.Reports;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -181,6 +182,12 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             {
                 PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
             }
+        }
+
+        private void bunifuButton1_Click(object sender, EventArgs e)
+        {
+            frmReportPregled pregledIzvjestaja = new frmReportPregled(null, null, null, null, null, null, null, _odabraniIzvjestaj, null);
+            pregledIzvjestaja.Show();
         }
     }
 }

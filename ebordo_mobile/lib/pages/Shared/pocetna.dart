@@ -490,7 +490,39 @@ class _PocetnaState extends State<Pocetna> {
                   onTap: () {
                     Navigator.of(context).pushNamed('/prikaz_treninga');
                   }),
+              ListTile(
+                  leading: Icon(
+                    Icons.event,
+                    color: HexColor("#400507"),
+                    size: 30,
+                  ),
+                  title: Text("Kalendar aktivnosti".toUpperCase(),
+                      style: GoogleFonts.oswald(
+                        fontSize: 16,
+                        color: HexColor("#400507"),
+                        letterSpacing: 0,
+                        fontWeight: FontWeight.w500,
+                      )),
+                  onTap: () {
+                    Navigator.of(context).pushNamed('/kalendar');
+                  }),
               Divider(),
+              ListTile(
+                  leading: Icon(
+                    Icons.account_circle,
+                    color: HexColor("#400507"),
+                    size: 30,
+                  ),
+                  title: Text("Korisnički račun".toUpperCase(),
+                      style: GoogleFonts.oswald(
+                        fontSize: 16,
+                        color: HexColor("#400507"),
+                        letterSpacing: 0,
+                        fontWeight: FontWeight.w500,
+                      )),
+                  onTap: () {
+                    Navigator.of(context).pushNamed('/korisnicki_racun');
+                  }),
               ListTile(
                   leading: Icon(
                     Icons.info,

@@ -31,10 +31,10 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrikazRasporedaUtakmicacs));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges21 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges22 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges23 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges24 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.lblNaslovStranice = new Bunifu.UI.WinForms.BunifuLabel();
             this.pnlRasporedUtakmica = new System.Windows.Forms.Panel();
             this.pnlUtakmiceWrapper = new System.Windows.Forms.FlowLayoutPanel();
@@ -314,11 +314,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.btnSaveIgracSastav.ColorContrastOnClick = 45;
             this.btnSaveIgracSastav.ColorContrastOnHover = 45;
             this.btnSaveIgracSastav.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges21.BottomLeft = true;
-            borderEdges21.BottomRight = true;
-            borderEdges21.TopLeft = true;
-            borderEdges21.TopRight = true;
-            this.btnSaveIgracSastav.CustomizableEdges = borderEdges21;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btnSaveIgracSastav.CustomizableEdges = borderEdges1;
             this.btnSaveIgracSastav.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnSaveIgracSastav.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnSaveIgracSastav.DisabledFillColor = System.Drawing.Color.Empty;
@@ -407,11 +407,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.bunifuButton1.ColorContrastOnClick = 45;
             this.bunifuButton1.ColorContrastOnHover = 45;
             this.bunifuButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges22.BottomLeft = true;
-            borderEdges22.BottomRight = true;
-            borderEdges22.TopLeft = true;
-            borderEdges22.TopRight = true;
-            this.bunifuButton1.CustomizableEdges = borderEdges22;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.bunifuButton1.CustomizableEdges = borderEdges2;
             this.bunifuButton1.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bunifuButton1.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton1.DisabledFillColor = System.Drawing.Color.Empty;
@@ -524,11 +524,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.btnSaveUpdate.ColorContrastOnClick = 45;
             this.btnSaveUpdate.ColorContrastOnHover = 45;
             this.btnSaveUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges23.BottomLeft = true;
-            borderEdges23.BottomRight = true;
-            borderEdges23.TopLeft = true;
-            borderEdges23.TopRight = true;
-            this.btnSaveUpdate.CustomizableEdges = borderEdges23;
+            borderEdges3.BottomLeft = true;
+            borderEdges3.BottomRight = true;
+            borderEdges3.TopLeft = true;
+            borderEdges3.TopRight = true;
+            this.btnSaveUpdate.CustomizableEdges = borderEdges3;
             this.btnSaveUpdate.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnSaveUpdate.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnSaveUpdate.DisabledFillColor = System.Drawing.Color.Empty;
@@ -596,6 +596,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.btnSaveUpdate.TextMarginLeft = 0;
             this.btnSaveUpdate.TextPadding = new System.Windows.Forms.Padding(0, 0, 7, 0);
             this.btnSaveUpdate.UseDefaultRadiusAndThickness = true;
+            this.btnSaveUpdate.Click += new System.EventHandler(this.btnSaveUpdate_Click);
             // 
             // bunifuButton2
             // 
@@ -617,11 +618,11 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.bunifuButton2.ColorContrastOnClick = 45;
             this.bunifuButton2.ColorContrastOnHover = 45;
             this.bunifuButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges24.BottomLeft = true;
-            borderEdges24.BottomRight = true;
-            borderEdges24.TopLeft = true;
-            borderEdges24.TopRight = true;
-            this.bunifuButton2.CustomizableEdges = borderEdges24;
+            borderEdges4.BottomLeft = true;
+            borderEdges4.BottomRight = true;
+            borderEdges4.TopLeft = true;
+            borderEdges4.TopRight = true;
+            this.bunifuButton2.CustomizableEdges = borderEdges4;
             this.bunifuButton2.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bunifuButton2.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton2.DisabledFillColor = System.Drawing.Color.Empty;
@@ -689,6 +690,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.RasporedUtakmica
             this.bunifuButton2.TextMarginLeft = 0;
             this.bunifuButton2.TextPadding = new System.Windows.Forms.Padding(0, 0, 7, 0);
             this.bunifuButton2.UseDefaultRadiusAndThickness = true;
+            this.bunifuButton2.Click += new System.EventHandler(this.bunifuButton2_Click);
             // 
             // noSearchResults
             // 

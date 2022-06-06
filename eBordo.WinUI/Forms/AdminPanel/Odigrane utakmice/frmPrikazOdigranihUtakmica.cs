@@ -1,5 +1,6 @@
 ﻿using eBordo.Model.Requests.Izvještaj;
 using eBordo.WinUI.Helper;
+using eBordo.WinUI.Reports;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -235,6 +236,18 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             cmbVrstaUtakmkce.Text = "Vrsta utakmice";
             cmbRezultat.Text = "Rezultat";
             await LoadIzvještaj();
+        }
+
+        private void btnSaveUpdate_Click(object sender, EventArgs e)
+        {
+            frmReportPregled pregledIzvjestaja = new frmReportPregled(null, null, null, null, null, null, _podaci, null, null);
+            pregledIzvjestaja.Show();
+        }
+
+        private void bunifuButton2_Click(object sender, EventArgs e)
+        {
+            frmReportPregled pregledIzvjestaja = new frmReportPregled(null, null, null, null, null, null, _podaci, null, null);
+            pregledIzvjestaja.Show();
         }
     }
 }

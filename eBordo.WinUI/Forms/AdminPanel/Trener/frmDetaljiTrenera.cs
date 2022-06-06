@@ -1,4 +1,5 @@
 ﻿using eBordo.WinUI.Helper;
+using eBordo.WinUI.Reports;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -69,6 +70,12 @@ namespace eBordo.WinUI.Forms.AdminPanel.Trener
         private void pictureZastava_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSaveUpdate_Click(object sender, EventArgs e)
+        {
+            frmReportPregled pregledIzvjestaja = new frmReportPregled(null, null, null, null, null,_odabraniTrener,null, null, null);
+            pregledIzvjestaja.Show();
         }
     }
 }

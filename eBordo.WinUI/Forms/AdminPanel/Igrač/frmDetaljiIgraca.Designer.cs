@@ -1070,7 +1070,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.label20.Location = new System.Drawing.Point(522, 306);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(50, 16);
+            this.label20.Size = new System.Drawing.Size(49, 16);
             this.label20.TabIndex = 309;
             this.label20.Text = "ODRBANA";
             // 
@@ -1096,7 +1096,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.label21.Location = new System.Drawing.Point(522, 287);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(32, 16);
+            this.label21.Size = new System.Drawing.Size(31, 16);
             this.label21.TabIndex = 307;
             this.label21.Text = "SKOK";
             // 
@@ -1122,7 +1122,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.label22.Location = new System.Drawing.Point(522, 269);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(70, 16);
+            this.label22.Size = new System.Drawing.Size(69, 16);
             this.label22.TabIndex = 305;
             this.label22.Text = "KLIZEĆI START";
             // 
@@ -1148,7 +1148,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.label23.Location = new System.Drawing.Point(522, 251);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(63, 16);
+            this.label23.Size = new System.Drawing.Size(62, 16);
             this.label23.TabIndex = 303;
             this.label23.Text = "MARKIRANJE";
             // 
@@ -1174,7 +1174,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.label24.Location = new System.Drawing.Point(522, 232);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(38, 16);
+            this.label24.Size = new System.Drawing.Size(37, 16);
             this.label24.TabIndex = 301;
             this.label24.Text = "SNAGA";
             // 
@@ -1185,7 +1185,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.lblMinute.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.lblMinute.Location = new System.Drawing.Point(302, 251);
             this.lblMinute.Name = "lblMinute";
-            this.lblMinute.Size = new System.Drawing.Size(26, 16);
+            this.lblMinute.Size = new System.Drawing.Size(25, 16);
             this.lblMinute.TabIndex = 300;
             this.lblMinute.Text = "456";
             this.lblMinute.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1197,7 +1197,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.label18.Location = new System.Drawing.Point(211, 251);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(42, 16);
+            this.label18.Size = new System.Drawing.Size(41, 16);
             this.label18.TabIndex = 299;
             this.label18.Text = "MINUTE";
             // 
@@ -1234,7 +1234,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.label17.Location = new System.Drawing.Point(346, 324);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(26, 16);
+            this.label17.Size = new System.Drawing.Size(25, 16);
             this.label17.TabIndex = 296;
             this.label17.Text = "ŠUT";
             // 
@@ -1260,7 +1260,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.label16.Location = new System.Drawing.Point(346, 306);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(40, 16);
+            this.label16.Size = new System.Drawing.Size(39, 16);
             this.label16.TabIndex = 294;
             this.label16.Text = "BRZINA";
             // 
@@ -1286,7 +1286,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.label15.Location = new System.Drawing.Point(346, 287);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(50, 16);
+            this.label15.Size = new System.Drawing.Size(49, 16);
             this.label15.TabIndex = 292;
             this.label15.Text = "KRETANJE";
             // 
@@ -1312,7 +1312,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.label14.Location = new System.Drawing.Point(346, 269);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(58, 16);
+            this.label14.Size = new System.Drawing.Size(57, 16);
             this.label14.TabIndex = 290;
             this.label14.Text = "DODAVANJE";
             // 
@@ -1338,7 +1338,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.label13.Location = new System.Drawing.Point(346, 251);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(53, 16);
+            this.label13.Size = new System.Drawing.Size(52, 16);
             this.label13.TabIndex = 288;
             this.label13.Text = "DRIBLANJE";
             // 
@@ -1364,7 +1364,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.lblAsistencije.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.lblAsistencije.Location = new System.Drawing.Point(302, 287);
             this.lblAsistencije.Name = "lblAsistencije";
-            this.lblAsistencije.Size = new System.Drawing.Size(26, 16);
+            this.lblAsistencije.Size = new System.Drawing.Size(25, 16);
             this.lblAsistencije.TabIndex = 286;
             this.lblAsistencije.Text = "456";
             this.lblAsistencije.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1376,7 +1376,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.lblZutiKartoni.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.lblZutiKartoni.Location = new System.Drawing.Point(302, 305);
             this.lblZutiKartoni.Name = "lblZutiKartoni";
-            this.lblZutiKartoni.Size = new System.Drawing.Size(26, 16);
+            this.lblZutiKartoni.Size = new System.Drawing.Size(25, 16);
             this.lblZutiKartoni.TabIndex = 285;
             this.lblZutiKartoni.Text = "456";
             this.lblZutiKartoni.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1388,7 +1388,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.lblCrveniKartoni.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.lblCrveniKartoni.Location = new System.Drawing.Point(302, 324);
             this.lblCrveniKartoni.Name = "lblCrveniKartoni";
-            this.lblCrveniKartoni.Size = new System.Drawing.Size(26, 16);
+            this.lblCrveniKartoni.Size = new System.Drawing.Size(25, 16);
             this.lblCrveniKartoni.TabIndex = 284;
             this.lblCrveniKartoni.Text = "456";
             this.lblCrveniKartoni.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1400,7 +1400,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.lblGolovi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.lblGolovi.Location = new System.Drawing.Point(302, 269);
             this.lblGolovi.Name = "lblGolovi";
-            this.lblGolovi.Size = new System.Drawing.Size(26, 16);
+            this.lblGolovi.Size = new System.Drawing.Size(25, 16);
             this.lblGolovi.TabIndex = 283;
             this.lblGolovi.Text = "456";
             this.lblGolovi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1412,7 +1412,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.lblBrojNastupa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.lblBrojNastupa.Location = new System.Drawing.Point(302, 232);
             this.lblBrojNastupa.Name = "lblBrojNastupa";
-            this.lblBrojNastupa.Size = new System.Drawing.Size(26, 16);
+            this.lblBrojNastupa.Size = new System.Drawing.Size(25, 16);
             this.lblBrojNastupa.TabIndex = 282;
             this.lblBrojNastupa.Text = "456";
             this.lblBrojNastupa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1424,7 +1424,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.label19.Location = new System.Drawing.Point(211, 324);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(80, 16);
+            this.label19.Size = new System.Drawing.Size(79, 16);
             this.label19.TabIndex = 281;
             this.label19.Text = "CRVENI KARTONI";
             // 
@@ -1435,7 +1435,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.label25.Location = new System.Drawing.Point(211, 305);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(68, 16);
+            this.label25.Size = new System.Drawing.Size(67, 16);
             this.label25.TabIndex = 280;
             this.label25.Text = "ŽUTI KARTONI";
             // 
@@ -1446,7 +1446,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.label26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.label26.Location = new System.Drawing.Point(211, 287);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(62, 16);
+            this.label26.Size = new System.Drawing.Size(61, 16);
             this.label26.TabIndex = 279;
             this.label26.Text = "ASISTENCIJE";
             // 
@@ -1457,7 +1457,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.label27.Location = new System.Drawing.Point(211, 269);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(39, 16);
+            this.label27.Size = new System.Drawing.Size(38, 16);
             this.label27.TabIndex = 278;
             this.label27.Text = "GOLOVI";
             // 
@@ -1468,7 +1468,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.label28.Location = new System.Drawing.Point(211, 232);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(47, 16);
+            this.label28.Size = new System.Drawing.Size(46, 16);
             this.label28.TabIndex = 277;
             this.label28.Text = "NASTUPI";
             // 
@@ -1534,7 +1534,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(5)))), ((int)(((byte)(7)))));
             this.label29.Location = new System.Drawing.Point(346, 232);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(81, 16);
+            this.label29.Size = new System.Drawing.Size(80, 16);
             this.label29.TabIndex = 271;
             this.label29.Text = "KONTROLA LOPTE";
             // 
@@ -1970,6 +1970,7 @@ namespace eBordo.WinUI.Forms.AdminPanel
             this.btnSaveUpdate.TextMarginLeft = 0;
             this.btnSaveUpdate.TextPadding = new System.Windows.Forms.Padding(0, 0, 7, 0);
             this.btnSaveUpdate.UseDefaultRadiusAndThickness = true;
+            this.btnSaveUpdate.Click += new System.EventHandler(this.btnSaveUpdate_Click);
             // 
             // frmDetaljiIgraca
             // 

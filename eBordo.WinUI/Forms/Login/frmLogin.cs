@@ -87,10 +87,10 @@ namespace eBordo.WinUI.Forms.Login
         private void frmLogin_Load(object sender, EventArgs e)
         {
             loader.Hide();
-            txtKorisnickoIme.Text = "haris.pandzic@fksarajevo.ba";
-            txtLozinka.Text = "Test1234!";
-            isEmailValidated = true;
-            isPasswordValidated = true;
+            //txtKorisnickoIme.Text = "haris.pandzic@fksarajevo.ba";
+            //txtLozinka.Text = "Test1234!";
+            //isEmailValidated = true;
+            //isPasswordValidated = true;
         }
 
         private void txtKorisnickoIme_TextChanged(object sender, EventArgs e)

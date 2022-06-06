@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsUtakmicaUcinak" targetNamespace="http://tempuri.org/dsUtakmicaUcinak.xsd" xmlns:mstns="http://tempuri.org/dsUtakmicaUcinak.xsd" xmlns="http://tempuri.org/dsUtakmicaUcinak.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsUtakmicaUcinak" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="dsUtakmicaUcinak" msprop:Generator_DataSetName="dsUtakmicaUcinak">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Igrac" msprop:Generator_RowEvHandlerName="IgracRowChangeEventHandler" msprop:Generator_RowDeletedName="IgracRowDeleted" msprop:Generator_RowDeletingName="IgracRowDeleting" msprop:Generator_RowEvArgName="IgracRowChangeEvent" msprop:Generator_TablePropName="Igrac" msprop:Generator_RowChangedName="IgracRowChanged" msprop:Generator_RowChangingName="IgracRowChanging" msprop:Generator_TableClassName="IgracDataTable" msprop:Generator_RowClassName="IgracRow" msprop:Generator_TableVarName="tableIgrac" msprop:Generator_UserTableName="Igrac">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ImePrezime" msprop:Generator_ColumnPropNameInRow="ImePrezime" msprop:Generator_ColumnPropNameInTable="ImePrezimeColumn" msprop:Generator_ColumnVarNameInTable="columnImePrezime" msprop:Generator_UserColumnName="ImePrezime" type="xs:string" minOccurs="0" />
+              <xs:element name="Pozicija" msprop:Generator_ColumnPropNameInRow="Pozicija" msprop:Generator_ColumnPropNameInTable="PozicijaColumn" msprop:Generator_ColumnVarNameInTable="columnPozicija" msprop:Generator_UserColumnName="Pozicija" type="xs:string" minOccurs="0" />
+              <xs:element name="BrojDresa" msprop:Generator_ColumnPropNameInRow="BrojDresa" msprop:Generator_ColumnPropNameInTable="BrojDresaColumn" msprop:Generator_ColumnVarNameInTable="columnBrojDresa" msprop:Generator_UserColumnName="BrojDresa" type="xs:string" minOccurs="0" />
+              <xs:element name="Minute" msprop:Generator_ColumnPropNameInRow="Minute" msprop:Generator_ColumnPropNameInTable="MinuteColumn" msprop:Generator_ColumnVarNameInTable="columnMinute" msprop:Generator_UserColumnName="Minute" type="xs:string" minOccurs="0" />
+              <xs:element name="Golovi" msprop:Generator_ColumnPropNameInRow="Golovi" msprop:Generator_ColumnPropNameInTable="GoloviColumn" msprop:Generator_ColumnVarNameInTable="columnGolovi" msprop:Generator_UserColumnName="Golovi" type="xs:string" minOccurs="0" />
+              <xs:element name="Asistencije" msprop:Generator_ColumnPropNameInRow="Asistencije" msprop:Generator_ColumnPropNameInTable="AsistencijeColumn" msprop:Generator_ColumnVarNameInTable="columnAsistencije" msprop:Generator_UserColumnName="Asistencije" type="xs:string" minOccurs="0" />
+              <xs:element name="ZutiKartoni" msprop:Generator_ColumnPropNameInRow="ZutiKartoni" msprop:Generator_ColumnPropNameInTable="ZutiKartoniColumn" msprop:Generator_ColumnVarNameInTable="columnZutiKartoni" msprop:Generator_UserColumnName="ZutiKartoni" type="xs:string" minOccurs="0" />
+              <xs:element name="CrveniKartoni" msprop:Generator_ColumnPropNameInRow="CrveniKartoni" msprop:Generator_ColumnPropNameInTable="CrveniKartoniColumn" msprop:Generator_ColumnVarNameInTable="columnCrveniKartoni" msprop:Generator_UserColumnName="CrveniKartoni" type="xs:string" minOccurs="0" />
+              <xs:element name="Ocjena" msprop:Generator_ColumnPropNameInRow="Ocjena" msprop:Generator_ColumnPropNameInTable="OcjenaColumn" msprop:Generator_ColumnVarNameInTable="columnOcjena" msprop:Generator_UserColumnName="Ocjena" type="xs:base64Binary" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
