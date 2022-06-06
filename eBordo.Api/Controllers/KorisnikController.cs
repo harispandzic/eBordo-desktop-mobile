@@ -1,4 +1,5 @@
 ﻿using eBordo.Api.Services.Korisnik;
+using eBordo.Model.Requests.Korisnik;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace eBordo.Api.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class KorisnikController : ControllerBase
@@ -22,6 +23,16 @@ namespace eBordo.Api.Controllers
         public ActionResult<Model.Models.Korisnik> Auth()
         {
             return _korisnikService.Auth();
+        }
+        [HttpPost("ChangePassword")]
+        public Task<Model.Models.Korisnik> ChangePassword([FromBody] KorisnikChangePasswordRequest request)
+        {
+            return _korisnikService.ChangePassword(request);
+        }
+        [HttpPut("/api/Korisnik/UrediKorisnika/{id}")]
+        public Model.Models.Korisnik UrediKorisnika(int id,[FromBody] KorisnikUpdateRequest request)
+        {
+            return _korisnikService.Update(id, request);
         }
     }
 }

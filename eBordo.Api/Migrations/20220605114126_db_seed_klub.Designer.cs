@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using eBordo.Api.Database;
 
 namespace eBordo.Api.Migrations
 {
     [DbContext(typeof(eBordoContext))]
-    partial class eBordoContextModelSnapshot : ModelSnapshot
+    [Migration("20220605114126_db_seed_klub")]
+    partial class db_seed_klub
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1076,23 +1078,6 @@ namespace eBordo.Api.Migrations
                     b.HasKey("trenerskaLicencaId");
 
                     b.ToTable("trenerskeLicence");
-
-                    b.HasData(
-                        new
-                        {
-                            trenerskaLicencaId = 1,
-                            nazivLicence = "UEFA A"
-                        },
-                        new
-                        {
-                            trenerskaLicencaId = 2,
-                            nazivLicence = "UEFA B"
-                        },
-                        new
-                        {
-                            trenerskaLicencaId = 3,
-                            nazivLicence = "UEFA PRO"
-                        });
                 });
 
             modelBuilder.Entity("eBordo.Api.Database.Trening", b =>

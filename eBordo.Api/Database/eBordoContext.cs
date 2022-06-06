@@ -6,13 +6,36 @@ using System.Threading.Tasks;
 
 namespace eBordo.Api.Database
 {
-    public class eBordoContext : DbContext
+    public partial class eBordoContext : DbContext
     {
         public eBordoContext() { }
 
         public eBordoContext(DbContextOptions<eBordoContext> options)
             : base(options)
         { }
+
+        public virtual DbSet<Pozicija> pozicije { get; set; }                           
+        public virtual DbSet<Drzava> drzave { get; set; }                               
+        public virtual DbSet<Grad> gradovi { get; set; }
+        public virtual DbSet<IgracSkills> igracSkills { get; set; }
+        public virtual DbSet<IgracStatistika> igracStatistika { get; set; }
+        public virtual DbSet<Ugovor> ugovori { get; set; }
+        public virtual DbSet<Korisnik> korisnici { get; set; }
+        public virtual DbSet<Igrac> igraci { get; set; }
+        public virtual DbSet<TrenerStatistika> trenerStatistika { get; set; }
+        public virtual DbSet<Formacija> formacije { get; set; }
+        public virtual DbSet<TrenerskaLicenca> trenerskeLicence { get; set; }
+        public virtual DbSet<Trener> treneri { get; set; }
+        public virtual DbSet<Stadion> stadioni { get; set; }
+        public virtual DbSet<Takmicenje> takmicenje { get; set; }
+        public virtual DbSet<Klub> klubovi { get; set; }
+        public virtual DbSet<UtakmicaSastav> utakmicaSastav { get; set; }
+        public virtual DbSet<Utakmica> utakmice { get; set; }
+        public virtual DbSet<UtakmicaNastup> utakmicaNastup { get; set; }
+        public virtual DbSet<UtakmicaIzmjena> utakmicaIzmjena { get; set; }
+        public virtual DbSet<Izvještaj> izvještaj { get; set; }
+        public virtual DbSet<Notifikacija> notifikacije { get; set; }
+        public virtual DbSet<Trening> trening { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -59,28 +82,9 @@ namespace eBordo.Api.Database
                 .WithOne(ad => ad.trenerStatistika)
                 .HasForeignKey<Trener>(ad => ad.trenerStatistikaId)
                 ;
+
+            OnModelCreatingPartial(modelBuilder);
         }
-        public virtual DbSet<Pozicija> pozicije { get; set; }
-        public virtual DbSet<Drzava> drzave { get; set; }
-        public virtual DbSet<Grad> gradovi { get; set; }
-        public virtual DbSet<IgracSkills> igracSkills { get; set; }
-        public virtual DbSet<IgracStatistika> igracStatistika { get; set; }
-        public virtual DbSet<Ugovor> ugovori { get; set; }
-        public virtual DbSet<Korisnik> korisnici { get; set; }
-        public virtual DbSet<Igrac> igraci { get; set; }
-        public virtual DbSet<TrenerStatistika> trenerStatistika { get; set; }
-        public virtual DbSet<Formacija> formacije { get; set; }
-        public virtual DbSet<TrenerskaLicenca> trenerskeLicence { get; set; }
-        public virtual DbSet<Trener> treneri { get; set; }
-        public virtual DbSet<Stadion> stadioni { get; set; }
-        public virtual DbSet<Takmicenje> takmicenje { get; set; }
-        public virtual DbSet<Klub> klubovi { get; set; }
-        public virtual DbSet<UtakmicaSastav> utakmicaSastav { get; set; }
-        public virtual DbSet<Utakmica> utakmice { get; set; }
-        public virtual DbSet<UtakmicaNastup> utakmicaNastup { get; set; }
-        public virtual DbSet<UtakmicaIzmjena> utakmicaIzmjena { get; set; }
-        public virtual DbSet<Izvještaj> izvještaj { get; set; }
-        public virtual DbSet<Notifikacija> notifikacije { get; set; }
-        public virtual DbSet<Trening> trening { get; set; }
+        partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }
 }

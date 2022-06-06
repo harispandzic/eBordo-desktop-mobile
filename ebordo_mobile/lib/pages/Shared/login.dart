@@ -37,6 +37,9 @@ class _LoginState extends State<Login> {
       result = await APIService.Auth();
 
       if (result == null) {
+        setState(() {
+          _isLoading = false;
+        });
         MotionToast.error(
           title: "Korisničko ime i lozinka nisu ispravni!",
           titleStyle: TextStyle(fontWeight: FontWeight.bold),
@@ -67,6 +70,9 @@ class _LoginState extends State<Login> {
         height: 80,
         toastDuration: Duration(seconds: 4),
       ).show(context);
+      setState(() {
+        _isLoading = false;
+      });
     }
   }
 

@@ -799,6 +799,7 @@ class _DetaljiUtakmiceState extends State<DetaljiUtakmice> {
         height: 60,
       ).show(context);
     }
+    return null;
   }
 
   Future<void>? obrisiIzPostave(
@@ -829,7 +830,7 @@ class _DetaljiUtakmiceState extends State<DetaljiUtakmice> {
       isPodaciPromjenjeni = true;
     });
     if (sastavId != 0 && sastavId != null) {
-      await APIService.DeleteById("UtakmicaSastav", sastavId!);
+      await APIService.DeleteById("UtakmicaSastav", sastavId);
     }
     if (!isUredjivanje!) {
       MotionToast.success(

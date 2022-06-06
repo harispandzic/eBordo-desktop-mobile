@@ -43,6 +43,7 @@ using eBordo.Api.Services.UtakmicaIzmjena;
 using eBordo.Api.Services.Notifikacija;
 using eBordo.Api.Services.Trening;
 using eBordo.Api.Filters;
+using eBordo.Api.Services.Event;
 
 namespace eBordo.Api
 {
@@ -110,6 +111,7 @@ namespace eBordo.Api
             services.AddScoped<IUtakmicaIzmjenaService, UtakmicaIzmjenaService>();
             services.AddScoped<INotifikacijaService, NotifikacijaService>();
             services.AddScoped<ITreningService, TreningService>();
+            services.AddScoped<IEventService, EventService>();
 
             services.AddAuthentication("BasicAuthentication")
                 .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
