@@ -4,9 +4,9 @@ using System.Text;
 
 namespace eBordo.Model.Models
 {
-    public class Izvještaj
+    public class Izvjestaj
     {
-        public int izvještajId { get; set; }
+        public int izvjestajId { get; set; }
         public int goloviSarajevo { get; set; }
         public int goloviProtivnik { get; set; }
         public Rezultat rezultat { get; set; }

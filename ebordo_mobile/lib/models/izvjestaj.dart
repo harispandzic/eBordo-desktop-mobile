@@ -37,7 +37,7 @@ class Izvjestaj {
     String stringByte = json["slikaSaUtakmice"] as String;
     List<int> bytes = base64.decode(stringByte);
     return Izvjestaj(
-        izvjestajId: int.parse(json["izvještajId"].toString()),
+        izvjestajId: int.parse(json["izvjestajId"].toString()),
         goloviSarajevo: json["goloviSarajevo"],
         goloviProtivnik: json["goloviProtivnik"],
         rezultat: json["rezultat"],

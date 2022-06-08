@@ -1,4 +1,4 @@
-﻿using eBordo.Api.Services.Izvještaj;
+﻿using eBordo.Api.Services.Izvjestaj;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace eBordo.Api.Controllers
 {
-    public class IzvještajController : BaseCRUDController<eBordo.Model.Models.Izvještaj, eBordo.Model.Requests.Izvještaj.IzvjestajSearchObject, eBordo.Model.Requests.Izvještaj.IzvjetajInsertRequest, eBordo.Model.Requests.Izvještaj.IzvjestajUpdateRequest>
+    public class IzvjestajController : BaseCRUDController<eBordo.Model.Models.Izvjestaj, eBordo.Model.Requests.Izvjestaj.IzvjestajSearchObject, eBordo.Model.Requests.Izvjestaj.IzvjetajInsertRequest, eBordo.Model.Requests.Izvjestaj.IzvjestajUpdateRequest>
     {
-        public IzvještajController(IIzvještajService service) : base(service) { }
+        public IzvjestajController(IIzvjestajService service) : base(service) { }
     }
 }

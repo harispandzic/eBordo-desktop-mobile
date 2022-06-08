@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace eBordo.Model.Requests.Izvještaj
+namespace eBordo.Model.Requests.Izvjestaj
 {
     public class IzvjestajSearchObject
     {

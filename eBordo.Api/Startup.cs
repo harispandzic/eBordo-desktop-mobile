@@ -36,7 +36,6 @@ using eBordo.Api.Services.Klub;
 using eBordo.Api.Services.Utakmica;
 using eBordo.Api.Services.UtakmicaSastav;
 using Newtonsoft.Json;
-using eBordo.Api.Services.Izvještaj;
 using eBordo.Api.Services.UtakmicaNastupService;
 using eBordo.Api.Services.UtakmicaNastup;
 using eBordo.Api.Services.UtakmicaIzmjena;
@@ -44,6 +43,13 @@ using eBordo.Api.Services.Notifikacija;
 using eBordo.Api.Services.Trening;
 using eBordo.Api.Filters;
 using eBordo.Api.Services.Event;
+using eBordo.Api.Services.Izvjestaj;
+using System.Net.Sockets;
+using System.Net;
+using Microsoft.AspNetCore.DataProtection;
+using System.IO;
+using Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel;
+using Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption;
 
 namespace eBordo.Api
 {
@@ -84,7 +90,7 @@ namespace eBordo.Api
                 });
             });
 
-            services.AddDbContext<eBordoContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<eBordoContext>(options => options.UseSqlServer(Configuration.GetConnectionString("eBordo")));
 
             services.AddAutoMapper(typeof(Startup));
 
@@ -106,7 +112,7 @@ namespace eBordo.Api
             services.AddScoped<IKlubService, KlubService>();
             services.AddScoped<IUtakmicaService, UtakmicaService>();
             services.AddScoped<IUtakmicaSastavService, UtakmicaSastavService>();
-            services.AddScoped<IIzvještajService, IzvještajService>();
+            services.AddScoped<IIzvjestajService, IzvjestajService>();
             services.AddScoped<IUtakmicaNastupService, UtakmicaNastupService>();
             services.AddScoped<IUtakmicaIzmjenaService, UtakmicaIzmjenaService>();
             services.AddScoped<INotifikacijaService, NotifikacijaService>();
@@ -117,6 +123,13 @@ namespace eBordo.Api
                 .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
 
             services.AddHttpContextAccessor();
+
+            services.AddDataProtection().PersistKeysToFileSystem(new DirectoryInfo(@"C:\temp-keys\"))
+                .UseCryptographicAlgorithms(new AuthenticatedEncryptorConfiguration()
+                {
+                    EncryptionAlgorithm = EncryptionAlgorithm.AES_256_CBC,
+                    ValidationAlgorithm = ValidationAlgorithm.HMACSHA256
+                });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

@@ -16,7 +16,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
 {
     public partial class frmIzvjestajKartica : UserControl
     {
-        private readonly ApiService.ApiService _izvjestaj = new ApiService.ApiService("Izvještaj");
+        private readonly ApiService.ApiService _izvjestaj = new ApiService.ApiService("Izvjestaj");
         BunifuSnackbar _snackbar;
 
         private frmPrikazOdigranihUtakmica _prikazOdigranihUtakmica;
@@ -55,7 +55,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
 
         public frmIzvjestajKartica(frmPrikazOdigranihUtakmica prikazOdigranihUtakmica, BunifuSnackbar snackbar)
         {
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 285,249, 12, 12));
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 285, 249, 12, 12));
             InitializeComponent();
             _prikazOdigranihUtakmica = prikazOdigranihUtakmica;
             _snackbar = snackbar;
@@ -108,7 +108,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
         {
             try
             {
-                var result = await _izvjestaj.GetById<Model.Models.Izvještaj>(izvjestajId);
+                var result = await _izvjestaj.GetById<Model.Models.Izvjestaj>(izvjestajId);
                 frmUpsertIzvjestaj update = new frmUpsertIzvjestaj(result.utakmicaID, _prikazOdigranihUtakmica, result);
                 update.Show();
             }
@@ -122,7 +122,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
         {
             try
             {
-                await _izvjestaj.DeleteById<Model.Models.Izvještaj>(izvjestajId);
+                await _izvjestaj.DeleteById<Model.Models.Izvjestaj>(izvjestajId);
                 await _prikazOdigranihUtakmica.LoadIzvještaj(notifikacija: TipNotifikacije.BRISANJE);
             }
             catch
@@ -135,7 +135,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
         {
             try
             {
-                var result = await _izvjestaj.GetById<Model.Models.Izvještaj>(izvjestajId);
+                var result = await _izvjestaj.GetById<Model.Models.Izvjestaj>(izvjestajId);
                 frmDetaljiOdigraneUtakmice detalji = new frmDetaljiOdigraneUtakmice(result);
                 detalji.Show();
             }

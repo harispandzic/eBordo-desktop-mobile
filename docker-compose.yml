@@ -1,0 +1,33 @@
+version: '3'
+services:
+  #mssql docker
+  ebordo-sql:
+    image: mcr.microsoft.com/mssql/server:2017-latest-ubuntu
+    restart: unless-stopped
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=FKSarajevo1946
+      - MSSQL_PID=Developer
+    ports:
+      - 1401:1433
+    networks:
+      - ebordonet
+
+  ebordo-api:
+    restart: unless-stopped
+    build:
+      context: .
+    environment:
+      - ConnectionStrings:eBordo=Server=ebordo-sql,1433;Database=eBordo_db;User=sa;Password=FKSarajevo1946;ConnectRetryCount=0
+    ports:
+      - 5000:5050
+    networks:
+      - ebordonet
+    links:
+      - ebordo-sql
+    depends_on:
+      - ebordo-sql
+
+networks:
+  ebordonet:
+    driver: bridge

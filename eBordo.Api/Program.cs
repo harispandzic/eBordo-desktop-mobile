@@ -13,6 +13,7 @@ namespace eBordo.Api
 {
     public class Program
     {
+        
         public static void Main(string[] args)
         {
             var host = CreateHostBuilder(args).Build();
@@ -23,7 +24,7 @@ namespace eBordo.Api
                 var igrac_service = scope.ServiceProvider.GetRequiredService<eBordo.Api.Services.Igrac.IIgracService>();
                 var trener_service = scope.ServiceProvider.GetRequiredService<eBordo.Api.Services.Trener.ITrenerService>();
                 var utakmica_service = scope.ServiceProvider.GetRequiredService<eBordo.Api.Services.Utakmica.IUtakmicaService>();
-                var izvjestaj_service = scope.ServiceProvider.GetRequiredService<eBordo.Api.Services.Izvještaj.IIzvještajService>();
+                var izvjestaj_service = scope.ServiceProvider.GetRequiredService<eBordo.Api.Services.Izvjestaj.IIzvjestajService>();
                 var trening_service = scope.ServiceProvider.GetRequiredService<eBordo.Api.Services.Trening.ITreningService>();
                 Database.Data.Seed(eBordoContext, korisnik_service, igrac_service, trener_service, utakmica_service, izvjestaj_service, trening_service);
             }

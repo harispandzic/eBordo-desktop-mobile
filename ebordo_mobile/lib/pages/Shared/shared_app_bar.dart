@@ -83,7 +83,7 @@ class _SharedAppBarState extends State<SharedAppBar> {
                   color: Colors.white,
                   letterSpacing: 0,
                   fontWeight: FontWeight.bold)),
-          SizedBox(width: 120),
+          SizedBox(width: MediaQuery.of(context).size.width - 240),
           TextButton(
               child: Badge(
                 badgeColor: HexColor("#FFC107"),

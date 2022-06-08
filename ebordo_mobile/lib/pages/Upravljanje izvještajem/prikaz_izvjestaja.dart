@@ -48,7 +48,7 @@ class _PrikazRezultataState extends State<PrikazRezultata> {
     Map<String, String>? queryParams = null;
     queryParams = {'tipUtakmice': "", 'odigrana': "false"};
 
-    var result = await APIService.Get("Izvještaj", queryParams) as List;
+    var result = await APIService.Get("Izvjestaj", queryParams) as List;
 
     setState(() {
       isDataLoading = false;
