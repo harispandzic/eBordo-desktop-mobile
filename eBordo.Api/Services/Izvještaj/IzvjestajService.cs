@@ -5,7 +5,7 @@ using eBordo.Api.Services.Notifikacija;
 using eBordo.Api.Services.UtakmicaIzmjena;
 using eBordo.Api.Services.UtakmicaNastupService;
 using eBordo.Model.Exceptions;
-using eBordo.Model.Requests.Izvještaj;
+using eBordo.Model.Requests.Izvjestaj;
 using eBordo.Model.Requests.Notifikacija;
 using eBordo.Model.Requests.UtakmicaIzmjena;
 using eBordo.Model.Requests.UtakmicaNastup;
@@ -14,25 +14,27 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Vonage;
+using Vonage.Request;
 
-namespace eBordo.Api.Services.Izvještaj
+namespace eBordo.Api.Services.Izvjestaj
 {
-    public class IzvještajService : BaseCRUDService<eBordo.Model.Models.Izvještaj, eBordo.Api.Database.Izvještaj, eBordo.Model.Requests.Izvještaj.IzvjestajSearchObject, eBordo.Model.Requests.Izvještaj.IzvjetajInsertRequest, eBordo.Model.Requests.Izvještaj.IzvjestajUpdateRequest>, IIzvještajService
+    public class IzvjestajService : BaseCRUDService<eBordo.Model.Models.Izvjestaj, eBordo.Api.Database.Izvjestaj, eBordo.Model.Requests.Izvjestaj.IzvjestajSearchObject, eBordo.Model.Requests.Izvjestaj.IzvjetajInsertRequest, eBordo.Model.Requests.Izvjestaj.IzvjestajUpdateRequest>, IIzvjestajService
     {
         private IUtakmicaNastupService _utakmicaNastupService { get; set; }
         private IUtakmicaIzmjenaService _utakmicaIzmjenaService { get; set; }
         private INotifikacijaService _notifikacijaService { get; set; }
 
-        public IzvještajService(eBordoContext db, IMapper mapper, IUtakmicaNastupService utakmicaNastupService, IUtakmicaIzmjenaService utakmicaIzmjenaService, INotifikacijaService notifikacijaService)
+        public IzvjestajService(eBordoContext db, IMapper mapper, IUtakmicaNastupService utakmicaNastupService, IUtakmicaIzmjenaService utakmicaIzmjenaService, INotifikacijaService notifikacijaService)
             : base(db, mapper)
         {
             _utakmicaNastupService = utakmicaNastupService;
             _utakmicaIzmjenaService = utakmicaIzmjenaService;
             _notifikacijaService = notifikacijaService;
         }
-        public override IEnumerable<Model.Models.Izvještaj> Get(IzvjestajSearchObject search = null)
+        public override IEnumerable<Model.Models.Izvjestaj> Get(IzvjestajSearchObject search = null)
         {
-            var entity = _db.izvještaj
+            var entity = _db.izvjestaj
                 .Include(s => s.nastupi)
                     .ThenInclude(t => t.igrac)
                     .ThenInclude(t => t.korisnik)
@@ -167,49 +169,113 @@ namespace eBordo.Api.Services.Izvještaj
             }
             var result = entity.ToList();
 
-            return _mapper.Map<List<Model.Models.Izvještaj>>(result);
+            return _mapper.Map<List<Model.Models.Izvjestaj>>(result);
         }
-        public override Model.Models.Izvještaj GetById(int id)
+        public override Model.Models.Izvjestaj GetById(int id)
         {
-            var entity = _db.izvještaj
-                .Where(s => s.izvještajId == id)
-                .Include(s => s.nastupi)
+            var entity = _db.izvjestaj
+                .Where(s => s.izvjestajId == id)
+            .Include(s => s.nastupi)
                     .ThenInclude(t => t.igrac)
                     .ThenInclude(t => t.korisnik)
                 .Include(s => s.nastupi)
                     .ThenInclude(t => t.igrac)
-                    .ThenInclude(t => t.pozicija)
+                    .ThenInclude(t => t.korisnik.gradRodjenja)
+                    .ThenInclude(t => t.drzava)
+                .Include(s => s.nastupi)
+                    .ThenInclude(t => t.igrac)
+                    .ThenInclude(t => t.korisnik)
+                    .ThenInclude(t => t.drzavljanstvo)
+                .Include(s => s.nastupi)
+                    .ThenInclude(t => t.igrac.igracStatistika)
+                .Include(s => s.nastupi)
+                    .ThenInclude(t => t.igrac.igracSkills)
+                .Include(s => s.nastupi)
+                    .ThenInclude(t => t.igrac.pozicija)
+                .Include(s => s.nastupi)
+                    .ThenInclude(t => t.igrac.ugovor)
                 .Include(s => s.izmjene)
                     .ThenInclude(t => t.igracIn)
                     .ThenInclude(t => t.korisnik)
                 .Include(s => s.izmjene)
                     .ThenInclude(t => t.igracIn)
-                    .ThenInclude(t => t.pozicija)
+                    .ThenInclude(t => t.korisnik.gradRodjenja)
+                    .ThenInclude(t => t.drzava)
                 .Include(s => s.izmjene)
-                    .ThenInclude(t => t.igracOut)
-                    .ThenInclude(t => t.pozicija)
+                    .ThenInclude(t => t.igracIn)
+                    .ThenInclude(t => t.korisnik)
+                    .ThenInclude(t => t.drzavljanstvo)
+                .Include(s => s.izmjene)
+                    .ThenInclude(t => t.igracIn.igracStatistika)
+                .Include(s => s.izmjene)
+                    .ThenInclude(t => t.igracIn.igracSkills)
+                .Include(s => s.izmjene)
+                    .ThenInclude(t => t.igracIn.pozicija)
+                .Include(s => s.izmjene)
+                    .ThenInclude(t => t.igracIn.ugovor)
                 .Include(s => s.izmjene)
                     .ThenInclude(t => t.igracOut)
                     .ThenInclude(t => t.korisnik)
+                .Include(s => s.izmjene)
+                    .ThenInclude(t => t.igracOut)
+                    .ThenInclude(t => t.korisnik.gradRodjenja)
+                    .ThenInclude(t => t.drzava)
+                .Include(s => s.izmjene)
+                    .ThenInclude(t => t.igracOut)
+                    .ThenInclude(t => t.korisnik)
+                    .ThenInclude(t => t.drzavljanstvo)
+                .Include(s => s.izmjene)
+                    .ThenInclude(t => t.igracOut.igracStatistika)
+                .Include(s => s.izmjene)
+                    .ThenInclude(t => t.igracOut.igracSkills)
+                .Include(s => s.izmjene)
+                    .ThenInclude(t => t.igracOut.pozicija)
+                .Include(s => s.izmjene)
+                    .ThenInclude(t => t.igracOut.ugovor)
                 .Include(s => s.igracUtakmica)
+                .Include(s => s.igracUtakmica.igracStatistika)
+                .Include(s => s.igracUtakmica.igracSkills)
+                .Include(s => s.igracUtakmica.pozicija)
                 .Include(s => s.igracUtakmica.korisnik)
+                .Include(s => s.igracUtakmica.korisnik.drzavljanstvo)
+                .Include(s => s.igracUtakmica.korisnik.gradRodjenja.drzava)
+                .Include(s => s.igracUtakmica.ugovor)
                 .Include(s => s.utakmica)
                 .Include(s => s.utakmica.stadion)
+                .Include(s => s.utakmica.stadion.lokacijaStadiona)
+                .Include(s => s.utakmica.stadion.lokacijaStadiona.drzava)
                 .Include(s => s.utakmica.takmicenje)
                 .Include(s => s.utakmica.kapiten)
+                .Include(s => s.utakmica.kapiten.igracStatistika)
+                .Include(s => s.utakmica.kapiten.igracSkills)
+                .Include(s => s.utakmica.kapiten.pozicija)
                 .Include(s => s.utakmica.kapiten.korisnik)
+                .Include(s => s.utakmica.kapiten.korisnik.drzavljanstvo)
+                .Include(s => s.utakmica.kapiten.korisnik.gradRodjenja.drzava)
+                .Include(s => s.utakmica.kapiten.ugovor)
                 .Include(s => s.utakmica.trener)
+                .Include(s => s.utakmica.trener.trenerStatistika)
+                .Include(s => s.utakmica.trener.trenerskaLicenca)
+                .Include(s => s.utakmica.trener.formacija)
+                .Include(s => s.utakmica.trener.ugovor)
                 .Include(s => s.utakmica.trener.korisnik)
+                .Include(s => s.utakmica.trener.korisnik.drzavljanstvo)
+                .Include(s => s.utakmica.trener.korisnik.gradRodjenja.drzava)
                 .Include(s => s.utakmica.protivnik)
+                .Include(s => s.utakmica.protivnik.stadion)
+                .Include(s => s.utakmica.protivnik.stadion.lokacijaStadiona)
+                .Include(s => s.utakmica.protivnik.stadion.lokacijaStadiona.drzava)
+                .Include(s => s.utakmica.protivnik.grad)
+                .Include(s => s.utakmica.protivnik.grad.drzava)
                 .Include(s => s.trener)
                 .Include(s => s.trener.korisnik)
                 .AsQueryable();
 
             var result = entity.SingleOrDefault();
 
-            return _mapper.Map<Model.Models.Izvještaj>(result);
+            return _mapper.Map<Model.Models.Izvjestaj>(result);
         }
-        public override Model.Models.Izvještaj Insert(IzvjetajInsertRequest request)
+        public override Model.Models.Izvjestaj Insert(IzvjetajInsertRequest request)
         {
             string rezultat = "";
             if (request.goloviSarajevo > request.goloviProtivnik)
@@ -224,7 +290,7 @@ namespace eBordo.Api.Services.Izvještaj
             {
                 rezultat = "NERJEŠENO";
             }
-            eBordo.Api.Database.Izvještaj izvjestaj = new Database.Izvještaj
+            eBordo.Api.Database.Izvjestaj izvjestaj = new Database.Izvjestaj
             {
                 goloviSarajevo = request.goloviSarajevo,
                 goloviProtivnik = request.goloviProtivnik,
@@ -242,8 +308,8 @@ namespace eBordo.Api.Services.Izvještaj
             _db.SaveChanges();
 
             var igraciUtakmica = _db.utakmicaSastav.Where(s => s.utakmicaId == request.utakmicaID).Include(s => s.igrac).ToList();
-         
-            Database.Izvještaj izvjestajSearch = _db.izvještaj.Where(s => s.utakmicaID == request.utakmicaID).SingleOrDefault();
+
+            Database.Izvjestaj izvjestajSearch = _db.izvjestaj.Where(s => s.utakmicaID == request.utakmicaID).SingleOrDefault();
 
             if (request.utakmicaNastup.Count != 0)
             {
@@ -279,19 +345,46 @@ namespace eBordo.Api.Services.Izvještaj
             //    NotifikacijaInsertRequest notifikacijaInsertRequest = new NotifikacijaInsertRequest
             //    {
             //        korisnikId = item.igrac.korisnik.korisnikId,
-            //        tekstNotifikacije = "Izvještaj za utakmicu protiv" + utakmicaSearch.protivnik.nazivKluba + " je kreiran!",
+            //        tekstNotifikacije = "Izvjestaj za utakmicu protiv" + utakmicaSearch.protivnik.nazivKluba + " je kreiran!",
             //        tipNotifikacije = "Info"
             //    };
 
             //    _notifikacijaService.Insert(notifikacijaInsertRequest);
             //}
 
+            try
+            {
+                Database.Igrac igracUtakmice = _db.igraci
+                .Where(s => s.igracId == request.igracUtakmicaID)
+                .Include(s => s.korisnik)
+                .FirstOrDefault();
 
-            return _mapper.Map<Model.Models.Izvještaj>(izvjestaj);
+                var credentials = Credentials.FromApiKeyAndSecret(
+                "f9a87310",
+                "4iJaLbyjSXUcOuIm"
+                );
+
+                var VonageClient = new VonageClient(credentials);
+
+                var response = VonageClient.SmsClient.SendAnSms(new Vonage.Messaging.SendSmsRequest()
+                {
+                    To = "38762209709",
+                    From = "FK SARAJEVO",
+                    Text = igracUtakmice.korisnik.ime + " " + igracUtakmice.korisnik.prezime + ", čestitamo na osvojenoj nagradi za igrača utakmice!"
+                });
+
+            }
+            catch (Exception e)
+            {
+
+            }
+
+
+            return _mapper.Map<Model.Models.Izvjestaj>(izvjestaj);
         }
-        public override Model.Models.Izvještaj Update(int id, IzvjestajUpdateRequest request)
+        public override Model.Models.Izvjestaj Update(int id, IzvjestajUpdateRequest request)
         {
-            Database.Izvještaj izvjestaj = _db.izvještaj.Where(s => s.izvještajId == id).SingleOrDefault();
+            Database.Izvjestaj izvjestaj = _db.izvjestaj.Where(s => s.izvjestajId == id).SingleOrDefault();
 
             izvjestaj.zapisnik = request.zapisnik;
 
@@ -327,7 +420,7 @@ namespace eBordo.Api.Services.Izvještaj
 
             ICollection<Database.UtakmicaNastup> nastupiUtakmicaDatabase = _db.utakmicaNastup.Where(s => s.utakmicaId == request.utakmicaId).ToList();
 
-         
+
             if (request.izmjene.Count != 0)
             {
                 foreach (var item in request.izmjene)
@@ -346,7 +439,7 @@ namespace eBordo.Api.Services.Izvještaj
                     }
                     else
                     {
-                        _utakmicaIzmjenaService.Update(item.utakmicaIzmjenaId,item);
+                        _utakmicaIzmjenaService.Update(item.utakmicaIzmjenaId, item);
                     }
                 }
             }
@@ -358,11 +451,11 @@ namespace eBordo.Api.Services.Izvještaj
 
             _db.SaveChanges();
 
-            return _mapper.Map<Model.Models.Izvještaj>(izvjestaj);
+            return _mapper.Map<Model.Models.Izvjestaj>(izvjestaj);
         }
-        public override Model.Models.Izvještaj Delete(int id)
+        public override Model.Models.Izvjestaj Delete(int id)
         {
-            var entity = _db.izvještaj.Where(s => s.izvještajId == id).FirstOrDefault();
+            var entity = _db.izvjestaj.Where(s => s.izvjestajId == id).FirstOrDefault();
 
             var utakmicaNastupi = _db.utakmicaNastup.Where(s => s.utakmicaId == entity.utakmicaID).ToList();
 
@@ -388,7 +481,7 @@ namespace eBordo.Api.Services.Izvještaj
             _db.Remove(entity);
             _db.SaveChanges();
 
-            return _mapper.Map<Model.Models.Izvještaj>(entity);
+            return _mapper.Map<Model.Models.Izvjestaj>(entity);
         }
     }
 }

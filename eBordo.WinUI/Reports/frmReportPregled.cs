@@ -23,8 +23,8 @@ namespace eBordo.WinUI.Reports
         Model.Models.Utakmica _odabranaUtakmica;
         List<Model.Models.Utakmica> _listaUtakmica;
         List<Model.Models.Trener> _listaTrenera;
-        List<Model.Models.Izvještaj> _listaRezultata;
-        Model.Models.Izvještaj _odabraniRezultat;
+        List<Model.Models.Izvjestaj> _listaRezultata;
+        Model.Models.Izvjestaj _odabraniRezultat;
         List<Model.Models.Trening> _listaTreninga;
 
         public frmReportPregled(Model.Models.Igrac odabraniIgrac, 
@@ -33,8 +33,8 @@ namespace eBordo.WinUI.Reports
             List<Model.Models.Utakmica> listaUtakmica,
             List<Model.Models.Trener> listaTrenera,
             Model.Models.Trener odabraniTrener,
-            List<Model.Models.Izvještaj> listaRezultata,
-            Model.Models.Izvještaj odabraniRezultat,
+            List<Model.Models.Izvjestaj> listaRezultata,
+            Model.Models.Izvjestaj odabraniRezultat,
             List<Model.Models.Trening> listaTreninga)
         {
             InitializeComponent();

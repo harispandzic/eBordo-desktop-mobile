@@ -1,4 +1,4 @@
-﻿using eBordo.Model.Requests.Izvještaj;
+﻿using eBordo.Model.Requests.Izvjestaj;
 using eBordo.WinUI.Helper;
 using eBordo.WinUI.Reports;
 using System;
@@ -15,8 +15,8 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
 {
     public partial class frmPrikazOdigranihUtakmica : UserControl
     {
-        private readonly ApiService.ApiService _izvjestaj = new ApiService.ApiService("Izvještaj");
-        private List<Model.Models.Izvještaj> _podaci;
+        private readonly ApiService.ApiService _izvjestaj = new ApiService.ApiService("Izvjestaj");
+        private List<Model.Models.Izvjestaj> _podaci;
         ByteToImage byteToImage = new ByteToImage();
 
         int brojPonavljanja = 0;
@@ -65,7 +65,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             {
                 pnlUtakmiceWrapper.Controls.Clear();
 
-                _podaci = await _izvjestaj.GetAll<List<Model.Models.Izvještaj>>(search);
+                _podaci = await _izvjestaj.GetAll<List<Model.Models.Izvjestaj>>(search);
                 loader.Hide();
                 gifLoader.Hide();
 
@@ -92,7 +92,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
                 for (int i = 0; i < listItems.Length; i++)
                 {
                     listItems[i] = new frmIzvjestajKartica(this, snackbar);
-                    listItems[i].izvjestajId = _podaci[i].izvještajId;
+                    listItems[i].izvjestajId = _podaci[i].izvjestajId;
                     listItems[i].utakmicaId = _podaci[i].utakmicaID;
                     if (_podaci[i].utakmica.vrstaUtakmice == "Domaća")
                     {
@@ -126,7 +126,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
                     {
                         listItems[i].dres = Properties.Resources.rezervni;
                     }
-                    if(_podaci[i].goloviSarajevo > _podaci[i].goloviProtivnik)
+                    if (_podaci[i].goloviSarajevo > _podaci[i].goloviProtivnik)
                     {
                         listItems[i].rezultat = Properties.Resources.eBordo_success_notification;
                         listItems[i].rezultatOpis = "POBJEDA";

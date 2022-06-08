@@ -1,5 +1,5 @@
 ﻿using eBordo.Model.Models;
-using eBordo.Model.Requests.Izvještaj;
+using eBordo.Model.Requests.Izvjestaj;
 using eBordo.Model.Requests.UtakmicaIzmjena;
 using eBordo.Model.Requests.UtakmicaNastup;
 using eBordo.Model.Requests.UtakmicaSastav;
@@ -20,15 +20,15 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
     {
         private readonly ApiService.ApiService _utakmicaApi = new ApiService.ApiService("Utakmica");
         private readonly ApiService.ApiService _utakmicaSastavApi = new ApiService.ApiService("UtakmicaSastav");
-        private readonly ApiService.ApiService _izvjestajApi = new ApiService.ApiService("Izvještaj");
+        private readonly ApiService.ApiService _izvjestajApi = new ApiService.ApiService("Izvjestaj");
 
-        private byte[] utakmicaSlika{ get; set; }
+        private byte[] utakmicaSlika { get; set; }
         ByteToImage byteToImage = new ByteToImage();
         frmPrikazOdigranihUtakmica _prikazUtakmica;
 
         private int _utakmicaId;
         private Utakmica _utakmica = new Utakmica();
-        private Izvještaj _izvještaj = new Izvještaj();
+        private Izvjestaj _izvještaj = new Izvjestaj();
         private List<Model.Models.UtakmicaSastav> _utakmicaSastav = new List<Model.Models.UtakmicaSastav>();
         private List<Model.Models.Igrac> _igraciPrvaPostava = new List<Model.Models.Igrac>();
         private List<Model.Models.Igrac> _igraciKlupa = new List<Model.Models.Igrac>();
@@ -40,21 +40,21 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
 
         bool isMinuteValidated = false, isGoloviValidated = false, isAsistencijeValidated = false,
             isZutKartoniValidated = false, isCrveniKartoniValidated = false, isIgracValidated = false,
-            isIgracUtakmiceValidated = false,isIgracOUTValidated = false,isIgracINValidated = false,isRazlogIzmjeneVAlidated;
+            isIgracUtakmiceValidated = false, isIgracOUTValidated = false, isIgracINValidated = false, isRazlogIzmjeneVAlidated;
 
 
         bool isMinutaIzmjenaValidirana = false;
 
         bool isSlikaUtakmiceValidated = false, isGoloviDomacinValidated = false, isGoloviGostValidated = false;
 
-        public frmUpsertIzvjestaj(int utakmicaId, frmPrikazOdigranihUtakmica prikazUtakmica, Izvještaj izvještaj)
+        public frmUpsertIzvjestaj(int utakmicaId, frmPrikazOdigranihUtakmica prikazUtakmica, Izvjestaj izvjestaj)
         {
             InitializeComponent();
             _utakmicaId = utakmicaId;
             _prikazUtakmica = prikazUtakmica;
-            _izvještaj = izvještaj;
+            _izvještaj = izvjestaj;
         }
-       
+
         private async void frmUpsertIzvjestaj_Load(object sender, EventArgs e)
         {
             await LoadIgraci();
@@ -63,7 +63,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             if (_izvještaj != null)
             {
                 btnSaveUpdate.Show();
-                this.Text = "eBordo | Uredi izvještaj";
+                this.Text = "eBordo | Uredi izvjestaj";
                 txtGoloviDomacin.Enabled = false;
                 txtGoloviGost.Enabled = false;
                 radioBtnKisa.Enabled = false;
@@ -92,7 +92,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             else
             {
                 btnSave.Show();
-                this.Text = "eBordo | Dodaj izvještaj";
+                this.Text = "eBordo | Dodaj izvjestaj";
                 txtGoloviDomacinhUredjivanje.Visible = false;
                 txtGoloviGostijuUredjivanje.Visible = false;
                 pictureRezultat.Visible = false;
@@ -122,7 +122,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
                 cmbIgracUtakmice.Enabled = false;
             }
             txtZapisnik.Text = _izvještaj.zapisnik;
-            if(_izvještaj.izmjene.Count() != 0)
+            if (_izvještaj.izmjene.Count() != 0)
             {
                 foreach (var item in _izvještaj.izmjene)
                 {
@@ -143,7 +143,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
                     flowPanelIzmjene.Controls.Add(izmjena);
                 }
             }
-            if(_izvještaj.nastupi.Count() > 0)
+            if (_izvještaj.nastupi.Count() > 0)
             {
                 frmIgracNastupKartica nastup;
                 foreach (var item in _izvještaj.nastupi)
@@ -350,7 +350,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
         }
         public void filterIgraci(TipFiltera tipFiltera, int igracId = -1)
         {
-            cmbIgraciSastav.Enabled = true;           
+            cmbIgraciSastav.Enabled = true;
 
             if (tipFiltera == TipFiltera.Uredjivanje)
             {
@@ -385,7 +385,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             }
             if (_ostaliIgraci.Count() == 0)
             {
-                PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.DODAVANJE); 
+                PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.DODAVANJE);
                 return;
             }
             else
@@ -396,7 +396,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
                 }
             }
         }
-       
+
         private void button4_Click(object sender, EventArgs e)
         {
             cmbIgracOut.Enabled = true;
@@ -436,7 +436,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
         private bool ValidirajFormu()
         {
             bool isUspjesno = true;
-            if(_izvještaj != null)
+            if (_izvještaj != null)
             {
                 if (!isSlikaUtakmiceValidated || !isIgracUtakmiceValidated)
                 {
@@ -580,7 +580,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             pictureSlikaIgraca.BackgroundImage = byteToImage.ConvertByteToImage(igrac.slikaPanel);
             pictureSlikaIgraca.BackgroundImageLayout = ImageLayout.Zoom;
             txtPrezime.Text = (igrac.korisnik.ime[0] + ". " + igrac.korisnik.prezime).ToUpper();
-            igracOcjena.Value = (int)igrac.igracStatistika.prosjecnaOcjena;           
+            igracOcjena.Value = (int)igrac.igracStatistika.prosjecnaOcjena;
         }
         private void cmbIgraciSastav_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -658,7 +658,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
                 izmjena.razlogIzmjene = razlogIzmjene.ToUpper();
                 izmjena.utakmicaIzmjenaId = izmjenaId;
                 flowPanelIzmjene.Controls.Add(izmjena);
-                if(cmbIgracIn.Enabled && cmbIgracOut.Enabled)
+                if (cmbIgracIn.Enabled && cmbIgracOut.Enabled)
                 {
                     PosaljiNotifikaciju.notificationSwitch(snackbar, this, TipNotifikacije.IZMJENA_USPJEŠNO_EVIDENTIRANA);
                 }
@@ -682,7 +682,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
         private void txtZutiKartoni_TextChanged_1(object sender, EventArgs e)
         {
             isZutKartoniValidated = Validacija.ValidirajOcjene(txtZutiKartoni, Field.ZUTI_KARTONI);
-            if(txtZutiKartoni.Text == "2")
+            if (txtZutiKartoni.Text == "2")
             {
                 txtCrveniKartoni.Text = "1";
             }
@@ -870,7 +870,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             };
             try
             {
-                await _izvjestajApi.Insert<Model.Models.Izvještaj>(insertRequest);
+                await _izvjestajApi.Insert<Model.Models.Izvjestaj>(insertRequest);
                 await _prikazUtakmica.LoadIzvještaj(notifikacija: TipNotifikacije.DODAVANJE);
                 this.Hide();
             }
@@ -945,7 +945,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             };
             try
             {
-                await _izvjestajApi.Update<Model.Models.Izvještaj>(_izvještaj.izvještajId, updateRequest);
+                await _izvjestajApi.Update<Model.Models.Izvjestaj>(_izvještaj.izvjestajId, updateRequest);
                 await _prikazUtakmica.LoadIzvještaj(notifikacija: TipNotifikacije.UREĐIVANJE);
                 this.Hide();
             }
@@ -957,7 +957,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
 
         private void txtMinute_TextChanged_1(object sender, EventArgs e)
         {
-            isMinuteValidated = Validacija.ValidirajOcjene(txtMinute, Field.MINUTE);          
+            isMinuteValidated = Validacija.ValidirajOcjene(txtMinute, Field.MINUTE);
         }
 
         private void txtGolovi_TextChanged_1(object sender, EventArgs e)

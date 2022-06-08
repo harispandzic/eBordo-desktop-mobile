@@ -284,7 +284,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmOdaberiUtakmicu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "eBordo | Kreiraj izvještaj";
+            this.Text = "eBordo | Kreiraj izvjestaj";
             this.Load += new System.EventHandler(this.frmOdaberiUtakmicu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureOdaberiUtakmicuValidator)).EndInit();
             this.ResumeLayout(false);

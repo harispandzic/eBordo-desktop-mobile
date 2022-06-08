@@ -6,7 +6,7 @@ using AutoMapper;
 
 namespace eBordo.Api.Mapping
 {
-    public class eBordoProfile: Profile
+    public class eBordoProfile : Profile
     {
         public eBordoProfile()
         {
@@ -54,17 +54,17 @@ namespace eBordo.Api.Mapping
             CreateMap<eBordo.Model.Requests.UtakmicaSastav.UtakmicaSastavInsertRequest, eBordo.Api.Database.UtakmicaSastav>();
             CreateMap<eBordo.Model.Requests.UtakmicaSastav.UtakmicaSastavUpdateRequest, eBordo.Api.Database.UtakmicaSastav>().ReverseMap(); ;
 
-            CreateMap<eBordo.Api.Database.Izvještaj, eBordo.Model.Models.Izvještaj>();
+            CreateMap<eBordo.Api.Database.Izvjestaj, eBordo.Model.Models.Izvjestaj>();
             CreateMap<eBordo.Api.Database.UtakmicaNastup, eBordo.Model.Models.UtakmicaNastup>();
             CreateMap<eBordo.Api.Database.UtakmicaIzmjena, eBordo.Model.Models.UtakmicaIzmjena>();
 
-            CreateMap<eBordo.Model.Requests.Izvještaj.IzvjetajInsertRequest, eBordo.Api.Database.Izvještaj>();
+            CreateMap<eBordo.Model.Requests.Izvjestaj.IzvjetajInsertRequest, eBordo.Api.Database.Izvjestaj>();
             CreateMap<eBordo.Model.Requests.UtakmicaNastup.UtakmicaNastupInsertRequest, eBordo.Api.Database.UtakmicaNastup>();
             CreateMap<eBordo.Model.Requests.UtakmicaIzmjena.UtakmicaIzmjenaInsertRequest, eBordo.Api.Database.UtakmicaIzmjena>();
 
             CreateMap<eBordo.Api.Database.Notifikacija, eBordo.Model.Models.Notifikacija>();
             CreateMap<eBordo.Model.Requests.Notifikacija.NotifikacijaInsertRequest, eBordo.Api.Database.Notifikacija>();
-           
+
             CreateMap<eBordo.Api.Database.Trening, eBordo.Model.Models.Trening>();
             CreateMap<eBordo.Model.Requests.Trening.TreningInsertRequest, eBordo.Api.Database.Trening>();
             CreateMap<eBordo.Model.Requests.Trening.TreningUpdateRequest, eBordo.Api.Database.Trening>();

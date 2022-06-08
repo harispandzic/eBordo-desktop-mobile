@@ -484,10 +484,10 @@ namespace eBordo.Api.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "izvještaj",
+                name: "izvjestaj",
                 columns: table => new
                 {
-                    izvještajId = table.Column<int>(type: "int", nullable: false)
+                    izvjestajId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     goloviSarajevo = table.Column<int>(type: "int", nullable: false),
                     goloviProtivnik = table.Column<int>(type: "int", nullable: false),
@@ -502,21 +502,21 @@ namespace eBordo.Api.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_izvještaj", x => x.izvještajId);
+                    table.PrimaryKey("PK_izvjestaj", x => x.izvjestajId);
                     table.ForeignKey(
-                        name: "FK_izvještaj_igraci_igracUtakmicaID",
+                        name: "FK_izvjestaj_igraci_igracUtakmicaID",
                         column: x => x.igracUtakmicaID,
                         principalTable: "igraci",
                         principalColumn: "igracId",
                         onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
-                        name: "FK_izvještaj_treneri_trenerID",
+                        name: "FK_izvjestaj_treneri_trenerID",
                         column: x => x.trenerID,
                         principalTable: "treneri",
                         principalColumn: "trenerId",
                         onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
-                        name: "FK_izvještaj_utakmice_utakmicaID",
+                        name: "FK_izvjestaj_utakmice_utakmicaID",
                         column: x => x.utakmicaID,
                         principalTable: "utakmice",
                         principalColumn: "utakmicaId",
@@ -568,7 +568,7 @@ namespace eBordo.Api.Migrations
                     igracInId = table.Column<int>(type: "int", nullable: false),
                     minuta = table.Column<int>(type: "int", nullable: false),
                     izmjenaRazlog = table.Column<int>(type: "int", nullable: false),
-                    izvještajId = table.Column<int>(type: "int", nullable: true)
+                    izvjestajId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -586,10 +586,10 @@ namespace eBordo.Api.Migrations
                         principalColumn: "igracId",
                         onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
-                        name: "FK_utakmicaIzmjena_izvještaj_izvještajId",
-                        column: x => x.izvještajId,
-                        principalTable: "izvještaj",
-                        principalColumn: "izvještajId",
+                        name: "FK_utakmicaIzmjena_izvjestaj_izvjestajId",
+                        column: x => x.izvjestajId,
+                        principalTable: "izvjestaj",
+                        principalColumn: "izvjestajId",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_utakmicaIzmjena_utakmice_utakmicaId",
@@ -626,7 +626,7 @@ namespace eBordo.Api.Migrations
                     klizeciStart = table.Column<int>(type: "int", nullable: false),
                     skok = table.Column<int>(type: "int", nullable: false),
                     odbrana = table.Column<int>(type: "int", nullable: false),
-                    izvještajId = table.Column<int>(type: "int", nullable: true)
+                    izvjestajId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -638,10 +638,10 @@ namespace eBordo.Api.Migrations
                         principalColumn: "igracId",
                         onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
-                        name: "FK_utakmicaNastup_izvještaj_izvještajId",
-                        column: x => x.izvještajId,
-                        principalTable: "izvještaj",
-                        principalColumn: "izvještajId",
+                        name: "FK_utakmicaNastup_izvjestaj_izvjestajId",
+                        column: x => x.izvjestajId,
+                        principalTable: "izvjestaj",
+                        principalColumn: "izvjestajId",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_utakmicaNastup_treneri_trenerId",
@@ -692,18 +692,18 @@ namespace eBordo.Api.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_izvještaj_igracUtakmicaID",
-                table: "izvještaj",
+                name: "IX_izvjestaj_igracUtakmicaID",
+                table: "izvjestaj",
                 column: "igracUtakmicaID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_izvještaj_trenerID",
-                table: "izvještaj",
+                name: "IX_izvjestaj_trenerID",
+                table: "izvjestaj",
                 column: "trenerID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_izvještaj_utakmicaID",
-                table: "izvještaj",
+                name: "IX_izvjestaj_utakmicaID",
+                table: "izvjestaj",
                 column: "utakmicaID");
 
             migrationBuilder.CreateIndex(
@@ -780,9 +780,9 @@ namespace eBordo.Api.Migrations
                 column: "igracOutId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_utakmicaIzmjena_izvještajId",
+                name: "IX_utakmicaIzmjena_izvjestajId",
                 table: "utakmicaIzmjena",
-                column: "izvještajId");
+                column: "izvjestajId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_utakmicaIzmjena_utakmicaId",
@@ -795,9 +795,9 @@ namespace eBordo.Api.Migrations
                 column: "igracId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_utakmicaNastup_izvještajId",
+                name: "IX_utakmicaNastup_izvjestajId",
                 table: "utakmicaNastup",
-                column: "izvještajId");
+                column: "izvjestajId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_utakmicaNastup_trenerId",
@@ -868,7 +868,7 @@ namespace eBordo.Api.Migrations
                 name: "utakmicaSastav");
 
             migrationBuilder.DropTable(
-                name: "izvještaj");
+                name: "izvjestaj");
 
             migrationBuilder.DropTable(
                 name: "utakmice");

@@ -132,7 +132,7 @@ class _PocetnaState extends State<Pocetna> {
     Map<String, String>? queryParams = null;
     queryParams = {'isSearchZadnjaUtakmica': 'true'};
 
-    var result = await APIService.Get("Izvještaj", queryParams) as List;
+    var result = await APIService.Get("Izvjestaj", queryParams) as List;
 
     List<Izvjestaj> utakmiceList =
         result.map((i) => Izvjestaj.fromJson(i)).toList();
@@ -167,7 +167,7 @@ class _PocetnaState extends State<Pocetna> {
     Map<String, String>? queryParams = null;
     queryParams = {'tipUtakmice': "", 'odigrana': "false"};
 
-    var result = await APIService.Get("Izvještaj", queryParams) as List;
+    var result = await APIService.Get("Izvjestaj", queryParams) as List;
 
     List<Izvjestaj> utakmiceList =
         result.map((i) => Izvjestaj.fromJson(i)).toList();
@@ -219,7 +219,7 @@ class _PocetnaState extends State<Pocetna> {
                     color: Colors.white,
                     letterSpacing: 0,
                     fontWeight: FontWeight.bold)),
-            SizedBox(width: 115),
+            SizedBox(width: MediaQuery.of(context).size.width - 240),
             TextButton(
                 child: Badge(
                   badgeColor: HexColor("#FFC107"),
@@ -272,8 +272,10 @@ class _PocetnaState extends State<Pocetna> {
                                                   letterSpacing: 0,
                                                   fontWeight: FontWeight.bold)),
                                           SizedBox(
-                                            width: 185,
-                                          ),
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width -
+                                                  180),
                                           Container(
                                             child: Align(
                                               alignment: Alignment(1, 1),

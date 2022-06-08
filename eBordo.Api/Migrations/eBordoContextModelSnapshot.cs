@@ -490,9 +490,9 @@ namespace eBordo.Api.Migrations
                     b.ToTable("igracStatistika");
                 });
 
-            modelBuilder.Entity("eBordo.Api.Database.Izvještaj", b =>
+            modelBuilder.Entity("eBordo.Api.Database.Izvjestaj", b =>
                 {
-                    b.Property<int>("izvještajId")
+                    b.Property<int>("izvjestajId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -527,7 +527,7 @@ namespace eBordo.Api.Migrations
                     b.Property<string>("zapisnik")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("izvještajId");
+                    b.HasKey("izvjestajId");
 
                     b.HasIndex("igracUtakmicaID");
 
@@ -535,7 +535,7 @@ namespace eBordo.Api.Migrations
 
                     b.HasIndex("utakmicaID");
 
-                    b.ToTable("izvještaj");
+                    b.ToTable("izvjestaj");
                 });
 
             modelBuilder.Entity("eBordo.Api.Database.Klub", b =>
@@ -1231,7 +1231,7 @@ namespace eBordo.Api.Migrations
                     b.Property<int>("izmjenaRazlog")
                         .HasColumnType("int");
 
-                    b.Property<int?>("izvještajId")
+                    b.Property<int?>("izvjestajId")
                         .HasColumnType("int");
 
                     b.Property<int>("minuta")
@@ -1246,7 +1246,7 @@ namespace eBordo.Api.Migrations
 
                     b.HasIndex("igracOutId");
 
-                    b.HasIndex("izvještajId");
+                    b.HasIndex("izvjestajId");
 
                     b.HasIndex("utakmicaId");
 
@@ -1281,7 +1281,7 @@ namespace eBordo.Api.Migrations
                     b.Property<int>("igracId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("izvještajId")
+                    b.Property<int?>("izvjestajId")
                         .HasColumnType("int");
 
                     b.Property<int>("klizeciStart")
@@ -1330,7 +1330,7 @@ namespace eBordo.Api.Migrations
 
                     b.HasIndex("igracId");
 
-                    b.HasIndex("izvještajId");
+                    b.HasIndex("izvjestajId");
 
                     b.HasIndex("trenerId");
 
@@ -1423,7 +1423,7 @@ namespace eBordo.Api.Migrations
                     b.Navigation("ugovor");
                 });
 
-            modelBuilder.Entity("eBordo.Api.Database.Izvještaj", b =>
+            modelBuilder.Entity("eBordo.Api.Database.Izvjestaj", b =>
                 {
                     b.HasOne("eBordo.Api.Database.Igrac", "igracUtakmica")
                         .WithMany()
@@ -1621,9 +1621,9 @@ namespace eBordo.Api.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("eBordo.Api.Database.Izvještaj", null)
+                    b.HasOne("eBordo.Api.Database.Izvjestaj", null)
                         .WithMany("izmjene")
-                        .HasForeignKey("izvještajId");
+                        .HasForeignKey("izvjestajId");
 
                     b.HasOne("eBordo.Api.Database.Utakmica", "utakmica")
                         .WithMany()
@@ -1646,9 +1646,9 @@ namespace eBordo.Api.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("eBordo.Api.Database.Izvještaj", null)
+                    b.HasOne("eBordo.Api.Database.Izvjestaj", null)
                         .WithMany("nastupi")
-                        .HasForeignKey("izvještajId");
+                        .HasForeignKey("izvjestajId");
 
                     b.HasOne("eBordo.Api.Database.Trener", "trener")
                         .WithMany()
@@ -1704,7 +1704,7 @@ namespace eBordo.Api.Migrations
                     b.Navigation("igrac");
                 });
 
-            modelBuilder.Entity("eBordo.Api.Database.Izvještaj", b =>
+            modelBuilder.Entity("eBordo.Api.Database.Izvjestaj", b =>
                 {
                     b.Navigation("izmjene");
 

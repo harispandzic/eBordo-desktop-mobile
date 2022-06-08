@@ -1,6 +1,6 @@
 ﻿using Bunifu.UI.WinForms;
 using eBordo.Model.Requests.Igrac;
-using eBordo.Model.Requests.Izvještaj;
+using eBordo.Model.Requests.Izvjestaj;
 using eBordo.Model.Requests.Notifikacija;
 using eBordo.Model.Requests.Trener;
 using eBordo.Model.Requests.Trening;
@@ -25,7 +25,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
         private readonly ApiService.ApiService _notifikacijaApi = new ApiService.ApiService("Notifikacija");
         private readonly ApiService.ApiService _utakmicaApi = new ApiService.ApiService("Utakmica");
         private readonly ApiService.ApiService _treningApi = new ApiService.ApiService("Trening");
-        private readonly ApiService.ApiService _izvjestsajApi = new ApiService.ApiService("Izvještaj");
+        private readonly ApiService.ApiService _izvjestsajApi = new ApiService.ApiService("Izvjestaj");
         private readonly ApiService.ApiService _igracApi = new ApiService.ApiService("Igrac");
         private readonly ApiService.ApiService _trenerApi = new ApiService.ApiService("Trener");
 
@@ -34,7 +34,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
         private List<Model.Models.Trening> _podaciTreningTop3;
 
         private List<Model.Models.Utakmica> _narednaUtakmica;
-        private List<Model.Models.Izvještaj> _zadnjaUtakmica;
+        private List<Model.Models.Izvjestaj> _zadnjaUtakmica;
 
         ByteToImage byteToImage = new ByteToImage();
 
@@ -75,10 +75,10 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
 
             try
             {
-                var _sveUtakmice = await _izvjestsajApi.GetAll<List<Model.Models.Izvještaj>>(searchPobjeda);
+                var _sveUtakmice = await _izvjestsajApi.GetAll<List<Model.Models.Izvjestaj>>(searchPobjeda);
                 foreach (var item in _sveUtakmice)
                 {
-                    if(item.rezultat == Model.Models.Rezultat.POBJEDA)
+                    if (item.rezultat == Model.Models.Rezultat.POBJEDA)
                     {
                         pobjede++;
                     }
@@ -151,9 +151,9 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
 
             try
             {
-                _zadnjaUtakmica = await _izvjestsajApi.GetAll<List<Model.Models.Izvještaj>>(search);
+                _zadnjaUtakmica = await _izvjestsajApi.GetAll<List<Model.Models.Izvjestaj>>(search);
 
-                if(_zadnjaUtakmica.Count > 0)
+                if (_zadnjaUtakmica.Count > 0)
                 {
                     if (_zadnjaUtakmica[0].utakmica.vrstaUtakmice == "Domaća")
                     {
@@ -221,7 +221,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
             {
                 _narednaUtakmica = await _utakmicaApi.GetAll<List<Model.Models.Utakmica>>(search);
 
-                if(_narednaUtakmica.Count > 0)
+                if (_narednaUtakmica.Count > 0)
                 {
                     if (_narednaUtakmica[0].vrstaUtakmice == "Domaća")
                     {
@@ -281,7 +281,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
                 _podaciNotifikacija = await _notifikacijaApi.GetAll<List<Model.Models.Notifikacija>>(search);
                 //loaderNotifikacije.Hide();
 
-                if(_podaciNotifikacija.Count > 0)
+                if (_podaciNotifikacija.Count > 0)
                 {
                     frmNotifikacijaKartica[] listItems = new frmNotifikacijaKartica[_podaciNotifikacija.Count];
                     for (int i = 0; i < listItems.Length; i++)
@@ -330,7 +330,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
                 _podaciUtakmiceTop3 = await _utakmicaApi.GetAll<List<Model.Models.Utakmica>>(search);
                 bunifuLoader1.Hide();
 
-                if(_podaciUtakmiceTop3.Count > 0)
+                if (_podaciUtakmiceTop3.Count > 0)
                 {
                     frmPrikazUtakmica[] listItems = new frmPrikazUtakmica[_podaciUtakmiceTop3.Count];
                     for (int i = 0; i < listItems.Length; i++)
@@ -379,7 +379,7 @@ namespace eBordo.WinUI.Forms.AdminPanel.Početna
                 _podaciTreningTop3 = await _treningApi.GetAll<List<Model.Models.Trening>>(search);
                 treningLoader.Hide();
 
-                if(_podaciTreningTop3.Count > 0)
+                if (_podaciTreningTop3.Count > 0)
                 {
                     frmPrikazTreninga[] listItems = new frmPrikazTreninga[_podaciTreningTop3.Count];
                     for (int i = 0; i < listItems.Length; i++)

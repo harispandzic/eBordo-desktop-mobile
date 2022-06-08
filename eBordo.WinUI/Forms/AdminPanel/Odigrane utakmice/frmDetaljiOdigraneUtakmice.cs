@@ -19,10 +19,10 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
         private readonly ApiService.ApiService _igracApi = new ApiService.ApiService("Igrac");
         private readonly ApiService.ApiService _utakmica = new ApiService.ApiService("Utakmica");
 
-        Model.Models.Izvještaj _odabraniIzvjestaj { get; set; }
+        Model.Models.Izvjestaj _odabraniIzvjestaj { get; set; }
         ByteToImage byteToImage = new ByteToImage();
 
-        public frmDetaljiOdigraneUtakmice(Model.Models.Izvještaj odabraniIzvjestaj)
+        public frmDetaljiOdigraneUtakmice(Model.Models.Izvjestaj odabraniIzvjestaj)
         {
             InitializeComponent();
             _odabraniIzvjestaj = odabraniIzvjestaj;
@@ -136,38 +136,37 @@ namespace eBordo.WinUI.Forms.AdminPanel.Odigrane_utakmice
                 izmjena.razlogIzmjene = item.izmjenaRazlog.ToString();
                 flowPanelIzmjene.Controls.Add(izmjena);
             }
-            var podaciIgracUtakmice = _odabraniIzvjestaj.nastupi.Where(s => s.igracId == _odabraniIzvjestaj.igracUtakmicaID).SingleOrDefault();
-            Model.Models.Igrac igracKorisnik = null;
-            try
-            {
-                igracKorisnik = await _igracApi.GetById<Model.Models.Igrac>(podaciIgracUtakmice.igracId);
-            }
-            catch
-            {
-                PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
-            }
+            Model.Models.Igrac igracKorisnik = _odabraniIzvjestaj.igracUtakmica; ;
+            //try
+            //{
+            //    igracKorisnik = await _igracApi.GetById<Model.Models.Igrac>(podaciIgracUtakmice.igracId);
+            //}
+            //catch
+            //{
+            //    PosaljiNotifikaciju.notificationSwitch(snackbar, this.ParentForm, TipNotifikacije.GREŠKA_NA_SERVERU);
+            //}
             lblDresVrijednost.Text = "#" + igracKorisnik.brojDresa.ToString();
             korisnickaFotoagrafija.BackgroundImage = byteToImage.ConvertByteToImage(igracKorisnik.slikaPanel);
             korisnickaFotoagrafija.BackgroundImageLayout = ImageLayout.Zoom;
             lblImePrezime.Text = (igracKorisnik.korisnik.ime[0] + " " + igracKorisnik.korisnik.prezime).ToUpper();
             lblOcjena.Value = (int)igracKorisnik.igracStatistika.prosjecnaOcjena;
-            ratingKontrolaLopte.Value = podaciIgracUtakmice.kontrolaLopte;
-            ratingDriblanje.Value = podaciIgracUtakmice.driblanje;
-            ratingDodavanje.Value = podaciIgracUtakmice.dodavanje;
-            ratingKretanje.Value = podaciIgracUtakmice.kretanje;
-            ratingBrzina.Value = podaciIgracUtakmice.brzina;
-            ratingSut.Value = podaciIgracUtakmice.sut;
-            ratingSnaga.Value = podaciIgracUtakmice.snaga;
-            ratingMarkiranje.Value = podaciIgracUtakmice.markiranje;
-            ratingKlizeciStart.Value = podaciIgracUtakmice.klizeciStart;
-            ratingSkok.Value = podaciIgracUtakmice.skok;
-            ratingOdbrana.Value = podaciIgracUtakmice.odbrana;
-            ocjenaNastupa.Value = podaciIgracUtakmice.ocjena;
-            lblMinute.Text = podaciIgracUtakmice.minute.ToString();
-            lblGolovi.Text = podaciIgracUtakmice.golovi.ToString();
-            lblAsistencije.Text = podaciIgracUtakmice.asistencije.ToString();
-            lblZutiKartoni.Text = podaciIgracUtakmice.zutiKartoni.ToString();
-            lblCrveniKartoni.Text = podaciIgracUtakmice.crveniKartoni.ToString();
+            ratingKontrolaLopte.Value = (int)igracKorisnik.igracSkills.kontrolaLopte;
+            ratingDriblanje.Value = (int)igracKorisnik.igracSkills.driblanje;
+            ratingDodavanje.Value = (int)igracKorisnik.igracSkills.dodavanje;
+            ratingKretanje.Value = (int)igracKorisnik.igracSkills.kretanje;
+            ratingBrzina.Value = (int)igracKorisnik.igracSkills.brzina;
+            ratingSut.Value = (int)igracKorisnik.igracSkills.sut;
+            ratingSnaga.Value = (int)igracKorisnik.igracSkills.snaga;
+            ratingMarkiranje.Value = (int)igracKorisnik.igracSkills.markiranje;
+            ratingKlizeciStart.Value = (int)igracKorisnik.igracSkills.klizeciStart;
+            ratingSkok.Value = (int)igracKorisnik.igracSkills.skok;
+            ratingOdbrana.Value = (int)igracKorisnik.igracSkills.odbrana;
+            ocjenaNastupa.Value = (int)igracKorisnik.igracSkills.prosjekOcjena;
+            lblMinute.Text = (igracKorisnik.igracStatistika.brojNastupa * 90).ToString(); ;
+            lblGolovi.Text = igracKorisnik.igracStatistika.golovi.ToString();
+            lblAsistencije.Text = igracKorisnik.igracStatistika.asistencije.ToString();
+            lblZutiKartoni.Text = igracKorisnik.igracStatistika.zutiKartoni.ToString();
+            lblCrveniKartoni.Text = igracKorisnik.igracStatistika.crveniKartoni.ToString();
         }
 
         private async void btnSaveUpdate_Click(object sender, EventArgs e)

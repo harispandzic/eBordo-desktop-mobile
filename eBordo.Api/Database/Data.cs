@@ -12,7 +12,7 @@ namespace eBordo.Api.Database
             eBordo.Api.Services.Igrac.IIgracService igrac_service,
             eBordo.Api.Services.Trener.ITrenerService trener_service,
             eBordo.Api.Services.Utakmica.IUtakmicaService utakmica_service,
-            eBordo.Api.Services.Izvještaj.IIzvještajService izvjestaj_service,
+            eBordo.Api.Services.Izvjestaj.IIzvjestajService izvjestaj_service,
             eBordo.Api.Services.Trening.ITreningService trening_service
             )
         {
@@ -31,7 +31,7 @@ namespace eBordo.Api.Database
                     datumRodjenja = System.DateTime.Parse("1997-10-03 10:27:31.0000000"),
                     adresa = "Koševo 1",
                     telefon = "38762209709",
-                    email = "haris.pandzic@edu.fit.ba",
+                    email = "eBordoApp@outlook.com",
                     drzavljanstvoId = 1,
                     gradRodjenjaId = 1,
                     Slika = webClient.DownloadData("https://i.postimg.cc/xTfHNwZV/admin.png")
@@ -52,7 +52,7 @@ namespace eBordo.Api.Database
                         datumRodjenja = System.DateTime.Parse("2000-01-01 10:32:55.0000000"),
                         adresa = "Koševo 1",
                         telefon = "38762209709",
-                        email = "haris.pandzic@edu.fit.ba",
+                        email = "eBordoApp@outlook.com",
                         drzavljanstvoId = 1,
                         gradRodjenjaId = 9,
                         Slika = webClient.DownloadData("https://i.postimg.cc/sGXNhJ22/belmin-dizdarevic.png"),
@@ -71,7 +71,7 @@ namespace eBordo.Api.Database
                     trzisnaVrijednost = 100000,
                     napomeneOIgracu = "",
                     SlikaPanel = webClient.DownloadData("https://i.postimg.cc/WFM2yTmZ/belmin-dizdarevic.png"),
-                });              
+                });
 
                 igrac_service.Insert(new Model.Requests.Igrac.IgracInsertRequest
                 {
@@ -82,7 +82,7 @@ namespace eBordo.Api.Database
                         datumRodjenja = System.DateTime.Parse("2000-01-01 10:32:55.0000000"),
                         adresa = "Koševo 1",
                         telefon = "38762209709",
-                        email = "haris.pandzic@edu.fit.ba",
+                        email = "eBordoApp@outlook.com",
                         drzavljanstvoId = 1,
                         gradRodjenjaId = 10,
                         Slika = webClient.DownloadData("https://i.postimg.cc/jwkhGYss/numan-kurdic.png"),
@@ -92,7 +92,7 @@ namespace eBordo.Api.Database
                         datumPocetka = System.DateTime.Now,
                         datumZavrsetka = System.DateTime.Parse("2024-01-30 10:27:31.0000000"),
                     },
-                    pozicijaId = 1,
+                    pozicijaId = 2,
                     noga = "DESNA",
                     jacinaSlabijeNoge = 5,
                     visina = 190,
@@ -112,7 +112,7 @@ namespace eBordo.Api.Database
                         datumRodjenja = System.DateTime.Parse("2000-01-01 10:32:55.0000000"),
                         adresa = "Koševo 1",
                         telefon = "38762209709",
-                        email = "haris.pandzic@edu.fit.ba",
+                        email = "eBordoApp@outlook.com",
                         drzavljanstvoId = 1,
                         gradRodjenjaId = 9,
                         Slika = webClient.DownloadData("https://i.postimg.cc/sQ2c6gC6/muharem-trako.png"),
@@ -142,7 +142,7 @@ namespace eBordo.Api.Database
                         datumRodjenja = System.DateTime.Parse("2000-01-01 10:32:55.0000000"),
                         adresa = "Koševo 1",
                         telefon = "38762209709",
-                        email = "haris.pandzic@edu.fit.ba",
+                        email = "eBordoApp@outlook.com",
                         drzavljanstvoId = 7,
                         gradRodjenjaId = 11,
                         Slika = webClient.DownloadData("https://i.postimg.cc/qNnZyqp2/darko-lazic.png"),
@@ -172,7 +172,7 @@ namespace eBordo.Api.Database
                         datumRodjenja = System.DateTime.Parse("2000-01-01 10:32:55.0000000"),
                         adresa = "Koševo 1",
                         telefon = "38762209709",
-                        email = "haris.pandzic@edu.fit.ba",
+                        email = "eBordoApp@outlook.com",
                         drzavljanstvoId = 1,
                         gradRodjenjaId = 1,
                         Slika = webClient.DownloadData("https://i.postimg.cc/4K6qkdMX/amer-dupovac.png"),
@@ -202,7 +202,7 @@ namespace eBordo.Api.Database
                         datumRodjenja = System.DateTime.Parse("2000-01-01 10:32:55.0000000"),
                         adresa = "Koševo 1",
                         telefon = "38762209709",
-                        email = "haris.pandzic@edu.fit.ba",
+                        email = "eBordoApp@outlook.com",
                         drzavljanstvoId = 1,
                         gradRodjenjaId = 1,
                         Slika = webClient.DownloadData("https://i.postimg.cc/p9HcZvd4/dino-islamovic.png"),
@@ -232,7 +232,7 @@ namespace eBordo.Api.Database
                         datumRodjenja = System.DateTime.Parse("2000-01-01 10:32:55.0000000"),
                         adresa = "Koševo 1",
                         telefon = "38762209709",
-                        email = "haris.pandzic@edu.fit.ba",
+                        email = "eBordoApp@outlook.com",
                         drzavljanstvoId = 1,
                         gradRodjenjaId = 3,
                         Slika = webClient.DownloadData("https://i.postimg.cc/hhywqNCQ/armin-imamovic.png"),
@@ -262,7 +262,7 @@ namespace eBordo.Api.Database
                         datumRodjenja = System.DateTime.Parse("2000-01-01 10:32:55.0000000"),
                         adresa = "Koševo 1",
                         telefon = "38762209709",
-                        email = "haris.pandzic@edu.fit.ba",
+                        email = "eBordoApp@outlook.com",
                         drzavljanstvoId = 1,
                         gradRodjenjaId = 12,
                         Slika = webClient.DownloadData("https://i.postimg.cc/9RcSW25Z/andrej-dokanovic.png"),
@@ -292,7 +292,7 @@ namespace eBordo.Api.Database
                         datumRodjenja = System.DateTime.Parse("2000-01-01 10:32:55.0000000"),
                         adresa = "Koševo 1",
                         telefon = "38762209709",
-                        email = "haris.pandzic@edu.fit.ba",
+                        email = "eBordoApp@outlook.com",
                         drzavljanstvoId = 1,
                         gradRodjenjaId = 1,
                         Slika = webClient.DownloadData("https://i.postimg.cc/z3Btp0Jz/kerim-palic.png"),
@@ -322,7 +322,7 @@ namespace eBordo.Api.Database
                         datumRodjenja = System.DateTime.Parse("2000-01-01 10:32:55.0000000"),
                         adresa = "Koševo 1",
                         telefon = "38762209709",
-                        email = "haris.pandzic@edu.fit.ba",
+                        email = "eBordoApp@outlook.com",
                         drzavljanstvoId = 1,
                         gradRodjenjaId = 1,
                         Slika = webClient.DownloadData("https://i.postimg.cc/XBGgW1J9/tarik-ramic.png"),
@@ -352,7 +352,7 @@ namespace eBordo.Api.Database
                         datumRodjenja = System.DateTime.Parse("2000-01-01 10:32:55.0000000"),
                         adresa = "Koševo 1",
                         telefon = "38762209709",
-                        email = "haris.pandzic@edu.fit.ba",
+                        email = "eBordoApp@outlook.com",
                         drzavljanstvoId = 1,
                         gradRodjenjaId = 14,
                         Slika = webClient.DownloadData("https://i.postimg.cc/mtPnZVqX/dal-varesanovic.png"),
@@ -382,7 +382,7 @@ namespace eBordo.Api.Database
                         datumRodjenja = System.DateTime.Parse("2000-01-01 10:32:55.0000000"),
                         adresa = "Koševo 1",
                         telefon = "38762209709",
-                        email = "haris.pandzic@edu.fit.ba",
+                        email = "eBordoApp@outlook.com",
                         drzavljanstvoId = 1,
                         gradRodjenjaId = 1,
                         Slika = webClient.DownloadData("https://i.postimg.cc/bGpLnRCj/muhamed-sahinovic.png"),
@@ -412,7 +412,7 @@ namespace eBordo.Api.Database
                         datumRodjenja = System.DateTime.Parse("2000-01-01 10:32:55.0000000"),
                         adresa = "Koševo 1",
                         telefon = "38762209709",
-                        email = "haris.pandzic@edu.fit.ba",
+                        email = "eBordoApp@outlook.com",
                         drzavljanstvoId = 1,
                         gradRodjenjaId = 3,
                         Slika = webClient.DownloadData("https://i.postimg.cc/vxc0BHPg/kenan-dervisagic.png"),
@@ -442,7 +442,7 @@ namespace eBordo.Api.Database
                         datumRodjenja = System.DateTime.Parse("2000-01-01 10:32:55.0000000"),
                         adresa = "Koševo 1",
                         telefon = "38762209709",
-                        email = "haris.pandzic@edu.fit.ba",
+                        email = "eBordoApp@outlook.com",
                         drzavljanstvoId = 1,
                         gradRodjenjaId = 15,
                         Slika = webClient.DownloadData("https://i.postimg.cc/Hc3NnNdK/anel-hebibovic.png"),
@@ -472,7 +472,7 @@ namespace eBordo.Api.Database
                         datumRodjenja = System.DateTime.Parse("2000-01-01 10:32:55.0000000"),
                         adresa = "Koševo 1",
                         telefon = "38762209709",
-                        email = "haris.pandzic@edu.fit.ba",
+                        email = "eBordoApp@outlook.com",
                         drzavljanstvoId = 10,
                         gradRodjenjaId = 1,
                         Slika = webClient.DownloadData("https://i.postimg.cc/1fbj8w19/darko-bodul.png"),
@@ -502,7 +502,7 @@ namespace eBordo.Api.Database
                         datumRodjenja = System.DateTime.Parse("2000-01-01 10:32:55.0000000"),
                         adresa = "Koševo 1",
                         telefon = "38762209709",
-                        email = "haris.pandzic@edu.fit.ba",
+                        email = "eBordoApp@outlook.com",
                         drzavljanstvoId = 5,
                         gradRodjenjaId = 16,
                         Slika = webClient.DownloadData("https://i.postimg.cc/F1BP63Rj/krste-velkoski.png"),
@@ -532,7 +532,7 @@ namespace eBordo.Api.Database
                         datumRodjenja = System.DateTime.Parse("2000-01-01 10:32:55.0000000"),
                         adresa = "Koševo 1",
                         telefon = "38762209709",
-                        email = "haris.pandzic@edu.fit.ba",
+                        email = "eBordoApp@outlook.com",
                         drzavljanstvoId = 4,
                         gradRodjenjaId = 14,
                         Slika = webClient.DownloadData("https://i.postimg.cc/cKB9kzgH/drazen-bagaric.png"),
@@ -562,7 +562,7 @@ namespace eBordo.Api.Database
                         datumRodjenja = System.DateTime.Parse("2000-01-01 10:32:55.0000000"),
                         adresa = "Koševo 1",
                         telefon = "38762209709",
-                        email = "haris.pandzic@edu.fit.ba",
+                        email = "eBordoApp@outlook.com",
                         drzavljanstvoId = 1,
                         gradRodjenjaId = 3,
                         Slika = webClient.DownloadData("https://i.postimg.cc/CRych0b5/mersudin-ahmetovic.png"),
@@ -572,7 +572,7 @@ namespace eBordo.Api.Database
                         datumPocetka = System.DateTime.Now,
                         datumZavrsetka = System.DateTime.Parse("2024-01-30 10:27:31.0000000"),
                     },
-                    pozicijaId = 9,
+                    pozicijaId = 10,
                     noga = "DESNA",
                     jacinaSlabijeNoge = 5,
                     visina = 190,
@@ -592,7 +592,7 @@ namespace eBordo.Api.Database
                         datumRodjenja = System.DateTime.Parse("2000-01-01 10:32:55.0000000"),
                         adresa = "Koševo 1",
                         telefon = "38762209709",
-                        email = "haris.pandzic@edu.fit.ba",
+                        email = "eBordoApp@outlook.com",
                         drzavljanstvoId = 4,
                         gradRodjenjaId = 18,
                         Slika = webClient.DownloadData("https://i.postimg.cc/9DGJzkBp/mirko-oremus.png"),
@@ -602,7 +602,7 @@ namespace eBordo.Api.Database
                         datumPocetka = System.DateTime.Now,
                         datumZavrsetka = System.DateTime.Parse("2024-01-30 10:27:31.0000000"),
                     },
-                    pozicijaId = 10,
+                    pozicijaId = 11,
                     noga = "LIJEVA",
                     jacinaSlabijeNoge = 5,
                     visina = 190,
@@ -622,7 +622,7 @@ namespace eBordo.Api.Database
                         datumRodjenja = System.DateTime.Parse("2000-01-01 10:32:55.0000000"),
                         adresa = "Koševo 1",
                         telefon = "38762209709",
-                        email = "haris.pandzic@edu.fit.ba",
+                        email = "eBordoApp@outlook.com",
                         drzavljanstvoId = 1,
                         gradRodjenjaId = 1,
                         Slika = webClient.DownloadData("https://i.postimg.cc/1nRWkKwK/halid-sabanovic.png"),
@@ -632,7 +632,7 @@ namespace eBordo.Api.Database
                         datumPocetka = System.DateTime.Now,
                         datumZavrsetka = System.DateTime.Parse("2024-01-30 10:27:31.0000000"),
                     },
-                    pozicijaId = 10,
+                    pozicijaId = 12,
                     noga = "DESNA",
                     jacinaSlabijeNoge = 5,
                     visina = 190,
@@ -652,7 +652,7 @@ namespace eBordo.Api.Database
                         datumRodjenja = System.DateTime.Parse("2000-01-01 10:32:55.0000000"),
                         adresa = "Koševo 1",
                         telefon = "38762209709",
-                        email = "haris.pandzic@edu.fit.ba",
+                        email = "eBordoApp@outlook.com",
                         drzavljanstvoId = 4,
                         gradRodjenjaId = 18,
                         Slika = webClient.DownloadData("https://i.postimg.cc/qgzw2qLg/vicko-sevelj.png"),
@@ -686,7 +686,7 @@ namespace eBordo.Api.Database
                         datumRodjenja = System.DateTime.Parse("2000-01-01 10:32:55.0000000"),
                         adresa = "Koševo 1",
                         telefon = "38762209709",
-                        email = "haris.pandzic@edu.fit.ba",
+                        email = "eBordoApp@outlook.com",
                         drzavljanstvoId = 9,
                         gradRodjenjaId = 19,
                         Slika = webClient.DownloadData("https://i.postimg.cc/nC9dfrjN/mathias-fanimo.png"),
@@ -720,7 +720,7 @@ namespace eBordo.Api.Database
                         datumRodjenja = System.DateTime.Parse("2000-01-01 10:32:55.0000000"),
                         adresa = "Koševo 1",
                         telefon = "38762209709",
-                        email = "haris.pandzic@edu.fit.ba",
+                        email = "eBordoApp@outlook.com",
                         drzavljanstvoId = 1,
                         gradRodjenjaId = 20,
                         Slika = webClient.DownloadData("https://i.postimg.cc/dkWWwT9c/harsi-konjalic.png"),
@@ -754,7 +754,7 @@ namespace eBordo.Api.Database
                         datumRodjenja = System.DateTime.Parse("2000-01-01 10:32:55.0000000"),
                         adresa = "Koševo 1",
                         telefon = "38762209709",
-                        email = "haris.pandzic@edu.fit.ba",
+                        email = "eBordoApp@outlook.com",
                         drzavljanstvoId = 11,
                         gradRodjenjaId = 21,
                         Slika = webClient.DownloadData("https://i.postimg.cc/t7Cfw9zH/boris-cmiljanic.png"),
@@ -788,7 +788,7 @@ namespace eBordo.Api.Database
                         datumRodjenja = System.DateTime.Parse("1988-12-27 19:28:44.0000000"),
                         adresa = "Koševo 1",
                         telefon = "38762209709",
-                        email = "haris.pandzic@edu.fit.ba",
+                        email = "eBordoApp@outlook.com",
                         drzavljanstvoId = 4,
                         gradRodjenjaId = 22,
                         Slika = webClient.DownloadData("https://i.postimg.cc/PvCvvQ6t/goran-sablic.png"),
@@ -813,7 +813,7 @@ namespace eBordo.Api.Database
                         datumRodjenja = System.DateTime.Parse("1988-12-27 19:28:44.0000000"),
                         adresa = "Koševo 1",
                         telefon = "38762209709",
-                        email = "haris.pandzic@edu.fit.ba",
+                        email = "eBordoApp@outlook.com",
                         drzavljanstvoId = 1,
                         gradRodjenjaId = 1,
                         Slika = webClient.DownloadData("https://i.postimg.cc/8Fb625JV/abdulah-oruc.png"),
@@ -838,7 +838,7 @@ namespace eBordo.Api.Database
                         datumRodjenja = System.DateTime.Parse("1988-12-27 19:28:44.0000000"),
                         adresa = "Koševo 1",
                         telefon = "38762209709",
-                        email = "haris.pandzic@edu.fit.ba",
+                        email = "eBordoApp@outlook.com",
                         drzavljanstvoId = 1,
                         gradRodjenjaId = 9,
                         Slika = webClient.DownloadData("https://i.postimg.cc/R6sn0DLs/adi-adilovic.png"),
@@ -863,7 +863,7 @@ namespace eBordo.Api.Database
                         datumRodjenja = System.DateTime.Parse("1988-12-27 19:28:44.0000000"),
                         adresa = "Koševo 1",
                         telefon = "38762209709",
-                        email = "haris.pandzic@edu.fit.ba",
+                        email = "eBordoApp@outlook.com",
                         drzavljanstvoId = 1,
                         gradRodjenjaId = 1,
                         Slika = webClient.DownloadData("https://i.postimg.cc/grjZ7GGf/nermin-huskic.png"),
@@ -894,7 +894,7 @@ namespace eBordo.Api.Database
                     tipGarniture = "Domaća",
                     tipUtakmice = "Domaća",
                     odigrana = false,
-                    sastav = generateSastav(prvaPostava: 11,klupa: 9)
+                    sastav = generateSastav(prvaPostava: 11, klupa: 9)
                 });
 
                 utakmica_service.Insert(new eBordo.Model.Requests.Utakmica.UtakmicaInsertRequest
@@ -953,7 +953,7 @@ namespace eBordo.Api.Database
 
                 List<eBordo.Model.Requests.UtakmicaNastup.UtakmicaNastupInsertRequest> ocjene1 = generateOcjene(1);
 
-                izvjestaj_service.Insert(new Model.Requests.Izvještaj.IzvjetajInsertRequest
+                izvjestaj_service.Insert(new Model.Requests.Izvjestaj.IzvjetajInsertRequest
                 {
                     goloviSarajevo = ocjene1.Select(s => s.golovi).Sum(),
                     goloviProtivnik = 3,
@@ -965,11 +965,11 @@ namespace eBordo.Api.Database
                     slikaSaUtakmice = webClient.DownloadData("https://i.postimg.cc/mh1cs1m5/sarajvo-sloboda.jpg"),
                     utakmicaNastup = generateOcjene(1),
                     izmjene = generateIzmjene(1)
-                }) ;
+                });
 
                 List<eBordo.Model.Requests.UtakmicaNastup.UtakmicaNastupInsertRequest> ocjene3 = generateOcjene(3);
 
-                izvjestaj_service.Insert(new Model.Requests.Izvještaj.IzvjetajInsertRequest
+                izvjestaj_service.Insert(new Model.Requests.Izvjestaj.IzvjetajInsertRequest
                 {
                     goloviSarajevo = ocjene3.Select(s => s.golovi).Sum(),
                     goloviProtivnik = 2,
@@ -1091,11 +1091,11 @@ namespace eBordo.Api.Database
             List<eBordo.Model.Requests.UtakmicaSastav.UtakmicaSastavInsertRequest> generateSastav(int prvaPostava, int klupa)
             {
                 List<eBordo.Model.Requests.UtakmicaSastav.UtakmicaSastavInsertRequest> sastav = new List<Model.Requests.UtakmicaSastav.UtakmicaSastavInsertRequest>();
-                
+
+                int count = 1;
+
                 for (int i = 0; i < prvaPostava; i++)
                 {
-                    int count = 1;
-
                     sastav.Add(new Model.Requests.UtakmicaSastav.UtakmicaSastavInsertRequest
                     {
                         igracId = count,
@@ -1106,18 +1106,20 @@ namespace eBordo.Api.Database
                     count++;
                 }
 
+                count = prvaPostava + 1;
+                int pozicijaId = 1;
+
                 for (int i = prvaPostava; i < prvaPostava + klupa; i++)
                 {
-                    int count = 1;
-
                     sastav.Add(new Model.Requests.UtakmicaSastav.UtakmicaSastavInsertRequest
                     {
                         igracId = count,
-                        pozicijaId = count,
+                        pozicijaId = pozicijaId,
                         uloga = "KLUPA"
                     });
 
                     count++;
+                    pozicijaId++;
                 }
 
                 return sastav;

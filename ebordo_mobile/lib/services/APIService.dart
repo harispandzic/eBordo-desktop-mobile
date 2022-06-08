@@ -6,6 +6,8 @@ import '../models/change-password.dart';
 import '../models/get-preporuceni.dart';
 import '../models/korisnik.dart';
 
+String server_adress = "http://localhost:5000/api/";
+
 class APIService {
   static Korisnik? logovaniKorisnik;
   static String username = "";
@@ -15,8 +17,6 @@ class APIService {
   APIService({required this.route});
 
   static void PostaviKredencijale(String Username, String Password) {
-    // username = "goran.sablic@fksarajevo.ba";
-    // password = "Test1234!";
     username = Username;
     password = Password;
   }
@@ -26,7 +26,7 @@ class APIService {
   }
 
   static Future Auth() async {
-    String baseUrl = "http://127.0.0.1:58250/api/Korisnik/Auth";
+    String baseUrl = server_adress + "Korisnik/Auth";
     final String basicAuth =
         'Basic ' + base64Encode(utf8.encode('$username:$password'));
     final response = await http.get(
@@ -40,7 +40,7 @@ class APIService {
   }
 
   static Future<dynamic> ChangeUserPassword(ChangePassword body) async {
-    String baseUrl = "http://127.0.0.1:58250/api/Korisnik/ChangePassword";
+    String baseUrl = server_adress + "Korisnik/ChangePassword";
 
     Map data = {
       'korisnikId': body.korisnikId,
@@ -62,7 +62,7 @@ class APIService {
 
   static Future<dynamic> GetPreporuceneIgrace(
       String route, String naziv, GetPreporuceni body) async {
-    String baseUrl = "http://127.0.0.1:58250/api/" + route + "/" + naziv;
+    String baseUrl = server_adress + route + "/" + naziv;
 
     Map data = {
       'igracId': body.igracId,
@@ -83,7 +83,7 @@ class APIService {
 
   static Future<List<dynamic>?> Get(String route, dynamic object) async {
     String queryString = Uri(queryParameters: object).query;
-    String baseUrl = "http://127.0.0.1:58250/api/" + route;
+    String baseUrl = server_adress + route;
     if (object != null) {
       baseUrl = baseUrl + '?' + queryString;
     }
@@ -101,8 +101,7 @@ class APIService {
   }
 
   static Future<dynamic> DeleteById(String route, int id) async {
-    String baseUrl =
-        "http://127.0.0.1:58250/api/" + route + "/" + id.toString();
+    String baseUrl = server_adress + route + "/" + id.toString();
     final response = await http.delete(
       Uri.parse(baseUrl),
       headers: <String, String>{
@@ -116,8 +115,7 @@ class APIService {
   }
 
   static Future<dynamic> Update(String route, int id, dynamic body) async {
-    String baseUrl =
-        "http://127.0.0.1:58250/api/" + route + "/" + id.toString();
+    String baseUrl = server_adress + route + "/" + id.toString();
 
     final String basicAuth =
         'Basic ' + base64Encode(utf8.encode('$username:$password'));
