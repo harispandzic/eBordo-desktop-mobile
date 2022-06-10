@@ -18,7 +18,7 @@ services:
     build:
       context: .
     environment:
-      - ConnectionStrings:eBordo=Server=ebordo-sql,1433;Database=eBordo_db;User=sa;Password=FKSarajevo1946;ConnectRetryCount=0
+      - ConnectionStrings:eBordo=Server=ebordo-sql,1433;Database=IB210355;User=sa;Password=FKSarajevo1946;ConnectRetryCount=0
     ports:
       - 5000:5050
     networks:

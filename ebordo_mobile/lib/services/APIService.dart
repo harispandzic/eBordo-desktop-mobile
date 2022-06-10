@@ -6,7 +6,7 @@ import '../models/change-password.dart';
 import '../models/get-preporuceni.dart';
 import '../models/korisnik.dart';
 
-String server_adress = "http://localhost:5000/api/";
+String server_adress = "http://10.0.2.2:5000/api/";
 
 class APIService {
   static Korisnik? logovaniKorisnik;
