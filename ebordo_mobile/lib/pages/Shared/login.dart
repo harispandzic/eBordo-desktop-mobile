@@ -110,7 +110,7 @@ class _LoginState extends State<Login> {
                           image:
                               AssetImage('assets/login-background-slika.png'))),
                   child: Padding(
-                    padding: EdgeInsets.only(left: 20, top: 20, right: 20),
+                    padding: EdgeInsets.only(left: 20, top: 15, right: 20),
                     child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -148,7 +148,7 @@ class _LoginState extends State<Login> {
                                         letterSpacing: 0))
                               ]),
                           SizedBox(
-                            height: 5,
+                            height: 3,
                           ),
                           Text("UNESITE PODATKE ZA PRIJAVU",
                               style: GoogleFonts.oswald(
@@ -186,7 +186,7 @@ class _LoginState extends State<Login> {
                                     labelText: 'E-mail adresa',
                                   ),
                                 ),
-                                SizedBox(height: 21),
+                                SizedBox(height: 18),
                                 TextFormField(
                                   controller: passwordController,
                                   obscureText: !widget._passwordVisible,
@@ -236,7 +236,7 @@ class _LoginState extends State<Login> {
                                     ),
                                   ),
                                 ),
-                                SizedBox(height: 21),
+                                SizedBox(height: 18),
                                 SizedBox(
                                   width: 200,
                                   height: 50,
@@ -259,7 +259,7 @@ class _LoginState extends State<Login> {
                                             fontWeight: FontWeight.bold)),
                                   ),
                                 ),
-                                SizedBox(height: 10),
+                                SizedBox(height: 8),
                                 Container(
                                   height: 30,
                                   decoration: BoxDecoration(
