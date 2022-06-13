@@ -135,8 +135,10 @@ class _SharedAppBarState extends State<SharedAppBar> {
                                               letterSpacing: 0,
                                               fontWeight: FontWeight.bold)),
                                       SizedBox(
-                                        width: 185,
-                                      ),
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width -
+                                              180),
                                       Container(
                                         child: Align(
                                           alignment: Alignment(1, 1),
