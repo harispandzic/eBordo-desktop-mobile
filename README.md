@@ -42,6 +42,8 @@ eBordo MOBILE setup:
 
 NOTES: With Visual Studio Code you can run mobile app like Windows application, it can be more easier and faster.
 
+BEST platform for testing is Windows, so you can run it with Visual Studio Code!
+
 Credentials:
 
 Every user in DB have same template for username and password: username: name.surname@fksarajevo.ba
