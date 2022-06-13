@@ -13,7 +13,7 @@ namespace eBordo.WinUI.ApiService
     public class ApiService
     {
         private string _resource;
-        public string endpoint = $"{Properties.Settings.Default.ApiURL}";
+        public string endpoint = $"{Properties.Settings.Default.ApiURL}/";
 
         public static string username { get; set; }
         public static string password { get; set; }
